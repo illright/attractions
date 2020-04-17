@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/illright/attractions/master/attractions-logo.svg" alt="Logo" style="float: right; width: 5em" />
+<img src="https://raw.githubusercontent.com/illright/attractions/master/attractions-logo.png" alt="Logo" align="right" width="80" />
 
 # Attractions
 
