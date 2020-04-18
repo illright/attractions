@@ -6,13 +6,13 @@ export default function events(node, args) {
     }
   }
 
-	return {
-		destroy() {
+  return {
+    destroy() {
       if (args != null) {
         for (let event of args) {
           node.removeEventListener(event.name, event.handler);
         }
       }
-		},
-	};
+    },
+  };
 }
