@@ -2,14 +2,11 @@
 @import '../mixins.scss';
 @import '_attractions-theme.scss';
 
-label {
+.radio {
   display: flex;
   font-family: $font;
-  cursor: pointer;
-}
-
-.radio {
   position: relative;
+  cursor: pointer;
 
   & > input[type="radio"] {
     @include hide-accessible;
@@ -79,21 +76,4 @@ label {
   & > input:focus:checked + .icon::after {
     background-color: transparentize($main, .875);
   }
-}
-
-.radio.colored > input + .icon::before {
-  background-color: lightgray;
-  background-color: rgb(var(--before-r), var(--before-g), var(--before-b));
-}
-
-.radio.colored:hover > input + .icon::after,
-label:hover .radio.colored > input + .icon::after {
-  background-color: rgba(0, 0, 0, .05);
-  background-color: rgba(var(--r), var(--g), var(--b), .05);
-}
-
-.radio.colored > input:focus + .icon::after,
-label:hover .radio.colored > input:focus + .icon::after {
-  background-color: rgba(0, 0, 0, .125);
-  background-color: rgba(var(--r), var(--g), var(--b), .125);
 }
