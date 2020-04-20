@@ -78,7 +78,7 @@
         padding-left: 2.2em;
       }
 
-      & > .item {
+      & > :global(.item) {
         left: .625em;
         font-weight: 500;
       }
@@ -90,23 +90,23 @@
         text-align: right;
       }
 
-      & > .item {
+      & > :global(.item) {
         right: .625em;
       }
     }
 
-    & > .item {
+    & > :global(.item) {
       color: $textfield-item;
       height: 1.1em;
       position: absolute;
       top: .85em;
     }
 
-    & > input:focus + .item {
+    & > input:focus + :global(.item) {
       color: $main;
       stroke: $main;
 
-      svg {
+      :global(svg) {
         stroke: $main;
       }
     }
@@ -125,12 +125,12 @@
       }
     }
 
-    & > svg.item {
+    & > :global(svg.item) {
       height: 1em;
       top: .9em;
     }
 
-    input:invalid + svg.item {
+    input:invalid + :global(svg.item) {
       stroke: $danger;
     }
   }
@@ -158,11 +158,11 @@
         left: 2.2em;
       }
 
-      svg {
+      :global(svg) {
         stroke: $disabled;
       }
 
-      & > input:focus ~ .item {
+      & > input:focus ~ :global(.item) {
         color: $main;
       }
     }
@@ -196,11 +196,11 @@
           color: transparentize($danger, .3);
         }
 
-        & ~ svg.item {
+        & ~ :global(svg.item) {
           stroke: transparentize($danger, .3);
         }
 
-        &:focus ~ svg.item {
+        &:focus ~ :global(svg.item) {
           stroke: transparentize($danger, .3);
         }
 
@@ -210,7 +210,7 @@
       }
     }
 
-    input:focus ~ svg.item {
+    input:focus ~ :global(svg.item) {
       stroke: $main;
     }
   }
