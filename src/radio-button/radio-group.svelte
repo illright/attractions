@@ -4,7 +4,7 @@
   import getColorPickerStyles from '../_utils/color-picker-styles.js';
 
   let _class = null;
-  export { _class as class};
+  export { _class as class };
   export let wrapperClass = null;
   export let radioClass = null;
   export let inputClass = null;
