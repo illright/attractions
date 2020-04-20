@@ -1,0 +1,99 @@
+@import '../var-defaults.scss';
+@import '../mixins.scss';
+@import '_attractions-theme.scss';
+
+label {
+  display: flex;
+  font-family: $font;
+  cursor: pointer;
+}
+
+.radio {
+  position: relative;
+
+  & > input[type="radio"] {
+    @include hide-accessible;
+  }
+
+  & > .icon {
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    cursor: pointer;
+    border: .125em solid $light-contrast;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 2.25em;
+      height: 2.25em;
+      border-radius: 50%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  & > input:disabled + .icon {
+    cursor: not-allowed;
+    background-color: lighten($light-contrast, 6%);
+  }
+
+  & > input:checked + .icon {
+    background-color: $main;
+    border-color: $main;
+
+    &::before {
+      content: "";
+      width: .5rem;
+      height: .5rem;
+      background-color: $main-text;
+      border-radius: 50%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  & > input:disabled:checked + .icon {
+    background-color: $disabled;
+    border-color: lighten($disabled, 4%);
+  }
+
+  &:hover {
+    & > input:not(:disabled) + .icon::after {
+      background-color: transparentize($dark, .95);
+    }
+
+    & > input:checked + .icon::after {
+      background-color: transparentize($main, .95);
+    }
+  }
+
+  & > input:focus + .icon::after {
+    background-color: transparentize($dark, .875);
+  }
+
+  & > input:focus:checked + .icon::after {
+    background-color: transparentize($main, .875);
+  }
+}
+
+.radio.colored > input + .icon::before {
+  background-color: lightgray;
+  background-color: rgb(var(--before-r), var(--before-g), var(--before-b));
+}
+
+.radio.colored:hover > input + .icon::after,
+label:hover .radio.colored > input + .icon::after {
+  background-color: rgba(0, 0, 0, .05);
+  background-color: rgba(var(--r), var(--g), var(--b), .05);
+}
+
+.radio.colored > input:focus + .icon::after,
+label:hover .radio.colored > input:focus + .icon::after {
+  background-color: rgba(0, 0, 0, .125);
+  background-color: rgba(var(--r), var(--g), var(--b), .125);
+}
