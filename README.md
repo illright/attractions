@@ -5,10 +5,6 @@
 A UI kit for Svelte.
 
 
-## Prerequisites
-
-This library uses SCSS for styling, therefore, `svelte-preprocess` should be configured for your application if you're using Rollup.
-
 ## Installation
 
 **Step 1.** Clone this library and run the following command inside the cloned folder:
