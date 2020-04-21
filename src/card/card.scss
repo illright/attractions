@@ -1,0 +1,32 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.card {
+  box-shadow: $shadow-0;
+  background-color: #fff;
+  border-radius: 1.25rem;
+  padding: 1.5em;
+  overflow: hidden;
+
+  &.with-image {
+    padding: 0;
+
+    & > .image {
+      width: 100%;
+    }
+
+    & > .content {
+      padding: .8em 1.3em;
+    }
+
+  }
+  .title {
+    font-size: 1.15rem;
+    font-weight: 400;
+  }
+
+  .subtitle {
+    font-size: .95rem;
+    font-weight: 300;
+  }
+}
