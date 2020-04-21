@@ -4,7 +4,7 @@
 .card {
   box-shadow: $shadow-0;
   background-color: #fff;
-  border-radius: 1.25rem;
+  border-radius: $card-radius;
   padding: 1.5em;
   overflow: hidden;
 
