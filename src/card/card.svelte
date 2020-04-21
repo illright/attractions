@@ -3,7 +3,6 @@
 
   let _class = null;
   export { _class as class };
-  export let id = '';
   export let imgSrc = '';
   export let imgAlt = '';
   export let title = '';
@@ -12,7 +11,7 @@
   const withImage = !!imgSrc;
 </script>
 
-<div class={classes('card', _class, withImage && 'with-image')} {id}>
+<div class={classes('card', _class, withImage && 'with-image')} {...$$restProps}>
   {#if withImage}
     <img src={imgSrc} alt={imgAlt} class="image" />
   {/if}
