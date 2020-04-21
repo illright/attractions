@@ -7,11 +7,12 @@
   export let imgAlt = '';
   export let title = '';
   export let subtitle = '';
+  export let tight = false;
 
   const withImage = !!imgSrc;
 </script>
 
-<div class={classes('card', _class, withImage && 'with-image')} {...$$restProps}>
+<div class={classes('card', _class, tight && 'no-padding', withImage && 'with-image')} {...$$restProps}>
   {#if withImage}
     <img src={imgSrc} alt={imgAlt} class="image" />
   {/if}

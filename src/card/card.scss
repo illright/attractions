@@ -8,6 +8,10 @@
   padding: 1.5em;
   overflow: hidden;
 
+  &.no-padding {
+    padding: 0;
+  }
+
   &.with-image {
     padding: 0;
 
