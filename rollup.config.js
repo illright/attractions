@@ -1,6 +1,5 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
-import alias from '@rollup/plugin-alias';
 import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
 
@@ -48,11 +47,6 @@ export default [
 			resolve({
 				browser: true,
 				dedupe: ['svelte'],
-			}),
-			alias({
-				entries: [
-					{ find: /^@\//, replacement: __dirname + '/src/' },
-				],
 			}),
 			!production && serve(),
 		],

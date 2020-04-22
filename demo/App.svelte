@@ -4,7 +4,7 @@
     RadioGroup,
     Card,
     TextField,
-  } from '@/index.js';
+  } from '../src/index.js';
 
   let items = [
     { value: 1, label: 'one', disabled: true },
