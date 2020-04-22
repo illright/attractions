@@ -1,0 +1,24 @@
+name: Deploy demo to GH Pages
+on: ['release']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Install and Build 🔧
+      uses: actions/setup-node@v1
+      run: |
+        yarn install
+        yarn build
+
+    - name: Deploy demo to GitHub Pages 🚀
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./demo/public
+        force_orphan: true
