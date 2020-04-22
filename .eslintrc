@@ -34,7 +34,7 @@
     "no-trailing-spaces": 0,
     "no-constant-condition": "off",
     "curly": [0, "multi"],
-    "indent": "off",
+    "indent": ["error", 2],
     "comma-dangle": ["warn", "always-multiline"],
     "no-unused-vars": [
       "error",
