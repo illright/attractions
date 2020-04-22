@@ -1,0 +1,14 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.card {
+  box-shadow: $shadow-0;
+  background-color: #fff;
+  border-radius: $card-radius;
+  padding: 1.5em;
+  overflow: hidden;
+
+  &.no-padding {
+    padding: 0;
+  }
+}
