@@ -10,8 +10,8 @@ jobs:
       with:
         persist-credentials: false
 
+    - uses: actions/setup-node@v1
     - name: Install and Build 🔧
-      uses: actions/setup-node@v1
       run: |
         yarn install
         yarn build
