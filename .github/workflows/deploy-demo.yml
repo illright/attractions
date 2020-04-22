@@ -1,5 +1,7 @@
 name: Deploy demo to GH Pages
-on: ['release']
+on:
+  release:
+    types: [published]
 
 jobs:
   build:
