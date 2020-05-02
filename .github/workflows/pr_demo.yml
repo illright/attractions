@@ -17,11 +17,14 @@ jobs:
       run: |
         yarn install
         yarn build
+    
+    - name: Exctract PR number
+      run: export PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
 
     - name: Move output files to a folder with PR number
       run: |
         mkdir demo/dist
-        mv demo/public demo/dist/$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+        mv demo/public demo/dist/$PR_NUMBER
 
     - name: Deploy demo to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
