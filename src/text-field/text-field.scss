@@ -137,8 +137,10 @@
 
   &.outline {
     position: relative;
+    margin-top: .65em;
 
     label {
+      font-family: $font;
       background-color: #fff;
       color: $textfield-border;
       padding: 0 .25em;

@@ -63,9 +63,9 @@
       use:eventsAction={events}
       {...$$restProps}
     />
-    {#if outline}
-      <label for={id} class={classes('label', labelClass)}>
-        <slot name="label">{label}</slot>
+    {#if outline && label != null}
+      <label for={id} class={labelClass}>
+        {label}
       </label>
     {/if}
 
