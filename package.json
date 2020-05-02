@@ -25,6 +25,7 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.17.0",
     "svelte": "^3.0.0",
+    "svelte-feather-icons": "^3.2.2",
     "svelte-preprocess": "^3.7.3"
   },
   "keywords": [
