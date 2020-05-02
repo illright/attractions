@@ -35,4 +35,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: Demo available on https://illright.github.io/attractions/${{ $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }') }}/
+        msg: Demo available on https://illright.github.io/attractions/${{ echo GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }' }}/
