@@ -1,4 +1,4 @@
-name: CI
+name: Deploy PR demo to Pages
 
 on:
   pull_request
@@ -10,7 +10,6 @@ jobs:
     - uses: actions/checkout@v2
       name: Checkout PR
       with:
-        ref: $GITHUB_REF
         persist-credentials: false
     
     - uses: actions/setup-node@v1
