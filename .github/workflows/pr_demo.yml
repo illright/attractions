@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout PR
+      with:
+        ref: $GITHUB_REF
+        persist-credentials: false
+    
+    - uses: actions/setup-node@v1
+    - name: Install and Build
+      run: |
+        yarn install
+        yarn build
+
+    - name: Move output files to a folder with PR number
+      run: |
+        mkdir demo/dist
+        mv demo/public demo/dist/$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+
+    - name: Deploy demo to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: demo/dist
+        keep_files: true
