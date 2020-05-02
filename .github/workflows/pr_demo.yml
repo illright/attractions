@@ -24,7 +24,7 @@ jobs:
     - name: Move output files to a folder with PR number
       run: |
         mkdir demo/dist
-        mv demo/public demo/dist/$PR_NUMBER
+        mv demo/public demo/dist/${{ env.PR_NUMBER }}
 
     - name: Deploy demo to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -38,4 +38,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: "Demo available on https://illright.github.io/attractions/$PR_NUMBER/"
+        msg: "Demo available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
