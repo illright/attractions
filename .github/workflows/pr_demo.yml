@@ -29,3 +29,10 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: demo/dist
         keep_files: true
+
+    - name: Post demo URL on PR
+      uses: unsplash/comment-on-pr@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        msg: Demo available on https://illright.github.io/attractions/$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')/
