@@ -4,7 +4,10 @@
     RadioGroup,
     Card,
     TextField,
+    DropdownShell,
+    Dropdown,
   } from '../src/index.js';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
     { value: 1, label: 'one', disabled: true },
@@ -18,11 +21,10 @@
     { value: '#FF0000', disabled: false },
     { value: '#00FF00' },
     { value: '#00FFFF', disabled: true },
-    { value: '#000000',},
+    { value: '#000000' },
   ];
   let item = items[1].value;
   let colorItem = colorItems[1].value;
-
 </script>
 
 <Card>
@@ -32,4 +34,27 @@
   </Button>
   <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
   <RadioGroup items={items} bind:value={item} name="numbers" />
+  <div class="dropdown-holder">
+    <DropdownShell let:toggle on:change={() => console.log('yay')}>
+      <Button on:click={toggle}>
+        test me!
+        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+      </Button>
+      <Dropdown top>
+        <div class="padded">
+          I'm a little dropdown short and stout
+        </div>
+      </Dropdown>
+    </DropdownShell>
+  </div>
 </Card>
+
+<style>
+  .padded {
+    padding: 1em;
+  }
+
+  .dropdown-holder {
+    display: flex;
+  }
+</style>
