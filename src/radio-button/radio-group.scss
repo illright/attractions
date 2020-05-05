@@ -1,7 +1,7 @@
 @import '../var-defaults.scss';
 @import '_attractions-theme.scss';
 
-div[role=group] {
+div[role=radiogroup] {
   :global(.radio:not(.colored) > .icon) {
     margin: 0 .5em;
   }
