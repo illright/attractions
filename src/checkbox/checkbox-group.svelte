@@ -1,0 +1,64 @@
+<script>
+  import classes from '../_utils/classes.js';
+  import getColorPickerStyles from '../_utils/color-picker-styles.js';
+  import s from '../_utils/plural-s.js';
+  import Checkbox from './checkbox.svelte';
+
+  let _class = null;
+  export { _class as class };
+  export let checkboxClass = null;
+  export let labelClass = null;
+
+  export let color = false;
+
+  export let items;
+  export let name;
+  export let labelsLeft = false;
+  export let max = null;
+
+  $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
+  const maxReachedTooltip = { title: `Can only select ${max} value${s(max)}.` };
+
+  if (!items || items.length === 0) {
+    console.error('Must have at least one item in the checkbox group');
+  }
+
+  if (color && labelClass != null) {
+    console.warn('labelClass has no effect: labels are not rendered for color checkbox groups');
+  }
+</script>
+
+{#if items != null && items.length !== 0}
+  <div class={_class} role="group">
+    {#each items as item (item.value)}
+      <Checkbox
+        {name}
+        slotLeft={labelsLeft}
+        iconStyle={color ? getColorPickerStyles(item.value) : null}
+        value={item.value}
+        bind:checked={item.checked}
+        disabled={item.disabled || (!item.checked && max != null && currentChecked >= max)}
+        class={classes(color && 'colored', checkboxClass)}
+        on:change
+        {...$$restProps}
+        {...(
+          !item.disabled
+          && !item.checked
+          && max != null
+          && currentChecked >= max
+          ? maxReachedTooltip : {}
+        )}
+      >
+        {#if !color}
+          {#if labelClass != null}
+            <span class={labelClass}>{item.label || item.value}</span>
+          {:else}
+            {item.label || item.value}
+          {/if}
+        {/if}
+      </Checkbox>
+    {/each}
+  </div>
+{/if}
+
+<style src="./checkbox-group.scss"></style>
