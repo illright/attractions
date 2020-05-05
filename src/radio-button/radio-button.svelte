@@ -8,7 +8,7 @@
   export let iconClass = null;
   export let iconStyle = null;
 
-  export let value = null;
+  export let value;
   export let disabled = false;
   export let group = null;
   export let slotLeft = false;
