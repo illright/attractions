@@ -6,6 +6,7 @@
     TextField,
     DropdownShell,
     Dropdown,
+    CheckboxGroup,
   } from '../src/index.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
@@ -34,6 +35,7 @@
   </Button>
   <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
   <RadioGroup items={items} bind:value={item} name="numbers" />
+  <CheckboxGroup items={items} max={1} name="numbers-check" />
   <div class="dropdown-holder">
     <DropdownShell let:toggle on:change={() => console.log('yay')}>
       <Button on:click={toggle}>
