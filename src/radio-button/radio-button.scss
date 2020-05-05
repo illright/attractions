@@ -1,9 +1,10 @@
 @import '../var-defaults.scss';
-@import '../mixins.scss';
+@import '../_mixins.scss';
 @import '_attractions-theme.scss';
 
 .radio {
   display: flex;
+  align-items: center;
   font-family: $font;
   position: relative;
   cursor: pointer;
@@ -43,8 +44,8 @@
 
     &::before {
       content: "";
-      width: .5rem;
-      height: .5rem;
+      width: .5em;
+      height: .5em;
       background-color: $main-text;
       border-radius: 50%;
       left: 50%;
