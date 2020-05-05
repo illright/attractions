@@ -11,14 +11,12 @@ div[role=radiogroup] {
     background-color: rgb(var(--before-r), var(--before-g), var(--before-b));
   }
 
-  :global(.radio.colored:hover > input + .icon::after),
-  :global(label:hover .radio.colored > input + .icon::after) {
+  :global(.radio.colored:hover > input + .icon::after) {
     background-color: rgba(0, 0, 0, .05);
     background-color: rgba(var(--r), var(--g), var(--b), .05);
   }
 
-  :global(.radio.colored > input:focus + .icon::after),
-  :global(label:hover .radio.colored > input:focus + .icon::after) {
+  :global(.radio.colored > input:focus + .icon::after) {
     background-color: rgba(0, 0, 0, .125);
     background-color: rgba(var(--r), var(--g), var(--b), .125);
   }
