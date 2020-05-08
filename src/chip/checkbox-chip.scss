@@ -10,7 +10,7 @@
     transition: width 50ms;
     border: 0 solid $main;
     width: 0;
-    height: 9px;
+    height: .5625em;
     content: "";
     transform: translateY(-50%) rotate(45deg);
     position: absolute;
@@ -23,8 +23,8 @@ input:checked + .chip {
   padding-left: 2em;
 
   &::before {
-    width: 5px;
-    border-bottom-width: 2px;
-    border-right-width: 2px;
+    width: .3125em;
+    border-bottom-width: .125em;
+    border-right-width: .125em;
   }
 }
