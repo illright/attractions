@@ -15,4 +15,6 @@ export { default as Dropdown } from './dropdown/dropdown.svelte';
 
 export { default as Chip } from './chip/chip.svelte';
 export { default as RadioChip } from './chip/radio-chip.svelte';
+export { default as RadioChipGroup } from './chip/radio-chip-group.svelte';
 export { default as CheckboxChip } from './chip/checkbox-chip.svelte';
+export { default as CheckboxChipGroup } from './chip/checkbox-chip-group.svelte';
