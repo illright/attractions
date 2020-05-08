@@ -7,6 +7,8 @@
     DropdownShell,
     Dropdown,
     CheckboxGroup,
+    RadioChipGroup,
+    CheckboxChipGroup,
   } from '../src/index.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
@@ -49,6 +51,10 @@
       </Dropdown>
     </DropdownShell>
   </div>
+  <div class="flex">
+    <RadioChipGroup {items} name="radio-chip-group" outline />
+    <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
+  </div>
 </Card>
 
 <style>
@@ -58,5 +64,14 @@
 
   .dropdown-holder {
     display: flex;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex > :global(*) {
+    margin-left: 1em;
+    margin-top: 1em;
   }
 </style>
