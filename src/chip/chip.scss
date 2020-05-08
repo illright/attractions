@@ -1,0 +1,27 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.chip {
+  border-radius: $chip-radius;
+  background: $chip-bg;
+  color: $chip-fg;
+  font-family: $font;
+  padding: .6em .9em;
+  font-weight: 500;
+
+  &.small {
+    padding: .4em .6em;
+    font-size: .9rem;
+    min-width: .9em;
+    text-align: center;
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid $main;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
+}
