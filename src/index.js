@@ -12,3 +12,5 @@ export { default as Card } from './card/card.svelte';
 
 export { default as DropdownShell } from './dropdown/dropdown-shell.svelte';
 export { default as Dropdown } from './dropdown/dropdown.svelte';
+
+export { default as Switch } from './switch/switch.svelte';
