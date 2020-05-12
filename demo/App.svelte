@@ -7,6 +7,7 @@
     DropdownShell,
     Dropdown,
     CheckboxGroup,
+    Switch,
   } from '../src/index.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
@@ -49,6 +50,22 @@
       </Dropdown>
     </DropdownShell>
   </div>
+
+  <Switch>
+    <span class="padded">
+      default
+    </span>
+  </Switch>
+  <Switch slotLeft value={true}>
+    <span class="padded">
+      on
+    </span>
+  </Switch>
+  <Switch slotLeft value={true} disabled>
+    <span class="padded">
+      disabled
+    </span>
+  </Switch>
 </Card>
 
 <style>
