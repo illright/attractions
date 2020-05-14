@@ -17,7 +17,7 @@
   export let max = null;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
-  const maxReachedTooltip = { title: `Can only select ${max} value${s(max)}.` };
+  $: maxReachedTooltip = `Can only select ${max} value${s(max)}.`;
 
   if (!items || items.length === 0) {
     console.error('Must have at least one item in the checkbox group');
@@ -39,15 +39,15 @@
         bind:checked={item.checked}
         disabled={item.disabled || (!item.checked && max != null && currentChecked >= max)}
         class={classes(color && 'colored', checkboxClass)}
-        on:change
-        {...$$restProps}
-        {...(
+        title={
           !item.disabled
           && !item.checked
           && max != null
           && currentChecked >= max
-          ? maxReachedTooltip : {}
-        )}
+          ? maxReachedTooltip : null
+        }
+        on:change
+        {...$$restProps}
       >
         {#if !color}
           {#if labelClass != null}
