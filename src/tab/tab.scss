@@ -1,0 +1,42 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+// .tabs {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+.tab {
+  display: flex;
+  align-items: stretch;
+
+  & > input {
+    @include hide-accessible;
+  }
+
+  & > .content {
+    border-bottom: .125em solid lighten($off-state, 25%);
+    font-family: $font;
+    font-weight: 500;
+    color: $main;
+    padding: .7em .6em .5em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-top-left-radius: .3125em;
+    border-top-right-radius: .3125em;
+
+    &:hover {
+      background: transparentize($off-state, .9);
+    }
+  }
+
+  & > input:focus + .content {
+    background: transparentize($off-state, .85);
+  }
+
+  & > input:checked + .content {
+    border-color: transparentize($main, .4);
+  }
+}

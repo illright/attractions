@@ -20,3 +20,6 @@ export { default as RadioChip } from './chip/radio-chip.svelte';
 export { default as RadioChipGroup } from './chip/radio-chip-group.svelte';
 export { default as CheckboxChip } from './chip/checkbox-chip.svelte';
 export { default as CheckboxChipGroup } from './chip/checkbox-chip-group.svelte';
+
+export { default as Tab } from './tab/tab.svelte';
+export { default as Tabs } from './tab/tabs.svelte';
