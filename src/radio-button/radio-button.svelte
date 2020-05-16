@@ -26,7 +26,7 @@
     type="radio"
     class={inputClass}
     {disabled}
-    on:change={() => dispatch('change', value)}
+    on:change={() => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
   <div class={classes('icon', iconClass)} style={iconStyle} />

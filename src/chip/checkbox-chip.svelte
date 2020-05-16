@@ -26,7 +26,11 @@
     type="checkbox"
     class={inputClass}
     {disabled}
-    on:change={(e) => dispatch('change', { value: e.target.value, checked: e.target.checked })}
+    on:change={(e) => dispatch('change', {
+      value: e.target.value,
+      checked: e.target.checked,
+      nativeEvent: e,
+    })}
     {...$$restProps}
   />
   <div
