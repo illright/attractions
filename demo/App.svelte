@@ -7,6 +7,7 @@
     DropdownShell,
     Dropdown,
     CheckboxGroup,
+    Switch,
     RadioChipGroup,
     CheckboxChipGroup,
   } from '../src/index.js';
@@ -51,6 +52,22 @@
       </Dropdown>
     </DropdownShell>
   </div>
+
+  <Switch>
+    <span class="padded">
+      default
+    </span>
+  </Switch>
+  <Switch slotLeft value={true}>
+    <span class="padded">
+      on
+    </span>
+  </Switch>
+  <Switch slotLeft value={true} disabled>
+    <span class="padded">
+      disabled
+    </span>
+  </Switch>
   <div class="flex">
     <RadioChipGroup {items} name="radio-chip-group" outline />
     <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
