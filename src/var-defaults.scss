@@ -17,10 +17,13 @@ $textfield-bg-error: #fbeeee;
 $textfield-border: transparentize(black, .58);
 $textfield-item: #7a7a7a;
 $off-state: #aaa;
+$chip-bg: transparentize(black, .92);
+$chip-fg: #656565;
 
+$chip-radius: 1.5625em;
 $button-radius: 1.5625em;
 
-$card-radius: 1.25rem;
+$card-radius: 1.25em;
 
 $font-face: 'Ubuntu', sans-serif;
 
