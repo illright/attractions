@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher, onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import eventsAction from '../_utils/events.js';
   import classes from '../_utils/classes.js';
 
@@ -29,8 +29,6 @@
 
   let inputElement;
   onMount(() => autofocus && inputElement.focus());
-
-  const dispatch = createEventDispatcher();
 </script>
 
 <div

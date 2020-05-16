@@ -24,7 +24,7 @@
     type="checkbox"
     class={inputClass}
     {disabled}
-    on:change={(e) => dispatch('change', { value: e.target.checked })}
+    on:change={(e) => dispatch('change', { value: e.target.checked, nativeEvent: e })}
     {...$$restProps}
   />
   <div class={classes('track', trackClass)}>
