@@ -2,17 +2,16 @@
 @import '../_mixins.scss';
 @import '_attractions-theme.scss';
 
-// .tabs {
-//   display: flex;
-//   justify-content: space-between;
-// }
-
 .tab {
   display: flex;
   align-items: stretch;
 
   & > input {
     @include hide-accessible;
+  }
+
+  :global(.ripple) {
+    background: transparentize($main, .9);
   }
 
   & > .content {

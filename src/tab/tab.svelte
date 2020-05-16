@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import rippleEffect from '../_utils/ripple.js';
   import classes from '../_utils/classes.js';
 
   let _class = null;
@@ -10,6 +11,7 @@
   export let value;
   export let group = null;
   export let disabled = false;
+  export let ripple = true;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -24,7 +26,7 @@
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('content', contentClass)}>
+  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: !ripple }}>
     <slot>{value}</slot>
   </div>
 </label>
