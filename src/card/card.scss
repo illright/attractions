@@ -11,4 +11,9 @@
   &.no-padding {
     padding: 0;
   }
+
+  &.outline {
+    box-shadow: none;
+    border: 1px solid transparentize($main, .7);
+  }
 }
