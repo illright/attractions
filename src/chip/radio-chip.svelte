@@ -27,7 +27,7 @@
     type="radio"
     class={inputClass}
     {disabled}
-    on:change={() => dispatch('change', { value, nativeEvent: e })}
+    on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
   <div
