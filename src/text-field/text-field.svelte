@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   import eventsAction from '../_utils/events.js';
   import classes from '../_utils/classes.js';
 
@@ -29,6 +29,8 @@
 
   let inputElement;
   onMount(() => autofocus && inputElement.focus());
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <div
@@ -45,8 +47,8 @@
       bind:value={value}
       class={inputClass}
       bind:this={inputElement}
-      on:input
-      on:change
+      on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
+      on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
@@ -56,8 +58,8 @@
       bind:value={value}
       class={inputClass}
       bind:this={inputElement}
-      on:input
-      on:change
+      on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
+      on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />

@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import ripple from '../_utils/ripple.js';
   import eventsAction from '../_utils/events.js';
   import classes from '../_utils/classes.js';
@@ -34,6 +35,8 @@
   if (href != null && disabled) {
     console.warn('The prop `disabled` has no effect on Buttons with href');
   }
+
+  const dispatch = createEventDispatcher();
 </script>
 
 {#if href}
@@ -50,7 +53,7 @@
     class:rectangle
     class:small
     class:selected
-    on:click
+    on:click={(e) => dispatch('click', { nativeEvent: e })}
     use:eventsAction={events}
     use:ripple
     {...$$restProps}
