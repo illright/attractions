@@ -69,10 +69,9 @@
         width: .6em;
         height: .125em;
         left: 0;
-        top: 50%;
+        top: (.5em - .125em) / 2;
         background: $disabled;
         position: absolute;
-        transform: rotate(-45deg) translateY(-50%);
       }
     }
   }

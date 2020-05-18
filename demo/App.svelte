@@ -10,6 +10,7 @@
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
+    Tab, Tabs,
     Label,
     Headline,
     Dot,
@@ -32,6 +33,8 @@
   ];
   let item = items[1].value;
   let colorItem = colorItems[1].value;
+
+  let dropdownTabSelected = false;
 </script>
 
 <a href="https://googles.com">say my name</a>
@@ -81,6 +84,24 @@
     <RadioChipGroup {items} name="radio-chip-group" outline />
     <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
   </div>
+  <div class="flex">
+    <Tab
+      class={dropdownTabSelected && 'selected'}
+      value="page1"
+      name="nav1"
+      on:change={() => dropdownTabSelected = true}
+    >
+      Components
+      <ChevronDownIcon size="24" class="tab-chevron" />
+    </Tab>
+    <Tab value="page2" name="nav1" on:change={() => dropdownTabSelected = false}>
+      Installation
+    </Tab>
+    <Tab value="Showcase" name="nav1" />
+  </div>
+  <div class="flex">
+    <Tabs name="nav2" items={['Showcase', 'Components']} />
+  </div>
 </Card>
 
 <style>
@@ -100,6 +121,13 @@
     margin-left: 1em;
     margin-top: 1em;
   }
+
+  .flex :global(.tab .tab-chevron) {
+    transition: transform 150ms;
+  }
+
+  .flex :global(.tab.selected .tab-chevron) {
+    transform: rotate(180deg);
 
   :global(.ml) {
     margin-left: .4em;
