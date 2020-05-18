@@ -10,11 +10,14 @@
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
+    ModalOverlay,
+    Modal,
     Tab, Tabs,
     Label,
     Headline,
     Dot,
   } from '../src/index.js';
+  import ModalCard from './modal-card.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -34,75 +37,83 @@
   let item = items[1].value;
   let colorItem = colorItems[1].value;
 
+  let open1 = false;
+  let open2 = false;
   let dropdownTabSelected = false;
 </script>
 
-<a href="https://googles.com">say my name</a>
-<Card>
-  <Label>and you know it</Label>
-  <Headline>you messin with my head</Headline>
-  <TextField label="Write something" outline />
-  <Button filled>
-    <Dot success />
-    <Dot attention small class="ml" />
-    <Dot info small class="ml" />
-    <Dot danger class="ml" title="You're in trouble now, son." />
-  </Button>
-  <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
-  <RadioGroup items={items} bind:value={item} name="numbers" />
-  <CheckboxGroup items={items} max={1} name="numbers-check" />
-  <div class="dropdown-holder">
-    <DropdownShell let:toggle on:change={() => console.log('yay')}>
-      <Button on:click={toggle}>
-        test me!
-        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
-      </Button>
-      <Dropdown top>
-        <div class="padded">
-          I'm a little dropdown short and stout
-        </div>
-      </Dropdown>
-    </DropdownShell>
-  </div>
+<ModalOverlay>
+  <a href="https://googles.com">say my name</a>
+  <Card>
+    <TextField label="Write something" outline />
+    <Button filled>
+      <Dot success />
+      <Dot attention small class="ml" />
+      <Dot info small class="ml" />
+      <Dot danger class="ml" title="You're in trouble now, son." />
+    </Button>
+    <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
+    <RadioGroup items={items} bind:value={item} name="numbers" />
+    <CheckboxGroup items={items} max={1} name="numbers-check" />
+    <div class="dropdown-holder">
+      <DropdownShell let:toggle on:change={() => console.log('yay')}>
+        <Button on:click={toggle}>
+          test me!
+          <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+        </Button>
+        <Dropdown top>
+          <div class="padded">
+            I'm a little dropdown short and stout
+          </div>
+        </Dropdown>
+      </DropdownShell>
+    </div>
 
-  <Switch>
-    <span class="padded">
-      default
-    </span>
-  </Switch>
-  <Switch slotLeft value={true}>
-    <span class="padded">
-      on
-    </span>
-  </Switch>
-  <Switch slotLeft value={true} disabled>
-    <span class="padded">
-      disabled
-    </span>
-  </Switch>
-  <div class="flex">
-    <RadioChipGroup {items} name="radio-chip-group" outline />
-    <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
-  </div>
-  <div class="flex">
-    <Tab
-      class={dropdownTabSelected && 'selected'}
-      value="page1"
-      name="nav1"
-      on:change={() => dropdownTabSelected = true}
-    >
-      Components
-      <ChevronDownIcon size="24" class="tab-chevron" />
-    </Tab>
-    <Tab value="page2" name="nav1" on:change={() => dropdownTabSelected = false}>
-      Installation
-    </Tab>
-    <Tab value="Showcase" name="nav1" />
-  </div>
-  <div class="flex">
-    <Tabs name="nav2" items={['Showcase', 'Components']} />
-  </div>
-</Card>
+    <Switch>
+      <span class="padded">
+        default
+      </span>
+    </Switch>
+    <Switch slotLeft value={true}>
+      <span class="padded">
+        on
+      </span>
+    </Switch>
+    <Switch slotLeft value={true} disabled>
+      <span class="padded">
+        disabled
+      </span>
+    </Switch>
+    <div class="flex">
+      <RadioChipGroup {items} name="radio-chip-group" outline />
+      <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
+    </div>
+    <div class="flex">
+      <Tab
+        class={dropdownTabSelected && 'selected'}
+        value="page1"
+        name="nav1"
+        on:change={() => dropdownTabSelected = true}
+      >
+        Components
+        <ChevronDownIcon size="24" class="tab-chevron" />
+      </Tab>
+      <Tab value="page2" name="nav1" on:change={() => dropdownTabSelected = false}>
+        Installation
+      </Tab>
+      <Tab value="Showcase" name="nav1" />
+    </div>
+    <div class="flex">
+      <Tabs name="nav2" items={['Showcase', 'Components']} />
+    </div>
+    <div class="flex">
+      <Button on:click={() => open1 = true}>open modal 1</Button>
+      <Button on:click={() => open2 = true}>open modal 2</Button>
+    </div>
+    <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
+    <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
+  </Card>
+</ModalOverlay>
 
 <style>
   .padded {
