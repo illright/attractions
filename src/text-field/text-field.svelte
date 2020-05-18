@@ -47,8 +47,8 @@
       bind:value={value}
       class={inputClass}
       bind:this={inputElement}
-      on:input
-      on:change
+      on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
+      on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
@@ -58,8 +58,8 @@
       bind:value={value}
       class={inputClass}
       bind:this={inputElement}
-      on:input
-      on:change
+      on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
+      on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
