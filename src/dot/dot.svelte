@@ -22,6 +22,7 @@
   class:success
   class:danger
   class:small
+  {...$$restProps}
 />
 
 <style src="./dot.scss"></style>

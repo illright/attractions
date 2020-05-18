@@ -38,7 +38,7 @@
     <Dot success />
     <Dot attention small class="ml" />
     <Dot info small class="ml" />
-    <Dot danger class="ml" />
+    <Dot danger class="ml" title="You're in trouble now, son." />
   </Button>
   <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
   <RadioGroup items={items} bind:value={item} name="numbers" />
