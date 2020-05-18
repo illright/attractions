@@ -14,9 +14,7 @@
       open = false;
     },
     toggle() {
-      if (!open) {
-        dispatch('panel-open', selfControl);
-      }
+      dispatch(!open ? 'panel-open' : 'panel-close', selfControl);
       open = !open;
     },
   };

@@ -3,11 +3,12 @@
 
   let _class = null;
   export { _class as class };
+  export let multiple = false;
 
   let currentlyOpenPanel = null;
 
   function closeOtherPanels({ detail: thisPanel }) {
-    if (currentlyOpenPanel != null && currentlyOpenPanel !== thisPanel) {
+    if (currentlyOpenPanel != null && currentlyOpenPanel !== thisPanel && !multiple) {
       currentlyOpenPanel.close();
     }
     currentlyOpenPanel = thisPanel;
