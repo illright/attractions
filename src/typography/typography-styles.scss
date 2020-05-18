@@ -1,0 +1,22 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+html {
+  font-family: $font;
+}
+
+p {
+  line-height: 1.2em;
+}
+
+strong {
+  font-weight: $bold-font-weight;
+}
+
+a {
+  color: $main;
+
+  &:visited {
+    color: $link-visited;
+  }
+}

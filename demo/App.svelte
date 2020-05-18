@@ -12,6 +12,10 @@
     CheckboxChipGroup,
     ModalOverlay,
     Modal,
+    Tab, Tabs,
+    Label,
+    Headline,
+    Dot,
   } from '../src/index.js';
   import ModalCard from './modal-card.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
@@ -35,13 +39,18 @@
 
   let open1 = false;
   let open2 = false;
+  let dropdownTabSelected = false;
 </script>
 
 <ModalOverlay>
+  <a href="https://googles.com">say my name</a>
   <Card>
     <TextField label="Write something" outline />
     <Button filled>
-      Button!!
+      <Dot success />
+      <Dot attention small class="ml" />
+      <Dot info small class="ml" />
+      <Dot danger class="ml" title="You're in trouble now, son." />
     </Button>
     <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
     <RadioGroup items={items} bind:value={item} name="numbers" />
@@ -80,6 +89,24 @@
       <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
     </div>
     <div class="flex">
+      <Tab
+        class={dropdownTabSelected && 'selected'}
+        value="page1"
+        name="nav1"
+        on:change={() => dropdownTabSelected = true}
+      >
+        Components
+        <ChevronDownIcon size="24" class="tab-chevron" />
+      </Tab>
+      <Tab value="page2" name="nav1" on:change={() => dropdownTabSelected = false}>
+        Installation
+      </Tab>
+      <Tab value="Showcase" name="nav1" />
+    </div>
+    <div class="flex">
+      <Tabs name="nav2" items={['Showcase', 'Components']} />
+    </div>
+    <div class="flex">
       <Button on:click={() => open1 = true}>open modal 1</Button>
       <Button on:click={() => open2 = true}>open modal 2</Button>
     </div>
@@ -104,5 +131,20 @@
   .flex > :global(*) {
     margin-left: 1em;
     margin-top: 1em;
+  }
+
+  .flex :global(.tab .tab-chevron) {
+    transition: transform 150ms;
+  }
+
+  .flex :global(.tab.selected .tab-chevron) {
+    transform: rotate(180deg);
+
+  :global(.ml) {
+    margin-left: .4em;
+  }
+
+  :global(.mr) {
+    margin-right: .4em;
   }
 </style>

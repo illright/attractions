@@ -1,0 +1,13 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.label {
+  text-transform: uppercase;
+  color: $main;
+  font-weight: 500;
+  font-size: .8em;
+
+  &.small {
+    font-size: .7em;
+  }
+}
