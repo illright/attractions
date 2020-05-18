@@ -167,6 +167,7 @@
 
   .flex :global(.tab.selected .tab-chevron) {
     transform: rotate(180deg);
+  }
 
   :global(.ml) {
     margin-left: .4em;
