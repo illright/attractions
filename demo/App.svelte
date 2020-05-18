@@ -10,6 +10,7 @@
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
+    Dot,
   } from '../src/index.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
@@ -34,7 +35,10 @@
 <Card>
   <TextField label="Write something" outline />
   <Button filled>
-    Button!!
+    <Dot success />
+    <Dot attention small class="ml" />
+    <Dot info small class="ml" />
+    <Dot danger class="ml" />
   </Button>
   <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
   <RadioGroup items={items} bind:value={item} name="numbers" />
@@ -90,5 +94,13 @@
   .flex > :global(*) {
     margin-left: 1em;
     margin-top: 1em;
+  }
+
+  :global(.ml) {
+    margin-left: .4em;
+  }
+
+  :global(.mr) {
+    margin-right: .4em;
   }
 </style>
