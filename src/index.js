@@ -21,6 +21,9 @@ export { default as RadioChipGroup } from './chip/radio-chip-group.svelte';
 export { default as CheckboxChip } from './chip/checkbox-chip.svelte';
 export { default as CheckboxChipGroup } from './chip/checkbox-chip-group.svelte';
 
+export { default as Accordion } from './accordion/accordion.svelte';
+export { default as AccordionSection } from './accordion/accordion-section.svelte';
+
 export { default as ModalOverlay } from './modal/modal-overlay.svelte';
 export { default as Modal } from './modal/modal.svelte';
 

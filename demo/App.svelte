@@ -10,6 +10,8 @@
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
+    Accordion,
+    AccordionSection,
     ModalOverlay,
     Modal,
     Tab, Tabs,
@@ -52,9 +54,9 @@
       <Dot info small class="ml" />
       <Dot danger class="ml" title="You're in trouble now, son." />
     </Button>
-    <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
+    <!-- <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
     <RadioGroup items={items} bind:value={item} name="numbers" />
-    <CheckboxGroup items={items} max={1} name="numbers-check" />
+    <CheckboxGroup items={items} max={1} name="numbers-check" /> -->
     <div class="dropdown-holder">
       <DropdownShell let:toggle on:change={() => console.log('yay')}>
         <Button on:click={toggle}>
@@ -112,6 +114,32 @@
     </div>
     <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
     <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
+    <div class="flex">
+      <Accordion let:closeOtherPanels>
+        <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+          <div slot="handle">
+            <Button on:click={toggle}>
+              open first panel
+              <ChevronDownIcon size=24 class="ml accordion-chevron" />
+            </Button>
+          </div>
+          <Card>
+            But until someday comes...
+          </Card>
+        </AccordionSection>
+        <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+          <div slot="handle">
+            <Button on:click={toggle}>
+              open second panel
+              <ChevronDownIcon size=24 class="ml accordion-chevron" />
+            </Button>
+          </div>
+          <Card>
+            I'll be writing sad songs.
+          </Card>
+        </AccordionSection>
+      </Accordion>
+    </div>
   </Card>
 </ModalOverlay>
 
