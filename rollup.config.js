@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import autoPreprocess from 'svelte-preprocess';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 const name = pkg.name
@@ -49,6 +50,9 @@ export default [
         dedupe: ['svelte'],
       }),
       !production && serve(),
+      production && terser({
+        module: true,
+      }),
     ],
   },
 ];
