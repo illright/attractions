@@ -12,6 +12,7 @@
     CheckboxChipGroup,
     Label,
     Headline,
+    Dot,
   } from '../src/index.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
@@ -39,7 +40,10 @@
   <Headline>you messin with my head</Headline>
   <TextField label="Write something" outline />
   <Button filled>
-    Button!!
+    <Dot success />
+    <Dot attention small class="ml" />
+    <Dot info small class="ml" />
+    <Dot danger class="ml" title="You're in trouble now, son." />
   </Button>
   <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
   <RadioGroup items={items} bind:value={item} name="numbers" />
@@ -95,5 +99,13 @@
   .flex > :global(*) {
     margin-left: 1em;
     margin-top: 1em;
+  }
+
+  :global(.ml) {
+    margin-left: .4em;
+  }
+
+  :global(.mr) {
+    margin-right: .4em;
   }
 </style>

@@ -28,3 +28,5 @@ export { default as Headline } from './typography/headline.svelte';
 export { default as Subhead } from './typography/subhead.svelte';
 export { default as Label } from './typography/label.svelte';
 export { default as TypographyStyles } from './typography/typography-styles.svelte';
+
+export { default as Dot } from './dot/dot.svelte';

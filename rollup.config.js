@@ -1,6 +1,7 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import autoPreprocess from 'svelte-preprocess';
+import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
 const name = pkg.name
@@ -42,13 +43,16 @@ export default [
             },
           }),
         ],
-        css: css => css.write('demo/public/build/bundle.css'),
+        css: css => css.write('demo/public/build/bundle.css', false),
       }),
       resolve({
         browser: true,
         dedupe: ['svelte'],
       }),
       !production && serve(),
+      production && terser({
+        module: true,
+      }),
     ],
   },
 ];
