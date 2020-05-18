@@ -11,7 +11,7 @@
 
   export let small = false;
 
-  if (info + attention + success > 1) {
+  if (info + attention + danger + success > 1) {
     console.warn('A dot can either be info, attention, danger or success, not several of them');
   }
 </script>
