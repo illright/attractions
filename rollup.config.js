@@ -43,7 +43,7 @@ export default [
             },
           }),
         ],
-        css: css => css.write('demo/public/build/bundle.css'),
+        css: css => css.write('demo/public/build/bundle.css', false),
       }),
       resolve({
         browser: true,
