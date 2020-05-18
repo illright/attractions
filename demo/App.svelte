@@ -10,6 +10,8 @@
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
+    Label,
+    Headline,
     Dot,
   } from '../src/index.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
@@ -32,7 +34,10 @@
   let colorItem = colorItems[1].value;
 </script>
 
+<a href="https://googles.com">say my name</a>
 <Card>
+  <Label>and you know it</Label>
+  <Headline>you messin with my head</Headline>
   <TextField label="Write something" outline />
   <Button filled>
     <Dot success />
