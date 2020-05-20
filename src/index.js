@@ -39,3 +39,6 @@ export { default as Label } from './typography/label.svelte';
 export { default as TypographyStyles } from './typography/typography-styles.svelte';
 
 export { default as Dot } from './dot/dot.svelte';
+
+export { default as SnackbarContainer } from './snackbar/snackbar-container.svelte';
+export { default as Snackbar } from './snackbar/snackbar.svelte';

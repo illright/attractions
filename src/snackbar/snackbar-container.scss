@@ -1,0 +1,33 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.snackbar-stack {
+  position: fixed;
+  z-index: 1100;
+
+  &.left {
+    left: $snackbar-horizontal-offset;
+  }
+
+  &.right {
+    right: $snackbar-horizontal-offset;
+  }
+
+  &.h-middle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.top {
+    top: $snackbar-vertical-offset;
+  }
+
+  &.bottom {
+    bottom: $snackbar-vertical-offset;
+  }
+
+  &.v-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
