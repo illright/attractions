@@ -22,6 +22,7 @@
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import ModalCard from './modal-card.svelte';
+  import MySnackbar from './my-snackbar.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -119,7 +120,12 @@
             text: 'Did it hurt when you fell from the vending machine? Cause you a snack ;)',
             action: { text: 'smooth', callback: () => console.log('thanks!') }
           }
-        })}>show a snackbar</Button>
+        })}>
+          show a snackbar
+        </Button>
+        <Button on:click={() => showSnackbar({ component: MySnackbar })}>
+          show a custom snackbar
+        </Button>
       </div>
       <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
       <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
