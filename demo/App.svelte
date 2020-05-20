@@ -1,12 +1,12 @@
 <script>
   import {
     Button,
-    RadioGroup,
+    // RadioGroup,
     Card,
     TextField,
     DropdownShell,
     Dropdown,
-    CheckboxGroup,
+    // CheckboxGroup,
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
@@ -15,8 +15,8 @@
     ModalOverlay,
     Modal,
     Tab, Tabs,
-    Label,
-    Headline,
+    // Label,
+    // Headline,
     Dot,
   } from '../src/index.js';
   import ModalCard from './modal-card.svelte';
@@ -29,15 +29,15 @@
     { value: 4, disabled: true },
     { value: 5, label: 5 },
   ];
-  let colorItems = [
-    { value: '#FFFFFF', disabled: false },
-    { value: '#FF0000', disabled: false },
-    { value: '#00FF00' },
-    { value: '#00FFFF', disabled: true },
-    { value: '#000000' },
-  ];
-  let item = items[1].value;
-  let colorItem = colorItems[1].value;
+  // let colorItems = [
+  //   { value: '#FFFFFF', disabled: false },
+  //   { value: '#FF0000', disabled: false },
+  //   { value: '#00FF00' },
+  //   { value: '#00FFFF', disabled: true },
+  //   { value: '#000000' },
+  // ];
+  // let item = items[1].value;
+  // let colorItem = colorItems[1].value;
 
   let open1 = false;
   let open2 = false;
