@@ -6,7 +6,7 @@ export default function* range(start, end, step = 1) {
   }
 
   if (step === 0) {
-    console.error('Range must have a non-zero step.');
+    throw new Error('Range must have a non-zero step.');
     return;
   }
 
