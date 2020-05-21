@@ -1,0 +1,47 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+$hover-color: mix(white, $main, 60%);
+$selected-color: mix(white, $main, 20%);
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  fill: none;
+
+  input {
+    @include hide-accessible;
+  }
+
+  label {
+    padding: .5em;
+    border-radius: 50%;
+    cursor: pointer;
+    color: $off-state;
+
+    :global(svg) {
+      display: block;
+    }
+
+    :global(.ripple) {
+      background: transparentize($main, .9);
+    }
+
+    &:hover {
+      background: transparentize($main, .95);
+      color: $hover-color;
+    }
+
+    &:hover ~ label {
+      color: $hover-color;
+    }
+  }
+
+  input:checked + label,
+  input:checked ~ input + label {
+    color: $selected-color;
+    fill: $selected-color;
+  }
+}

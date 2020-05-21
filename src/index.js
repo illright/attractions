@@ -40,4 +40,11 @@ export { default as TypographyStyles } from './typography/typography-styles.svel
 
 export { default as Dot } from './dot/dot.svelte';
 
+export { default as SnackbarContainer } from './snackbar/snackbar-container.svelte';
+export { default as Snackbar } from './snackbar/snackbar.svelte';
+
+export { default as StarRating } from './star-rating/star-rating.svelte';
+
+export { default as Dialog } from './dialog/dialog.svelte';
+
 export { default as FileInput } from './file-input/file-input.svelte';

@@ -17,7 +17,7 @@
   & > .content {
     border-bottom: .125em solid lighten($off-state, 25%);
     font-family: $font;
-    font-weight: 500;
+    font-weight: $bold-font-weight;
     color: $main;
     padding: .7em .6em .5em;
     display: flex;

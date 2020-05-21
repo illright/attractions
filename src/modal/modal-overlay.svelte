@@ -3,8 +3,6 @@
   import { writable } from 'svelte/store';
   import modalContextKey from './modal-context-key.js';
 
-  export const modalOverlayKey = {};
-
   /* Stores modal registration objects.
      A key for such a registration is a store object
        that stores the open state of the modal. */

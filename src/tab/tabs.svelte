@@ -5,7 +5,7 @@
   export { _class as class };
   export let tabClass = null;
 
-  export let value;
+  export let value = null;
   export let items;
   export let name;
 </script>

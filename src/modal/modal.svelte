@@ -11,7 +11,7 @@
 
   /* The props to pass to the modal component.
      It will also receive the `closeCallback` prop which can be used to close the modal. */
-  export let props;
+  export let props = {};
 
   let openState = null;
   let unsubscribe = null;

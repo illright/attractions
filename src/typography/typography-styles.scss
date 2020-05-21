@@ -1,19 +1,19 @@
 @import '../var-defaults.scss';
 @import '_attractions-theme.scss';
 
-html {
+:global(html) {
   font-family: $font;
 }
 
-p {
+:global(p) {
   line-height: 1.2em;
 }
 
-strong {
+:global(strong) {
   font-weight: $bold-font-weight;
 }
 
-a {
+:global(a) {
   color: $main;
 
   &:visited {

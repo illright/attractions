@@ -20,12 +20,18 @@ $textfield-item: #7a7a7a;
 $off-state: #aaa;
 $chip-bg: transparentize(black, .92);
 $chip-fg: #656565;
+$snackbar-bg: lighten($dark, 5%);
+$snackbar-fg: #fff;
 $modal-overlay-bg: transparentize(black, .75);
 
 $chip-radius: 1.5625em;
 $button-radius: 1.5625em;
-
+$snackbar-radius: .625em;
+$dialog-radius: 1.5625em;
 $card-radius: 1.25em;
+
+$snackbar-horizontal-offset: 5%;
+$snackbar-vertical-offset: 3em;
 
 $bold-font-weight: 500;
 

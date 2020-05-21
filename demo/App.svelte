@@ -1,12 +1,12 @@
 <script>
   import {
     Button,
-    RadioGroup,
+    // RadioGroup,
     Card,
     TextField,
     DropdownShell,
     Dropdown,
-    CheckboxGroup,
+    // CheckboxGroup,
     Switch,
     RadioChipGroup,
     CheckboxChipGroup,
@@ -15,12 +15,18 @@
     ModalOverlay,
     Modal,
     Tab, Tabs,
-    Label,
-    Headline,
+    // Label,
+    // Headline,
     Dot,
+    SnackbarContainer,
+    StarRating,
+    Dialog,
     FileInput,
   } from '../src/index.js';
+  import { SnackbarPositions } from '../src/snackbar';
   import ModalCard from './modal-card.svelte';
+  import MySnackbar from './my-snackbar.svelte';
+  import ModalDialog from './modal-dialog.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -30,27 +36,27 @@
     { value: 4, disabled: true },
     { value: 5, label: 5 },
   ];
-  let colorItems = [
-    { value: '#FFFFFF', disabled: false },
-    { value: '#FF0000', disabled: false },
-    { value: '#00FF00' },
-    { value: '#00FFFF', disabled: true },
-    { value: '#000000' },
-  ];
-  let item = items[1].value;
-  let colorItem = colorItems[1].value;
+  // let colorItems = [
+  //   { value: '#FFFFFF', disabled: false },
+  //   { value: '#FF0000', disabled: false },
+  //   { value: '#00FF00' },
+  //   { value: '#00FFFF', disabled: true },
+  //   { value: '#000000' },
+  // ];
+  // let item = items[1].value;
+  // let colorItem = colorItems[1].value;
 
   let open1 = false;
   let open2 = false;
+  let open3 = false;
   let dropdownTabSelected = false;
 
   let filesSelected = [];
   $: console.log(filesSelected);
 </script>
 
-<ModalOverlay>
-  <a href="https://googles.com">say my name</a>
-  <Card>
+<SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
+  <ModalOverlay>
     <div class="flex">
       <FileInput accept="image/*" bind:value={filesSelected} />
 
@@ -63,102 +69,118 @@
         {/if}
       </div>
     </div>
+    <a href="https://googles.com">say my name</a>
+    <Card>
+      <StarRating name="test" max={7} />
+      <TextField label="Write something" outline />
+      <Button filled>
+        <Dot success />
+        <Dot attention small class="ml" />
+        <Dot info small class="ml" />
+        <Dot danger class="ml" title="You're in trouble now, son." />
+      </Button>
+      <!-- <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
+      <RadioGroup items={items} bind:value={item} name="numbers" />
+      <CheckboxGroup items={items} max={1} name="numbers-check" /> -->
+      <div class="dropdown-holder">
+        <DropdownShell let:toggle on:change={() => console.log('yay')}>
+          <Button on:click={toggle}>
+            test me!
+            <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+          </Button>
+          <Dropdown top>
+            <div class="padded">
+              I'm a little dropdown short and stout
+            </div>
+          </Dropdown>
+        </DropdownShell>
+      </div>
 
-    <TextField label="Write something" outline />
-    <Button filled>
-      <Dot success />
-      <Dot attention small class="ml" />
-      <Dot info small class="ml" />
-      <Dot danger class="ml" title="You're in trouble now, son." />
-    </Button>
-    <!-- <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
-    <RadioGroup items={items} bind:value={item} name="numbers" />
-    <CheckboxGroup items={items} max={1} name="numbers-check" /> -->
-    <div class="dropdown-holder">
-      <DropdownShell let:toggle on:change={() => console.log('yay')}>
-        <Button on:click={toggle}>
-          test me!
-          <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+      <Switch>
+        <span class="padded">
+          default
+        </span>
+      </Switch>
+      <Switch slotLeft value={true}>
+        <span class="padded">
+          on
+        </span>
+      </Switch>
+      <Switch slotLeft value={true} disabled>
+        <span class="padded">
+          disabled
+        </span>
+      </Switch>
+      <div class="flex">
+        <RadioChipGroup {items} name="radio-chip-group" outline />
+        <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
+      </div>
+      <div class="flex">
+        <Tab
+          class={dropdownTabSelected && 'selected'}
+          value="page1"
+          name="nav1"
+          on:change={() => dropdownTabSelected = true}
+        >
+          Components
+          <ChevronDownIcon size="24" class="tab-chevron" />
+        </Tab>
+        <Tab value="page2" name="nav1" on:change={() => dropdownTabSelected = false}>
+          Installation
+        </Tab>
+        <Tab value="Showcase" name="nav1" />
+      </div>
+      <div class="flex">
+        <Tabs name="nav2" items={['Showcase', 'Components']} />
+      </div>
+      <div class="flex">
+        <Button on:click={() => open1 = true}>open modal 1</Button>
+        <Button on:click={() => open2 = true}>open modal 2</Button>
+        <Button on:click={() => open3 = true}>open dialog</Button>
+        <Button on:click={() => showSnackbar({
+          props: {
+            text: 'Did it hurt when you fell from the vending machine? Cause you a snack ;)',
+            action: { text: 'smooth', callback: () => console.log('thanks!') }
+          }
+        })}>
+          show a snackbar
         </Button>
-        <Dropdown top>
-          <div class="padded">
-            I'm a little dropdown short and stout
-          </div>
-        </Dropdown>
-      </DropdownShell>
-    </div>
-
-    <Switch>
-      <span class="padded">
-        default
-      </span>
-    </Switch>
-    <Switch slotLeft value={true}>
-      <span class="padded">
-        on
-      </span>
-    </Switch>
-    <Switch slotLeft value={true} disabled>
-      <span class="padded">
-        disabled
-      </span>
-    </Switch>
-    <div class="flex">
-      <RadioChipGroup {items} name="radio-chip-group" outline />
-      <CheckboxChipGroup {items} name="checkbox-chip-group" max={2} small />
-    </div>
-    <div class="flex">
-      <Tab
-        class={dropdownTabSelected && 'selected'}
-        value="page1"
-        name="nav1"
-        on:change={() => dropdownTabSelected = true}
-      >
-        Components
-        <ChevronDownIcon size="24" class="tab-chevron" />
-      </Tab>
-      <Tab value="page2" name="nav1" on:change={() => dropdownTabSelected = false}>
-        Installation
-      </Tab>
-      <Tab value="Showcase" name="nav1" />
-    </div>
-    <div class="flex">
-      <Tabs name="nav2" items={['Showcase', 'Components']} />
-    </div>
-    <div class="flex">
-      <Button on:click={() => open1 = true}>open modal 1</Button>
-      <Button on:click={() => open2 = true}>open modal 2</Button>
-    </div>
-    <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
-    <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
-    <div class="flex">
-      <Accordion let:closeOtherPanels>
-        <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
-          <div slot="handle">
-            <Button on:click={toggle}>
-              open first panel
-              <ChevronDownIcon size=24 class="ml accordion-chevron" />
-            </Button>
-          </div>
-          <Card>
-            But until someday comes...
-          </Card>
-        </AccordionSection>
-        <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
-          <div slot="handle">
-            <Button on:click={toggle}>
-              open second panel
-              <ChevronDownIcon size=24 class="ml accordion-chevron" />
-            </Button>
-          </div>
-          <Card>
-            I'll be writing sad songs.
-          </Card>
-        </AccordionSection>
-      </Accordion>
-    </div>
-  </Card>
-</ModalOverlay>
+        <Button on:click={() => showSnackbar({ component: MySnackbar })}>
+          show a custom snackbar
+        </Button>
+      </div>
+      <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
+      <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
+      <Modal component={ModalDialog} bind:open={open3} />
+      <div class="flex">
+        <Accordion let:closeOtherPanels>
+          <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+            <div slot="handle">
+              <Button on:click={toggle}>
+                open first panel
+                <ChevronDownIcon size=24 class="ml accordion-chevron" />
+              </Button>
+            </div>
+            <Card>
+              But until someday comes...
+            </Card>
+          </AccordionSection>
+          <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+            <div slot="handle">
+              <Button on:click={toggle}>
+                open second panel
+                <ChevronDownIcon size=24 class="ml accordion-chevron" />
+              </Button>
+            </div>
+            <Card>
+              I'll be writing sad songs.
+            </Card>
+          </AccordionSection>
+        </Accordion>
+      </div>
+    </Card>
+  </ModalOverlay>
+</SnackbarContainer>
 
 <style>
   .padded {

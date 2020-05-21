@@ -98,7 +98,7 @@
 .switch-wrapper {
   .state {
     color: $off-state;
-    font-weight: 500;
+    font-weight: $bold-font-weight;
 
     &.first {
       margin-right: .8em;
