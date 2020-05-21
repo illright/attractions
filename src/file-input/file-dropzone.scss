@@ -1,0 +1,83 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+.image-platform {
+  display: block;
+  border: 2px dashed $main;
+  margin: 2em 0 .5em;
+  width: 100%;
+  position: relative;
+  border-radius: $dropzone-radius;
+
+  input {
+    @include hide-accessible;
+  }
+
+  .icon {
+    stroke: $main;
+  }
+
+  .empty-layer {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    padding: 2em 1em;
+
+    .title {
+      font-weight: 500;
+      color: $main;
+      text-align: center;
+      margin-left: .5em;
+      flex: 1;
+    }
+  }
+
+  .dropzone-layer {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5625rem;
+    opacity: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background: transparentize($main, .975);
+    }
+
+    :global(.ripple) {
+      background: transparentize($main, .9);
+    }
+
+    &.accepting {
+      background: transparentize($main, .95);
+    }
+
+    :global(svg) {
+      margin-right: 1em;
+      stroke: $main;
+    }
+  }
+
+  &.has-content {
+    display: grid;
+    gap: .5em;
+    padding: 1em;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 12em);
+
+    .empty-layer {
+      display: none;
+    }
+
+    .dropzone-layer {
+      opacity: 1;
+    }
+  }
+}
