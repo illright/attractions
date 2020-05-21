@@ -1,0 +1,48 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.dialog {
+  border-radius: $dialog-radius;
+  box-shadow: $shadow-raised;
+  padding: 1.6em 2em 1.4em;
+  position: relative;
+  background-color: #fff;
+
+  .title {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: .7em;
+    color: $main;
+
+    &.close-padded {
+      padding-right: 1.5em;
+    }
+
+    :global(svg) {
+      margin-right: .5em;
+      flex-shrink: 0;
+    }
+  }
+
+  & > :global(.btn.close) {
+    position: absolute;
+    top: .7em;
+    right: .7em;
+  }
+
+  &.constrain-width {
+    max-width: 30em;
+  }
+
+  &.danger .title {
+    color: $danger;
+  }
+
+  .content {
+    max-height: calc(100vh - 10em);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
