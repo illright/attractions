@@ -16,5 +16,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    :global(.dialog) {
+      animation: slide-up 100ms ease-out;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
