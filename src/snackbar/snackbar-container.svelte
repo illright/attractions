@@ -25,8 +25,7 @@
 
     return function close() {
       clearTimeout(key.timeoutID);
-      registeredSnackbars.delete(key);
-      registeredSnackbars = registeredSnackbars;
+      removeSnackbar(key);
     };
   }
 
