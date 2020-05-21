@@ -80,7 +80,7 @@
 
       & > :global(.item) {
         left: .625em;
-        font-weight: 500;
+        font-weight: $bold-font-weight;
       }
     }
 
@@ -235,7 +235,7 @@
     display: none;
     font-size: .8rem;
     color: transparentize($danger, .3);
-    font-weight: 500;
+    font-weight: $bold-font-weight;
   }
 
   &.no-spinner > input[type="number"] {

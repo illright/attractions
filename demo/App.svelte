@@ -19,10 +19,13 @@
     // Headline,
     Dot,
     SnackbarContainer,
+    StarRating,
+    Dialog,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
+  import ModalDialog from './modal-dialog.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -44,6 +47,7 @@
 
   let open1 = false;
   let open2 = false;
+  let open3 = false;
   let dropdownTabSelected = false;
 </script>
 
@@ -51,6 +55,7 @@
   <ModalOverlay>
     <a href="https://googles.com">say my name</a>
     <Card>
+      <StarRating name="test" max={7} />
       <TextField label="Write something" outline />
       <Button filled>
         <Dot success />
@@ -115,6 +120,7 @@
       <div class="flex">
         <Button on:click={() => open1 = true}>open modal 1</Button>
         <Button on:click={() => open2 = true}>open modal 2</Button>
+        <Button on:click={() => open3 = true}>open dialog</Button>
         <Button on:click={() => showSnackbar({
           props: {
             text: 'Did it hurt when you fell from the vending machine? Cause you a snack ;)',
@@ -129,6 +135,7 @@
       </div>
       <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
       <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
+      <Modal component={ModalDialog} bind:open={open3} />
       <div class="flex">
         <Accordion let:closeOtherPanels>
           <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
