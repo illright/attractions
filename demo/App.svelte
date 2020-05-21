@@ -18,6 +18,7 @@
     Label,
     Headline,
     Dot,
+    StarRating,
   } from '../src/index.js';
   import ModalCard from './modal-card.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
@@ -47,6 +48,7 @@
 <ModalOverlay>
   <a href="https://googles.com">say my name</a>
   <Card>
+    <StarRating name="test" max={7} />
     <TextField label="Write something" outline />
     <Button filled>
       <Dot success />

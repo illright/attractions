@@ -39,3 +39,5 @@ export { default as Label } from './typography/label.svelte';
 export { default as TypographyStyles } from './typography/typography-styles.svelte';
 
 export { default as Dot } from './dot/dot.svelte';
+
+export { default as StarRating } from './star-rating/star-rating.svelte';
