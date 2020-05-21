@@ -3,7 +3,7 @@
 
 h3 {
   font-size: 1.15em;
-  font-weight: 500;
+  font-weight: $bold-font-weight;
   margin: 0 0 .3em 0;
 
   @media only screen and (min-width: 640px) {
