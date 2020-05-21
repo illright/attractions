@@ -4,13 +4,12 @@
 .dialog {
   border-radius: $dialog-radius;
   box-shadow: $shadow-raised;
-  padding: 1.6em 2em 1.4em;
+  padding: 1.4em 2em;
   position: relative;
   background-color: #fff;
 
   .title {
     display: flex;
-    align-items: flex-end;
     font-size: 1.2em;
     font-weight: 500;
     margin-bottom: .7em;
