@@ -18,8 +18,10 @@
     Label,
     Headline,
     Dot,
+    Dialog,
   } from '../src/index.js';
   import ModalCard from './modal-card.svelte';
+  import ModalDialog from './modal-dialog.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -41,6 +43,7 @@
 
   let open1 = false;
   let open2 = false;
+  let open3 = false;
   let dropdownTabSelected = false;
 </script>
 
@@ -111,9 +114,11 @@
     <div class="flex">
       <Button on:click={() => open1 = true}>open modal 1</Button>
       <Button on:click={() => open2 = true}>open modal 2</Button>
+      <Button on:click={() => open3 = true}>open dialog</Button>
     </div>
     <Modal component={ModalCard} props={{ doYou: 'hear what I hear' }} bind:open={open1} />
     <Modal component={ModalCard} props={{ doYou: 'care if I care' }} bind:open={open2} />
+    <Modal component={ModalDialog} bind:open={open3} />
     <div class="flex">
       <Accordion let:closeOtherPanels>
         <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
