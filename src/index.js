@@ -41,3 +41,5 @@ export { default as TypographyStyles } from './typography/typography-styles.svel
 export { default as Dot } from './dot/dot.svelte';
 
 export { default as StarRating } from './star-rating/star-rating.svelte';
+
+export { default as Dialog } from './dialog/dialog.svelte';

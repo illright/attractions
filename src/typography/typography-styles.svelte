@@ -1,1 +1,1 @@
-<style global src="./typography-styles.scss"></style>
+<style src="./typography-styles.scss"></style>
