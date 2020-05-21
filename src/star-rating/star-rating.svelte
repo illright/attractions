@@ -15,22 +15,15 @@
   export let name;
   export let events = null;
 
-  const ARROW_LEFT_CODE = 37;
-  const ARROW_UP_CODE = 38;
-  const ARROW_RIGHT_CODE = 39;
-  const ARROW_DOWN_CODE = 40;
-
   function reverseArrowKeys(event) {
-    switch (event.keyCode) {
+    switch (event.key) {
 
-    case ARROW_LEFT_CODE:
-    case ARROW_UP_CODE:
+    case 'ArrowLeft':
       event.preventDefault();
       value = (value + (max + 1) - 1) % (max + 1);
       break;
 
-    case ARROW_RIGHT_CODE:
-    case ARROW_DOWN_CODE:
+    case 'ArrowRight':
       event.preventDefault();
       value = (value + 1) % (max + 1);
       break;
