@@ -41,7 +41,6 @@
     width: 100%;
     height: 100%;
     border-radius: 1.5625rem;
-    opacity: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -62,6 +61,7 @@
     :global(svg) {
       margin-right: 1em;
       stroke: $main;
+      opacity: 0;
     }
   }
 
@@ -76,7 +76,7 @@
       display: none;
     }
 
-    .dropzone-layer {
+    .dropzone-layer :global(svg) {
       opacity: 1;
     }
   }
