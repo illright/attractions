@@ -7,7 +7,7 @@
   color: $chip-fg;
   font-family: $font;
   padding: .6em .9em;
-  font-weight: 500;
+  font-weight: $bold-font-weight;
 
   &.small {
     padding: .4em .6em;
