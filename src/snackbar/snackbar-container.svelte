@@ -15,7 +15,7 @@
     const {
       component = Snackbar,
       props = {},
-      duration = 3000,
+      duration = 4000,
     } = options;
 
     const key = { component, props };
