@@ -18,6 +18,7 @@
     Label,
     Headline,
     Dot,
+    FileInput,
   } from '../src/index.js';
   import ModalCard from './modal-card.svelte';
   import { ChevronDownIcon } from 'svelte-feather-icons';
@@ -42,11 +43,27 @@
   let open1 = false;
   let open2 = false;
   let dropdownTabSelected = false;
+
+  let filesSelected = [];
+  $: console.log(filesSelected);
 </script>
 
 <ModalOverlay>
   <a href="https://googles.com">say my name</a>
   <Card>
+    <div class="flex">
+      <FileInput accept="image/*" bind:value={filesSelected} />
+
+      <div>
+        <!-- {#each filesSelected as file (file.name)}
+          <Card>{file.name}</Card>
+        {/each} -->
+        {#if filesSelected != null}
+          <Card>{filesSelected.name}</Card>
+        {/if}
+      </div>
+    </div>
+
     <TextField label="Write something" outline />
     <Button filled>
       <Dot success />
