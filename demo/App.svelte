@@ -18,6 +18,7 @@
     Label,
     Headline,
     Dot,
+    StarRating,
     Dialog,
   } from '../src/index.js';
   import ModalCard from './modal-card.svelte';
@@ -50,6 +51,7 @@
 <ModalOverlay>
   <a href="https://googles.com">say my name</a>
   <Card>
+    <StarRating name="test" max={7} />
     <TextField label="Write something" outline />
     <Button filled>
       <Dot success />
