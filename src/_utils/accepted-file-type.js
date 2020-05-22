@@ -14,26 +14,20 @@ function matches(reference, subject) {
     return subject.name.toLowerCase().endsWith(reference);
   }
 
-  return checkMimeType(reference, (subject.type || '').toLowerCase());
+  return checkMimeType(reference.toLowerCase(), (subject.type || '').toLowerCase());
 }
 
 /* Checks for compatibility of the reference MIME type pattern with the subject MIME type.
    Adapted from Chromium sources:
      https://source.chromium.org/chromium/chromium/src/+/master:net/base/mime_util.cc;l=413 */
 function checkMimeType(reference, subject) {
-  const baseReference = reference.split(';')[0].toLowerCase();
-  const baseSubject = subject.split(';')[0].toLowerCase();
-
-  if (baseReference === '*' || baseReference === '*/*') {
-    return matchesMimeTypeParameters(reference, subject);
+  if (reference === '*' || reference === '*/*') {
+    return true;
   }
 
-  const parts = baseReference.split('*');
+  const parts = reference.split('*');
   if (parts.length === 1) {
-    return (
-      baseReference === baseSubject
-      && matchesMimeTypeParameters(reference, subject)
-    );
+    return reference === subject;
   }
 
   if (parts.length !== 2) {
@@ -41,52 +35,7 @@ function checkMimeType(reference, subject) {
     return false;
   }
 
-  return (
-    baseSubject.startsWith(parts[0])
-    && baseSubject.endsWith(parts[1])
-    && matchesMimeTypeParameters(reference, subject)
-  );
-}
-
-
-/* Ensures that the parameters of the MIME types match, if any. */
-function matchesMimeTypeParameters(reference, subject) {
-  const semicolon = reference.indexOf(';');
-  const subjectSemicolon = subject.indexOf(';');
-  if (semicolon !== -1) {
-    if (subjectSemicolon === -1) {
-      return false;
-    }
-
-    const referenceParameters = splitIntoKeyValue(reference.slice(semicolon + 1));
-    const subjectParameters = splitIntoKeyValue(subject.slice(subjectSemicolon + 1));
-
-    if (referenceParameters.length > subjectParameters.length)
-      return false;
-
-    for (let [key, value] of referenceParameters.entries()) {
-      if (subjectParameters.get(key) !== value) {
-        return false;
-      }
-    }
-  }
-
-  return true;
-}
-
-/* Splits a string of the form 'key=value;key2=value2' into a map with lowercase keys. */
-function splitIntoKeyValue(parameterString) {
-  const params = new Map();
-  if (parameterString === '') {
-    return params;
-  }
-
-  for (let parameter of parameterString.split(';')) {
-    const [key, value = null] = parameter.split('=');
-    params.set(key.toLowerCase(), value);
-  }
-
-  return params;
+  return subject.startsWith(parts[0]) && subject.endsWith(parts[1]);
 }
 
 
