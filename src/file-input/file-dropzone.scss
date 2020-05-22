@@ -3,8 +3,9 @@
 @import '_attractions-theme.scss';
 
 .image-platform {
+  color: $main;
   display: block;
-  border: 2px dashed $main;
+  border: 2px dashed currentColor;
   margin: 2em 0 .5em;
   width: 100%;
   position: relative;
@@ -14,8 +15,8 @@
     @include hide-accessible;
   }
 
-  .icon {
-    stroke: $main;
+  :global(.icon) {
+    stroke: currentColor;
   }
 
   .empty-layer {
@@ -26,7 +27,7 @@
 
     .title {
       font-weight: 500;
-      color: $main;
+      color: currentColor;
       text-align: center;
       margin-left: .5em;
       flex: 1;
@@ -60,7 +61,8 @@
 
     :global(svg) {
       margin-right: 1em;
-      stroke: $main;
+      stroke: currentColor;
+      transition: transform 150ms;
       opacity: 0;
     }
   }
@@ -78,6 +80,28 @@
 
     .dropzone-layer :global(svg) {
       opacity: 1;
+    }
+  }
+
+  &.wrong-type {
+    color: $danger;
+
+    .dropzone-layer {
+      &:hover {
+        background: transparentize($danger, .975);
+      }
+
+      &.accepting {
+        background: transparentize($danger, .95);
+      }
+
+      :global(.ripple) {
+        background: transparentize($danger, .9);
+      }
+
+      :global(svg.plus) {
+        transform: rotate(45deg);
+      }
     }
   }
 }

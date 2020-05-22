@@ -5,6 +5,7 @@
   import { createEventDispatcher } from 'svelte';
   import classes from '../_utils/classes.js';
   import ripple from '../_utils/ripple.js';
+  import accepted from '../_utils/accepted-file-type.js';
 
   let _class = null;
   export { _class as class };
@@ -14,51 +15,24 @@
   export let accept = null;
 
   let dragActive = false;
+  let wrongType = false;
 
   let emptyLayer;
   let dropzoneLayer;
   let inputElement;
 
-  function mimeMatches(acceptedType, acceptedSubtype, fileType, fileSubtype) {
-    if (acceptedType == null) {
-      return true;
-    }
-
-    if (fileType == null) {
-      return false;
-    }
-
-    if (acceptedType !== fileType) {
-      return false;
-    }
-
-    if (acceptedSubtype === '*') {
-      return true;
-    }
-
-    return acceptedSubtype === fileSubtype;
+  function checkTypesEarly(e) {
+    wrongType = [...e.dataTransfer.items].some(file => !accepted(accept, file));
   }
 
   function acceptUpload(e) {
-    let acceptedType = null;
-    let acceptedSubtype = null;
-
-    if (accept != null) {
-      [acceptedType, acceptedSubtype] = accept.split('/');
-    }
-
     for (let file of (e.dataTransfer || e.target).files) {
-      let fileType = null;
-      let fileSubtype = null;
-      if (file.type != null) {
-        [fileType, fileSubtype] = file.type.split('/');
-      }
-
-      if (mimeMatches(acceptedType, acceptedSubtype, fileType, fileSubtype)) {
+      if (accepted(accept, file)) {
         files.push(file);
       }
     }
     files = files;
+    setTimeout(() => wrongType = false, 1000);
     dispatch('change', { files, nativeEvent: e });
     inputElement.value = '';
     dragActive = false;
@@ -83,6 +57,7 @@
 <label
   class={classes('image-platform', _class)}
   class:has-content={files && files.length !== 0}
+  class:wrong-type={wrongType}
   on:click={blockOnTiles}
 >
   <input
@@ -97,7 +72,9 @@
     <slot name="empty-layer">
       <Paperclip class="icon" />
       <div class="title">
-        {#if dragActive}
+        {#if wrongType}
+          incorrect file type
+        {:else if dragActive}
           release to upload
         {:else}
           drag &amp; drop here or click to upload files
@@ -109,14 +86,14 @@
     class="dropzone-layer"
     bind:this={dropzoneLayer}
     class:accepting={dragActive}
-    on:dragover|preventDefault|stopPropagation
+    on:dragover|preventDefault|stopPropagation={checkTypesEarly}
     on:dragenter={() => dragActive = true}
-    on:dragleave={() => dragActive = false}
+    on:dragleave={() => { dragActive = false; wrongType = false; }}
     on:drop|preventDefault|stopPropagation={acceptUpload}
     use:ripple
   >
     <slot name="more-icon">
-      <Plus />
+      <Plus class="plus" />
     </slot>
   </div>
   {#each files as file}
