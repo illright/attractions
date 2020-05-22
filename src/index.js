@@ -46,3 +46,6 @@ export { default as Snackbar } from './snackbar/snackbar.svelte';
 export { default as StarRating } from './star-rating/star-rating.svelte';
 
 export { default as Dialog } from './dialog/dialog.svelte';
+
+export { default as Popover } from './popover/popover.svelte';
+export { default as PopoverButton } from './popover/popover-button.svelte';
