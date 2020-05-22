@@ -20,7 +20,9 @@
     Dot,
     SnackbarContainer,
     StarRating,
-    Dialog,
+    // Dialog,
+    FileInput,
+    FileDropzone,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import ModalCard from './modal-card.svelte';
@@ -49,10 +51,25 @@
   let open2 = false;
   let open3 = false;
   let dropdownTabSelected = false;
+
+  let filesSelected = [];
+  $: console.log(filesSelected);
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
   <ModalOverlay>
+    <div class="flex">
+      <FileDropzone accept="image/jpeg" />
+    </div>
+    <div class="flex">
+      <FileInput accept="image/*" bind:value={filesSelected} vertical />
+
+      <div>
+        {#if filesSelected != null}
+          <Card>{filesSelected.name}</Card>
+        {/if}
+      </div>
+    </div>
     <a href="https://googles.com">say my name</a>
     <Card>
       <StarRating name="test" max={7} />
@@ -124,8 +141,8 @@
         <Button on:click={() => showSnackbar({
           props: {
             text: 'Did it hurt when you fell from the vending machine? Cause you a snack ;)',
-            action: { text: 'smooth', callback: () => console.log('thanks!') }
-          }
+            action: { text: 'smooth', callback: () => console.log('thanks!') },
+          },
         })}>
           show a snackbar
         </Button>
