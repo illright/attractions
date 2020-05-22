@@ -21,7 +21,7 @@
     SnackbarContainer,
     StarRating,
     // Dialog,
-    // FileInput,
+    FileInput,
     FileDropzone,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
@@ -59,17 +59,16 @@
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
   <ModalOverlay>
     <div class="flex">
-      <!-- <FileInput accept="image/*" bind:value={filesSelected} /> -->
-      <FileDropzone bind:value={filesSelected} accept="image/jpeg" />
+      <FileDropzone accept="image/jpeg" />
+    </div>
+    <div class="flex">
+      <FileInput accept="image/*" bind:value={filesSelected} vertical />
 
-      <!-- <div>
-        {#each filesSelected as file}
-          <Card>{file.name}</Card>
-        {/each}
+      <div>
         {#if filesSelected != null}
           <Card>{filesSelected.name}</Card>
         {/if}
-      </div> -->
+      </div>
     </div>
     <a href="https://googles.com">say my name</a>
     <Card>

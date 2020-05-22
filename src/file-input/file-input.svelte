@@ -29,7 +29,7 @@
   <label class={labelClass} use:ripple>
     <input
       type="file"
-      bind:files={files}
+      bind:files
       bind:this={input}
       {multiple}
       {...$$restProps}

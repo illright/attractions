@@ -9,7 +9,7 @@
   let _class = null;
   export { _class as class };
 
-  export let value = [];
+  export let files = [];
   export let fileComponent = FileTile;
   export let accept = null;
 
@@ -55,18 +55,18 @@
       }
 
       if (mimeMatches(acceptedType, acceptedSubtype, fileType, fileSubtype)) {
-        value.push(file);
+        files.push(file);
       }
     }
-    value = value;
-    dispatch('change', { value, nativeEvent: e });
+    files = files;
+    dispatch('change', { files, nativeEvent: e });
     inputElement.value = '';
     dragActive = false;
   }
 
   function deleteFile(thatFile) {
-    value = value.filter(thisFile => thisFile !== thatFile);
-    dispatch('change', { value });
+    files = files.filter(thisFile => thisFile !== thatFile);
+    dispatch('change', { files });
   }
 
   function blockOnTiles(e) {
@@ -82,7 +82,7 @@
 
 <label
   class={classes('image-platform', _class)}
-  class:has-content={value && value.length !== 0}
+  class:has-content={files && files.length !== 0}
   on:click={blockOnTiles}
 >
   <input
@@ -97,10 +97,10 @@
     <slot name="empty-layer">
       <Paperclip class="icon" />
       <div class="title">
-        {#if !dragActive}
-          drag &amp; drop here or click to upload files
-        {:else}
+        {#if dragActive}
           release to upload
+        {:else}
+          drag &amp; drop here or click to upload files
         {/if}
       </div>
     </slot>
@@ -115,9 +115,11 @@
     on:drop|preventDefault|stopPropagation={acceptUpload}
     use:ripple
   >
-    <Plus />
+    <slot name="more-icon">
+      <Plus />
+    </slot>
   </div>
-  {#each value as file}
+  {#each files as file}
     <svelte:component this={fileComponent} {file} on:delete={() => deleteFile(file)} />
   {/each}
 </label>
