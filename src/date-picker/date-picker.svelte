@@ -121,10 +121,6 @@
     if (!range || start != null && end != null) {
       dispatch('change', value);
     }
-    //
-    // if (value != null) {
-    //   setTimeout(toggle, 150);
-    // }
   }
 
   function showPrevMonth() {
