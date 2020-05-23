@@ -24,7 +24,11 @@
     console.error('Labels are only available for outlined text fields');
   }
 
+  let internalValue = null;
   export let value = null;
+  $: value = (
+    $$restProps.type === 'number' && internalValue != null ? +internalValue : internalValue
+  );
   export let events = null;
 
   let inputElement;
@@ -44,7 +48,7 @@
   {#if multiline}
     <textarea
       {id}
-      bind:value={value}
+      bind:value={internalValue}
       class={inputClass}
       bind:this={inputElement}
       on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
@@ -55,7 +59,7 @@
   {:else}
     <input
       {id}
-      bind:value={value}
+      bind:value={internalValue}
       class={inputClass}
       bind:this={inputElement}
       on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
