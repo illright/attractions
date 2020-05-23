@@ -20,9 +20,11 @@
     Dot,
     SnackbarContainer,
     StarRating,
-    Dialog,
     Popover,
     PopoverButton,
+    // Dialog,
+    FileInput,
+    FileDropzone,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
@@ -52,10 +54,25 @@
   let open2 = false;
   let open3 = false;
   let dropdownTabSelected = false;
+
+  let filesSelected = [];
+  $: console.log(filesSelected);
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
   <ModalOverlay>
+    <div class="flex">
+      <FileDropzone accept="image/jpeg" />
+    </div>
+    <div class="flex">
+      <FileInput accept="image/*" bind:value={filesSelected} vertical />
+
+      <div>
+        {#if filesSelected != null}
+          <Card>{filesSelected.name}</Card>
+        {/if}
+      </div>
+    </div>
     <a href="https://googles.com">say my name</a>
 
     <Card>
