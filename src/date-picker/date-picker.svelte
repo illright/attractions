@@ -180,7 +180,7 @@
         <Button noRipple on:click={clearFocus}>close the date picker</Button>
       </div>
       <div class={classes('month-header', monthHeaderClass)}>
-        <Button round small on:click={showPrevMonth}>
+        <Button round small on:click={showPrevMonth} title="Previous month">
           <slot name="chevron-left">
             <ChevronLeft />
           </slot>
@@ -188,7 +188,7 @@
         <div class="month-display">
           {headerFormatter.format(shownCalendar)}
         </div>
-        <Button round small on:click={showNextMonth}>
+        <Button round small on:click={showNextMonth} title="Next month">
           <slot name="chevron-right">
             <ChevronRight />
           </slot>

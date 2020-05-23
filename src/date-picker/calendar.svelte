@@ -112,7 +112,10 @@
             && datesLessEqual(day.value, selectionEnd)
           }
         >
-          <Button on:click={(e) => { e.stopPropagation(); dispatch('day-select', day.value); }}>
+          <Button
+            title={datesEqual(day.value, today) && 'Today' || null}
+            on:click={(e) => { e.stopPropagation(); dispatch('day-select', day.value); }}
+          >
             {dayNumberFormatter.format(day.value)}
           </Button>
         </div>
