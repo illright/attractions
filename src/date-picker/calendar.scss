@@ -1,0 +1,107 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+$day-size: 2.25rem;
+$day-gap: .0625rem;
+$side-padding: 1rem;
+
+.weekdays {
+  padding: .5em 1em;
+  display: flex;
+  font-size: .85em;
+
+  & > .weekday {
+    width: percentage(1 / 7);
+    text-align: center;
+  }
+}
+
+.week {
+  display: flex;
+
+  .day {
+    width: percentage(1 / 7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:last-child {
+      padding-right: $side-padding;
+    }
+
+    &:first-child {
+      padding-left: $side-padding;
+    }
+
+    & > :global(.btn) {
+      font-weight: 400;
+      font-size: .9em;
+      color: $dark;
+      justify-content: center;
+      margin: $day-gap;
+      z-index: 2;
+      width: $day-size;
+      height: $day-size;
+    }
+
+    &.today > :global(.btn) {
+      color: $main;
+    }
+
+    &.selected > :global(.btn) {
+      background-color: desaturate(lighten($main, 10%), 20%);
+      color: $main-text;
+    }
+
+    &.outside > :global(.btn) {
+      color: $disabled;
+    }
+
+    &.in-range::before {
+      background-color: transparentize($main, .75);
+      content: "";
+      height: $day-size;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: $day-gap;
+      z-index: 1;
+    }
+
+    &.outside.selected > :global(.btn) {
+      color: $main-text;
+    }
+
+    &.start {
+      &::before {
+        right: 0;
+        left: unset;
+        width: $day-size / 2 + $day-gap;
+      }
+
+      &:last-child::before {
+        width: $day-size / 2 + $day-gap + $side-padding;
+      }
+    }
+
+    &.end {
+      &::before {
+        left: 0;
+        right: unset;
+        width: $day-size / 2 + $day-gap;
+      }
+    }
+
+    &.start:last-child,
+    &.end:first-child {
+      &::before {
+        width: $day-size / 2 + $day-gap + $side-padding;
+      }
+    }
+
+    &.start.end::before {
+      width: 0;
+    }
+  }
+}
