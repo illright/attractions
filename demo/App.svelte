@@ -20,11 +20,14 @@
     Dot,
     SnackbarContainer,
     StarRating,
+    Popover,
+    PopoverButton,
     // Dialog,
     FileInput,
     FileDropzone,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
+  import { PopoverPositions } from '../src/popover';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
   import ModalDialog from './modal-dialog.svelte';
@@ -71,15 +74,39 @@
       </div>
     </div>
     <a href="https://googles.com">say my name</a>
+
     <Card>
       <StarRating name="test" max={7} />
       <TextField label="Write something" outline />
-      <Button filled>
-        <Dot success />
-        <Dot attention small class="ml" />
-        <Dot info small class="ml" />
-        <Dot danger class="ml" title="You're in trouble now, son." />
-      </Button>
+      <div class="flex">
+        <Button filled>
+          <Dot success />
+          <Dot attention small class="ml" />
+          <Dot info small class="ml" />
+          <Dot danger class="ml" title="You're in trouble now, son." />
+        </Button>
+        <Popover position={PopoverPositions.BOTTOM}>
+          <Button>
+            i have a popover
+          </Button>
+          <div slot="popover-content">
+            <PopoverButton>
+              hello
+            </PopoverButton>
+          </div>
+        </Popover>
+        <Popover position={PopoverPositions.BOTTOM}>
+          <Button>
+            i have a popover too!
+          </Button>
+          <div
+            slot="popover-content"
+            style="background: white; padding: .3em; border: 1px solid gray;"
+          >
+            bad ideas inbound.
+          </div>
+        </Popover>
+      </div>
       <!-- <RadioGroup items={colorItems} color bind:value={colorItem} name="colors" />
       <RadioGroup items={items} bind:value={item} name="numbers" />
       <CheckboxGroup items={items} max={1} name="numbers-check" /> -->
