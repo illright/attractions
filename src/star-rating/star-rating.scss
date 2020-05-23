@@ -6,10 +6,15 @@ $hover-color: mix(white, $main, 60%);
 $selected-color: mix(white, $main, 20%);
 
 .star-rating {
-  display: flex;
+  display: inline-flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
+  border-radius: 1.5em;
   fill: none;
+
+  &:focus-within {
+    background: transparentize($main, .95);
+  }
 
   input {
     @include hide-accessible;
@@ -37,6 +42,12 @@ $selected-color: mix(white, $main, 20%);
     &:hover ~ label {
       color: $hover-color;
     }
+  }
+
+  input:disabled + label {
+    cursor: not-allowed;
+    background: none;
+    color: $disabled;
   }
 
   input:checked + label,
