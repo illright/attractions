@@ -8,6 +8,7 @@
   import ChevronLeft from './chevron-left.svelte';
   import ChevronRight from './chevron-right.svelte';
   import Calendar from './calendar.svelte';
+  import { parseDate, formatDate } from '../_utils/date-utils.js';
 
   let _class = null;
   export { _class as class };
@@ -22,6 +23,17 @@
   export let top = false;
   export let right = false;
   export let value = null;
+  export let format = '%D.%M.%Y';
+  $: readableFormat = (
+    format
+      .replace('%d', 'd')
+      .replace('%D', 'dd')
+      .replace('%m', 'm')
+      .replace('%M', 'mm')
+      .replace('%y', 'yy')
+      .replace('%Y', 'yyyy')
+      .replace('%%', '%')
+  );
 
   let datePicker = null;
   let startFocus = false;
@@ -64,22 +76,6 @@
 
     range && fixRange();
     shiftShownCalendar(date);
-  }
-
-  function tryParse(string, _default) {
-    if (string === '') {
-      return null;
-    }
-
-    const parts = string.split('.');
-    if (parts.length !== 3) {
-      return _default;
-    }
-    const parsed = new Date(parts[2], parts[1] - 1, parts[0]);
-    if (isNaN(parsed.valueOf())) {
-      return _default;
-    }
-    return parsed;
   }
 
   function fixRange() {
@@ -134,11 +130,6 @@
   }
 
   const headerFormatter = Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' });
-  const textRepresentation = Intl.DateTimeFormat('ru', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
   const dispatch = createEventDispatcher();
 </script>
 
@@ -146,12 +137,12 @@
   <DropdownShell let:toggle open={startFocus || endFocus} on:change={clearFocus}>
     <div class="handle">
       <TextField
-        placeholder="dd.mm.yyyy"
-        value={startValue && textRepresentation.format(startValue)}
+        placeholder={readableFormat}
+        value={formatDate(startValue, format)}
         on:focus={() => { startFocus = true; endFocus = false; }}
         class={startFocus && 'in-focus'}
         on:change={({ detail }) => {
-          startValue = tryParse(detail.value, startValue);
+          startValue = parseDate(detail.value, format, startValue);
           fixRange();
           shiftShownCalendar(startValue);
         }}
@@ -159,12 +150,12 @@
       {#if range}
         <span>to</span>
         <TextField
-          placeholder="dd.mm.yyyy"
-          value={endValue && textRepresentation.format(endValue)}
+          placeholder={readableFormat}
+          value={formatDate(endValue, format)}
           on:focus={() => { startFocus = false; endFocus = true; }}
           class={endFocus && 'in-focus'}
           on:change={({ detail }) => {
-            endValue = tryParse(detail.value, endValue);
+            endValue = parseDate(detail.value, format, endValue);
             fixRange();
             shiftShownCalendar(endValue);
           }}
