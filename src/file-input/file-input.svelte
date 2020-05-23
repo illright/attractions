@@ -11,6 +11,7 @@
   export let multiple = false;
   export let vertical = false;
   export let value = multiple ? [] : null;
+  export let disabled = false;
 
   let input;
   let files;
@@ -26,12 +27,13 @@
 </script>
 
 <span class={classes('file-input', _class)} class:vertical>
-  <label class={labelClass} use:ripple>
+  <label class:disabled class={labelClass} use:ripple={{ disabled }}>
     <input
       type="file"
       bind:files
       bind:this={input}
       {multiple}
+      {disabled}
       {...$$restProps}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     />
