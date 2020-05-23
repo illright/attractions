@@ -25,6 +25,8 @@
     // Dialog,
     FileInput,
     FileDropzone,
+    DatePicker,
+    Calendar,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
@@ -54,9 +56,18 @@
   let open2 = false;
   let open3 = false;
   let dropdownTabSelected = false;
+  let date = { start: new Date(), end: new Date() };
+  date.start.setDate(2);
+
+  function changeFromOutside() {
+    date.start.setDate(1);
+    date = date;
+  }
+
+  // $: console.log(date);
 
   let filesSelected = [];
-  $: console.log(filesSelected);
+  // $: console.log(filesSelected);
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
@@ -78,8 +89,9 @@
     <Card>
       <StarRating name="test" max={7} />
       <TextField label="Write something" outline />
+      <DatePicker range bind:value={date} />
       <div class="flex">
-        <Button filled>
+        <Button filled on:click={changeFromOutside}>
           <Dot success />
           <Dot attention small class="ml" />
           <Dot info small class="ml" />
@@ -116,9 +128,9 @@
             test me!
             <ChevronDownIcon size="24" class="ml dropdown-chevron" />
           </Button>
-          <Dropdown top>
+          <Dropdown>
             <div class="padded">
-              I'm a little dropdown short and stout
+              <Calendar year={2020} month={4} />
             </div>
           </Dropdown>
         </DropdownShell>
