@@ -13,6 +13,7 @@
   export let files = [];
   export let fileComponent = FileTile;
   export let accept = null;
+  export let disabled = false;
 
   let dragActive = false;
   let wrongType = false;
@@ -55,9 +56,10 @@
 </script>
 
 <label
-  class={classes('image-platform', _class)}
+  class={classes('file-platform', _class)}
   class:has-content={files && files.length !== 0}
   class:wrong-type={wrongType}
+  class:disabled
   on:click={blockOnTiles}
 >
   <input
@@ -66,13 +68,16 @@
     on:change={acceptUpload}
     bind:this={inputElement}
     {accept}
+    {disabled}
     {...$$restProps}
   />
   <div class="empty-layer" bind:this={emptyLayer}>
     <slot name="empty-layer">
       <Paperclip class="icon" />
       <div class="title">
-        {#if wrongType}
+        {#if disabled}
+          file upload unavailable
+        {:else if wrongType}
           incorrect file type
         {:else if dragActive}
           release to upload
@@ -90,7 +95,7 @@
     on:dragenter={() => dragActive = true}
     on:dragleave={() => { dragActive = false; wrongType = false; }}
     on:drop|preventDefault|stopPropagation={acceptUpload}
-    use:ripple
+    use:ripple={{ disabled }}
   >
     <slot name="more-icon">
       <Plus class="plus" />
