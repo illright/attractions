@@ -53,7 +53,7 @@ export function parseDateTime(string, format, _default) {
         result.setMonth(string.substr(stringIdx, numberLength) - 1);
         break;
       case 'y':
-        result.setFullYear(century * 100 + string.substr(stringIdx, numberLength));
+        result.setFullYear(century * 100 + +string.substr(stringIdx, numberLength));
         break;
       case 'Y':
         result.setFullYear(string.substr(stringIdx, numberLength));
@@ -78,7 +78,7 @@ export function formatDateTime(datetime, format) {
   return (
     format
       .replace('%Y', datetime.getFullYear())
-      .replace('%y', datetime.getFullYear() % 100)
+      .replace('%y', (datetime.getFullYear() % 100).toString().padStart(2, '0'))
       .replace('%m', (datetime.getMonth() + 1).toString().padStart(2, '0'))
       .replace('%d', datetime.getDate().toString().padStart(2, '0'))
       .replace('%H', datetime.getHours().toString().padStart(2, '0'))
