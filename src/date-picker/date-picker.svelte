@@ -12,7 +12,6 @@
 
   let _class = null;
   export { _class as class };
-  export let monthHeaderClass = null;
   export let weekdaysClass = null;
   export let weekClass = null;
   export let dayClass = null;
@@ -133,7 +132,7 @@
 </script>
 
 <div class={classes('date-picker', _class)}>
-  <DropdownShell let:toggle open={startFocus || endFocus} on:change={clearFocus}>
+  <DropdownShell open={startFocus || endFocus} on:change={clearFocus}>
     <div class="handle">
       <TextField
         placeholder={readableFormat}
@@ -147,7 +146,9 @@
         }}
       />
       {#if range}
-        <span>to</span>
+        <slot name="between-inputs">
+          <span>to</span>
+        </slot>
         <TextField
           placeholder={readableFormat}
           value={formatDate(endValue, format)}
@@ -161,11 +162,11 @@
         />
       {/if}
     </div>
-    <Dropdown class={classes('calendar', _class)} {top} {right}>
+    <Dropdown class="calendar" {top} {right}>
       <div class="shown-on-focus">
         <Button noRipple on:click={clearFocus}>close the date picker</Button>
       </div>
-      <div class={classes('month-header', monthHeaderClass)}>
+      <div class="month-header">
         <Button round small on:click={showPrevMonth} title="Previous month">
           <slot name="chevron-left">
             <ChevronLeft />
