@@ -1,8 +1,10 @@
 const digitRegex = /^[0-9]$/;
-const formatSpecifierRegex = /%[dDmMyY%]/g;
+const formatSpecifierRegex = /%[HMdmyY%]/g;
 const daysInWeek = 7;
 
 export function parseDate(string, format, _default) {
+  const century = Math.floor((new Date()).getFullYear() / 100);
+
   if (string === '') {
     return null;
   }
@@ -38,17 +40,23 @@ export function parseDate(string, format, _default) {
       }
 
       switch (format[formatIdx]) {
+      case 'H':
+        result.setHours(string.substr(stringIdx, numberLength));
+        break;
+      case 'M':
+        result.setMinutes(string.substr(stringIdx, numberLength));
+        break;
       case 'd':
-      case 'D':
         result.setDate(string.substr(stringIdx, numberLength));
         break;
       case 'm':
-      case 'M':
         result.setMonth(string.substr(stringIdx, numberLength) - 1);
         break;
       case 'y':
+        result.setFullYear(century * 100 + string.substr(stringIdx, numberLength));
+        break;
       case 'Y':
-        result.setYear(string.substr(stringIdx, numberLength));
+        result.setFullYear(string.substr(stringIdx, numberLength));
         break;
       }
       stringIdx += numberLength;
@@ -70,7 +78,7 @@ export function formatDateTime(datetime, format) {
   return (
     format
       .replace('%Y', datetime.getFullYear())
-      .replace('%y', datetime.getYear())
+      .replace('%y', datetime.getFullYear() % 100)
       .replace('%m', (datetime.getMonth() + 1).toString().padStart(2, '0'))
       .replace('%d', datetime.getDate().toString().padStart(2, '0'))
       .replace('%H', datetime.getHours().toString().padStart(2, '0'))
