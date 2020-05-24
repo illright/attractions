@@ -35,7 +35,6 @@
       .replace('%%', '%')
   );
 
-  let datePicker = null;
   let startFocus = false;
   let endFocus = false;
   let startValue;
@@ -133,7 +132,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class={classes('date-picker', _class)} bind:this={datePicker}>
+<div class={classes('date-picker', _class)}>
   <DropdownShell let:toggle open={startFocus || endFocus} on:change={clearFocus}>
     <div class="handle">
       <TextField
