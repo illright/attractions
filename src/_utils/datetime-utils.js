@@ -21,6 +21,9 @@ export function parseDateTime(string, format, _default) {
 
     stringIdx += part.length;
     if (stringIdx === string.length) {
+      if (formatIdx !== format.length) {
+        return _default;
+      }
       break;
     }
 
