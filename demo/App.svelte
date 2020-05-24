@@ -89,7 +89,7 @@
     <Card>
       <StarRating name="test" max={7} />
       <TextField label="Write something" outline />
-      <DatePicker range bind:value={date} format="%m/%D/%Y" />
+      <DatePicker range bind:value={date} format="%m/%d/%y" />
       <div class="flex">
         <Button filled on:click={changeFromOutside}>
           <Dot success />

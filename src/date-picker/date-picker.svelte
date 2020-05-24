@@ -8,7 +8,7 @@
   import ChevronLeft from './chevron-left.svelte';
   import ChevronRight from './chevron-right.svelte';
   import Calendar from './calendar.svelte';
-  import { parseDate, formatDate } from '../_utils/date-utils.js';
+  import { parseDate, formatDateTime } from '../_utils/date-utils.js';
 
   let _class = null;
   export { _class as class };
@@ -22,13 +22,11 @@
   export let top = false;
   export let right = false;
   export let value = null;
-  export let format = '%D.%M.%Y';
+  export let format = '%d.%m.%Y';
   $: readableFormat = (
     format
-      .replace('%d', 'd')
-      .replace('%D', 'dd')
-      .replace('%m', 'm')
-      .replace('%M', 'mm')
+      .replace('%d', 'dd')
+      .replace('%m', 'mm')
       .replace('%y', 'yy')
       .replace('%Y', 'yyyy')
       .replace('%%', '%')
@@ -136,7 +134,7 @@
     <div class="handle">
       <TextField
         placeholder={readableFormat}
-        value={formatDate(startValue, format)}
+        value={formatDateTime(startValue, format)}
         on:focus={() => { startFocus = true; endFocus = false; }}
         class={startFocus && 'in-focus'}
         on:change={({ detail }) => {
@@ -151,7 +149,7 @@
         </slot>
         <TextField
           placeholder={readableFormat}
-          value={formatDate(endValue, format)}
+          value={formatDateTime(endValue, format)}
           on:focus={() => { startFocus = false; endFocus = true; }}
           class={endFocus && 'in-focus'}
           on:change={({ detail }) => {

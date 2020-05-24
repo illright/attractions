@@ -62,19 +62,19 @@ export function parseDate(string, format, _default) {
   return result;
 }
 
-export function formatDate(date, format) {
-  if (date == null) {
+export function formatDateTime(datetime, format) {
+  if (datetime == null) {
     return null;
   }
 
   return (
     format
-      .replace('%Y', date.getFullYear())
-      .replace('%y', date.getYear())
-      .replace('%M', (date.getMonth() + 1).toString().padStart(2, '0'))
-      .replace('%m', (date.getMonth() + 1))
-      .replace('%D', date.getDate().toString().padStart(2, '0'))
-      .replace('%d', date.getDate())
+      .replace('%Y', datetime.getFullYear())
+      .replace('%y', datetime.getYear())
+      .replace('%m', (datetime.getMonth() + 1).toString().padStart(2, '0'))
+      .replace('%d', datetime.getDate().toString().padStart(2, '0'))
+      .replace('%H', datetime.getHours().toString().padStart(2, '0'))
+      .replace('%M', datetime.getMinutes().toString().padStart(2, '0'))
       .replace('%%', '%')
   );
 }
