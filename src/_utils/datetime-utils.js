@@ -2,7 +2,7 @@ const digitRegex = /^[0-9]$/;
 const formatSpecifierRegex = /%[HMdmyY%]/g;
 const daysInWeek = 7;
 
-export function parseDate(string, format, _default) {
+export function parseDateTime(string, format, _default) {
   const century = Math.floor((new Date()).getFullYear() / 100);
 
   if (string === '') {
