@@ -24,7 +24,6 @@ export { default as CheckboxChipGroup } from './chip/checkbox-chip-group.svelte'
 export { default as Accordion } from './accordion/accordion.svelte';
 export { default as AccordionSection } from './accordion/accordion-section.svelte';
 
-export { default as ModalOverlay } from './modal/modal-overlay.svelte';
 export { default as Modal } from './modal/modal.svelte';
 
 export { default as Tab } from './tab/tab.svelte';
@@ -56,3 +55,5 @@ export { default as FileTile } from './file-input/file-tile.svelte';
 
 export { default as DatePicker } from './date-picker/date-picker.svelte';
 export { default as Calendar } from './date-picker/calendar.svelte';
+
+export { default as FormField } from './form-field/form-field.svelte';
