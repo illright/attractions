@@ -13,6 +13,7 @@
   export let max = 5;
   export let value = null;
   export let name;
+  export let disabled = false;
   export let events = null;
 
   function reverseArrowKeys(event) {
@@ -42,12 +43,13 @@
       type="radio"
       name={name}
       id={`${name}-${i}`}
+      {disabled}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:keydown={reverseArrowKeys}
       use:eventsAction={events}
       {...$$restProps}
     />
-    <label class={starClass} for={`${name}-${i}`} use:ripple>
+    <label class={starClass} for={`${name}-${i}`} use:ripple={{ disabled }}>
       <slot name="icon"><Star /></slot>
     </label>
   {/each}

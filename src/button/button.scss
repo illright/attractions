@@ -30,7 +30,7 @@
   &.neutral {
     color: $dark;
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $dark;
     }
 
@@ -42,7 +42,7 @@
   &.danger {
     color: $danger;
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $danger;
     }
 
@@ -110,7 +110,7 @@
       box-shadow: none;
     }
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $main-text;
     }
 
@@ -168,7 +168,7 @@
     background: transparent;
     cursor: default;
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $disabled;
     }
   }
@@ -185,7 +185,7 @@
     background: transparentize($main, .88);
   }
 
-  :global(& .icon) {
+  & :global(.icon) {
     stroke: $main;
   }
 }

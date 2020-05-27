@@ -24,7 +24,6 @@ export { default as CheckboxChipGroup } from './chip/checkbox-chip-group.svelte'
 export { default as Accordion } from './accordion/accordion.svelte';
 export { default as AccordionSection } from './accordion/accordion-section.svelte';
 
-export { default as ModalOverlay } from './modal/modal-overlay.svelte';
 export { default as Modal } from './modal/modal.svelte';
 
 export { default as Tab } from './tab/tab.svelte';
