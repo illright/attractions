@@ -25,6 +25,7 @@
     FileInput,
     FileDropzone,
     DatePicker,
+    TimePicker,
     Calendar,
     FormField,
   } from '../src/index.js';
@@ -89,6 +90,8 @@
   <a href="https://googles.com">say my name</a>
   <Card>
     <StarRating name="test" max={7} />
+    <DatePicker range />
+    <TimePicker format="%H:%M %P" />
     <FormField
       name="One"
       help="Faithful to my made-up mission"
