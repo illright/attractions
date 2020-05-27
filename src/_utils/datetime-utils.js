@@ -3,7 +3,7 @@ const formatSpecifierRegex = /%[HMdmyY%]/g;
 const daysInWeek = 7;
 
 export function parseDateTime(string, format, defaultValue) {
-  const century = Math.floor((new Date()).getFullYear() / 100);
+  const century = Math.floor((new Date()).getUTCFullYear() / 100);
 
   if (string === '') {
     return null;
@@ -45,22 +45,22 @@ export function parseDateTime(string, format, defaultValue) {
 
       switch (format[formatIdx]) {
       case 'H':
-        result.setHours(string.substr(stringIdx, numberLength));
+        result.setUTCHours(string.substr(stringIdx, numberLength));
         break;
       case 'M':
-        result.setMinutes(string.substr(stringIdx, numberLength));
+        result.setUTCMinutes(string.substr(stringIdx, numberLength));
         break;
       case 'd':
-        result.setDate(string.substr(stringIdx, numberLength));
+        result.setUTCDate(string.substr(stringIdx, numberLength));
         break;
       case 'm':
-        result.setMonth(string.substr(stringIdx, numberLength) - 1);
+        result.setUTCMonth(string.substr(stringIdx, numberLength) - 1);
         break;
       case 'y':
-        result.setFullYear(century * 100 + +string.substr(stringIdx, numberLength));
+        result.setUTCFullYear(century * 100 + +string.substr(stringIdx, numberLength));
         break;
       case 'Y':
-        result.setFullYear(string.substr(stringIdx, numberLength));
+        result.setUTCFullYear(string.substr(stringIdx, numberLength));
         break;
       }
       stringIdx += numberLength;
@@ -81,12 +81,12 @@ export function formatDateTime(datetime, format) {
 
   return (
     format
-      .replace('%Y', datetime.getFullYear())
-      .replace('%y', (datetime.getFullYear() % 100).toString().padStart(2, '0'))
-      .replace('%m', (datetime.getMonth() + 1).toString().padStart(2, '0'))
-      .replace('%d', datetime.getDate().toString().padStart(2, '0'))
-      .replace('%H', datetime.getHours().toString().padStart(2, '0'))
-      .replace('%M', datetime.getMinutes().toString().padStart(2, '0'))
+      .replace('%Y', datetime.getUTCFullYear())
+      .replace('%y', (datetime.getUTCFullYear() % 100).toString().padStart(2, '0'))
+      .replace('%m', (datetime.getUTCMonth() + 1).toString().padStart(2, '0'))
+      .replace('%d', datetime.getUTCDate().toString().padStart(2, '0'))
+      .replace('%H', datetime.getUTCHours().toString().padStart(2, '0'))
+      .replace('%M', datetime.getUTCMinutes().toString().padStart(2, '0'))
       .replace('%%', '%')
   );
 }
@@ -97,7 +97,7 @@ export function getWeekdays(locale, firstWeekday) {
   const mondayOffset = 5;  // How many days to add to the epoch to get a monday
   const weekdays = [];
   for (let i = 0; i < daysInWeek; ++i) {
-    anchor.setDate(mondayOffset + firstWeekday - 1 + i);
+    anchor.setUTCDate(mondayOffset + firstWeekday - 1 + i);
     weekdays.push(weekdayFormatter.format(anchor));
   }
 
@@ -110,9 +110,17 @@ export function datesEqual(date1, date2) {
   }
 
   return (
-    date1.getFullYear() === date2.getFullYear()
-    && date1.getMonth() === date2.getMonth()
-    && date1.getDate() === date2.getDate()
+    date1.getUTCFullYear() === date2.getUTCFullYear()
+    && date1.getUTCMonth() === date2.getUTCMonth()
+    && date1.getUTCDate() === date2.getUTCDate()
+  );
+}
+
+export function dateTimesEqual(dt1, dt2) {
+  return (
+    datesEqual(dt1, dt2)
+    && dt1.getUTCHours() === dt2.getUTCHours()
+    && dt1.getUTCMinutes() === dt2.getUTCMinutes()
   );
 }
 
@@ -122,8 +130,8 @@ export function datesLessEqual(date1, date2) {
   }
 
   return (
-    new Date(date1.getFullYear(), date1.getMonth(), date1.getDate())
-    <= new Date(date2.getFullYear(), date2.getMonth(), date2.getDate())
+    new Date(date1.getUTCFullYear(), date1.getUTCMonth(), date1.getUTCDate())
+    <= new Date(date2.getUTCFullYear(), date2.getUTCMonth(), date2.getUTCDate())
   );
 }
 
@@ -139,12 +147,12 @@ export function getCalendar(month, year, firstWeekday) {
     for (let i = 0; i < daysInWeek; ++i) {
       week.push({
         value: new Date(dayCursor.valueOf()),
-        outside: dayCursor.getMonth() !== month,
+        outside: dayCursor.getUTCMonth() !== month,
       });
-      dayCursor.setDate(dayCursor.getDate() + 1);
+      dayCursor.setUTCDate(dayCursor.getUTCDate() + 1);
     }
     calendar.push(week);
-  } while (dayCursor.getMonth() === month);
+  } while (dayCursor.getUTCMonth() === month);
 
   return calendar;
 }

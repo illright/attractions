@@ -87,8 +87,8 @@
       return;
     }
 
-    shownCalendar.setFullYear(date.getFullYear());
-    shownCalendar.setMonth(date.getMonth());
+    shownCalendar.setUTCFullYear(date.getUTCFullYear());
+    shownCalendar.setUTCMonth(date.getUTCMonth());
     shownCalendar = shownCalendar;
   }
 
@@ -116,12 +116,12 @@
   }
 
   function showPrevMonth() {
-    shownCalendar.setMonth(shownCalendar.getMonth() - 1);
+    shownCalendar.setUTCMonth(shownCalendar.getUTCMonth() - 1);
     shownCalendar = shownCalendar;
   }
 
   function showNextMonth() {
-    shownCalendar.setMonth(shownCalendar.getMonth() + 1);
+    shownCalendar.setUTCMonth(shownCalendar.getUTCMonth() + 1);
     shownCalendar = shownCalendar;
   }
 
@@ -182,8 +182,8 @@
       <Calendar
         {locale}
         {firstWeekday}
-        month={shownCalendar.getMonth()}
-        year={shownCalendar.getFullYear()}
+        month={shownCalendar.getUTCMonth()}
+        year={shownCalendar.getUTCFullYear()}
         selectionStart={startValue}
         selectionEnd={endValue}
         {weekdaysClass}
