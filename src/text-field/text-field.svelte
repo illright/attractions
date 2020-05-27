@@ -51,8 +51,8 @@
       bind:value={internalValue}
       class={inputClass}
       bind:this={inputElement}
-      on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
-      on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
+      on:input={(e) => dispatch('input', { value, nativeEvent: e })}
+      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
@@ -62,8 +62,8 @@
       bind:value={internalValue}
       class={inputClass}
       bind:this={inputElement}
-      on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
-      on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
+      on:input={(e) => dispatch('input', { value, nativeEvent: e })}
+      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
