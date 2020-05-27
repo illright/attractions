@@ -14,6 +14,7 @@
   export let rectangle = false;
   export let small = false;
   export let selected = false;
+  export let noRipple = false;
 
   export let disabled = false;
   export let href = null;
@@ -55,7 +56,7 @@
     class:selected
     on:click={(e) => dispatch('click', { nativeEvent: e })}
     use:eventsAction={events}
-    use:ripple
+    use:ripple={{ disabled: noRipple }}
     {...$$restProps}
   >
     <slot />
@@ -74,7 +75,7 @@
     class:small
     class:selected
     on:click
-    use:ripple
+    use:ripple={{ disabled: noRipple }}
     use:eventsAction={events}
     {...$$restProps}
   >

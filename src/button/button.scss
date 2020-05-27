@@ -179,6 +179,10 @@
 
   &.small {
     padding: .5em .8em;
+
+    &.round {
+      padding: .5em;
+    }
   }
 
   &.selected:not(.filled) {

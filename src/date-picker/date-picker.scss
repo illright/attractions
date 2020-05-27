@@ -1,0 +1,64 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+$side-padding: 1rem;
+
+.date-picker {
+  display: inline-block;
+
+  :global(.dropdown-shell .handle) {
+    display: flex;
+    align-items: center;
+
+    & > :global(span) {
+      margin: 1em;
+    }
+
+    :global(.text-field.in-focus input) {
+      background-color: darken($textfield-bg, 8%);
+      border-bottom-width: .125em;
+      border-color: lighten($main, 4%);
+      padding-bottom: 0;
+    }
+  }
+
+  .shown-on-focus {
+    display: flex;
+    justify-content: center;
+
+    & > :global(.btn) {
+      @include hide-accessible;
+    }
+
+    & > :global(.btn:focus) {
+      @include show-accessible;
+    }
+  }
+
+  .month-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: $bold-font-weight;
+    padding: 0 $side-padding .5em;
+    color: $main;
+
+    :global(.btn) {
+      flex: 0;
+    }
+
+    .month-display {
+      min-width: 12em;
+      text-align: center;
+    }
+  }
+
+  :global(.calendar) {
+    padding: .5em 0 1em;
+  }
+
+  :global(.text-field) {
+    width: 7em;
+  }
+}

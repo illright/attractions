@@ -24,6 +24,8 @@
     // Dialog,
     FileInput,
     FileDropzone,
+    DatePicker,
+    Calendar,
     FormField,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
@@ -54,8 +56,18 @@
   let open2 = false;
   let open3 = false;
   let dropdownTabSelected = false;
+  let date = { start: new Date(), end: new Date() };
+  date.start.setDate(2);
+
+  function changeFromOutside() {
+    date.start.setDate(1);
+    date = date;
+  }
+
+  // $: console.log(date);
 
   let filesSelected = [];
+  // $: console.log(filesSelected);
 
   let inputNumber = null;
   $: console.log(inputNumber);
@@ -138,12 +150,11 @@
         </Button>
         <Dropdown top>
           <div class="padded">
-            I'm a little dropdown short and stout
+            <Calendar year={2020} month={4} />
           </div>
         </Dropdown>
       </DropdownShell>
     </div>
-
     <Switch>
       <span class="padded">
         default
