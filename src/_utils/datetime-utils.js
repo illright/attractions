@@ -1,8 +1,8 @@
-const digitRegex = /^[0-9]$/;
+const digitRegex = /^\d$/;
 const formatSpecifierRegex = /%[HMdmyY%]/g;
 const daysInWeek = 7;
 
-export function parseDateTime(string, format, _default) {
+export function parseDateTime(string, format, defaultValue) {
   const century = Math.floor((new Date()).getFullYear() / 100);
 
   if (string === '') {
@@ -16,13 +16,13 @@ export function parseDateTime(string, format, _default) {
 
   for (let part of parts) {
     if (!string.startsWith(part, stringIdx)) {
-      return _default;
+      return defaultValue;
     }
 
     stringIdx += part.length;
     if (stringIdx === string.length) {
       if (formatIdx !== format.length) {
-        return _default;
+        return defaultValue;
       }
       break;
     }
@@ -30,16 +30,17 @@ export function parseDateTime(string, format, _default) {
     formatIdx += part.length + 1;
 
     if (format[formatIdx] === '%') {
-      if (string[stringIdx++] !== '%') {
-        return _default;
+      if (string[stringIdx] !== '%') {
+        return defaultValue;
       }
+      stringIdx++;
     } else {
       let numberLength = 0;
       while (digitRegex.test(string[stringIdx + numberLength])) {
         numberLength++;
       }
       if (numberLength === 0) {
-        return _default;
+        return defaultValue;
       }
 
       switch (format[formatIdx]) {
@@ -68,7 +69,7 @@ export function parseDateTime(string, format, _default) {
   }
 
   if (isNaN(result.valueOf())) {
-    return _default;
+    return defaultValue;
   }
   return result;
 }
