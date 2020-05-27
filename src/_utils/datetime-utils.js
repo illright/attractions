@@ -1,9 +1,10 @@
-const digitRegex = /^\d$/;
-const formatSpecifierRegex = /%[HMdmyY%]/g;
+const numberRegex = /\d+/g;
+const formatSpecifierRegex = /%[HMdmyYpP%]/g;
 const daysInWeek = 7;
 
 export function parseDateTime(string, format, defaultValue) {
   const century = Math.floor((new Date()).getUTCFullYear() / 100);
+  let isPM = false;
 
   if (string === '') {
     return null;
@@ -27,6 +28,10 @@ export function parseDateTime(string, format, defaultValue) {
       break;
     }
 
+    if (format[formatIdx + part.length] !== '%') {
+      break;
+    }
+
     formatIdx += part.length + 1;
 
     if (format[formatIdx] === '%') {
@@ -34,36 +39,49 @@ export function parseDateTime(string, format, defaultValue) {
         return defaultValue;
       }
       stringIdx++;
-    } else {
-      let numberLength = 0;
-      while (digitRegex.test(string[stringIdx + numberLength])) {
-        numberLength++;
+    } else if (format[formatIdx].toLowerCase() === 'p') {
+      const hourFormat = string.substr(stringIdx, 2).toUpperCase();
+      if (hourFormat === 'AM') {
+        isPM = false;
+        if (result.getUTCHours() >= 12) {
+          result.setUTCHours(result.getUTCHours() - 12);
+        }
+      } else if (hourFormat === 'PM') {
+        isPM = true;
+        if (result.getUTCHours() < 12) {
+          result.setUTCHours(result.getUTCHours() + 12);
+        }
+      } else {
+        return defaultValue;
       }
-      if (numberLength === 0) {
+    } else {
+      numberRegex.lastIndex = stringIdx;
+      const number = numberRegex.exec(string);
+      if (number == null) {
         return defaultValue;
       }
 
       switch (format[formatIdx]) {
       case 'H':
-        result.setUTCHours(string.substr(stringIdx, numberLength));
+        result.setUTCHours(parseInt(number[0]) + 12 * isPM);
         break;
       case 'M':
-        result.setUTCMinutes(string.substr(stringIdx, numberLength));
+        result.setUTCMinutes(number[0]);
         break;
       case 'd':
-        result.setUTCDate(string.substr(stringIdx, numberLength));
+        result.setUTCDate(number[0]);
         break;
       case 'm':
-        result.setUTCMonth(string.substr(stringIdx, numberLength) - 1);
+        result.setUTCMonth(number[0] - 1);
         break;
       case 'y':
-        result.setUTCFullYear(century * 100 + +string.substr(stringIdx, numberLength));
+        result.setUTCFullYear(century * 100 + parseInt(number[0]));
         break;
       case 'Y':
-        result.setUTCFullYear(string.substr(stringIdx, numberLength));
+        result.setUTCFullYear(number[0]);
         break;
       }
-      stringIdx += numberLength;
+      stringIdx += number[0].length;
     }
     formatIdx++;
   }
@@ -79,14 +97,18 @@ export function formatDateTime(datetime, format) {
     return null;
   }
 
+  const hours = ((/%p/i).test(format) ? datetime.getUTCHours() % 12 : datetime.getUTCHours());
+
   return (
     format
       .replace('%Y', datetime.getUTCFullYear())
       .replace('%y', (datetime.getUTCFullYear() % 100).toString().padStart(2, '0'))
       .replace('%m', (datetime.getUTCMonth() + 1).toString().padStart(2, '0'))
       .replace('%d', datetime.getUTCDate().toString().padStart(2, '0'))
-      .replace('%H', datetime.getUTCHours().toString().padStart(2, '0'))
+      .replace('%H', hours.toString().padStart(2, '0'))
       .replace('%M', datetime.getUTCMinutes().toString().padStart(2, '0'))
+      .replace('%p', datetime.getUTCHours() < 12 ? 'am' : 'pm')
+      .replace('%P', datetime.getUTCHours() < 12 ? 'AM' : 'PM')
       .replace('%%', '%')
   );
 }
@@ -94,7 +116,7 @@ export function formatDateTime(datetime, format) {
 export function getWeekdays(locale, firstWeekday) {
   const weekdayFormatter = new Intl.DateTimeFormat(locale, { weekday: 'short' });
   const anchor = new Date(0);  // Initially set to the UNIX epoch – Thursday
-  const mondayOffset = 5;  // How many days to add to the epoch to get a monday
+  const mondayOffset = 5;  // How many days to add to the epoch to get a Monday
   const weekdays = [];
   for (let i = 0; i < daysInWeek; ++i) {
     anchor.setUTCDate(mondayOffset + firstWeekday - 1 + i);
@@ -137,10 +159,11 @@ export function datesLessEqual(date1, date2) {
 
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];
-  const dayCursor = new Date(year, month, 1);
+  const dayCursor = new Date(0);
+  dayCursor.setUTCFullYear(year, month);
 
   // Offset the start of the month to the closest left `firstWeekday`
-  dayCursor.setDate(1 - (daysInWeek + dayCursor.getDay() - firstWeekday) % daysInWeek);
+  dayCursor.setUTCDate(1 - (daysInWeek + dayCursor.getUTCDay() - firstWeekday) % daysInWeek);
 
   do {
     let week = [];
