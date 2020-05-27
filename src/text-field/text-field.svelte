@@ -49,8 +49,8 @@
       bind:this={inputElement}
       on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
       on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
-      on:focus
-      on:blur
+      on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
@@ -62,8 +62,8 @@
       bind:this={inputElement}
       on:input={(e) => dispatch('input', { value: e.target.value, nativeEvent: e })}
       on:change={(e) => dispatch('change', { value: e.target.value, nativeEvent: e })}
-      on:focus
-      on:blur
+      on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
