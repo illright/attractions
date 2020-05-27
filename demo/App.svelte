@@ -24,6 +24,7 @@
     // Dialog,
     FileInput,
     FileDropzone,
+    FormField,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
@@ -55,7 +56,9 @@
   let dropdownTabSelected = false;
 
   let filesSelected = [];
-  // $: console.log(filesSelected);
+
+  let inputNumber = null;
+  $: console.log(inputNumber);
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
@@ -72,10 +75,29 @@
     </div>
   </div>
   <a href="https://googles.com">say my name</a>
-
   <Card>
     <StarRating name="test" max={7} />
-    <TextField label="Write something" outline />
+    <FormField
+      name="One"
+      help="Faithful to my made-up mission"
+      errors={[
+        inputNumber != null && inputNumber < 15 && "Enter a number greater than 14.",
+        inputNumber != null && inputNumber % 2 !== 0 && "Make sure the number is even.",
+        inputNumber === 42 && "42 is not allowed (don't ask why)",
+      ]}
+      required
+    >
+      <TextField type="number" min={15} bind:value={inputNumber} />
+    </FormField>
+    <FormField
+      name="Eden"
+      optional
+    >
+      <FileInput accept="image/*" bind:value={filesSelected} vertical />
+      <div slot="message">
+        don't worry, I don't bite
+      </div>
+    </FormField>
     <div class="flex">
       <Button filled>
         <Dot success />
