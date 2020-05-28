@@ -27,7 +27,7 @@
     padding: 0 .625em .0625em;
     font-family: $font;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: $thin-font-weight;
     box-sizing: border-box;
     border: 0 solid $textfield-border;  // to disable the global border
     border-bottom-width: .0625em;

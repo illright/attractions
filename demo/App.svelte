@@ -13,6 +13,7 @@
     Accordion,
     AccordionSection,
     Modal,
+    Chip,
     Tab, Tabs,
     // Label,
     // Headline,
@@ -28,12 +29,14 @@
     TimePicker,
     Calendar,
     FormField,
+    Autocomplete,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
   import ModalDialog from './modal-dialog.svelte';
+  import getOptions from './get-autocomplete-options.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -64,6 +67,7 @@
     date = date;
   }
 
+  let selection = [];
   let filesSelected = [];
 
   let inputNumber = null;
@@ -84,6 +88,12 @@
   </div>
   <a href="https://googles.com">say my name</a>
   <Card>
+    <Autocomplete
+      {getOptions}
+      bind:selection
+      maxOptions={2}
+      minSearchLength={0}
+    />
     <StarRating name="test" max={7} />
     <div class="flex">
       {date}
