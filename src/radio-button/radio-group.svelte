@@ -25,7 +25,7 @@
 </script>
 
 {#if items != null && items.length !== 0}
-  <div class={_class} role="group">
+  <div class={_class} role="radiogroup">
     {#each items as item (item.value)}
       <RadioButton
         {name}
@@ -34,7 +34,7 @@
         bind:group={value}
         value={item.value}
         disabled={item.disabled}
-        class={classes(color ? 'colored' : null, radioClass)}
+        class={classes(color && 'colored', radioClass)}
         on:change
         {...$$restProps}
       >

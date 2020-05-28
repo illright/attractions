@@ -8,7 +8,7 @@
   export let iconClass = null;
   export let iconStyle = null;
 
-  export let value = null;
+  export let value;
   export let disabled = false;
   export let group = null;
   export let slotLeft = false;
@@ -26,7 +26,7 @@
     type="radio"
     class={inputClass}
     {disabled}
-    on:change={() => dispatch('change', value)}
+    on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
   <div class={classes('icon', iconClass)} style={iconStyle} />

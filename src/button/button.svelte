@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import ripple from '../_utils/ripple.js';
   import eventsAction from '../_utils/events.js';
   import classes from '../_utils/classes.js';
@@ -13,6 +14,7 @@
   export let rectangle = false;
   export let small = false;
   export let selected = false;
+  export let noRipple = false;
 
   export let disabled = false;
   export let href = null;
@@ -34,6 +36,8 @@
   if (href != null && disabled) {
     console.warn('The prop `disabled` has no effect on Buttons with href');
   }
+
+  const dispatch = createEventDispatcher();
 </script>
 
 {#if href}
@@ -50,9 +54,9 @@
     class:rectangle
     class:small
     class:selected
-    on:click
+    on:click={(e) => dispatch('click', { nativeEvent: e })}
     use:eventsAction={events}
-    use:ripple
+    use:ripple={{ disabled: noRipple }}
     {...$$restProps}
   >
     <slot />
@@ -71,7 +75,7 @@
     class:small
     class:selected
     on:click
-    use:ripple
+    use:ripple={{ disabled: noRipple }}
     use:eventsAction={events}
     {...$$restProps}
   >

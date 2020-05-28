@@ -1,0 +1,45 @@
+<script>
+  import Button from '../button/button.svelte';
+  import Chip from '../chip/chip.svelte';
+  import AutocompleteField from './autocomplete-field.svelte';
+  import AutocompleteOption from './autocomplete-option.svelte';
+  import X from '../dialog/x.svelte';
+  import classes from '../_utils/classes.js';
+
+  let _class = null;
+  export { _class as class };
+
+  export let getOptions;
+  export let selection = [];
+  export let minSearchLength = 3;
+  export let maxOptions = null;
+  export let searchQuery = null;
+  export let optionComponent = AutocompleteOption;
+
+  let focus = false;
+
+  function deselect(item) {
+    selection = selection.filter(thisItem => thisItem !== item);
+  }
+</script>
+
+<div class:focus class={classes('autocomplete', _class)}>
+  {#each selection as item}
+    <Chip noPadding>
+      {item.name}
+      <Button neutral round small on:click={() => deselect(item)}><X /></Button>
+    </Chip>
+  {/each}
+  <AutocompleteField
+    bind:selection
+    bind:searchQuery
+    bind:focus
+    {getOptions}
+    {minSearchLength}
+    {maxOptions}
+    {optionComponent}
+    {...$$restProps}
+  />
+</div>
+
+<style src="./autocomplete.scss"></style>

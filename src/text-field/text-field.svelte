@@ -30,6 +30,11 @@
   let inputElement;
   onMount(() => autofocus && inputElement.focus());
 
+  function handleInput(event) {
+    value = $$restProps.type === 'number' ? parseFloat(event.target.value) : event.target.value;
+    dispatch('input', { value, nativeEvent: event });
+  }
+
   const dispatch = createEventDispatcher();
 </script>
 
@@ -44,28 +49,32 @@
   {#if multiline}
     <textarea
       {id}
-      bind:value={value}
+      {value}
       class={inputClass}
       bind:this={inputElement}
-      on:input
-      on:change
+      on:input={handleInput}
+      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+      on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
   {:else}
     <input
       {id}
-      bind:value={value}
+      {value}
       class={inputClass}
       bind:this={inputElement}
-      on:input
-      on:change
+      on:input={handleInput}
+      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+      on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
-    {#if outline}
-      <label for={id} class={classes('label', labelClass)}>
-        <slot name="label">{label}</slot>
+    {#if outline && label != null}
+      <label for={id} class={labelClass}>
+        {label}
       </label>
     {/if}
 

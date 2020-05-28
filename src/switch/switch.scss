@@ -1,0 +1,116 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+.switch {
+  display: flex;
+  align-items: center;
+  font-family: $font;
+  cursor: pointer;
+
+  input {
+    @include hide-accessible;
+  }
+
+  .track {
+    position: relative;
+    width: 2em;
+    height: 1.125em;
+    border-radius: .75em;
+    border: .125em solid $off-state;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: 3.25em;
+      height: 2.375em;
+      border-radius: 1.125em;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & > .thumb {
+      border-radius: 50%;
+      width: .75em;
+      height: .75em;
+      background: $off-state;
+      position: absolute;
+      top: 50%;
+      left: .25em;
+      transform: translateY(-50%);
+      transition: transform 100ms;
+    }
+  }
+
+  input:checked ~ .track {
+    border-color: $main;
+
+    & > .thumb {
+      background-color: $main;
+      transform: translateY(-50%) translateX(100%);
+    }
+  }
+
+  input:disabled ~ .track {
+    cursor: not-allowed;
+    border-color: $disabled;
+
+    & > .thumb {
+      background: none;
+      border: .125em solid $disabled;
+      width: .5em;
+      height: .5em;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: .6em;
+        height: .125em;
+        left: 0;
+        top: (.5em - .125em) / 2;
+        background: $disabled;
+        position: absolute;
+      }
+    }
+  }
+
+  input:focus ~ .track::before {
+    background: transparentize(black, .9);
+  }
+
+  input:focus:checked ~ .track::before {
+    background: transparentize($main, .9);
+  }
+}
+
+.switch:hover {
+  .track::before {
+    background: transparentize(black, .95);
+  }
+
+  input:checked:not(:disabled) ~ .track::before {
+    background: transparentize($main, .95);
+  }
+}
+
+.switch-wrapper {
+  .state {
+    color: $off-state;
+    font-weight: $bold-font-weight;
+
+    &.first {
+      margin-right: .8em;
+    }
+
+    &.second {
+      margin-left: .8em;
+    }
+  }
+
+  input:not(:checked) ~ .first,
+  input:checked ~ .second {
+    color: $main;
+  }
+}

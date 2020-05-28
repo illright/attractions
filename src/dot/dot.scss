@@ -1,0 +1,30 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.dot {
+  width: .625em;
+  height: .625em;
+  background: $main;
+  border-radius: 50%;
+
+  &.info {
+    background: $info;
+  }
+
+  &.attention {
+    background: $attention;
+  }
+
+  &.success {
+    background: $success;
+  }
+
+  &.danger {
+    background: $danger;
+  }
+
+  &.small {
+    width: .375em;
+    height: .375em;
+  }
+}

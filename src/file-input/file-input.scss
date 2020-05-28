@@ -1,0 +1,63 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+.file-input {
+  display: inline-flex;
+  align-items: center;
+
+  &.vertical {
+    flex-direction: column;
+
+    label {
+      margin-right: 0;
+      margin-bottom: .5em;
+    }
+  }
+}
+
+label {
+  font-family: $font;
+  font-weight: $bold-font-weight;
+  color: $main;
+  margin-right: .5em;
+  padding: .8em 1.1em;
+  border-radius: $button-radius;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  input {
+    @include hide-accessible;
+  }
+
+  :global(.ripple) {
+    background: transparentize($main, .9);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:hover {
+    background: transparentize($main, .95);
+  }
+
+  &:focus-within {
+    background-color: transparentize($main, .88);
+  }
+
+  &.disabled {
+    color: $disabled;
+    background: transparent;
+    cursor: default;
+
+    & :global(.icon) {
+      stroke: $disabled;
+    }
+  }
+
+  & :global(.icon) {
+    stroke: $main;
+  }
+}

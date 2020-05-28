@@ -3,7 +3,7 @@
 
 .btn {
   font-family: $font;
-  font-weight: 500;
+  font-weight: $bold-font-weight;
   font-size: 1rem;
   color: $main;
   text-decoration: none;
@@ -30,7 +30,7 @@
   &.neutral {
     color: $dark;
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $dark;
     }
 
@@ -42,7 +42,7 @@
   &.danger {
     color: $danger;
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $danger;
     }
 
@@ -110,7 +110,7 @@
       box-shadow: none;
     }
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $main-text;
     }
 
@@ -168,7 +168,7 @@
     background: transparent;
     cursor: default;
 
-    :global(& .icon) {
+    & :global(.icon) {
       stroke: $disabled;
     }
   }
@@ -179,13 +179,17 @@
 
   &.small {
     padding: .5em .8em;
+
+    &.round {
+      padding: .5em;
+    }
   }
 
   &.selected:not(.filled) {
     background: transparentize($main, .88);
   }
 
-  :global(& .icon) {
+  & :global(.icon) {
     stroke: $main;
   }
 }

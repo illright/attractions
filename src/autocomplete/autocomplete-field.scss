@@ -1,0 +1,83 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+.shown-on-focus {
+  display: flex;
+  justify-content: center;
+
+  & > :global(.btn) {
+    @include hide-accessible;
+  }
+
+  & > :global(.btn:focus) {
+    @include show-accessible;
+
+    margin: .5em;
+  }
+}
+
+.notice {
+  font-size: .9em;
+  margin: .5em;
+  font-weight: $thin-font-weight;
+}
+
+input + :global(.dropdown) {
+  border-radius: .5em;
+  overflow: hidden;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 15em;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+
+  &::-webkit-scrollbar {
+    width: .3125em;
+    height: .5em;
+    background: none;
+    margin: 1em 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $light-contrast;
+    border-radius: .3125em;
+
+    &:hover {
+      background: darken($light-contrast, 10%);
+    }
+  }
+
+  :global(li:first-child) {
+    margin-top: .5em;
+  }
+
+  :global(li:last-child) {
+    margin-bottom: .5em;
+  }
+
+  .loading-options {
+    display: flex;
+    align-items: center;
+    font-size: .95em;
+    margin: .5em 1.2em;
+
+    :global(.spinner) {
+      margin-right: .7em;
+      margin-bottom: .3em;
+    }
+  }
+
+  .more-options {
+    margin-left: .5em;
+    margin-right: .5em;
+
+    :global(svg) {
+      margin-right: .5em;
+    }
+  }
+}

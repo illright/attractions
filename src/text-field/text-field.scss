@@ -27,7 +27,7 @@
     padding: 0 .625em .0625em;
     font-family: $font;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: $thin-font-weight;
     box-sizing: border-box;
     border: 0 solid $textfield-border;  // to disable the global border
     border-bottom-width: .0625em;
@@ -80,7 +80,7 @@
 
       & > :global(.item) {
         left: .625em;
-        font-weight: 500;
+        font-weight: $bold-font-weight;
       }
     }
 
@@ -137,8 +137,10 @@
 
   &.outline {
     position: relative;
+    margin-top: .65em;
 
     label {
+      font-family: $font;
       background-color: #fff;
       color: $textfield-border;
       padding: 0 .25em;
@@ -233,7 +235,7 @@
     display: none;
     font-size: .8rem;
     color: transparentize($danger, .3);
-    font-weight: 500;
+    font-weight: $bold-font-weight;
   }
 
   &.no-spinner > input[type="number"] {
