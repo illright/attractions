@@ -8,7 +8,7 @@
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Tab from '../tab/tab.svelte';
   import Clock from './clock.svelte';
-  import { parseDateTime, formatDateTime } from '../_utils/datetime-utils.js';
+  import { parseDateTime, formatDateTime, applyTime } from '../_utils/datetime-utils.js';
   import { default as rangeGenerator } from '../_utils/range.js';
 
   let _class = null;
@@ -23,27 +23,29 @@
     format
       .replace('%H', 'HH')
       .replace('%M', 'MM')
+      .replace('%S', 'SS')
       .replace('%P', 'AM')
       .replace('%p', 'am')
       .replace('%%', '%')
   );
 
-  let f12hours = (/%p/i).test(format);
+  const f12hours = /%p/i.test(format);
+  const seconds = /%S/.test(format);
   let focus = false;
-  $: currentAmPm = value && (value.getUTCHours() < 12 ? 'AM' : 'PM');
+  $: currentAmPm = value && (value.getHours() < 12 ? 'AM' : 'PM');
 
   const hourValues = [...rangeGenerator(0, f12hours ? 12 : 24)];
   const minuteValues = [...rangeGenerator(0, 60, 5), 59];
 
-  function setHours(hourValue, minuteValue = null) {
+  function setHours(hourValue, minuteValue = null, secondValue = null) {
     if (value == null) {
       value = new Date(0);
     }
 
-    if (minuteValue != null) {
-      value.setUTCHours(hourValue, minuteValue);
+    if (minuteValue != null && secondValue != null) {
+      value.setHours(hourValue, minuteValue, secondValue);
     } else {
-      value.setUTCHours(hourValue);
+      value.setHours(hourValue);
     }
     value = value;
     dispatch('change', { value });
@@ -54,14 +56,24 @@
       value = new Date(0);
     }
 
-    value.setUTCMinutes(minuteValue);
+    value.setMinutes(minuteValue);
+    value = value;
+    dispatch('change', { value });
+  }
+
+  function setSeconds(secondValue) {
+    if (value == null) {
+      value = new Date(0);
+    }
+
+    value.setSeconds(secondValue);
     value = value;
     dispatch('change', { value });
   }
 
   function setToNow() {
     const now = new Date();
-    setHours(now.getHours(), now.getMinutes());
+    setHours(now.getHours(), now.getMinutes(), now.getSeconds());
   }
 
   function changeAmPm({ detail: newAmPm }) {
@@ -72,10 +84,10 @@
         setHours(0);
       }
     } else {
-      if (newAmPm.value === 'PM' && value.getUTCHours() < 12) {
-        setHours(value.getUTCHours() + 12);
-      } else if (newAmPm.value === 'AM' && value.getUTCHours() >= 12) {
-        setHours(value.getUTCHours() - 12);
+      if (newAmPm.value === 'PM' && value.getHours() < 12) {
+        setHours(value.getHours() + 12);
+      } else if (newAmPm.value === 'AM' && value.getHours() >= 12) {
+        setHours(value.getHours() - 12);
       }
     }
   }
@@ -83,7 +95,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class={classes('time-picker', _class, f12hours && 'f12hours')}>
+<div class={classes('time-picker', _class, f12hours && 'f12hours', seconds && 'seconds')}>
   <DropdownShell bind:open={focus}>
     <div class="handle">
       <TextField
@@ -92,13 +104,15 @@
         on:focus={() => focus = true}
         class={focus && 'in-focus'}
         on:change={({ detail }) => {
-          value = parseDateTime(detail.value, format, value);
+          value = applyTime(parseDateTime(detail.value, format, value), value);
         }}
       />
     </div>
     <Dropdown class="barrel" {top} {right}>
+      <div class="shown-on-focus">
+        <Button noRipple on:click={() => focus = false}>close the time picker</Button>
+      </div>
       <Label>Hours</Label>
-      <Label>Minutes</Label>
       <div class="column">
         {#each hourValues as value}
         <Button on:click={() => setHours(value + 12 * (f12hours && currentAmPm === 'PM'))}>
@@ -106,6 +120,7 @@
         </Button>
         {/each}
       </div>
+      <Label>Minutes</Label>
       <div class="column">
         {#each minuteValues as value}
         <Button on:click={() => setMinutes(value)}>
@@ -113,19 +128,31 @@
         </Button>
         {/each}
       </div>
+      {#if seconds}
+        <Label>Seconds</Label>
+        <div class="column">
+          {#each minuteValues as value}
+          <Button on:click={() => setSeconds(value)}>
+            {value.toString().padStart(2, '0')}
+          </Button>
+          {/each}
+        </div>
+      {/if}
       {#if f12hours}
-        <Tab
-          value="AM"
-          name={amPmTabName}
-          on:change={changeAmPm}
-          bind:group={currentAmPm}
-        />
-        <Tab
-          value="PM"
-          name={amPmTabName}
-          on:change={changeAmPm}
-          bind:group={currentAmPm}
-        />
+        <div class="am-pm-tabs">
+          <Tab
+            value="AM"
+            name={amPmTabName}
+            on:change={changeAmPm}
+            bind:group={currentAmPm}
+          />
+          <Tab
+            value="PM"
+            name={amPmTabName}
+            on:change={changeAmPm}
+            bind:group={currentAmPm}
+          />
+        </div>
       {/if}
       <Button on:click={setToNow}>
         <Clock />
