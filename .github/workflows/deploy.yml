@@ -1,4 +1,4 @@
-name: Deploy demo to GH Pages
+name: Release
 on:
   release:
     types: [published]
@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Deply demo to Pages
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v2
@@ -24,3 +25,23 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./demo/public
         force_orphan: true
+  release:
+    runs-on: ubuntu-latest
+    name: Relase to NPM
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - name: Install and Build 🔧
+      run: |
+        yarn install
+        yarn build
+        yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
