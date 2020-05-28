@@ -59,3 +59,5 @@ export { default as Calendar } from './date-picker/calendar.svelte';
 export { default as FormField } from './form-field/form-field.svelte';
 
 export { default as Loading } from './loading/loading.svelte';
+
+export { default as Autocomplete } from './autocomplete/autocomplete.svelte';

@@ -13,6 +13,7 @@
     Accordion,
     AccordionSection,
     Modal,
+    Chip,
     Tab, Tabs,
     // Label,
     // Headline,
@@ -27,6 +28,7 @@
     DatePicker,
     Calendar,
     FormField,
+    Autocomplete,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
@@ -64,10 +66,25 @@
     date = date;
   }
 
-  // $: console.log(date);
+  const autocompleteItems = [
+    { name: 'option1', details: 'can you say pizza' },
+    { name: 'option2', details: 'pizza! happy new year' },
+    { name: 'option3', details: 'happy new year' },
+  ];
+
+  // eslint-disable-next-line require-yield
+  async function *getOptions(query) {
+    for (let option of autocompleteItems.filter(item => (new RegExp(query)).test(item.details))) {
+      yield new Promise(function(resolve) {
+        setTimeout(() => resolve([option]), 1000);
+      });
+    }
+    return [];
+  }
+
+  let selection = [autocompleteItems[0]];
 
   let filesSelected = [];
-  // $: console.log(filesSelected);
 
   let inputNumber = null;
   $: console.log(inputNumber);
@@ -88,6 +105,18 @@
   </div>
   <a href="https://googles.com">say my name</a>
   <Card>
+    <div class="flex">
+      {#each selection as item}
+        <Chip>{item.name}</Chip>
+      {/each}
+    </div>
+    <Autocomplete
+      {getOptions}
+      bind:selection
+      placeholder="Type 'pizza' or 'happy'"
+      maxOptions={2}
+      minSearchLength={0}
+    />
     <StarRating name="test" max={7} />
     <FormField
       name="One"
