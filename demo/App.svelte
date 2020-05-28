@@ -57,21 +57,16 @@
   let open2 = false;
   let open3 = false;
   let dropdownTabSelected = false;
-  let date = { start: new Date(), end: new Date() };
-  date.start.setDate(2);
+  let date = new Date();
 
   function changeFromOutside() {
-    date.start.setDate(1);
+    date.setDate(1);
     date = date;
   }
 
-  // $: console.log(date);
-
   let filesSelected = [];
-  // $: console.log(filesSelected);
 
   let inputNumber = null;
-  $: console.log(inputNumber);
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
@@ -90,8 +85,13 @@
   <a href="https://googles.com">say my name</a>
   <Card>
     <StarRating name="test" max={7} />
-    <DatePicker range />
-    <TimePicker format="%H:%M %P" />
+    <div class="flex">
+      {date}
+    </div>
+    <div class="flex">
+      <DatePicker bind:value={date} />
+      <TimePicker format="%H:%M:%S %P" bind:value={date} />
+    </div>
     <FormField
       name="One"
       help="Faithful to my made-up mission"
