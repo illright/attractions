@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Deply demo to Pages
+    name: Deploy demo to Pages
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v2
