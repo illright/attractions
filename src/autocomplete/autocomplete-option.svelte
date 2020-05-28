@@ -1,4 +1,6 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+
   export let option;
   export let query = null;
   $: matchRegex = (query ? new RegExp(`(${query})`, 'ig') : null);
@@ -11,9 +13,11 @@
     const partition = string.split(matchRegex);
     return partition.map((content, idx) => ({ content, marked: idx % 2 !== 0 }));
   }
+
+  const dispatch = createEventDispatcher();
 </script>
 
-<li on:click|stopPropagation>
+<li on:click|stopPropagation={(e) => dispatch('click', { nativeEvent: e })}>
   <button type="button">
     {#each markMatch(option.name) as part}
       {#if part.marked}<mark>{part.content}</mark>{:else}{part.content}{/if}

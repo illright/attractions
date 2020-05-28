@@ -29,7 +29,7 @@
     TimePicker,
     Calendar,
     FormField,
-    AutocompleteField,
+    Autocomplete,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
@@ -88,7 +88,7 @@
   </div>
   <a href="https://googles.com">say my name</a>
   <Card>
-    <AutocompleteField
+    <Autocomplete
       {getOptions}
       bind:selection
       maxOptions={2}
