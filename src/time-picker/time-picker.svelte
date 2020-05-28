@@ -34,7 +34,7 @@
   let focus = false;
   $: currentAmPm = value && (value.getHours() < 12 ? 'AM' : 'PM');
 
-  const hourValues = [...rangeGenerator(0, f12hours ? 12 : 24)];
+  const hourValues = [...rangeGenerator(f12hours ? 1 : 0, f12hours ? 13 : 24)];
   const minuteValues = [...rangeGenerator(0, 60, 5), 59];
 
   function setHours(hourValue, minuteValue = null, secondValue = null) {
@@ -116,7 +116,7 @@
       <Label>Hours</Label>
       <div class="column">
         {#each hourValues as value}
-        <Button on:click={() => setHours(value + 12 * (f12hours && currentAmPm === 'PM'))}>
+        <Button on:click={() => setHours(value + 12 * (f12hours && currentAmPm === 'PM' ^ value === 12))}>
           {value.toString().padStart(2, '0')}
         </Button>
         {/each}
