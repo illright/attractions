@@ -23,17 +23,41 @@
   font-weight: $thin-font-weight;
 }
 
+input + :global(.dropdown) {
+  border-radius: .5em;
+  overflow: hidden;
+}
+
 .options-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  max-height: 15em;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+
+  &::-webkit-scrollbar {
+    width: .3125em;
+    height: .5em;
+    background: none;
+    margin: 1em 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $light-contrast;
+    border-radius: .3125em;
+
+    &:hover {
+      background: darken($light-contrast, 10%);
+    }
+  }
 
   :global(li:first-child) {
-    margin-top: 1.25em;
+    margin-top: .5em;
   }
 
   :global(li:last-child) {
-    margin-bottom: 1.25em;
+    margin-bottom: .5em;
   }
 
   .loading-options {

@@ -61,3 +61,5 @@ export { default as FormField } from './form-field/form-field.svelte';
 export { default as Loading } from './loading/loading.svelte';
 
 export { default as Autocomplete } from './autocomplete/autocomplete.svelte';
+export { default as AutocompleteOption } from './autocomplete/autocomplete-option.svelte';
+export { default as AutocompleteField } from './autocomplete/autocomplete-field.svelte';

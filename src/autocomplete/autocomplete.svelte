@@ -17,13 +17,14 @@
   export let selection = [];
   export let minSearchLength = 3;
   export let maxOptions = null;
-  export let searchQuery = null;
+  export let searchQuery = '';
   export let optionComponent = AutocompleteOption;
+  export let focus = false;
 
-  let focus = false;
   let moreOptions = false;
   let promises = [];
   let optionGenerator = null;
+
   $: updateOptionGenerator(searchQuery);
 
   let inputElement = null;
@@ -111,15 +112,18 @@
             {/each}
           {/await}
         {/each}
+
         {#if moreOptions && optionGenerator != null}
-          <slot name="more-options">
-            <li class="more-options" use:callOnSight={{ callback: loadMoreOptions }}>
-              <Button on:click={loadMoreOptions}>
-                <MoreHorizontal />
-                load more options
-              </Button>
-            </li>
-          </slot>
+          {#await Promise.all(promises) then _}
+            <slot name="more-options">
+              <li class="more-options" use:callOnSight={{ callback: loadMoreOptions }}>
+                <Button on:click={loadMoreOptions}>
+                  <MoreHorizontal />
+                  load more options
+                </Button>
+              </li>
+            </slot>
+          {/await}
         {/if}
       </ul>
     {/if}

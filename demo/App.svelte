@@ -28,13 +28,14 @@
     DatePicker,
     Calendar,
     FormField,
-    Autocomplete,
+    AutocompleteField,
   } from '../src/index.js';
   import { SnackbarPositions } from '../src/snackbar';
   import { PopoverPositions } from '../src/popover';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
   import ModalDialog from './modal-dialog.svelte';
+  import getOptions from './get-autocomplete-options.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
   let items = [
@@ -66,23 +67,7 @@
     date = date;
   }
 
-  const autocompleteItems = [
-    { name: 'option1', details: 'can you say pizza' },
-    { name: 'option2', details: 'pizza! happy new year' },
-    { name: 'option3', details: 'happy new year' },
-  ];
-
-  // eslint-disable-next-line require-yield
-  async function *getOptions(query) {
-    for (let option of autocompleteItems.filter(item => (new RegExp(query)).test(item.details))) {
-      yield new Promise(function(resolve) {
-        setTimeout(() => resolve([option]), 1000);
-      });
-    }
-    return [];
-  }
-
-  let selection = [autocompleteItems[0]];
+  let selection = [];
 
   let filesSelected = [];
 
@@ -105,15 +90,9 @@
   </div>
   <a href="https://googles.com">say my name</a>
   <Card>
-    <div class="flex">
-      {#each selection as item}
-        <Chip>{item.name}</Chip>
-      {/each}
-    </div>
-    <Autocomplete
+    <AutocompleteField
       {getOptions}
       bind:selection
-      placeholder="Type 'pizza' or 'happy'"
       maxOptions={2}
       minSearchLength={0}
     />
