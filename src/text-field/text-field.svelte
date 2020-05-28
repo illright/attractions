@@ -31,7 +31,7 @@
   onMount(() => autofocus && inputElement.focus());
 
   function handleInput(event) {
-    value = $$restProps.type === 'number' ? +event.target.value : event.target.value;
+    value = $$restProps.type === 'number' ? parseFloat(event.target.value) : event.target.value;
     dispatch('input', { value, nativeEvent: event });
   }
 
