@@ -105,6 +105,9 @@ export function formatDateTime(datetime, format) {
   if ((/%p/i).test(format)) {
     // If the AM/PM specifier is in the format string
     hours %= 12;
+    if (hours === 0) {
+      hours = 12;
+    }
   }
 
   return (
