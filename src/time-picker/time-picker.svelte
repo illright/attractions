@@ -38,6 +38,7 @@
   const minuteValues = [...rangeGenerator(0, 60, 5), 59];
 
   function setHours(hourValue, minuteValue = null, secondValue = null) {
+    hourValue %= 24;
     if (value == null) {
       value = new Date(0);
     }
