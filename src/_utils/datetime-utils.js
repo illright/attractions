@@ -1,9 +1,10 @@
-const digitRegex = /^\d$/;
-const formatSpecifierRegex = /%[HMdmyY%]/g;
+const numberRegex = /\d+/g;
+const formatSpecifierRegex = /%[HMSpPdmyY%]/g;
 const daysInWeek = 7;
 
 export function parseDateTime(string, format, defaultValue) {
   const century = Math.floor((new Date()).getFullYear() / 100);
+  let isPM = false;
 
   if (string === '') {
     return null;
@@ -27,6 +28,10 @@ export function parseDateTime(string, format, defaultValue) {
       break;
     }
 
+    if (format[formatIdx + part.length] !== '%') {
+      break;
+    }
+
     formatIdx += part.length + 1;
 
     if (format[formatIdx] === '%') {
@@ -34,41 +39,58 @@ export function parseDateTime(string, format, defaultValue) {
         return defaultValue;
       }
       stringIdx++;
-    } else {
-      let numberLength = 0;
-      while (digitRegex.test(string[stringIdx + numberLength])) {
-        numberLength++;
+    } else if (format[formatIdx].toLowerCase() === 'p') {
+      const hourFormat = string.substr(stringIdx, 2).toUpperCase();
+      if (hourFormat === 'AM') {
+        isPM = false;
+        if (result.getHours() >= 12) {
+          result.setHours(result.getHours() - 12);
+        }
+      } else if (hourFormat === 'PM') {
+        isPM = true;
+        if (result.getHours() < 12) {
+          result.setHours(result.getHours() + 12);
+        }
+      } else {
+        return defaultValue;
       }
-      if (numberLength === 0) {
+    } else {
+      numberRegex.lastIndex = stringIdx;
+      const number = numberRegex.exec(string);
+      if (number == null) {
         return defaultValue;
       }
 
       switch (format[formatIdx]) {
       case 'H':
-        result.setHours(string.substr(stringIdx, numberLength));
+        result.setHours(parseInt(number[0]) + 12 * isPM);
         break;
       case 'M':
-        result.setMinutes(string.substr(stringIdx, numberLength));
+        result.setMinutes(number[0]);
+        break;
+      case 'S':
+        result.setSeconds(number[0]);
         break;
       case 'd':
-        result.setDate(string.substr(stringIdx, numberLength));
+        result.setDate(number[0]);
         break;
       case 'm':
-        result.setMonth(string.substr(stringIdx, numberLength) - 1);
+        result.setMonth(number[0] - 1);
         break;
       case 'y':
-        result.setFullYear(century * 100 + +string.substr(stringIdx, numberLength));
+        result.setFullYear(century * 100 + parseInt(number[0]));
         break;
       case 'Y':
-        result.setFullYear(string.substr(stringIdx, numberLength));
+        result.setFullYear(number[0]);
         break;
       }
-      stringIdx += numberLength;
+      stringIdx += number[0].length;
     }
     formatIdx++;
   }
 
   if (isNaN(result.valueOf())) {
+    // If the resulting date is invalid
     return defaultValue;
   }
   return result;
@@ -79,14 +101,26 @@ export function formatDateTime(datetime, format) {
     return null;
   }
 
+  let hours = datetime.getHours();
+  if ((/%p/i).test(format)) {
+    // If the AM/PM specifier is in the format string
+    hours %= 12;
+    if (hours === 0) {
+      hours = 12;
+    }
+  }
+
   return (
     format
       .replace('%Y', datetime.getFullYear())
       .replace('%y', (datetime.getFullYear() % 100).toString().padStart(2, '0'))
       .replace('%m', (datetime.getMonth() + 1).toString().padStart(2, '0'))
       .replace('%d', datetime.getDate().toString().padStart(2, '0'))
-      .replace('%H', datetime.getHours().toString().padStart(2, '0'))
+      .replace('%H', hours.toString().padStart(2, '0'))
       .replace('%M', datetime.getMinutes().toString().padStart(2, '0'))
+      .replace('%S', datetime.getSeconds().toString().padStart(2, '0'))
+      .replace('%p', datetime.getHours() < 12 ? 'am' : 'pm')
+      .replace('%P', datetime.getHours() < 12 ? 'AM' : 'PM')
       .replace('%%', '%')
   );
 }
@@ -94,7 +128,7 @@ export function formatDateTime(datetime, format) {
 export function getWeekdays(locale, firstWeekday) {
   const weekdayFormatter = new Intl.DateTimeFormat(locale, { weekday: 'short' });
   const anchor = new Date(0);  // Initially set to the UNIX epoch – Thursday
-  const mondayOffset = 5;  // How many days to add to the epoch to get a monday
+  const mondayOffset = 5;  // How many days to add to the epoch to get a Monday
   const weekdays = [];
   for (let i = 0; i < daysInWeek; ++i) {
     anchor.setDate(mondayOffset + firstWeekday - 1 + i);
@@ -116,6 +150,15 @@ export function datesEqual(date1, date2) {
   );
 }
 
+export function dateTimesEqual(dt1, dt2) {
+  return (
+    datesEqual(dt1, dt2)
+    && dt1.getHours() === dt2.getHours()
+    && dt1.getMinutes() === dt2.getMinutes()
+    && dt1.getSeconds() === dt2.getSeconds()
+  );
+}
+
 export function datesLessEqual(date1, date2) {
   if (date1 == null || date2 == null) {
     return false;
@@ -129,7 +172,8 @@ export function datesLessEqual(date1, date2) {
 
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];
-  const dayCursor = new Date(year, month, 1);
+  const dayCursor = new Date(0);
+  dayCursor.setFullYear(year, month);
 
   // Offset the start of the month to the closest left `firstWeekday`
   dayCursor.setDate(1 - (daysInWeek + dayCursor.getDay() - firstWeekday) % daysInWeek);
@@ -147,4 +191,20 @@ export function getCalendar(month, year, firstWeekday) {
   } while (dayCursor.getMonth() === month);
 
   return calendar;
+}
+
+export function applyDate(source, destination) {
+  if (destination == null) {
+    return source;
+  }
+  destination.setFullYear(source.getFullYear(), source.getMonth(), source.getDate());
+  return destination;
+}
+
+export function applyTime(source, destination) {
+  if (destination == null) {
+    return source;
+  }
+  destination.setHours(source.getHours(), source.getMinutes(), source.getSeconds());
+  return destination;
 }

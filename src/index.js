@@ -56,6 +56,8 @@ export { default as FileTile } from './file-input/file-tile.svelte';
 export { default as DatePicker } from './date-picker/date-picker.svelte';
 export { default as Calendar } from './date-picker/calendar.svelte';
 
+export { default as TimePicker } from './time-picker/time-picker.svelte';
+
 export { default as FormField } from './form-field/form-field.svelte';
 
 export { default as Loading } from './loading/loading.svelte';

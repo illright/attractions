@@ -8,7 +8,7 @@
   import ChevronLeft from './chevron-left.svelte';
   import ChevronRight from './chevron-right.svelte';
   import Calendar from './calendar.svelte';
-  import { parseDateTime, formatDateTime } from '../_utils/datetime-utils.js';
+  import { parseDateTime, formatDateTime, applyDate } from '../_utils/datetime-utils.js';
 
   let _class = null;
   export { _class as class };
@@ -57,13 +57,13 @@
 
   function select({ detail: date }) {
     if (startFocus) {
-      startValue = date;
+      startValue = applyDate(date, startValue);
       if (range && endValue == null) {
         startFocus = false;
         endFocus = true;
       }
     } else {
-      endValue = date;
+      endValue = applyDate(date, endValue);
       if (range && startValue == null) {
         endFocus = false;
         startFocus = true;
@@ -138,7 +138,7 @@
         on:focus={() => { startFocus = true; endFocus = false; }}
         class={startFocus && 'in-focus'}
         on:change={({ detail }) => {
-          startValue = parseDateTime(detail.value, format, startValue);
+          startValue = applyDate(parseDateTime(detail.value, format, startValue), startValue);
           fixRange();
           shiftShownCalendar(startValue);
         }}
@@ -153,7 +153,7 @@
           on:focus={() => { startFocus = false; endFocus = true; }}
           class={endFocus && 'in-focus'}
           on:change={({ detail }) => {
-            endValue = parseDateTime(detail.value, format, endValue);
+            endValue = applyDate(parseDateTime(detail.value, format, endValue), endValue);
             fixRange();
             shiftShownCalendar(endValue);
           }}

@@ -24,15 +24,16 @@
     console.error('Labels are only available for outlined text fields');
   }
 
-  let internalValue = null;
   export let value = null;
-  $: value = (
-    $$restProps.type === 'number' && internalValue != null ? +internalValue : internalValue
-  );
   export let events = null;
 
   let inputElement;
   onMount(() => autofocus && inputElement.focus());
+
+  function handleInput(event) {
+    value = $$restProps.type === 'number' ? parseFloat(event.target.value) : event.target.value;
+    dispatch('input', { value, nativeEvent: event });
+  }
 
   const dispatch = createEventDispatcher();
 </script>
@@ -48,10 +49,10 @@
   {#if multiline}
     <textarea
       {id}
-      bind:value={internalValue}
+      {value}
       class={inputClass}
       bind:this={inputElement}
-      on:input={(e) => dispatch('input', { value, nativeEvent: e })}
+      on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:focus={(e) => dispatch('focus', { nativeEvent: e })}
       on:blur={(e) => dispatch('blur', { nativeEvent: e })}
@@ -61,10 +62,10 @@
   {:else}
     <input
       {id}
-      bind:value={internalValue}
+      {value}
       class={inputClass}
       bind:this={inputElement}
-      on:input={(e) => dispatch('input', { value, nativeEvent: e })}
+      on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:focus={(e) => dispatch('focus', { nativeEvent: e })}
       on:blur={(e) => dispatch('blur', { nativeEvent: e })}
