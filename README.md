@@ -7,25 +7,17 @@ A UI kit for Svelte.
 
 ## Installation
 
-**Step 1.** Clone this library and run the following command inside the cloned folder:
+**Step 1.** Install the library with NPM or Yarn:
 
 ```bash
-npm link
+npm install --save-dev attractions
 # -- or --
-yarn link
+yarn add -D attractions
 ```
 
-**Step 2.** Link this library to your application by running the following inside your application's folder:
+**Step 2.** Make sure you have configured [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess#usage) for compiling SCSS.
 
-```bash
-npm link attractions
-# -- or --
-yarn link attractions
-```
-
-**Step 3.** Make sure you have `svelte-preprocess` and `node-sass` installed and [configured](https://github.com/kaisermann/svelte-preprocess#usage).
-
-**Step 4.** Create a file named `_attractions-theme.scss` (can be empty) anywhere in the project and add the path to that file to `includePaths` for Sass:
+**Step 3.** Create a file named `_attractions-theme.scss` (can be empty) anywhere in the project and add the path to the directory containing file to `includePaths` for SCSS:
 
 ```js
 autoPreprocess({
@@ -50,4 +42,4 @@ Refer to the documentation for each component for the variables available for ov
 
 ## License
 
-This project is under the terms of the MIT license.
+This project is [MIT licensed](./LICENSE).
