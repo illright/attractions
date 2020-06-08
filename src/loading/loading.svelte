@@ -1,5 +1,12 @@
 <!-- Adapted from SpinKit by @tobiasahlin: https://tobiasahlin.com/spinkit/ -->
-<div class="spinner">
+<script>
+  import classes from '../_utils/classes.js';
+
+  let _class = null;
+  export { _class as class };
+</script>
+
+<div class={classes('spinner', _class)}>
   <div class="bounce1"></div>
   <div class="bounce2"></div>
   <div class="bounce3"></div>

@@ -5,7 +5,9 @@
 $dot-size: .4em;
 
 .spinner {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   & > div {
     width: $dot-size;
@@ -13,6 +15,7 @@ $dot-size: .4em;
     background: $main;
     border-radius: 100%;
     display: inline-block;
+    margin: 0 .1em;
     animation: sk-bouncedelay 1.2s infinite ease-in-out both;
   }
 
