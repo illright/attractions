@@ -3,7 +3,7 @@ export default function ripple(node, options = {}) {
   let props = {
     event: options.event || 'click',
     transition: options.transition || 150,
-    zIndex: options.zIndex || '9999',
+    zIndex: options.zIndex || '100',
     bg: options.rippleColor || null,
     disabled: options.disabled || false,
   };
