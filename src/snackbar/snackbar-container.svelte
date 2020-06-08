@@ -6,8 +6,11 @@
   export let position;
   let registeredSnackbars = new Set();
 
-  function removeSnackbar(key) {
+  function removeSnackbar(key, closedEarly) {
     registeredSnackbars.delete(key);
+    if (key.resolveExpiredPromise != null) {
+      key.resolveExpiredPromise(!closedEarly);
+    }
     registeredSnackbars = registeredSnackbars;
   }
 
@@ -19,13 +22,17 @@
     } = options;
 
     const key = { component, props };
-    key.timeoutID = setTimeout(removeSnackbar, duration, key);
+    key.props.closeCallback = function close() {
+      clearTimeout(key.timeoutID);
+      removeSnackbar(key, true);
+    };
+    key.timeoutID = setTimeout(removeSnackbar, duration, key, false);
     registeredSnackbars.add(key);
     registeredSnackbars = registeredSnackbars;
 
-    return function close() {
-      clearTimeout(key.timeoutID);
-      removeSnackbar(key);
+    return {
+      close: key.props.closeCallback,
+      expired: new Promise((resolve) => key.resolveExpiredPromise = resolve),
     };
   }
 

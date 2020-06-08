@@ -11,6 +11,8 @@
 
   export let text;
   export let action = null;
+  export let closeOnAction = true;
+  export let closeCallback;
   export let transition = fly;
   export let transitionOptions = { x: -20, duration: 150 };
 </script>
@@ -22,7 +24,15 @@
 >
   <span class={classes('text', textClass)}>{text}</span>
   {#if action != null}
-    <Button on:click={action.callback} class={buttonClass}>
+    <Button
+      class={buttonClass}
+      on:click={() => {
+        action.callback();
+        if (closeOnAction) {
+          closeCallback();
+        }
+      }}
+    >
       {action.text}
     </Button>
   {/if}
