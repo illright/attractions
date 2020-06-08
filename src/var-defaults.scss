@@ -38,8 +38,6 @@ $snackbar-vertical-offset: 3em;
 $bold-font-weight: 500;
 $thin-font-weight: 300;
 
-$light-gray: #ddd;
-
 $shadow-0:
   0 2px 2px 0 transparentize(black, .86),
   0 1px 5px 0 transparentize(black, .88);
@@ -52,10 +50,3 @@ $shadow-raised:
   0 2px 4px -1px transparentize(black, .8),
   0 3px 5px 0    transparentize(black, .86),
   0 1px 10px 0   transparentize(black, .88);
-
-$shadow-glowing:
-  0 2px 8px -1px transparentize(darken($main, 10%), .8),
-  0 3px 10px 0   transparentize(darken($main, 10%), .86),
-  0 1px 20px 0   transparentize(darken($main, 10%), .88);
-
-$dark-spot-bg: transparentize(black, .6);
