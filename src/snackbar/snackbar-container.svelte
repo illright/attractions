@@ -8,7 +8,7 @@
 
   function removeSnackbar(key, closedEarly) {
     registeredSnackbars.delete(key);
-    if (key.resolveExpiredPromise != null) {
+    if (typeof key.resolveExpiredPromise === 'function') {
       key.resolveExpiredPromise(!closedEarly);
     }
     registeredSnackbars = registeredSnackbars;
