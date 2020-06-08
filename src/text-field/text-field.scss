@@ -205,10 +205,6 @@
         &:focus ~ :global(svg.item) {
           stroke: transparentize($danger, .3);
         }
-
-        & ~ .error {
-          display: inline;
-        }
       }
     }
 
@@ -232,7 +228,6 @@
   }
 
   & > .error {
-    display: none;
     font-size: .8rem;
     color: transparentize($danger, .3);
     font-weight: $bold-font-weight;
