@@ -1,13 +1,17 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import classes from '../_utils/classes.js';
 
   let _class = null;
   export { _class as class };
   export let open = false;
+  $: dispatch('change', { value: open });
 
   function close() {
     open = false;
   }
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <div
