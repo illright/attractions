@@ -15,7 +15,14 @@
 
   let input;
   let files;
+  $: handleOutsideClearing(value);
   $: value = multiple ? (files || []) : files && files[0];
+
+  function handleOutsideClearing(value) {
+    if (value == null && input != null) {
+      input.value = '';
+    }
+  }
 
   function clearSelection() {
     value = multiple ? [] : null;
