@@ -14,7 +14,7 @@
     registeredSnackbars = registeredSnackbars;
   }
 
-  function showSnackbar(options) {
+  export function showSnackbar(options) {
     const {
       component = Snackbar,
       props = {},
