@@ -2,7 +2,7 @@
   import {
     Dialog,
     TextField,
-  } from '../src/index.js';
+  } from '../attractions/index.js';
 
   export let closeCallback;
 </script>

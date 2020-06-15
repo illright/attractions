@@ -2,7 +2,7 @@
   import {
     Button,
     Card,
-  } from '../src/index.js';
+  } from '../attractions/index.js';
   import { fade } from 'svelte/transition';
 </script>
 
