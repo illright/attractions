@@ -42,6 +42,7 @@ jobs:
       run: |
         yarn install
         yarn build
+        cd attractions
         yarn publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
