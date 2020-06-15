@@ -3,28 +3,15 @@
   "version": "1.0.0-alpha",
   "description": "A UI kit for Svelte",
   "license": "MIT",
-  "svelte": "src/index.js",
+  "svelte": "index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build",
-    "dev": "rollup -c -w",
-    "start": "sirv demo/public --host 0.0.0.0"
+    "build": "cd .. && rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-svelte3": "^2.7.3",
     "node-sass": "^4.13.1",
-    "rollup": "^1.20.0",
-    "rollup-plugin-svelte": "^5.0.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "sirv-cli": "^0.4.5",
-    "stylelint": "^13.3.2",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.17.0",
     "svelte": "^3.0.0",
     "svelte-feather-icons": "^3.2.2",
     "svelte-preprocess": "^3.7.3"
