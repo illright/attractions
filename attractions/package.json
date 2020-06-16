@@ -10,12 +10,6 @@
     "build": "cd .. && rollup -c",
     "prepublishOnly": "npm run build"
   },
-  "devDependencies": {
-    "node-sass": "^4.13.1",
-    "svelte": "^3.0.0",
-    "svelte-feather-icons": "^3.2.2",
-    "svelte-preprocess": "^3.7.3"
-  },
   "keywords": [
     "svelte"
   ],

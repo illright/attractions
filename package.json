@@ -3,8 +3,7 @@
     "build": "rollup -c",
     "prepublishOnly": "echo \"Error: You shouldn't publish this package.\" && exit 1",
     "dev": "rollup -c -w",
-    "start": "sirv demo/public --host 0.0.0.0",
-    "install": "cd attractions && npm install"
+    "start": "sirv demo/public --host 0.0.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
