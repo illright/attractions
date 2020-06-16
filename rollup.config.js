@@ -2,7 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import autoPreprocess from 'svelte-preprocess';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import pkg from './attractions/package.json';
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -13,10 +13,10 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'attractions/index.js',
     output: [
-      { file: pkg.module, 'format': 'es' },
-      { file: pkg.main, 'format': 'umd', name },
+      { file: `attractions/${pkg.module}`, 'format': 'es' },
+      { file: `attractions/${pkg.main}`, 'format': 'umd', name },
     ],
     plugins: [
       svelte(),

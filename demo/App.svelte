@@ -30,9 +30,9 @@
     Calendar,
     FormField,
     Autocomplete,
-  } from '../src/index.js';
-  import { SnackbarPositions } from '../src/snackbar';
-  import { PopoverPositions } from '../src/popover';
+  } from '../attractions/index.js';
+  import { SnackbarPositions } from '../attractions/snackbar';
+  import { PopoverPositions } from '../attractions/popover';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
   import ModalDialog from './modal-dialog.svelte';

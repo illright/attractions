@@ -1,0 +1,19 @@
+{
+  "name": "attractions",
+  "version": "1.0.0-alpha",
+  "description": "A UI kit for Svelte",
+  "license": "MIT",
+  "svelte": "index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "cd .. && rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "*"
+  ]
+}
