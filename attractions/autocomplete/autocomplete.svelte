@@ -1,4 +1,5 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import Chip from '../chip/chip.svelte';
   import AutocompleteField from './autocomplete-field.svelte';
@@ -20,7 +21,10 @@
 
   function deselect(item) {
     selection = selection.filter(thisItem => thisItem !== item);
+    dispatch('change', { value: selection });
   }
+
+  const dispatch = createEventDispatcher();
 </script>
 
 <div class:focus class={classes('autocomplete', _class)}>
@@ -39,6 +43,7 @@
     {maxOptions}
     {optionComponent}
     {...$$restProps}
+    on:change
   />
 </div>
 
