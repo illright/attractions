@@ -19,10 +19,7 @@
     <div class="description">
       {#if name != null}
         <div class={classes('name', nameClass)}>
-          {name}
-          {#if required}
-            <span class="required">*</span>
-          {/if}
+          {name}&nbsp;{#if required}<span class="required">*</span>{/if}
         </div>
       {/if}
       {#if help != null}
