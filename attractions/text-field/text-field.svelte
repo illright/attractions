@@ -30,8 +30,22 @@
   let inputElement;
   onMount(() => autofocus && inputElement.focus());
 
+  function toNumber(string) {
+    if (string === '') {
+      return null;
+    }
+    return parseFloat(string);
+  }
+
+  function toString(value) {
+    if (value == null) {
+      return '';
+    }
+    return value.toString();
+  }
+
   function handleInput(event) {
-    value = $$restProps.type === 'number' ? parseFloat(event.target.value) : event.target.value;
+    value = $$restProps.type === 'number' ? toNumber(event.target.value) : event.target.value;
     dispatch('input', { value, nativeEvent: event });
   }
 
@@ -62,7 +76,7 @@
   {:else}
     <input
       {id}
-      {value}
+      value={toString(value)}
       class={inputClass}
       bind:this={inputElement}
       on:input={handleInput}
