@@ -15,7 +15,8 @@
   }
 
   & > .content {
-    border-bottom: .125em solid lighten($off-state, 25%);
+    border: 0 solid lighten($off-state, 25%);
+    border-bottom-width: .125em;
     font-family: $font;
     font-weight: $bold-font-weight;
     color: $main;
