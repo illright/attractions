@@ -61,7 +61,7 @@
     selection.push(option);
     selection = selection;
     searchQuery = null;
-    dispatch('change', selection);
+    dispatch('change', { value: selection });
     inputElement.focus();
   }
 
