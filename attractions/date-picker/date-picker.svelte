@@ -8,7 +8,13 @@
   import ChevronLeft from './chevron-left.svelte';
   import ChevronRight from './chevron-right.svelte';
   import Calendar from './calendar.svelte';
-  import { parseDateTime, formatDateTime, applyDate } from '../_utils/datetime-utils.js';
+  import {
+    applyDate,
+    copyDate,
+    datesEqual,
+    formatDateTime,
+    parseDateTime,
+  } from '../_utils/datetime-utils.js';
 
   let _class = null;
   export { _class as class };
@@ -44,8 +50,8 @@
   let shownCalendar = new Date();
 
   function unpackValue(value) {
-    startValue = (range ? value && value.start : value);
-    endValue = (range ? value && value.end : null);
+    startValue = copyDate(range ? value && value.start : value);
+    endValue = copyDate(range ? value && value.end : null);
   }
 
   function clearFocus({ detail: open }) {
@@ -99,17 +105,17 @@
       }
     } else {
       if (range) {
-        if (start === value.start && end === value.end) {
+        if (datesEqual(start, value.start) && datesEqual(end, value.end)) {
           return;
         }
       } else {
-        if (start === value) {
+        if (datesEqual(start, value)) {
           return;
         }
       }
     }
 
-    value = range ? { start, end } : start;
+    value = range ? { start: copyDate(start), end: copyDate(end) } : copyDate(start);
     if (!range || start != null && end != null) {
       dispatch('change', value);
     }

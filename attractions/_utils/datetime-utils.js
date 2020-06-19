@@ -208,3 +208,11 @@ export function applyTime(source, destination) {
   destination.setHours(source.getHours(), source.getMinutes(), source.getSeconds());
   return destination;
 }
+
+/* Copy a Date object, respecting null values. */
+export function copyDate(date) {
+  if (date == null) {
+    return null;
+  }
+  return new Date(date.valueOf());
+}
