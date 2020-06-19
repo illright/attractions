@@ -117,7 +117,7 @@
 
     value = range ? { start: copyDate(start), end: copyDate(end) } : copyDate(start);
     if (!range || start != null && end != null) {
-      dispatch('change', value);
+      dispatch('change', { value });
     }
   }
 
