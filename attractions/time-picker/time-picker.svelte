@@ -8,7 +8,7 @@
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Tab from '../tab/tab.svelte';
   import Clock from './clock.svelte';
-  import { parseDateTime, formatDateTime, applyTime } from '../_utils/datetime-utils.js';
+  import { parseDateTime, formatDateTime, applyTime, copyDate } from '../_utils/datetime-utils.js';
   import { default as rangeGenerator } from '../_utils/range.js';
 
   let _class = null;
@@ -41,6 +41,8 @@
     hourValue %= 24;
     if (value == null) {
       value = new Date(0);
+    } else {
+      value = copyDate(value);
     }
 
     if (minuteValue != null && secondValue != null) {
@@ -55,6 +57,8 @@
   function setMinutes(minuteValue) {
     if (value == null) {
       value = new Date(0);
+    } else {
+      value = copyDate(value);
     }
 
     value.setMinutes(minuteValue);
@@ -65,6 +69,8 @@
   function setSeconds(secondValue) {
     if (value == null) {
       value = new Date(0);
+    } else {
+      value = copyDate(value);
     }
 
     value.setSeconds(secondValue);
