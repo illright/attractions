@@ -47,7 +47,7 @@
   $: unpackValue(value);
   $: registerChange(startValue, endValue);
 
-  let shownCalendar = new Date();
+  let shownCalendar = (range ? value.start : value) || new Date();
 
   function unpackValue(value) {
     startValue = copyDate(range ? value && value.start : value);
