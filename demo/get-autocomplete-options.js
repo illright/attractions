@@ -43,5 +43,5 @@ export default async function *getOptions(query) {
   await sleep(150);
   yield people2;
   await sleep(150);
-  return people3;
+  yield people3;
 }
