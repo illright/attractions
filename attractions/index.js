@@ -39,6 +39,8 @@ export { default as TypographyStyles } from './typography/typography-styles.svel
 
 export { default as Dot } from './dot/dot.svelte';
 
+export { default as Divider } from './divider/divider.svelte';
+
 export { default as SnackbarContainer } from './snackbar/snackbar-container.svelte';
 export { default as Snackbar } from './snackbar/snackbar.svelte';
 
