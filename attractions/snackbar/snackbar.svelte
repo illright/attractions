@@ -27,7 +27,10 @@
     <Button
       class={buttonClass}
       on:click={() => {
-        action.callback();
+        if (typeof action.callback === 'function') {
+          action.callback();
+        }
+
         if (closeOnAction) {
           closeCallback();
         }
