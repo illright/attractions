@@ -41,9 +41,13 @@
     }
   }
 
-  function filterOutSelected(generatorValue) {
-    moreOptions = !generatorValue.done;
-    return generatorValue.value.filter(
+  function filterOutSelected(generatorState) {
+    moreOptions = !generatorState.done;
+    if (generatorState.value == null) {
+      return [];
+    }
+
+    return generatorState.value.filter(
       option => selection.find(thisOption => thisOption === option) == null,
     );
   }
