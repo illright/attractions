@@ -13,6 +13,7 @@
   export let files = [];
   export let fileComponent = FileTile;
   export let accept = null;
+  export let beforeChange = null;
   export let disabled = false;
 
   let dragActive = false;
@@ -26,12 +27,19 @@
     wrongType = [...e.dataTransfer.items].some(file => !accepted(accept, file));
   }
 
-  function acceptUpload(e) {
+  async function acceptUpload(e) {
     for (let file of (e.dataTransfer || e.target).files) {
-      if (accepted(accept, file)) {
-        files.push(file);
-      }
+      try {
+        if (typeof beforeChange === 'function') {
+          await beforeChange(file);
+        }
+
+        if (accepted(accept, file)) {
+          files.push(file);
+        }
+      } catch (e) {}  // eslint-disable-line no-empty
     }
+
     files = files;
     setTimeout(() => wrongType = false, 1000);
     dispatch('change', { files, nativeEvent: e });
@@ -39,7 +47,7 @@
     dragActive = false;
   }
 
-  function deleteFile(thatFile) {
+  function deleteFile({ detail: thatFile }) {
     files = files.filter(thisFile => thisFile !== thatFile);
     dispatch('change', { files });
   }
@@ -101,8 +109,8 @@
       <Plus class="plus" />
     </slot>
   </div>
-  {#each files as file}
-    <svelte:component this={fileComponent} {file} on:delete={() => deleteFile(file)} />
+  {#each files as file (file)}
+    <svelte:component this={fileComponent} {file} on:delete={deleteFile} />
   {/each}
 </label>
 
