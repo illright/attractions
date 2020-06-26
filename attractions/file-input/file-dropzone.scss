@@ -7,7 +7,6 @@
   display: block;
   border: .125em dashed currentColor;
   margin: 2em 0 .5em;
-  width: 100%;
   position: relative;
   border-radius: $dropzone-radius;
 
@@ -89,7 +88,6 @@
     display: grid;
     gap: .5em;
     padding: 1em;
-    width: 100%;
     grid-template-columns: repeat(auto-fill, 12em);
 
     .empty-layer {

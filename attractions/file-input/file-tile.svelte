@@ -17,7 +17,7 @@
   <div class="properties">
     {formatFileSize(file.size)} • {formatFileType(file.name)}
   </div>
-  <Button danger round on:click={() => dispatch('delete')}>
+  <Button danger round on:click={() => dispatch('delete', file)}>
     <Trash2 />
   </Button>
 </div>
