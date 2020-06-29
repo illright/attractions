@@ -1,5 +1,5 @@
 <script>
-  import s from '../_utils/plural-s.js';
+  import s from '../utils/plural-s.js';
   import CheckboxChip from './checkbox-chip.svelte';
 
   let _class = null;

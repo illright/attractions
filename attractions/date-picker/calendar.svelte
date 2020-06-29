@@ -1,13 +1,13 @@
 <script>
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
-  import classes from '../_utils/classes.js';
+  import classes from '../utils/classes.js';
   import {
     getWeekdays,
     datesEqual,
     datesLessEqual,
     getCalendar,
-  } from '../_utils/datetime-utils.js';
+  } from '../utils/datetime-utils.js';
 
   export let weekdaysClass = null;
   export let weekClass = null;

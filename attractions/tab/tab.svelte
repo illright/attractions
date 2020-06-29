@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import rippleEffect from '../_utils/ripple.js';
-  import classes from '../_utils/classes.js';
+  import rippleEffect from '../utils/ripple.js';
+  import classes from '../utils/classes.js';
 
   let _class = null;
   export { _class as class };

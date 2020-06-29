@@ -1,8 +1,8 @@
 <script>
   import Button from '../button/button.svelte';
   import { fly } from 'svelte/transition';
-  import dynamic from '../_utils/dynamic-transition.js';
-  import classes from '../_utils/classes.js';
+  import dynamic from '../utils/dynamic-transition.js';
+  import classes from '../utils/classes.js';
 
   let _class = null;
   export { _class as class };

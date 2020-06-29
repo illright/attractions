@@ -1,10 +1,15 @@
 /* Return the styles needed for displaying a radiobutton or a checkbox
    with the given color. */
 export default function getColorPickerStyles(hexColor) {
+  if (hexColor == null) {
+    return null;
+  }
+
   if (hexColor.length !== 7) {
     console.error('Values of colored radio groups must be #XXXXXX hex colors.');
-    return '';
+    return null;
   }
+
   let r, g, b, bgR, bgG, bgB, beforeR, beforeG, beforeB;
   bgR = r = parseInt(hexColor.slice(1, 3), 16);
   bgG = g = parseInt(hexColor.slice(3, 5), 16);

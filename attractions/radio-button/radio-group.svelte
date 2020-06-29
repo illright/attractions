@@ -1,6 +1,6 @@
 <script>
-  import classes from '../_utils/classes.js';
-  import getColorPickerStyles from '../_utils/color-picker-styles.js';
+  import classes from '../utils/classes.js';
+  import getColorPickerStyles from '../utils/color-picker-styles.js';
   import RadioButton from './radio-button.svelte';
 
   let _class = null;

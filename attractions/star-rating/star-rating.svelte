@@ -1,10 +1,10 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   import Star from './star.svelte';
-  import range from '../_utils/range.js';
-  import classes from '../_utils/classes.js';
-  import ripple from '../_utils/ripple.js';
-  import eventsAction from '../_utils/events.js';
+  import range from '../utils/range.js';
+  import classes from '../utils/classes.js';
+  import ripple from '../utils/ripple.js';
+  import eventsAction from '../utils/events.js';
 
   let _class = null;
   export { _class as class };
