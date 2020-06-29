@@ -4,6 +4,8 @@
   import TextField from '../text-field/text-field.svelte';
   import { classes } from '../utils';
 
+  let _class = null;
+  export { _class as class };
   export let pages;
   export let currentPage = 1;
 
@@ -75,7 +77,7 @@
 </script>
 
 {#if pages > 1}
-  <nav class="pagination">
+  <nav class={classes('pagination', _class)} {...$$restProps}>
     {#each generateButtonList() as buttonValue (buttonValue)}
       {#if buttonValue === leftEllipsisKey}
         {#if leftInputActive}
