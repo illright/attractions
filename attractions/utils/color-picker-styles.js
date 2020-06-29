@@ -16,7 +16,7 @@ export default function getColorPickerStyles(hexColor) {
   bgB = b = parseInt(hexColor.slice(5, 7), 16);
   beforeR = beforeG = beforeB = 255;
 
-  const whiteThreshold = 245;
+  const whiteThreshold = 240;
   const gray = 153;
   if (r > whiteThreshold && g > whiteThreshold && b > whiteThreshold) {
     r = g = b = beforeR = beforeG = beforeB = gray;
