@@ -1,0 +1,26 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.badge {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: -.1875em;
+    right: -.125em;
+    width: .625em;
+    height: .625em;
+    border-radius: 50%;
+    background-color: $badge-default;
+    box-shadow: $shadow-raised;
+    content: "";
+  }
+
+  &.hidden::after {
+    display: none;
+  }
+
+  :global(.icon) {
+    display: block;
+  }
+}

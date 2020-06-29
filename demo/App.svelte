@@ -1,6 +1,7 @@
 <script>
   import {
     Button,
+    Badge,
     // RadioGroup,
     Card,
     TextField,
@@ -132,7 +133,9 @@
       </Button>
       <Popover position={PopoverPositions.BOTTOM}>
         <Button>
-          i have a popover
+          <Badge>
+            i have a popover
+          </Badge>
         </Button>
         <div slot="popover-content">
           <PopoverButton>
