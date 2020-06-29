@@ -8,6 +8,7 @@
   export { _class as class };
   export let pages;
   export let currentPage = 1;
+  export let showLonePage = true;
 
   if (currentPage < 1 || currentPage > pages) {
     currentPage = 1;
@@ -76,7 +77,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-{#if pages > 1}
+{#if pages > 1 || pages == 1 && showLonePage}
   <nav class={classes('pagination', _class)} {...$$restProps}>
     {#each generateButtonList() as buttonValue (buttonValue)}
       {#if buttonValue === leftEllipsisKey}
