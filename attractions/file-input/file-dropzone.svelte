@@ -28,17 +28,20 @@
   }
 
   async function acceptUpload(e) {
-    for (let file of (e.dataTransfer || e.target).files) {
+    const incomingFiles = Array.from((e.dataTransfer || e.target).files);
+    await Promise.all(incomingFiles.map(async (file) => {
       try {
         if (typeof beforeChange === 'function') {
           await beforeChange(file);
         }
+      } catch (e) {
+        return;
+      }
 
-        if (accepted(accept, file)) {
-          files.push(file);
-        }
-      } catch (e) {}  // eslint-disable-line no-empty
-    }
+      if (accepted(accept, file)) {
+        files.push(file);
+      }
+    }));
 
     files = files;
     setTimeout(() => wrongType = false, 1000);
