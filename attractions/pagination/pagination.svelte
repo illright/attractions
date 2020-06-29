@@ -10,9 +10,7 @@
   export let currentPage = 1;
   export let showLonePage = true;
 
-  if (currentPage < 1 || currentPage > pages) {
-    currentPage = 1;
-  }
+  $: currentPage = Math.min(Math.max(currentPage, 1), pages); // clamp currentPage between [1; pages]
 
   let leftInputActive = false;
   let rightInputActive = false;
@@ -20,41 +18,43 @@
   const leftEllipsisKey = {};
   const rightEllipsisKey = {};
 
-  function generateButtonList() {
+  function generateButtonList(pageCount, current = 1) {
     const list = [];
-    if (currentPage !== 1) {
+    if (current !== 1) {
       list.push(1);
     }
 
-    if (currentPage - 1 == 3) {
-      list.push(currentPage - 2);
-    } else if (currentPage - 1 > 3) {
+    if (current - 1 == 3) {
+      list.push(current - 2);
+    } else if (current - 1 > 3) {
       list.push(leftEllipsisKey);
     }
 
-    if (currentPage > 2) {
-      list.push(currentPage - 1);
+    if (current > 2) {
+      list.push(current - 1);
     }
 
-    list.push(currentPage);
+    list.push(current);
 
-    if (currentPage < pages - 1) {
-      list.push(currentPage + 1);
+    if (current < pageCount - 1) {
+      list.push(current + 1);
     }
 
-    if (pages - currentPage == 3) {
-      list.push(currentPage + 2);
-    } else if (pages - currentPage > 3) {
+    if (pageCount - current == 3) {
+      list.push(current + 2);
+    } else if (pageCount - current > 3) {
       list.push(rightEllipsisKey);
     }
 
-    if (currentPage !== pages) {
-      list.push(pages);
+    if (current !== pageCount) {
+      list.push(pageCount);
     }
 
     return list;
   }
 
+  $: pageList = generateButtonList(pages, currentPage);
+  
   function goTo(page) {
     if (page >= 1 && page <= pages) {
       leftInputActive = false;
@@ -79,7 +79,7 @@
 
 {#if pages > 1 || pages == 1 && showLonePage}
   <nav class={classes('pagination', _class)} {...$$restProps}>
-    {#each generateButtonList() as buttonValue (buttonValue)}
+    {#each pageList as buttonValue (buttonValue)}
       {#if buttonValue === leftEllipsisKey}
         {#if leftInputActive}
           <TextField
