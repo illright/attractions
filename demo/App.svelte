@@ -31,6 +31,7 @@
     Calendar,
     FormField,
     Autocomplete,
+    Pagination,
   } from '../attractions/index.js';
   import { SnackbarPositions } from '../attractions/snackbar';
   import { PopoverPositions } from '../attractions/popover';
@@ -72,6 +73,8 @@
   let filesSelected = [];
 
   let inputNumber = null;
+
+  let pageCount = 5;
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
@@ -87,6 +90,9 @@
       {/if}
     </div>
   </div>
+  <Button on:click={() => pageCount--}>-</Button>
+  <Pagination pages={pageCount} />
+  <Button on:click={() => pageCount++}>+</Button>
   <a href="https://googles.com">say my name</a>
   <Card>
     <Autocomplete

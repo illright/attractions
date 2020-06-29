@@ -69,3 +69,5 @@ export { default as AutocompleteOption } from './autocomplete/autocomplete-optio
 export { default as AutocompleteField } from './autocomplete/autocomplete-field.svelte';
 
 export { default as Badge } from './badge/badge.svelte';
+
+export { default as Pagination } from './pagination/pagination.svelte';

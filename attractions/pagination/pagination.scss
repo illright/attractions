@@ -1,0 +1,63 @@
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
+
+.pagination {
+  margin: 2em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > .page {
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0 .2em;
+    justify-content: center;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  & > :global(.text-field) {
+    margin: 0 .2em;
+
+    :global(input) {
+      width: 2.8em !important;
+      height: 2.8em !important;
+    }
+  }
+
+  & > :global(.page.current) {
+    background: transparentize($main, .95);
+
+    &:hover {
+      background: transparentize($main, .9);
+    }
+
+    &:focus {
+      background: transparentize($main, .85);
+    }
+  }
+
+  @media only screen and (min-width: 380px) {
+    & > :global(.page),
+    & > :global(.text-field) {
+      margin: 0 .4em;
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    width: 540px;
+    align-self: center;
+
+    & > :global(.page),
+    :global(input) {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    & > :global(.page),
+    :global(input) {
+      font-size: 1.2rem;
+    }
+  }
+}
