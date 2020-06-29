@@ -31,6 +31,7 @@
     Calendar,
     FormField,
     Autocomplete,
+    Pagination,
   } from '../attractions/index.js';
   import { SnackbarPositions } from '../attractions/snackbar';
   import { PopoverPositions } from '../attractions/popover';
@@ -87,6 +88,7 @@
       {/if}
     </div>
   </div>
+  <Pagination pages={20} />
   <a href="https://googles.com">say my name</a>
   <Card>
     <Autocomplete
