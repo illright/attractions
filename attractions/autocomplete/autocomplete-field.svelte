@@ -6,9 +6,9 @@
   import Loading from '../loading/loading.svelte';
   import AutocompleteOption from './autocomplete-option.svelte';
   import MoreHorizontal from './more-horizontal.svelte';
-  import s from '../_utils/plural-s.js';
-  import callOnSight from '../_utils/call-on-sight.js';
-  import classes from '../_utils/classes.js';
+  import s from '../utils/plural-s.js';
+  import callOnSight from '../utils/call-on-sight.js';
+  import classes from '../utils/classes.js';
 
   let _class = null;
   export { _class as class };

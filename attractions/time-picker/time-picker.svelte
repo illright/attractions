@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import classes from '../_utils/classes.js';
+  import classes from '../utils/classes.js';
   import Button from '../button/button.svelte';
   import Label from '../typography/label.svelte';
   import TextField from '../text-field/text-field.svelte';
@@ -8,8 +8,8 @@
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Tab from '../tab/tab.svelte';
   import Clock from './clock.svelte';
-  import { parseDateTime, formatDateTime, applyTime, copyDate } from '../_utils/datetime-utils.js';
-  import { default as rangeGenerator } from '../_utils/range.js';
+  import { parseDateTime, formatDateTime, applyTime, copyDate } from '../utils/datetime-utils.js';
+  import { default as rangeGenerator } from '../utils/range.js';
 
   let _class = null;
   export { _class as class };

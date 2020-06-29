@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher, onMount } from 'svelte';
-  import eventsAction from '../_utils/events.js';
-  import classes from '../_utils/classes.js';
+  import eventsAction from '../utils/events.js';
+  import classes from '../utils/classes.js';
 
   let _class = null;
   export { _class as class };

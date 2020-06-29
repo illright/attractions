@@ -2,8 +2,8 @@
   import Trash2 from './trash-2.svelte';
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
-  import formatFileSize from '../_utils/format-file-size.js';
-  import formatFileType from '../_utils/format-file-type.js';
+  import formatFileSize from '../utils/format-file-size.js';
+  import formatFileType from '../utils/format-file-type.js';
 
   export let file;
 

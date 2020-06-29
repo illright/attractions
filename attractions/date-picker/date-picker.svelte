@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import classes from '../_utils/classes.js';
+  import classes from '../utils/classes.js';
   import Button from '../button/button.svelte';
   import TextField from '../text-field/text-field.svelte';
   import Dropdown from '../dropdown/dropdown.svelte';
@@ -14,7 +14,7 @@
     datesEqual,
     formatDateTime,
     parseDateTime,
-  } from '../_utils/datetime-utils.js';
+  } from '../utils/datetime-utils.js';
 
   let _class = null;
   export { _class as class };

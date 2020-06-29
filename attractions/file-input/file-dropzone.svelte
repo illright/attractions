@@ -3,9 +3,9 @@
   import Plus from './plus.svelte';
   import FileTile from './file-tile.svelte';
   import { createEventDispatcher } from 'svelte';
-  import classes from '../_utils/classes.js';
-  import ripple from '../_utils/ripple.js';
-  import accepted from '../_utils/accepted-file-type.js';
+  import classes from '../utils/classes.js';
+  import ripple from '../utils/ripple.js';
+  import accepted from '../utils/accepted-file-type.js';
 
   let _class = null;
   export { _class as class };

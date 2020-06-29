@@ -1,7 +1,7 @@
 <script>
-  import classes from '../_utils/classes.js';
-  import getColorPickerStyles from '../_utils/color-picker-styles.js';
-  import s from '../_utils/plural-s.js';
+  import classes from '../utils/classes.js';
+  import getColorPickerStyles from '../utils/color-picker-styles.js';
+  import s from '../utils/plural-s.js';
   import Checkbox from './checkbox.svelte';
 
   let _class = null;
