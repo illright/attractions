@@ -1,0 +1,6 @@
+node_modules/
+demo/public/
+*.*
+LICENSE
+!*.css
+!*.scss
