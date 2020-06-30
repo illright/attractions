@@ -1,6 +1,6 @@
 export default function ripple(node, options = {}) {
   // Default values.
-  let props = {
+  const props = {
     event: options.event || 'click',
     transition: options.transition || 150,
     zIndex: options.zIndex || '100',
@@ -14,12 +14,12 @@ export default function ripple(node, options = {}) {
     });
   }
 
-  function rippler(event, target, {bg, zIndex, transition}) {
+  function rippler(event, target, { bg, zIndex, transition }) {
     // Get border to avoid offsetting on ripple container position
-    let targetBorder = parseInt((getComputedStyle(target).borderWidth).replace('px', ''));
+    const targetBorder = parseInt((getComputedStyle(target).borderWidth).replace('px', ''));
 
     // Get necessary variables
-    let rect = target.getBoundingClientRect(),
+    const rect = target.getBoundingClientRect(),
       left = rect.left,
       top = rect.top,
       width = target.offsetWidth,
@@ -30,11 +30,11 @@ export default function ripple(node, options = {}) {
       maxY = Math.max(dy, height - dy),
       style = window.getComputedStyle(target),
       radius = Math.sqrt((maxX * maxX) + (maxY * maxY)),
-      border = (targetBorder > 0 ) ? targetBorder : 0;
+      border = (targetBorder > 0) ? targetBorder : 0;
 
     // Create the ripple and its container
-    let ripple = document.createElement('div');
-    let rippleContainer = document.createElement('div');
+    const ripple = document.createElement('div');
+    const rippleContainer = document.createElement('div');
     rippleContainer.className = 'ripple-container';
     ripple.className = 'ripple';
 
@@ -62,7 +62,7 @@ export default function ripple(node, options = {}) {
     rippleContainer.style.overflow = 'hidden';
 
     // Store target position to change it after
-    let storedTargetPosition = (
+    const storedTargetPosition = (
       (target.style.position).length > 0 ?
         target.style.position
         : getComputedStyle(target).position
@@ -78,7 +78,6 @@ export default function ripple(node, options = {}) {
     ripple.style.marginLeft = dx + 'px';
     ripple.style.marginTop = dy + 'px';
 
-    // No need to set positioning because ripple should be child of target and to its relative position.
     rippleContainer.style.width = width + 'px';
     rippleContainer.style.height = height + 'px';
     rippleContainer.style.borderTopLeftRadius = style.borderTopLeftRadius;
@@ -106,7 +105,7 @@ export default function ripple(node, options = {}) {
 
       // After removing event set position to target to it's original one
       // Timeout it's needed to avoid jerky effect of ripple jumping out parent target
-      setTimeout(function () {
+      setTimeout(function() {
         let clearPosition = true;
         for (let i = 0; i < target.childNodes.length; i++) {
           if (target.childNodes[i].className === 'ripple-container') {

@@ -10,7 +10,8 @@
   export let currentPage = 1;
   export let showLonePage = true;
 
-  $: currentPage = Math.min(Math.max(currentPage, 1), pages); // clamp currentPage between [1; pages]
+  // clamp currentPage between [1; pages]
+  $: currentPage = Math.min(Math.max(currentPage, 1), pages);
 
   let leftInputActive = false;
   let rightInputActive = false;
@@ -54,7 +55,7 @@
   }
 
   $: pageList = generateButtonList(pages, currentPage);
-  
+
   function goTo(page) {
     if (page >= 1 && page <= pages) {
       leftInputActive = false;

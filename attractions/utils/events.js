@@ -1,7 +1,7 @@
 /* An action to set up arbitrary event listeners dynamically. */
 export default function events(node, args) {
   if (args != null) {
-    for (let event of args) {
+    for (const event of args) {
       node.addEventListener(event.name, event.handler);
     }
   }
@@ -9,7 +9,7 @@ export default function events(node, args) {
   return {
     destroy() {
       if (args != null) {
-        for (let event of args) {
+        for (const event of args) {
           node.removeEventListener(event.name, event.handler);
         }
       }
