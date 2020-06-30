@@ -61,7 +61,7 @@
       leftInputActive = false;
       rightInputActive = false;
       currentPage = page;
-      dispatch('page-switch', page);
+      dispatch('change', { value: page });
     }
   }
 
