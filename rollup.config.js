@@ -62,7 +62,9 @@ function serve() {
 
   return {
     writeBundle() {
-      if (started) return;
+      if (started) {
+        return;
+      }
       started = true;
 
       require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {

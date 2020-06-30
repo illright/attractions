@@ -10,12 +10,12 @@ export function parseDateTime(string, format, defaultValue) {
     return null;
   }
 
-  let parts = format.split(formatSpecifierRegex);
+  const parts = format.split(formatSpecifierRegex);
   let stringIdx = 0;
   let formatIdx = 0;
   const result = new Date(0);
 
-  for (let part of parts) {
+  for (const part of parts) {
     if (!string.startsWith(part, stringIdx)) {
       return defaultValue;
     }
@@ -179,7 +179,7 @@ export function getCalendar(month, year, firstWeekday) {
   dayCursor.setDate(1 - (daysInWeek + dayCursor.getDay() - firstWeekday) % daysInWeek);
 
   do {
-    let week = [];
+    const week = [];
     for (let i = 0; i < daysInWeek; ++i) {
       week.push({
         value: new Date(dayCursor.valueOf()),
