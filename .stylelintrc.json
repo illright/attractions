@@ -1,0 +1,10 @@
+{
+  "extends": ["stylelint-config-sass-guidelines"],
+  "rules": {
+    "color-named": null,
+    "scss/at-import-partial-extension-blacklist": null,
+    "scss/at-import-no-partial-leading-underscore": null,
+    "number-leading-zero": "never",
+    "order/properties-alphabetical-order": null
+  }
+}

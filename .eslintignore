@@ -1,0 +1,6 @@
+/node_modules/
+/demo/public
+/src/node_modules/@sapper/
+/dist
+/attractions/dist
+static
