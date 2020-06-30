@@ -14,7 +14,9 @@
   let self = null;
 
   function clickOutside(event) {
-    if (!self) return;
+    if (!self) {
+      return;
+    }
 
     const isClickInside = self.contains(event.target);
     if (!isClickInside && open) {

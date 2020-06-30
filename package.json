@@ -4,8 +4,8 @@
     "prepublishOnly": "echo \"Error: You shouldn't publish this package.\" && exit 1",
     "dev": "rollup -c -w",
     "start": "sirv demo/public --host 0.0.0.0",
-    "lint": "eslint --format=pretty .; stylelint .",
-    "lint:fix": "eslint --format=pretty --fix .; stylelint --fix ."
+    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
+    "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js,.json'; stylelint --fix ."
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
