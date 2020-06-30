@@ -72,6 +72,7 @@
       stroke: currentColor;
       transition: transform 150ms;
       opacity: 0;
+      pointer-events: none;
     }
   }
 
