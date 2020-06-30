@@ -1,22 +1,22 @@
 @import '../var-defaults.scss';
 @import '_attractions-theme.scss';
 
-div[role=group] {
-  :global(.checkbox:not(.colored) > .icon) {
+div[role=group] :global {
+  .checkbox:not(.colored) > .icon {
     margin: 0 .5em;
   }
 
-  :global(.checkbox.colored > input + .icon::before) {
+  .checkbox.colored > input + .icon::before {
     border-color: lightgray;
     border-color: rgb(var(--before-r), var(--before-g), var(--before-b));
   }
 
-  :global(.checkbox.colored:hover > input + .icon::after) {
+  .checkbox.colored:hover > input + .icon::after {
     background-color: rgba(0, 0, 0, .05);
     background-color: rgba(var(--r), var(--g), var(--b), .05);
   }
 
-  :global(.checkbox.colored > input:focus + .icon::after) {
+  .checkbox.colored > input:focus + .icon::after {
     background-color: rgba(0, 0, 0, .125);
     background-color: rgba(var(--r), var(--g), var(--b), .125);
   }

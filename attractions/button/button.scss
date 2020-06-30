@@ -15,7 +15,7 @@
   align-items: center;
   cursor: pointer;
 
-  :global(.ripple) {
+  :global .ripple {
     background: transparentize($main, .9);
   }
 
@@ -27,26 +27,26 @@
     color: $main;
   }
 
-  &.neutral {
+  &.neutral :global {
     color: $dark;
 
-    :global(.icon) {
+    .icon {
       stroke: $dark;
     }
 
-    :global(.ripple) {
+    .ripple {
       background: transparentize($dark, .9);
     }
   }
 
-  &.danger {
+  &.danger :global {
     color: $danger;
 
-    :global(.icon) {
+    .icon {
       stroke: $danger;
     }
 
-    :global(.ripple) {
+    .ripple {
       background: transparentize($danger, .9);
     }
   }
@@ -110,11 +110,11 @@
       box-shadow: none;
     }
 
-    :global(.icon) {
+    :global .icon {
       stroke: $main-text;
     }
 
-    :global(.ripple) {
+    :global .ripple {
       background: transparentize($main-text, .75);
     }
   }
@@ -174,7 +174,7 @@
     background: transparent;
     cursor: default;
 
-    :global(.icon) {
+    :global .icon {
       stroke: $disabled;
     }
   }
@@ -195,7 +195,7 @@
     background: transparentize($main, .88);
   }
 
-  :global(.icon) {
+  :global .icon {
     stroke: $main;
   }
 }

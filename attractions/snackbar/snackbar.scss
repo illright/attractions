@@ -19,7 +19,7 @@
     font-size: .95em;
   }
 
-  :global(.btn) {
+  :global .btn {
     color: lighten($main, 17%);
   }
 }

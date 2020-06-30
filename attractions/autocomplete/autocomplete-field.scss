@@ -6,14 +6,14 @@
   display: flex;
   justify-content: center;
 
-  > :global(.btn) {
+  > :global .btn {
     @include hide-accessible;
-  }
 
-  > :global(.btn:focus) {
-    @include show-accessible;
+    &:focus {
+      @include show-accessible;
 
-    margin: .5em;
+      margin: .5em;
+    }
   }
 }
 
@@ -23,7 +23,7 @@
   font-weight: $thin-font-weight;
 }
 
-input + :global(.dropdown) {
+input + :global .dropdown {
   border-radius: .5em;
   overflow: hidden;
 }
@@ -52,12 +52,14 @@ input + :global(.dropdown) {
     }
   }
 
-  :global(li:first-child) {
-    margin-top: .5em;
-  }
+  :global li {
+    &:first-child {
+      margin-top: .5em;
+    }
 
-  :global(li:last-child) {
-    margin-bottom: .5em;
+    &:last-child {
+      margin-bottom: .5em;
+    }
   }
 
   .loading-options {
@@ -66,7 +68,7 @@ input + :global(.dropdown) {
     font-size: .95em;
     margin: .5em 1.2em;
 
-    :global(.spinner) {
+    :global .spinner {
       margin-right: .7em;
       margin-bottom: .3em;
     }
@@ -76,7 +78,7 @@ input + :global(.dropdown) {
     margin-left: .5em;
     margin-right: .5em;
 
-    :global(svg) {
+    :global svg {
       margin-right: .5em;
     }
   }

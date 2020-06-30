@@ -23,7 +23,7 @@
     @include hide-accessible;
   }
 
-  :global(.icon) {
+  :global .icon {
     stroke: currentColor;
   }
 
@@ -59,7 +59,7 @@
       background: transparentize($main, .975);
     }
 
-    :global(.ripple) {
+    :global .ripple {
       background: transparentize($main, .9);
     }
 
@@ -67,7 +67,7 @@
       background: transparentize($main, .95);
     }
 
-    :global(svg) {
+    :global svg {
       margin-right: 1em;
       stroke: currentColor;
       transition: transform 150ms;
@@ -94,7 +94,7 @@
       display: none;
     }
 
-    .dropzone-layer :global(svg) {
+    .dropzone-layer :global svg {
       opacity: 1;
     }
   }
@@ -111,11 +111,11 @@
         background: transparentize($danger, .95);
       }
 
-      :global(.ripple) {
+      :global .ripple {
         background: transparentize($danger, .9);
       }
 
-      :global(svg.plus) {
+      :global svg.plus {
         transform: rotate(45deg);
       }
     }

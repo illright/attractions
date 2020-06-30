@@ -5,108 +5,112 @@
 .time-picker {
   display: inline-block;
 
-  :global(.dropdown-shell .handle) {
-    display: flex;
-    align-items: center;
+  :global {
+    .dropdown-shell .handle {
+      display: flex;
+      align-items: center;
 
-    > :global(span) {
-      margin: 1em;
-    }
-
-    :global(.text-field.in-focus input) {
-      background-color: darken($textfield-bg, 8%);
-      border-bottom-width: .125em;
-      border-color: lighten($main, 4%);
-      padding-bottom: 0;
-    }
-  }
-
-  :global(.text-field) {
-    width: 4.8em;
-  }
-
-  :global(.barrel) {
-    display: grid;
-    grid-template-columns: repeat(2, 4em);
-    justify-items: center;
-    gap: .5em 1em;
-    padding: 1em 1em .5em;
-
-    > :global(.label) {
-      margin: 0 1em;
-      grid-row: 2;
-    }
-
-    > :global(.column) {
-      max-height: 10em;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      overscroll-behavior: none;
-      list-style: none;
-      border: 0 solid $light-contrast;
-      border-bottom-width: .0625em;
-      border-top-width: .0625em;
-
-      @media only screen and (min-height: 620px) {
-        max-height: 15em;
+      > span {
+        margin: 1em;
       }
 
-      &::-webkit-scrollbar {
-        width: .3125em;
-        height: .5em;
-        background: $background;
+      .text-field.in-focus input {
+        background-color: darken($textfield-bg, 8%);
+        border-bottom-width: .125em;
+        border-color: lighten($main, 4%);
+        padding-bottom: 0;
+      }
+    }
+
+    .text-field {
+      width: 4.8em;
+    }
+
+    .barrel {
+      display: grid;
+      grid-template-columns: repeat(2, 4em);
+      justify-items: center;
+      gap: .5em 1em;
+      padding: 1em 1em .5em;
+
+      > .label {
+        margin: 0 1em;
+        grid-row: 2;
       }
 
-      &::-webkit-scrollbar-thumb {
-        background: $light-contrast;
-        border-radius: .3125em;
+      > .column {
+        max-height: 10em;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        overscroll-behavior: none;
+        list-style: none;
+        border: 0 solid $light-contrast;
+        border-bottom-width: .0625em;
+        border-top-width: .0625em;
 
-        &:hover {
-          background: darken($light-contrast, 10%);
+        @media only screen and (min-height: 620px) {
+          max-height: 15em;
+        }
+
+        &::-webkit-scrollbar {
+          width: .3125em;
+          height: .5em;
+          background: $background;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $light-contrast;
+          border-radius: .3125em;
+
+          &:hover {
+            background: darken($light-contrast, 10%);
+          }
         }
       }
-    }
 
-    :global(.am-pm-tabs) {
-      display: flex;
+      .am-pm-tabs {
+        display: flex;
 
-      :global(.tab) {
-        margin: 0 1em;
+        .tab {
+          margin: 0 1em;
+        }
       }
-    }
 
-    :global(.shown-on-focus > .btn) {
-      @include hide-accessible;
+      .shown-on-focus > .btn {
+        @include hide-accessible;
 
-      &:focus {
-        @include show-accessible;
+        &:focus {
+          @include show-accessible;
+        }
       }
-    }
 
-    :global(.btn, .am-pm-tabs, .shown-on-focus) {
-      grid-column: 1 / -1;
-      justify-self: center;
-    }
+      .btn,
+      .am-pm-tabs,
+      .shown-on-focus {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
 
-    :global(.btn > svg) {
-      margin-right: .4em;
+      .btn > svg {
+        margin-right: .4em;
+      }
     }
   }
 
-  &.f12hours :global(.text-field) {
+  &.f12hours :global .text-field {
     width: 6.5em;
   }
 
-  &.f12hours.seconds :global(.text-field) {
+  &.f12hours.seconds :global .text-field {
     width: 7.7em;
   }
 
-  &.seconds {
-    :global(.text-field) {
+  &.seconds :global {
+    .text-field {
       width: 6em;
     }
 
-    :global(.barrel) {
+    .barrel {
       grid-template-columns: repeat(3, 4em);
     }
   }
