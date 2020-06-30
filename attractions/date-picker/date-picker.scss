@@ -11,7 +11,7 @@ $side-padding: 1rem;
     display: flex;
     align-items: center;
 
-    & > :global(span) {
+    > :global(span) {
       margin: 1em;
     }
 
@@ -27,11 +27,11 @@ $side-padding: 1rem;
     display: flex;
     justify-content: center;
 
-    & > :global(.btn) {
+    > :global(.btn) {
       @include hide-accessible;
     }
 
-    & > :global(.btn:focus) {
+    > :global(.btn:focus) {
       @include show-accessible;
     }
   }

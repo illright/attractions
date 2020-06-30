@@ -9,7 +9,7 @@ $dot-size: .4em;
   align-items: center;
   justify-content: center;
 
-  & > div {
+  > div {
     width: $dot-size;
     height: $dot-size;
     background: $main;
@@ -29,7 +29,9 @@ $dot-size: .4em;
 }
 
 @keyframes sk-bouncedelay {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     transform: scale(0);
   }
 

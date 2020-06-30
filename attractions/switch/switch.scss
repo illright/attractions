@@ -21,7 +21,7 @@
     cursor: pointer;
 
     &::before {
-      content: "";
+      content: '';
       width: 3.25em;
       height: 2.375em;
       border-radius: 1.125em;
@@ -31,7 +31,7 @@
       transform: translate(-50%, -50%);
     }
 
-    & > .thumb {
+    > .thumb {
       border-radius: 50%;
       width: .75em;
       height: .75em;
@@ -47,7 +47,7 @@
   input:checked ~ .track {
     border-color: $main;
 
-    & > .thumb {
+    > .thumb {
       background-color: $main;
       transform: translateY(-50%) translateX(100%);
     }
@@ -57,7 +57,7 @@
     cursor: not-allowed;
     border-color: $disabled;
 
-    & > .thumb {
+    > .thumb {
       background: none;
       border: .125em solid $disabled;
       width: .5em;
@@ -65,7 +65,7 @@
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         width: .6em;
         height: .125em;
         left: 0;

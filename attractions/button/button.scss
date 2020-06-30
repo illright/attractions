@@ -30,7 +30,7 @@
   &.neutral {
     color: $dark;
 
-    & :global(.icon) {
+    :global(.icon) {
       stroke: $dark;
     }
 
@@ -42,7 +42,7 @@
   &.danger {
     color: $danger;
 
-    & :global(.icon) {
+    :global(.icon) {
       stroke: $danger;
     }
 
@@ -110,7 +110,7 @@
       box-shadow: none;
     }
 
-    & :global(.icon) {
+    :global(.icon) {
       stroke: $main-text;
     }
 
@@ -136,29 +136,35 @@
   }
 
   &:hover:not(:disabled) {
-    &, &.outline {
+    &,
+    &.outline {
       background: transparentize($main, .95);
     }
 
-    &.danger, &.outline.danger {
+    &.danger,
+    &.outline.danger {
       background: transparentize($danger, .95);
     }
 
-    &.neutral, &.outline.neutral {
+    &.neutral,
+    &.outline.neutral {
       background-color: transparentize($dark, .95);
     }
   }
 
   &:focus:not(:disabled) {
-    &, &.outline {
+    &,
+    &.outline {
       background-color: transparentize($main, .88);
     }
 
-    &.danger, &.outline.danger {
+    &.danger,
+    &.outline.danger {
       background: transparentize($danger, .88);
     }
 
-    &.neutral, &.outline.neutral {
+    &.neutral,
+    &.outline.neutral {
       background-color: transparentize($dark, .88);
     }
   }
@@ -168,7 +174,7 @@
     background: transparent;
     cursor: default;
 
-    & :global(.icon) {
+    :global(.icon) {
       stroke: $disabled;
     }
   }
@@ -189,11 +195,11 @@
     background: transparentize($main, .88);
   }
 
-  & :global(.icon) {
+  :global(.icon) {
     stroke: $main;
   }
 }
 
 button.btn {
-  border: none;
+  border: 0;
 }

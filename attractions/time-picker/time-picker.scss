@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
 
-    & > :global(span) {
+    > :global(span) {
       margin: 1em;
     }
 
@@ -32,12 +32,12 @@
     gap: .5em 1em;
     padding: 1em 1em .5em;
 
-    & > :global(.label) {
+    > :global(.label) {
       margin: 0 1em;
       grid-row: 2;
     }
 
-    & > :global(.column) {
+    > :global(.column) {
       max-height: 10em;
       overflow-y: scroll;
       overflow-x: hidden;

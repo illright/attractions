@@ -8,7 +8,7 @@
   font-size: .9em;
   font-family: $font;
   box-shadow: $shadow-raised;
-  border: none;
+  border: 0;
   outline: none;
   color: #fff;
   padding: .5em .625em;
@@ -25,7 +25,7 @@
     background: rgb(50, 50, 50);
   }
 
-  & > :global(svg) {
+  > :global(svg) {
     width: 1.125em;
     height: 1.125em;
     stroke: #fff;
