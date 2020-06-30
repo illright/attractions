@@ -96,7 +96,7 @@
       <slot />
     {/if}
 
-    {#if error != null}
+    {#if error}
       <span class={classes('error', errorClass)}>
         <slot name="error">{error}</slot>
       </span>
