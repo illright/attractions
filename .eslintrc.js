@@ -15,15 +15,10 @@ module.exports = {
   "plugins": ["svelte3"],
   "overrides": [
     {
-      "files": ["**/*.svelte"],
+      "files": ["*.svelte"],
       "processor": "svelte3/svelte3",
     },
   ],
-  "globals": {
-    "__DEBUG__": false,
-    "__DEV__": false,
-    "__HOT__": false,
-  },
   "settings": {
     "svelte3/ignore-styles": (attrs) => attrs.lang === 'scss',
   },

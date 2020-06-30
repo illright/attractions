@@ -14,7 +14,6 @@
     Accordion,
     AccordionSection,
     Modal,
-    Chip,
     Tab, Tabs,
     // Label,
     // Headline,
@@ -41,7 +40,7 @@
   import getOptions from './get-autocomplete-options.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
-  let items = [
+  const items = [
     { value: 1, label: 'one', disabled: true },
     { value: 2, label: 'two', disabled: false },
     { value: 3 },
@@ -63,11 +62,6 @@
   let open3 = false;
   let dropdownTabSelected = false;
   let date = new Date();
-
-  function changeFromOutside() {
-    date.setDate(1);
-    date = date;
-  }
 
   let selection = [];
   let filesSelected = [];
@@ -165,7 +159,7 @@
     <RadioGroup items={items} bind:value={item} name="numbers" />
     <CheckboxGroup items={items} max={1} name="numbers-check" /> -->
     <div class="dropdown-holder">
-      <DropdownShell let:toggle on:change={() => console.log('yay')}>
+      <DropdownShell let:toggle>
         <Button on:click={toggle}>
           test me!
           <ChevronDownIcon size="24" class="ml dropdown-chevron" />
@@ -221,7 +215,7 @@
       <Button on:click={() => showSnackbar({
         props: {
           text: 'Did it hurt when you fell from the vending machine? Cause you a snack ;)',
-          action: { text: 'smooth', callback: () => console.log('thanks!') },
+          action: { text: 'smooth' },
         },
       })}>
         show a snackbar
