@@ -6,11 +6,11 @@
   display: flex;
   justify-content: center;
 
-  & > :global(.btn) {
+  > :global(.btn) {
     @include hide-accessible;
   }
 
-  & > :global(.btn:focus) {
+  > :global(.btn:focus) {
     @include show-accessible;
 
     margin: .5em;

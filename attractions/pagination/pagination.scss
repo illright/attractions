@@ -1,5 +1,5 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .pagination {
   margin: 2em 1em;
@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
 
-  & > .page {
+  > .page {
     width: 2.5em;
     height: 2.5em;
     margin: 0 .2em;
@@ -16,7 +16,7 @@
     flex-shrink: 0;
   }
 
-  & > :global(.text-field) {
+  > :global(.text-field) {
     margin: 0 .2em;
 
     :global(input) {
@@ -25,7 +25,7 @@
     }
   }
 
-  & > :global(.page.current) {
+  > :global(.page.current) {
     background: transparentize($main, .95);
 
     &:hover {
@@ -38,8 +38,8 @@
   }
 
   @media only screen and (min-width: 380px) {
-    & > :global(.page),
-    & > :global(.text-field) {
+    > :global(.page),
+    > :global(.text-field) {
       margin: 0 .4em;
     }
   }
@@ -48,14 +48,14 @@
     width: 540px;
     align-self: center;
 
-    & > :global(.page),
+    > :global(.page),
     :global(input) {
       font-size: 1.1rem;
     }
   }
 
   @media only screen and (min-width: 1024px) {
-    & > :global(.page),
+    > :global(.page),
     :global(input) {
       font-size: 1.2rem;
     }

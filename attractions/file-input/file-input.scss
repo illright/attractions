@@ -52,12 +52,12 @@ label {
     background: transparent;
     cursor: default;
 
-    & :global(.icon) {
+    :global(.icon) {
       stroke: $disabled;
     }
   }
 
-  & :global(.icon) {
+  :global(.icon) {
     stroke: $main;
   }
 }

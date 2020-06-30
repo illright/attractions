@@ -9,11 +9,11 @@
   position: relative;
   cursor: pointer;
 
-  & > input[type="radio"] {
+  > input[type='radio'] {
     @include hide-accessible;
   }
 
-  & > .icon {
+  > .icon {
     border-radius: 50%;
     width: 1.25em;
     height: 1.25em;
@@ -22,7 +22,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       width: 2.25em;
       height: 2.25em;
       border-radius: 50%;
@@ -33,17 +33,17 @@
     }
   }
 
-  & > input:disabled + .icon {
+  > input:disabled + .icon {
     cursor: not-allowed;
     background-color: lighten($light-contrast, 6%);
   }
 
-  & > input:checked + .icon {
+  > input:checked + .icon {
     background-color: $main;
     border-color: $main;
 
     &::before {
-      content: "";
+      content: '';
       width: .5em;
       height: .5em;
       background-color: $main-text;
@@ -55,26 +55,26 @@
     }
   }
 
-  & > input:disabled:checked + .icon {
+  > input:disabled:checked + .icon {
     background-color: $disabled;
     border-color: lighten($disabled, 4%);
   }
 
   &:hover {
-    & > input:not(:disabled) + .icon::after {
+    > input:not(:disabled) + .icon::after {
       background-color: transparentize($dark, .95);
     }
 
-    & > input:checked + .icon::after {
+    > input:checked + .icon::after {
       background-color: transparentize($main, .95);
     }
   }
 
-  & > input:focus + .icon::after {
+  > input:focus + .icon::after {
     background-color: transparentize($dark, .875);
   }
 
-  & > input:focus:checked + .icon::after {
+  > input:focus:checked + .icon::after {
     background-color: transparentize($main, .875);
   }
 }

@@ -10,7 +10,7 @@ $side-padding: 1rem;
   display: flex;
   font-size: .85em;
 
-  & > .weekday {
+  > .weekday {
     width: percentage(1 / 7);
     text-align: center;
   }
@@ -34,7 +34,7 @@ $side-padding: 1rem;
       padding-left: $side-padding;
     }
 
-    & > :global(.btn) {
+    > :global(.btn) {
       font-weight: 400;
       font-size: .9em;
       color: $dark;
@@ -60,7 +60,7 @@ $side-padding: 1rem;
 
     &.in-range::before {
       background-color: transparentize($main, .75);
-      content: "";
+      content: '';
       height: $day-size;
       position: absolute;
       left: 0;

@@ -38,6 +38,7 @@ $snackbar-vertical-offset: 3em;
 $bold-font-weight: 500;
 $thin-font-weight: 300;
 
+/* stylelint-disable scss/dollar-variable-colon-space-after */
 $shadow-0:
   0 2px 2px 0 transparentize(black, .86),
   0 1px 5px 0 transparentize(black, .88);
@@ -50,3 +51,4 @@ $shadow-raised:
   0 2px 4px -1px transparentize(black, .8),
   0 3px 5px 0    transparentize(black, .86),
   0 1px 10px 0   transparentize(black, .88);
+/* stylelint-enable scss/dollar-variable-colon-space-after */
