@@ -31,7 +31,7 @@ label {
     @include hide-accessible;
   }
 
-  :global(.ripple) {
+  :global .ripple {
     background: transparentize($main, .9);
   }
 
@@ -52,12 +52,12 @@ label {
     background: transparent;
     cursor: default;
 
-    :global(.icon) {
+    :global .icon {
       stroke: $disabled;
     }
   }
 
-  :global(.icon) {
+  :global .icon {
     stroke: $main;
   }
 }

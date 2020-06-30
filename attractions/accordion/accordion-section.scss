@@ -3,12 +3,12 @@
     display: none;
   }
 
-  :global(.accordion-chevron) {
+  :global .accordion-chevron {
     margin-bottom: -.125em;
     transition: transform 100ms;
   }
 
-  &.open :global(.accordion-chevron) {
+  &.open :global .accordion-chevron {
     transform: rotate(180deg);
   }
 }

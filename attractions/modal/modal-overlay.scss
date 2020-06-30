@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
 
-    :global(.dialog) {
+    :global .dialog {
       animation: slide-up 100ms ease-out;
     }
   }

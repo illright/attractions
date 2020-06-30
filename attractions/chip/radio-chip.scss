@@ -12,7 +12,7 @@
   user-select: none;
   -webkit-touch-callout: none;
 
-  :global(.ripple) {
+  :global .ripple {
     background: transparentize($main, .9);
   }
 

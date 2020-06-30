@@ -7,15 +7,15 @@ $side-padding: 1rem;
 .date-picker {
   display: inline-block;
 
-  :global(.dropdown-shell .handle) {
+  :global .dropdown-shell .handle {
     display: flex;
     align-items: center;
 
-    > :global(span) {
+    > span {
       margin: 1em;
     }
 
-    :global(.text-field.in-focus input) {
+    .text-field.in-focus input {
       background-color: darken($textfield-bg, 8%);
       border-bottom-width: .125em;
       border-color: lighten($main, 4%);
@@ -23,15 +23,15 @@ $side-padding: 1rem;
     }
   }
 
-  .shown-on-focus {
+  .shown-on-focus :global {
     display: flex;
     justify-content: center;
 
-    > :global(.btn) {
+    > .btn {
       @include hide-accessible;
     }
 
-    > :global(.btn:focus) {
+    > .btn:focus {
       @include show-accessible;
     }
   }
@@ -44,7 +44,7 @@ $side-padding: 1rem;
     padding: 0 $side-padding .5em;
     color: $main;
 
-    :global(.btn) {
+    :global .btn {
       flex: 0;
     }
 
@@ -54,11 +54,11 @@ $side-padding: 1rem;
     }
   }
 
-  :global(.calendar) {
+  :global .calendar {
     padding: .5em 0 1em;
   }
 
-  :global(.text-field) {
+  :global .text-field {
     width: 7em;
   }
 }

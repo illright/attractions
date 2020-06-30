@@ -26,11 +26,11 @@ $selected-color: mix(white, $main, 20%);
     cursor: pointer;
     color: $off-state;
 
-    :global(svg) {
+    :global svg {
       display: block;
     }
 
-    :global(.ripple) {
+    :global .ripple {
       background: transparentize($main, .9);
     }
 

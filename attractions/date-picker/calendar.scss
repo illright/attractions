@@ -34,7 +34,7 @@ $side-padding: 1rem;
       padding-left: $side-padding;
     }
 
-    > :global(.btn) {
+    > :global .btn {
       font-weight: 400;
       font-size: .9em;
       color: $dark;
@@ -45,16 +45,16 @@ $side-padding: 1rem;
       height: $day-size;
     }
 
-    &.today > :global(.btn) {
+    &.today > :global .btn {
       color: $main;
     }
 
-    &.selected > :global(.btn) {
+    &.selected > :global .btn {
       background-color: desaturate(lighten($main, 10%), 20%);
       color: $main-text;
     }
 
-    &.outside > :global(.btn) {
+    &.outside > :global .btn {
       color: $disabled;
     }
 
@@ -69,7 +69,7 @@ $side-padding: 1rem;
       z-index: 1;
     }
 
-    &.outside.selected > :global(.btn) {
+    &.outside.selected > :global .btn {
       color: $main-text;
     }
 

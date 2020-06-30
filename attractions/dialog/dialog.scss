@@ -19,13 +19,13 @@
       padding-right: 1.5em;
     }
 
-    :global(svg) {
+    :global svg {
       margin-right: .5em;
       flex-shrink: 0;
     }
   }
 
-  > :global(.btn.close) {
+  > :global .btn.close {
     position: absolute;
     top: .7em;
     right: .7em;
