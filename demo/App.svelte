@@ -1,6 +1,7 @@
 <script>
   import {
     Button,
+    Badge,
     // RadioGroup,
     Card,
     TextField,
@@ -13,7 +14,6 @@
     Accordion,
     AccordionSection,
     Modal,
-    Chip,
     Tab, Tabs,
     // Label,
     // Headline,
@@ -30,16 +30,17 @@
     Calendar,
     FormField,
     Autocomplete,
-  } from '../src/index.js';
-  import { SnackbarPositions } from '../src/snackbar';
-  import { PopoverPositions } from '../src/popover';
+    Pagination,
+  } from '../attractions/index.js';
+  import { SnackbarPositions } from '../attractions/snackbar';
+  import { PopoverPositions } from '../attractions/popover';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
   import ModalDialog from './modal-dialog.svelte';
   import getOptions from './get-autocomplete-options.js';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
-  let items = [
+  const items = [
     { value: 1, label: 'one', disabled: true },
     { value: 2, label: 'two', disabled: false },
     { value: 3 },
@@ -62,15 +63,12 @@
   let dropdownTabSelected = false;
   let date = new Date();
 
-  function changeFromOutside() {
-    date.setDate(1);
-    date = date;
-  }
-
   let selection = [];
   let filesSelected = [];
 
   let inputNumber = null;
+
+  let pageCount = 5;
 </script>
 
 <SnackbarContainer position={SnackbarPositions.BOTTOM_LEFT} let:showSnackbar>
@@ -86,6 +84,9 @@
       {/if}
     </div>
   </div>
+  <Button on:click={() => pageCount--}>-</Button>
+  <Pagination pages={pageCount} />
+  <Button on:click={() => pageCount++}>+</Button>
   <a href="https://googles.com">say my name</a>
   <Card>
     <Autocomplete
@@ -132,7 +133,9 @@
       </Button>
       <Popover position={PopoverPositions.BOTTOM}>
         <Button>
-          i have a popover
+          <Badge>
+            i have a popover
+          </Badge>
         </Button>
         <div slot="popover-content">
           <PopoverButton>
@@ -156,7 +159,7 @@
     <RadioGroup items={items} bind:value={item} name="numbers" />
     <CheckboxGroup items={items} max={1} name="numbers-check" /> -->
     <div class="dropdown-holder">
-      <DropdownShell let:toggle on:change={() => console.log('yay')}>
+      <DropdownShell let:toggle>
         <Button on:click={toggle}>
           test me!
           <ChevronDownIcon size="24" class="ml dropdown-chevron" />
@@ -212,7 +215,7 @@
       <Button on:click={() => showSnackbar({
         props: {
           text: 'Did it hurt when you fell from the vending machine? Cause you a snack ;)',
-          action: { text: 'smooth', callback: () => console.log('thanks!') },
+          action: { text: 'smooth' },
         },
       })}>
         show a snackbar

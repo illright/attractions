@@ -1,0 +1,41 @@
+/* Adapted from SpinKit by @tobiasahlin: https://tobiasahlin.com/spinkit/ */
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+$dot-size: .4em;
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    width: $dot-size;
+    height: $dot-size;
+    background: $main;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 0 .1em;
+    animation: sk-bouncedelay 1.2s infinite ease-in-out both;
+  }
+
+  .bounce1 {
+    animation-delay: -.32s;
+  }
+
+  .bounce2 {
+    animation-delay: -.16s;
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}

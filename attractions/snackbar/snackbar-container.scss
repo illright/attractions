@@ -1,0 +1,38 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.snackbar-stack {
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+
+  &.left {
+    left: $snackbar-horizontal-offset;
+    align-items: flex-start;
+  }
+
+  &.right {
+    right: $snackbar-horizontal-offset;
+    align-items: flex-end;
+  }
+
+  &.h-middle {
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+  }
+
+  &.top {
+    top: $snackbar-vertical-offset;
+  }
+
+  &.bottom {
+    bottom: $snackbar-vertical-offset;
+  }
+
+  &.v-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

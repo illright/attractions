@@ -4,8 +4,8 @@
     Button,
     Card,
     TextField,
-  } from '../src/index.js';
-  import { snackbarContextKey } from '../src/snackbar';
+  } from '../attractions/index.js';
+  import { snackbarContextKey } from '../attractions/snackbar';
 
   const showSnackbar = getContext(snackbarContextKey);
 

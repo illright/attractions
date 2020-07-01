@@ -1,9 +1,0 @@
-div {
-  display: flex;
-  flex-wrap: wrap;
-
-  :global(.chip) {
-    margin-top: .5em;
-    margin-right: .5em;
-  }
-}

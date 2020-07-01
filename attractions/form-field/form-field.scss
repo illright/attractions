@@ -1,0 +1,54 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+
+  .description {
+    margin-bottom: .75em;
+
+    .name {
+      font-size: 1.1em;
+      margin-bottom: .2em;
+
+      .required {
+        color: $main;
+      }
+    }
+
+    .help {
+      font-size: .95em;
+      font-weight: $thin-font-weight;
+    }
+  }
+
+  .field {
+    .message {
+      margin: .3em .5em;
+      font-size: .85em;
+
+      &.info {
+        color: $main;
+      }
+
+      &.error {
+        color: $danger;
+      }
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+
+    .description {
+      flex-basis: 40%;
+    }
+
+    .field {
+      flex: 1;
+      margin-left: 1em;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: $font;
+  cursor: pointer;
+
+  > input[type='checkbox'] {
+    @include hide-accessible;
+  }
+
+  > .icon {
+    border-radius: .25em;
+    width: 1em;
+    height: 1em;
+    border: .125em solid $light-contrast;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 2.25em;
+      height: 2.25em;
+      border-radius: 50%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.round > .icon {
+    border-radius: 50%;
+    width: 1.375em;
+    height: 1.375em;
+  }
+
+  > input:disabled + .icon {
+    cursor: not-allowed;
+    background-color: lighten($light-contrast, 6%);
+  }
+
+  > input:checked + .icon {
+    background-color: $main;
+    border-color: $main;
+
+    &::before {
+      content: '';
+      width: .5625em;
+      height: .375em;
+      border: 0 solid $main-text;
+      border-bottom-width: .125em;
+      border-left-width: .125em;
+      border-bottom-left-radius: .125em;
+      left: 50%;
+      position: absolute;
+      top: 45%;
+      transform: translate(-50%, -50%) rotate(-57deg) skew(-11deg);
+    }
+  }
+
+  > input:disabled:checked + .icon {
+    background-color: $disabled;
+    border-color: lighten($disabled, 4%);
+  }
+
+  &:hover {
+    > input:not(:disabled) + .icon::after {
+      background-color: transparentize($dark, .95);
+    }
+
+    > input:checked + .icon::after {
+      background-color: transparentize($main, .95);
+    }
+  }
+
+  > input:focus + .icon::after {
+    background-color: transparentize($dark, .875);
+  }
+
+  > input:focus:checked + .icon::after {
+    background-color: transparentize($main, .875);
+  }
+}

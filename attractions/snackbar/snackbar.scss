@@ -1,0 +1,25 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.snackbar {
+  min-width: 16em;
+  padding: .375em;
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  border-radius: $snackbar-radius;
+  background: $snackbar-bg;
+  box-shadow: $shadow-raised;
+
+  .text {
+    padding: .8em 0;
+    margin: 0 .625em;
+    color: $snackbar-fg;
+    flex: 1;
+    font-size: .95em;
+  }
+
+  :global .btn {
+    color: lighten($main, 17%);
+  }
+}

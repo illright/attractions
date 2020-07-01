@@ -1,0 +1,23 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+div[role=radiogroup] :global {
+  .radio:not(.colored) > .icon {
+    margin: 0 .5em;
+  }
+
+  .radio.colored > input + .icon::before {
+    background-color: lightgray;
+    background-color: rgb(var(--before-r), var(--before-g), var(--before-b));
+  }
+
+  .radio.colored:hover > input + .icon::after {
+    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(var(--r), var(--g), var(--b), .05);
+  }
+
+  .radio.colored > input:focus + .icon::after {
+    background-color: rgba(0, 0, 0, .125);
+    background-color: rgba(var(--r), var(--g), var(--b), .125);
+  }
+}

@@ -1,0 +1,25 @@
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+
+.dropdown {
+  position: absolute;
+  background: $background;
+  box-shadow: $shadow-raised;
+  border-radius: $card-radius;
+  z-index: 900;
+  margin-top: .3125em;
+
+  &.top {
+    top: 0;
+    transform: translateY(-100%);
+    margin-top: -.3125em;
+  }
+
+  &:not(.right) {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+}
