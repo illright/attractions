@@ -8,6 +8,7 @@
 
   export let name = null;
   export let help = null;
+  export let id = null;
 
   export let required = false;
   export let optional = false;
@@ -18,9 +19,9 @@
   <slot name="description">
     <div class="description">
       {#if name != null}
-        <div class={classes('name', nameClass)}>
+        <label class={classes('name', nameClass)} for={id}>
           {name}&nbsp;{#if required}<span class="required">*</span>{/if}
-        </div>
+        </label>
       {/if}
       {#if help != null}
         <div class={classes('help', helpClass)}>{help}</div>
