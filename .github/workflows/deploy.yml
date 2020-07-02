@@ -42,6 +42,7 @@ jobs:
       run: |
         yarn install
         yarn build
+        cp README.md attractions/
         cd attractions
         yarn publish
       env:
