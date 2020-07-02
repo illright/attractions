@@ -1,0 +1,137 @@
+@import "_attractions-theme.scss";
+
+:global {
+  @import "global.scss";
+}
+
+$mobile-top-padding: 2.4em;
+
+main {
+  background: transparentize($main, .93);
+  padding-top: $mobile-top-padding;
+
+  mark {
+    background: none;
+    color: $main;
+  }
+
+  > :global .card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 20;
+    position: relative;
+
+    header {
+      display: flex;
+      align-items: center;
+      margin-top: 1em;
+
+      img {
+        width: 2em;
+        margin-right: 1em;
+      }
+
+      h1 {
+        margin-bottom: 0;
+      }
+
+      a {
+        margin-left: 1em;
+      }
+    }
+
+    p {
+      margin-top: 1.5em;
+      font-weight: $thin-font-weight;
+    }
+
+    .actions {
+      display: flex;
+    }
+  }
+
+  .strip {
+    background: $main;
+    height: 3.6em;
+    width: 100%;
+    position: absolute;
+    top: $mobile-top-padding + 7.9em;
+    left: 0;
+    z-index: 10;
+  }
+
+  footer {
+    margin-top: 2em;
+    padding-bottom: 1em;
+
+    p {
+      margin: .7em 0 0;
+      text-align: center;
+      font-weight: 300;
+      font-size: .95em;
+    }
+  }
+
+  @media only screen and (min-width: 360px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > :global .card {
+      padding: 1.5em 2em;
+    }
+  }
+
+  @media only screen and (min-width: 640px) {
+    > :global .card {
+      padding: 2em 3.5em;
+    }
+
+    .strip {
+      height: 8em;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: auto 1fr;
+    min-height: 100vh;
+    padding: 0 5%;
+    column-gap: 4em;
+
+    :global {
+      > .card,
+      .info-tiles {
+        grid-row: 2;
+      }
+
+      .card {
+        width: max-content;
+      }
+    }
+
+    footer {
+      grid-row: 3;
+      grid-column: span 2;
+      align-self: end;
+      padding-bottom: 2em;
+    }
+
+    .strip {
+      height: 100%;
+      width: 11em;
+      top: 0;
+      left: calc(5% - 1em);
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding: 0 15%;
+
+    .strip {
+      left: calc(15% - 1em);
+    }
+  }
+}

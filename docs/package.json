@@ -20,10 +20,12 @@
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.0.0",
+    "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.2.0",
+    "attractions": "^2.0.1-alpha",
     "node-sass": "^4.14.1",
     "postcss": "^7.0.32",
     "rollup": "^2.3.4",
@@ -31,6 +33,7 @@
     "rollup-plugin-terser": "^5.3.0",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
+    "svelte-feather-icons": "^3.2.2",
     "svelte-preprocess": "^3.9.11"
   }
 }
