@@ -2,3 +2,5 @@
 /demo/public
 /dist
 /attractions/dist
+/docs/node_modules
+/docs/__sapper__
