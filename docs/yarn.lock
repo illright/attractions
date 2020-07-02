@@ -809,6 +809,13 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.11.tgz#aeb16f50649a91af79dbe36574b66d0f9e4d9f71"
   integrity sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
 
+"@rollup/plugin-alias@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-3.1.1.tgz#bb96cf37fefeb0a953a6566c284855c7d1cd290c"
+  integrity sha512-hNcQY4bpBUIvxekd26DBPgF7BT4mKVNDF5tBG4Zi+3IgwLxGYRY0itHs9D0oLVwXM5pvJDWJlBQro+au8WaUWw==
+  dependencies:
+    slash "^3.0.0"
+
 "@rollup/plugin-babel@^5.0.0":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.0.4.tgz#dbfcf86a0561e399579ceb1a534a83c970e76645"
@@ -988,6 +995,11 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
+
+attractions@^2.0.1-alpha:
+  version "2.0.1-alpha"
+  resolved "https://registry.yarnpkg.com/attractions/-/attractions-2.0.1-alpha.tgz#03837bdca5dd3496d11c8c701053eaaaa67d91be"
+  integrity sha512-QlKnY13UDyCVydb/5Sri+xKd14D9WUUlShMcrTr9aWtbkGaTsyJVUndY+ODQEc/VmBUDRSdWvOgPbSAzwPm6VA==
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -2428,6 +2440,11 @@ sirv@^0.4.0:
     "@polka/url" "^0.5.0"
     mime "^2.3.1"
 
+slash@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
+  integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
+
 source-map-support@~0.5.12:
   version "0.5.19"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
@@ -2604,6 +2621,11 @@ supports-color@^6.1.0:
   integrity sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==
   dependencies:
     has-flag "^3.0.0"
+
+svelte-feather-icons@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/svelte-feather-icons/-/svelte-feather-icons-3.2.2.tgz#fdb4ecc7ac9127442d06d8bbeee52d3be0491834"
+  integrity sha512-GY86mGZYjZCRRnY2t5caiY+2gzSWrYvG8dUjhnOi6YlaWVZEAzDOBuTDiZ1abOz2mM9fCpdpbgj1JZajjzEEAw==
 
 svelte-preprocess@^3.9.11:
   version "3.9.11"

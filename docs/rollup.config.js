@@ -3,10 +3,12 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
+import alias from '@rollup/plugin-alias';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
+import attractionsPkg from '../attractions/package.json';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -17,11 +19,23 @@ const onwarn = (warning, onwarn) => (
   && /[/\\]@sapper[/\\]/.test(warning.message)
 ) || onwarn(warning);
 
+const commonSubstitutions = {
+  'process.latest_version': JSON.stringify(attractionsPkg.version),
+  'process.license': JSON.stringify(attractionsPkg.license),
+};
+
 const preprocess = [
   autoPreprocess({
     scss: { includePaths: ['./static/css'] },
   }),
 ];
+
+const pathAlias = alias({
+  resolve: ['.js', '.svelte', '.svg'],
+  entries: [
+    { find: /^src\//, replacement: __dirname + '/src/' },
+  ],
+});
 
 export default {
   client: {
@@ -31,6 +45,7 @@ export default {
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
+        ...commonSubstitutions,
       }),
       svelte({
         preprocess,
@@ -43,6 +58,7 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+      pathAlias,
 
       legacy && babel({
         extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -77,6 +93,7 @@ export default {
       replace({
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
+        ...commonSubstitutions,
       }),
       svelte({
         preprocess,
@@ -87,6 +104,7 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
+      pathAlias,
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules || Object.keys(process.binding('natives')),

@@ -1,0 +1,42 @@
+@import "_attractions-theme.scss";
+
+.info-tile {
+  margin-bottom: 1em;
+
+  :global .card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1em;
+  }
+
+  .icon {
+    padding: .8em;
+    border-radius: 50%;
+    background: $main;
+    color: white;
+    grid-row: span 2;
+
+    :global svg {
+      display: block;
+    }
+  }
+
+  .subtitle {
+    font-size: .9em;
+    font-weight: $thin-font-weight;
+    color: $main;
+  }
+
+  @media only screen and (min-width: 640px) {
+    margin-bottom: 2.5em;
+
+    :global .card {
+      width: 30em;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    margin-bottom: 1em;
+  }
+}
