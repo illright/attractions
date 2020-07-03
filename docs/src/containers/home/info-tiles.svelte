@@ -4,7 +4,7 @@
   import { GridIcon, Edit2Icon, FeatherIcon } from 'svelte-feather-icons';
   import InfoTile from 'src/components/home/info-tile.svelte';
 
-  const totalComponents = [...Object.keys(attractions)].length;
+  const totalComponents = Object.keys(attractions).length;
 </script>
 
 <div class="info-tiles">
