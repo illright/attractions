@@ -15,14 +15,14 @@ jobs:
       with:
         persist-credentials: false
 
+    - name: Extract PR number
+      run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
+
     - uses: actions/setup-node@v1
     - name: Install and Build
       run: |
         yarn install
-        yarn export
-
-    - name: Extract PR number
-      run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
+        yarn export --basepath /attractions/${{ env.PR_NUMBER }}/
 
     - name: Move output files to a folder with PR number
       run: |
