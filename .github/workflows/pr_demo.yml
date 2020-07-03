@@ -22,18 +22,13 @@ jobs:
     - name: Install and Build
       run: |
         yarn install
-        yarn export --basepath /attractions/${{ env.PR_NUMBER }}/
-
-    - name: Move output files to a folder with PR number
-      run: |
-        mkdir dist
-        mv __sapper__/export dist/${{ env.PR_NUMBER }}
+        SAPPER_APP_BASEPATH=attractions/${{ env.PR_NUMBER }} yarn export --basepath attractions/${{ env.PR_NUMBER }}
 
     - name: Deploy demo to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/dist
+        publish_dir: __sapper__/export/attractions
         keep_files: true
 
     - name: Post docs URL on PR

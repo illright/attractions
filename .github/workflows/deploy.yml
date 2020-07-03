@@ -20,13 +20,13 @@ jobs:
     - name: Install and Build 🔧
       run: |
         yarn install
-        yarn export --basepath /attractions/
+        SAPPER_APP_BASEPATH=attractions yarn export --basepath attractions
 
     - name: Deploy demo to GitHub Pages 🚀
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/__sapper__/export
+        publish_dir: docs/__sapper__/export/attractions/
         force_orphan: true
   release:
     runs-on: ubuntu-latest
