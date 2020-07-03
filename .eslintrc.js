@@ -51,7 +51,6 @@ module.exports = {
     "computed-property-spacing": ["error", "never"],
     "eol-last": ["error", "always"],
     "max-len": ["error", { "code": 100 }],
-    "linebreak-style": ["error", "unix"],
     "no-tabs": "error",
     "operator-assignment": ["error", "always"],
     "object-curly-spacing": ["warn", "always", {
