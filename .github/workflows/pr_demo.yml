@@ -6,6 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
     steps:
     - uses: actions/checkout@v2
       name: Checkout PR
@@ -15,7 +18,6 @@ jobs:
     - uses: actions/setup-node@v1
     - name: Install and Build
       run: |
-        cd docs
         yarn install
         yarn export
 

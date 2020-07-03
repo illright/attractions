@@ -6,6 +6,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
     name: Deploy docs to Pages
     steps:
     - name: Checkout 🛎️
@@ -16,7 +19,6 @@ jobs:
     - uses: actions/setup-node@v1
     - name: Install and Build 🔧
       run: |
-        cd docs
         yarn install
         yarn export
 
