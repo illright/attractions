@@ -28,7 +28,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: __sapper__/export/attractions
+        publish_dir: docs/__sapper__/export/attractions
         keep_files: true
 
     - name: Post docs URL on PR
