@@ -7,13 +7,13 @@
 <main class="padded">
   <Card>
     <header>
-      <img src="/logo-no-bg.svg" alt="Attractions logo" />
+      <img src="logo-no-bg.svg" alt="Attractions logo" />
       <H1>Attractions</H1>
-      <a href="/changelog" class="hide-on-tb-more">v{process.latest_version}</a>
+      <a href="changelog" class="hide-on-tb-more">v{process.latest_version}</a>
     </header>
     <p>A <mark>pretty cool</mark> UI kit for Svelte.</p>
     <div class="actions">
-      <Button filled href="/docs">
+      <Button filled href="docs">
         <BookOpenIcon size="24" class="mr" />
         docs
       </Button>
@@ -35,7 +35,7 @@
     <p>
       {process.license} licensed
       &nbsp;•&nbsp;
-      <a href="/changelog">v{process.latest_version}</a>
+      <a href="changelog">v{process.latest_version}</a>
     </p>
   </footer>
 </main>
