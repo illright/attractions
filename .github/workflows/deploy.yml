@@ -26,7 +26,7 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: __sapper__/export
+        publish_dir: docs/__sapper__/export
         force_orphan: true
   release:
     runs-on: ubuntu-latest
