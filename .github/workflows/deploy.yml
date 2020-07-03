@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Deploy demo to Pages
+    name: Deploy docs to Pages
     steps:
     - name: Checkout 🛎️
       uses: actions/checkout@v2
@@ -16,14 +16,15 @@ jobs:
     - uses: actions/setup-node@v1
     - name: Install and Build 🔧
       run: |
+        cd docs
         yarn install
-        yarn build
+        yarn export
 
     - name: Deploy demo to GitHub Pages 🚀
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./demo/public
+        publish_dir: __sapper__/export
         force_orphan: true
   release:
     runs-on: ubuntu-latest
@@ -40,10 +41,10 @@ jobs:
         registry-url: https://registry.npmjs.org/
     - name: Install and Build 🔧
       run: |
+        cp README.md LICENSE attractions/
+        cd attractions
         yarn install
         yarn build
-        cp README.md attractions/
-        cd attractions
         yarn publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
