@@ -9,6 +9,7 @@ import config from 'sapper/config/rollup.js';
 import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
 import attractionsPkg from '../attractions/package.json';
+import sapperEnv from 'sapper-environment';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -20,6 +21,7 @@ const onwarn = (warning, onwarn) => (
 ) || onwarn(warning);
 
 const commonSubstitutions = {
+  ...sapperEnv(),
   'process.latest_version': JSON.stringify(attractionsPkg.version),
   'process.license': JSON.stringify(attractionsPkg.license),
 };

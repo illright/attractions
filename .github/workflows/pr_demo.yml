@@ -6,32 +6,29 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
     steps:
     - uses: actions/checkout@v2
       name: Checkout PR
       with:
         persist-credentials: false
 
-    - uses: actions/setup-node@v1
-    - name: Install and Build
-      run: |
-        cd docs
-        yarn install
-        yarn export
-
     - name: Extract PR number
       run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
 
-    - name: Move output files to a folder with PR number
+    - uses: actions/setup-node@v1
+    - name: Install and Build
       run: |
-        mkdir dist
-        mv __sapper__/export dist/${{ env.PR_NUMBER }}
+        yarn install
+        SAPPER_APP_BASEPATH=attractions/${{ env.PR_NUMBER }} yarn export --basepath attractions/${{ env.PR_NUMBER }}
 
     - name: Deploy demo to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist
+        publish_dir: docs/__sapper__/export/attractions
         keep_files: true
 
     - name: Post docs URL on PR
