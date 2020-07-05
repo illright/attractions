@@ -1,6 +1,6 @@
 {
   "name": "attractions",
-  "version": "2.0.1-alpha",
+  "version": "2.0.3-alpha",
   "description": "A UI kit for Svelte",
   "license": "MIT",
   "svelte": "index.js",
