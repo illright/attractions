@@ -18,6 +18,7 @@
   ],
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^8.1.0",
+    "pkg-versions": "^2.1.0",
     "rollup": "^2.18.2",
     "rollup-plugin-svelte": "^5.2.3",
     "svelte": "^3.23.2"
