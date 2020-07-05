@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && node --unhandled-rejections=strict check-version.js"
   },
   "files": [
     "*"

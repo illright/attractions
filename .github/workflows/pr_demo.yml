@@ -37,3 +37,25 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         msg: "Docs available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
+  deployability:
+    if: ${{ github.base_ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    name: Release to NPM (dry run)
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - name: Install and Build 🔧
+      run: |
+        cp README.md LICENSE attractions/
+        cd attractions
+        yarn install
+        npm publish --dry-run  # yarn doesn't support the --dry-run option
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
