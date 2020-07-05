@@ -5,6 +5,7 @@
   let _class = null;
   export { _class as class };
   export let open = false;
+  export let clickaway = true;
   $: dispatch('change', { value: open });
 
   function close() {
@@ -14,12 +15,18 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div
-  class:open
-  on:click|self={close}
-  class={classes('modal-overlay', _class)}
->
-  <slot closeCallback={close} />
-</div>
+{#if clickaway}
+  <div
+    class:open
+    on:click|self={close}
+    class={classes('modal-overlay', _class)}
+  >
+    <slot closeCallback={close} />
+  </div>
+{:else}
+  <div class:open class={classes('modal-overlay', _class)}>
+    <slot closeCallback={close} />
+  </div>
+{/if}
 
 <style src="./modal-overlay.scss"></style>
