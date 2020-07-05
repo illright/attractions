@@ -1,4 +1,4 @@
-name: Deploy PR demo to Pages
+name: Deploy PR docs to Pages
 
 on:
   pull_request
@@ -6,36 +6,34 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
     steps:
     - uses: actions/checkout@v2
       name: Checkout PR
       with:
         persist-credentials: false
 
+    - name: Extract PR number
+      run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
+
     - uses: actions/setup-node@v1
     - name: Install and Build
       run: |
         yarn install
-        yarn build
-
-    - name: Extract PR number
-      run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
-
-    - name: Move output files to a folder with PR number
-      run: |
-        mkdir demo/dist
-        mv demo/public demo/dist/${{ env.PR_NUMBER }}
+        SAPPER_APP_BASEPATH=attractions/${{ env.PR_NUMBER }} yarn export --basepath attractions/${{ env.PR_NUMBER }}
 
     - name: Deploy demo to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: demo/dist
+        publish_dir: docs/__sapper__/export/attractions
         keep_files: true
 
-    - name: Post demo URL on PR
+    - name: Post docs URL on PR
       uses: unsplash/comment-on-pr@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: "Demo available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
+        msg: "Docs available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
