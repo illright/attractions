@@ -1,0 +1,45 @@
+{
+  "name": "attractions",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
+    "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js,.json'; stylelint --fix ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/runtime": "^7.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "stylelint": "^13.6.1",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "svelte": "^3.24.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "[^.]*.js": [
+      "eslint --format=pretty",
+      "eslint --max-warnings 0 --fix"
+    ],
+    "*.svelte": [
+      "eslint --format=pretty",
+      "eslint --max-warnings 0 --fix"
+    ],
+    "*.scss": [
+      "stylelint --max-warnings 0 --fix"
+    ]
+  }
+}

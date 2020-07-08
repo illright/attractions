@@ -37,7 +37,7 @@ const people3 = [
   { name: 'Final Human', details: 'f.human@email.com' },
 ];
 
-export default async function* getOptions(query) {
+export default async function* getOptions(_query) {
   await sleep(150);
   yield people1;
   await sleep(150);

@@ -1,6 +1,6 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
 
 $hover-color: mix(white, $main, 60%);
 $selected-color: mix(white, $main, 20%);

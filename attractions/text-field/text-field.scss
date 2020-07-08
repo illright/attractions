@@ -1,8 +1,8 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
 
 .text-field {
-  input[type='search']::-webkit-search-cancel-button {
+  input[type="search"]::-webkit-search-cancel-button {
     position: relative;
     top: 1px;
     height: 1.25em;
@@ -77,7 +77,7 @@
         padding-left: 3rem;
       }
 
-      input[type='search'] {
+      input[type="search"] {
         padding-left: 2.2em;
       }
 
@@ -119,7 +119,7 @@
       text-align: right;
     }
 
-    input[type='number'] {
+    input[type="number"] {
       appearance: textfield;
 
       &::-webkit-outer-spin-button,
@@ -237,7 +237,7 @@
     font-weight: $bold-font-weight;
   }
 
-  &.no-spinner > input[type='number'] {
+  &.no-spinner > input[type="number"] {
     appearance: textfield;
 
     &::-webkit-inner-spin-button,

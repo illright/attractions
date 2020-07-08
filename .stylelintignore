@@ -1,5 +1,8 @@
 node_modules/
 demo/public/
+demo/node_modules/
+docs/node_modules/
+docs/__sapper__/
 *.*
 LICENSE
 !*.css
