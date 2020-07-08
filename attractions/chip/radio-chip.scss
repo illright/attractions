@@ -1,7 +1,7 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
-@import './chip.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
+@import "./chip.scss";
 
 .chip-wrapper > input {
   @include hide-accessible;

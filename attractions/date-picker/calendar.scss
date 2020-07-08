@@ -1,5 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
 
 $day-size: 2.25rem;
 $day-gap: .0625rem;
@@ -60,7 +60,7 @@ $side-padding: 1rem;
 
     &.in-range::before {
       background-color: transparentize($main, .75);
-      content: '';
+      content: "";
       height: $day-size;
       position: absolute;
       left: 0;

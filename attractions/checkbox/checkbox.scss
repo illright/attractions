@@ -1,6 +1,6 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
 
 .checkbox {
   position: relative;
@@ -9,7 +9,7 @@
   font-family: $font;
   cursor: pointer;
 
-  > input[type='checkbox'] {
+  > input[type="checkbox"] {
     @include hide-accessible;
   }
 
@@ -22,7 +22,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       width: 2.25em;
       height: 2.25em;
       border-radius: 50%;
@@ -49,7 +49,7 @@
     border-color: $main;
 
     &::before {
-      content: '';
+      content: "";
       width: .5625em;
       height: .375em;
       border: 0 solid $main-text;

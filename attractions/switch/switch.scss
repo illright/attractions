@@ -1,6 +1,6 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
 
 .switch {
   display: flex;
@@ -21,7 +21,7 @@
     cursor: pointer;
 
     &::before {
-      content: '';
+      content: "";
       width: 3.25em;
       height: 2.375em;
       border-radius: 1.125em;
@@ -65,7 +65,7 @@
       position: relative;
 
       &::before {
-        content: '';
+        content: "";
         width: 100%;
         height: .125em;
         left: 0;
