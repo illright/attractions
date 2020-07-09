@@ -10,6 +10,7 @@ import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
 import attractionsPkg from 'attractions/package.json';
 import sapperEnv from 'sapper-environment';
+import { mdsvex } from 'mdsvex';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -29,6 +30,13 @@ const commonSubstitutions = {
 const preprocess = [
   autoPreprocess({
     scss: { includePaths: ['./static/css'] },
+  }),
+  mdsvex({
+    layout: './src/routes/docs/_layout-mdsvex.svelte',
+    smartypants: {
+      quotes: true,
+      ellipses: true,
+    },
   }),
 ];
 
@@ -50,6 +58,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
+        extensions: ['.svelte', '.svx'],
         preprocess,
         dev,
         hydratable: true,
@@ -98,6 +107,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
+        extensions: ['.svelte', '.svx'],
         preprocess,
         generate: 'ssr',
         dev,
