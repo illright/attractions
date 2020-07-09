@@ -7,26 +7,26 @@
   const places = [
     {
       title: HomeIcon,
-      href: '/docs',
+      href: './docs',
     },
     {
       title: 'Changelog',
-      href: '/docs/changelog',
+      href: './docs/changelog',
     },
     {
       title: 'Installation',
-      href: '/docs/installation',
+      href: './docs/installation',
     },
     {
       title: 'Components',
       sub: [
         {
           title: 'Placeholder',
-          href: '/docs/placeholder',
+          href: './docs/placeholder',
         },
         {
           title: 'Second placeholder',
-          href: '/docs/placeholder2',
+          href: './docs/placeholder2',
         },
       ],
     },
