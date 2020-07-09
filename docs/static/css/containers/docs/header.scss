@@ -1,0 +1,38 @@
+@import "_attractions-theme.scss";
+
+$side-margin: 1em;
+
+header {
+  padding-top: .6em;
+  padding-bottom: .5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid transparentize($main, .75);
+
+  .logo,
+  .clickables {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: $side-margin + .7em;
+    text-decoration: none;
+
+    span {
+      margin-left: .7em;
+      font-size: 1.25em;
+      font-weight: $bold-font-weight;
+      color: black;
+    }
+  }
+
+  .clickables {
+    margin-right: $side-margin;
+
+    :global .dropdown-chevron {
+      margin-top: -2px;
+    }
+  }
+}

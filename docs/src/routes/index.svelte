@@ -4,7 +4,7 @@
   import InfoTiles from 'src/containers/home/info-tiles.svelte';
 </script>
 
-<main class="padded">
+<main>
   <Card>
     <header>
       <img src="logo-no-bg.svg" alt="Attractions logo" />
