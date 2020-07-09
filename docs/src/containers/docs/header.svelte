@@ -6,7 +6,7 @@
 </script>
 
 <header class="padded">
-  <a href="/" class="logo">
+  <a href="./" class="logo">
     <img src="logo-no-bg.svg" width={logoSize} height={logoSize} alt="Logo" />
     <span class="hide-on-less-tb">Attractions</span>
   </a>
