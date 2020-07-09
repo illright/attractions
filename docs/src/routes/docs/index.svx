@@ -1,0 +1,19 @@
+---
+bundleSizeBytes: 1024  # TODO: replace with the actual bundle size
+---
+
+<script>
+  import { formatFileSize } from 'attractions/utils';
+</script>
+
+# Warm welcome, stranded developer
+
+Attractions is a stylish and functional UI kit for Svelte, built to solve interface tasks at hand.
+
+Given the compiling nature of Svelte, the components can be used for any framework using the JavaScript API.
+
+This library is MIT licensed.
+
+- Weighs only {formatFileSize(bundleSizeBytes)}, tree-shaking-enabled
+- Components are customizable with classes and Sass variables
+- Accessibility included
