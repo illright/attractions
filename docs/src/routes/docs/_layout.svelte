@@ -4,29 +4,31 @@
   import DesktopNavigation from 'src/containers/docs/desktop-navigation.svelte';
   import { HomeIcon } from 'svelte-feather-icons';
 
+  export let segment;
+
   const places = [
     {
       title: HomeIcon,
-      href: './docs',
+      segment: '',
     },
     {
       title: 'Changelog',
-      href: './docs/changelog',
+      segment: 'changelog',
     },
     {
       title: 'Installation',
-      href: './docs/installation',
+      segment: 'installation',
     },
     {
       title: 'Components',
       sub: [
         {
           title: 'Placeholder',
-          href: './docs/placeholder',
+          segment: 'placeholder',
         },
         {
           title: 'Second placeholder',
-          href: './docs/placeholder2',
+          segment: 'placeholder2',
         },
       ],
     },
@@ -34,9 +36,9 @@
 </script>
 
 <Header />
-<MobileNavigation {places} />
+<MobileNavigation {places} segment={segment || ''} />
 <main class="padded extra">
-  <DesktopNavigation {places} />
+  <DesktopNavigation {places} segment={segment || ''} />
   <slot />
 </main>
 
