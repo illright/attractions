@@ -6,6 +6,11 @@
     "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
     "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js,.json'; stylelint --fix ."
   },
+  "workspaces": [
+    "attractions",
+    "docs",
+    "demo"
+  ],
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
