@@ -9,6 +9,7 @@
     "max-nesting-depth": null,
     "selector-no-qualifying-type": null,
     "selector-max-compound-selectors": null,
+    "selector-list-comma-newline-after": null,
     "string-quotes": "double"
   }
 }
