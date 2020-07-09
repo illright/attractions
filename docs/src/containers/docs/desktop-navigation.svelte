@@ -1,12 +1,11 @@
 <script>
-  import { stores } from '@sapper/app';
   import { Button, Accordion, AccordionSection } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
-  const { page } = stores();
-
   export let places;
-  $: currentPlace = places.find(place => place.href === $page.path);
+  export let segment;
+
+  $: currentPlace = places.find(place => place.segment === segment);
 </script>
 
 <nav class="desktop">
@@ -22,13 +21,13 @@
               </Button>
             </div>
             {#each place.sub as entry}
-              <Button href={entry.href} selected={place === currentPlace}>
+              <Button href="./docs/{entry.segment}" selected={place === currentPlace}>
                 {entry.title}
               </Button>
             {/each}
           </AccordionSection>
         {:else}
-          <Button href={place.href} selected={place === currentPlace}>
+          <Button href="./docs/{place.segment}" selected={place === currentPlace}>
             {place.title}
           </Button>
         {/if}

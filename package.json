@@ -6,6 +6,7 @@
     "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
     "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js'; stylelint --fix .",
     "docs:build": "yarn workspace attractions-docs build",
+    "docs:export": "yarn workspace attractions-docs export",
     "docs:dev": "yarn workspace attractions-docs dev",
     "demo:build": "yarn workspace attractions-demo build",
     "demo:dev": "yarn workspace attractions-demo dev"

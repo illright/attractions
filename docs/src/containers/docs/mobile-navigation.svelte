@@ -1,31 +1,31 @@
 <script>
-  import { goto, stores } from '@sapper/app';
+  import { goto } from '@sapper/app';
   import { Tab, DropdownShell, Dropdown, Button } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 
-  const { page } = stores();
-
   export let places;
-  let currentPlace = places.find(place => place.href === $page.path);
+  export let segment;
+
+  let currentPlace = places.find(place => place.segment === segment);
 
   function handleTabClick(place) {
-    if (place.href != null) {
-      goto(place.href);
+    if (place.segment != null) {
+      goto(`./docs/${place.segment}`);
     }
   }
 
   function clearSubmenu({ detail }) {
     if (!detail.value) {
-      currentPlace = places.find(place => place.href === $page.path);
+      currentPlace = places.find(place => place.segment === segment);
     }
   }
 </script>
 
-<DropdownShell open={currentPlace.sub != null} on:change={clearSubmenu}>
+<DropdownShell open={currentPlace != null && currentPlace.sub != null} on:change={clearSubmenu}>
   <nav class="mobile padded">
     {#each places as place}
       <Tab
-        class={place.sub === currentPlace.sub && 'selected'}
+        class={currentPlace != null && place.sub === currentPlace.sub && 'selected'}
         value={place}
         name="nav-mobile"
         bind:group={currentPlace}
@@ -43,9 +43,9 @@
     {/each}
   </nav>
   <Dropdown right>
-    {#if currentPlace.sub != null}
-      {#each currentPlace.sub as entry (entry.href)}
-        <Button href={entry.href}>{entry.title}</Button>
+    {#if currentPlace != null && currentPlace.sub != null}
+      {#each currentPlace.sub as entry (entry.segment)}
+        <Button href="./docs/{entry.segment}">{entry.title}</Button>
       {/each}
     {/if}
   </Dropdown>
