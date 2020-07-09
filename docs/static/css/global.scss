@@ -17,6 +17,25 @@ body {
 .padded {
   padding-left: .5em;
   padding-right: .5em;
+
+  &.extra {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  @media only screen and (min-width: 640px) {
+    &, &.extra {
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &, &.extra {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
 }
 
 @media only screen and (max-width: 639px) {
