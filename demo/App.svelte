@@ -31,9 +31,9 @@
     FormField,
     Autocomplete,
     Pagination,
-  } from '../attractions/index.js';
-  import { SnackbarPositions } from '../attractions/snackbar';
-  import { PopoverPositions } from '../attractions/popover';
+  } from 'attractions/index.js';
+  import { SnackbarPositions } from 'attractions/snackbar';
+  import { PopoverPositions } from 'attractions/popover';
   import ModalCard from './modal-card.svelte';
   import MySnackbar from './my-snackbar.svelte';
   import ModalDialog from './modal-dialog.svelte';
