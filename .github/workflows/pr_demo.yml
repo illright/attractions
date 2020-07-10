@@ -14,6 +14,7 @@ jobs:
       name: Checkout PR
       with:
         persist-credentials: false
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Extract PR number
       run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
