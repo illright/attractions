@@ -35,7 +35,7 @@
   ];
 </script>
 
-<Header />
+<Header {segment} />
 <MobileNavigation {places} segment={segment || ''} />
 <main class="padded extra">
   <DesktopNavigation {places} segment={segment || ''} />

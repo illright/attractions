@@ -1,8 +1,11 @@
 <script>
   import { Button } from 'attractions';
   import { GithubIcon } from 'svelte-feather-icons';
+  import Breadcrumbs from 'src/components/docs/breadcrumbs.svelte';
 
   const logoSize = 30;
+
+  export let segment;
 </script>
 
 <header class="padded">
@@ -10,6 +13,7 @@
     <img src="logo-no-bg.svg" width={logoSize} height={logoSize} alt="Logo" />
     <span class="hide-on-less-tb">Attractions</span>
   </a>
+  <Breadcrumbs {segment} />
   <div class="clickables">
     <!-- TODO: add the versions here
     <DropdownShell let:toggle>
