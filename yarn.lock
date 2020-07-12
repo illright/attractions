@@ -1425,6 +1425,11 @@ cli-truncate@2.1.0, cli-truncate@^2.1.0:
     slice-ansi "^3.0.0"
     string-width "^4.2.0"
 
+clipboard-polyfill@^3.0.0-pre5:
+  version "3.0.0-pre5"
+  resolved "https://registry.yarnpkg.com/clipboard-polyfill/-/clipboard-polyfill-3.0.0-pre5.tgz#550ec1f703dff0d0bf8523cbfe51269835edd198"
+  integrity sha512-CwiZo2dl4c/F2ijZ4gSGdMWx4wwwC1pjynSRI99P98VepTH8NBf8btFRdjvhxUzP3kQZwk5QQ4jHTQcms7JhLA==
+
 clipboard@^2.0.0:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.6.tgz#52921296eec0fdf77ead1749421b21c968647376"

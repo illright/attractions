@@ -25,7 +25,7 @@ $border-radius: .5em;
       border-bottom-width: 1px;
     }
 
-    > [slot="source"] {
+    > .copyable {
       overflow-x: auto;
       border-radius: $border-radius;
       border: 0 solid transparentize($main, .75);
@@ -57,7 +57,7 @@ $border-radius: .5em;
         border-bottom-left-radius: $border-radius;
       }
 
-      > [slot="source"] {
+      > .copyable {
         border-width: 1px;
         border-left-width: 0;
         border-top-left-radius: 0;
