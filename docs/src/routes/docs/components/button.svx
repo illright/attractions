@@ -24,12 +24,12 @@ Comes in three flavours: filled, outline and flat.
     <Button outline>button</Button>
     <Button>button</Button>
 
-    <Button filled disabled>button</Button>
-    <Button outline disabled>button</Button>
+    <Button disabled filled>button</Button>
+    <Button disabled outline>button</Button>
     <Button disabled>button</Button>
 
-    <Button filled danger>button</Button>
-    <Button outline danger>button</Button>
+    <Button danger filled>button</Button>
+    <Button danger outline>button</Button>
     <Button danger noRipple>button</Button>
 
     <Button filled>
@@ -46,12 +46,12 @@ Comes in three flavours: filled, outline and flat.
 <Button outline>button</Button>
 <Button>button</Button>
 
-<Button filled disabled>button</Button>
-<Button outline disabled>button</Button>
+<Button disabled filled>button</Button>
+<Button disabled outline>button</Button>
 <Button disabled>button</Button>
 
-<Button filled danger>button</Button>
-<Button outline danger>button</Button>
+<Button danger filled>button</Button>
+<Button danger outline>button</Button>
 <Button danger noRipple>button</Button>
 
 <Button filled>
