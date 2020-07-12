@@ -63,13 +63,13 @@
     box-shadow: $shadow-1;
     color: $main-text;
 
-    &:hover:not(:disabled) {
+    &:hover:not([disabled]) {
       background: lighten($main, 2%);
       background: linear-gradient(0deg, lighten($main, 2%) 0%, lighten($main, 7%) 100%);
       box-shadow: $shadow-raised;
     }
 
-    &:focus:not(:disabled) {
+    &:focus:not([disabled]) {
       background: lighten($main, 5%);
       background: linear-gradient(0deg, lighten($main, 5%) 0%, lighten($main, 10%) 100%);
       box-shadow: $shadow-raised;
@@ -79,12 +79,12 @@
       background: $danger;
       background: linear-gradient(0deg, $danger 0%, lighten($danger, 5%) 100%);
 
-      &:hover:not(:disabled) {
+      &:hover:not([disabled]) {
         background: lighten($danger, 2%);
         background: linear-gradient(0deg, lighten($danger, 2%) 0%, lighten($danger, 7%) 100%);
       }
 
-      &:focus:not(:disabled) {
+      &:focus:not([disabled]) {
         background: lighten($danger, 5%);
         background: linear-gradient(0deg, lighten($danger, 5%) 0%, lighten($danger, 10%) 100%);
       }
@@ -94,18 +94,18 @@
       background: $dark;
       background: linear-gradient(0deg, $dark 0%, lighten($dark, 5%) 100%);
 
-      &:hover:not(:disabled) {
+      &:hover:not([disabled]) {
         background: lighten($dark, 2%);
         background: linear-gradient(0deg, lighten($dark, 2%) 0%, lighten($dark, 7%) 100%);
       }
 
-      &:focus:not(:disabled) {
+      &:focus:not([disabled]) {
         background: lighten($dark, 5%);
         background: linear-gradient(0deg, lighten($dark, 5%) 0%, lighten($dark, 10%) 100%);
       }
     }
 
-    &:disabled {
+    &[disabled] {
       background: $disabled-bg;
       box-shadow: none;
     }
@@ -130,12 +130,12 @@
       border-color: $dark;
     }
 
-    &:disabled {
+    &[disabled] {
       border-color: $disabled-bg;
     }
   }
 
-  &:hover:not(:disabled) {
+  &:hover:not([disabled]) {
     &,
     &.outline {
       background: transparentize($main, .95);
@@ -152,7 +152,7 @@
     }
   }
 
-  &:focus:not(:disabled) {
+  &:focus:not([disabled]) {
     &,
     &.outline {
       background-color: transparentize($main, .88);
@@ -169,7 +169,7 @@
     }
   }
 
-  &:disabled {
+  &[disabled] {
     color: $disabled;
     background: transparent;
     cursor: default;
@@ -202,4 +202,8 @@
 
 button.btn {
   border: 0;
+}
+
+a.btn[disabled] {
+  pointer-events: none;
 }
