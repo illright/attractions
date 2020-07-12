@@ -39,7 +39,9 @@
 <MobileNavigation {places} segment={segment || ''} />
 <main class="padded extra">
   <DesktopNavigation {places} segment={segment || ''} />
-  <slot />
+  <article>
+    <slot />
+  </article>
 </main>
 
 <style src="../../../static/css/routes/docs/_layout.scss"></style>
