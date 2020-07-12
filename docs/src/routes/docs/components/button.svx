@@ -123,5 +123,6 @@ Native DOM events of buttons and links may be handled using the Events action th
 | **`$shadow-raised`** | The shadow of filled buttons on hover. | <ShadowPreview value={shadowRaised} /> |
 | **`$disabled`** | The text color of disabled buttons. | <ColorPreview value="#888888" /> |
 | **`$disabled-bg`** | The background color of filled disabled buttons. | <ColorPreview value="#D7D7D7" /> |
+| **`$bold-font-weight`** | The font weight of the buttons. | `500` |
 
 <style src="../../../../static/css/routes/docs/components/button.scss"></style>
