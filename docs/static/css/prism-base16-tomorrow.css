@@ -4,14 +4,15 @@
  *
  * prism.js Tomorrow theme for JavaScript, CSS and HTML
  * @author Chris Kempson (http:&#x2F;&#x2F;chriskempson.com)
+ *
+ * Slightly tweaked
  */
 
-code[class*="language-"],
+code,
 pre[class*="language-"] {
   color: #4d4d4c;
   background: none;
-  text-shadow: 0 1px white;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;
@@ -52,7 +53,7 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code {
-  padding: .2em;
+  padding: 0 .1em .1em;
 }
 
 .token.comment,

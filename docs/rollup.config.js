@@ -11,6 +11,9 @@ import pkg from './package.json';
 import attractionsPkg from 'attractions/package.json';
 import sapperEnv from 'sapper-environment';
 import { mdsvex } from 'mdsvex';
+import remarkMark from "remark-mark-plus";
+import 'prismjs';
+import 'prism-svelte';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -32,11 +35,12 @@ const preprocess = [
     scss: { includePaths: ['./static/css'] },
   }),
   mdsvex({
-    layout: './src/routes/docs/_layout-mdsvex.svelte',
+    layout: './src/mdsvex/layout.svelte',
     smartypants: {
       quotes: true,
       ellipses: true,
     },
+    remarkPlugins: [remarkMark],
   }),
 ];
 

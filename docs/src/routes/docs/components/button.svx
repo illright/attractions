@@ -1,0 +1,127 @@
+---
+shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script>
+  import { Button, Label } from 'attractions';
+  import { CheckIcon, XIcon } from 'svelte-feather-icons';
+  import H2 from 'src/mdsvex/h2.svelte';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
+</script>
+
+# Button
+
+A clickable entity for all your controlling and linking needs.
+
+Comes in three flavours: filled, outline and flat.
+
+<Showcase>
+  <div slot="showcase">
+    <Button filled>button</Button>
+    <Button outline>button</Button>
+    <Button>button</Button>
+
+    <Button filled disabled>button</Button>
+    <Button outline disabled>button</Button>
+    <Button disabled>button</Button>
+
+    <Button filled danger>button</Button>
+    <Button outline danger>button</Button>
+    <Button danger noRipple>button</Button>
+
+    <Button filled>
+      <CheckIcon size="20" class="mr" />
+      icons
+    </Button>
+    <Button selected>selected</Button>
+    <Button round neutral><XIcon size="20" /></Button>
+  </div>
+  <div slot="source">
+
+```svelte
+<Button filled>button</Button>
+<Button outline>button</Button>
+<Button>button</Button>
+
+<Button filled disabled>button</Button>
+<Button outline disabled>button</Button>
+<Button disabled>button</Button>
+
+<Button filled danger>button</Button>
+<Button outline danger>button</Button>
+<Button danger noRipple>button</Button>
+
+<Button filled>
+  <CheckIcon size="20" class="mr" />
+  icons
+</Button>
+<Button selected>selected</Button>
+<Button round neutral><XIcon size="20" /></Button>
+```
+
+  </div>
+</Showcase>
+
+
+<H2 id="properties">Properties</H2>
+
+### Style Properties
+
+| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
+| --- | --- | --- |
+| **`filled`** | `boolean` | Adds a filled background to the button. <br /> Mutually exclusive with ==`outline`== and ==`selected`==. |
+| **`outline`** | `boolean` | Adds a border to the button. <br /> Mutually exclusive with ==`filled`==. |
+| **`danger`** | `boolean` | Gives the button a color of danger (red by default) <br /> Mutually exclusive with ==`neutral`==. |
+| **`neutral`** | `boolean` | Gives the button a neutral color (very dark gray by default). <br /> Mutually exclusive with ==`danger`==. |
+| **`round`** | `boolean` | Adjusts the padding to be equal on all sides. Great for icon-only buttons. |
+| **`rectangle`** | `boolean` | Halves the border radius and increases the padding. Well-suited for large menus. |
+| **`small`** | `boolean` | Cuts the padding to make the button smaller. |
+| **`selected`** | `boolean` | Gives the button a tinted background. Suitable for indicating the selected item. <br /> Mutually exclusive with ==`filled`==. |
+| **`noRipple`** | `boolean` | Disables the ripple effect. |
+
+### Functional Properties
+
+| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
+| --- | --- | --- |
+| **`disabled`** | `boolean` | Disables the button, styling it appropriately and disabling click events. <br /> Has no effect on link buttons (those with an ==`href`== prop). |
+| **`href`** | `string` | Turns the button into a link (prefetch-enabled for Sapper). |
+| **`noPrefetch`** | `string` | Disables Sapper prefetching for link buttons (those with an ==`href`== prop). |
+| **`events`** | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. |
+| **`...`** | `*` | Everything else will be passed to the underlying `<button>` or `<a>` element. |
+
+### Class Properties
+
+All `<Button>` components use the `.btn` class.
+
+| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
+| --- | --- | --- |
+| **`class`** | `string` | A class string to add to a button. |
+
+
+<H2 id="events">Events</H2>
+
+Native DOM events of buttons and links may be handled using the Events action through the ==`events`== property.
+
+| <Label>Name</Label> | <Label>Event Detail</Label> | <Label>Description</Label> |
+| --- | --- | --- |
+| **`click`** | `{ nativeEvent }` | Fired on clicking the button with a mouse or keyboard. |
+
+<H2 id="scss-variables">SCSS Variables</H2>
+
+| <Label>Name</Label> | <Label>Description</Label> | <Label>Default</Label> |
+| --- | --- | --- |
+| **`$main`** | The main theme color. Used in backgrounds of filled buttons, text and tint of flat buttons, etc. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the button text. | `'Ubuntu'` |
+| **`$button-radius`** | The curvature radius of a button. | `1.5625em` |
+| **`$dark`** | The color used in neutral buttons. | <ColorPreview value="#333333" /> |
+| **`$danger`** | The color used in danger buttons. | <ColorPreview value="#B80000" /> |
+| **`$shadow-1`** | The shadow of filled buttons. | <ShadowPreview value={shadow1} /> |
+| **`$main-text`** | The text color of filled buttons. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** | The shadow of filled buttons on hover. | <ShadowPreview value={shadowRaised} /> |
+| **`$disabled`** | The text color of disabled buttons. | <ColorPreview value="#888888" /> |
+| **`$disabled-bg`** | The background color of filled disabled buttons. | <ColorPreview value="#D7D7D7" /> |
+
+<style src="../../../../static/css/routes/docs/components/button.scss"></style>

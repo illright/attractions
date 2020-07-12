@@ -23,8 +23,8 @@
       title: 'Components',
       sub: [
         {
-          title: 'Placeholder',
-          segment: 'placeholder',
+          title: 'Button',
+          segment: 'components/button',
         },
         {
           title: 'Second placeholder',
