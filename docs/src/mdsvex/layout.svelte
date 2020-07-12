@@ -35,8 +35,4 @@
   <meta name="og:title" content="{name} – Attractions" />
 </svelte:head>
 
-<article>
-  <slot />
-</article>
-
-<style src="../../static/css/mdsvex/layout.scss"></style>
+<slot />
