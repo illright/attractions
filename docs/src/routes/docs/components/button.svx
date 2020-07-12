@@ -86,7 +86,7 @@ Comes in three flavours: filled, outline and flat.
 
 | <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
 | --- | --- | --- |
-| **`disabled`** | `boolean` | Disables the button, styling it appropriately and disabling click events. <br /> Has no effect on link buttons (those with an ==`href`== prop). |
+| **`disabled`** | `boolean` | Disables the button, styling it appropriately and disabling click events. |
 | **`href`** | `string` | Turns the button into a link (prefetch-enabled for Sapper). |
 | **`noPrefetch`** | `string` | Disables Sapper prefetching for link buttons (those with an ==`href`== prop). |
 | **`events`** | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. |
