@@ -18,6 +18,7 @@
 
   export let disabled = false;
   export let href = null;
+  export let noPrefetch = false;
 
   export let events = null;
 
@@ -43,8 +44,7 @@
 {#if href}
   <a
     {href}
-    {disabled}
-    rel="prefetch"
+    rel={noPrefetch ? null : "prefetch"}
     class={classes('btn', _class)}
     class:filled
     class:outline

@@ -3883,6 +3883,11 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
+prism-svelte@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/prism-svelte/-/prism-svelte-0.4.6.tgz#37cb372266e482882770c62cdca9eb9da960b13b"
+  integrity sha512-C4U7thaRBDqtWu0H/8+NjBri4wKzzzJ5PULQFL8ZBCjYjniFvRNUEDldXpt4GWAi0vkrc1Uho3PVyCiXg9mCYg==
+
 prismjs@^1.17.1:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
@@ -4117,6 +4122,13 @@ relateurl@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
+remark-mark-plus@^1.0.21:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/remark-mark-plus/-/remark-mark-plus-1.0.21.tgz#5b1f50f4e80d2e195272bfcd3a4c164bf9e44d80"
+  integrity sha512-jQMoLARvb4wSP/mlSR6Fd8j2oGQadmX8nOQumsBfDZQpu/UQgvKirt14luHCcg9WD5mYtTi4YHQvFh9gDdsbog==
+  dependencies:
+    is-whitespace-character "^1.0.0"
 
 remark-parse@^8.0.0:
   version "8.0.2"

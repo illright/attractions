@@ -1,0 +1,12 @@
+@import "_attractions-theme.scss";
+
+td {
+  padding: 1em;
+  border: 0 solid transparentize($main, .75);
+  border-width: 1px 0 0 1px;
+  line-height: 1.3em;
+
+  &:last-child {
+    border-right-width: 1px;
+  }
+}

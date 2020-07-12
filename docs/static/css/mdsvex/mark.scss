@@ -1,0 +1,10 @@
+@import "_attractions-theme.scss";
+
+mark {
+  background: none;
+  color: $main;
+
+  :global code {
+    color: $main;
+  }
+}

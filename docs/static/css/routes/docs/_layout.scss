@@ -1,8 +1,9 @@
 main {
   display: flex;
-  margin-top: 1em;
+  margin: 1em 0 2em;
 
   @media only screen and (min-width: 1024px) {
     margin-top: 2em;
+    flex: 1;
   }
 }

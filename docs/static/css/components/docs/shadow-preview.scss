@@ -1,0 +1,22 @@
+@import "_attractions-theme.scss";
+
+.preview {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: .25em;
+  background: $background;
+}
+
+.value-popover {
+  background: $background;
+  padding: .5em;
+  margin-right: .25em;
+  box-shadow: $shadow-raised;
+  white-space: pre;
+  font-family: "Roboto Mono", monospace;
+  border-radius: .5em;
+  color: $dark;
+}
