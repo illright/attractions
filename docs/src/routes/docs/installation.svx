@@ -31,4 +31,4 @@ $main: #b17200;
 $font: 'Noto Sans', sans-serif;
 ```
 
-Refer to the documentation for each component for the variables available for overriding.
+Refer to the documentation of each component for the variables available for overriding.
