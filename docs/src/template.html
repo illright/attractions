@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<meta name="theme-color" content="#4300b0">
-
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 	%sapper.base%
+	<meta name="theme-color" content="#4300b0" />
+	<meta property="og:site_name" content="Attractions" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="./logo-512.png" />
+	<meta property="og:title" content="Attractions" />
+  <meta name="og:description" content="A pretty cool UI kit for Svelte" />
+	<meta property="og:url" content="https://illright.github.io/attractions" />
+	<meta name="twitter:card" content="summary_large_image" />
 
 	<link
 		href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
@@ -20,8 +26,9 @@
 		rel="stylesheet"
 	/>
 
-	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
-	<link rel="icon" type="image/png" href="logo-192.png">
+	<link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
+	<link rel="icon" type="image/png" href="./logo-192.png" />
+	<link rel="apple-touch-icon" href="./logo-192.png" />
 
 	%sapper.styles%
 	%sapper.head%

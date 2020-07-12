@@ -4,6 +4,11 @@
   import InfoTiles from 'src/containers/home/info-tiles.svelte';
 </script>
 
+<svelte:head>
+  <title>Attractions</title>
+  <meta name="og:title" content="Attractions" />
+</svelte:head>
+
 <main>
   <Card>
     <header>

@@ -26,6 +26,15 @@
   };
 </script>
 
+<script>
+  export let name;
+</script>
+
+<svelte:head>
+  <title>{name} – Attractions</title>
+  <meta name="og:title" content="{name} – Attractions" />
+</svelte:head>
+
 <article>
   <slot />
 </article>
