@@ -1,12 +1,9 @@
 <script>
   import { Button } from 'attractions';
   import { HomeIcon } from 'svelte-feather-icons';
+  import capitalize from 'src/utils/capitalize.js';
 
   export let segment;
-
-  function capitalize(word) {
-    return word[0].toUpperCase() + word.slice(1);
-  }
 </script>
 
 <nav class="breadcrumbs">
