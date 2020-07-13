@@ -99,7 +99,7 @@ All `<Button>` components use the `.btn` class.
 
 | <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
 | --- | --- | --- |
-| **`class`** | `string` | A class string to add to a button. |
+| **`class`** | `string` | A class string to add to the component. |
 
 
 <H2 id="events">Events</H2>
@@ -109,6 +109,14 @@ Native DOM events of buttons and links may be handled using the Events action th
 | <Label>Name</Label> | <Label>Event Detail</Label> | <Label>Description</Label> |
 | --- | --- | --- |
 | **`click`** | `{ nativeEvent }` | Fired on clicking the button with a mouse or keyboard. |
+
+
+<H2 id="slots">Slots</H2>
+
+### Default slot
+
+The content of the Button. Icons, other components, everything is fair game here.
+
 
 <H2 id="scss-variables">SCSS Variables</H2>
 
