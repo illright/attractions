@@ -1,0 +1,12 @@
+@import "_attractions-theme.scss";
+
+.related-components {
+  padding: 1em 1em 1em 2em;
+  background: transparentize($main, .97);
+  border-radius: 1em;
+
+  li {
+    margin-top: .7em;
+    font-weight: $bold-font-weight;
+  }
+}
