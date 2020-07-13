@@ -29,7 +29,6 @@ input + :global .dropdown {
 }
 
 .options-list {
-  list-style: none;
   padding: 0;
   margin: 0;
   max-height: 15em;
@@ -69,8 +68,7 @@ input + :global .dropdown {
     margin: .5em 1.2em;
 
     :global .spinner {
-      margin-right: .7em;
-      margin-bottom: .3em;
+      margin: .3em .7em .3em 0;
     }
   }
 

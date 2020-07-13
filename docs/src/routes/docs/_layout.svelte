@@ -27,8 +27,8 @@
           segment: 'components/accordion',
         },
         {
-          title: 'AccordionSection',
-          segment: 'components/accordion-section',
+          title: 'Autocomplete',
+          segment: 'components/autocomplete',
         },
         {
           title: 'Button',

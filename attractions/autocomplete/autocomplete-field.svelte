@@ -123,7 +123,7 @@
 
         {#if moreOptions && optionGenerator != null}
           {#await Promise.all(promises) then _}
-            <slot name="more-options">
+            <slot name="more-options" {loadMoreOptions}>
               <li class="more-options" use:callOnSight={{ callback: loadMoreOptions }}>
                 <Button on:click={loadMoreOptions}>
                   <MoreHorizontal />
