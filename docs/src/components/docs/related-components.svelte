@@ -1,18 +1,18 @@
 <script>
-  import { Label } from 'attractions';
+  import { Label, Card, Button } from 'attractions';
 
   export let components;
 </script>
 
 {#if components.length !== 0}
-  <ul class="related-components">
+  <div class="related-components">
     <Label>Related Components</Label>
     {#each components as component}
-      <li>
-        <a href={component.link}><code>{component.name}</code></a>
-      </li>
+      <Card>
+        <Button href={component.link}>{component.name}</Button>
+      </Card>
     {/each}
-  </ul>
+  </div>
 {/if}
 
 <style src="../../../static/css/components/docs/related-components.scss"></style>
