@@ -8,7 +8,6 @@ relatedComponents:
 <script>
   import { Accordion, AccordionSection, Button, Label } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
-  import H2 from 'src/mdsvex/h2.svelte';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 </script>
@@ -58,7 +57,7 @@ A controller for multiple collapsible elements, allowing either one open panel a
 </Showcase>
 
 
-<H2 id="properties">Properties</H2>
+## Properties {#properties}
 
 ### Functional Properties
 
@@ -76,7 +75,7 @@ All `<Accordion>` components use the `.accordion` class.
 | **`class`** | `string` | A class string to add to the component. |
 
 
-<H2 id="slots">Slots</H2>
+## Slots {#slots}
 
 ### Default slot
 
