@@ -7,7 +7,7 @@ A UI kit for Svelte.
 
 ## Installation
 
-**Step 1.** Install the library with NPM or Yarn:
+**Step 1.** Install the library with npm or Yarn:
 
 ```bash
 npm install --save-dev attractions
