@@ -23,12 +23,12 @@
       title: 'Components',
       sub: [
         {
-          title: 'Button',
-          segment: 'components/button',
+          title: 'Accordion',
+          segment: 'components/accordion',
         },
         {
-          title: 'Second placeholder',
-          segment: 'placeholder2',
+          title: 'Button',
+          segment: 'components/button',
         },
       ],
     },
