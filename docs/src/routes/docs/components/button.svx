@@ -7,7 +7,6 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 <script>
   import { Button, Label } from 'attractions';
   import { CheckIcon, XIcon } from 'svelte-feather-icons';
-  import H2 from 'src/mdsvex/h2.svelte';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
@@ -67,7 +66,7 @@ Comes in three flavours: filled, outline and flat.
 </Showcase>
 
 
-<H2 id="properties">Properties</H2>
+## Properties {#properties}
 
 ### Style Properties
 
@@ -102,7 +101,7 @@ All `<Button>` components use the `.btn` class.
 | **`class`** | `string` | A class string to add to the component. |
 
 
-<H2 id="events">Events</H2>
+## Events {#events}
 
 Native DOM events of buttons and links may be handled using the Events action through the ==`events`== property.
 
@@ -111,14 +110,14 @@ Native DOM events of buttons and links may be handled using the Events action th
 | **`click`** | `{ nativeEvent }` | Fired on clicking the button with a mouse or keyboard. |
 
 
-<H2 id="slots">Slots</H2>
+## Slots {#slots}
 
 ### Default slot
 
 The content of the Button. Icons, other components, everything is fair game here.
 
 
-<H2 id="scss-variables">SCSS Variables</H2>
+## SCSS Variables {#scss-variables}
 
 | <Label>Name</Label> | <Label>Description</Label> | <Label>Default</Label> |
 | --- | --- | --- |
