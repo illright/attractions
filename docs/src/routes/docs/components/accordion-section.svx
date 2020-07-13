@@ -6,7 +6,7 @@ relatedComponents:
 ---
 
 <script>
-  import { Accordion, AccordionSection, Button, Label } from 'attractions';
+  import { Accordion, AccordionSection, Button } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
@@ -69,8 +69,8 @@ The panel to be used inside an Accordion.
 
 ### Functional Properties
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | **`label`** | `string` | The label text to use on the button that toggles the section. <br /> Not used if the `handle` slot is provided. |
 | **`open`** | `boolean` | The state of the section: opened or closed. |
 
@@ -78,8 +78,8 @@ The panel to be used inside an Accordion.
 
 All `<AccordionSection>` components use the `.panel` class for the handle and the `section` tag for the hidden content.
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | **`class`** | `string` | A class string to add to the handle. |
 
 ==Bonus==: use the `.accordion-chevron` class for the chevrons on the handle to get a nice rotation animation (see showcase).
@@ -87,8 +87,8 @@ All `<AccordionSection>` components use the `.panel` class for the handle and th
 
 ## Events {#events}
 
-| <Label>Name</Label> | <Label>Event Detail</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
 | **`panel-open`** | `{ close(), toggle() }` | Fired when the panel is opened. The detail object contains callbacks to close and toggle the panel respectively. |
 | **`panel-close`** | `{ close(), toggle() }` | Fired when the panel is closed. The detail object contains callbacks to close and toggle the panel respectively. |
 
@@ -104,8 +104,8 @@ The content of the AccordionSection, initially hidden.
 
 The handle used for opening the hidden content. By default it contains a Button with the text taken from the `label` prop.
 
-| <Label>Prop Name</Label> | <Label>Description</Label> |
-| --- | --- |
+| Prop Name | Description |
+| --------- | ----------- |
 | **`toggle`** | A callback to toggle the open state of the current panel. |
 
 <style src="../../../../static/css/routes/docs/components/accordion.scss"></style>

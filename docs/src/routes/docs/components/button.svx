@@ -5,7 +5,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 ---
 
 <script>
-  import { Button, Label } from 'attractions';
+  import { Button } from 'attractions';
   import { CheckIcon, XIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
@@ -70,8 +70,8 @@ Comes in three flavours: filled, outline and flat.
 
 ### Style Properties
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | **`filled`** | `boolean` | Adds a filled background to the button. <br /> Mutually exclusive with ==`outline`== and ==`selected`==. |
 | **`outline`** | `boolean` | Adds a border to the button. <br /> Mutually exclusive with ==`filled`==. |
 | **`danger`** | `boolean` | Gives the button a color of danger (red by default) <br /> Mutually exclusive with ==`neutral`==. |
@@ -84,20 +84,20 @@ Comes in three flavours: filled, outline and flat.
 
 ### Functional Properties
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | **`disabled`** | `boolean` | Disables the button, styling it appropriately and disabling click events. |
 | **`href`** | `string` | Turns the button into a link (prefetch-enabled for Sapper). |
 | **`noPrefetch`** | `string` | Disables Sapper prefetching for link buttons (those with an ==`href`== prop). |
 | **`events`** | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. |
-| **`...`** | `*` | Everything else will be passed to the underlying `<button>` or `<a>` element. |
+| **`...`** | `any` | Everything else will be passed to the underlying `<button>` or `<a>` element. |
 
 ### Class Properties
 
 All `<Button>` components use the `.btn` class.
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Type | Description |
+| ---- | ---- | ----------- |
 | **`class`** | `string` | A class string to add to the component. |
 
 
@@ -105,8 +105,8 @@ All `<Button>` components use the `.btn` class.
 
 Native DOM events of buttons and links may be handled using the Events action through the ==`events`== property.
 
-| <Label>Name</Label> | <Label>Event Detail</Label> | <Label>Description</Label> |
-| --- | --- | --- |
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
 | **`click`** | `{ nativeEvent }` | Fired on clicking the button with a mouse or keyboard. |
 
 
@@ -119,8 +119,8 @@ The content of the Button. Icons, other components, everything is fair game here
 
 ## SCSS Variables {#scss-variables}
 
-| <Label>Name</Label> | <Label>Description</Label> | <Label>Default</Label> |
-| --- | --- | --- |
+| Name | Description | Default |
+| ---- | ----------- | ------- |
 | **`$main`** | The main theme color. Used in backgrounds of filled buttons, text and tint of flat buttons, etc. | <ColorPreview value="#4300B0" /> |
 | **`$font`** | The font of the button text. | `'Ubuntu'` |
 | **`$button-radius`** | The curvature radius of a button. | `1.5625em` |
