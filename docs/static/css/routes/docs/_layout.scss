@@ -1,3 +1,5 @@
+@import "_attractions-theme.scss";
+
 main {
   display: flex;
   margin: 1em 0 2em;
@@ -5,6 +7,11 @@ main {
   article {
     width: 100%;
     padding: 1em 0;
+  }
+
+  :global .required {
+    color: $main;
+    font-size: .9em;
   }
 
   @media only screen and (min-width: 1024px) {
