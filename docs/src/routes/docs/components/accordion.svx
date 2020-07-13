@@ -6,7 +6,7 @@ relatedComponents:
 ---
 
 <script>
-  import { Accordion, AccordionSection, Button, Label } from 'attractions';
+  import { Accordion, AccordionSection, Button } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
@@ -61,16 +61,16 @@ A controller for multiple collapsible elements, allowing either one open panel a
 
 ### Functional Properties
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
+| Name | Type | Description |
 | --- | --- | --- |
 | **`multiple`** | `boolean` | Setting this to `true` allows multiple panels to be open at the same time. |
-| **`...`** | `*` | Everything else will be passed to the underlying `<ul>` element. |
+| **`...`** | `any` | Everything else will be passed to the underlying `<ul>` element. |
 
 ### Class Properties
 
 All `<Accordion>` components use the `.accordion` class.
 
-| <Label>Name</Label> | <Label>Type</Label> | <Label>Description</Label> |
+| Name | Type | Description |
 | --- | --- | --- |
 | **`class`** | `string` | A class string to add to the component. |
 
@@ -81,7 +81,7 @@ All `<Accordion>` components use the `.accordion` class.
 
 The content of the Accordion. Pass one or more [==`AccordionSection`==](./docs/components/accordion-section) components or something miscellaneous.
 
-| <Label>Prop Name</Label> | <Label>Description</Label> |
+| Prop Name | Description |
 | --- | --- |
 | **`closeOtherPanels`** | A callback to force-close all panels except for the calling one. |
 
