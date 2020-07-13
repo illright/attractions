@@ -3,38 +3,47 @@ name: Installation
 ---
 
 <script>
+  import { Tabs } from 'attractions';
   import CopyableCode from 'src/components/docs/copyable-code.svelte';
+
+  const packageManagers = ['npm', 'Yarn']
+  let packageManager = packageManagers[0];
 </script>
 
 # Installation
 
-**Step 1.** Install the library with NPM or Yarn:
+**Step 1.** Install the library with npm or Yarn:
 
-<CopyableCode>
+<div class="installation">
+  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers" />
+  {#if packageManager === packageManagers[0]}
+    <CopyableCode>
 
-  ```bash
-  npm install --save-dev attractions
-  ```
+```sh
+npm install --save-dev attractions
+```
 
-</CopyableCode>
+    </CopyableCode>
+  {:else}
+    <CopyableCode>
 
-or
+```sh
+yarn add --dev attractions
+```
 
-<CopyableCode>
+    </CopyableCode>
+  {/if}
+</div>
 
-  ```bash
-  yarn add -D attractions
-  ```
-
-</CopyableCode>
-
-**Step 2.** Make sure you have configured [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess/blob/master/docs/usage.md) for compiling SCSS.
+**Step 2.** Add [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess/blob/master/docs/usage.md) to your preprocessor chain for compiling SCSS.
 
 **Step 3.** Create a file named `_attractions-theme.scss` (can be empty) anywhere in the project and add the path to the directory containing file to `includePaths` for SCSS:
 
 <CopyableCode>
 
   ```js
+  import autoPreprocess from 'svelte-preprocess';
+
   autoPreprocess({
     scss: {
       includePaths: [
@@ -60,3 +69,5 @@ You may configure style parameters such as colors, fonts and shadows by overridi
 </CopyableCode>
 
 Refer to the documentation of each component for the variables available for overriding.
+
+<style src="../../../static/css/routes/docs/installation.scss"></style>
