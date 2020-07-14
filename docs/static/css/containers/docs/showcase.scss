@@ -23,6 +23,10 @@ $border-radius: .5em;
       overflow-x: auto;
       border: 0 solid transparentize($main, .75);
       border-bottom-width: 1px;
+
+      &.padded {
+        padding: 1em;
+      }
     }
 
     > .copyable {
