@@ -38,6 +38,10 @@
           title: 'Badge',
           segment: 'components/badge',
         },
+        {
+          title: 'Card',
+          segment: 'components/card',
+        },
       ],
     },
   ];
