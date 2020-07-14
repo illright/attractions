@@ -14,7 +14,7 @@
   export let selection = [];
   export let minSearchLength = 3;
   export let maxOptions = Infinity;
-  export let searchQuery = null;
+  export let searchQuery = '';
   export let optionComponent = AutocompleteOption;
 
   let focus = false;
