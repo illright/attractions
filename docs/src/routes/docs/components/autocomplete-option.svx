@@ -31,7 +31,7 @@ It's unlikely that this component will be used by itself, but it is a part of th
 <RelatedComponents components={relatedComponents} />
 
 <Showcase>
-  <div slot="showcase">
+  <div slot="showcase" class="padded">
     {#each options as option}
       <AutocompleteOption {option} query="tio" />
     {/each}
@@ -83,5 +83,3 @@ It's unlikely that this component will be used by itself, but it is a part of th
 | **`$font`** | The font of the component. | `'Ubuntu'` |
 | **`$thin-font-weight`** | The thin font weight to differentiate the details from the name. | `300` |
 | **`$bold-font-weight`** | The bold font weight to emphasize the highight. | `500` |
-
-<style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>
