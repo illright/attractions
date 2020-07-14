@@ -34,6 +34,10 @@
           title: 'Button',
           segment: 'components/button',
         },
+        {
+          title: 'Badge',
+          segment: 'components/badge',
+        },
       ],
     },
   ];
