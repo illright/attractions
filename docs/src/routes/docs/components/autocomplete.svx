@@ -9,7 +9,6 @@ relatedComponents:
 
 <script>
   import { Autocomplete } from 'attractions';
-  import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
