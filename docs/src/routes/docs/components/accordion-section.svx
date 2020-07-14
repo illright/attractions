@@ -69,18 +69,18 @@ The panel to be used inside an Accordion.
 
 ### Functional Properties
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **`label`** | `string` | The label text to use on the button that toggles the section. <br /> Not used if the `handle` slot is provided. |
-| **`open`** | `boolean` | The state of the section: opened or closed. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`label`** | `null` | `string` | The label text to use on the button that toggles the section. <br /> Not used if the `handle` slot is provided. |
+| **`open`** | `false` | `boolean` | The state of the section: opened or closed. |
 
 ### Class Properties
 
 All `<AccordionSection>` components use the `.panel` class for the handle and the `section` tag for the hidden content.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **`class`** | `string` | A class string to add to the handle. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the handle. Falsy values disregarded. |
 
 ==Bonus==: use the `.accordion-chevron` class for the chevrons on the handle to get a nice rotation animation (see showcase).
 

@@ -61,18 +61,18 @@ A controller for multiple collapsible elements, allowing either one open panel a
 
 ### Functional Properties
 
-| Name | Type | Description |
-| --- | --- | --- |
-| **`multiple`** | `boolean` | Setting this to `true` allows multiple panels to be open at the same time. |
-| **`...`** | `any` | Everything else will be passed to the underlying `<ul>` element. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`multiple`** | `false` | `boolean` | Setting this to `true` allows multiple panels to be open at the same time. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<ul>` element. |
 
 ### Class Properties
 
 All `<Accordion>` components use the `.accordion` class.
 
-| Name | Type | Description |
-| --- | --- | --- |
-| **`class`** | `string` | A class string to add to the component. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
 
 
 ## Slots {#slots}
@@ -82,7 +82,7 @@ All `<Accordion>` components use the `.accordion` class.
 The content of the Accordion. Pass one or more [==`AccordionSection`==](./docs/components/accordion-section) components or something miscellaneous.
 
 | Prop Name | Description |
-| --- | --- |
+| --------- | ----------- |
 | **`closeOtherPanels`** | A callback to force-close all panels except for the calling one. |
 
 <style src="../../../../static/css/routes/docs/components/accordion.scss"></style>

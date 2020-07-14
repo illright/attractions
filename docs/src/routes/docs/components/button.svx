@@ -70,35 +70,35 @@ Comes in three flavours: filled, outline and flat.
 
 ### Style Properties
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **`filled`** | `boolean` | Adds a filled background to the button. <br /> Mutually exclusive with ==`outline`== and ==`selected`==. |
-| **`outline`** | `boolean` | Adds a border to the button. <br /> Mutually exclusive with ==`filled`==. |
-| **`danger`** | `boolean` | Gives the button a color of danger (red by default) <br /> Mutually exclusive with ==`neutral`==. |
-| **`neutral`** | `boolean` | Gives the button a neutral color (very dark gray by default). <br /> Mutually exclusive with ==`danger`==. |
-| **`round`** | `boolean` | Adjusts the padding to be equal on all sides. Great for icon-only buttons. |
-| **`rectangle`** | `boolean` | Halves the border radius and increases the padding. Well-suited for large menus. |
-| **`small`** | `boolean` | Cuts the padding to make the button smaller. |
-| **`selected`** | `boolean` | Gives the button a tinted background. Suitable for indicating the selected item. <br /> Mutually exclusive with ==`filled`==. |
-| **`noRipple`** | `boolean` | Disables the ripple effect. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`filled`** | `false` | `boolean` | Adds a filled background to the button. <br /> Mutually exclusive with ==`outline`== and ==`selected`==. |
+| **`outline`** | `false` | `boolean` | Adds a border to the button. <br /> Mutually exclusive with ==`filled`==. |
+| **`danger`** | `false` | `boolean` | Gives the button a color of danger (red by default) <br /> Mutually exclusive with ==`neutral`==. |
+| **`neutral`** | `false` | `boolean` | Gives the button a neutral color (very dark gray by default). <br /> Mutually exclusive with ==`danger`==. |
+| **`round`** | `false` | `boolean` | Adjusts the padding to be equal on all sides. Great for icon-only buttons. |
+| **`rectangle`** | `false` | `boolean` | Halves the border radius and increases the padding. Well-suited for large menus. |
+| **`small`** | `false` | `boolean` | Cuts the padding to make the button smaller. |
+| **`selected`** | `false` | `boolean` | Gives the button a tinted background. Suitable for indicating the selected item. <br /> Mutually exclusive with ==`filled`==. |
+| **`noRipple`** | `false` | `boolean` | Disables the ripple effect. |
 
 ### Functional Properties
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **`disabled`** | `boolean` | Disables the button, styling it appropriately and disabling click events. |
-| **`href`** | `string` | Turns the button into a link (prefetch-enabled for Sapper). |
-| **`noPrefetch`** | `string` | Disables Sapper prefetching for link buttons (those with an ==`href`== prop). |
-| **`events`** | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. |
-| **`...`** | `any` | Everything else will be passed to the underlying `<button>` or `<a>` element. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`disabled`** | `false` | `boolean` | Disables the button, styling it appropriately and disabling click events. |
+| **`href`** | `null` | `string` | Turns the button into a link (prefetch-enabled for Sapper). |
+| **`noPrefetch`** | `false` | `boolean` | Disables Sapper prefetching for link buttons (those with an ==`href`== prop). |
+| **`events`** | `[]` | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<button>` or `<a>` element. |
 
 ### Class Properties
 
 All `<Button>` components use the `.btn` class.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **`class`** | `string` | A class string to add to the component. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
 
 
 ## Events {#events}

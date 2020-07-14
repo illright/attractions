@@ -60,10 +60,10 @@ It's unlikely that this component will be used by itself, but it is a part of th
 
 ### Functional Properties
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| ==**`option`**==&nbsp;<span class="required">*</span> | `Object` | The option object, containing a `name` field and, optionally, a `details` field, both strings. |
-| **`query`** | `string` | The substring to seek out and highlight among the name and the details. |
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| ==**`option`**==&nbsp;<span class="required">*</span> |  | `Object` | The option object, containing a `name` field and, optionally, a `details` field, both strings. |
+| **`query`** | `null` | `string` | The substring to seek out and highlight among the name and the details. |
 
 <div class="required">* Required</div>
 
