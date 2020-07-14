@@ -26,6 +26,10 @@ $border-radius: .5em;
 
       &.padded {
         padding: 1em;
+
+        > * {
+          margin-bottom: .5em;
+        }
       }
     }
 
@@ -33,6 +37,11 @@ $border-radius: .5em;
       overflow-x: auto;
       border-radius: $border-radius;
       border: 0 solid transparentize($main, .75);
+
+      > [slot="source"] {
+        height: 100%;
+        background: #fcfcfc;
+      }
 
       pre {
         margin: 0;
