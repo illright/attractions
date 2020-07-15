@@ -42,6 +42,10 @@
           title: 'Card',
           segment: 'components/card',
         },
+        {
+          title: 'Checkbox',
+          segment: 'components/checkbox',
+        },
       ],
     },
   ];
