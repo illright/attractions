@@ -19,7 +19,7 @@ relatedComponents:
 <RelatedComponents components={relatedComponents} />
 
 <Showcase>
-  <div slot="showcase">
+  <div slot="showcase" class="padded">
     <Checkbox name="subscribe" value="newsletter" title="Select to subscribe!">
       Subscribe to newsletter?
     </Checkbox>
