@@ -14,7 +14,7 @@
   export let items;
   export let name;
   export let labelsLeft = false;
-  export let max = null;
+  export let max = Infinity;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
   $: maxReachedTooltip = `Can only select ${max} value${s(max)}.`;
@@ -37,12 +37,11 @@
         iconStyle={color ? getColorPickerStyles(item.value) : null}
         value={item.value}
         bind:checked={item.checked}
-        disabled={item.disabled || (!item.checked && max != null && currentChecked >= max)}
+        disabled={item.disabled || (!item.checked && currentChecked >= max)}
         class={classes(color && 'colored', checkboxClass)}
         title={
           !item.disabled
           && !item.checked
-          && max != null
           && currentChecked >= max
           ? maxReachedTooltip : null
         }
