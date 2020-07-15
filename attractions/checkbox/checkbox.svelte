@@ -18,7 +18,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<label class={classes('checkbox', _class)} class:round>
+<label class={classes('checkbox', _class)} class:round {title}>
   {#if slotLeft}
     <slot />
   {/if}
@@ -35,7 +35,7 @@
     })}
     {...$$restProps}
   />
-  <div class={classes('icon', iconClass)} style={iconStyle} {title} />
+  <div class={classes('icon', iconClass)} style={iconStyle} />
   {#if !slotLeft}
     <slot />
   {/if}
