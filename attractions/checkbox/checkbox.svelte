@@ -9,7 +9,7 @@
   export let iconStyle = null;
 
   export let checked = false;
-  export let value;
+  export let value = null;
   export let disabled = false;
   export let slotLeft = false;
   export let round = false;
