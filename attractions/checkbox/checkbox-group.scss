@@ -1,6 +1,3 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
-
 div[role=group] :global {
   .checkbox:not(.colored) > .icon {
     margin: 0 .5em;
