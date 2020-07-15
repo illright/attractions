@@ -35,7 +35,7 @@ A group of `<Checkbox>`es
 <RelatedComponents components={relatedComponents} />
 
 <Showcase>
-  <div slot="showcase">
+  <div slot="showcase" class="padded">
     <p>Select your favorite sports:</p>
     <CheckboxGroup name="sports[]" {items} labelsLeft />
     <p>And color as well:</p>
