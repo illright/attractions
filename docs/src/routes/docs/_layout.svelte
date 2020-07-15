@@ -43,8 +43,8 @@
           segment: 'components/card',
         },
         {
-          title: 'Checkbox',
-          segment: 'components/checkbox',
+          title: 'CheckboxGroup',
+          segment: 'components/checkbox-group',
         },
       ],
     },
