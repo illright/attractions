@@ -65,7 +65,7 @@ An individual checkbox.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`value`** | `null` | `string` | The value assigned to the checkbox input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information. |
+| **`value`** | `null` | `any` | The value assigned to the checkbox input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information. |
 | **`checked`** | `false` | `boolean` | Whether the checkbox is checked or not. |
 | **`disabled`** | `false` | `boolean` | Disables the checkbox, freezing its current `checked` state. |
 | **`title`** | `null` | `string` | Adds a tooltip to the checkbox. |

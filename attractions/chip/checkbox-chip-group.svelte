@@ -9,7 +9,7 @@
 
   export let items;
   export let name;
-  export let max = null;
+  export let max = Infinity;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
   $: maxReachedTooltip = `Can only select ${max} value${s(max)}.`;
@@ -26,12 +26,11 @@
         {name}
         value={item.value}
         bind:checked={item.checked}
-        disabled={item.disabled || (!item.checked && max != null && currentChecked >= max)}
+        disabled={item.disabled || (!item.checked && currentChecked >= max)}
         class={checkboxClass}
         title={
           !item.disabled
           && !item.checked
-          && max != null
           && currentChecked >= max
           ? maxReachedTooltip : null
         }

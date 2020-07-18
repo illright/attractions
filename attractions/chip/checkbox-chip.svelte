@@ -9,6 +9,7 @@
 
   export let checked = false;
   export let value;
+  export let name;
   export let disabled = false;
   export let title = null;
 
@@ -19,10 +20,11 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<label class={classes('chip-wrapper', _class)}>
+<label class={classes('input-chip checkbox-chip', _class)}>
   <input
     bind:checked
     {value}
+    {name}
     type="checkbox"
     class={inputClass}
     {disabled}

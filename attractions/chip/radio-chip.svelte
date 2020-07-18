@@ -9,6 +9,7 @@
   export let chipClass = null;
 
   export let value;
+  export let name;
   export let disabled = false;
   export let group = null;
   export let title = null;
@@ -20,10 +21,11 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<label class={classes('chip-wrapper', _class)}>
+<label class={classes('input-chip radio-chip', _class)}>
   <input
     bind:group
     {value}
+    {name}
     type="radio"
     class={inputClass}
     {disabled}
