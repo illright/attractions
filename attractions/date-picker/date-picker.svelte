@@ -25,6 +25,7 @@
   export let range = false;
   export let locale = undefined;
   export let firstWeekday = 1;  // 1 corresponds to Monday
+  export let noCalendar = false;
   export let top = false;
   export let right = false;
   export let value = null;
@@ -47,7 +48,7 @@
   $: unpackValue(value);
   $: registerChange(startValue, endValue);
 
-  let shownCalendar = (range ? value.start : value) || new Date();
+  let shownCalendar = (range && value != null ? value.start : value) || new Date();
 
   function unpackValue(value) {
     startValue = copyDate(range ? value && value.start : value);
@@ -166,38 +167,40 @@
         />
       {/if}
     </div>
-    <Dropdown class="calendar" {top} {right}>
-      <div class="shown-on-focus">
-        <Button noRipple on:click={clearFocus}>close the date picker</Button>
-      </div>
-      <div class="month-header">
-        <Button round small on:click={showPrevMonth} title="Previous month">
-          <slot name="chevron-left">
-            <ChevronLeft />
-          </slot>
-        </Button>
-        <div class="month-display">
-          {headerFormatter.format(shownCalendar)}
+    {#if !noCalendar}
+      <Dropdown class="calendar" {top} {right}>
+        <div class="shown-on-focus">
+          <Button noRipple on:click={clearFocus}>close the date picker</Button>
         </div>
-        <Button round small on:click={showNextMonth} title="Next month">
-          <slot name="chevron-right">
-            <ChevronRight />
-          </slot>
-        </Button>
-      </div>
-      <Calendar
-        {locale}
-        {firstWeekday}
-        month={shownCalendar.getMonth()}
-        year={shownCalendar.getFullYear()}
-        selectionStart={startValue}
-        selectionEnd={endValue}
-        {weekdaysClass}
-        {weekClass}
-        {dayClass}
-        on:day-select={select}
-      />
-    </Dropdown>
+        <div class="month-header">
+          <Button round small on:click={showPrevMonth} title="Previous month">
+            <slot name="chevron-left">
+              <ChevronLeft />
+            </slot>
+          </Button>
+          <div class="month-display">
+            {headerFormatter.format(shownCalendar)}
+          </div>
+          <Button round small on:click={showNextMonth} title="Next month">
+            <slot name="chevron-right">
+              <ChevronRight />
+            </slot>
+          </Button>
+        </div>
+        <Calendar
+          {locale}
+          {firstWeekday}
+          month={shownCalendar.getMonth()}
+          year={shownCalendar.getFullYear()}
+          selectionStart={startValue}
+          selectionEnd={endValue}
+          {weekdaysClass}
+          {weekClass}
+          {dayClass}
+          on:day-select={select}
+        />
+      </Dropdown>
+    {/if}
   </DropdownShell>
 </div>
 
