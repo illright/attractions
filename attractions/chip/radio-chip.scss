@@ -3,7 +3,7 @@
 @import "_attractions-theme.scss";
 @import "./chip.scss";
 
-.chip-wrapper > input {
+.input-chip > input {
   @include hide-accessible;
 }
 
