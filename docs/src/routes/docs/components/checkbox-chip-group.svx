@@ -67,7 +67,7 @@ Any properties of `CheckboxChip` can be specified – they will be passed down.
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | ==**`items`**==&nbsp;<span class="required">*</span> |  | `Array` | An array of `{ value, label, disabled, checked }` objects, where only the value is required. Must contain at least one value. |
-| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of this checkbox group. |
+| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of this checkbox group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`max`** | `Infinity` | `number` | The maximum number of chips that can be selected. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `CheckboxChip` component. |
 

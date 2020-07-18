@@ -52,15 +52,15 @@ If you don't need too much customization, consider using [==`CheckboxChipGroup`=
 | ---- | ------- | ---- | ----------- |
 | **`small`** | `false` | `boolean` | Makes the chip smaller. |
 | **`outline`** | `false` | `boolean` | Adds a border to the chip instead of the background. |
-| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful for adding deletion buttons. |
+| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful if you want to handle spacing yourself. |
 
 ### Functional Properties
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`value`**==&nbsp;<span class="required">*</span> |  | `any` | The value of this checkbox. Included in events. |
-| ==**`checked`**== | `false` | `boolean` | Whether the chip is selected or not. |
-| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of the group to relate this checkbox chip to. |
+| ==**`value`**==&nbsp;<span class="required">*</span> |  | `string` | The value of this checkbox. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information. <br /> Included in events unaltered (won't be stringified if not a string). |
+| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of the group to relate this checkbox chip to. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`checked`** | `false` | `boolean` | Whether the chip is selected or not. |
 | **`disabled`** | `false` | `boolean` | Disables the chip and disallows selection. |
 | **`title`** | `null` | `string` | The tooltip to give to a chip. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
@@ -69,7 +69,7 @@ If you don't need too much customization, consider using [==`CheckboxChipGroup`=
 
 ### Class Properties
 
-All `<CheckboxChip>` components use the `.input-chip.checkbox-chip` class.
+All `<CheckboxChip>` components use the `.input-chip` and `.checkbox-chip` classes.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |

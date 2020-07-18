@@ -52,14 +52,14 @@ If you don't need too much customization, consider using [==`RadioChipGroup`==](
 | ---- | ------- | ---- | ----------- |
 | **`small`** | `false` | `boolean` | Makes the chip smaller. |
 | **`outline`** | `false` | `boolean` | Adds a border to the chip instead of the background. |
-| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful for adding deletion buttons. |
+| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful if you want to handle spacing yourself. |
 
 ### Functional Properties
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | ==**`value`**==&nbsp;<span class="required">*</span> |  | `any` | The value of this radiobutton. Included in events and can be bound to using `bind:group`. |
-| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of the group to relate this radio chip to. |
+| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of the group to relate this radio chip to. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`disabled`** | `false` | `boolean` | Disables the chip and disallows selection. |
 | **`group`** | `null` | `string` | The currently selected value among the radio chips with the same name. Often used with a two-way binding: `bind:group`. |
 | **`title`** | `null` | `string` | The tooltip to give to a chip. |
@@ -69,7 +69,7 @@ If you don't need too much customization, consider using [==`RadioChipGroup`==](
 
 ### Class Properties
 
-All `<RadioChip>` components use the `.input-chip.radio-chip` class.
+All `<RadioChip>` components use the `.input-chip` and `.radio-chip` classes.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |

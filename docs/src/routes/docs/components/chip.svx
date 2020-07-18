@@ -50,7 +50,7 @@ For radio/checkbox selecting capabilities, take a look at [==`RadioChipGroup`==]
 | ---- | ------- | ---- | ----------- |
 | **`small`** | `false` | `boolean` | Makes the chip smaller. |
 | **`outline`** | `false` | `boolean` | Adds a border to the chip instead of the background. |
-| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful for adding deletion buttons. |
+| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful if you want to handle spacing yourself. |
 
 ### Class Properties
 
