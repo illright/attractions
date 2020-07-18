@@ -67,8 +67,8 @@ Any properties of `RadioChip` can be specified – they will be passed down.
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | ==**`items`**==&nbsp;<span class="required">*</span> |  | `Array` | An array of `{ value, label, disabled }` objects, where only the value is required. Must contain at least one value. |
+| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of this radiobutton group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`value`** | `null` | `any` | The currently selected value of the group. |
-| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of this radiobutton group. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `RadioChip` component. |
 
 <div class="required">* Required</div>

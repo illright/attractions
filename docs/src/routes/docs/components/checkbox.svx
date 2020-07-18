@@ -65,7 +65,7 @@ An individual checkbox.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`value`** | `null` | `any` | The value assigned to the checkbox input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information. |
+| **`value`** | `null` | `string` | The value assigned to the checkbox input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information. |
 | **`checked`** | `false` | `boolean` | Whether the checkbox is checked or not. |
 | **`disabled`** | `false` | `boolean` | Disables the checkbox, freezing its current `checked` state. |
 | **`title`** | `null` | `string` | Adds a tooltip to the checkbox. |
@@ -86,7 +86,7 @@ All `<Checkbox>` components use the `.checkbox` class on the `<label>` and `.ico
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`change`** | `{ value, checked, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a prop, `checked` represents the input's state, and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`change`** | `{ value, checked, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a property (not altered, so if you pass an object, you get an object here), `checked` represents the input's state, and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
 
 
 ## Slots {#slots}
