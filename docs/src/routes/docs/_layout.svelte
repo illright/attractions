@@ -46,6 +46,50 @@
           title: 'CheckboxGroup',
           segment: 'components/checkbox-group',
         },
+        {
+          title: 'Chip',
+          segment: 'components/chip',
+        },
+        {
+          title: 'DatePicker',
+          segment: 'components/date-picker',
+        },
+        {
+          title: 'Dialog',
+          segment: 'components/dialog',
+        },
+        {
+          title: 'Divider',
+          segment: 'components/divider',
+        },
+        {
+          title: 'Dot',
+          segment: 'components/dot',
+        },
+        {
+          title: 'Dropdown',
+          segment: 'components/dropdown',
+        },
+        {
+          title: 'FileInput',
+          segment: 'components/file-input',
+        },
+        {
+          title: 'FileDropzone',
+          segment: 'components/file-dropzone',
+        },
+        {
+          title: 'FormField',
+          segment: 'components/form-field',
+        },
+        {
+          title: 'Loading',
+          segment: 'components/loading',
+        },
+        {
+          title: 'Modal',
+          segment: 'components/modal',
+        },
       ],
     },
   ];
