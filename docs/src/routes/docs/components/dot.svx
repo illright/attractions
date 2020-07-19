@@ -68,6 +68,12 @@ Only one of ==`info`==, ==`attention`==, ==`danger`==, and ==`success`== props m
 | **`success`** | `false` | `boolean` | Applies the `$success` color to the dot |
 | **`small`** | `false` | `boolean` | Decreases the size of the dot |
 
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<div>` element. |
+
 ### Class Properties
 
 All `<Dot>` components use the `.dot` class
