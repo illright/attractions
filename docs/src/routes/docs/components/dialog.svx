@@ -17,7 +17,7 @@ A modal window that informs users about a task and can contain critical informat
 
 <Showcase>
   <div slot="showcase" class="padded">
-    <Dialog title="Are you sure you want to exit?" danger closeCallback={() => console.log('cancelled')}>
+    <Dialog title="Are you sure you want to exit?" danger closeCallback={() => console.log('Closing the dialog...')}>
       <div slot="title-icon">
         <AlertTriangleIcon size="25" />
       </div>
@@ -32,7 +32,7 @@ A modal window that informs users about a task and can contain critical informat
 ```svelte
 <Dialog
   title="Are you sure you want to exit?"
-  closeCallback={() => alert('cancelled')}
+  closeCallback={() => console.log('Closing the dialog...')}
   danger
 >
   <div slot="title-icon">
