@@ -1,6 +1,6 @@
 ---
 name: Dialog
-shadowRaised: '0 2px 4px -1px transparentize(black, .8), 0 3px 5px 0 transparentize(black, .86), 0 1px 10px 0 transparentize(black, .88);'
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
 ---
 
 <script>
