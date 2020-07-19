@@ -24,7 +24,7 @@ A modal window that informs users about a task and can contain critical informat
       <p>You have not saved your changes yet.</p>
       <p>If you exit without saving, changes will be lost.</p>
       <p>Are you sure you want to exit?</p>
-      <Button>Yes, exit</Button>
+      <Button>yes, exit</Button>
     </Dialog>
   </div>
   <div slot="source">
@@ -41,7 +41,7 @@ A modal window that informs users about a task and can contain critical informat
   <p>You have not saved your changes yet.</p>
   <p>If you exit without saving, changes will be lost.</p>
   <p>Are you sure you want to exit?</p>
-  <Button>Yes, exit</Button>
+  <Button>yes, exit</Button>
 </Dialog>
 ```
 
