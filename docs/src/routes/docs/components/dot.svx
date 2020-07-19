@@ -10,7 +10,7 @@ name: Dot
 
 # Dot
 
-A dot.
+A colorful dot to signal about all your important events.
 
 <Showcase>
   <div slot="showcase" class="padded">
