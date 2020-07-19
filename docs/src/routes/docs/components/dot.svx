@@ -58,6 +58,8 @@ A dot.
 
 ### Style Properties
 
+Only one of ==`info`==, ==`attention`==, ==`danger`==, and ==`success`== props may be specified at a time.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`info`** | `false` | `boolean` | Applies the `$info` color to the dot |
