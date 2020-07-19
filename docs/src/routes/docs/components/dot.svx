@@ -15,7 +15,7 @@ A dot.
 <Showcase>
   <div slot="showcase" class="padded">
     <Button>
-      Plain ol' dot: <Dot />
+      Plain ol' dot: <Dot class="ml" />
     </Button>
     <Button>
       New info <Dot info class="ml" />
@@ -34,7 +34,7 @@ A dot.
 
 ```svelte
 <Button>
-  Plain ol' dot: <Dot />
+  Plain ol' dot: <Dot class="ml" />
 </Button>
 <Button>
   New info <Dot info class="ml" />
