@@ -17,13 +17,13 @@
     "demo"
   ],
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.10.5",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
+    "@babel/runtime": "^7.10.5",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-formatter-pretty": "^4.0.0",
     "eslint-plugin-import": "^2.22.0",
