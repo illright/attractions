@@ -1,0 +1,95 @@
+---
+name: FileDropzone
+relatedComponents:
+  - name: FileInput
+    link: ./docs/components/file-input
+  - name: FileTile
+    link: ./docs/components/file-tile
+---
+
+<script>
+  import { FileDropzone } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+</script>
+
+
+# FileDropzone
+
+A large, prominent area for uploading files either by clicking or by dragging them into the area. <br /> Allows uploading files in several takes (that is, the value of the input isn't cleared every time a new selection is made).
+
+For a simpler file input without the built-in representation of the file selection, check out the [`FileInput`](./docs/components/file-input).
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <FileDropzone />
+    <p>Only images below:</p>
+    <FileDropzone accept="image/*" />
+  </div>
+  <div slot="source">
+
+```svelte
+<FileDropzone />
+<p>Only images below:</p>
+<FileDropzone accept="image/*" />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`accept`** | `null` | `string` | Limits the allowed files to particular types. For guidelines on the value of the attribute, consult the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept). |
+| **`files`** | `[]` | `Array` | The user's selection as an array of [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) objects. Note: this is an actual `Array`, not a `FileList`, as opposed to the native `<input type="file">`. |
+| **`beforeChange`** | `null` | `Function` | A callback to call for each file that passes the ==`accept`== check before it is added to the ==`files`==. <br /> If it returns a Promise, they will be started for every file, but awaited at the end. |
+| **`disabled`** | `false` | `boolean` | Whether the input should accept files. |
+| **`fileComponent`** | [==`FileTile`==](./docs/components/file-tile) | Svelte component | The component used to render a selected file. <br /> Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object. <br /> Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
+
+### Class Properties
+
+All `<FileDropzone>` components use the `.file-dropzone` class.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when a selection is added to/removed from. In case of removal, the `nativeEvent` isn't present in the event detail. |
+
+
+## Slots {#slots}
+
+### `empty-layer` slot
+
+The inner content of the dropzone when no files are selected. Defaults to a message that responds to the state of the dropzone: empty, with files ready to be dropped, with incorrect files ready to be dropped or disabled.
+
+### `plus-icon` slot
+
+The plus icon inside the dropzone when there are files inside. ==Bonus==: if supplied with a `plus` class, rotates 45 degrees to become an X when an incorrect file is uploaded. Defaults to [Feather icons](https://feathericons.com/?query=plus)' `Plus`.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the text and borders. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the button text. | `'Ubuntu'` |
+| **`$dropzone-radius`** | The curvature radius of a button. | `1.5625em` |
+| **`$danger`** | The color of the "incorrect files uploaded" state of the dropzone. | <ColorPreview value="#B80000" /> |
+| **`$disabled`** | The color of the disabled state of the dropzone. | <ColorPreview value="#888888" /> |
+| **`$bold-font-weight`** | The bold font weight of the text in the empty layer. | `500` |
+
+<style src="../../../../static/css/routes/docs/components/file-dropzone.scss"></style>
