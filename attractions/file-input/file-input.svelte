@@ -24,10 +24,10 @@
     }
   }
 
-  function clearSelection() {
+  function clearSelection(e) {
     value = multiple ? [] : null;
     input.value = '';
-    dispatch('change', { value });
+    dispatch('change', { value, nativeEvent: e });
   }
 
   const dispatch = createEventDispatcher();

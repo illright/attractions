@@ -57,8 +57,8 @@
 
   function blockOnTiles(e) {
     if (e.target != emptyLayer
-     && e.target != dropzoneLayer
-     && e.target != inputElement) {
+        && e.target != dropzoneLayer
+        && e.target != inputElement) {
       e.preventDefault();
     }
   }
@@ -67,7 +67,7 @@
 </script>
 
 <label
-  class={classes('file-platform', _class)}
+  class={classes('file-dropzone', _class)}
   class:has-content={files && files.length !== 0}
   class:wrong-type={wrongType}
   class:disabled
