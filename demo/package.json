@@ -28,6 +28,6 @@
     "stylelint-config-standard": "^20.0.0",
     "svelte": "^3.23.2",
     "svelte-feather-icons": "^3.2.2",
-    "svelte-preprocess": "^3.9.10"
+    "svelte-preprocess": "^4.0.8"
   }
 }
