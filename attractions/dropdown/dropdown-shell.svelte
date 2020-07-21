@@ -8,7 +8,7 @@
 
   export function toggle() {
     open = !open;
-    dispatch('change', { value: open});
+    dispatch('change', { value: open });
   }
 
   let self = null;
