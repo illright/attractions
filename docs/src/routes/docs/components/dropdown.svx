@@ -8,6 +8,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 
 <script>
   import { DropdownShell, Dropdown, Button } from 'attractions';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
@@ -26,25 +27,26 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
         I toggle a dropdown
+        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
       </Button>
       <Dropdown>
         <div class="padded">
-          And I am the dropdown content
+          and I am the dropdown content
         </div>
       </Dropdown>
     </DropdownShell>
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        Look up there
+        look up there
       </Button>
       <Dropdown top>
         <div class="padded">
-          Right here
+          right here
         </div>
       </Dropdown>
     </DropdownShell>
     <Dropdown>
-      Don't use it without its shell
+      don't use it without its shell
     </Dropdown>
   </div>
   <div slot="source">
@@ -53,25 +55,26 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
     I toggle a dropdown
+    <ChevronDownIcon size="24" class="ml dropdown-chevron" />
   </Button>
   <Dropdown>
     <div class="padded">
-      And I am the dropdown content
+      and I am the dropdown content
     </div>
   </Dropdown>
 </DropdownShell>
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    Look up there
+    look up there
   </Button>
   <Dropdown top>
     <div class="padded">
-      Right here
+      right here
     </div>
   </Dropdown>
 </DropdownShell>
 <Dropdown>
-  Don't use it without its shell
+  don't use it without its shell
 </Dropdown>
 ```
 
