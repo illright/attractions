@@ -45,9 +45,6 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
         </div>
       </Dropdown>
     </DropdownShell>
-    <Dropdown>
-      don't use it without its shell
-    </Dropdown>
   </div>
   <div slot="source">
 
@@ -73,9 +70,6 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
     </div>
   </Dropdown>
 </DropdownShell>
-<Dropdown>
-  don't use it without its shell
-</Dropdown>
 ```
 
   </div>
