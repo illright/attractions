@@ -83,7 +83,7 @@
     {...$$restProps}
   />
   <div class="empty-layer" bind:this={emptyLayer}>
-    <slot name="empty-layer">
+    <slot name="empty-layer" {wrongType} {dragActive}>
       <Paperclip class="icon" />
       <div class="title">
         {#if disabled}
