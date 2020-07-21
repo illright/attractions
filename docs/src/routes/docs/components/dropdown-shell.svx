@@ -85,6 +85,14 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 | ---- | ------------ | ----------- |
 | **`change`** | `value: boolean` | Fired when toggling the dropdown (with `value` being `true` for "open" and `false` for "closed"). |
 
+
+## Slots {#slots}
+
+### Default slot
+
+The shell of the dropdown. The dropdown itself must also be inside it since it exposes the `toggle` function as a slot prop.
+
+
 ## Functions {#functions}
 
 | Name | Arguments | Description |

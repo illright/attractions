@@ -97,6 +97,13 @@ All `<Dropdown>` components use the `.dropdown` class
 | **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
 
 
+## Slots {#slots}
+
+### Default slot
+
+The content of the dropdown.
+
+
 ## SCSS Variables {#scss-variables}
 
 | Name | Description | Default |
