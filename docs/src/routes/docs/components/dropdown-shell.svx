@@ -90,3 +90,5 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 | Name | Arguments | Description |
 | ---- | ------------ | ----------- |
 | **`toggle`** | | Toggles the dropdown's "open" state. |
+
+<style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>
