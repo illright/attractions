@@ -12,16 +12,19 @@
     icon={GridIcon}
     title="{totalComponents} component{s(totalComponents)}"
     subtitle="and more to come!"
+    href="./docs/components/button"
   />
   <InfoTile
     icon={Edit2Icon}
     title="Stylable with Sass"
     subtitle="customize colors, fonts, shadows!"
+    href="./docs/installation"
   />
   <InfoTile
     icon={FeatherIcon}
     title="How to compute bundle size?"
     subtitle="please help me!"
+    href="https://bundlephobia.com/result?p=attractions"
   />
 </div>
 

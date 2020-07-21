@@ -2,12 +2,18 @@
 
 .info-tile {
   margin-bottom: 1em;
+  cursor: pointer;
 
   :global .card {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     column-gap: 1em;
+    transition: 150ms box-shadow;
+
+    &:hover {
+      box-shadow: $shadow-raised;
+    }
   }
 
   .icon {
@@ -16,6 +22,7 @@
     background: $main;
     color: white;
     grid-row: span 2;
+    align-self: center;
 
     :global svg {
       display: block;
