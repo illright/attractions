@@ -7,6 +7,7 @@ relatedComponents:
 
 <script>
   import { DropdownShell, Dropdown, Button } from 'attractions';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
@@ -25,6 +26,7 @@ The container for the [`Dropdown`](./docs/components/dropdown) activator and con
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
         this is the dropdown shell
+        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
       </Button>
       <Dropdown right>
         <div class="padded">
@@ -42,6 +44,7 @@ The container for the [`Dropdown`](./docs/components/dropdown) activator and con
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
     this is the dropdown shell
+    <ChevronDownIcon size="24" class="ml dropdown-chevron" />
   </Button>
   <Dropdown right>
     <div class="padded">
@@ -74,6 +77,7 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
 
+==Bonus==: use the `.dropdown-chevron` class for the chevrons on the dropdown shell to get a nice rotation animation (see showcase).
 
 ## Events {#events}
 
