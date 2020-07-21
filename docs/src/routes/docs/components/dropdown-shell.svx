@@ -83,7 +83,7 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`change`** | `value: boolean` | Fired when toggling the dropdown (with `value` being `true` for "open" and `false` for "closed"). |
+| **`change`** | `{ value }` | Fired when toggling the dropdown (with `value` being `true` for "open" and `false` for "closed"). |
 
 
 ## Slots {#slots}
