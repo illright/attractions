@@ -1,0 +1,106 @@
+---
+name: Dropdown
+relatedComponents:
+  - name: DropdownShell
+    link: ./docs/components/dropdown-shell
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script>
+  import { DropdownShell, Dropdown, Button } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+
+</script>
+
+# Dropdown
+
+Toggleable, contextual overlays for displaying additional details or actions. Must be wrapped with a [`DropdownShell`](./docs/components/dropdown-shell) for correct behavior.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        I toggle a dropdown
+      </Button>
+      <Dropdown>
+        <div class="padded">
+          And I am the dropdown content
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        Look up there
+      </Button>
+      <Dropdown top>
+        <div class="padded">
+          Right here
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <Dropdown>
+      Don't use it without its shell
+    </Dropdown>
+  </div>
+  <div slot="source">
+
+```svelte
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    I toggle a dropdown
+  </Button>
+  <Dropdown>
+    <div class="padded">
+      And I am the dropdown content
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    Look up there
+  </Button>
+  <Dropdown top>
+    <div class="padded">
+      Right here
+    </div>
+  </Dropdown>
+</DropdownShell>
+<Dropdown>
+  Don't use it without its shell
+</Dropdown>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`right`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the right of the shell |
+| **`top`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the top of the shell |
+
+### Class Properties
+
+All `<Dropdown>` components use the `.dropdown` class
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$background`** | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** | The shadow of the dropdown content. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** | The curvature radius of the dropdown content. | `1.25em` |

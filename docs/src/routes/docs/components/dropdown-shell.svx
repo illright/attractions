@@ -1,0 +1,98 @@
+---
+name: DropdownShell
+relatedComponents:
+  - name: Dropdown
+    link: ./docs/components/dropdown
+---
+
+<script>
+  import { DropdownShell, Dropdown, Button } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+
+</script>
+
+# DropdownShell
+
+The container for the [`Dropdown`](./docs/components/dropdown) activator and content.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        Can contain more than one
+      </Button>
+      <Dropdown>
+        <div class="padded">
+          first
+        </div>
+      </Dropdown>
+      <Dropdown right>
+        <div class="padded">
+          second
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell>
+      Useless without a <code>&lt;Dropdown /&gt;</code>
+    </DropdownShell>
+  </div>
+  <div slot="source">
+
+```svelte
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    Can contain more than one
+  </Button>
+  <Dropdown>
+    <div class="padded">
+      first
+    </div>
+  </Dropdown>
+  <Dropdown right>
+    <div class="padded">
+      second
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell>
+  Useless without a <code>&lt;Dropdown /&gt;</code>
+</DropdownShell>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`open`** | `false` | `boolean` | Controls whether the dropdown content is shown or hidden. |
+
+### Class Properties
+
+All `<DropdownShell>` components use the `.dropdown-shell` class
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `value: boolean` | Fired when toggling the dropdown (with `value` being `true` for "open" and `false` for "closed"). |
+
+## Functions {#functions}
+
+| Name | Arguments | Description |
+| ---- | ------------ | ----------- |
+| **`toggle`** | | Toggles the dropdown's "open" state. |
