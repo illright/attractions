@@ -93,10 +93,12 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 The shell of the dropdown. The dropdown itself must also be inside it since it exposes the `toggle` function as a slot prop.
 
 
-## Functions {#functions}
+## Exported Attributes {#exported}
 
-| Name | Arguments | Description |
-| ---- | ------------ | ----------- |
-| **`toggle`** | | Toggles the dropdown's "open" state. |
+These attributes can be accessed from variables holding component instances bound using `bind:this` on the instance. 
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **`toggle`** | `Function` | Toggles the dropdown's "open" state. In addition to being exposed as a slot prop, this function is exported to allow toggling the dropdown from same component where the shell is created. |
 
 <style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>
