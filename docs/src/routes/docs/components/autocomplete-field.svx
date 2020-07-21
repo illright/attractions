@@ -117,9 +117,9 @@ The loading state of the dropdown while the next promise with suggestions is res
 The element to display at the end of a list to trigger the option generator.
 Defaults to a button equipped with an `IntersectionObserver` to trigger the generator whenever it scrolls into view.
 
-| Prop Name | Description |
-| --------- | ----------- |
-| **`loadMoreOptions`** | A callback to trigger the option generator. |
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`loadMoreOptions`** | `Function` | A callback to trigger the option generator. |
 
 
 ## SCSS Variables {#scss-variables}

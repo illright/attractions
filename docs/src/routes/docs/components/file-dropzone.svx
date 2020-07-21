@@ -76,10 +76,10 @@ All `<FileDropzone>` components use the `.file-dropzone` class.
 
 The inner content of the dropzone when no files are selected. Defaults to a message that responds to the state of the dropzone: empty, with files ready to be dropped, with incorrect files ready to be dropped or disabled.
 
-| Prop Name | Description |
-| --------- | ----------- |
-| **`dragActive`** | The boolean state of having a file dragged over the dropzone. |
-| **`wrongType`** | The boolean state of having an incorrect file dragged over the dropzone. |
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`dragActive`** | `boolean` | The state of having a file dragged over the dropzone. |
+| **`wrongType`** | `boolean` | The state of having an incorrect file dragged over the dropzone. |
 
 ### `plus-icon` slot
 
