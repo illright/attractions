@@ -104,3 +104,5 @@ All `<Dropdown>` components use the `.dropdown` class
 | **`$background`** | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
 | **`$shadow-raised`** | The shadow of the dropdown content. | <ShadowPreview value={shadowRaised} /> |
 | **`$card-radius`** | The curvature radius of the dropdown content. | `1.25em` |
+
+<style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>
