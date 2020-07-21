@@ -84,7 +84,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 
 ## Properties {#properties}
 
-### Functional Properties
+### Style Properties
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
