@@ -104,8 +104,8 @@ The content of the AccordionSection, initially hidden.
 
 The handle used for opening the hidden content. By default it contains a Button with the text taken from the `label` prop.
 
-| Prop Name | Description |
-| --------- | ----------- |
-| **`toggle`** | A callback to toggle the open state of the current panel. |
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`toggle`** | `Function` | A callback to toggle the open state of the current panel. |
 
 <style src="../../../../static/css/routes/docs/components/accordion.scss"></style>
