@@ -90,7 +90,11 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 
 ### Default slot
 
-The shell of the dropdown. The dropdown itself must also be inside it since it exposes the `toggle` function as a slot prop.
+The shell of the dropdown. The dropdown itself must be inside it.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`toggle`** | `Function` | A callback to toggle the open state of the dropdown. |
 
 
 ## Exported Attributes {#exported}
