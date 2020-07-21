@@ -26,10 +26,11 @@ jobs:
         SAPPER_APP_BASEPATH=attractions/${{ env.PR_NUMBER }} yarn export --basepath attractions/${{ env.PR_NUMBER }}
 
     - name: Deploy demo to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3.7.0-1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/__sapper__/export/attractions
+        publish_dir: docs/__sapper__/export/attractions/${{ env.PR_NUMBER }}
+        destination_dir: ${{ env.PR_NUMBER }}
         keep_files: true
 
     - name: Post docs URL on PR
