@@ -24,16 +24,11 @@ The container for the [`Dropdown`](./docs/components/dropdown) activator and con
   <div slot="showcase" class="padded">
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        Can contain more than one
+        this is the dropdown shell
       </Button>
-      <Dropdown>
-        <div class="padded">
-          first
-        </div>
-      </Dropdown>
       <Dropdown right>
         <div class="padded">
-          second
+          and this is the dropdown
         </div>
       </Dropdown>
     </DropdownShell>
@@ -46,16 +41,11 @@ The container for the [`Dropdown`](./docs/components/dropdown) activator and con
 ```svelte
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    Can contain more than one
+    this is the dropdown shell
   </Button>
-  <Dropdown>
-    <div class="padded">
-      first
-    </div>
-  </Dropdown>
   <Dropdown right>
     <div class="padded">
-      second
+      and this is the dropdown
     </div>
   </Dropdown>
 </DropdownShell>
