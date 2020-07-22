@@ -83,7 +83,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`right`** | `false` | `boolean` | Aligns the dropdown content with the right edge of the shell. |
-| **`top`** | `false` | `boolean` | Aligns the dropdown content with the top edge of the shell. |
+| **`top`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the top of the shell, extending up. |
 
 ### Class Properties
 
