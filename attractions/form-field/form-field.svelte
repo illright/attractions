@@ -12,29 +12,26 @@
 
   export let required = false;
   export let optional = false;
-  export let errors = null;
+  export let errors = [];
 </script>
 
 <div class={classes('form-field', _class)}>
-  <slot name="description">
-    <div class="description">
-      {#if name != null}
-        <label class={classes('name', nameClass)} for={id}>
-          {name}&nbsp;{#if required}<span class="required">*</span>{/if}
-        </label>
-      {/if}
-      {#if help != null}
-        <div class={classes('help', helpClass)}>{help}</div>
-      {/if}
-    </div>
-  </slot>
+  <div class="description">
+    {#if name != null}
+      <label class={classes('name', nameClass)} for={id}>
+        {name}&nbsp;{#if required}<span class="required">*</span>{/if}
+      </label>
+    {/if}
+    {#if help != null}
+      <div class={classes('help', helpClass)}>{help}</div>
+    {/if}
+    <slot name="description" />
+  </div>
   <div class="field">
     <slot />
-    {#if errors != null}
-      {#each errors as error}
-        {#if error}<div class="message error">{error}</div>{/if}
-      {/each}
-    {/if}
+    {#each errors as error}
+      {#if error}<div class="message error">{error}</div>{/if}
+    {/each}
     {#if required}
       <div class="message info">* Required</div>
     {:else if optional}
