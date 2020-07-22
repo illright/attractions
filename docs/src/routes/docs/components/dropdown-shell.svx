@@ -17,7 +17,7 @@ relatedComponents:
 
 # DropdownShell
 
-The container for the [`Dropdown`](./docs/components/dropdown) activator and content.
+The container for the [`Dropdown`](./docs/components/dropdown) and its activating handle.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -25,7 +25,7 @@ The container for the [`Dropdown`](./docs/components/dropdown) activator and con
   <div slot="showcase" class="padded">
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        this is the dropdown shell
+        this is the handle
         <ChevronDownIcon size="24" class="ml dropdown-chevron" />
       </Button>
       <Dropdown right>
@@ -43,7 +43,7 @@ The container for the [`Dropdown`](./docs/components/dropdown) activator and con
 ```svelte
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    this is the dropdown shell
+    this is the handle
     <ChevronDownIcon size="24" class="ml dropdown-chevron" />
   </Button>
   <Dropdown right>
@@ -77,7 +77,7 @@ All `<DropdownShell>` components use the `.dropdown-shell` class
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
 
-==Bonus==: use the `.dropdown-chevron` class for the chevrons on the dropdown shell to get a nice rotation animation (see showcase).
+==Bonus==: use the `.dropdown-chevron` class for the chevrons on the dropdown handle to get a nice rotation animation (see showcase).
 
 ## Events {#events}
 
@@ -99,7 +99,7 @@ The shell of the dropdown. The dropdown itself must be inside it.
 
 ## Exported Attributes {#exported}
 
-These attributes can be accessed from variables holding component instances bound using `bind:this` on the instance. 
+These attributes can be accessed from variables holding component instances bound using `bind:this` on the instance.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
