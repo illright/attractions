@@ -1,3 +1,0 @@
-Not to be actually merged.
-
-This is just a toy file that I'll remove in a subsequent commit.
