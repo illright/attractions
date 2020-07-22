@@ -82,7 +82,7 @@ Note that this component doesn't add any form handling capabilities; it is merel
 | **`id`** | `null` | `string` | The ID to add the the `for` attribute of the `<label>` element containing the ==`name`==. Useful if you pass an ID to the actual field inside and want to connect it with the label. |
 | **`required`** | `false` | `boolean` | Marks the form field as required, adding an asterisk to the name and text under the field indicating that the field is mandatory. |
 | **`optional`** | `false` | `boolean` | Marks the form field as optional, explicitly stating the optionality of the field in the text under the field. |
-| **`errors`** | `null` | `Array` | An array of error messages to display under the field. Falsy values disregarded. |
+| **`errors`** | `[]` | `Array` | An array of error messages to display under the field. Falsy elements are not shown. |
 
 ### Class Properties
 
@@ -91,8 +91,8 @@ All `<FormField>` components use the `.form-field` class.
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
-| **`nameClass`** | `null` | `string` | A class string to the `<label>` containing the form field name. Falsy values disregarded. |
-| **`helpClass`** | `null` | `string` | A class string to the help text of the form field. Falsy values disregarded. |
+| **`nameClass`** | `null` | `string` | A class string to add to the `<label>` containing the form field name. Falsy values disregarded. |
+| **`helpClass`** | `null` | `string` | A class string to add to the help text of the form field. Falsy values disregarded. |
 
 
 ## Slots {#slots}
@@ -103,7 +103,7 @@ The content of the form field – the actual field itself.
 
 ### `description` slot
 
-The block describing the form field, which by default is taken up by the ==`name`== and ==`help`==. If you need a custom description of the field, use this slot.
+Additional content to put in the form field description block, after the name and the help. If you want a completely custom description, don't pass the ==`name`== and ==`help`== props and just use this slot.
 
 ### `message` slot
 
