@@ -5,7 +5,7 @@
   let _class = null;
   export { _class as class };
   export let open = false;
-  export let clickaway = true;
+  export let noClickaway = false;
   $: dispatch('change', { value: open });
 
   function close() {
@@ -15,7 +15,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-{#if clickaway}
+{#if !noClickaway}
   <div
     class:open
     on:click|self={close}
