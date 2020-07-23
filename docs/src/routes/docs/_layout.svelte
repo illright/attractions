@@ -90,6 +90,46 @@
           title: 'Modal',
           segment: 'components/modal',
         },
+        {
+          title: 'Pagination',
+          segment: 'components/pagination',
+        },
+        {
+          title: 'Popover',
+          segment: 'components/popover',
+        },
+        {
+          title: 'RadioGroup',
+          segment: 'components/radio-group',
+        },
+        {
+          title: 'SnackbarContainer',
+          segment: 'components/snackbar-container',
+        },
+        {
+          title: 'StarRating',
+          segment: 'components/star-rating',
+        },
+        {
+          title: 'Switch',
+          segment: 'components/switch',
+        },
+        {
+          title: 'Tabs',
+          segment: 'components/tabs',
+        },
+        {
+          title: 'TextField',
+          segment: 'components/text-field',
+        },
+        {
+          title: 'TimePicker',
+          segment: 'components/time-picker',
+        },
+        {
+          title: 'Typography',
+          segment: 'components/typography',
+        },
       ],
     },
   ];
