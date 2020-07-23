@@ -8,11 +8,12 @@ $dot-size: .4em;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: $main;
 
   > div {
     width: $dot-size;
     height: $dot-size;
-    background: $main;
+    background: currentColor;
     border-radius: 100%;
     display: inline-block;
     margin: 0 .1em;
