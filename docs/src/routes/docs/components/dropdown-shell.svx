@@ -12,7 +12,6 @@ relatedComponents:
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
-
 </script>
 
 # DropdownShell
@@ -71,7 +70,7 @@ The container for the [`Dropdown`](./docs/components/dropdown) and its activatin
 
 ### Class Properties
 
-All `<DropdownShell>` components use the `.dropdown-shell` class
+All `<DropdownShell>` components use the `.dropdown-shell` class.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |

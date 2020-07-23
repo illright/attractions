@@ -13,7 +13,6 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
-
 </script>
 
 # Dropdown
@@ -87,7 +86,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 
 ### Class Properties
 
-All `<Dropdown>` components use the `.dropdown` class
+All `<Dropdown>` components use the `.dropdown` class.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
