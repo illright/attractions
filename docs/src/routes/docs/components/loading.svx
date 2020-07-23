@@ -1,0 +1,47 @@
+---
+name: Loading
+---
+
+<script>
+  import { Loading } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+</script>
+
+
+# Loading
+
+An indeterminate loading spinner.
+
+Adapted from SpinKit by [@tobiasahlin](https://github.com/tobiasahlin): <https://tobiasahlin.com/spinkit/>
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Loading />
+  </div>
+  <div slot="source">
+
+```svelte
+<Loading />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Class Properties
+
+All `<Loading>` components use the `.spinner` class.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of spinner dots. | <ColorPreview value="#4300B0" /> |
