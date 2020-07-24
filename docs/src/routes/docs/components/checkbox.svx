@@ -93,7 +93,7 @@ All `<Checkbox>` components use the `.checkbox` class on the `<label>` and `.ico
 
 ### Default slot
 
-The label for the checkbox. By default, the slot is positioned to the right of the checkbox, but its placement can be adjusted with the `slotLeft` property.
+The label for the checkbox. By default, the slot is positioned to the right of the checkbox, but its placement can be adjusted with the ==`slotLeft`== property.
 
 
 

@@ -12,11 +12,12 @@
   export let disabled = false;
   export let group = null;
   export let slotLeft = false;
+  export let title = null;
 
   const dispatch = createEventDispatcher();
 </script>
 
-<label class={classes('radio', _class)}>
+<label class={classes('radio', _class)} {title}>
   {#if slotLeft}
     <slot />
   {/if}
