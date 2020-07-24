@@ -91,9 +91,9 @@ These attributes can be accessed from variables holding component instances boun
 | **`prop`** | `type` | Description. |
 
 
-## Enums {#enums}
+## Related Objects {#related-objects}
 
-The following enums are available as named exports in `'attractions/template'`.
+The following objects are available as named exports in `'attractions/template'`.
 
 ### `TemplateEnum` {#template-enum}
 
