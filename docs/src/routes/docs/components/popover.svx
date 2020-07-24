@@ -79,15 +79,17 @@ The handle – any content that will, on hover or focus, show a popover next to 
 The content of the popover.
 
 
-## Enums {#enums}
+## Related Objects {#related-objects}
 
-The following enums are available as named exports in `'attractions/popover'`.
+The following objects are available as named exports in `'attractions/popover'`.
 
 ### `PopoverPositions` {#popover-positions}
 
+An enum describing possible positions for the `Popover`.
+
 | Field | Description |
 | ---- | ----------- |
-| **`TOP`** | Place the popover above the handle, centered with respect to it. |
-| **`BOTTOM`** | Place the popover below the handle, centered with respect to it. |
-| **`LEFT`** | Place the popover to the left of the handle, centered with respect to it. |
-| **`RIGHT`** | Place the popover to the right of the handle, centered with respect to it. |
+| **`TOP`** | Above the handle, centered with respect to it. |
+| **`BOTTOM`** | Below the handle, centered with respect to it. |
+| **`LEFT`** | To the left of the handle, centered with respect to it. |
+| **`RIGHT`** | To the right of the handle, centered with respect to it. |
