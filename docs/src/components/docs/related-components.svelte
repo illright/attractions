@@ -1,11 +1,14 @@
 <script>
   import { Label, Card, Button } from 'attractions';
+  import { classes } from 'attractions/utils';
 
+  let _class = null;
+  export { _class as class};
   export let components;
 </script>
 
 {#if components.length !== 0}
-  <div class="related-components">
+  <div class={classes('related-components', _class)}>
     <Label>Related Components</Label>
     {#each components as component}
       <Card>
