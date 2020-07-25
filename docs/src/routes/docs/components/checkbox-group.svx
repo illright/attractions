@@ -109,7 +109,7 @@ If you need more control over the labels and checkbox layout, you may use the in
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the wrapper `<div>` element. |
+| **`class`** | `null` | `string` | A class string to assign to the wrapper `<div>` element. |
 | **`checkboxClass`** | `null` | `string` | A class string to add to the `<Checkbox>` components. |
 | **`labelClass`** | `null` | `string` | A class string to assign to the labels' wrapping `<span>`s. <br /> If this is not passed, the labels are not wrapped in a `<span>`. |
 
