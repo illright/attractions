@@ -38,7 +38,7 @@ const preprocess = [
   mdsvex({
     layout: './src/mdsvex/layout.svelte',
     smartypants: {
-      quotes: true,
+      quotes: false,
       ellipses: true,
     },
     remarkPlugins: [remarkMark, remarkHeadingID],

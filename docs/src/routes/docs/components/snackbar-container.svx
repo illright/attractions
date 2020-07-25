@@ -59,7 +59,7 @@ The main piece of functionality is the `showSnackbar` function, which you can ac
 
 ### Class Properties
 
-All `<SnackbarContainer>` components create the `.snackbar-stack` element after the default slot content.
+All `<SnackbarContainer>` components create the element with a `.snackbar-stack` class after the default slot content.
 
 
 ## Slots {#slots}

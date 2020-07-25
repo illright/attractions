@@ -58,10 +58,10 @@ Note: below is not the intended way of using this component. It is meant to be p
 | ---- | ------- | ---- | ----------- |
 | ==**`text`**==&nbsp;<span class="required">*</span> |  | `string` | The text to show on the snackbar. |
 | ==**`closeCallback`**==&nbsp;<span class="required">*</span> |  | `Function` | The callback to call to close the snackbar in the `SnackbarContainer`. Passed internally by the `SnackbarContainer` when using the `showSnackbar` function. |
-| **`action`** | `null` | `{ text, callback() }` | The action for the button on the snackbar. If this is `null`, the button is not rendered. Otherwise it has `text` as a label and calls `callback` on click. |
+| **`action`** | `null` | <code>{'{'}<br />  text: string,<br />  callback: Function<br />{'}'}</code> | The action for the button on the snackbar. If this is `null`, the button is not rendered. Otherwise it has `text` as a label and calls `callback` on click. |
 | **`closeOnAction`** | `true` | `boolean` | Whether to call the ==`closeCallback`== when an action button is pressed, after its callback. |
 | **`transition`** | [`fly`](https://svelte.dev/docs#fly) | Svelte transition | The transition to use to animate the in and out of the snackbar. |
-| **`transitionOptions`** | `{ x: -20, duration: 150 }` | `object` | The options to use with the given transition. |
+| **`transitionOptions`** | <code>{'{'}<br />  x: -20,<br />  duration: 150<br />{'}'}</code> | `object` | The options to use with the given transition. |
 
 <div class="required">* Required</div>
 
