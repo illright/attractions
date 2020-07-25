@@ -58,7 +58,7 @@ If you don't need too much customization, consider using [==`RadioChipGroup`==](
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`value`**==&nbsp;<span class="required">*</span> |  | `any` | The value of this radiobutton. Included in events and can be bound to using `bind:group`. |
+| ==**`value`**==&nbsp;<span class="required">*</span> |  | `any` | The value of this radio button. Included in events and can be bound to using `bind:group`. |
 | ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of the group to relate this radio chip to. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`disabled`** | `false` | `boolean` | Disables the chip and disallows selection. |
 | **`group`** | `null` | `string` | The currently selected value among the radio chips with the same name. Often used with a two-way binding: `bind:group`. |
@@ -82,7 +82,7 @@ All `<RadioChip>` components use the `.input-chip` and `.radio-chip` classes.
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`change`** | `{ value, nativeEvent }` | Fired on selecting this chip in a group. The `value` contains the value that was passed to the radiobutton (won't be stringified) and `nativeEvent` is the [native `change` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) of radiobuttons. |
+| **`change`** | `{ value, nativeEvent }` | Fired on selecting this chip in a group. The `value` contains the value that was passed to the radio button (won't be stringified) and `nativeEvent` is the [native `change` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) of radio buttons. |
 
 
 ## Slots {#slots}
