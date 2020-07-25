@@ -69,6 +69,7 @@
       on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:keydown={(e) => dispatch('keydown', { nativeEvent: e })}
       on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
@@ -82,6 +83,7 @@
       on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:keydown={(e) => dispatch('keydown', { nativeEvent: e })}
       on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
