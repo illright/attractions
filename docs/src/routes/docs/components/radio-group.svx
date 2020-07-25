@@ -80,7 +80,7 @@ A group of radio buttons to present a list of selectable options.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the wrapper `<div>` element. |
+| **`class`** | `null` | `string` | A class string to assign to the wrapper `<div>` element. |
 | **`radioClass`** | `null` | `string` | A class string to add to the `<RadioButton>` components. |
 | **`labelClass`** | `null` | `string` | A class string to assign to the labels' wrapping `<span>`s. <br /> If this is not passed, the labels are not wrapped in a `<span>`. |
 
