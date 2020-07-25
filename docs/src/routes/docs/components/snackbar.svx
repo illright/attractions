@@ -81,7 +81,7 @@ All `<Snackbar>` components use the `.snackbar` class.
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **`$snackbar-bg`** | The background of the snackbar. | <ColorPreview value="#404040" /> |
-| **`$snackbar-fg`** | The text color of the snackbar. | <ColorPreview value="#404040" /> |
+| **`$snackbar-fg`** | The text color of the snackbar. | <ColorPreview value="#FFFFFF" /> |
 | **`$shadow-raised`** | The shadow of the snackbar. | <ShadowPreview value={shadowRaised} /> |
 | **`$main`** | The action button color (45% lighter). | <ColorPreview value="#4300B0" /> |
 | **`$snackbar-radius`** | The curvature radius of the snackbar. | `.625em` |
