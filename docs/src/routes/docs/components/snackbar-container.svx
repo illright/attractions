@@ -97,7 +97,7 @@ An enum listing the possible positions for the snackbar stack.
 | **`TOP_RIGHT`** | In the top right corner. |
 | **`MIDDLE_RIGHT`** | Along the right edge, vertically centered. |
 | **`BOTTOM_RIGHT`** | In the bottom right corner. |
-| **`TOP_MIDDLE`** | At the bottom, horizontally centered. |
+| **`BOTTOM_MIDDLE`** | At the bottom, horizontally centered. |
 | **`BOTTOM_LEFT`** | In the bottom left corner. |
 | **`MIDDLE_LEFT`** | Along the left edge, vertically centered. |
 
