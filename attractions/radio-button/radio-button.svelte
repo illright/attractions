@@ -5,8 +5,8 @@
   let _class = null;
   export { _class as class };
   export let inputClass = null;
-  export let iconClass = null;
-  export let iconStyle = null;
+  export let selectorClass = null;
+  export let selectorStyle = null;
 
   export let value;
   export let disabled = false;
@@ -30,7 +30,7 @@
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('icon', iconClass)} style={iconStyle} />
+  <div class={classes('selector', selectorClass)} style={selectorStyle} />
   {#if !slotLeft}
     <slot />
   {/if}

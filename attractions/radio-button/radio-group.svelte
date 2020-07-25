@@ -30,7 +30,7 @@
       <RadioButton
         {name}
         slotLeft={labelsLeft}
-        iconStyle={color ? getColorPickerStyles(item.value) : null}
+        selectorStyle={color ? getColorPickerStyles(item.value) : null}
         bind:group={value}
         value={item.value}
         disabled={item.disabled}

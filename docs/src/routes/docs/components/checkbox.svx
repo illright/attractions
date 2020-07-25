@@ -59,7 +59,7 @@ An individual checkbox.
 | ---- | ------- | ---- | ----------- |
 | **`slotLeft`** | `false` | `boolean` | Places the default slot (label) to the left of the checkbox. |
 | **`round`** | `false` | `boolean` | Makes the checkbox round (and slightly larger). |
-| **`iconStyle`** | `null` | `string` | A CSS style string to assign to the box icon element. <br /> Can be used to make the checkbox represent a color (in conjunction with the `getColorPickerStyles` utility). |
+| **`selectorStyle`** | `null` | `string` | A CSS style string to assign to the selector box element. <br /> Can be used to make the checkbox represent a color (in conjunction with the `getColorPickerStyles` utility). |
 
 ### Functional Properties
 
@@ -73,13 +73,13 @@ An individual checkbox.
 
 ### Class Properties
 
-All `<Checkbox>` components use the `.checkbox` class on the `<label>` and `.icon` on the box icon.
+All `<Checkbox>` components use the `.checkbox` class on the `<label>` and `.selector` on the selector box.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the root `<label>` element. |
 | **`inputClass`** | `null` | `string` | A class string to assign to the `<input>` element. |
-| **`iconClass`** | `null` | `string` | A class string to assign to the box icon element. |
+| **`selectorClass`** | `null` | `string` | A class string to add to the selector box element. |
 
 
 ## Events {#events}
