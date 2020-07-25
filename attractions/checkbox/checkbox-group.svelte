@@ -34,7 +34,7 @@
       <Checkbox
         {name}
         slotLeft={labelsLeft}
-        iconStyle={color ? getColorPickerStyles(item.value) : null}
+        selectorStyle={color ? getColorPickerStyles(item.value) : null}
         value={item.value}
         bind:checked={item.checked}
         disabled={item.disabled || (!item.checked && currentChecked >= max)}
