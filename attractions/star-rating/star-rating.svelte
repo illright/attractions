@@ -22,6 +22,9 @@
     case 'ArrowLeft':
       event.preventDefault();
       value = (value + (max + 1) - 1) % (max + 1);
+      if (value === 0) {
+        value = max;  // would otherwise get stuck at 1
+      }
       break;
 
     case 'ArrowRight':
@@ -30,6 +33,7 @@
       break;
 
     }
+    value = Math.max(value, 1);
   }
 
   const dispatch = createEventDispatcher();
