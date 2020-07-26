@@ -63,7 +63,7 @@ All `<StarRating>` components use the `.star-rating` class.
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |
-| **`starClass`** | `null` | `string` | A class string to assign to label element containing the star icon. |
+| **`starClass`** | `null` | `string` | A class string to assign to the `<label>` element containing the star icon. |
 
 
 ## Events {#events}
