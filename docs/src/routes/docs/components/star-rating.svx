@@ -84,8 +84,6 @@ The icon to use as the star. Defaults to [Feather icons](https://feathericons.co
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** | Affects the hover and background colors of the component and the default values of `$hover-color` and `$selected-color`. | <ColorPreview value="#4300B0" /> |
-| **`$hover-color`** | The background color of the label when hovering on it with the mouse. | `mix(white, $main, 60%)` |
-| **`$selected-color`** | The fill color of the selected stars. | `mix(white, $main, 20%)` |
+| **`$main`** | Affects the hover and background colors of the component and the fill color of the selected stars. | <ColorPreview value="#4300B0" /> |
 | **`$off-state`** | The color of the unselected label. | <ColorPreview value="#AAAAAA" /> |
 | **`$disabled`** | The color of the icon when the input is disabled. | <ColorPreview value="#888888" /> |
