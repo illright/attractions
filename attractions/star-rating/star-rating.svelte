@@ -20,6 +20,7 @@
     switch (event.key) {
 
     case 'ArrowLeft':
+    case 'ArrowDown':
       event.preventDefault();
       value = (value + (max + 1) - 1) % (max + 1);
       if (value === 0) {
@@ -28,6 +29,7 @@
       break;
 
     case 'ArrowRight':
+    case 'ArrowUp':
       event.preventDefault();
       value = (value + 1) % (max + 1);
       break;
