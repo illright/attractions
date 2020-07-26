@@ -52,7 +52,7 @@ An input element used for rating with a number of stars.
 | **`value`** | `null` | `number` | Current amount of selected stars. |
 | **`disabled`** | `false` | `boolean` | Disables star selection. |
 | **`events`** | `[]` | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. |
-| **`...`** |  | `any` | Everything else will be passed to the underlying `<input type="radio">` element. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input type="radio">` elements. |
 
 <div class="required">* Required</div>
 
