@@ -32,6 +32,10 @@
     }
   }
 
+  > input:disabled + .content {
+    cursor: not-allowed;
+  }
+
   > input:focus + .content {
     background: transparentize($off-state, .85);
   }
