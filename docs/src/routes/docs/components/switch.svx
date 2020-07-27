@@ -64,7 +64,7 @@ All `<Switch>` components use the `.switch` class.
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`event`** | `{ value, nativeEvent }` | Fires when a switch is toggled. The `value` corresponds to the current value of the ==`value`== property, the `nativeEvent` contains the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`change`** | `{ value, nativeEvent }` | Fires when a switch is toggled. The `value` corresponds to the current value of the ==`value`== property, the `nativeEvent` contains the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
 
 
 ## Slots {#slots}
