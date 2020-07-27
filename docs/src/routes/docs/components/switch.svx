@@ -15,13 +15,17 @@ An on/off switch.
 <Showcase>
   <div slot="showcase" class="padded">
     <Switch />
-    <Switch disabled />
+    <Switch disabled>
+      <span class="ml">No luck</span>
+    </Switch>
   </div>
   <div slot="source">
 
 ```svelte
 <Switch />
-<Switch disabled />
+<Switch disabled>
+  <span class="ml">No luck</span>
+</Switch>
 ```
 
   </div>
