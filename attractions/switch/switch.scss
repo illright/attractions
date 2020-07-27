@@ -95,23 +95,3 @@
     background: transparentize($main, .95);
   }
 }
-
-.switch-wrapper {
-  .state {
-    color: $off-state;
-    font-weight: $bold-font-weight;
-
-    &.first {
-      margin-right: .8em;
-    }
-
-    &.second {
-      margin-left: .8em;
-    }
-  }
-
-  input:not(:checked) ~ .first,
-  input:checked ~ .second {
-    color: $main;
-  }
-}
