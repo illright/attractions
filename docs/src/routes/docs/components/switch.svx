@@ -67,7 +67,7 @@ All `<Switch>` components use the `.switch` class.
 
 ### Default slot
 
-The label of the switch. Positioned to the right of the switch by default, can be moved to the left using the ==`slotLeft`== property.
+The label of the switch. Positioned to the right of the switch by default, but can be moved to the left using the ==`slotLeft`== property.
 
 
 ## SCSS Variables {#scss-variables}
