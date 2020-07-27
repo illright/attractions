@@ -9,6 +9,7 @@
   export let contentClass = null;
 
   export let value;
+  export let name = null;
   export let group = null;
   export let disabled = false;
   export let noRipple = false;
@@ -20,6 +21,7 @@
   <input
     bind:group
     {value}
+    {name}
     type="radio"
     class={inputClass}
     {disabled}
