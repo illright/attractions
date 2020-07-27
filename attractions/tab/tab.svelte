@@ -26,7 +26,7 @@
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: !ripple }}>
+  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: !ripple || disabled }}>
     <slot>{value}</slot>
   </div>
 </label>
