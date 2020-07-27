@@ -34,6 +34,7 @@
 
   > input:disabled + .content {
     cursor: not-allowed;
+    color: $disabled;
   }
 
   > input:focus + .content {
