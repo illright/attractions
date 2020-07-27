@@ -93,6 +93,7 @@ The content of the tab label. Defaults to the content of the `value` prop.
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **`$main`** | Affects the color of the ripple background, border color of the selected tab, and text color. | <ColorPreview value="#4300B0" /> |
+| **`$disabled`** | The text color of disabled tabs. | <ColorPreview value="#888888" /> |
 | **`$off-state`** | Affects the background color of the tab when focused or hovered on and the default border color. | <ColorPreview value="#AAAAAA" /> |
 | **`$font`** | The font family of the content text. | `'Ubuntu'` |
 | **`$bold-font-weight`** | The font weight of the content text. | `500` |
