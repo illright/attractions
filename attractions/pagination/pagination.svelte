@@ -102,7 +102,7 @@
             type="number"
             min={1}
             max={pages}
-            spinner={false}
+            noSpinner
             autofocus
             bind:value={inputValue}
             on:blur={tryNavigate}
@@ -117,7 +117,7 @@
             type="number"
             min={1}
             max={pages}
-            spinner={false}
+            noSpinner
             autofocus
             bind:value={inputValue}
             on:blur={tryNavigate}
