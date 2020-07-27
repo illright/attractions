@@ -14,7 +14,7 @@
   export let itemRight = false;
 
   export let id = null;
-  export let spinner = true;
+  export let noSpinner = false;
   export let label = null;
   export let error = null;
   export let multiline = null;
@@ -58,7 +58,7 @@
   class:with-item={withItem}
   class:left={withItem && !itemRight}
   class:right={withItem && itemRight}
-  class:no-spinner={!spinner}
+  class:no-spinner={noSpinner}
 >
   {#if multiline}
     <textarea
