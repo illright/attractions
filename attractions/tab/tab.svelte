@@ -11,7 +11,7 @@
   export let value;
   export let group = null;
   export let disabled = false;
-  export let ripple = true;
+  export let noRipple = false;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -26,7 +26,7 @@
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: !ripple || disabled }}>
+  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: noRipple || disabled }}>
     <slot>{value}</slot>
   </div>
 </label>

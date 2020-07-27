@@ -50,7 +50,7 @@ Allows for finer control over individual tabs when the default [==`Tabs`==](./do
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`ripple`** | `true` | `boolean` | Adds a ripple to the tab when clicking on it. |
+| **`noRipple`** | `false` | `boolean` | Disables the ripple on the tab when clicking on it. |
 
 ### Functional Properties
 
