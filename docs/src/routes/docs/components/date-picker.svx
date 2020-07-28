@@ -3,6 +3,8 @@ name: DatePicker
 relatedComponents:
   - name: Calendar
     link: ./docs/components/calendar
+  - name: TimePicker
+    link: ./docs/components/time-picker
 ---
 
 <script>
