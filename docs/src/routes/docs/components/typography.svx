@@ -62,9 +62,9 @@ _This property only applies to `<Label>`_.
 
 ### Class Properties
 
-_The following only applies to `<Headline>`, `<Subhead>` and `<Label>` components._
+_The following only applies to `<Headline>`, `<Subhead>`, and `<Label>` components._
 
-All `<Headline>` components use the `.headline` class, all `<Subhead>` components use the `.subhead` class, all `<Label>` components use the `.label` class.
+All `<Headline>` components use the `.headline` class, all `<Subhead>` components use the `.subhead` class, and all `<Label>` components use the `.label` class.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
