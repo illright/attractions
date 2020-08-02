@@ -86,5 +86,3 @@ The content of the button.
 | **`$font`** | The font family used for the button. | `'Ubuntu'` |
 | **`$shadow-raised`** | The shadow of the button. | <ShadowPreview value={shadowRaised} /> |
 | **`$bold-font-weight`** | The bold font weight of the button. | `500` |
-
-<style src="../../../../static/css/routes/docs/components/template.scss"></style>

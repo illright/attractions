@@ -1,3 +1,5 @@
+@import "_attractions-theme.scss";
+
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -7,6 +9,24 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: $font;
+}
+
+p {
+  line-height: 1.25em;
+}
+
+
+strong {
+  font-weight: $bold-font-weight;
+}
+
+a {
+  color: $main;
+
+  &:visited {
+    color: $link-visited;
+  }
 }
 
 .ml {
