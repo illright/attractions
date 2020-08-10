@@ -26,15 +26,15 @@ For a simpler file input without the built-in representation of the file selecti
 <Showcase>
   <div slot="showcase" class="padded">
     <FileDropzone />
-    <p>Only images below:</p>
-    <FileDropzone accept="image/*" />
+    <p>Only images below (3 max.):</p>
+    <FileDropzone accept="image/*" max={3} />
   </div>
   <div slot="source">
 
 ```svelte
 <FileDropzone />
-<p>Only images below:</p>
-<FileDropzone accept="image/*" />
+<p>Only images below (3 max.):</p>
+<FileDropzone accept="image/*" max={3} />
 ```
 
   </div>
@@ -51,6 +51,7 @@ For a simpler file input without the built-in representation of the file selecti
 | **`files`** | `[]` | `Array` | The user's selection as an array of [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) objects. Note: this is an actual `Array`, not a `FileList`, as opposed to the native `<input type="file">`. |
 | **`beforeChange`** | `null` | `Function` | A callback to call for each file that passes the ==`accept`== check before it is added to the ==`files`==. <br /> If it returns a Promise, they will be started for every file, but awaited at the end. |
 | **`disabled`** | `false` | `boolean` | Whether the input should accept files. |
+| **`max`** | `Infinity` | `number` | The maximum number of allowed files. |
 | **`fileComponent`** | [==`FileTile`==](./docs/components/file-tile) | Svelte component | The component used to render a selected file. <br /> Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object. <br /> Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
 

@@ -15,6 +15,7 @@
   export let accept = null;
   export let beforeChange = null;
   export let disabled = false;
+  export let max = Infinity;
 
   let dragActive = false;
   let wrongType = false;
@@ -28,7 +29,7 @@
   }
 
   async function acceptUpload(e) {
-    const incomingFiles = Array.from((e.dataTransfer || e.target).files);
+    const incomingFiles = Array.from((e.dataTransfer || e.target).files).slice(0, max - files.length);
     await Promise.all(incomingFiles.map(async (file) => {
       try {
         if (typeof beforeChange === 'function') {
