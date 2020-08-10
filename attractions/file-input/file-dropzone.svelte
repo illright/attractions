@@ -29,7 +29,7 @@
   }
 
   async function acceptUpload(e) {
-    const incomingFiles = Array.from((e.dataTransfer || e.target).files).slice(0, max - files.length);
+    const incomingFiles = Array.from((e.dataTransfer || e.target).files);
     await Promise.all(incomingFiles.map(async (file) => {
       try {
         if (typeof beforeChange === 'function') {
@@ -39,7 +39,7 @@
         return;
       }
 
-      if (accepted(accept, file)) {
+      if (accepted(accept, file) && files.length < max) {
         files.push(file);
       }
     }));
