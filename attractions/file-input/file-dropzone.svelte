@@ -71,7 +71,7 @@
   class={classes('file-dropzone', _class)}
   class:has-content={files && files.length !== 0}
   class:wrong-type={wrongType}
-  class:disabled
+  class:disabled={disabled || files.length >= max}
   on:click={blockOnTiles}
 >
   <input
@@ -80,7 +80,7 @@
     on:change={acceptUpload}
     bind:this={inputElement}
     {accept}
-    {disabled}
+    disabled={disabled || files.length >= max}
     {...$$restProps}
   />
   <div class="empty-layer" bind:this={emptyLayer}>
@@ -107,11 +107,13 @@
     on:dragenter={() => dragActive = true}
     on:dragleave={() => { dragActive = false; wrongType = false; }}
     on:drop|preventDefault|stopPropagation={acceptUpload}
-    use:ripple={{ disabled }}
+    use:ripple={{ disabled: disabled || files.length >= max }}
   >
-    <slot name="more-icon">
-      <Plus class="plus" />
-    </slot>
+    {#if files.length < max}
+      <slot name="more-icon">
+        <Plus class="plus" />
+      </slot>
+    {/if}
   </div>
   {#each files as file (file)}
     <svelte:component this={fileComponent} {file} on:delete={deleteFile} />
