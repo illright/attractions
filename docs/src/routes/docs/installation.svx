@@ -76,6 +76,8 @@ yarn add --dev svelte-preprocess node-sass postcss
 
 </CopyableCode>
 
+To use the variables declared in the library, add `@import 'attractions/var-defaults.scss';` to your `_attractions-theme.scss`.
+
 ## Theming
 
 You may configure style parameters such as colors, fonts and shadows by overriding respective variables in your `_attractions-theme.scss` file:
