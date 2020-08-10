@@ -24,5 +24,10 @@
     "rollup": "^2.18.2",
     "rollup-plugin-svelte": "^5.2.3",
     "svelte": "^3.23.2"
+  },
+  "peerDependencies": {
+    "node-sass": "^4.14.1",
+    "postcss": "^7.0.32",
+    "svelte-preprocess": "^4.0.10"
   }
 }
