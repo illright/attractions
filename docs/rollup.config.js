@@ -115,6 +115,7 @@ export default {
         extensions: ['.svelte', '.svx'],
         preprocess,
         generate: 'ssr',
+        hydratable: true,
         dev,
       }),
       resolve({
