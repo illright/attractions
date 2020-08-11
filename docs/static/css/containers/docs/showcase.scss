@@ -41,6 +41,7 @@ $border-radius: .5em;
       > [slot="source"] {
         height: 100%;
         background: #fcfcfc;
+        display: flex;
       }
 
       pre {
