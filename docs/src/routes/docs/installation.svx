@@ -38,7 +38,7 @@ yarn add --dev attractions
 **Step 2.** Add [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess/blob/master/docs/usage.md) to your preprocessor chain for compiling SCSS. Make sure to also install its peer dependencies:
 
 <div class="installation">
-  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers" />
+  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers2" />
   {#if packageManager === packageManagers[0]}
     <CopyableCode>
 
