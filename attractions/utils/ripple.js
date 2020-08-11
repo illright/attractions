@@ -8,10 +8,10 @@ export default function ripple(node, options = {}) {
     disabled: options.disabled || false,
   };
 
+  const handler = (event) => rippler(event, node, props);
+
   if (!props.disabled) {
-    node.addEventListener(props.event, function(event) {
-      rippler(event, node, props);
-    });
+    node.addEventListener(props.event, handler);
   }
 
   function rippler(event, target, { bg, zIndex, transition }) {
@@ -126,4 +126,17 @@ export default function ripple(node, options = {}) {
 
     clearRipple();
   }
+
+  return {
+    destroy() {
+      node.removeEventListener(props.event, handler);
+    },
+    update(newProps = {}) {
+      if (newProps.disabled) {
+        node.removeEventListener(props.event, handler);
+      } else {
+        node.addEventListener(props.event, handler);
+      }
+    },
+  };
 }
