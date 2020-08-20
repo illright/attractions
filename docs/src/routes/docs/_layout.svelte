@@ -132,6 +132,10 @@
         },
       ],
     },
+    {
+      title: 'Utilities',
+      segment: 'utils',
+    },
   ];
 </script>
 
