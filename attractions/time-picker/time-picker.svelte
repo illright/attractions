@@ -109,7 +109,7 @@
         placeholder={readableFormat}
         value={formatDateTime(value, format)}
         on:focus={() => focus = true}
-        class={focus && 'in-focus'}
+        class={classes(focus && 'in-focus')}
         on:change={({ detail }) => {
           value = applyTime(parseDateTime(detail.value, format, value), value);
         }}

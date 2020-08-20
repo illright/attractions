@@ -55,7 +55,7 @@
       use:eventsAction={events}
       {...$$restProps}
     />
-    <label class={starClass} for={`${name}-${i}`} use:ripple={{ disabled }}>
+    <label class={classes(starClass)} for={`${name}-${i}`} use:ripple={{ disabled }}>
       <slot name="icon"><Star /></slot>
     </label>
   {/each}

@@ -25,7 +25,7 @@
     bind:group
     {value}
     type="radio"
-    class={inputClass}
+    class={classes(inputClass)}
     {disabled}
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}

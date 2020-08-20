@@ -1,5 +1,6 @@
 <script>
   import s from '../utils/plural-s.js';
+  import classes from '../utils/classes.js';
   import CheckboxChip from './checkbox-chip.svelte';
 
   let _class = null;
@@ -20,14 +21,14 @@
 </script>
 
 {#if items != null && items.length !== 0}
-  <div class={_class} role="group">
+  <div class={classes(_class)} role="group">
     {#each items as item (item.value)}
       <CheckboxChip
         {name}
         value={item.value}
         bind:checked={item.checked}
         disabled={item.disabled || (!item.checked && currentChecked >= max)}
-        class={checkboxClass}
+        class={classes(checkboxClass)}
         title={
           !item.disabled
           && !item.checked
@@ -38,7 +39,7 @@
         {...$$restProps}
       >
         {#if labelClass != null}
-          <span class={labelClass}>{item.label || item.value}</span>
+          <span class={classes(labelClass)}>{item.label || item.value}</span>
         {:else}
           {item.label || item.value}
         {/if}

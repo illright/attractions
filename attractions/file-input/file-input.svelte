@@ -34,7 +34,7 @@
 </script>
 
 <span class={classes('file-input', _class)} class:vertical>
-  <label class:disabled class={labelClass} use:ripple={{ disabled }}>
+  <label class:disabled class={classes(labelClass)} use:ripple={{ disabled }}>
     <input
       type="file"
       bind:files
