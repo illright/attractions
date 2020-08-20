@@ -64,7 +64,7 @@
     <textarea
       {id}
       {value}
-      class={inputClass}
+      class={classes(inputClass)}
       bind:this={inputElement}
       on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
@@ -78,7 +78,7 @@
     <input
       {id}
       value={toString(value)}
-      class={inputClass}
+      class={classes(inputClass)}
       bind:this={inputElement}
       on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
@@ -89,7 +89,7 @@
       {...$$restProps}
     />
     {#if outline && label != null}
-      <label for={id} class={labelClass}>
+      <label for={id} class={classes(labelClass)}>
         {label}
       </label>
     {/if}

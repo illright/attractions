@@ -143,7 +143,7 @@
         placeholder={readableFormat}
         value={formatDateTime(startValue, format)}
         on:focus={() => { startFocus = true; endFocus = false; }}
-        class={startFocus && 'in-focus'}
+        class={classes(startFocus && 'in-focus')}
         on:change={({ detail }) => {
           startValue = applyDate(parseDateTime(detail.value, format, startValue), startValue);
           fixRange();
@@ -158,7 +158,7 @@
           placeholder={readableFormat}
           value={formatDateTime(endValue, format)}
           on:focus={() => { startFocus = false; endFocus = true; }}
-          class={endFocus && 'in-focus'}
+          class={classes(endFocus && 'in-focus')}
           on:change={({ detail }) => {
             endValue = applyDate(parseDateTime(detail.value, format, endValue), endValue);
             fixRange();

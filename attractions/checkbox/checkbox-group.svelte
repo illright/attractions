@@ -29,7 +29,7 @@
 </script>
 
 {#if items != null && items.length !== 0}
-  <div class={_class} role="group">
+  <div class={classes(_class)} role="group">
     {#each items as item (item.value)}
       <Checkbox
         {name}
@@ -50,7 +50,7 @@
       >
         {#if !color}
           {#if labelClass != null}
-            <span class={labelClass}>{item.label || item.value}</span>
+            <span class={classes(labelClass)}>{item.label || item.value}</span>
           {:else}
             {item.label || item.value}
           {/if}

@@ -25,7 +25,7 @@
 </script>
 
 {#if items != null && items.length !== 0}
-  <div class={_class} role="radiogroup">
+  <div class={classes(_class)} role="radiogroup">
     {#each items as item (item.value)}
       <RadioButton
         {name}
@@ -40,7 +40,7 @@
       >
         {#if !color}
           {#if labelClass != null}
-            <span class={labelClass}>{item.label || item.value}</span>
+            <span class={classes(labelClass)}>{item.label || item.value}</span>
           {:else}
             {item.label || item.value}
           {/if}
