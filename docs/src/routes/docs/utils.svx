@@ -1,0 +1,21 @@
+---
+name: Utility functions
+---
+
+# Utility functions
+
+A collection of helper functions that can be imported by name from `attractions/utils`. For example: `import { classes } from 'attractions/utils';`
+
+
+| Name | Signature | Description |
+| ---- | --------- | ----------- |
+| **`callOnSight`** | `(node, { callback, args }) => { destroy }` | An [action](https://svelte.dev/tutorial/actions) that is intended to be used with the `use` directive. Calls the provided `callback` with the given `args` (spreaded) once the component appears on the screen. |
+| **`classes`** | `(...args) => string` | Filters the falsey values from the given arguments and concatenates the rest in one string. |
+| **`getColorPickerStyle`** | `(hexColor: string) => string` | Returns the styles needed for displaying a radiobutton or a checkbox with the given color. |
+| **`dynamicTransition`** | `(node, { transition, options }) => Transition` | Create a transition that allows specifying a transition programmatically or disable it altogether. To be used with the [`transition`](https://svelte.dev/tutorial/transition) directive. |
+| **`events`** | `(node, args: {name, handler}[]) => { destroy }` | An action to set up arbitrary event listeners dynamically. Can be used to define multiple handlers for the same event. |
+| **`formatFileSize`** | `(bytes: number) => string` | Format the file size in bytes to a human-readable format. |
+| **`formatFileType`** | `(filename: string) => string` | Format the file type from the extension. |
+| **`s`** | `(amount: number) => string` | Returns an 's' character to use for pluralization if the amount is not one. |
+| **`range`** | `(start, end, step) => Generator<number>` | Generates a (Python-like) semi-open range. |
+| **`ripple`** | `(node, options) => { destroy, update }` | An action that adds a ripple effect to the component on the specified event. Possible options are: <br /><ul><li>`event` (defaults to `click`)</li><li>`transition`: specifies the transition time (defaults to `150`)</li><li>`zIndex` (defaults to `'100'`)</li><li>`bg`: specifies the background color of the ripple (defaults to `null`)</li><li>`disabled`: disables the ripple (defaults to `false`)</li></ul> |
