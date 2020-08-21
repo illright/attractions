@@ -134,7 +134,7 @@
     },
     {
       title: 'Utilities',
-      segment: 'utils',
+      segment: 'utilities',
     },
   ];
 </script>
