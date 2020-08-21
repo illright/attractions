@@ -1,6 +1,6 @@
 /* Adapted from SpinKit by @tobiasahlin: https://tobiasahlin.com/spinkit/ */
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
 
 $dot-size: .4em;
 
@@ -8,11 +8,12 @@ $dot-size: .4em;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: $main;
 
   > div {
     width: $dot-size;
     height: $dot-size;
-    background: $main;
+    background: currentColor;
     border-radius: 100%;
     display: inline-block;
     margin: 0 .1em;

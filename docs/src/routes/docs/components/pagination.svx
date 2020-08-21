@@ -1,0 +1,69 @@
+---
+name: Pagination
+---
+
+<script>
+  import { Pagination } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+</script>
+
+# Pagination
+
+A page navigating component that supports random page access.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Pagination pages={20} />
+  </div>
+  <div slot="source">
+
+```svelte
+<Pagination pages={20} />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`showLonePage`** | `true` | `boolean` | Whether the pagination component should be displayed when there's only one page. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| ==**`pages`**==&nbsp;<span class="required">*</span> |  | `number` | The amount of pages to allow for navigation. |
+| **`currentPage`** | `1` | `number` | The currently selected page (starting from 1). |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<nav>` element. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<Pagination>` components use the `.pagination` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when a page is changed. The value contains the currently selected page. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of selection. | <ColorPreview value="#4300B0" /> |

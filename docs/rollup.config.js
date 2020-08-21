@@ -8,17 +8,22 @@ import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
-import attractionsPkg from '../attractions/package.json';
+import attractionsPkg from 'attractions/package.json';
 import sapperEnv from 'sapper-environment';
+import { mdsvex } from 'mdsvex';
+import remarkMark from 'remark-mark-plus';
+import remarkHeadingID from 'remark-heading-id';
+import 'prismjs';
+import 'prism-svelte';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => (
-  warning.code === 'CIRCULAR_DEPENDENCY'
-  && /[/\\]@sapper[/\\]/.test(warning.message)
-) || onwarn(warning);
+const onwarn = (warning, onwarn) =>
+  (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message))
+  || (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message))
+  || onwarn(warning);
 
 const commonSubstitutions = {
   ...sapperEnv(),
@@ -29,6 +34,14 @@ const commonSubstitutions = {
 const preprocess = [
   autoPreprocess({
     scss: { includePaths: ['./static/css'] },
+  }),
+  mdsvex({
+    layout: './src/mdsvex/layout.svelte',
+    smartypants: {
+      quotes: false,
+      ellipses: true,
+    },
+    remarkPlugins: [remarkMark, remarkHeadingID],
   }),
 ];
 
@@ -50,6 +63,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
+        extensions: ['.svelte', '.svx'],
         preprocess,
         dev,
         hydratable: true,
@@ -98,8 +112,10 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
+        extensions: ['.svelte', '.svx'],
         preprocess,
         generate: 'ssr',
+        hydratable: true,
         dev,
       }),
       resolve({

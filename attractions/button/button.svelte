@@ -18,6 +18,7 @@
 
   export let disabled = false;
   export let href = null;
+  export let noPrefetch = false;
 
   export let events = null;
 
@@ -33,18 +34,14 @@
     console.error('A button may not be filled and selected at the same time');
   }
 
-  if (href != null && disabled) {
-    console.warn('The prop `disabled` has no effect on Buttons with href');
-  }
-
   const dispatch = createEventDispatcher();
 </script>
 
 {#if href}
   <a
-    {href}
-    {disabled}
-    rel="prefetch"
+    href={disabled ? null : href}
+    rel={noPrefetch ? null : "prefetch"}
+    disabled={disabled ? true : null}
     class={classes('btn', _class)}
     class:filled
     class:outline
@@ -56,7 +53,7 @@
     class:selected
     on:click={(e) => dispatch('click', { nativeEvent: e })}
     use:eventsAction={events}
-    use:ripple={{ disabled: noRipple }}
+    use:ripple={{ disabled: noRipple || disabled }}
     {...$$restProps}
   >
     <slot />
@@ -75,7 +72,7 @@
     class:small
     class:selected
     on:click
-    use:ripple={{ disabled: noRipple }}
+    use:ripple={{ disabled: noRipple || disabled }}
     use:eventsAction={events}
     {...$$restProps}
   >

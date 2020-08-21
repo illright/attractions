@@ -1,6 +1,6 @@
 {
   "name": "attractions",
-  "version": "2.0.3-alpha",
+  "version": "2.1.0",
   "description": "A UI kit for Svelte",
   "license": "MIT",
   "svelte": "index.js",
@@ -11,15 +11,23 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
+    "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js,.json'; stylelint --fix .",
+    "prepublishOnly": "npm run build && node --unhandled-rejections=strict check-version.js"
   },
   "files": [
     "*"
   ],
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "pkg-versions": "^2.1.0",
     "rollup": "^2.18.2",
     "rollup-plugin-svelte": "^5.2.3",
     "svelte": "^3.23.2"
+  },
+  "peerDependencies": {
+    "node-sass": "^4.14.1",
+    "postcss": "^7.0.32",
+    "svelte-preprocess": "^4.0.10"
   }
 }

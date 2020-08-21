@@ -1,0 +1,96 @@
+---
+name: Installation
+---
+
+<script>
+  import { Tabs } from 'attractions';
+  import CopyableCode from 'src/components/docs/copyable-code.svelte';
+
+  const packageManagers = ['npm', 'Yarn']
+  let packageManager = packageManagers[0];
+</script>
+
+# Installation
+
+**Step 1.** Install the library with npm or Yarn:
+
+<div class="installation">
+  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers" />
+  {#if packageManager === packageManagers[0]}
+    <CopyableCode>
+
+```sh
+npm install --save-dev attractions
+```
+
+    </CopyableCode>
+  {:else}
+    <CopyableCode>
+
+```sh
+yarn add --dev attractions
+```
+
+    </CopyableCode>
+  {/if}
+</div>
+
+**Step 2.** Add [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess/blob/master/docs/usage.md) to your preprocessor chain for compiling SCSS. Make sure to also install its peer dependencies:
+
+<div class="installation">
+  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers2" />
+  {#if packageManager === packageManagers[0]}
+    <CopyableCode>
+
+```sh
+npm install --save-dev svelte-preprocess node-sass postcss
+```
+
+    </CopyableCode>
+  {:else}
+    <CopyableCode>
+
+```sh
+yarn add --dev svelte-preprocess node-sass postcss
+```
+
+    </CopyableCode>
+  {/if}
+</div>
+
+**Step 3.** Create a file named `_attractions-theme.scss` (can be empty) anywhere in the project and add the path to the directory containing that file to `includePaths` for SCSS:
+
+<CopyableCode>
+
+  ```js
+  import autoPreprocess from 'svelte-preprocess';
+
+  autoPreprocess({
+    scss: {
+      includePaths: [
+        './path/to/theme/',
+      ],
+    },
+  })
+  ```
+
+</CopyableCode>
+
+To use the variables declared in the library, add `@import 'attractions/var-defaults.scss';` to your `_attractions-theme.scss`.
+
+## Theming
+
+You may configure style parameters such as colors, fonts and shadows by overriding respective variables in your `_attractions-theme.scss` file:
+
+<CopyableCode>
+
+  ```scss
+  $main: #b17200;
+  $font: 'Noto Sans', sans-serif;
+  ```
+
+</CopyableCode>
+
+Refer to the documentation of each component for the variables available for overriding.
+
+<style src="../../../static/css/routes/docs/installation.scss"></style>

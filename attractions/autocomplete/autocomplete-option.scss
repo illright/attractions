@@ -1,5 +1,9 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
+
+li {
+  list-style: none;
+}
 
 button {
   background: none;

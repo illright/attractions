@@ -8,7 +8,7 @@ $mobile-top-padding: 2.4em;
 
 main {
   background: transparentize($main, .93);
-  padding-top: $mobile-top-padding;
+  padding: $mobile-top-padding .5em;
 
   mark {
     background: none;
@@ -34,6 +34,7 @@ main {
 
       h1 {
         margin-bottom: 0;
+        color: black;
       }
 
       a {

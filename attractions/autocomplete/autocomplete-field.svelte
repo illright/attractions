@@ -16,7 +16,7 @@
   export let getOptions;
   export let selection = [];
   export let minSearchLength = 3;
-  export let maxOptions = null;
+  export let maxOptions = Infinity;
   export let searchQuery = '';
   export let optionComponent = AutocompleteOption;
   export let focus = false;
@@ -87,7 +87,7 @@
     <div class="shown-on-focus">
       <Button noRipple on:click={() => focus = false}>close the options</Button>
     </div>
-    {#if maxOptions != null && selection.length >= maxOptions}
+    {#if selection.length >= maxOptions}
       <slot name="too-many-options">
         <div class="notice">
           Cannot select more than {maxOptions} option{s(maxOptions)}
@@ -123,7 +123,7 @@
 
         {#if moreOptions && optionGenerator != null}
           {#await Promise.all(promises) then _}
-            <slot name="more-options">
+            <slot name="more-options" {loadMoreOptions}>
               <li class="more-options" use:callOnSight={{ callback: loadMoreOptions }}>
                 <Button on:click={loadMoreOptions}>
                   <MoreHorizontal />

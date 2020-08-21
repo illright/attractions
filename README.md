@@ -1,13 +1,15 @@
-<img src="https://raw.githubusercontent.com/illright/attractions/master/attractions-logo.png" alt="Logo" align="right" width="80" />
+<img src="https://raw.githubusercontent.com/illright/attractions/develop/docs/static/logo-192.png" alt="Logo" align="right" width="80" />
 
 # Attractions
 
-A UI kit for Svelte.
+A pretty cool UI kit for Svelte.
+
+Refer to the main documentation: <https://illright.github.io/attractions>
 
 
 ## Installation
 
-**Step 1.** Install the library with NPM or Yarn:
+**Step 1.** Install the library with npm or Yarn:
 
 ```bash
 npm install --save-dev attractions
@@ -15,11 +17,13 @@ npm install --save-dev attractions
 yarn add -D attractions
 ```
 
-**Step 2.** Make sure you have configured [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess#usage) for compiling SCSS.
+**Step 2.** Add [`svelte-preprocess`](https://github.com/sveltejs/svelte-preprocess/blob/master/docs/usage.md) to your preprocessor chain for compiling SCSS.
 
 **Step 3.** Create a file named `_attractions-theme.scss` (can be empty) anywhere in the project and add the path to the directory containing file to `includePaths` for SCSS:
 
 ```js
+import autoPreprocess from 'svelte-preprocess';
+
 autoPreprocess({
   scss: {
     includePaths: [

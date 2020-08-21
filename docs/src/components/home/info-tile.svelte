@@ -1,12 +1,14 @@
 <script>
+  import { goto } from '@sapper/app';
   import { Card } from 'attractions';
 
   export let icon;
   export let title;
   export let subtitle;
+  export let href;
 </script>
 
-<div class="info-tile">
+<div class="info-tile" on:click={() => goto(href)}>
   <Card>
     <div class="icon">
       <svelte:component this={icon} size="24" />

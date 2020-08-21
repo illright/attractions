@@ -1,5 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
 
 .snackbar {
   min-width: 16em;
@@ -20,6 +20,6 @@
   }
 
   :global .btn {
-    color: lighten($main, 17%);
+    color: lighten($main, 45%);
   }
 }

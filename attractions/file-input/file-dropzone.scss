@@ -1,8 +1,8 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
 
-.file-platform {
+.file-dropzone {
   color: $main;
   display: block;
   border: .125em dashed currentColor;
@@ -34,7 +34,7 @@
     padding: 2em 1em;
 
     .title {
-      font-weight: 500;
+      font-weight: $bold-font-weight;
       color: currentColor;
       text-align: center;
       margin-left: .5em;

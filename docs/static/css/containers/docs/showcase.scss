@@ -1,0 +1,82 @@
+@import "_attractions-theme.scss";
+
+$border-radius: .5em;
+
+.showcase {
+  border: 1px solid transparentize($main, .75);
+  border-radius: $border-radius;
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(4, auto);
+
+  :global {
+    > .label {
+      padding: .5rem 1rem 0;
+
+      &.code {
+        background: $code-bg;
+      }
+    }
+
+    > [slot="showcase"] {
+      overflow-x: auto;
+      border: 0 solid transparentize($main, .75);
+      border-bottom-width: 1px;
+
+      &.padded {
+        padding: 1em;
+
+        > * {
+          margin-bottom: .5em;
+        }
+      }
+    }
+
+    > .copyable {
+      overflow-x: auto;
+      border-radius: $border-radius;
+      border: 0 solid transparentize($main, .75);
+
+      > [slot="source"] {
+        height: 100%;
+        background: #fcfcfc;
+        display: flex;
+      }
+
+      pre {
+        margin: 0;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 920px) {
+    border-width: 0;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+
+    :global {
+      > .label {
+        padding-bottom: .5rem;
+
+        &.code {
+          background: none;
+        }
+      }
+
+      > [slot="showcase"] {
+        border-width: 1px;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+
+      > .copyable {
+        border-width: 1px;
+        border-left-width: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "_attractions-theme.scss";
 
 .badge {
   position: relative;
@@ -13,7 +13,7 @@
     border-radius: 50%;
     background-color: $badge-default;
     box-shadow: $shadow-raised;
-    content: '';
+    content: "";
   }
 
   &.hidden::after {

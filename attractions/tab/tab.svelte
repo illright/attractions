@@ -9,9 +9,10 @@
   export let contentClass = null;
 
   export let value;
+  export let name = null;
   export let group = null;
   export let disabled = false;
-  export let ripple = true;
+  export let noRipple = false;
 
   const dispatch = createEventDispatcher();
 </script>
@@ -20,13 +21,14 @@
   <input
     bind:group
     {value}
+    {name}
     type="radio"
-    class={inputClass}
+    class={classes(inputClass)}
     {disabled}
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: !ripple }}>
+  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: noRipple || disabled }}>
     <slot>{value}</slot>
   </div>
 </label>

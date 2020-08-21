@@ -1,4 +1,5 @@
 <script>
+  import classes from '../utils/classes.js';
   import RadioChip from './radio-chip.svelte';
 
   let _class = null;
@@ -16,19 +17,19 @@
 </script>
 
 {#if items != null && items.length !== 0}
-  <div class={_class} role="radiogroup">
+  <div class={classes(_class)} role="radiogroup">
     {#each items as item (item.value)}
       <RadioChip
         {name}
         bind:group={value}
         value={item.value}
         disabled={item.disabled}
-        class={radioClass}
+        class={classes(radioClass)}
         on:change
         {...$$restProps}
       >
         {#if labelClass != null}
-          <span class={labelClass}>{item.label || item.value}</span>
+          <span class={classes(labelClass)}>{item.label || item.value}</span>
         {:else}
           {item.label || item.value}
         {/if}

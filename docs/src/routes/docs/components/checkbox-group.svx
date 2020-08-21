@@ -1,0 +1,125 @@
+---
+name: CheckboxGroup
+relatedComponents:
+  - name: Checkbox
+    link: ./docs/components/checkbox
+---
+
+<script>
+  import { CheckboxGroup } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+
+  const items = [
+    { value: 'couch_potato', label: 'Sitting lazily on the couch', checked: true, disabled: true },
+    { value: 'cycling', label: 'Cycling' },
+    { value: 'running', label: 'Running' },
+    { value: 'swimming', label: 'Olympic Swimming' },
+  ];
+  const colors = [
+    { value: '#000000' },
+    { value: '#ff0000' },
+    { value: '#00ff00' },
+    { value: '#ffffff' },
+  ];
+</script>
+
+
+# CheckboxGroup
+
+A group of checkboxes from an array of items to select.
+
+If you need more control over the labels and checkbox layout, you may use the individual [==`Checkbox`==](./docs/components/checkbox) component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <p>Select your favorite sports:</p>
+    <CheckboxGroup name="sports[]" {items} />
+    <p>And color as well (up to 2):</p>
+    <CheckboxGroup
+      color
+      round
+      items={colors}
+      name="colors[]"
+      max={2}
+      class="colored"
+    />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const items = [
+    {
+      value: 'couch_potato',
+      label: 'Sitting lazily on the couch',
+      checked: true,
+      disabled: true
+    },
+    { value: 'cycling', label: 'Cycling' },
+    { value: 'running', label: 'Running' },
+    { value: 'swimming', label: 'Olympic Swimming' },
+  ];
+  const colors = [
+    { value: '#000000' },
+    { value: '#ff0000' },
+    { value: '#00ff00' },
+    { value: '#ffffff' },
+  ];
+</script>
+
+<p>Select your favorite sports:</p>
+<CheckboxGroup name="sports[]" {items} />
+<p>And color as well (up to 2):</p>
+<CheckboxGroup
+  color
+  round
+  items={colors}
+  name="colors[]"
+  max={2}
+  class="colored"
+/>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| **`labelsLeft`** | `false` | `boolean` | Places the labels to the left of the checkboxes. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| ==**`items`**==&nbsp;<span class="required">*</span> | | `Array` | An array of `{ value, label, checked, disabled }` objects, where only the value is required. Must contain at least one value. |
+| ==**`name`**==&nbsp;<span class="required">*</span> | | `string` | The name to assign to all checkboxes belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`max`** | `Infinity` | `number` | The maximum allowed number of checkboxes to select. |
+| **`color`** | `false` | `boolean` | Designates the checkboxes as color choices. Labels are ignored and values are expected to be `"#RRGGBB"`. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<Checkbox>` components. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to assign to the wrapper `<div>` element. |
+| **`checkboxClass`** | `null` | `string` | A class string to add to the `<Checkbox>` components. |
+| **`labelClass`** | `null` | `string` | A class string to assign to the labels' wrapping `<span>`s. <br /> If this is not passed, the labels are not wrapped in a `<span>`. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, checked, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a prop, `checked` represents the input's state, and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+<style src="../../../../static/css/routes/docs/components/checkbox-group.scss"></style>

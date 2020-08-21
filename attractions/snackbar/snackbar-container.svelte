@@ -2,8 +2,9 @@
   import { setContext } from 'svelte';
   import Snackbar from './snackbar.svelte';
   import snackbarContextKey from './snackbar-context-key.js';
+  import SnackbarPositions from './snackbar-positions.js';
 
-  export let position;
+  export let position = SnackbarPositions.BOTTOM_LEFT;
   let registeredSnackbars = new Set();
 
   function removeSnackbar(key, closedEarly) {

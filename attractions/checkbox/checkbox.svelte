@@ -5,11 +5,11 @@
   let _class = null;
   export { _class as class };
   export let inputClass = null;
-  export let iconClass = null;
-  export let iconStyle = null;
+  export let selectorClass = null;
+  export let selectorStyle = null;
 
   export let checked = false;
-  export let value;
+  export let value = null;
   export let disabled = false;
   export let slotLeft = false;
   export let round = false;
@@ -18,7 +18,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<label class={classes('checkbox', _class)} class:round>
+<label class={classes('checkbox', _class)} class:round {title}>
   {#if slotLeft}
     <slot />
   {/if}
@@ -26,7 +26,7 @@
     bind:checked
     {value}
     type="checkbox"
-    class={inputClass}
+    class={classes(inputClass)}
     {disabled}
     on:change={(e) => dispatch('change', {
       value: e.target.value,
@@ -35,7 +35,7 @@
     })}
     {...$$restProps}
   />
-  <div class={classes('icon', iconClass)} style={iconStyle} {title} />
+  <div class={classes('selector', selectorClass)} style={selectorStyle} />
   {#if !slotLeft}
     <slot />
   {/if}

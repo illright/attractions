@@ -15,7 +15,7 @@
   }
 </script>
 
-<ul class={classes('accordion', _class)}>
+<ul class={classes('accordion', _class)} {...$$restProps}>
   <slot {closeOtherPanels} />
 </ul>
 

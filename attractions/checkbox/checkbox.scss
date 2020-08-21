@@ -1,6 +1,6 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
 
 .checkbox {
   position: relative;
@@ -9,11 +9,11 @@
   font-family: $font;
   cursor: pointer;
 
-  > input[type='checkbox'] {
+  > input[type="checkbox"] {
     @include hide-accessible;
   }
 
-  > .icon {
+  > .selector {
     border-radius: .25em;
     width: 1em;
     height: 1em;
@@ -22,7 +22,7 @@
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       width: 2.25em;
       height: 2.25em;
       border-radius: 50%;
@@ -33,23 +33,23 @@
     }
   }
 
-  &.round > .icon {
+  &.round > .selector {
     border-radius: 50%;
     width: 1.375em;
     height: 1.375em;
   }
 
-  > input:disabled + .icon {
+  > input:disabled + .selector {
     cursor: not-allowed;
     background-color: lighten($light-contrast, 6%);
   }
 
-  > input:checked + .icon {
+  > input:checked + .selector {
     background-color: $main;
     border-color: $main;
 
     &::before {
-      content: '';
+      content: "";
       width: .5625em;
       height: .375em;
       border: 0 solid $main-text;
@@ -63,26 +63,26 @@
     }
   }
 
-  > input:disabled:checked + .icon {
+  > input:disabled:checked + .selector {
     background-color: $disabled;
     border-color: lighten($disabled, 4%);
   }
 
   &:hover {
-    > input:not(:disabled) + .icon::after {
+    > input:not(:disabled) + .selector::after {
       background-color: transparentize($dark, .95);
     }
 
-    > input:checked + .icon::after {
+    > input:checked + .selector::after {
       background-color: transparentize($main, .95);
     }
   }
 
-  > input:focus + .icon::after {
+  > input:focus + .selector::after {
     background-color: transparentize($dark, .875);
   }
 
-  > input:focus:checked + .icon::after {
+  > input:focus:checked + .selector::after {
     background-color: transparentize($main, .875);
   }
 }

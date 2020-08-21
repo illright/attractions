@@ -1,0 +1,20 @@
+@import "_attractions-theme.scss";
+
+.preview {
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+
+  .color {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    margin-right: .8em;
+    flex-shrink: 0;
+
+    &.bordered {
+      border-color: $main;
+    }
+  }
+}

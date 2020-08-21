@@ -1,0 +1,22 @@
+@import "_attractions-theme.scss";
+
+.related-components {
+  margin-top: 1.5em;
+  padding: 1em 1em 1em 2em;
+  background: transparentize($main, .97);
+  border-radius: 1em;
+  display: flex;
+  flex-wrap: wrap;
+
+  :global {
+    .label {
+      width: 100%;
+      margin-bottom: .75em;
+    }
+
+    .card {
+      margin: 0 .5em .5em 0;
+      padding: .5em;
+    }
+  }
+}

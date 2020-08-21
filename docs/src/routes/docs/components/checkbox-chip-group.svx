@@ -1,0 +1,103 @@
+---
+name: CheckboxChipGroup
+relatedComponents:
+  - name: Chip
+    link: ./docs/components/chip
+  - name: RadioChip
+    link: ./docs/components/radio-chip
+  - name: RadioChipGroup
+    link: ./docs/components/radio-chip-group
+  - name: CheckboxChip
+    link: ./docs/components/checkbox-chip
+---
+
+<script>
+  import { CheckboxChipGroup } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+
+  const items = [
+    { value: 1, label: 'option 1', checked: true },
+    { value: 1.5, label: 'option 1.5', disabled: true },
+    { value: 2, label: 'option 2' },
+  ];
+</script>
+
+# CheckboxChipGroup
+
+A set of options presented as chips with multiple options to select.
+
+If you need to allow selecting only one option, consider using [==`RadioChipGroup`==](./docs/components/radio-chip-group). If you need more customization for the chips, such as their slots, take a look at [==`CheckboxChip`==](./docs/components/checkbox-chip), the building block of this component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <CheckboxChipGroup {items} name="group1" />
+    <CheckboxChipGroup {items} name="group2" outline />
+    <CheckboxChipGroup {items} name="group3" small />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const items = [
+    { value: 1, label: 'option 1', checked: true },
+    { value: 1.5, label: 'option 1.5', disabled: true },
+    { value: 2, label: 'option 2' },
+  ];
+</script>
+
+<CheckboxChipGroup {items} name="group1" />
+<CheckboxChipGroup {items} name="group2" outline />
+<CheckboxChipGroup {items} name="group3" small />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+Any properties of `CheckboxChip` can be specified – they will be passed down.
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| ==**`items`**==&nbsp;<span class="required">*</span> |  | `Array` | An array of `{ value, label, disabled, checked }` objects, where only the value is required. Must contain at least one value. |
+| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name of this checkbox group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`max`** | `Infinity` | `number` | The maximum number of chips that can be selected. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `CheckboxChip` component. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`checkboxClass`** | `null` | `string` | A class string to add to the `CheckboxChip` components inside. |
+| **`labelClass`** | `null` | `string` | A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, checked, nativeEvent }` | Fired on selecting any chip in a group. The `value` contains the value that was passed to the checkbox (won't be stringified), `checked` is the state of the checkbox after the event and `nativeEvent` is the [native `change` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) of checkboxes. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$chip-bg`** | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** | The curvature radius of a chip. | `1.5625em` |
+| **`$font`** | The font of the chip text. | `'Ubuntu'` |
+| **`$main`** | The border color of outline chips and the selection color. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** | The bold font weight of the chips. | `500` |

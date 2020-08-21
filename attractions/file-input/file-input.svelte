@@ -24,17 +24,17 @@
     }
   }
 
-  function clearSelection() {
+  function clearSelection(e) {
     value = multiple ? [] : null;
     input.value = '';
-    dispatch('change', { value });
+    dispatch('change', { value, nativeEvent: e });
   }
 
   const dispatch = createEventDispatcher();
 </script>
 
 <span class={classes('file-input', _class)} class:vertical>
-  <label class:disabled class={labelClass} use:ripple={{ disabled }}>
+  <label class:disabled class={classes(labelClass)} use:ripple={{ disabled }}>
     <input
       type="file"
       bind:files

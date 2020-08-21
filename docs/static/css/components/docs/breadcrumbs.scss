@@ -1,0 +1,17 @@
+@import "_attractions-theme.scss";
+
+nav {
+  display: none;
+
+  @media only screen and (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 2em;
+    font-weight: $thin-font-weight;
+
+    .node {
+      margin: 0 .25em;
+    }
+  }
+}

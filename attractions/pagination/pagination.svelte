@@ -13,6 +13,7 @@
   // clamp currentPage between [1; pages]
   $: currentPage = Math.min(Math.max(currentPage, 1), pages);
 
+  let inputValue = null;
   let leftInputActive = false;
   let rightInputActive = false;
 
@@ -65,6 +66,20 @@
     }
   }
 
+  function tryNavigate(e) {
+    const parsed = parseInt(inputValue);
+    if (!isNaN(parsed)) {
+      goTo(parsed);
+    }
+  }
+
+  function navigateOnEnter({ detail }) {
+    if (detail.nativeEvent.key === 'Enter') {
+      tryNavigate();
+      inputValue = '';
+    }
+  }
+
   function activateLeftInput() {
     leftInputActive = true;
     rightInputActive = false;
@@ -87,9 +102,11 @@
             type="number"
             min={1}
             max={pages}
-            spinner={false}
+            noSpinner
             autofocus
-            on:change={({ detail }) => goTo(detail.value)}
+            bind:value={inputValue}
+            on:blur={tryNavigate}
+            on:keydown={navigateOnEnter}
           />
         {:else}
           <Button class="page" neutral on:click={activateLeftInput}>...</Button>
@@ -100,9 +117,11 @@
             type="number"
             min={1}
             max={pages}
-            spinner={false}
+            noSpinner
             autofocus
-            on:change={({ detail }) => goTo(detail.value)}
+            bind:value={inputValue}
+            on:blur={tryNavigate}
+            on:keydown={navigateOnEnter}
           />
         {:else}
           <Button class="page" neutral on:click={activateRightInput}>...</Button>

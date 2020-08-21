@@ -13,8 +13,8 @@
   export let getOptions;
   export let selection = [];
   export let minSearchLength = 3;
-  export let maxOptions = null;
-  export let searchQuery = null;
+  export let maxOptions = Infinity;
+  export let searchQuery = '';
   export let optionComponent = AutocompleteOption;
 
   let focus = false;

@@ -25,7 +25,7 @@
   <span class={classes('text', textClass)}>{text}</span>
   {#if action != null}
     <Button
-      class={buttonClass}
+      class={classes(buttonClass)}
       on:click={() => {
         if (typeof action.callback === 'function') {
           action.callback();

@@ -15,6 +15,7 @@
   export let accept = null;
   export let beforeChange = null;
   export let disabled = false;
+  export let max = Infinity;
 
   let dragActive = false;
   let wrongType = false;
@@ -38,7 +39,7 @@
         return;
       }
 
-      if (accepted(accept, file)) {
+      if (accepted(accept, file) && files.length < max) {
         files.push(file);
       }
     }));
@@ -57,8 +58,8 @@
 
   function blockOnTiles(e) {
     if (e.target != emptyLayer
-     && e.target != dropzoneLayer
-     && e.target != inputElement) {
+        && e.target != dropzoneLayer
+        && e.target != inputElement) {
       e.preventDefault();
     }
   }
@@ -67,10 +68,10 @@
 </script>
 
 <label
-  class={classes('file-platform', _class)}
+  class={classes('file-dropzone', _class)}
   class:has-content={files && files.length !== 0}
   class:wrong-type={wrongType}
-  class:disabled
+  class:disabled={disabled || files.length >= max}
   on:click={blockOnTiles}
 >
   <input
@@ -79,11 +80,11 @@
     on:change={acceptUpload}
     bind:this={inputElement}
     {accept}
-    {disabled}
+    disabled={disabled || files.length >= max}
     {...$$restProps}
   />
   <div class="empty-layer" bind:this={emptyLayer}>
-    <slot name="empty-layer">
+    <slot name="empty-layer" {wrongType} {dragActive}>
       <Paperclip class="icon" />
       <div class="title">
         {#if disabled}
@@ -106,11 +107,13 @@
     on:dragenter={() => dragActive = true}
     on:dragleave={() => { dragActive = false; wrongType = false; }}
     on:drop|preventDefault|stopPropagation={acceptUpload}
-    use:ripple={{ disabled }}
+    use:ripple={{ disabled: disabled || files.length >= max }}
   >
-    <slot name="more-icon">
-      <Plus class="plus" />
-    </slot>
+    {#if files.length < max}
+      <slot name="more-icon">
+        <Plus class="plus" />
+      </slot>
+    {/if}
   </div>
   {#each files as file (file)}
     <svelte:component this={fileComponent} {file} on:delete={deleteFile} />

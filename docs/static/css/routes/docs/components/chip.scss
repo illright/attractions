@@ -1,0 +1,8 @@
+[slot="showcase"] {
+  display: flex;
+  align-items: flex-start;
+
+  :global .chip {
+    margin-right: .5em;
+  }
+}

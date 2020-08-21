@@ -5,18 +5,19 @@
   let _class = null;
   export { _class as class };
   export let inputClass = null;
-  export let iconClass = null;
-  export let iconStyle = null;
+  export let selectorClass = null;
+  export let selectorStyle = null;
 
   export let value;
   export let disabled = false;
   export let group = null;
   export let slotLeft = false;
+  export let title = null;
 
   const dispatch = createEventDispatcher();
 </script>
 
-<label class={classes('radio', _class)}>
+<label class={classes('radio', _class)} {title}>
   {#if slotLeft}
     <slot />
   {/if}
@@ -24,12 +25,12 @@
     bind:group
     {value}
     type="radio"
-    class={inputClass}
+    class={classes(inputClass)}
     {disabled}
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('icon', iconClass)} style={iconStyle} />
+  <div class={classes('selector', selectorClass)} style={selectorStyle} />
   {#if !slotLeft}
     <slot />
   {/if}

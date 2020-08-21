@@ -1,0 +1,90 @@
+---
+name: Accordion
+relatedComponents:
+  - name: AccordionSection
+    link: ./docs/components/accordion-section
+---
+
+<script>
+  import { Accordion, AccordionSection, Button } from 'attractions';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+</script>
+
+
+# Accordion
+
+A controller for multiple collapsible elements, allowing either one open panel at a time or infinite.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase">
+    <Accordion let:closeOtherPanels>
+      {#each [0, 1, 2, 3, 4] as idx}
+        <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+          <div slot="handle">
+            <Button on:click={toggle}>
+              open panel {idx}
+              <ChevronDownIcon size="20" class="ml accordion-chevron" />
+            </Button>
+          </div>
+          Content of panel {idx}
+        </AccordionSection>
+      {/each}
+    </Accordion>
+  </div>
+  <div slot="source">
+
+```svelte
+<Accordion let:closeOtherPanels>
+  {#each [0, 1, 2, 3, 4] as idx}
+    <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+      <div slot="handle">
+        <Button on:click={toggle}>
+          open panel {idx}
+          <ChevronDownIcon size="20" class="ml accordion-chevron" />
+        </Button>
+      </div>
+      Content of panel {idx}
+    </AccordionSection>
+  {/each}
+</Accordion>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`multiple`** | `false` | `boolean` | Setting this to `true` allows multiple panels to be open at the same time. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<ul>` element. |
+
+### Class Properties
+
+All `<Accordion>` components use the `.accordion` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the Accordion. Pass one or more [==`AccordionSection`==](./docs/components/accordion-section) components or something miscellaneous.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`closeOtherPanels`** | `Function` | A callback to force-close all panels except for the calling one. |
+
+<style src="../../../../static/css/routes/docs/components/accordion.scss"></style>

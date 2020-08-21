@@ -1,6 +1,4 @@
-/node_modules/
-/demo/public
-/dist
-/attractions/dist
-/docs/node_modules
-/docs/__sapper__
+public
+node_modules
+dist
+__sapper__

@@ -14,7 +14,7 @@
   export let itemRight = false;
 
   export let id = null;
-  export let spinner = true;
+  export let noSpinner = false;
   export let label = null;
   export let error = null;
   export let multiline = null;
@@ -58,17 +58,18 @@
   class:with-item={withItem}
   class:left={withItem && !itemRight}
   class:right={withItem && itemRight}
-  class:no-spinner={!spinner}
+  class:no-spinner={noSpinner}
 >
   {#if multiline}
     <textarea
       {id}
       {value}
-      class={inputClass}
+      class={classes(inputClass)}
       bind:this={inputElement}
       on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:keydown={(e) => dispatch('keydown', { nativeEvent: e })}
       on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
@@ -77,17 +78,18 @@
     <input
       {id}
       value={toString(value)}
-      class={inputClass}
+      class={classes(inputClass)}
       bind:this={inputElement}
       on:input={handleInput}
       on:change={(e) => dispatch('change', { value, nativeEvent: e })}
       on:focus={(e) => dispatch('focus', { nativeEvent: e })}
+      on:keydown={(e) => dispatch('keydown', { nativeEvent: e })}
       on:blur={(e) => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
     {#if outline && label != null}
-      <label for={id} class={labelClass}>
+      <label for={id} class={classes(labelClass)}>
         {label}
       </label>
     {/if}

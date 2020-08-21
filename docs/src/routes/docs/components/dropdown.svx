@@ -1,0 +1,113 @@
+---
+name: Dropdown
+relatedComponents:
+  - name: DropdownShell
+    link: ./docs/components/dropdown-shell
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script>
+  import { DropdownShell, Dropdown, Button } from 'attractions';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+</script>
+
+# Dropdown
+
+Toggleable, contextual overlays for displaying additional details or actions. Must be wrapped with a [`DropdownShell`](./docs/components/dropdown-shell) for correct behavior.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        I toggle a dropdown
+        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+      </Button>
+      <Dropdown>
+        <div class="padded">
+          and I am the dropdown content
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        look up there
+      </Button>
+      <Dropdown top>
+        <div class="padded">
+          right here
+        </div>
+      </Dropdown>
+    </DropdownShell>
+  </div>
+  <div slot="source">
+
+```svelte
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    I toggle a dropdown
+    <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+  </Button>
+  <Dropdown>
+    <div class="padded">
+      and I am the dropdown content
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    look up there
+  </Button>
+  <Dropdown top>
+    <div class="padded">
+      right here
+    </div>
+  </Dropdown>
+</DropdownShell>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`right`** | `false` | `boolean` | Aligns the dropdown content with the right edge of the shell. |
+| **`top`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the top of the shell, extending up. |
+
+### Class Properties
+
+All `<Dropdown>` components use the `.dropdown` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the dropdown.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$background`** | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** | The shadow of the dropdown content. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** | The curvature radius of the dropdown content. | `1.25em` |
+
+<style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>

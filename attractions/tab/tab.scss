@@ -1,6 +1,6 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@import "../var-defaults.scss";
+@import "../_mixins.scss";
+@import "_attractions-theme.scss";
 
 .tab {
   display: flex;
@@ -30,6 +30,11 @@
     &:hover {
       background: transparentize($off-state, .9);
     }
+  }
+
+  > input:disabled + .content {
+    cursor: not-allowed;
+    color: $disabled;
   }
 
   > input:focus + .content {
