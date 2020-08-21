@@ -2,7 +2,9 @@
 
 # Attractions
 
-A UI kit for Svelte.
+A pretty cool UI kit for Svelte.
+
+Refer to the main documentation: <https://illright.github.io/attractions>
 
 
 ## Installation
