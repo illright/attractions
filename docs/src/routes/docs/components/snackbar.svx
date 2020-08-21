@@ -69,6 +69,8 @@ Note: below is not the intended way of using this component. It is meant to be p
 
 All `<Snackbar>` components use the `.snackbar` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

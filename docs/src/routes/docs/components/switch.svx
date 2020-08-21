@@ -52,6 +52,8 @@ An on/off switch.
 
 All `<Switch>` components use the `.switch` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

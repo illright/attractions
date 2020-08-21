@@ -74,6 +74,8 @@ An individual radio button.
 
 All `<RadioButton>` components use the `.radio` class on the `<label>` and `.selector` on the selector circle.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the root `<label>` element. |

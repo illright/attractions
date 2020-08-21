@@ -96,9 +96,11 @@ Comes in three flavours: filled, outline and flat.
 
 All `<Button>` components use the `.btn` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
 
 
 ## Events {#events}

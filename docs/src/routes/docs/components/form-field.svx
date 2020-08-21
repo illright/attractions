@@ -88,11 +88,13 @@ Note that this component doesn't add any form handling capabilities; it is merel
 
 All `<FormField>` components use the `.form-field` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
-| **`nameClass`** | `null` | `string` | A class string to add to the `<label>` containing the form field name. Falsy values disregarded. |
-| **`helpClass`** | `null` | `string` | A class string to add to the help text of the form field. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`nameClass`** | `null` | `string` | A class string to add to the `<label>` containing the form field name. |
+| **`helpClass`** | `null` | `string` | A class string to add to the help text of the form field. |
 
 
 ## Slots {#slots}

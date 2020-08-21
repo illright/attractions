@@ -59,9 +59,11 @@ For a simpler file input without the built-in representation of the file selecti
 
 All `<FileDropzone>` components use the `.file-dropzone` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
 
 
 ## Events {#events}

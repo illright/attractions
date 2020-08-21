@@ -88,6 +88,8 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 
 All `<Dropdown>` components use the `.dropdown` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |

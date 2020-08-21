@@ -55,6 +55,8 @@ A time picker that supports both the text input and a dropdown with buttons.
 
 All `<TimePicker>` components use the `.time-picker` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

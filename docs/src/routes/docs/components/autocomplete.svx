@@ -79,9 +79,11 @@ Builds upon the [==`AutocompleteField`==](./docs/components/autocomplete-field),
 
 All `<Autocomplete>` components use the `.autocomplete` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
 
 
 ## Events {#events}

@@ -69,10 +69,12 @@ A modal window that informs users about a task and can contain critical informat
 
 All `<Dialog>` components use the `.dialog` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
-| **`titleClass`** | `null` | `string` | A class string to add to the title `div`. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`titleClass`** | `null` | `string` | A class string to add to the title `div`. |
 
 
 ## Slots {#slots}

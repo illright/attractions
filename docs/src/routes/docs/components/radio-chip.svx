@@ -71,11 +71,13 @@ If you don't need too much customization, consider using [==`RadioChipGroup`==](
 
 All `<RadioChip>` components use the `.input-chip` and `.radio-chip` classes.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
 | **`inputClass`** | `null` | `string` | A class string to add to the `<input>` element. |
-| **`chipClass`** | `null` | `string` | A class string to add to the underlying Chip element. Falsy values disregarded. |
+| **`chipClass`** | `null` | `string` | A class string to add to the underlying Chip element. |
 
 
 ## Events {#events}

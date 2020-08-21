@@ -75,6 +75,8 @@ An individual checkbox.
 
 All `<Checkbox>` components use the `.checkbox` class on the `<label>` and `.selector` on the selector box.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the root `<label>` element. |

@@ -55,6 +55,8 @@ Tabs are used to organize content and navigate between it.
 
 ### Class Properties
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to assign to the root `<nav>` element. |

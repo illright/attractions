@@ -78,6 +78,8 @@ A group of radio buttons to present a list of selectable options.
 
 ### Class Properties
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to assign to the wrapper `<div>` element. |

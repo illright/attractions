@@ -60,6 +60,8 @@ An input element used for rating with a number of stars.
 
 All `<StarRating>` components use the `.star-rating` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

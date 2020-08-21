@@ -78,9 +78,11 @@ The panel to be used inside an Accordion.
 
 All `<AccordionSection>` components use the `.panel` class for the handle and the `section` tag for the hidden content.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the handle. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the handle. |
 
 ==Bonus==: use the `.accordion-chevron` class for the chevrons on the handle to get a nice rotation animation (see showcase).
 

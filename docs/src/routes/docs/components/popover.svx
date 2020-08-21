@@ -62,6 +62,8 @@ Extra content revealed on hover or focus within.
 
 All `<Popover>` components use the `.popover-container` class for the main element and `.popover` for the popover itself.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

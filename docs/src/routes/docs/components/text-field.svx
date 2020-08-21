@@ -81,6 +81,8 @@ The most basic form element – taking text input.
 
 All `<TextField>` components use the `.text-field` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |
