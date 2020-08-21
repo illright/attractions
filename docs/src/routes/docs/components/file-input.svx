@@ -70,10 +70,12 @@ For a larger, more functional and visual file uploader, check out the [`FileDrop
 
 All `<FileInput>` components use the `.file-input` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
-| **`labelClass`** | `null` | `string` | A class string to add to the `<label>` element wrapping the `<input>`. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`labelClass`** | `null` | `string` | A class string to add to the `<label>` element wrapping the `<input>`. |
 
 
 ## Events {#events}

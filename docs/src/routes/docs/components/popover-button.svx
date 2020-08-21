@@ -60,6 +60,8 @@ A button designed to be used as the [==`Popover`==](./docs/components/popover) c
 
 All `<PopoverButton>` components use the `.popover-button` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

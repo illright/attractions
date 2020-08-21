@@ -72,6 +72,8 @@ The container for the [`Dropdown`](./docs/components/dropdown) and its activatin
 
 All `<DropdownShell>` components use the `.dropdown-shell` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |

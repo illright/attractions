@@ -76,7 +76,9 @@ Only one of ==`info`==, ==`attention`==, ==`danger`==, and ==`success`== props m
 
 ### Class Properties
 
-All `<Dot>` components use the `.dot` class
+All `<Dot>` components use the `.dot` class.
+
+Falsy values passed to classes will be disregarded.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |

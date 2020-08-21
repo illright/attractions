@@ -70,9 +70,11 @@ A controller for multiple collapsible elements, allowing either one open panel a
 
 All `<Accordion>` components use the `.accordion` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
 
 
 ## Slots {#slots}

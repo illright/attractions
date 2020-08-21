@@ -52,11 +52,13 @@ If you're seeking a ready-to-use date picking solution, consider using [`DatePic
 
 ### Class Properties
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. Falsy values disregarded. |
-| **`weekClass`** | `null` | `string` | A class string to add to the element containing each row of days in the calendar. Falsy values disregarded. |
-| **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. Falsy values disregarded. |
+| **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. |
+| **`weekClass`** | `null` | `string` | A class string to add to the element containing each row of days in the calendar. |
+| **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
 
 
 ## Events {#events}

@@ -48,6 +48,8 @@ A page navigating component that supports random page access.
 
 All `<Pagination>` components use the `.pagination` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |

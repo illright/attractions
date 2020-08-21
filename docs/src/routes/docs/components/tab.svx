@@ -68,6 +68,8 @@ Allows for finer control over individual tabs when the default [==`Tabs`==](./do
 
 All `<Tab>` components use the `.tab` class on the `<label>` element and `.content` on the content of the tab label.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the root `<label>` element. |

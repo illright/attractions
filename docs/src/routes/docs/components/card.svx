@@ -49,9 +49,11 @@ A surface that stands out.
 
 All `<Card>` components use the `.card` class.
 
+Falsy values passed to classes will be disregarded.
+
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`class`** | `null` | `string` | A class string to add to the component. Falsy values disregarded. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
 
 
 ## Slots {#slots}
