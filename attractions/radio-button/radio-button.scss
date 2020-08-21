@@ -13,7 +13,7 @@
     @include hide-accessible;
   }
 
-  > .icon {
+  > .selector {
     border-radius: 50%;
     width: 1.25em;
     height: 1.25em;
@@ -33,12 +33,12 @@
     }
   }
 
-  > input:disabled + .icon {
+  > input:disabled + .selector {
     cursor: not-allowed;
     background-color: lighten($light-contrast, 6%);
   }
 
-  > input:checked + .icon {
+  > input:checked + .selector {
     background-color: $main;
     border-color: $main;
 
@@ -55,26 +55,26 @@
     }
   }
 
-  > input:disabled:checked + .icon {
+  > input:disabled:checked + .selector {
     background-color: $disabled;
     border-color: lighten($disabled, 4%);
   }
 
   &:hover {
-    > input:not(:disabled) + .icon::after {
+    > input:not(:disabled) + .selector::after {
       background-color: transparentize($dark, .95);
     }
 
-    > input:checked + .icon::after {
+    > input:checked + .selector::after {
       background-color: transparentize($main, .95);
     }
   }
 
-  > input:focus + .icon::after {
+  > input:focus + .selector::after {
     background-color: transparentize($dark, .875);
   }
 
-  > input:focus:checked + .icon::after {
+  > input:focus:checked + .selector::after {
     background-color: transparentize($main, .875);
   }
 }
