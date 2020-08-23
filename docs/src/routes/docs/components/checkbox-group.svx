@@ -91,6 +91,8 @@ If you need more control over the labels and checkbox layout, you may use the in
 
 ### Style Properties
 
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
 | **`labelsLeft`** | `false` | `boolean` | Places the labels to the left of the checkboxes. |
 
 ### Functional Properties

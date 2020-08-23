@@ -62,6 +62,9 @@ A group of radio buttons to present a list of selectable options.
 ## Properties {#properties}
 
 ### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
 | **`labelsLeft`** | `false` | `boolean` | Places the labels to the left of the radio buttons. |
 
 ### Functional Properties
