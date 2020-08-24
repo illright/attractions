@@ -42,13 +42,14 @@ const preprocess = [
       ellipses: true,
     },
     remarkPlugins: [remarkMark, remarkHeadingID],
+    extensions: ['.svx', '.md'],
   }),
 ];
 
 const pathAlias = alias({
-  resolve: ['.js', '.svelte', '.svg'],
   entries: [
     { find: /^src\//, replacement: __dirname + '/src/' },
+    { find: /^root\//, replacement: __dirname + '/../' },
   ],
 });
 
@@ -63,7 +64,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
-        extensions: ['.svelte', '.svx'],
+        extensions: ['.svelte', '.svx', '.md'],
         preprocess,
         dev,
         hydratable: true,
@@ -112,7 +113,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
-        extensions: ['.svelte', '.svx'],
+        extensions: ['.svelte', '.svx', '.md'],
         preprocess,
         generate: 'ssr',
         hydratable: true,
