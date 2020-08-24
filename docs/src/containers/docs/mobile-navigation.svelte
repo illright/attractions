@@ -21,7 +21,7 @@
   }
 </script>
 
-<DropdownShell let:toggle open={currentPlace != null && currentPlace.sub != null} on:change={clearSubmenu}>
+<DropdownShell let:toggle on:change={clearSubmenu}>
   <nav class="mobile padded">
     {#each places as place}
       <Tab
@@ -30,6 +30,7 @@
         name="nav-mobile"
         bind:group={currentPlace}
         on:change={() => handleTabClick(place)}
+        on:click={() => place.sub != null && toggle()}
       >
         {#if typeof place.title === 'string'}
           {place.title}
