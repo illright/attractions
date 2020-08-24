@@ -82,6 +82,7 @@ Falsy values passed to classes will be disregarded.
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
 | **`change`** | `{ value, nativeEvent }` | Fired when selecting a tab. The `value` is the `value` prop and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`click`** | `{ nativeEvent }` | Fired when clicking on a tab. The `nativeEvent` has the [native click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event). |
 
 
 ## Slots {#slots}
