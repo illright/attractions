@@ -21,7 +21,7 @@
   }
 </script>
 
-<DropdownShell open={currentPlace != null && currentPlace.sub != null} on:change={clearSubmenu}>
+<DropdownShell let:toggle open={currentPlace != null && currentPlace.sub != null} on:change={clearSubmenu}>
   <nav class="mobile padded">
     {#each places as place}
       <Tab
@@ -45,7 +45,7 @@
   <Dropdown right>
     {#if currentPlace != null && currentPlace.sub != null}
       {#each currentPlace.sub as entry (entry.segment)}
-        <Button href="./docs/{entry.segment}">{entry.title}</Button>
+        <Button href="./docs/{entry.segment}" on:click={toggle}>{entry.title}</Button>
       {/each}
     {/if}
   </Dropdown>
