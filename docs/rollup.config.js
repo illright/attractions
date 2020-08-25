@@ -49,7 +49,7 @@ const preprocess = [
 const pathAlias = alias({
   entries: [
     { find: /^src\//, replacement: __dirname + '/src/' },
-    { find: /^root\//, replacement: __dirname + '/../' },
+    { find: /^#root\//, replacement: __dirname + '/../' },
   ],
 });
 
