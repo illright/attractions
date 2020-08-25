@@ -3,7 +3,7 @@ name: Changelog
 ---
 
 <script>
-  import Changelog from 'root/CHANGELOG.md';
+  import Changelog from '#root/CHANGELOG.md';
 </script>
 
 <Changelog />
