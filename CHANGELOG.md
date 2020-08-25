@@ -8,15 +8,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] - yyyy-mm-dd
+## [Unreleased]
 
 Just minor documentation fixes.
 
 ### Added
 - [`<Tab>`](https://github.com/illright/attractions/blob/master/attractions/tab/tab.svelte)s
   now also dispatch `click` event.
-
-### Changed
 
 ### Fixed
 - Mobile navigation in documentation ("Components" tab dropdown now works as expected).
