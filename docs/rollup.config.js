@@ -38,6 +38,7 @@ const preprocess = [
   mdsvex({
     layout: {
       docs: './src/mdsvex/layout.svelte',
+      _: './src/mdsvex/layout-no-head.svelte',
     },
     smartypants: {
       quotes: false,
