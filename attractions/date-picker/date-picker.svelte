@@ -56,7 +56,7 @@
   }
 
   function clearFocus({ detail: open }) {
-    if (!open) {
+    if (!open.value) {
       startFocus = false;
       endFocus = false;
     }
