@@ -51,7 +51,7 @@ An input element used for rating with a number of stars.
 | **`max`** | `5` | `number` | How many stars to be displayed. |
 | **`value`** | `null` | `number` | Current amount of selected stars. |
 | **`disabled`** | `false` | `boolean` | Disables star selection. |
-| **`events`** | `[]` | `Array` | List of handlers for the [Events action](): `[{ name, handler }]`. The event listeners are registered on the `<input type="radio">` elements. |
+| **`events`** | `[]` | `Array` | List of handlers for the [Events action](./docs/utilities): `[{ name, handler }]`. The event listeners are registered on the `<input type="radio">` elements. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input type="radio">` elements. |
 
 <div class="required">* Required</div>
