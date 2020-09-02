@@ -36,19 +36,23 @@ const preprocess = [
     scss: { includePaths: ['./static/css'] },
   }),
   mdsvex({
-    layout: './src/mdsvex/layout.svelte',
+    layout: {
+      docs: './src/mdsvex/layout.svelte',
+      _: './src/mdsvex/layout-no-head.svelte',
+    },
     smartypants: {
       quotes: false,
       ellipses: true,
     },
     remarkPlugins: [remarkMark, remarkHeadingID],
+    extensions: ['.svx', '.md'],
   }),
 ];
 
 const pathAlias = alias({
-  resolve: ['.js', '.svelte', '.svg'],
   entries: [
     { find: /^src\//, replacement: __dirname + '/src/' },
+    { find: /^#root\//, replacement: __dirname + '/../' },
   ],
 });
 
@@ -63,7 +67,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
-        extensions: ['.svelte', '.svx'],
+        extensions: ['.svelte', '.svx', '.md'],
         preprocess,
         dev,
         hydratable: true,
@@ -112,7 +116,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
-        extensions: ['.svelte', '.svx'],
+        extensions: ['.svelte', '.svx', '.md'],
         preprocess,
         generate: 'ssr',
         hydratable: true,

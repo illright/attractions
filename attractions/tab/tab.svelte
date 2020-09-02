@@ -26,6 +26,7 @@
     class={classes(inputClass)}
     {disabled}
     on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+    on:click={(e) => dispatch('click', { nativeEvent: e })}
     {...$$restProps}
   />
   <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: noRipple || disabled }}>
