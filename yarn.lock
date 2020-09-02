@@ -3174,10 +3174,10 @@ mdast-util-compact@^2.0.0:
   dependencies:
     unist-util-visit "^2.0.0"
 
-mdsvex@^0.8.6:
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/mdsvex/-/mdsvex-0.8.6.tgz#fe33c58de1f7b6b8539032118f3c3437e7cbf195"
-  integrity sha512-VxXv5jLBB3+QqhPbW/shVDzFa+jfI1P+stJxj6yKLIFS+Xuu2ebwqT1Q65v31MQtGCt31hLZZo/LyWzX00Xi0Q==
+mdsvex@^0.8.7:
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/mdsvex/-/mdsvex-0.8.7.tgz#4b85de513826ec316677ee6d25eeaa1595edbe66"
+  integrity sha512-ugrKnITfKwvrHD2lSp/W28Fm2wCGrJbQzxyAuHwZSSA34DM1NzoEgUWqB7hLKUCmR8cAI/d88MHP/JxCMjESog==
   dependencies:
     "@types/unist" "^2.0.3"
     prismjs "^1.17.1"

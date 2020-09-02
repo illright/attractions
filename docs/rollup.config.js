@@ -36,7 +36,10 @@ const preprocess = [
     scss: { includePaths: ['./static/css'] },
   }),
   mdsvex({
-    layout: './src/mdsvex/layout.svelte',
+    layout: {
+      docs: './src/mdsvex/layout.svelte',
+      _: './src/mdsvex/layout-no-head.svelte',
+    },
     smartypants: {
       quotes: false,
       ellipses: true,
