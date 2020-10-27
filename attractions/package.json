@@ -20,10 +20,12 @@
   ],
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "node-sass": "^4.14.1",
     "pkg-versions": "^2.1.0",
     "rollup": "^2.18.2",
     "rollup-plugin-svelte": "^5.2.3",
-    "svelte": "^3.23.2"
+    "svelte": "^3.23.2",
+    "svelte-preprocess": "^4.5.2"
   },
   "peerDependencies": {
     "node-sass": "^4.14.1",
