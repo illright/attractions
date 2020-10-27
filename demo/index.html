@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components demo</title>
+
+  <!-- ultimately should be something like https://unpkg.com/attractions@2.2.0/dist/index.js -->
+  <script src="../attractions/dist/bundle.js"></script>
+</head>
+
+<body>
+  <a-card>
+    <a-button filled="true" danger="true">
+      Alert
+    </a-button>
+    <!-- camelCase props seem to not work (HTML is case-insensitive) -->
+    <a-switch slotLeft="true">
+      On?
+    </a-switch>
+  </a-card>
+
+  <div id="container">
+    <!-- more elements will be injected here -->
+  </div>
+
+  <script>
+    // Or using the normal constructor
+    const { Button } = attractions;
+    new Button({
+      target: document.getElementById('container'),
+      props: {
+        filled: true,
+      },
+    });
+
+    // TODO: figure out how to listen to events
+  </script>
+</body>
+</html>
