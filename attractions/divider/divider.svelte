@@ -1,3 +1,5 @@
+<svelte:options tag="a-divider" />
+
 <script>
   export let text = null;
 </script>

@@ -1,5 +1,3 @@
-<!-- TODO: Decide whether to write out all tag names or leave them as null
-        for the users to set manually -->
 <svelte:options tag="a-button" />
 
 <script>

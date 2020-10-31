@@ -1,3 +1,5 @@
+<svelte:options tag="a-radio-button" />
+
 <script>
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';

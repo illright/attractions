@@ -1,3 +1,5 @@
+<svelte:options tag="a-badge" />
+
 <script>
   import classes from '../utils/classes.js';
 

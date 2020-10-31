@@ -1,3 +1,5 @@
+<svelte:options tag="a-label" />
+
 <script>
   import classes from '../utils/classes.js';
 

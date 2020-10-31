@@ -1,3 +1,5 @@
+<svelte:options tag="a-calendar" />
+
 <script>
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';

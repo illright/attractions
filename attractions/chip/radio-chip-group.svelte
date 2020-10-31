@@ -1,3 +1,5 @@
+<svelte:options tag="a-radio-chip-group" />
+
 <script>
   import classes from '../utils/classes.js';
   import RadioChip from './radio-chip.svelte';

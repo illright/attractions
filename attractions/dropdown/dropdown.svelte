@@ -1,3 +1,5 @@
+<svelte:options tag="a-dropdown" />
+
 <script>
   import classes from '../utils/classes.js';
 

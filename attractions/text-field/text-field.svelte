@@ -1,3 +1,5 @@
+<svelte:options tag="a-text-field" />
+
 <script>
   import { createEventDispatcher, onMount } from 'svelte';
   import eventsAction from '../utils/events.js';

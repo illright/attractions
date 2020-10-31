@@ -1,3 +1,5 @@
+<svelte:options tag="a-star-rating" />
+
 <script>
   import { createEventDispatcher } from 'svelte';
   import Star from './star.svelte';
