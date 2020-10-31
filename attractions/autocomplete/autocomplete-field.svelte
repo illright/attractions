@@ -1,3 +1,5 @@
+<svelte:options tag="a-autocomplete-field" />
+
 <script>
   import { createEventDispatcher } from 'svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';

@@ -1,3 +1,5 @@
+<svelte:options tag="a-autocomplete-option" />
+
 <script>
   import { createEventDispatcher } from 'svelte';
 

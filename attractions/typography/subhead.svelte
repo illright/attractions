@@ -1,3 +1,5 @@
+<svelte:options tag="a-subhead" />
+
 <script>
   import classes from '../utils/classes.js';
 

@@ -1,3 +1,5 @@
+<svelte:options tag="a-snackbar-container" />
+
 <script>
   import { setContext } from 'svelte';
   import Snackbar from './snackbar.svelte';

@@ -1,3 +1,5 @@
+<svelte:options tag="a-snackbar" />
+
 <script>
   import Button from '../button/button.svelte';
   import { fly } from 'svelte/transition';

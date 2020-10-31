@@ -1,3 +1,5 @@
+<svelte:options tag="a-h3" />
+
 <script>
   import classes from '../utils/classes.js';
 

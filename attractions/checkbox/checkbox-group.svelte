@@ -1,3 +1,5 @@
+<svelte:options tag="a-checkbox-group" />
+
 <script>
   import classes from '../utils/classes.js';
   import getColorPickerStyles from '../utils/color-picker-styles.js';

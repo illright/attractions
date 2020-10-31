@@ -1,3 +1,5 @@
+<svelte:options tag="a-dialog" />
+
 <script>
   import Button from '../button/button.svelte';
   import X from './x.svelte';
