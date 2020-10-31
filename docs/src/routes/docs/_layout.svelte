@@ -136,6 +136,10 @@
       title: 'Utilities',
       segment: 'utilities',
     },
+    {
+      title: 'Custom Elements',
+      segment: 'customElements',
+    },
   ];
 </script>
 
