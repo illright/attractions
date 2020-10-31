@@ -38,6 +38,21 @@ autoPreprocess({
 })
 ```
 
+---
+
+Alteratively, the library can be used from a CDN, such as unpkg, and then the components will be registered as custom elements. This is especially useful for quick prototypes that do not need all the features provided.
+
+Example usage:
+```html
+<head>
+  <script src="https://unpkg.com/attractions"></script>
+</head>
+<body>
+  <a-button filled="filled">My button</a-button>
+</body>
+```
+For more details, check out [the docs](https://illright.github.io/attractions/docs/customElements).
+
 ## Theming
 
 You may configure style parameters such as colors, fonts and shadows by overriding respective variables in your `_attractions-theme.scss` file:

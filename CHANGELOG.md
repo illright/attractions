@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- All components are now registered as `customElements` as well, meaning that they can be used with Svelte (or any framework). This does not affect any existing usage. More information in [the docs](https://illright.github.io/attractions/docs/customElements).
+
+### Changed
+- The [`<Button>`](https://github.com/illright/attractions/blob/master/attractions/button/button.svelte)'s `click` event was being forwarded directly instead of the payload being wrapped as with other events. This is changed (in commit 0b549d5cbd4a2c5328d5019886b8a4a25f7b903d) for consistency.
+
 ## [2.1.1] - 2020-09-02
 
 Minor documentation and bug fixes.
