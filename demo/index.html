@@ -13,11 +13,17 @@
   <a-card>
     <a-button filled="true" danger="true">
       Alert
+      <a-dot style="margin-left: 10px;" attention="attention" />
     </a-button>
-    <!-- camelCase props seem to not work (HTML is case-insensitive) -->
+
+    <!-- camelCase props do not work (HTML is case-insensitive) -->
     <a-switch slotLeft="true">
       On?
     </a-switch>
+
+    <!-- Cannot use the self-closing syntax! -->
+    <a-divider></a-divider>
+    <a-calendar id="calendar"></a-calendar>
   </a-card>
 
   <div id="container">
@@ -34,7 +40,17 @@
       },
     });
 
-    // TODO: figure out how to listen to events
+    const calendar = document.getElementById('calendar');
+    // Setting props that aren't string
+    calendar.$$set({
+      year: 2020,
+      month: 11,
+    });
+
+    // Listening to events
+    calendar.$on('day-select', (e) => {
+      alert(`You selected ${e.detail}`);
+    });
   </script>
 </body>
 </html>
