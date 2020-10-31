@@ -70,3 +70,5 @@ export { default as AutocompleteField } from './autocomplete/autocomplete-field.
 export { default as Badge } from './badge/badge.svelte';
 
 export { default as Pagination } from './pagination/pagination.svelte';
+
+export * as utils from './utils';
