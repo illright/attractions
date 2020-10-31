@@ -73,7 +73,7 @@
     class:rectangle
     class:small
     class:selected
-    on:click
+    on:click={(e) => dispatch('click', { nativeEvent: e })}
     use:ripple={{ disabled: noRipple || disabled }}
     use:eventsAction={events}
     {...$$restProps}
