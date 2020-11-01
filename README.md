@@ -51,7 +51,7 @@ Example usage:
   <a-button filled="filled">My button</a-button>
 </body>
 ```
-For more details, check out [the docs](https://illright.github.io/attractions/docs/customElements).
+For more details, check out [the docs](https://illright.github.io/attractions/docs/custom-elements).
 
 ## Theming
 
