@@ -7,10 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ## [Unreleased]
 
 ### Added
-- All components are now registered as `customElements` as well, meaning that they can be used with Svelte (or any framework). This does not affect any existing usage. More information in [the docs](https://illright.github.io/attractions/docs/customElements).
+- All components are now registered as `customElements` as well, meaning that they can be used without Svelte (or any framework). This does not affect any existing usage. More information in [the docs](https://illright.github.io/attractions/docs/customElements).
 
 ### Changed
-- The [`<Button>`](https://github.com/illright/attractions/blob/master/attractions/button/button.svelte)'s `click` event was being forwarded directly instead of the payload being wrapped as with other events. This is changed (in commit 0b549d5cbd4a2c5328d5019886b8a4a25f7b903d) for consistency.
+- The [`<Button>`](https://github.com/illright/attractions/blob/master/attractions/button/button.svelte)'s `click` event was being forwarded directly instead of the payload being wrapped as with other events. This is changed for consistency.
 
 ## [2.1.1] - 2020-09-02
 
@@ -32,6 +32,6 @@ First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
 
-[Unreleased]: https://github.com/illright/attractions/compare/v2.1.0...HEAD
-[2.1.1]: https://github.com/illright/attractions/releases/tag/2.1.1
+[Unreleased]: https://github.com/illright/attractions/compare/2.1.0...HEAD
+[2.1.1]: https://github.com/illright/attractions/releases/tag/v2.1.1
 [2.1.0]: https://github.com/illright/attractions/releases/tag/2.1.0
