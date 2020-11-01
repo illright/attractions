@@ -138,7 +138,7 @@
     },
     {
       title: 'Custom Elements',
-      segment: 'customElements',
+      segment: 'custom-elements',
     },
   ];
 </script>
