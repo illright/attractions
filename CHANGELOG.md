@@ -32,6 +32,6 @@ First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
 
-[Unreleased]: https://github.com/illright/attractions/compare/2.1.0...HEAD
+[Unreleased]: https://github.com/illright/attractions/compare/v2.1.1...HEAD
 [2.1.1]: https://github.com/illright/attractions/releases/tag/v2.1.1
-[2.1.0]: https://github.com/illright/attractions/releases/tag/2.1.0
+[2.1.0]: https://github.com/illright/attractions/releases/tag/v2.1.0
