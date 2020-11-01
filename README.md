@@ -40,7 +40,7 @@ autoPreprocess({
 
 ---
 
-Alternatively, the library can be used from a CDN, such as unpkg, and then the components will be registered as custom elements. This is especially useful for quick prototypes that do not need all the features provided.
+Alternatively, the library can be used from a CDN, such as [unpkg](https://unpkg.com/attractions), and then the components will be registered as custom elements. This is especially useful for quick prototypes that do not need all the features provided.
 
 Example usage:
 ```html
