@@ -4,6 +4,26 @@ on:
   pull_request
 
 jobs:
+  build:
+    name: Build and lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout PR
+      with:
+        persist-credentials: false
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - uses: actions/setup-node@v1
+    - name: Install and Build
+      run: |
+        yarn install
+        yarn build
+
+    - name: Lint
+      run: yarn lint
+
+
   docs:
     name: Build docs
     runs-on: ubuntu-latest
