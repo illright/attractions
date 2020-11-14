@@ -3,7 +3,7 @@
   import { classes } from 'attractions/utils';
 
   let _class = null;
-  export { _class as class};
+  export { _class as class };
   export let components;
 </script>
 

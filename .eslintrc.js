@@ -18,6 +18,14 @@ module.exports = {
       "files": ["*.svelte"],
       "processor": "svelte3/svelte3",
     },
+    {
+      files: ["attractions/**/*.svelte"],
+      settings: {
+        "svelte3/compiler-options": {
+          customElement: true,
+        },
+      },
+    },
   ],
   "settings": {
     "svelte3/ignore-styles": (attrs) => attrs.lang === 'scss',
