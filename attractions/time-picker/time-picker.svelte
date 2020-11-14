@@ -21,6 +21,10 @@
   export let value = null;
   export let format = '%H:%M';
   export let amPmTabName = 'am-pm';
+  export let hoursLabel = 'Hours';
+  export let minutesLabel = 'Minutes';
+  export let secondsLabel = 'Seconds';
+  export let nowLabel = 'Now';
   $: readableFormat = (
     format
       .replace('%H', 'HH')
@@ -101,6 +105,14 @@
     }
   }
 
+  function matchesCurrentHour(hour, selected) {
+    if (!value) {
+      return false;
+    }
+    const currentHour = f12hours ? ((selected.getHours() + 11) % 12) + 1 : selected.getHours();
+    return hour === currentHour;
+  }
+
   const dispatch = createEventDispatcher();
 </script>
 
@@ -121,24 +133,26 @@
       <div class="shown-on-focus">
         <Button noRipple on:click={() => focus = false}>close the time picker</Button>
       </div>
-      <Label>Hours</Label>
+      <Label>{hoursLabel}</Label>
       <div class="column">
-        {#each hourValues as value}
-        <Button on:click={() => setHours(value + 12 * (f12hours && currentAmPm === 'PM' ^ value === 12))}>
-          {value.toString().padStart(2, '0')}
-        </Button>
+        {#each hourValues as hour}
+          <Button
+            on:click={() => setHours(hour + 12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12)))}
+            filled={matchesCurrentHour(hour, value)}>
+            {hour.toString().padStart(2, '0')}
+          </Button>
         {/each}
       </div>
-      <Label>Minutes</Label>
+       <Label>{minutesLabel}</Label>
       <div class="column">
-        {#each minuteValues as value}
-        <Button on:click={() => setMinutes(value)}>
-          {value.toString().padStart(2, '0')}
-        </Button>
+        {#each minuteValues as mins}
+          <Button on:click={() => setMinutes(mins)} filled={value && mins === value.getMinutes()}>
+            {mins.toString().padStart(2, '0')}
+          </Button>
         {/each}
       </div>
       {#if seconds}
-        <Label>Seconds</Label>
+        <Label>{secondsLabel}</Label>
         <div class="column">
           {#each minuteValues as value}
           <Button on:click={() => setSeconds(value)}>
@@ -165,7 +179,7 @@
       {/if}
       <Button on:click={setToNow}>
         <Clock />
-        now
+        {nowLabel}
       </Button>
     </Dropdown>
   </DropdownShell>
