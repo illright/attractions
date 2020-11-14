@@ -1,5 +1,8 @@
 {
-  "extends": ["stylelint-config-sass-guidelines"],
+  "extends": [
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-prettier"
+  ],
   "rules": {
     "color-named": null,
     "scss/at-import-partial-extension-blacklist": null,
