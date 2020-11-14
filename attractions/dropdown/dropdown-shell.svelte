@@ -26,6 +26,18 @@
     }
   }
 
+  function handleKeyPress(evt) {
+    const isCloseKey = evt.key === 'Enter' || evt.key === 'Escape';
+    if (isCloseKey && open) {
+      evt.preventDefault();
+      toggle();
+    }
+  }
+
+  $: open
+    ? document.addEventListener('keydown', handleKeyPress)
+    : document.removeEventListener('keydown', handleKeyPress);
+
   const dispatch = createEventDispatcher();
 </script>
 
