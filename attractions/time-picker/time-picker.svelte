@@ -129,38 +129,36 @@
       <div class="shown-on-focus">
         <Button noRipple on:click={() => focus = false}>close the time picker</Button>
       </div>
-      <Label>
         <slot name="hours-label">
           <Label>Hours</Label>
         </slot>
-      </Label>
       <div class="column">
         {#each hourValues as hour}
           <Button
             on:click={() => setHours(hour + 12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12)))}
-            selected={matchesCurrentHour(hour, value)}>
+            selected={matchesCurrentHour(hour, value)}
+          >
             {hour.toString().padStart(2, '0')}
           </Button>
         {/each}
       </div>
-      <Label>
-        <slot name="minutes-label">
-          <Label>Minutes</Label>
-        </slot>
-      </Label>
+      <slot name="minutes-label">
+        <Label>Minutes</Label>
+      </slot>
       <div class="column">
         {#each minuteValues as mins}
-          <Button on:click={() => setMinutes(mins)} selected={value && mins === value.getMinutes()}>
+          <Button 
+            on:click={() => setMinutes(mins)}
+            selected={value && mins === value.getMinutes()}
+          >
             {mins.toString().padStart(2, '0')}
           </Button>
         {/each}
       </div>
       {#if seconds}
-        <Label>
-          <slot name="seconds-label">
-            <Label>Seconds</Label>
-          </slot>
-        </Label>
+        <slot name="seconds-label">
+          <Label>Seconds</Label>
+        </slot>
         <div class="column">
           {#each minuteValues as secs}
             <Button
