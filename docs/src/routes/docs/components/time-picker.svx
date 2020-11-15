@@ -88,6 +88,10 @@ Defaults to the text "`Hours`".
 
 Default to the text "`Minutes`".
 
+### `seconds-label` slot
+
+Default to the text "`Seconds`".
+
 ### `now-label` slot
 
 Text on button at bottom of dropdwon to set the time to current time. Default to the text "`now`".
