@@ -78,5 +78,18 @@ Falsy values passed to classes will be disregarded.
 | **`$light-contrast`** | The color of borders and WebKit scrollbars inside the dropdown. | <ColorPreview value="#DDDDDD" /> |
 | **`$background`** | The background of the WebKit scrollbars, to ensure they don'y stand out from the background. | <ColorPreview value="#FFFFFF" bordered /> |
 
+## Slots {#slots}
+
+### `hours-label` slot
+
+Defaults to the text "`Hours`".
+
+### `minutes-label` slot
+
+Default to the text "`Minutes`".
+
+### `now-label` slot
+
+Text on button at bottom of dropdwon to set the time to current time. Default to the text "`now`".
 
 <style src="../../../../static/css/routes/docs/components/time-picker.scss"></style>

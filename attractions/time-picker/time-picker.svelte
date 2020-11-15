@@ -21,10 +21,6 @@
   export let value = null;
   export let format = '%H:%M';
   export let amPmTabName = 'am-pm';
-  export let hoursLabel = 'Hours';
-  export let minutesLabel = 'Minutes';
-  export let secondsLabel = 'Seconds';
-  export let nowLabel = 'Now';
   $: readableFormat = (
     format
       .replace('%H', 'HH')
@@ -133,31 +129,40 @@
       <div class="shown-on-focus">
         <Button noRipple on:click={() => focus = false}>close the time picker</Button>
       </div>
-      <Label>{hoursLabel}</Label>
+      <Label>
+        <slot name="hours-label">Hours</slot>
+      </Label>
       <div class="column">
         {#each hourValues as hour}
           <Button
             on:click={() => setHours(hour + 12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12)))}
-            filled={matchesCurrentHour(hour, value)}>
+            selected={matchesCurrentHour(hour, value)}>
             {hour.toString().padStart(2, '0')}
           </Button>
         {/each}
       </div>
-       <Label>{minutesLabel}</Label>
+      <Label>
+        <slot name="minutes-label">Minutes</slot>
+      </Label>
       <div class="column">
         {#each minuteValues as mins}
-          <Button on:click={() => setMinutes(mins)} filled={value && mins === value.getMinutes()}>
+          <Button on:click={() => setMinutes(mins)} selected={value && mins === value.getMinutes()}>
             {mins.toString().padStart(2, '0')}
           </Button>
         {/each}
       </div>
       {#if seconds}
-        <Label>{secondsLabel}</Label>
+        <Label>
+          <slot name="seconds-label">Seconds</slot>
+        </Label>
         <div class="column">
-          {#each minuteValues as value}
-          <Button on:click={() => setSeconds(value)}>
-            {value.toString().padStart(2, '0')}
-          </Button>
+          {#each minuteValues as secs}
+            <Button
+              on:click={() => setSeconds(secs)}
+              selected={value && secs === value.getSeconds()}
+            >
+              {secs.toString().padStart(2, '0')}
+            </Button>
           {/each}
         </div>
       {/if}
@@ -179,7 +184,7 @@
       {/if}
       <Button on:click={setToNow}>
         <Clock />
-        {nowLabel}
+        <slot name="now-label">now</slot>
       </Button>
     </Dropdown>
   </DropdownShell>
