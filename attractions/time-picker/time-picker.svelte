@@ -130,7 +130,9 @@
         <Button noRipple on:click={() => focus = false}>close the time picker</Button>
       </div>
       <Label>
-        <slot name="hours-label">Hours</slot>
+        <slot name="hours-label">
+          <Label>Hours</Label>
+        </slot>
       </Label>
       <div class="column">
         {#each hourValues as hour}
@@ -142,7 +144,9 @@
         {/each}
       </div>
       <Label>
-        <slot name="minutes-label">Minutes</slot>
+        <slot name="minutes-label">
+          <Label>Minutes</Label>
+        </slot>
       </Label>
       <div class="column">
         {#each minuteValues as mins}
@@ -153,7 +157,9 @@
       </div>
       {#if seconds}
         <Label>
-          <slot name="seconds-label">Seconds</slot>
+          <slot name="seconds-label">
+            <Label>Seconds</Label>
+          </slot>
         </Label>
         <div class="column">
           {#each minuteValues as secs}
@@ -183,7 +189,9 @@
         </div>
       {/if}
       <Button on:click={setToNow}>
-        <Clock />
+        <slot name="now-icon">
+          <Clock />
+        </slot>
         <slot name="now-label">now</slot>
       </Button>
     </Dropdown>

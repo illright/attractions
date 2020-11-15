@@ -82,18 +82,22 @@ Falsy values passed to classes will be disregarded.
 
 ### `hours-label` slot
 
-Defaults to the text "`Hours`".
+Label for hour selector. Defaults to the `<Label />` component with the text "`Hours`".
 
 ### `minutes-label` slot
 
-Default to the text "`Minutes`".
+Label for the minutes selector. Defaults to the `<Label />` component with the text "`Minutes`".
 
 ### `seconds-label` slot
 
-Default to the text "`Seconds`".
+Label for the seconds selector. Defaults to the `<Label />` component with the text "`Seconds`".
+
+### `now-icon` slot
+
+Icon on button to select the current time. Defaults to the `<Clock />` icon from [Feather Icons](https://feathericons.com/).
 
 ### `now-label` slot
 
-Text on button at bottom of dropdwon to set the time to current time. Default to the text "`now`".
+Text on button to select the current time. Defaults to the text "`now`".
 
 <style src="../../../../static/css/routes/docs/components/time-picker.scss"></style>
