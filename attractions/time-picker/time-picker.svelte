@@ -129,9 +129,9 @@
       <div class="shown-on-focus">
         <Button noRipple on:click={() => focus = false}>close the time picker</Button>
       </div>
-        <slot name="hours-label">
-          <Label>Hours</Label>
-        </slot>
+      <slot name="hours-label">
+        <Label>Hours</Label>
+      </slot>
       <div class="column">
         {#each hourValues as hour}
           <Button
@@ -147,7 +147,7 @@
       </slot>
       <div class="column">
         {#each minuteValues as mins}
-          <Button 
+          <Button
             on:click={() => setMinutes(mins)}
             selected={value && mins === value.getMinutes()}
           >
