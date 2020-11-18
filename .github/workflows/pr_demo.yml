@@ -1,7 +1,7 @@
 name: Deploy PR docs to Pages
 
 on:
-  pull_request
+  pull_request_target
 
 jobs:
   build:
