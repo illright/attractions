@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - [`<DropdownShell>`](https://illright.github.io/attractions/docs/components/dropdown-shell): Now closes the dropdown when pressing <kbd>Enter</kbd> or <kbd>Escape</kbd> buttons.
 - [`<TimePicker>`](https://illright.github.io/attractions/docs/components/time-picker): The currently selected value will now be highlighted in the dropdown. Labels are customizable as slots.
 
-(Thanks to @RikuVan for these 2 contributions - #150)
+(Thanks to [@RikuVan](https://github.com/RikuVan) for these 2 contributions - [#150](https://github.com/illright/attractions/pull/150))
 
 ## [2.2.0] - 2020-11-10
 
