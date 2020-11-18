@@ -38,7 +38,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Extract PR number
-      run: echo "::set-env name=PR_NUMBER::$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')"
+      run: echo "PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')" >> $GITHUB_ENV
 
     - uses: actions/setup-node@v1
     - name: Install and Build
