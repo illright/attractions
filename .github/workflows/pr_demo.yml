@@ -37,21 +37,18 @@ jobs:
         persist-credentials: false
         ref: ${{ github.event.pull_request.head.sha }}
 
-    - name: Extract PR number
-      run: echo "PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')" >> $GITHUB_ENV
-
     - uses: actions/setup-node@v1
     - name: Install and Build
       run: |
         yarn install
-        SAPPER_APP_BASEPATH=attractions/${{ env.PR_NUMBER }} yarn export --basepath attractions/${{ env.PR_NUMBER }}
+        SAPPER_APP_BASEPATH=attractions/${{ github.event.number }} yarn export --basepath attractions/${{ github.event.number }}
 
     - name: Deploy demo to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/__sapper__/export/attractions/${{ env.PR_NUMBER }}
-        destination_dir: ${{ env.PR_NUMBER }}
+        publish_dir: docs/__sapper__/export/attractions/${{ github.event.number }}
+        destination_dir: ${{ github.event.number }}
         keep_files: true
 
     - name: Post docs URL on PR
@@ -59,4 +56,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: "Docs available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
+        msg: "Docs available on https://illright.github.io/attractions/${{ github.event.number }}/"
