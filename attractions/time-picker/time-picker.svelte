@@ -117,7 +117,6 @@
   }
 
   function toggleKeyboardListener({ detail }) {
-    console.log('change');
     if (detail.value) {
       document.addEventListener('keydown', handleKeyPress);
     } else {
