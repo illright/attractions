@@ -109,11 +109,27 @@
     return hour === currentHour;
   }
 
+  function handleKeyPress(evt) {
+    if (evt.key === 'Enter') {
+      evt.preventDefault();
+      focus = !focus;
+    }
+  }
+
+  function toggleKeyboardListener({ detail }) {
+    console.log('change');
+    if (detail.value) {
+      document.addEventListener('keydown', handleKeyPress);
+    } else {
+      document.removeEventListener('keydown', handleKeyPress);
+    }
+  }
+
   const dispatch = createEventDispatcher();
 </script>
 
 <div class={classes('time-picker', _class, f12hours && 'f12hours', seconds && 'seconds')}>
-  <DropdownShell bind:open={focus}>
+  <DropdownShell bind:open={focus} on:change={toggleKeyboardListener}>
     <div class="handle">
       <TextField
         placeholder={readableFormat}

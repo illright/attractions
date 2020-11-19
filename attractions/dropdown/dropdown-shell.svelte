@@ -10,11 +10,11 @@
 
   export function toggle() {
     open = !open;
-    dispatch('change', { value: open });
   }
 
-  let self = null;
+  $: dispatch('change', { value: open });
 
+  let self = null;
   function clickOutside(event) {
     if (!self) {
       return;
@@ -27,16 +27,15 @@
   }
 
   function handleKeyPress(evt) {
-    const isCloseKey = evt.key === 'Enter' || evt.key === 'Escape';
-    if (isCloseKey && open) {
+    if (evt.key === 'Escape' && open) {
       evt.preventDefault();
       toggle();
     }
   }
 
-  $: open
+  $: typeof document !== 'undefined' && (open
     ? document.addEventListener('keydown', handleKeyPress)
-    : document.removeEventListener('keydown', handleKeyPress);
+    : document.removeEventListener('keydown', handleKeyPress));
 
   const dispatch = createEventDispatcher();
 </script>
