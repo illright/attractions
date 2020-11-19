@@ -33,7 +33,9 @@ jobs:
     steps:
     - name: PR Number test
       run: |
-        echo ${{ github.event.pull_request.number }}
+        echo "${{ github.event.number }}"
+        echo "${{ github.event.issue.number }}"
+        echo "${{ github.event.pull_request.number }}"
         exit 1
 
     - uses: actions/checkout@v2
