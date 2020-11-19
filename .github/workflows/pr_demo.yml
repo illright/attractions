@@ -31,6 +31,11 @@ jobs:
       run:
         working-directory: docs
     steps:
+    - name: PR Number test
+      run: |
+        echo ${{ github.event.pull_request.number }}
+        exit 1
+
     - uses: actions/checkout@v2
       name: Checkout PR
       with:
