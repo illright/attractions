@@ -1,5 +1,3 @@
-<svelte:options tag="a-tab" />
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import rippleEffect from '../utils/ripple.js';

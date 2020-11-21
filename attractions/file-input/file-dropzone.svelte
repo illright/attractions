@@ -1,5 +1,3 @@
-<svelte:options tag="a-file-dropzone" />
-
 <script>
   import Paperclip from './paperclip.svelte';
   import Plus from './plus.svelte';

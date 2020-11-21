@@ -1,5 +1,3 @@
-<svelte:options tag="a-form-field" />
-
 <script>
   import classes from '../utils/classes.js';
 

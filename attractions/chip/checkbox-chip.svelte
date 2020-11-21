@@ -1,5 +1,3 @@
-<svelte:options tag="a-checkbox-chip" />
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';

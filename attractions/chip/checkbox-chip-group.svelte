@@ -1,5 +1,3 @@
-<svelte:options tag="a-checkbox-chip-group" />
-
 <script>
   import s from '../utils/plural-s.js';
   import classes from '../utils/classes.js';
