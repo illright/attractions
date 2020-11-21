@@ -1,5 +1,6 @@
 import path from 'path';
 import svelte from 'rollup-plugin-svelte';
+import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
@@ -42,6 +43,9 @@ export default [
     plugins: [
       svelte(),
       resolve(),
+      terser({
+        module: true,
+      }),
     ],
   },
   {
@@ -62,6 +66,9 @@ export default [
         ],
       }),
       resolve(),
+      terser({
+        module: true,
+      }),
     ],
   },
 ];
