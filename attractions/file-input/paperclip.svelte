@@ -1,6 +1,4 @@
 <!-- Paperclip icon from the Feather Icons pack: https://feathericons.com/ -->
-<svelte:options tag={null} />
-
 <script>
   import classes from '../utils/classes.js';
 

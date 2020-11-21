@@ -1,6 +1,4 @@
 <!-- X icon from the Feather Icons pack: https://feathericons.com/ -->
-<svelte:options tag={null} />
-
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="24"

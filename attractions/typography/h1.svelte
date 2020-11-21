@@ -1,5 +1,3 @@
-<svelte:options tag="a-h1" />
-
 <script>
   import classes from '../utils/classes.js';
 

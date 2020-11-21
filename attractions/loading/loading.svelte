@@ -1,6 +1,4 @@
 <!-- Adapted from SpinKit by @tobiasahlin: https://tobiasahlin.com/spinkit/ -->
-<svelte:options tag="a-loading" />
-
 <script>
   import classes from '../utils/classes.js';
 
