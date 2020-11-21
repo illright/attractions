@@ -1,5 +1,3 @@
-<svelte:options tag="a-card" />
-
 <script>
   import classes from '../utils/classes.js';
 

@@ -1,5 +1,3 @@
-<svelte:options tag="a-switch" />
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
