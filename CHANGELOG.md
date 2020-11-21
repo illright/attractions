@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.2.3] - 2020-11-21
+
+### Fixed
+- Warnings about forgetting to set `customElement: true` should no longer bother you.
+
 ## [2.2.2] - 2020-11-19
 
 ### Fixed
@@ -46,7 +51,8 @@ First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
 
-[Unreleased]: https://github.com/illright/attractions/compare/v2.2.2...HEAD
+[Unreleased]: https://github.com/illright/attractions/compare/v2.2.3...HEAD
+[2.2.3]: https://github.com/illright/attractions/releases/tag/v2.2.3
 [2.2.2]: https://github.com/illright/attractions/releases/tag/v2.2.2
 [2.2.1]: https://github.com/illright/attractions/releases/tag/v2.2.1
 [2.2.0]: https://github.com/illright/attractions/releases/tag/v2.2.0
