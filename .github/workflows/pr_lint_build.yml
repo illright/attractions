@@ -1,10 +1,10 @@
-name: Deploy PR docs to Pages
+name: Lint & Build PR docs
 
 on:
-  pull_request_target
+  pull_request
 
 jobs:
-  build:
+  lint:
     name: Build and lint
     runs-on: ubuntu-latest
     steps:
@@ -12,7 +12,6 @@ jobs:
       name: Checkout PR
       with:
         persist-credentials: false
-        ref: ${{ github.event.pull_request.head.sha }}
 
     - uses: actions/setup-node@v1
     - name: Install and Build
@@ -22,7 +21,6 @@ jobs:
 
     - name: Lint
       run: yarn lint
-
 
   docs:
     name: Build docs
@@ -35,7 +33,6 @@ jobs:
       name: Checkout PR
       with:
         persist-credentials: false
-        ref: ${{ github.event.pull_request.head.sha }}
 
     - uses: actions/setup-node@v1
     - name: Install and Build
@@ -43,7 +40,7 @@ jobs:
         yarn install
         SAPPER_APP_BASEPATH=attractions/${{ github.event.number }} yarn export --basepath attractions/${{ github.event.number }}
 
-    - name: Deploy demo to GitHub Pages
+    - name: Build docs
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
