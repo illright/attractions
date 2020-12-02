@@ -41,7 +41,8 @@ jobs:
         SAPPER_APP_BASEPATH=attractions/${{ github.event.number }} yarn export --basepath attractions/${{ github.event.number }}
 
     - name: Save PR number
-      run: echo "${{ github.event.number }}" > pr_number.txt
+      run: echo "${{ github.event.number }}" > ../pr_number.txt
+      # The ".." is to go outside the docs directory
 
     - name: Upload PR number
       uses: actions/upload-artifact@v2
