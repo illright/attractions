@@ -93,7 +93,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-{#if pages > 1 || pages == 1 && showLonePage}
+{#if pages > 1 || (pages == 1 && showLonePage)}
   <nav class={classes('pagination', _class)} {...$$restProps}>
     {#each pageList as buttonValue (buttonValue)}
       {#if buttonValue === leftEllipsisKey}
@@ -124,7 +124,9 @@
             on:keydown={navigateOnEnter}
           />
         {:else}
-          <Button class="page" neutral on:click={activateRightInput}>...</Button>
+          <Button class="page" neutral on:click={activateRightInput}>
+            ...
+          </Button>
         {/if}
       {:else}
         <Button
@@ -139,4 +141,5 @@
   </nav>
 {/if}
 
-<style src="./pagination.scss"></style>
+<style src="./pagination.scss">
+</style>

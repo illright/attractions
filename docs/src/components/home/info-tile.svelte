@@ -18,4 +18,5 @@
   </Card>
 </div>
 
-<style src="../../../static/css/components/home/info-tile.scss"></style>
+<style src="../../../static/css/components/home/info-tile.scss">
+</style>

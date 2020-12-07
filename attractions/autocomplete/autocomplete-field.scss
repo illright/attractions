@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 .shown-on-focus {
   display: flex;
@@ -12,19 +12,19 @@
     &:focus {
       @include show-accessible;
 
-      margin: .5em;
+      margin: 0.5em;
     }
   }
 }
 
 .notice {
-  font-size: .9em;
-  margin: .5em;
+  font-size: 0.9em;
+  margin: 0.5em;
   font-weight: $thin-font-weight;
 }
 
 input + :global .dropdown {
-  border-radius: .5em;
+  border-radius: 0.5em;
   overflow: hidden;
 }
 
@@ -36,15 +36,15 @@ input + :global .dropdown {
   overscroll-behavior: none;
 
   &::-webkit-scrollbar {
-    width: .3125em;
-    height: .5em;
+    width: 0.3125em;
+    height: 0.5em;
     background: none;
     margin: 1em 0;
   }
 
   &::-webkit-scrollbar-thumb {
     background: $light-contrast;
-    border-radius: .3125em;
+    border-radius: 0.3125em;
 
     &:hover {
       background: darken($light-contrast, 10%);
@@ -53,31 +53,31 @@ input + :global .dropdown {
 
   :global li {
     &:first-child {
-      margin-top: .5em;
+      margin-top: 0.5em;
     }
 
     &:last-child {
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
   }
 
   .loading-options {
     display: flex;
     align-items: center;
-    font-size: .95em;
-    margin: .5em 1.2em;
+    font-size: 0.95em;
+    margin: 0.5em 1.2em;
 
     :global .spinner {
-      margin: .3em .7em .3em 0;
+      margin: 0.3em 0.7em 0.3em 0;
     }
   }
 
   .more-options {
-    margin-left: .5em;
-    margin-right: .5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 
     :global svg {
-      margin-right: .5em;
+      margin-right: 0.5em;
     }
   }
 }

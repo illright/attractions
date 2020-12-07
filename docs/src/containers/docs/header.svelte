@@ -31,4 +31,5 @@
   </div>
 </header>
 
-<style src="../../../static/css/containers/docs/header.scss"></style>
+<style src="../../../static/css/containers/docs/header.scss">
+</style>

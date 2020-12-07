@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 .file-input {
   display: inline-flex;
@@ -11,7 +11,7 @@
 
     label {
       margin-right: 0;
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
   }
 }
@@ -20,8 +20,8 @@ label {
   font-family: $font;
   font-weight: $bold-font-weight;
   color: $main;
-  margin-right: .5em;
-  padding: .8em 1.1em;
+  margin-right: 0.5em;
+  padding: 0.8em 1.1em;
   border-radius: $button-radius;
   display: flex;
   align-items: center;
@@ -32,7 +32,7 @@ label {
   }
 
   :global .ripple {
-    background: transparentize($main, .9);
+    background: transparentize($main, 0.9);
   }
 
   &::-moz-focus-inner {
@@ -40,11 +40,11 @@ label {
   }
 
   &:hover {
-    background: transparentize($main, .95);
+    background: transparentize($main, 0.95);
   }
 
   &:focus-within {
-    background-color: transparentize($main, .88);
+    background-color: transparentize($main, 0.88);
   }
 
   &.disabled {

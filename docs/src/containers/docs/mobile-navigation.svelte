@@ -46,10 +46,13 @@
   <Dropdown right>
     {#if currentPlace != null && currentPlace.sub != null}
       {#each currentPlace.sub as entry (entry.segment)}
-        <Button href="./docs/{entry.segment}" on:click={toggle}>{entry.title}</Button>
+        <Button href="./docs/{entry.segment}" on:click={toggle}>
+          {entry.title}
+        </Button>
       {/each}
     {/if}
   </Dropdown>
 </DropdownShell>
 
-<style src="../../../static/css/containers/docs/mobile-navigation.scss"></style>
+<style src="../../../static/css/containers/docs/mobile-navigation.scss">
+</style>

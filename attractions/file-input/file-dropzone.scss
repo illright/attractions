@@ -1,18 +1,18 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 .file-dropzone {
   color: $main;
   display: block;
-  border: .125em dashed currentColor;
-  margin: 2em 0 .5em;
+  border: 0.125em dashed currentColor;
+  margin: 2em 0 0.5em;
   position: relative;
   border-radius: $dropzone-radius;
 
   &:focus-within {
     border-style: solid;
-    border-color: transparentize($main, .5);
+    border-color: transparentize($main, 0.5);
   }
 
   &.disabled {
@@ -37,7 +37,7 @@
       font-weight: $bold-font-weight;
       color: currentColor;
       text-align: center;
-      margin-left: .5em;
+      margin-left: 0.5em;
       flex: 1;
     }
   }
@@ -56,15 +56,15 @@
     border-radius: $dropzone-radius;
 
     &:hover {
-      background: transparentize($main, .975);
+      background: transparentize($main, 0.975);
     }
 
     :global .ripple {
-      background: transparentize($main, .9);
+      background: transparentize($main, 0.9);
     }
 
     &.accepting {
-      background: transparentize($main, .95);
+      background: transparentize($main, 0.95);
     }
 
     :global svg {
@@ -77,7 +77,7 @@
   }
 
   input:focus ~ .dropzone-layer {
-    background: transparentize($main, .95);
+    background: transparentize($main, 0.95);
   }
 
   &.disabled .dropzone-layer {
@@ -87,7 +87,7 @@
 
   &.has-content {
     display: grid;
-    gap: .5em;
+    gap: 0.5em;
     padding: 1em;
     grid-template-columns: repeat(auto-fill, 12em);
 
@@ -105,15 +105,15 @@
 
     .dropzone-layer {
       &:hover {
-        background: transparentize($danger, .975);
+        background: transparentize($danger, 0.975);
       }
 
       &.accepting {
-        background: transparentize($danger, .95);
+        background: transparentize($danger, 0.95);
       }
 
       :global .ripple {
-        background: transparentize($danger, .9);
+        background: transparentize($danger, 0.9);
       }
 
       :global svg.plus {

@@ -11,9 +11,9 @@ export default function getColorPickerStyles(hexColor) {
   }
 
   let r, g, b, beforeR, beforeG, beforeB;
-  const bgR = r = parseInt(hexColor.slice(1, 3), 16);
-  const bgG = g = parseInt(hexColor.slice(3, 5), 16);
-  const bgB = b = parseInt(hexColor.slice(5, 7), 16);
+  const bgR = (r = parseInt(hexColor.slice(1, 3), 16));
+  const bgG = (g = parseInt(hexColor.slice(3, 5), 16));
+  const bgB = (b = parseInt(hexColor.slice(5, 7), 16));
   beforeR = beforeG = beforeB = 255;
 
   const whiteThreshold = 240;

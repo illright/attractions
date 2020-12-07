@@ -14,7 +14,7 @@
   export let dayClass = null;
 
   export let locale = undefined;
-  export let firstWeekday = 1;  // 1 corresponds to Monday
+  export let firstWeekday = 1; // 1 corresponds to Monday
   export let month;
   export let year;
   export let selectionStart = null;
@@ -48,19 +48,17 @@
         class={classes('day', dayClass)}
         class:today={datesEqual(day.value, today)}
         class:outside={day.outside}
-        class:selected={
-          datesEqual(day.value, selectionStart) || datesEqual(day.value, selectionEnd)
-        }
+        class:selected={datesEqual(day.value, selectionStart) || datesEqual(day.value, selectionEnd)}
         class:start={datesEqual(day.value, selectionStart)}
         class:end={datesEqual(day.value, selectionEnd)}
-        class:in-range={
-          datesLessEqual(selectionStart, day.value)
-          && datesLessEqual(day.value, selectionEnd)
-        }
+        class:in-range={datesLessEqual(selectionStart, day.value) && datesLessEqual(day.value, selectionEnd)}
       >
         <Button
-          title={datesEqual(day.value, today) && 'Today' || null}
-          on:click={(e) => { e.stopPropagation(); dispatch('day-select', day.value); }}
+          title={(datesEqual(day.value, today) && 'Today') || null}
+          on:click={e => {
+            e.stopPropagation();
+            dispatch('day-select', day.value);
+          }}
         >
           {dayNumberFormatter.format(day.value)}
         </Button>
@@ -69,4 +67,5 @@
   </div>
 {/each}
 
-<style src="./calendar.scss"></style>
+<style src="./calendar.scss">
+</style>

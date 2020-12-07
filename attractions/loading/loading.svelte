@@ -7,9 +7,10 @@
 </script>
 
 <div class={classes('spinner', _class)}>
-  <div class="bounce1"></div>
-  <div class="bounce2"></div>
-  <div class="bounce3"></div>
+  <div class="bounce1" />
+  <div class="bounce2" />
+  <div class="bounce3" />
 </div>
 
-<style src="./loading.scss"></style>
+<style src="./loading.scss">
+</style>

@@ -1,11 +1,11 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 .copyable {
   position: relative;
 
   > :global .btn {
     position: absolute;
-    top: .3em;
-    right: .3em;
+    top: 0.3em;
+    right: 0.3em;
   }
 }

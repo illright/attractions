@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
-@import "./radio-chip.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
+@import './radio-chip.scss';
 
 .chip {
   position: relative;
@@ -10,11 +10,11 @@
     transition: width 50ms;
     border: 0 solid $main;
     width: 0;
-    height: .5625em;
-    content: "";
+    height: 0.5625em;
+    content: '';
     transform: translateY(-50%) rotate(45deg);
     position: absolute;
-    left: .9em;
+    left: 0.9em;
     top: 45%;
   }
 }
@@ -23,8 +23,8 @@ input:checked + .chip {
   padding-left: 2em;
 
   &::before {
-    width: .3125em;
-    border-bottom-width: .125em;
-    border-right-width: .125em;
+    width: 0.3125em;
+    border-bottom-width: 0.125em;
+    border-right-width: 0.125em;
   }
 }

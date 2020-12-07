@@ -20,11 +20,15 @@
 >
   {#if closeCallback != null}
     <Button neutral round class="close" on:click={closeCallback}>
-      <slot name="close-icon"><X /></slot>
+      <slot name="close-icon">
+        <X />
+      </slot>
     </Button>
   {/if}
   {#if title != null}
-    <div class={classes('title', closeCallback != null && 'close-padded', titleClass)}>
+    <div
+      class={classes('title', closeCallback != null && 'close-padded', titleClass)}
+    >
       <slot name="title-icon" />
       {title}
     </div>
@@ -32,4 +36,5 @@
   <slot />
 </div>
 
-<style src="./dialog.scss"></style>
+<style src="./dialog.scss">
+</style>

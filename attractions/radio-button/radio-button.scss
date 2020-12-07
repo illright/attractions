@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 .radio {
   display: flex;
@@ -9,7 +9,7 @@
   position: relative;
   cursor: pointer;
 
-  > input[type="radio"] {
+  > input[type='radio'] {
     @include hide-accessible;
   }
 
@@ -18,11 +18,11 @@
     width: 1.25em;
     height: 1.25em;
     cursor: pointer;
-    border: .125em solid $light-contrast;
+    border: 0.125em solid $light-contrast;
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       width: 2.25em;
       height: 2.25em;
       border-radius: 50%;
@@ -43,9 +43,9 @@
     border-color: $main;
 
     &::before {
-      content: "";
-      width: .5em;
-      height: .5em;
+      content: '';
+      width: 0.5em;
+      height: 0.5em;
       background-color: $main-text;
       border-radius: 50%;
       left: 50%;
@@ -62,19 +62,19 @@
 
   &:hover {
     > input:not(:disabled) + .selector::after {
-      background-color: transparentize($dark, .95);
+      background-color: transparentize($dark, 0.95);
     }
 
     > input:checked + .selector::after {
-      background-color: transparentize($main, .95);
+      background-color: transparentize($main, 0.95);
     }
   }
 
   > input:focus + .selector::after {
-    background-color: transparentize($dark, .875);
+    background-color: transparentize($dark, 0.875);
   }
 
   > input:focus:checked + .selector::after {
-    background-color: transparentize($main, .875);
+    background-color: transparentize($main, 0.875);
   }
 }

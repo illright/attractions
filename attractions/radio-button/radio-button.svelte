@@ -27,7 +27,7 @@
     type="radio"
     class={classes(inputClass)}
     {disabled}
-    on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+    on:change={e => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
   <div class={classes('selector', selectorClass)} style={selectorStyle} />
@@ -36,4 +36,5 @@
   {/if}
 </label>
 
-<style src="./radio-button.scss"></style>
+<style src="./radio-button.scss">
+</style>

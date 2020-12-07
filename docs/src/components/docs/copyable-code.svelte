@@ -20,7 +20,7 @@
     try {
       await writeText(text);
       copied = true;
-      setTimeout(() => copied = false, 1000);
+      setTimeout(() => (copied = false), 1000);
     } catch (e) {
       console.error(e);
     }
@@ -38,4 +38,5 @@
   </Button>
 </div>
 
-<style src="../../../static/css/components/docs/copyable-code.scss"></style>
+<style src="../../../static/css/components/docs/copyable-code.scss">
+</style>

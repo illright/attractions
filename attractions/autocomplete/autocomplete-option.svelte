@@ -3,7 +3,7 @@
 
   export let option;
   export let query = null;
-  $: matchRegex = (query ? new RegExp(`(${query})`, 'ig') : null);
+  $: matchRegex = query ? new RegExp(`(${query})`, 'ig') : null;
 
   function markMatch(string) {
     if (matchRegex == null) {
@@ -11,13 +11,16 @@
     }
 
     const partition = string.split(matchRegex);
-    return partition.map((content, idx) => ({ content, marked: idx % 2 !== 0 }));
+    return partition.map((content, idx) => ({
+      content,
+      marked: idx % 2 !== 0,
+    }));
   }
 
   const dispatch = createEventDispatcher();
 </script>
 
-<li on:click|stopPropagation={(e) => dispatch('click', { nativeEvent: e })}>
+<li on:click|stopPropagation={e => dispatch('click', { nativeEvent: e })}>
   <button type="button">
     {#each markMatch(option.name) as part}
       {#if part.marked}<mark>{part.content}</mark>{:else}{part.content}{/if}
@@ -32,4 +35,5 @@
   </button>
 </li>
 
-<style src="./autocomplete-option.scss"></style>
+<style src="./autocomplete-option.scss">
+</style>

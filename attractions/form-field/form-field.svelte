@@ -30,7 +30,9 @@
   <div class="field">
     <slot />
     {#each errors as error}
-      {#if error}<div class="message error">{error}</div>{/if}
+      {#if error}
+        <div class="message error">{error}</div>
+      {/if}
     {/each}
     {#if required}
       <div class="message info">* Required</div>
@@ -41,4 +43,5 @@
   </div>
 </div>
 
-<style src="./form-field.scss"></style>
+<style src="./form-field.scss">
+</style>

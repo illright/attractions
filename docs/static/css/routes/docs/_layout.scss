@@ -1,4 +1,4 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 main {
   display: flex;
@@ -11,7 +11,7 @@ main {
 
   :global .required {
     color: $main;
-    font-size: .9em;
+    font-size: 0.9em;
   }
 
   @media only screen and (min-width: 1024px) {

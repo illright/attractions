@@ -5,26 +5,29 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    '@sveltejs',
-    'prettier',
-  ],
+  extends: ['@sveltejs', 'prettier'],
   settings: {
-    'svelte3/ignore-styles': (attrs) => attrs.lang === 'scss',
+    'svelte3/ignore-styles': attrs => attrs.lang === 'scss',
   },
   rules: {
     semi: ['error', 'always'],
     'spaced-comment': ['error', 'always'],
-    'space-before-function-paren': ['error', {
-      anonymous: 'never',
-      named: 'never',
-      asyncArrow: 'always',
-    }],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
     'brace-style': ['error', '1tbs', { allowSingleLine: true }],
-    'no-trailing-spaces': ['error', {
-      skipBlankLines: false,
-      ignoreComments: false,
-    }],
+    'no-trailing-spaces': [
+      'error',
+      {
+        skipBlankLines: false,
+        ignoreComments: false,
+      },
+    ],
     curly: ['warn', 'all'],
     indent: ['error', 2],
     'comma-dangle': ['warn', 'always-multiline'],
@@ -43,25 +46,35 @@ module.exports = {
     'max-len': ['error', { code: 100 }],
     'no-tabs': 'error',
     'operator-assignment': ['error', 'always'],
-    'object-curly-spacing': ['warn', 'always', {
-      arraysInObjects: true,
-      objectsInObjects: true,
-    }],
+    'object-curly-spacing': [
+      'warn',
+      'always',
+      {
+        arraysInObjects: true,
+        objectsInObjects: true,
+      },
+    ],
     'key-spacing': 'error',
     'space-in-parens': ['error', 'never'],
     'space-infix-ops': 'error',
     'no-var': 'error',
-    'prefer-const': ['error', {
-      destructuring: 'all',
-      ignoreReadBeforeAssign: false,
-    }],
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'all',
+        ignoreReadBeforeAssign: false,
+      },
+    ],
     'yield-star-spacing': 'error',
-    'generator-star-spacing': ['error', {
-      before: false,
-      after: true,
-      anonymous: 'neither',
-      method: { before: true, after: false },
-    }],
+    'generator-star-spacing': [
+      'error',
+      {
+        before: false,
+        after: true,
+        anonymous: 'neither',
+        method: { before: true, after: false },
+      },
+    ],
     camelcase: 'warn',
   },
 };

@@ -4,7 +4,9 @@ export default function accepted(references, subject) {
     return true;
   }
 
-  const referencesArray = references.split(',').map(value => value.trim().toLowerCase());
+  const referencesArray = references
+    .split(',')
+    .map(value => value.trim().toLowerCase());
   return referencesArray.some(reference => matches(reference, subject));
 }
 
@@ -14,7 +16,10 @@ function matches(reference, subject) {
     return subject.name.toLowerCase().endsWith(reference);
   }
 
-  return checkMimeType(reference.toLowerCase(), (subject.type || '').toLowerCase());
+  return checkMimeType(
+    reference.toLowerCase(),
+    (subject.type || '').toLowerCase()
+  );
 }
 
 /* Checks for compatibility of the reference MIME type pattern with the subject MIME type.
@@ -37,7 +42,6 @@ function checkMimeType(reference, subject) {
 
   return subject.startsWith(parts[0]) && subject.endsWith(parts[1]);
 }
-
 
 // // true
 // console.log(accepted('image/*,.pdf', { name: 'test.pdf', type: 'application/pdf' }));

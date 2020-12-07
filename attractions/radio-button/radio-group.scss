@@ -1,9 +1,9 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
-div[role=radiogroup] :global {
+div[role='radiogroup'] :global {
   .radio:not(.colored) > .selector {
-    margin: 0 .5em;
+    margin: 0 0.5em;
   }
 
   .radio.colored > input + .selector::before {
@@ -12,12 +12,12 @@ div[role=radiogroup] :global {
   }
 
   .radio.colored:hover > input + .selector::after {
-    background-color: rgba(0, 0, 0, .05);
-    background-color: rgba(var(--r), var(--g), var(--b), .05);
+    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(var(--r), var(--g), var(--b), 0.05);
   }
 
   .radio.colored > input:focus + .selector::after {
-    background-color: rgba(0, 0, 0, .125);
-    background-color: rgba(var(--r), var(--g), var(--b), .125);
+    background-color: rgba(0, 0, 0, 0.125);
+    background-color: rgba(var(--r), var(--g), var(--b), 0.125);
   }
 }
