@@ -74,6 +74,6 @@ module.exports = {
       },
     ],
     camelcase: 'warn',
-    'import/no-unresolved': 'off'
+    'import/no-unresolved': 'off',
   },
 };

@@ -3,7 +3,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
+    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .; prettier --check .",
     "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js'; stylelint --fix .",
     "format": "prettier --write .",
     "docs:build": "yarn workspace attractions-docs build",
