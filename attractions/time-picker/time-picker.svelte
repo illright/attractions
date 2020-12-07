@@ -1,5 +1,3 @@
-<svelte:options tag="a-time-picker" />
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
@@ -101,11 +99,34 @@
     }
   }
 
+  function matchesCurrentHour(hour, selected) {
+    if (!value) {
+      return false;
+    }
+    const currentHour = f12hours ? ((selected.getHours() + 11) % 12) + 1 : selected.getHours();
+    return hour === currentHour;
+  }
+
+  function handleKeyPress(evt) {
+    if (evt.key === 'Enter') {
+      evt.preventDefault();
+      focus = !focus;
+    }
+  }
+
+  function toggleKeyboardListener({ detail }) {
+    if (detail.value) {
+      document.addEventListener('keydown', handleKeyPress);
+    } else {
+      document.removeEventListener('keydown', handleKeyPress);
+    }
+  }
+
   const dispatch = createEventDispatcher();
 </script>
 
 <div class={classes('time-picker', _class, f12hours && 'f12hours', seconds && 'seconds')}>
-  <DropdownShell bind:open={focus}>
+  <DropdownShell bind:open={focus} on:change={toggleKeyboardListener}>
     <div class="handle">
       <TextField
         placeholder={readableFormat}
@@ -121,29 +142,44 @@
       <div class="shown-on-focus">
         <Button noRipple on:click={() => focus = false}>close the time picker</Button>
       </div>
-      <Label>Hours</Label>
+      <slot name="hours-label">
+        <Label>Hours</Label>
+      </slot>
       <div class="column">
-        {#each hourValues as value}
-        <Button on:click={() => setHours(value + 12 * (f12hours && currentAmPm === 'PM' ^ value === 12))}>
-          {value.toString().padStart(2, '0')}
-        </Button>
+        {#each hourValues as hour}
+          <Button
+            on:click={() => setHours(hour + 12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12)))}
+            selected={matchesCurrentHour(hour, value)}
+          >
+            {hour.toString().padStart(2, '0')}
+          </Button>
         {/each}
       </div>
-      <Label>Minutes</Label>
+      <slot name="minutes-label">
+        <Label>Minutes</Label>
+      </slot>
       <div class="column">
-        {#each minuteValues as value}
-        <Button on:click={() => setMinutes(value)}>
-          {value.toString().padStart(2, '0')}
-        </Button>
+        {#each minuteValues as mins}
+          <Button
+            on:click={() => setMinutes(mins)}
+            selected={value && mins === value.getMinutes()}
+          >
+            {mins.toString().padStart(2, '0')}
+          </Button>
         {/each}
       </div>
       {#if seconds}
-        <Label>Seconds</Label>
+        <slot name="seconds-label">
+          <Label>Seconds</Label>
+        </slot>
         <div class="column">
-          {#each minuteValues as value}
-          <Button on:click={() => setSeconds(value)}>
-            {value.toString().padStart(2, '0')}
-          </Button>
+          {#each minuteValues as secs}
+            <Button
+              on:click={() => setSeconds(secs)}
+              selected={value && secs === value.getSeconds()}
+            >
+              {secs.toString().padStart(2, '0')}
+            </Button>
           {/each}
         </div>
       {/if}
@@ -164,8 +200,10 @@
         </div>
       {/if}
       <Button on:click={setToNow}>
-        <Clock />
-        now
+        <slot name="now-icon">
+          <Clock />
+        </slot>
+        <slot name="now-label">now</slot>
       </Button>
     </Dropdown>
   </DropdownShell>

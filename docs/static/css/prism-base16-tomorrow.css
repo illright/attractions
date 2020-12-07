@@ -12,7 +12,7 @@ code,
 pre[class*="language-"] {
   color: #4d4d4c;
   background: none;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 1em;
   text-align: left;
   white-space: pre;

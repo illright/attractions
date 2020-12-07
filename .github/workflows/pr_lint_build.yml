@@ -1,0 +1,57 @@
+name: Lint & Build PR docs
+
+on:
+  pull_request
+
+jobs:
+  lint:
+    name: Build and lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout PR
+      with:
+        persist-credentials: false
+
+    - uses: actions/setup-node@v1
+    - name: Install and Build
+      run: |
+        yarn install
+        yarn build
+
+    - name: Lint
+      run: yarn lint
+
+  docs:
+    name: Build docs
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout PR
+      with:
+        persist-credentials: false
+
+    - uses: actions/setup-node@v1
+    - name: Install and Build
+      run: |
+        yarn install
+        SAPPER_APP_BASEPATH=attractions/${{ github.event.number }} yarn export --basepath attractions/${{ github.event.number }}
+
+    - name: Save PR number
+      run: echo "${{ github.event.number }}" > ../pr_number.txt
+      # The ".." is to go outside the docs directory
+
+    - name: Upload PR number
+      uses: actions/upload-artifact@v2
+      with:
+        name: pr_number
+        path: pr_number.txt
+      
+    - name: Upload built docs
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs/__sapper__/export/attractions/${{ github.event.number }}/

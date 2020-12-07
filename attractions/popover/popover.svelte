@@ -1,5 +1,3 @@
-<svelte:options tag="a-popover" />
-
 <script>
   import classes from '../utils/classes.js';
   import PopoverPositions from './popover-positions.js';

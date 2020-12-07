@@ -1,5 +1,3 @@
-<svelte:options tag="a-file-tile" />
-
 <script>
   import Trash2 from './trash-2.svelte';
   import Button from '../button/button.svelte';

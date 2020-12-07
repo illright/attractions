@@ -1,5 +1,3 @@
-<svelte:options tag="a-button" />
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import ripple from '../utils/ripple.js';

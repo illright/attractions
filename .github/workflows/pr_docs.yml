@@ -1,0 +1,43 @@
+name: Deploy docs to GH Pages
+
+on:
+  workflow_run:
+    workflows:
+      - "Lint & Build PR docs"
+    types:
+      - completed
+
+jobs:
+  deploy:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the docs artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
+
+      - name: Download the PR number artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: pr_number
+
+      - name: Add PR number to env
+        run: echo "PR_NUMBER=$(cat pr_number.txt)" >> $GITHUB_ENV
+
+      - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
+          destination_dir: ${{ env.PR_NUMBER }}
+          keep_files: true
+
+      - name: Post URL on PR
+        uses: jungwinter/comment@v1
+        id: create
+        with:
+          type: create
+          body: "Docs available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
+          issue_number: ${{ env.PR_NUMBER }}
+          token: ${{ secrets.GITHUB_TOKEN }}

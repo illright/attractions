@@ -1,4 +1,6 @@
+import path from 'path';
 import svelte from 'rollup-plugin-svelte';
+import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
@@ -7,6 +9,29 @@ const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
   .replace(/^\w/, m => m.toUpperCase())
   .replace(/-\w/g, m => m[1].toUpperCase());
+
+function prependTagOption(exceptions = []) {
+  return {
+    markup({ content, filename }) {
+      const name = path.basename(filename, '.svelte');
+      const tagName = exceptions.includes(name) ? '{null}' : `a-${name}`;
+      const optionsTag = `<svelte:options tag="${tagName}" />`;
+      return { code: optionsTag + '\n\n' + content };
+    },
+  };
+}
+
+const icons = [
+  'more-horizontal',
+  'chevron-left',
+  'chevron-right',
+  'x',
+  'paperclip',
+  'plus',
+  'trash-2',
+  'star',
+  'clock',
+];
 
 export default [
   {
@@ -18,10 +43,12 @@ export default [
     plugins: [
       svelte(),
       resolve(),
+      terser({
+        module: true,
+      }),
     ],
   },
   {
-    // This will likely replace the other configuration above
     input: 'index.js',
     output: {
       file: 'dist/bundle.js',
@@ -31,11 +58,17 @@ export default [
     plugins: [
       svelte({
         customElement: true,
-        preprocess: autoPreprocess({
-          scss: { includePaths: ['./'] },
-        }),
+        preprocess: [
+          prependTagOption(icons),
+          autoPreprocess({
+            scss: { includePaths: ['./'] },
+          }),
+        ],
       }),
       resolve(),
+      terser({
+        module: true,
+      }),
     ],
   },
 ];

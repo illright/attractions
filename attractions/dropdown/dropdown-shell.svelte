@@ -1,5 +1,3 @@
-<svelte:options tag="a-dropdown-shell" />
-
 <script>
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
@@ -10,11 +8,11 @@
 
   export function toggle() {
     open = !open;
-    dispatch('change', { value: open });
   }
 
-  let self = null;
+  $: dispatch('change', { value: open });
 
+  let self = null;
   function clickOutside(event) {
     if (!self) {
       return;
@@ -25,6 +23,17 @@
       toggle();
     }
   }
+
+  function handleKeyPress(evt) {
+    if (evt.key === 'Escape' && open) {
+      evt.preventDefault();
+      toggle();
+    }
+  }
+
+  $: typeof document !== 'undefined' && (open
+    ? document.addEventListener('keydown', handleKeyPress)
+    : document.removeEventListener('keydown', handleKeyPress));
 
   const dispatch = createEventDispatcher();
 </script>
