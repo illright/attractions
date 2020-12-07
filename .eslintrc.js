@@ -15,7 +15,7 @@ module.exports = {
     'space-before-function-paren': [
       'error',
       {
-        anonymous: 'never',
+        anonymous: 'always',
         named: 'never',
         asyncArrow: 'always',
       },
@@ -29,8 +29,6 @@ module.exports = {
       },
     ],
     curly: ['warn', 'all'],
-    indent: ['error', 2],
-    'comma-dangle': ['warn', 'always-multiline'],
     'no-unused-vars': [
       'error',
       { vars: 'all', args: 'none', ignoreRestSiblings: true },
@@ -76,5 +74,6 @@ module.exports = {
       },
     ],
     camelcase: 'warn',
+    'import/no-unresolved': 'off'
   },
 };
