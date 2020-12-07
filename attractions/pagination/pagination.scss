@@ -7,16 +7,16 @@
   align-items: center;
   justify-content: center;
 
-  > .page {
-    width: 2.5em;
-    height: 2.5em;
-    margin: 0 .2em;
-    justify-content: center;
-    padding: 0;
-    flex-shrink: 0;
-  }
-
   :global {
+    > .page {
+      width: 2.5em;
+      height: 2.5em;
+      margin: 0 .2em;
+      justify-content: center;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
     > .text-field {
       margin: 0 .2em;
 
