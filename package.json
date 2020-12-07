@@ -32,7 +32,7 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-svelte3": "^2.7.3",
-    "husky": "^4.2.5",
+    "husky": "^5.0.4",
     "lint-staged": "^10.2.11",
     "prettier": "2.1.2",
     "prettier-plugin-svelte": "^1.4.1",
@@ -42,12 +42,17 @@
     "svelte": "^3.24.0",
     "typescript": "^4.0.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "[^.]*.js": [
+      "eslint --format=pretty",
+      "eslint --max-warnings 0 --fix"
+    ],
+    "*.svelte": [
+      "eslint --format=pretty",
+      "eslint --max-warnings 0 --fix"
+    ],
+    "*.scss": [
+      "stylelint --max-warnings 0 --fix"
+    ]
   }
 }
