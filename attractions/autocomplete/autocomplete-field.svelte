@@ -75,7 +75,7 @@
 <DropdownShell
   class={classes('autocomplete-field', _class)}
   open={focus}
-  on:change={() => focus = false}
+  on:change={({ detail }) => focus = detail.value}
 >
   <input
     bind:this={inputElement}
