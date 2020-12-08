@@ -4,4 +4,5 @@
 
 <hr data-text={text} {...$$restProps} />
 
-<style src="./divider.scss"></style>
+<style src="./divider.scss">
+</style>

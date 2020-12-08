@@ -1,5 +1,5 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .btn {
   font-family: $font;
@@ -9,14 +9,14 @@
   text-decoration: none;
   outline: none;
   background: none;
-  padding: .8em 1.1em;
+  padding: 0.8em 1.1em;
   border-radius: $button-radius;
   display: flex;
   align-items: center;
   cursor: pointer;
 
   :global .ripple {
-    background: transparentize($main, .9);
+    background: transparentize($main, 0.9);
   }
 
   &::-moz-focus-inner {
@@ -35,7 +35,7 @@
     }
 
     .ripple {
-      background: transparentize($dark, .9);
+      background: transparentize($dark, 0.9);
     }
   }
 
@@ -47,7 +47,7 @@
     }
 
     .ripple {
-      background: transparentize($danger, .9);
+      background: transparentize($danger, 0.9);
     }
   }
 
@@ -65,13 +65,21 @@
 
     &:hover:not([disabled]) {
       background: lighten($main, 2%);
-      background: linear-gradient(0deg, lighten($main, 2%) 0%, lighten($main, 7%) 100%);
+      background: linear-gradient(
+        0deg,
+        lighten($main, 2%) 0%,
+        lighten($main, 7%) 100%
+      );
       box-shadow: $shadow-raised;
     }
 
     &:focus:not([disabled]) {
       background: lighten($main, 5%);
-      background: linear-gradient(0deg, lighten($main, 5%) 0%, lighten($main, 10%) 100%);
+      background: linear-gradient(
+        0deg,
+        lighten($main, 5%) 0%,
+        lighten($main, 10%) 100%
+      );
       box-shadow: $shadow-raised;
     }
 
@@ -81,12 +89,20 @@
 
       &:hover:not([disabled]) {
         background: lighten($danger, 2%);
-        background: linear-gradient(0deg, lighten($danger, 2%) 0%, lighten($danger, 7%) 100%);
+        background: linear-gradient(
+          0deg,
+          lighten($danger, 2%) 0%,
+          lighten($danger, 7%) 100%
+        );
       }
 
       &:focus:not([disabled]) {
         background: lighten($danger, 5%);
-        background: linear-gradient(0deg, lighten($danger, 5%) 0%, lighten($danger, 10%) 100%);
+        background: linear-gradient(
+          0deg,
+          lighten($danger, 5%) 0%,
+          lighten($danger, 10%) 100%
+        );
       }
     }
 
@@ -96,12 +112,20 @@
 
       &:hover:not([disabled]) {
         background: lighten($dark, 2%);
-        background: linear-gradient(0deg, lighten($dark, 2%) 0%, lighten($dark, 7%) 100%);
+        background: linear-gradient(
+          0deg,
+          lighten($dark, 2%) 0%,
+          lighten($dark, 7%) 100%
+        );
       }
 
       &:focus:not([disabled]) {
         background: lighten($dark, 5%);
-        background: linear-gradient(0deg, lighten($dark, 5%) 0%, lighten($dark, 10%) 100%);
+        background: linear-gradient(
+          0deg,
+          lighten($dark, 5%) 0%,
+          lighten($dark, 10%) 100%
+        );
       }
     }
 
@@ -115,7 +139,7 @@
     }
 
     :global .ripple {
-      background: transparentize($main-text, .75);
+      background: transparentize($main-text, 0.75);
     }
   }
 
@@ -138,34 +162,34 @@
   &:hover:not([disabled]) {
     &,
     &.outline {
-      background: transparentize($main, .95);
+      background: transparentize($main, 0.95);
     }
 
     &.danger,
     &.outline.danger {
-      background: transparentize($danger, .95);
+      background: transparentize($danger, 0.95);
     }
 
     &.neutral,
     &.outline.neutral {
-      background-color: transparentize($dark, .95);
+      background-color: transparentize($dark, 0.95);
     }
   }
 
   &:focus:not([disabled]) {
     &,
     &.outline {
-      background-color: transparentize($main, .88);
+      background-color: transparentize($main, 0.88);
     }
 
     &.danger,
     &.outline.danger {
-      background: transparentize($danger, .88);
+      background: transparentize($danger, 0.88);
     }
 
     &.neutral,
     &.outline.neutral {
-      background-color: transparentize($dark, .88);
+      background-color: transparentize($dark, 0.88);
     }
   }
 
@@ -180,19 +204,19 @@
   }
 
   &.round {
-    padding: .7em;
+    padding: 0.7em;
   }
 
   &.small {
-    padding: .5em .8em;
+    padding: 0.5em 0.8em;
 
     &.round {
-      padding: .5em;
+      padding: 0.5em;
     }
   }
 
   &.selected:not(.filled) {
-    background: transparentize($main, .88);
+    background: transparentize($main, 0.88);
   }
 
   :global .icon {

@@ -8,4 +8,5 @@
   {value}
 </div>
 
-<style src="../../../static/css/components/docs/color-preview.scss"></style>
+<style src="../../../static/css/components/docs/color-preview.scss">
+</style>

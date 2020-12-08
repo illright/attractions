@@ -1,18 +1,18 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .chip {
   border-radius: $chip-radius;
   background: $chip-bg;
   color: $chip-fg;
   font-family: $font;
-  padding: .6em .9em;
+  padding: 0.6em 0.9em;
   font-weight: $bold-font-weight;
 
   &.small {
-    padding: .4em .6em;
-    font-size: .9rem;
-    min-width: .9em;
+    padding: 0.4em 0.6em;
+    font-size: 0.9rem;
+    min-width: 0.9em;
     text-align: center;
   }
 

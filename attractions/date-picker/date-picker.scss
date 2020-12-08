@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 $side-padding: 1rem;
 
@@ -17,7 +17,7 @@ $side-padding: 1rem;
 
     .text-field.in-focus input {
       background-color: darken($textfield-bg, 8%);
-      border-bottom-width: .125em;
+      border-bottom-width: 0.125em;
       border-color: lighten($main, 4%);
       padding-bottom: 0;
     }
@@ -41,7 +41,7 @@ $side-padding: 1rem;
     align-items: center;
     justify-content: space-between;
     font-weight: $bold-font-weight;
-    padding: 0 $side-padding .5em;
+    padding: 0 $side-padding 0.5em;
     color: $main;
 
     :global .btn {
@@ -55,7 +55,7 @@ $side-padding: 1rem;
   }
 
   :global .calendar {
-    padding: .5em 0 1em;
+    padding: 0.5em 0 1em;
   }
 
   :global .text-field {

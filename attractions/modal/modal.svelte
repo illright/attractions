@@ -29,4 +29,5 @@
   </div>
 {/if}
 
-<style src="./modal-overlay.scss"></style>
+<style src="./modal-overlay.scss">
+</style>

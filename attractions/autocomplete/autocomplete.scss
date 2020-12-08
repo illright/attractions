@@ -1,13 +1,13 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .autocomplete {
-  padding: .25em .625em .0625em;
+  padding: 0.25em 0.625em 0.0625em;
   box-sizing: border-box;
-  border-bottom: .0625em solid $textfield-border;
+  border-bottom: 0.0625em solid $textfield-border;
   background-color: $textfield-bg;
-  border-top-left-radius: .375em;
-  border-top-right-radius: .375em;
+  border-top-left-radius: 0.375em;
+  border-top-right-radius: 0.375em;
   width: 100%;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 
   &.focus {
     background-color: darken($textfield-bg, 8%);
-    border-bottom-width: .125em;
+    border-bottom-width: 0.125em;
     border-color: lighten($main, 4%);
     padding-bottom: 0;
   }
@@ -42,12 +42,12 @@
   :global .chip.no-padding {
     display: flex;
     align-items: center;
-    padding-left: .7em;
-    margin: .2em .4em .2em 0;
-    font-size: .95em;
+    padding-left: 0.7em;
+    margin: 0.2em 0.4em 0.2em 0;
+    font-size: 0.95em;
 
     .btn {
-      margin-left: .3em;
+      margin-left: 0.3em;
     }
 
     svg {

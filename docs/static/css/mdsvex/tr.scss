@@ -1,10 +1,10 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
-$border-radius: .5em;
+$border-radius: 0.5em;
 
 tr {
   &:nth-child(even) {
-    background: transparentize($main, .97);
+    background: transparentize($main, 0.97);
   }
 
   &:first-child :global {

@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 $hover-color: mix(white, $main, 60%);
 $selected-color: mix(white, $main, 20%);
@@ -13,7 +13,7 @@ $selected-color: mix(white, $main, 20%);
   fill: none;
 
   &:focus-within {
-    background: transparentize($main, .95);
+    background: transparentize($main, 0.95);
   }
 
   input {
@@ -21,7 +21,7 @@ $selected-color: mix(white, $main, 20%);
   }
 
   label {
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 50%;
     cursor: pointer;
     color: $off-state;
@@ -31,11 +31,11 @@ $selected-color: mix(white, $main, 20%);
     }
 
     :global .ripple {
-      background: transparentize($main, .9);
+      background: transparentize($main, 0.9);
     }
 
     &:hover {
-      background: transparentize($main, .95);
+      background: transparentize($main, 0.95);
       color: $hover-color;
     }
 

@@ -1,5 +1,5 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .form-field {
   display: flex;
@@ -7,11 +7,11 @@
   margin-bottom: 2em;
 
   .description {
-    margin-bottom: .75em;
+    margin-bottom: 0.75em;
 
     .name {
       font-size: 1.1em;
-      margin-bottom: .2em;
+      margin-bottom: 0.2em;
       display: block;
 
       .required {
@@ -20,15 +20,15 @@
     }
 
     .help {
-      font-size: .95em;
+      font-size: 0.95em;
       font-weight: $thin-font-weight;
     }
   }
 
   .field {
     .message {
-      margin: .3em .5em;
-      font-size: .85em;
+      margin: 0.3em 0.5em;
+      font-size: 0.85em;
 
       &.info {
         color: $main;

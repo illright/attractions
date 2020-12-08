@@ -1,6 +1,6 @@
-[slot="showcase"] :global {
+[slot='showcase'] :global {
   .checkbox {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   .colored {
@@ -8,7 +8,7 @@
     flex-wrap: wrap;
 
     .checkbox {
-      margin: .5em;
+      margin: 0.5em;
     }
   }
 }

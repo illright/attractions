@@ -1,3 +1,6 @@
-<table><slot /></table>
+<table>
+  <slot />
+</table>
 
-<style src="../../static/css/mdsvex/table.scss"></style>
+<style src="../../static/css/mdsvex/table.scss">
+</style>

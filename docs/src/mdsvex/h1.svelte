@@ -15,9 +15,8 @@
 
 <h1 {id}>
   <slot />
-  {#if href != null}
-    <a {href} class="ml">#</a>
-  {/if}
+  {#if href != null}<a {href} class="ml">#</a>{/if}
 </h1>
 
-<style src="../../static/css/mdsvex/h1.scss"></style>
+<style src="../../static/css/mdsvex/h1.scss">
+</style>

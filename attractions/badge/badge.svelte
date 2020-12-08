@@ -10,4 +10,5 @@
   <slot />
 </div>
 
-<style src="./badge.scss"></style>
+<style src="./badge.scss">
+</style>

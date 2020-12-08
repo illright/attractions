@@ -1,5 +1,5 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .card {
   box-shadow: $shadow-0;
@@ -14,6 +14,6 @@
 
   &.outline {
     box-shadow: none;
-    border: 1px solid transparentize($main, .7);
+    border: 1px solid transparentize($main, 0.7);
   }
 }

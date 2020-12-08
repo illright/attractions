@@ -1,5 +1,5 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 li {
   list-style: none;
@@ -14,20 +14,20 @@ button {
   font-size: 1em;
   width: 100%;
   text-align: left;
-  padding: .7em 1.2em;
+  padding: 0.7em 1.2em;
 
   .subtext {
-    font-size: .95em;
-    margin-top: .2em;
+    font-size: 0.95em;
+    margin-top: 0.2em;
     font-weight: $thin-font-weight;
   }
 
   &:hover {
-    background: transparentize($main, .95);
+    background: transparentize($main, 0.95);
   }
 
   &:focus {
-    background: transparentize($main, .925);
+    background: transparentize($main, 0.925);
   }
 
   mark {

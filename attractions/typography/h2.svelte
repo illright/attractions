@@ -5,6 +5,9 @@
   export { _class as class };
 </script>
 
-<h2 class={classes(_class)} {...$$restProps}><slot /></h2>
+<h2 class={classes(_class)} {...$$restProps}>
+  <slot />
+</h2>
 
-<style src="./h2.scss"></style>
+<style src="./h2.scss">
+</style>

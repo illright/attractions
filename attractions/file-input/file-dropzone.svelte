@@ -30,22 +30,24 @@
 
   async function acceptUpload(e) {
     const incomingFiles = Array.from((e.dataTransfer || e.target).files);
-    await Promise.all(incomingFiles.map(async (file) => {
-      try {
-        if (typeof beforeChange === 'function') {
-          await beforeChange(file);
+    await Promise.all(
+      incomingFiles.map(async file => {
+        try {
+          if (typeof beforeChange === 'function') {
+            await beforeChange(file);
+          }
+        } catch (e) {
+          return;
         }
-      } catch (e) {
-        return;
-      }
 
-      if (accepted(accept, file) && files.length < max) {
-        files.push(file);
-      }
-    }));
+        if (accepted(accept, file) && files.length < max) {
+          files.push(file);
+        }
+      })
+    );
 
     files = files;
-    setTimeout(() => wrongType = false, 1000);
+    setTimeout(() => (wrongType = false), 1000);
     dispatch('change', { files, nativeEvent: e });
     inputElement.value = '';
     dragActive = false;
@@ -57,9 +59,11 @@
   }
 
   function blockOnTiles(e) {
-    if (e.target != emptyLayer
-        && e.target != dropzoneLayer
-        && e.target != inputElement) {
+    if (
+      e.target != emptyLayer &&
+      e.target != dropzoneLayer &&
+      e.target != inputElement
+    ) {
       e.preventDefault();
     }
   }
@@ -93,9 +97,7 @@
           incorrect file type
         {:else if dragActive}
           release to upload
-        {:else}
-          drag &amp; drop here or click to upload files
-        {/if}
+        {:else}drag &amp; drop here or click to upload files{/if}
       </div>
     </slot>
   </div>
@@ -104,8 +106,11 @@
     bind:this={dropzoneLayer}
     class:accepting={dragActive}
     on:dragover|preventDefault|stopPropagation={checkTypesEarly}
-    on:dragenter={() => dragActive = true}
-    on:dragleave={() => { dragActive = false; wrongType = false; }}
+    on:dragenter={() => (dragActive = true)}
+    on:dragleave={() => {
+      dragActive = false;
+      wrongType = false;
+    }}
     on:drop|preventDefault|stopPropagation={acceptUpload}
     use:ripple={{ disabled: disabled || files.length >= max }}
   >
@@ -120,4 +125,5 @@
   {/each}
 </label>
 
-<style src="./file-dropzone.scss"></style>
+<style src="./file-dropzone.scss">
+</style>

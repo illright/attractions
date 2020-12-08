@@ -11,8 +11,10 @@ polka()
     SAPPER_APP_BASEPATH || '/',
     compression({ threshold: 0 }),
     sirv('static', { dev }),
-    sapper.middleware(),
+    sapper.middleware()
   )
   .listen(PORT, err => {
-    if (err) { console.error(err); }
+    if (err) {
+      console.error(err);
+    }
   });

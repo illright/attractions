@@ -18,22 +18,20 @@
 
   function reverseArrowKeys(event) {
     switch (event.key) {
+      case 'ArrowLeft':
+      case 'ArrowDown':
+        event.preventDefault();
+        value = (value + (max + 1) - 1) % (max + 1);
+        if (value === 0) {
+          value = max; // would otherwise get stuck at 1
+        }
+        break;
 
-    case 'ArrowLeft':
-    case 'ArrowDown':
-      event.preventDefault();
-      value = (value + (max + 1) - 1) % (max + 1);
-      if (value === 0) {
-        value = max;  // would otherwise get stuck at 1
-      }
-      break;
-
-    case 'ArrowRight':
-    case 'ArrowUp':
-      event.preventDefault();
-      value = (value + 1) % (max + 1);
-      break;
-
+      case 'ArrowRight':
+      case 'ArrowUp':
+        event.preventDefault();
+        value = (value + 1) % (max + 1);
+        break;
     }
     value = Math.max(value, 1);
   }
@@ -47,18 +45,25 @@
       bind:group={value}
       value={i}
       type="radio"
-      name={name}
+      {name}
       id={`${name}-${i}`}
       {disabled}
-      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+      on:change={e => dispatch('change', { value, nativeEvent: e })}
       on:keydown={reverseArrowKeys}
       use:eventsAction={events}
       {...$$restProps}
     />
-    <label class={classes(starClass)} for={`${name}-${i}`} use:ripple={{ disabled }}>
-      <slot name="icon"><Star /></slot>
+    <label
+      class={classes(starClass)}
+      for={`${name}-${i}`}
+      use:ripple={{ disabled }}
+    >
+      <slot name="icon">
+        <Star />
+      </slot>
     </label>
   {/each}
 </div>
 
-<style src="./star-rating.scss"></style>
+<style src="./star-rating.scss">
+</style>

@@ -1,4 +1,4 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 nav {
   display: none;
@@ -11,7 +11,7 @@ nav {
     font-weight: $thin-font-weight;
 
     .node {
-      margin: 0 .25em;
+      margin: 0 0.25em;
     }
   }
 }

@@ -1,10 +1,10 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 $mobile-top-padding: 2.4em;
 
 main {
-  background: transparentize($main, .93);
-  padding: $mobile-top-padding .5em;
+  background: transparentize($main, 0.93);
+  padding: $mobile-top-padding 0.5em;
 
   mark {
     background: none;
@@ -63,10 +63,10 @@ main {
     padding-bottom: 1em;
 
     p {
-      margin: .7em 0 0;
+      margin: 0.7em 0 0;
       text-align: center;
       font-weight: 300;
-      font-size: .95em;
+      font-size: 0.95em;
     }
   }
 

@@ -8,7 +8,11 @@
   let currentlyOpenPanel = null;
 
   function closeOtherPanels({ detail: thisPanel }) {
-    if (currentlyOpenPanel != null && currentlyOpenPanel !== thisPanel && !multiple) {
+    if (
+      currentlyOpenPanel != null &&
+      currentlyOpenPanel !== thisPanel &&
+      !multiple
+    ) {
       currentlyOpenPanel.close();
     }
     currentlyOpenPanel = thisPanel;
@@ -19,4 +23,5 @@
   <slot {closeOtherPanels} />
 </ul>
 
-<style src="./accordion.scss"></style>
+<style src="./accordion.scss">
+</style>

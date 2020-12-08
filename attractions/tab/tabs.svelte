@@ -13,8 +13,15 @@
 
 <nav class={classes(_class)} role="group">
   {#each items as item (item)}
-    <Tab class={classes(tabClass)} value={item} {name} bind:group={value} on:change />
+    <Tab
+      class={classes(tabClass)}
+      value={item}
+      {name}
+      bind:group={value}
+      on:change
+    />
   {/each}
 </nav>
 
-<style src="./tabs.scss"></style>
+<style src="./tabs.scss">
+</style>

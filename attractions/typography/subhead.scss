@@ -1,9 +1,9 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .subhead {
   font-weight: $thin-font-weight;
-  font-size: .95em;
+  font-size: 0.95em;
   line-height: 1.2em;
 
   @media only screen and (min-width: 640px) {

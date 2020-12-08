@@ -11,7 +11,6 @@ A pretty cool UI kit for Svelte.
 
 Refer to the main documentation: <https://illright.github.io/attractions>
 
-
 ## Installation
 
 **Step 1.** Install the library with npm or Yarn:
@@ -31,11 +30,9 @@ import autoPreprocess from 'svelte-preprocess';
 
 autoPreprocess({
   scss: {
-    includePaths: [
-      './path/to/theme',
-    ],
+    includePaths: ['./path/to/theme'],
   },
-})
+});
 ```
 
 ---
@@ -43,6 +40,7 @@ autoPreprocess({
 Alternatively, the library can be used from a CDN, such as [unpkg](https://unpkg.com/attractions), and then the components will be registered as custom elements. This is especially useful for quick prototypes that do not need all the features provided.
 
 Example usage:
+
 ```html
 <head>
   <script src="https://unpkg.com/attractions"></script>
@@ -51,6 +49,7 @@ Example usage:
   <a-button filled="filled">My button</a-button>
 </body>
 ```
+
 For more details, check out [the docs](https://illright.github.io/attractions/docs/custom-elements).
 
 ## Theming

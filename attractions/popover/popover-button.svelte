@@ -11,10 +11,11 @@
 <button
   type="button"
   class={classes('popover-button', _class)}
-  on:click={(e) => dispatch('click', { nativeEvent: e })}
+  on:click={e => dispatch('click', { nativeEvent: e })}
   {...$$restProps}
 >
   <slot />
 </button>
 
-<style src="./popover-button.scss"></style>
+<style src="./popover-button.scss">
+</style>

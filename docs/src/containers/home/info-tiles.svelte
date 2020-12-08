@@ -9,9 +9,9 @@
   let bundleSizePromise = Promise.resolve(Infinity);
 
   onMount(() => {
-    bundleSizePromise =
-      fetch(`https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`)
-        .then(response => response.json());
+    bundleSizePromise = fetch(
+      `https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`
+    ).then(response => response.json());
   });
 </script>
 
@@ -52,4 +52,5 @@
   {/await}
 </div>
 
-<style src="../../../static/css/containers/home/info-tiles.scss"></style>
+<style src="../../../static/css/containers/home/info-tiles.scss">
+</style>

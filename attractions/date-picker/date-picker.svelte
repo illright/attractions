@@ -24,31 +24,30 @@
 
   export let range = false;
   export let locale = undefined;
-  export let firstWeekday = 1;  // 1 corresponds to Monday
+  export let firstWeekday = 1; // 1 corresponds to Monday
   export let noCalendar = false;
   export let top = false;
   export let right = false;
   export let value = null;
   export let format = '%d.%m.%Y';
-  $: readableFormat = (
-    format
-      .replace('%d', 'dd')
-      .replace('%m', 'mm')
-      .replace('%y', 'yy')
-      .replace('%Y', 'yyyy')
-      .replace('%%', '%')
-  );
+  $: readableFormat = format
+    .replace('%d', 'dd')
+    .replace('%m', 'mm')
+    .replace('%y', 'yy')
+    .replace('%Y', 'yyyy')
+    .replace('%%', '%');
 
   let startFocus = false;
   let endFocus = false;
   let startValue;
   let endValue;
 
-  $: editedValue = (startFocus ? startValue : endValue);
+  $: editedValue = startFocus ? startValue : endValue;
   $: unpackValue(value);
   $: registerChange(startValue, endValue);
 
-  let shownCalendar = (range && value != null ? value.start : value) || new Date();
+  let shownCalendar =
+    (range && value != null ? value.start : value) || new Date();
 
   function unpackValue(value) {
     startValue = copyDate(range ? value && value.start : value);
@@ -116,8 +115,10 @@
       }
     }
 
-    value = range ? { start: copyDate(start), end: copyDate(end) } : copyDate(start);
-    if (!range || start != null && end != null) {
+    value = range
+      ? { start: copyDate(start), end: copyDate(end) }
+      : copyDate(start);
+    if (!range || (start != null && end != null)) {
       dispatch('change', { value });
     }
   }
@@ -132,7 +133,10 @@
     shownCalendar = shownCalendar;
   }
 
-  const headerFormatter = Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' });
+  const headerFormatter = Intl.DateTimeFormat(locale, {
+    month: 'long',
+    year: 'numeric',
+  });
   const dispatch = createEventDispatcher();
 </script>
 
@@ -142,7 +146,10 @@
       <TextField
         placeholder={readableFormat}
         value={formatDateTime(startValue, format)}
-        on:focus={() => { startFocus = true; endFocus = false; }}
+        on:focus={() => {
+          startFocus = true;
+          endFocus = false;
+        }}
         class={classes(startFocus && 'in-focus')}
         on:change={({ detail }) => {
           startValue = applyDate(parseDateTime(detail.value, format, startValue), startValue);
@@ -151,13 +158,14 @@
         }}
       />
       {#if range}
-        <slot name="between-inputs">
-          <span>to</span>
-        </slot>
+        <slot name="between-inputs"><span>to</span></slot>
         <TextField
           placeholder={readableFormat}
           value={formatDateTime(endValue, format)}
-          on:focus={() => { startFocus = false; endFocus = true; }}
+          on:focus={() => {
+            startFocus = false;
+            endFocus = true;
+          }}
           class={classes(endFocus && 'in-focus')}
           on:change={({ detail }) => {
             endValue = applyDate(parseDateTime(detail.value, format, endValue), endValue);
@@ -204,4 +212,5 @@
   </DropdownShell>
 </div>
 
-<style src="./date-picker.scss"></style>
+<style src="./date-picker.scss">
+</style>
