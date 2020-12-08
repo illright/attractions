@@ -28,11 +28,11 @@
     type="checkbox"
     class={classes(inputClass)}
     {disabled}
-    on:change={(e) => dispatch('change', {
-      value: e.target.value,
-      checked: e.target.checked,
-      nativeEvent: e,
-    })}
+    on:change={e => dispatch('change', {
+        value: e.target.value,
+        checked: e.target.checked,
+        nativeEvent: e,
+      })}
     {...$$restProps}
   />
   <div
@@ -46,4 +46,5 @@
   </div>
 </label>
 
-<style src="./checkbox-chip.scss"></style>
+<style src="./checkbox-chip.scss">
+</style>

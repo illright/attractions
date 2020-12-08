@@ -29,7 +29,7 @@
     type="radio"
     class={classes(inputClass)}
     {disabled}
-    on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+    on:change={e => dispatch('change', { value, nativeEvent: e })}
     {...$$restProps}
   />
   <div
@@ -44,4 +44,5 @@
   </div>
 </label>
 
-<style src="./radio-chip.scss"></style>
+<style src="./radio-chip.scss">
+</style>

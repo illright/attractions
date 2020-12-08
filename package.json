@@ -3,8 +3,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
+    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .; prettier --check .",
     "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js'; stylelint --fix .",
+    "format": "prettier --write .",
     "docs:build": "yarn workspace attractions-docs build",
     "docs:export": "yarn workspace attractions-docs export",
     "docs:dev": "yarn workspace attractions-docs dev",
@@ -20,22 +21,26 @@
     "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.0.0",
     "@babel/runtime": "^7.10.5",
+    "@sveltejs/eslint-config": "sveltejs/eslint-config",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-formatter-pretty": "^4.0.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-svelte3": "^2.7.3",
-    "husky": "^4.2.5",
+    "husky": "^5.0.4",
     "lint-staged": "^10.2.11",
+    "prettier": "2.1.2",
+    "prettier-plugin-svelte": "^1.4.1",
     "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^7.0.0",
-    "svelte": "^3.24.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "svelte": "^3.24.0",
+    "typescript": "^4.0.5"
   },
   "lint-staged": {
     "[^.]*.js": [

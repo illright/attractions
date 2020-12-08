@@ -22,7 +22,6 @@
   const dispatch = createEventDispatcher();
 </script>
 
-
 <li class:open class={classes('panel', _class)}>
   <slot name="handle" toggle={selfControl.toggle}>
     <Button on:click={selfControl.toggle}>{label}</Button>
@@ -32,4 +31,5 @@
   <slot />
 </section>
 
-<style src="./accordion-section.scss"></style>
+<style src="./accordion-section.scss">
+</style>

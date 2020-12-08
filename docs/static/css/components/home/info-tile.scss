@@ -1,4 +1,4 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 .info-tile {
   margin-bottom: 1em;
@@ -17,7 +17,7 @@
   }
 
   .icon {
-    padding: .8em;
+    padding: 0.8em;
     border-radius: 50%;
     background: $main;
     color: white;
@@ -30,7 +30,7 @@
   }
 
   .subtitle {
-    font-size: .9em;
+    font-size: 0.9em;
     font-weight: $thin-font-weight;
     color: $main;
   }

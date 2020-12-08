@@ -1,6 +1,6 @@
-div[role=group] :global {
+div[role='group'] :global {
   .checkbox:not(.colored) > .selector {
-    margin: 0 .5em;
+    margin: 0 0.5em;
   }
 
   .checkbox.colored > input + .selector::before {
@@ -9,12 +9,12 @@ div[role=group] :global {
   }
 
   .checkbox.colored:hover > input + .selector::after {
-    background-color: rgba(0, 0, 0, .05);
-    background-color: rgba(var(--r), var(--g), var(--b), .05);
+    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(var(--r), var(--g), var(--b), 0.05);
   }
 
   .checkbox.colored > input:focus + .selector::after {
-    background-color: rgba(0, 0, 0, .125);
-    background-color: rgba(var(--r), var(--g), var(--b), .125);
+    background-color: rgba(0, 0, 0, 0.125);
+    background-color: rgba(var(--r), var(--g), var(--b), 0.125);
   }
 }

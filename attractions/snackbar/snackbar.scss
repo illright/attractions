@@ -1,9 +1,9 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .snackbar {
   min-width: 16em;
-  padding: .375em;
+  padding: 0.375em;
   margin-top: 1em;
   display: flex;
   align-items: center;
@@ -12,11 +12,11 @@
   box-shadow: $shadow-raised;
 
   .text {
-    padding: .8em 0;
-    margin: 0 .625em;
+    padding: 0.8em 0;
+    margin: 0 0.625em;
     color: $snackbar-fg;
     flex: 1;
-    font-size: .95em;
+    font-size: 0.95em;
   }
 
   :global .btn {

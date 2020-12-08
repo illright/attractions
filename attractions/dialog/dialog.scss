@@ -1,5 +1,5 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .dialog {
   border-radius: $dialog-radius;
@@ -12,7 +12,7 @@
     display: flex;
     font-size: 1.2em;
     font-weight: $bold-font-weight;
-    margin-bottom: .7em;
+    margin-bottom: 0.7em;
     color: $main;
 
     &.close-padded {
@@ -20,15 +20,15 @@
     }
 
     :global svg {
-      margin-right: .5em;
+      margin-right: 0.5em;
       flex-shrink: 0;
     }
   }
 
   > :global .btn.close {
     position: absolute;
-    top: .7em;
-    right: .7em;
+    top: 0.7em;
+    right: 0.7em;
   }
 
   &.constrain-width {

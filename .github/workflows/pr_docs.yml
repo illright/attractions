@@ -3,7 +3,7 @@ name: Deploy docs to GH Pages
 on:
   workflow_run:
     workflows:
-      - "Lint & Build PR docs"
+      - 'Lint & Build PR docs'
     types:
       - completed
 
@@ -38,6 +38,6 @@ jobs:
         id: create
         with:
           type: create
-          body: "Docs available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/"
+          body: 'Docs available on https://illright.github.io/attractions/${{ env.PR_NUMBER }}/'
           issue_number: ${{ env.PR_NUMBER }}
           token: ${{ secrets.GITHUB_TOKEN }}

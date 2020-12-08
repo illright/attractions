@@ -1,12 +1,12 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
-[slot="showcase"] :global {
+[slot='showcase'] :global {
   .text-field.outline {
     margin-top: 1.5em;
   }
 
   .dollar {
     font-weight: $bold-font-weight;
-    top: .8em !important;
+    top: 0.8em !important;
   }
 }

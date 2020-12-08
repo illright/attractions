@@ -31,7 +31,9 @@
   {#each selection as item}
     <Chip noPadding>
       {item.name}
-      <Button neutral round small on:click={() => deselect(item)}><X /></Button>
+      <Button neutral round small on:click={() => deselect(item)}>
+        <X />
+      </Button>
     </Chip>
   {/each}
   <AutocompleteField
@@ -47,4 +49,5 @@
   />
 </div>
 
-<style src="./autocomplete.scss"></style>
+<style src="./autocomplete.scss">
+</style>

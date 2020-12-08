@@ -16,4 +16,5 @@
   {/if}
 </nav>
 
-<style src="../../../static/css/components/docs/breadcrumbs.scss"></style>
+<style src="../../../static/css/components/docs/breadcrumbs.scss">
+</style>

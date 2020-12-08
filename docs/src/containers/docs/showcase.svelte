@@ -12,4 +12,5 @@
   </CopyableCode>
 </section>
 
-<style src="../../../static/css/containers/docs/showcase.scss"></style>
+<style src="../../../static/css/containers/docs/showcase.scss">
+</style>

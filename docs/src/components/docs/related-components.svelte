@@ -18,4 +18,5 @@
   </div>
 {/if}
 
-<style src="../../../static/css/components/docs/related-components.scss"></style>
+<style src="../../../static/css/components/docs/related-components.scss">
+</style>

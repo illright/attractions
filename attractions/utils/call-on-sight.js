@@ -13,7 +13,10 @@ export default function callOnSight(node, { callback, args = [] }) {
   }
 
   if (typeof IntersectionObserver !== 'undefined') {
-    observer = new IntersectionObserver(onIntersect, { root: null, threshold: 0.5 });
+    observer = new IntersectionObserver(onIntersect, {
+      root: null,
+      threshold: 0.5,
+    });
     observer.observe(node);
   }
 

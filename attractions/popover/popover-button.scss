@@ -1,18 +1,18 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .popover-button {
   background: rgb(100, 100, 100);
-  border-radius: .625em;
+  border-radius: 0.625em;
   font-weight: $bold-font-weight;
-  font-size: .9em;
+  font-size: 0.9em;
   font-family: $font;
   box-shadow: $shadow-raised;
   border: 0;
   outline: none;
   color: #fff;
-  padding: .5em .625em;
-  margin: .2em;
+  padding: 0.5em 0.625em;
+  margin: 0.2em;
   cursor: pointer;
   display: flex;
   align-items: center;

@@ -17,7 +17,6 @@
   export let transitionOptions = { x: -20, duration: 150 };
 </script>
 
-
 <div
   class={classes('snackbar', _class)}
   transition:dynamic={{ transition, options: transitionOptions }}
@@ -41,4 +40,5 @@
   {/if}
 </div>
 
-<style src="./snackbar.scss"></style>
+<style src="./snackbar.scss">
+</style>

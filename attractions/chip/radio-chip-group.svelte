@@ -30,12 +30,11 @@
       >
         {#if labelClass != null}
           <span class={classes(labelClass)}>{item.label || item.value}</span>
-        {:else}
-          {item.label || item.value}
-        {/if}
+        {:else}{item.label || item.value}{/if}
       </RadioChip>
     {/each}
   </div>
 {/if}
 
-<style src="./chip-group.scss"></style>
+<style src="./chip-group.scss">
+</style>

@@ -1,14 +1,14 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 $side-margin: 1em;
 
 header {
-  padding-top: .6em;
-  padding-bottom: .5em;
+  padding-top: 0.6em;
+  padding-bottom: 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid transparentize($main, .75);
+  border-bottom: 1px solid transparentize($main, 0.75);
 
   .logo,
   .clickables {
@@ -17,11 +17,11 @@ header {
   }
 
   .logo {
-    margin-left: $side-margin + .7em;
+    margin-left: $side-margin + 0.7em;
     text-decoration: none;
 
     span {
-      margin-left: .7em;
+      margin-left: 0.7em;
       font-size: 1.25em;
       font-weight: $bold-font-weight;
       color: black;

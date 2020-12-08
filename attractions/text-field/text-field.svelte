@@ -45,7 +45,10 @@
   }
 
   function handleInput(event) {
-    value = $$restProps.type === 'number' ? toNumber(event.target.value) : event.target.value;
+    value =
+      $$restProps.type === 'number'
+        ? toNumber(event.target.value)
+        : event.target.value;
     dispatch('input', { value, nativeEvent: event });
   }
 
@@ -67,10 +70,10 @@
       class={classes(inputClass)}
       bind:this={inputElement}
       on:input={handleInput}
-      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
-      on:focus={(e) => dispatch('focus', { nativeEvent: e })}
-      on:keydown={(e) => dispatch('keydown', { nativeEvent: e })}
-      on:blur={(e) => dispatch('blur', { nativeEvent: e })}
+      on:change={e => dispatch('change', { value, nativeEvent: e })}
+      on:focus={e => dispatch('focus', { nativeEvent: e })}
+      on:keydown={e => dispatch('keydown', { nativeEvent: e })}
+      on:blur={e => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
@@ -81,17 +84,15 @@
       class={classes(inputClass)}
       bind:this={inputElement}
       on:input={handleInput}
-      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
-      on:focus={(e) => dispatch('focus', { nativeEvent: e })}
-      on:keydown={(e) => dispatch('keydown', { nativeEvent: e })}
-      on:blur={(e) => dispatch('blur', { nativeEvent: e })}
+      on:change={e => dispatch('change', { value, nativeEvent: e })}
+      on:focus={e => dispatch('focus', { nativeEvent: e })}
+      on:keydown={e => dispatch('keydown', { nativeEvent: e })}
+      on:blur={e => dispatch('blur', { nativeEvent: e })}
       use:eventsAction={events}
       {...$$restProps}
     />
     {#if outline && label != null}
-      <label for={id} class={classes(labelClass)}>
-        {label}
-      </label>
+      <label for={id} class={classes(labelClass)}>{label}</label>
     {/if}
 
     {#if withItem}
@@ -106,4 +107,5 @@
   {/if}
 </div>
 
-<style src="./text-field.scss"></style>
+<style src="./text-field.scss">
+</style>

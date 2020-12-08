@@ -1,4 +1,4 @@
-[slot="showcase"] {
+[slot='showcase'] {
   padding: 1em;
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -6,7 +6,7 @@
   grid-auto-flow: column;
   justify-items: start;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
 
   @media only screen and (min-width: 920px) {
     grid-template-columns: repeat(3, auto);

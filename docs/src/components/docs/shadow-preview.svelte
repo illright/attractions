@@ -12,5 +12,5 @@
   </div>
 </Popover>
 
-
-<style src="../../../static/css/components/docs/shadow-preview.scss"></style>
+<style src="../../../static/css/components/docs/shadow-preview.scss">
+</style>

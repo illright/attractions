@@ -8,7 +8,12 @@
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Tab from '../tab/tab.svelte';
   import Clock from './clock.svelte';
-  import { parseDateTime, formatDateTime, applyTime, copyDate } from '../utils/datetime-utils.js';
+  import {
+    parseDateTime,
+    formatDateTime,
+    applyTime,
+    copyDate,
+  } from '../utils/datetime-utils.js';
   import { default as rangeGenerator } from '../utils/range.js';
 
   let _class = null;
@@ -19,15 +24,13 @@
   export let value = null;
   export let format = '%H:%M';
   export let amPmTabName = 'am-pm';
-  $: readableFormat = (
-    format
-      .replace('%H', 'HH')
-      .replace('%M', 'MM')
-      .replace('%S', 'SS')
-      .replace('%P', 'AM')
-      .replace('%p', 'am')
-      .replace('%%', '%')
-  );
+  $: readableFormat = format
+    .replace('%H', 'HH')
+    .replace('%M', 'MM')
+    .replace('%S', 'SS')
+    .replace('%P', 'AM')
+    .replace('%p', 'am')
+    .replace('%%', '%');
 
   const f12hours = /%p/i.test(format);
   const seconds = /%S/.test(format);
@@ -103,7 +106,9 @@
     if (!value) {
       return false;
     }
-    const currentHour = f12hours ? ((selected.getHours() + 11) % 12) + 1 : selected.getHours();
+    const currentHour = f12hours
+      ? ((selected.getHours() + 11) % 12) + 1
+      : selected.getHours();
     return hour === currentHour;
   }
 
@@ -125,13 +130,15 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class={classes('time-picker', _class, f12hours && 'f12hours', seconds && 'seconds')}>
+<div
+  class={classes('time-picker', _class, f12hours && 'f12hours', seconds && 'seconds')}
+>
   <DropdownShell bind:open={focus} on:change={toggleKeyboardListener}>
     <div class="handle">
       <TextField
         placeholder={readableFormat}
         value={formatDateTime(value, format)}
-        on:focus={() => focus = true}
+        on:focus={() => (focus = true)}
         class={classes(focus && 'in-focus')}
         on:change={({ detail }) => {
           value = applyTime(parseDateTime(detail.value, format, value), value);
@@ -140,7 +147,9 @@
     </div>
     <Dropdown class="barrel" {top} {right}>
       <div class="shown-on-focus">
-        <Button noRipple on:click={() => focus = false}>close the time picker</Button>
+        <Button noRipple on:click={() => (focus = false)}>
+          close the time picker
+        </Button>
       </div>
       <slot name="hours-label">
         <Label>Hours</Label>
@@ -209,4 +218,5 @@
   </DropdownShell>
 </div>
 
-<style src="./time-picker.scss"></style>
+<style src="./time-picker.scss">
+</style>

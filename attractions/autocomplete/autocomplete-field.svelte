@@ -48,7 +48,7 @@
     }
 
     return generatorState.value.filter(
-      option => selection.find(thisOption => thisOption === option) == null,
+      option => selection.find(thisOption => thisOption === option) == null
     );
   }
 
@@ -75,28 +75,35 @@
 <DropdownShell
   class={classes('autocomplete-field', _class)}
   open={focus}
-  on:change={({ detail }) => focus = detail.value}
+  on:change={({ detail }) => (focus = detail.value)}
 >
   <input
     bind:this={inputElement}
     bind:value={searchQuery}
-    on:focus={() => focus = true}
+    on:focus={() => (focus = true)}
     {...$$restProps}
   />
   <Dropdown>
     <div class="shown-on-focus">
-      <Button noRipple on:click={() => focus = false}>close the options</Button>
+      <Button noRipple on:click={() => (focus = false)}>
+        close the options
+      </Button>
     </div>
     {#if selection.length >= maxOptions}
       <slot name="too-many-options">
         <div class="notice">
-          Cannot select more than {maxOptions} option{s(maxOptions)}
+          Cannot select more than
+          {maxOptions}
+          option{s(maxOptions)}
         </div>
       </slot>
     {:else if minSearchLength > 0 && (searchQuery == null || searchQuery.length < minSearchLength)}
       <slot name="not-enough-input">
         <div class="notice">
-          Type {minSearchLength} character{s(minSearchLength)} to search
+          Type
+          {minSearchLength}
+          character{s(minSearchLength)}
+          to search
         </div>
       </slot>
     {:else}
@@ -124,7 +131,10 @@
         {#if moreOptions && optionGenerator != null}
           {#await Promise.all(promises) then _}
             <slot name="more-options" {loadMoreOptions}>
-              <li class="more-options" use:callOnSight={{ callback: loadMoreOptions }}>
+              <li
+                class="more-options"
+                use:callOnSight={{ callback: loadMoreOptions }}
+              >
                 <Button on:click={loadMoreOptions}>
                   <MoreHorizontal />
                   load more options
@@ -138,4 +148,5 @@
   </Dropdown>
 </DropdownShell>
 
-<style src="./autocomplete-field.scss"></style>
+<style src="./autocomplete-field.scss">
+</style>
