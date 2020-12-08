@@ -23,6 +23,9 @@
   if (!outline && label != null) {
     console.error('Labels are only available for outlined text fields');
   }
+  if (id == null) {
+    id = `text-field-${Math.random().toString().substring(2, 8)}`;
+  }
 
   export let value = null;
   export let events = null;
