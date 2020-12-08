@@ -5,6 +5,9 @@
   export { _class as class };
 </script>
 
-<div class={classes('subhead', _class)} {...$$restProps}><slot /></div>
+<div class={classes('subhead', _class)} {...$$restProps}>
+  <slot />
+</div>
 
-<style src="./subhead.scss"></style>
+<style src="./subhead.scss">
+</style>

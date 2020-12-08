@@ -16,4 +16,5 @@
   </div>
 </div>
 
-<style src="./popover.scss"></style>
+<style src="./popover.scss">
+</style>

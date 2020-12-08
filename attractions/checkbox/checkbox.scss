@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 .checkbox {
   position: relative;
@@ -9,20 +9,20 @@
   font-family: $font;
   cursor: pointer;
 
-  > input[type="checkbox"] {
+  > input[type='checkbox'] {
     @include hide-accessible;
   }
 
   > .selector {
-    border-radius: .25em;
+    border-radius: 0.25em;
     width: 1em;
     height: 1em;
-    border: .125em solid $light-contrast;
+    border: 0.125em solid $light-contrast;
     cursor: pointer;
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       width: 2.25em;
       height: 2.25em;
       border-radius: 50%;
@@ -49,13 +49,13 @@
     border-color: $main;
 
     &::before {
-      content: "";
-      width: .5625em;
-      height: .375em;
+      content: '';
+      width: 0.5625em;
+      height: 0.375em;
       border: 0 solid $main-text;
-      border-bottom-width: .125em;
-      border-left-width: .125em;
-      border-bottom-left-radius: .125em;
+      border-bottom-width: 0.125em;
+      border-left-width: 0.125em;
+      border-bottom-left-radius: 0.125em;
       left: 50%;
       position: absolute;
       top: 45%;
@@ -70,19 +70,19 @@
 
   &:hover {
     > input:not(:disabled) + .selector::after {
-      background-color: transparentize($dark, .95);
+      background-color: transparentize($dark, 0.95);
     }
 
     > input:checked + .selector::after {
-      background-color: transparentize($main, .95);
+      background-color: transparentize($main, 0.95);
     }
   }
 
   > input:focus + .selector::after {
-    background-color: transparentize($dark, .875);
+    background-color: transparentize($dark, 0.875);
   }
 
   > input:focus:checked + .selector::after {
-    background-color: transparentize($main, .875);
+    background-color: transparentize($main, 0.875);
   }
 }

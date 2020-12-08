@@ -152,4 +152,5 @@
   </article>
 </main>
 
-<style src="../../../static/css/routes/docs/_layout.scss"></style>
+<style src="../../../static/css/routes/docs/_layout.scss">
+</style>

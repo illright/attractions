@@ -1,6 +1,6 @@
-@import "../var-defaults.scss";
-@import "../_mixins.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '../_mixins.scss';
+@import '_attractions-theme.scss';
 
 .time-picker {
   display: inline-block;
@@ -16,7 +16,7 @@
 
       .text-field.in-focus input {
         background-color: darken($textfield-bg, 8%);
-        border-bottom-width: .125em;
+        border-bottom-width: 0.125em;
         border-color: lighten($main, 4%);
         padding-bottom: 0;
       }
@@ -30,8 +30,8 @@
       display: grid;
       grid-template-columns: repeat(2, 4em);
       justify-items: center;
-      gap: .5em 1em;
-      padding: 1em 1em .5em;
+      gap: 0.5em 1em;
+      padding: 1em 1em 0.5em;
 
       > .label {
         margin: 0 1em;
@@ -45,22 +45,22 @@
         overscroll-behavior: none;
         list-style: none;
         border: 0 solid $light-contrast;
-        border-bottom-width: .0625em;
-        border-top-width: .0625em;
+        border-bottom-width: 0.0625em;
+        border-top-width: 0.0625em;
 
         @media only screen and (min-height: 620px) {
           max-height: 15em;
         }
 
         &::-webkit-scrollbar {
-          width: .3125em;
-          height: .5em;
+          width: 0.3125em;
+          height: 0.5em;
           background: $background;
         }
 
         &::-webkit-scrollbar-thumb {
           background: $light-contrast;
-          border-radius: .3125em;
+          border-radius: 0.3125em;
 
           &:hover {
             background: darken($light-contrast, 10%);
@@ -92,7 +92,7 @@
       }
 
       .btn > svg {
-        margin-right: .4em;
+        margin-right: 0.4em;
       }
     }
   }

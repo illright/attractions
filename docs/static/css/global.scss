@@ -14,7 +14,6 @@ p {
   line-height: 1.25em;
 }
 
-
 strong {
   font-weight: $bold-font-weight;
 }
@@ -28,20 +27,20 @@ a {
 }
 
 .ml {
-  margin-left: .4em;
+  margin-left: 0.4em;
 }
 
 .mr {
-  margin-right: .4em;
+  margin-right: 0.4em;
 }
 
 .mb {
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
 
 .padded {
-  padding-left: .5em;
-  padding-right: .5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 
   &.extra {
     padding-left: 1em;
@@ -49,14 +48,16 @@ a {
   }
 
   @media only screen and (min-width: 640px) {
-    &, &.extra {
+    &,
+    &.extra {
       padding-left: 2em;
       padding-right: 2em;
     }
   }
 
   @media only screen and (min-width: 1024px) {
-    &, &.extra {
+    &,
+    &.extra {
       padding-left: 8%;
       padding-right: 8%;
     }

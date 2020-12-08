@@ -1,8 +1,8 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .text-field {
-  input[type="search"]::-webkit-search-cancel-button {
+  input[type='search']::-webkit-search-cancel-button {
     position: relative;
     top: 1px;
     height: 1.25em;
@@ -12,29 +12,29 @@
 
     @if variable-exists(x-icon) {
       appearance: none;
-      border: .1875em solid transparent;
+      border: 0.1875em solid transparent;
       background-image: url($x-icon);
       background-size: contain;
     }
 
     &:hover {
-      background-color: transparentize($dark, .9);
+      background-color: transparentize($dark, 0.9);
     }
   }
 
   input,
   textarea {
     outline: none;
-    padding: 0 .625em .0625em;
+    padding: 0 0.625em 0.0625em;
     font-family: $font;
     font-size: 1rem;
     font-weight: $thin-font-weight;
     box-sizing: border-box;
-    border: 0 solid $textfield-border;  // to disable the global border
-    border-bottom-width: .0625em;
+    border: 0 solid $textfield-border; // to disable the global border
+    border-bottom-width: 0.0625em;
     background-color: $textfield-bg;
-    border-top-left-radius: .375em;
-    border-top-right-radius: .375em;
+    border-top-left-radius: 0.375em;
+    border-top-right-radius: 0.375em;
     width: 100%;
     height: 2.8em;
 
@@ -48,7 +48,7 @@
 
     &:focus {
       background-color: darken($textfield-bg, 8%);
-      border-bottom-width: .125em;
+      border-bottom-width: 0.125em;
       border-color: lighten($main, 4%);
       padding-bottom: 0;
     }
@@ -57,12 +57,12 @@
   input:disabled,
   textarea:disabled {
     background-color: lighten($textfield-bg, 1%);
-    border-color: transparentize($dark, .7);
+    border-color: transparentize($dark, 0.7);
     color: $disabled;
   }
 
   textarea {
-    padding: .75em .625em .0625em;
+    padding: 0.75em 0.625em 0.0625em;
     height: 6em;
   }
 
@@ -77,12 +77,12 @@
         padding-left: 3rem;
       }
 
-      input[type="search"] {
+      input[type='search'] {
         padding-left: 2.2em;
       }
 
       > :global .item {
-        left: .625em;
+        left: 0.625em;
         font-weight: $bold-font-weight;
       }
     }
@@ -95,7 +95,7 @@
       }
 
       > :global .item {
-        right: .625em;
+        right: 0.625em;
       }
     }
 
@@ -103,7 +103,7 @@
       color: $textfield-item;
       height: 1.1em;
       position: absolute;
-      top: .85em;
+      top: 0.85em;
     }
 
     > input:focus + :global .item {
@@ -119,7 +119,7 @@
       text-align: right;
     }
 
-    input[type="number"] {
+    input[type='number'] {
       appearance: textfield;
 
       &::-webkit-outer-spin-button,
@@ -131,7 +131,7 @@
 
     > :global svg.item {
       height: 1em;
-      top: .9em;
+      top: 0.9em;
     }
 
     input:invalid + :global svg.item {
@@ -141,18 +141,18 @@
 
   &.outline {
     position: relative;
-    margin-top: .65em;
+    margin-top: 0.65em;
 
     label {
       font-family: $font;
       background-color: #fff;
       color: $textfield-border;
-      padding: 0 .25em;
+      padding: 0 0.25em;
       position: absolute;
       top: 0;
       left: 1.4em;
-      transform: translate(-.25em, -55%);
-      border-radius: .3125em;
+      transform: translate(-0.25em, -55%);
+      border-radius: 0.3125em;
     }
 
     &.with-item.left {
@@ -180,10 +180,10 @@
       padding: 0 1.4em;
 
       &:hover {
-        border-color: transparentize(black, .3);
+        border-color: transparentize(black, 0.3);
 
         + label {
-          color: transparentize(black, .3);
+          color: transparentize(black, 0.3);
         }
       }
 
@@ -196,18 +196,18 @@
       }
 
       &:invalid {
-        border-color: transparentize($danger, .3);
+        border-color: transparentize($danger, 0.3);
 
         + label {
-          color: transparentize($danger, .3);
+          color: transparentize($danger, 0.3);
         }
 
         ~ :global svg.item {
-          stroke: transparentize($danger, .3);
+          stroke: transparentize($danger, 0.3);
         }
 
         &:focus ~ :global svg.item {
-          stroke: transparentize($danger, .3);
+          stroke: transparentize($danger, 0.3);
         }
       }
     }
@@ -232,12 +232,12 @@
   }
 
   > .error {
-    font-size: .8rem;
-    color: transparentize($danger, .3);
+    font-size: 0.8rem;
+    color: transparentize($danger, 0.3);
     font-weight: $bold-font-weight;
   }
 
-  &.no-spinner > input[type="number"] {
+  &.no-spinner > input[type='number'] {
     appearance: textfield;
 
     &::-webkit-inner-spin-button,

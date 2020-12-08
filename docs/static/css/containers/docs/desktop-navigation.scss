@@ -1,4 +1,4 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
 nav {
   display: none;
@@ -6,13 +6,13 @@ nav {
   @media only screen and (min-width: 1024px) {
     display: block;
     margin-right: 3em;
-    padding: .5em .5em .5em 0;
+    padding: 0.5em 0.5em 0.5em 0;
     min-width: 13em;
-    border-right: 1px solid transparentize($main, .75);
+    border-right: 1px solid transparentize($main, 0.75);
 
     :global .btn {
       white-space: nowrap;
-      margin-bottom: .25em;
+      margin-bottom: 0.25em;
     }
 
     :global .accordion {
@@ -21,8 +21,8 @@ nav {
       align-items: flex-start;
 
       section {
-        margin: .5em 0 .5em 1em;
-        padding-left: .5em;
+        margin: 0.5em 0 0.5em 1em;
+        padding-left: 0.5em;
         border-left: 1px solid $light-contrast;
         display: flex;
         flex-direction: column;

@@ -1,17 +1,17 @@
-@import "../var-defaults.scss";
-@import "_attractions-theme.scss";
+@import '../var-defaults.scss';
+@import '_attractions-theme.scss';
 
 .file-tile {
   background: white;
   box-shadow: $shadow-1;
   color: $dark;
   border-radius: $file-tile-radius;
-  padding: .5em;
-  font-size: .9em;
+  padding: 0.5em;
+  font-size: 0.9em;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
-  gap: .2em;
+  gap: 0.2em;
   padding-left: 1.2em;
   z-index: 100;
 
@@ -26,7 +26,7 @@
   }
 
   .properties {
-    font-size: .85em;
+    font-size: 0.85em;
     font-weight: $thin-font-weight;
   }
 }

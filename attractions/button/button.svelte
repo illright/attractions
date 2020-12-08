@@ -40,7 +40,7 @@
 {#if href}
   <a
     href={disabled ? null : href}
-    rel={noPrefetch ? null : "prefetch"}
+    rel={noPrefetch ? null : 'prefetch'}
     disabled={disabled ? true : null}
     class={classes('btn', _class)}
     class:filled
@@ -51,7 +51,7 @@
     class:rectangle
     class:small
     class:selected
-    on:click={(e) => dispatch('click', { nativeEvent: e })}
+    on:click={e => dispatch('click', { nativeEvent: e })}
     use:eventsAction={events}
     use:ripple={{ disabled: noRipple || disabled }}
     {...$$restProps}
@@ -71,7 +71,7 @@
     class:rectangle
     class:small
     class:selected
-    on:click={(e) => dispatch('click', { nativeEvent: e })}
+    on:click={e => dispatch('click', { nativeEvent: e })}
     use:ripple={{ disabled: noRipple || disabled }}
     use:eventsAction={events}
     {...$$restProps}
@@ -80,4 +80,5 @@
   </button>
 {/if}
 
-<style src="./button.scss"></style>
+<style src="./button.scss">
+</style>

@@ -24,7 +24,9 @@
   }
 
   if (color && labelClass != null) {
-    console.warn('labelClass has no effect: labels are not rendered for color checkbox groups');
+    console.warn(
+      'labelClass has no effect: labels are not rendered for color checkbox groups'
+    );
   }
 </script>
 
@@ -39,25 +41,21 @@
         bind:checked={item.checked}
         disabled={item.disabled || (!item.checked && currentChecked >= max)}
         class={classes(color && 'colored', checkboxClass)}
-        title={
-          !item.disabled
-          && !item.checked
-          && currentChecked >= max
-          ? maxReachedTooltip : null
-        }
+        title={!item.disabled && !item.checked && currentChecked >= max ? maxReachedTooltip : null}
         on:change
         {...$$restProps}
       >
         {#if !color}
           {#if labelClass != null}
-            <span class={classes(labelClass)}>{item.label || item.value}</span>
-          {:else}
-            {item.label || item.value}
-          {/if}
+            <span class={classes(labelClass)}>
+              {item.label || item.value}
+            </span>
+          {:else}{item.label || item.value}{/if}
         {/if}
       </Checkbox>
     {/each}
   </div>
 {/if}
 
-<style src="./checkbox-group.scss"></style>
+<style src="./checkbox-group.scss">
+</style>

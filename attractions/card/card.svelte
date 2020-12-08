@@ -7,8 +7,13 @@
   export let outline = false;
 </script>
 
-<div class:outline class={classes('card', _class, tight && 'no-padding')} {...$$restProps}>
+<div
+  class:outline
+  class={classes('card', _class, tight && 'no-padding')}
+  {...$$restProps}
+>
   <slot />
 </div>
 
-<style src="./card.scss"></style>
+<style src="./card.scss">
+</style>

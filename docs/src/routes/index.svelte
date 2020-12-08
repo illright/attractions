@@ -40,11 +40,12 @@
       <a href="https://github.com/illright">@illright</a>
     </p>
     <p>
-      {process.license} licensed
-      &nbsp;•&nbsp;
+      {process.license}
+      licensed &nbsp;•&nbsp;
       <a href="./docs/changelog" rel="prefetch">v{process.latest_version}</a>
     </p>
   </footer>
 </main>
 
-<style src="../../static/css/routes/index.scss"></style>
+<style src="../../static/css/routes/index.scss">
+</style>

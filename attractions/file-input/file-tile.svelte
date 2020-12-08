@@ -11,15 +11,16 @@
 </script>
 
 <div class="file-tile">
-  <div class="filename">
-    {file.name}
-  </div>
+  <div class="filename">{file.name}</div>
   <div class="properties">
-    {formatFileSize(file.size)} • {formatFileType(file.name)}
+    {formatFileSize(file.size)}
+    •
+    {formatFileType(file.name)}
   </div>
   <Button danger round on:click={() => dispatch('delete', file)}>
     <Trash2 />
   </Button>
 </div>
 
-<style src="./file-tile.scss"></style>
+<style src="./file-tile.scss">
+</style>

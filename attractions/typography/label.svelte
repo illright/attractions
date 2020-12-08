@@ -6,6 +6,9 @@
   export let small = false;
 </script>
 
-<div class={classes('label', _class)} class:small {...$$restProps}><slot /></div>
+<div class={classes('label', _class)} class:small {...$$restProps}>
+  <slot />
+</div>
 
-<style src="./label.scss"></style>
+<style src="./label.scss">
+</style>

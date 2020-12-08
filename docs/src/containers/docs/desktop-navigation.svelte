@@ -21,13 +21,19 @@
               </Button>
             </div>
             {#each place.sub as entry}
-              <Button href="./docs/{entry.segment}" selected={place === currentPlace}>
+              <Button
+                href="./docs/{entry.segment}"
+                selected={place === currentPlace}
+              >
                 {entry.title}
               </Button>
             {/each}
           </AccordionSection>
         {:else}
-          <Button href="./docs/{place.segment}" selected={place === currentPlace}>
+          <Button
+            href="./docs/{place.segment}"
+            selected={place === currentPlace}
+          >
             {place.title}
           </Button>
         {/if}
@@ -36,4 +42,5 @@
   </Accordion>
 </nav>
 
-<style src="../../../static/css/containers/docs/desktop-navigation.scss"></style>
+<style src="../../../static/css/containers/docs/desktop-navigation.scss">
+</style>

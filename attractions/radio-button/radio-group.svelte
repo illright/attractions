@@ -20,7 +20,9 @@
   }
 
   if (color && labelClass != null) {
-    console.warn('labelClass has no effect: labels are not rendered for color radio groups');
+    console.warn(
+      'labelClass has no effect: labels are not rendered for color radio groups'
+    );
   }
 </script>
 
@@ -41,13 +43,12 @@
         {#if !color}
           {#if labelClass != null}
             <span class={classes(labelClass)}>{item.label || item.value}</span>
-          {:else}
-            {item.label || item.value}
-          {/if}
+          {:else}{item.label || item.value}{/if}
         {/if}
       </RadioButton>
     {/each}
   </div>
 {/if}
 
-<style src="./radio-group.scss"></style>
+<style src="./radio-group.scss">
+</style>

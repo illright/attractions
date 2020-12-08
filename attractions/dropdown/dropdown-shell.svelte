@@ -31,9 +31,10 @@
     }
   }
 
-  $: typeof document !== 'undefined' && (open
-    ? document.addEventListener('keydown', handleKeyPress)
-    : document.removeEventListener('keydown', handleKeyPress));
+  $: typeof document !== 'undefined' &&
+    (open
+      ? document.addEventListener('keydown', handleKeyPress)
+      : document.removeEventListener('keydown', handleKeyPress));
 
   const dispatch = createEventDispatcher();
 </script>
@@ -44,4 +45,5 @@
   <slot {toggle} />
 </div>
 
-<style src="./dropdown-shell.scss"></style>
+<style src="./dropdown-shell.scss">
+</style>

@@ -1,9 +1,9 @@
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 
-$border-radius: .5em;
+$border-radius: 0.5em;
 
 .showcase {
-  border: 1px solid transparentize($main, .75);
+  border: 1px solid transparentize($main, 0.75);
   border-radius: $border-radius;
   margin: 1em 0;
   display: grid;
@@ -12,23 +12,23 @@ $border-radius: .5em;
 
   :global {
     > .label {
-      padding: .5rem 1rem 0;
+      padding: 0.5rem 1rem 0;
 
       &.code {
         background: $code-bg;
       }
     }
 
-    > [slot="showcase"] {
+    > [slot='showcase'] {
       overflow-x: auto;
-      border: 0 solid transparentize($main, .75);
+      border: 0 solid transparentize($main, 0.75);
       border-bottom-width: 1px;
 
       &.padded {
         padding: 1em;
 
         > * {
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
       }
     }
@@ -36,9 +36,9 @@ $border-radius: .5em;
     > .copyable {
       overflow-x: auto;
       border-radius: $border-radius;
-      border: 0 solid transparentize($main, .75);
+      border: 0 solid transparentize($main, 0.75);
 
-      > [slot="source"] {
+      > [slot='source'] {
         height: 100%;
         background: #fcfcfc;
         display: flex;
@@ -58,14 +58,14 @@ $border-radius: .5em;
 
     :global {
       > .label {
-        padding-bottom: .5rem;
+        padding-bottom: 0.5rem;
 
         &.code {
           background: none;
         }
       }
 
-      > [slot="showcase"] {
+      > [slot='showcase'] {
         border-width: 1px;
         border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;

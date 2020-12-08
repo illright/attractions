@@ -16,7 +16,7 @@
   let input;
   let files;
   $: handleOutsideClearing(value);
-  $: value = multiple ? (files || []) : files && files[0];
+  $: value = multiple ? files || [] : files && files[0];
 
   function handleOutsideClearing(value) {
     if (value == null && input != null) {
@@ -42,7 +42,7 @@
       {multiple}
       {disabled}
       {...$$restProps}
-      on:change={(e) => dispatch('change', { value, nativeEvent: e })}
+      on:change={e => dispatch('change', { value, nativeEvent: e })}
     />
     <slot>{multiple ? 'select files' : 'select a file'}</slot>
   </label>
@@ -51,4 +51,5 @@
   {/if}
 </span>
 
-<style src="./file-input.scss"></style>
+<style src="./file-input.scss">
+</style>

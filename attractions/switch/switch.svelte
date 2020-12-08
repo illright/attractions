@@ -24,7 +24,10 @@
     type="checkbox"
     class={classes(inputClass)}
     {disabled}
-    on:change={(e) => dispatch('change', { value: e.target.checked, nativeEvent: e })}
+    on:change={e => dispatch('change', {
+        value: e.target.checked,
+        nativeEvent: e,
+      })}
     {...$$restProps}
   />
   <div class={classes('track', trackClass)}>
@@ -35,4 +38,5 @@
   {/if}
 </label>
 
-<style src="./switch.scss"></style>
+<style src="./switch.scss">
+</style>

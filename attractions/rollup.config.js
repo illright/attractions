@@ -37,8 +37,8 @@ export default [
   {
     input: 'index.js',
     output: [
-      { file: pkg.module, 'format': 'es' },
-      { file: pkg.main, 'format': 'umd', name },
+      { file: pkg.module, format: 'es' },
+      { file: pkg.main, format: 'umd', name },
     ],
     plugins: [
       svelte(),

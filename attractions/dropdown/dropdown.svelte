@@ -11,4 +11,5 @@
   <slot />
 </div>
 
-<style src="./dropdown.scss"></style>
+<style src="./dropdown.scss">
+</style>

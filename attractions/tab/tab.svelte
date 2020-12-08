@@ -25,13 +25,17 @@
     type="radio"
     class={classes(inputClass)}
     {disabled}
-    on:change={(e) => dispatch('change', { value, nativeEvent: e })}
-    on:click={(e) => dispatch('click', { nativeEvent: e })}
+    on:change={e => dispatch('change', { value, nativeEvent: e })}
+    on:click={e => dispatch('click', { nativeEvent: e })}
     {...$$restProps}
   />
-  <div class={classes('content', contentClass)} use:rippleEffect={{ disabled: noRipple || disabled }}>
+  <div
+    class={classes('content', contentClass)}
+    use:rippleEffect={{ disabled: noRipple || disabled }}
+  >
     <slot>{value}</slot>
   </div>
 </label>
 
-<style src="./tab.scss"></style>
+<style src="./tab.scss">
+</style>
