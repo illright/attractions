@@ -194,7 +194,7 @@ export function getCalendar(month, year, firstWeekday) {
 }
 
 export function applyDate(source, destination) {
-  if (destination == null) {
+  if (source == null || destination == null) {
     return source;
   }
   destination.setFullYear(source.getFullYear(), source.getMonth(), source.getDate());
@@ -202,7 +202,7 @@ export function applyDate(source, destination) {
 }
 
 export function applyTime(source, destination) {
-  if (destination == null) {
+  if (source == null || destination == null) {
     return source;
   }
   destination.setHours(source.getHours(), source.getMinutes(), source.getSeconds());
