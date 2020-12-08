@@ -9,7 +9,10 @@
     "docs:build": "yarn workspace attractions-docs build",
     "docs:export": "yarn workspace attractions-docs export",
     "docs:dev": "yarn workspace attractions-docs dev",
-    "build": "yarn workspace attractions build"
+    "build": "yarn workspace attractions build",
+    "postinstall": "is-ci || husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "workspaces": [
     "attractions",
@@ -33,7 +36,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-svelte3": "^2.7.3",
     "husky": "^5.0.4",
+    "is-ci": "^2.0.0",
     "lint-staged": "^10.2.11",
+    "pinst": "^2.1.1",
     "prettier": "2.1.2",
     "prettier-plugin-svelte": "^1.4.1",
     "stylelint": "^13.6.1",
