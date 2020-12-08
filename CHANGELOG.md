@@ -6,14 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ## [2.2.4] - 2020-12-08
 
-### Added
-
-- Prettier configuration! Contributing should become easier now.
-
 ### Fixed
 
 - DatePicker and TimePicker threw exceptions when you cleared them ([#170](https://github.com/illright/attractions/issues/170)).
 - The Autocomplete wasn't showing the dropdown ([#172](https://github.com/illright/attractions/issues/172)).
+- Pagination component styles weren't applied properly.
 
 ## [2.2.3] - 2020-11-21
 
