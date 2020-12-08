@@ -1,8 +1,19 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
+
+## [2.2.4] - 2020-12-08
+
+### Added
+
+- Prettier configuration! Contributing should become easier now.
+
+### Fixed
+
+- DatePicker and TimePicker threw exceptions when you cleared them ([#170](https://github.com/illright/attractions/issues/170)).
+- The Autocomplete wasn't showing the dropdown ([#172](https://github.com/illright/attractions/issues/172)).
 
 ## [2.2.3] - 2020-11-21
 
@@ -56,7 +67,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v2.2.3...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v2.2.4...HEAD
+[2.2.4]: https://github.com/illright/attractions/releases/tag/v2.2.4
 [2.2.3]: https://github.com/illright/attractions/releases/tag/v2.2.3
 [2.2.2]: https://github.com/illright/attractions/releases/tag/v2.2.2
 [2.2.1]: https://github.com/illright/attractions/releases/tag/v2.2.1
