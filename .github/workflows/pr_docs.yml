@@ -13,13 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download the docs artifact
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
+          workflow: pr_lint_build.yml
+          workflow_conclusion: success
           name: docs
 
       - name: Download the PR number artifact
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
+          workflow: pr_lint_build.yml
+          workflow_conclusion: success
           name: pr_number
 
       - name: Add PR number to env
