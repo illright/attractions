@@ -3,11 +3,12 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
-import alias from '@rollup/plugin-alias';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
-import autoPreprocess from 'svelte-preprocess';
 import pkg from './package.json';
+
+import alias from '@rollup/plugin-alias';
+import autoPreprocess from 'svelte-preprocess';
 import attractionsPkg from 'attractions/package.json';
 import sapperEnv from 'sapper-environment';
 import { mdsvex } from 'mdsvex';
@@ -70,8 +71,10 @@ export default {
       svelte({
         extensions: ['.svelte', '.svx', '.md'],
         preprocess,
-        dev,
-        hydratable: true,
+        compilerOptions: {
+          dev,
+          hydratable: true,
+        },
         emitCss: true,
       }),
       resolve({
@@ -127,9 +130,11 @@ export default {
       svelte({
         extensions: ['.svelte', '.svx', '.md'],
         preprocess,
-        generate: 'ssr',
-        hydratable: true,
-        dev,
+        compilerOptions: {
+          dev,
+          hydratable: true,
+          generate: 'ssr',
+        },
       }),
       resolve({
         dedupe: ['svelte'],
