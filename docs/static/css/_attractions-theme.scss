@@ -14,7 +14,3 @@ $shadow-raised: 0 2px 4px -1px transparentize(black, 0.8),
   0 3px 5px 0 transparentize(black, 0.86),
   0 1px 10px 0 transparentize(black, 0.88);
 /* stylelint-enable scss/dollar-variable-colon-space-after */
-
-:global {
-  @import 'global.scss';
-}

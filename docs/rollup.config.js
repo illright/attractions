@@ -28,6 +28,7 @@ const onwarn = (warning, onwarn) =>
   onwarn(warning);
 
 const commonSubstitutions = {
+  'process.env.NODE_ENV': JSON.stringify(mode),
   ...sapperEnv(),
   'process.latest_version': JSON.stringify(attractionsPkg.version),
   'process.license': JSON.stringify(attractionsPkg.license),
@@ -35,7 +36,11 @@ const commonSubstitutions = {
 
 const preprocess = [
   autoPreprocess({
-    scss: { includePaths: ['./static/css'] },
+    scss: {
+      includePaths: ['./static/css'],
+      renderSync: true,
+    },
+    sourceMap: dev,
   }),
   mdsvex({
     layout: {
@@ -65,7 +70,6 @@ export default {
     plugins: [
       replace({
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
         ...commonSubstitutions,
       }),
       svelte({
@@ -124,7 +128,6 @@ export default {
     plugins: [
       replace({
         'process.browser': false,
-        'process.env.NODE_ENV': JSON.stringify(mode),
         ...commonSubstitutions,
       }),
       svelte({
@@ -142,10 +145,7 @@ export default {
       commonjs(),
       pathAlias,
     ],
-    external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules ||
-        Object.keys(process.binding('natives'))
-    ),
+    external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
 
     preserveEntrySignatures: 'strict',
     onwarn,

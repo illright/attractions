@@ -1,5 +1,9 @@
 @import '_attractions-theme.scss';
 
+:global {
+  @import 'global.scss';
+}
+
 main {
   display: flex;
   margin: 1em 0 2em;
