@@ -14,7 +14,7 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "unpkg": "dist/custom-elements.js",
-  "sideEffects": false,
+  "sideEffects": ["./dist/custom-elements.js"],
   "keywords": [
     "svelte",
     "ui"
