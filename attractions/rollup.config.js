@@ -41,7 +41,12 @@ export default [
       { file: pkg.main, format: 'umd', name },
     ],
     plugins: [
-      svelte(),
+      svelte({
+        preprocess: autoPreprocess({
+          scss: { includePaths: ['./'] },
+        }),
+        emitCss: false,
+      }),
       resolve(),
       terser({
         module: true,
