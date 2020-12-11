@@ -57,7 +57,9 @@ export default [
     },
     plugins: [
       svelte({
-        customElement: true,
+        compilerOptions: {
+          customElement: true,
+        },
         preprocess: [
           prependTagOption(icons),
           autoPreprocess({
