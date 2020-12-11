@@ -51,7 +51,7 @@ export default [
   {
     input: 'index.js',
     output: {
-      file: 'dist/bundle.js',
+      file: 'dist/custom-elements.js',
       format: 'iife',
       name: 'attractions',
     },

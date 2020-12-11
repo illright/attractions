@@ -13,6 +13,7 @@
   "svelte": "index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
+  "unpkg": "dist/custom-elements.js",
   "sideEffects": false,
   "keywords": [
     "svelte",
