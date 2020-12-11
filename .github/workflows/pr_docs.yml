@@ -18,6 +18,7 @@ jobs:
           workflow: pr_lint_build.yml
           workflow_conclusion: success
           name: docs
+          path: ./docs
 
       - name: Download the PR number artifact
         uses: dawidd6/action-download-artifact@v2
