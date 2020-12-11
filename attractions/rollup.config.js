@@ -33,6 +33,13 @@ const icons = [
   'clock',
 ];
 
+const sveltePreprocess = autoPreprocess({
+  scss: {
+    includePaths: ['./'],
+    renderSync: true,
+  },
+});
+
 export default [
   {
     input: 'index.js',
@@ -42,9 +49,7 @@ export default [
     ],
     plugins: [
       svelte({
-        preprocess: autoPreprocess({
-          scss: { includePaths: ['./'] },
-        }),
+        preprocess: sveltePreprocess,
         emitCss: false,
       }),
       resolve(),
@@ -65,12 +70,7 @@ export default [
         compilerOptions: {
           customElement: true,
         },
-        preprocess: [
-          prependTagOption(icons),
-          autoPreprocess({
-            scss: { includePaths: ['./'] },
-          }),
-        ],
+        preprocess: [prependTagOption(icons), sveltePreprocess],
       }),
       resolve(),
       terser({

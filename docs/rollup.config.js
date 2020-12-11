@@ -145,7 +145,9 @@ export default {
       commonjs(),
       pathAlias,
     ],
-    external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
+    external: Object.keys(pkg.dependencies).concat(
+      require('module').builtinModules
+    ),
 
     preserveEntrySignatures: 'strict',
     onwarn,
