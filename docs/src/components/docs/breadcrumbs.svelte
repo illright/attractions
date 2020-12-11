@@ -1,7 +1,7 @@
 <script>
   import { Button } from 'attractions';
   import { HomeIcon } from 'svelte-feather-icons';
-  import capitalize from 'src/utils/capitalize.js';
+  import segmentToName from 'src/utils/segment-to-name.js';
 
   export let segment;
 </script>
@@ -12,7 +12,7 @@
       <HomeIcon size="20" />
     </Button>
     <div class="node">/</div>
-    <div class="node">{capitalize(segment)}</div>
+    <div class="node">{segmentToName(segment)}</div>
   {/if}
 </nav>
 
