@@ -15,7 +15,7 @@ An example usage is as follows:
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://unpkg.com/attractions/dist/bundle.js"></script>
+  <script src="https://unpkg.com/attractions"></script>
 </head>
 
 <body>
