@@ -1,9 +1,10 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import escapeRegExp from '../utils/escape-regexp.js';
 
   export let option;
   export let query = null;
-  $: matchRegex = query ? new RegExp(`(${query})`, 'ig') : null;
+  $: matchRegex = query ? new RegExp(`(${escapeRegExp(query)})`, 'ig') : null;
 
   function markMatch(string) {
     if (matchRegex == null) {
