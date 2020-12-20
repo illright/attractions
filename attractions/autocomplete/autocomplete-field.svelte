@@ -30,7 +30,7 @@
   let inputElement = null;
 
   function updateOptionGenerator(query) {
-    if (query != null && query.length >= minSearchLength) {
+    if (query.length >= minSearchLength) {
       optionGenerator = getOptions(query);
     } else {
       optionGenerator = null;
@@ -64,9 +64,13 @@
   function select(option) {
     selection.push(option);
     selection = selection;
-    searchQuery = null;
+    searchQuery = '';
     dispatch('change', { value: selection });
-    inputElement.focus();
+    if (selection.length < maxOptions) {
+      inputElement.focus();
+    } else {
+      focus = false;
+    }
   }
 
   const dispatch = createEventDispatcher();
