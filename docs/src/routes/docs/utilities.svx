@@ -13,6 +13,7 @@ A collection of helper functions that can be imported by name from `attractions/
 | **`classes`** | `(...args) => string` | Filters the falsey values from the given arguments and concatenates the rest in one string. |
 | **`getColorPickerStyle`** | `(hexColor: string) => string` | Returns the styles needed for displaying a radiobutton or a checkbox with the given color. |
 | **`dynamicTransition`** | `(node, { transition, options }) => Transition` | Create a transition that allows specifying a transition programmatically or disable it altogether. To be used with the [`transition`](https://svelte.dev/tutorial/transition) directive. |
+| **`escapeRegExp`** | `(string: string) => string` | A small function to escape the regexp characters in a string. Taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#Escaping). |
 | **`events`** | `(node, args: {name, handler}[]) => { destroy }` | An action to set up arbitrary event listeners dynamically. Can be used to define multiple handlers for the same event. |
 | **`formatFileSize`** | `(bytes: number) => string` | Format the file size in bytes to a human-readable format. |
 | **`formatFileType`** | `(filename: string) => string` | Format the file type from the extension. |
