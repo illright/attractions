@@ -9,6 +9,7 @@ relatedComponents:
   import { CheckboxGroup } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
 
   const items = [
     { value: 'couch_potato', label: 'Sitting lazily on the couch', checked: true, disabled: true },
@@ -123,5 +124,17 @@ Falsy values passed to classes will be disregarded.
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
 | **`change`** | `{ value, checked, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a prop, `checked` represents the input's state, and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The fill color of the checked checkbox. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The font of the checkbox's label. | `'Ubuntu'` |
+| **`$disabled`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The fill color of the disabled checkbox. | <ColorPreview value="#888888" /> |
+| **`$dark`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The background color of the checkbox hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |
 
 <style src="../../../../static/css/routes/docs/components/checkbox-group.scss"></style>

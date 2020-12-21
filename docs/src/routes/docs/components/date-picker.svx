@@ -104,8 +104,8 @@ The icon to use for switching to the next month in the calendar.
 | **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" /> |
 | **`$main`** | The color of the bottom border of the focused text field and calendar selection. | <ColorPreview value="#4300B0" /> |
 | **`$bold-font-weight`** | The bold font weight of the selected month in the calendar. | `500` |
-| **`$dark`**| The text color of the days in the calendar. | <ColorPreview value="#333333" /> |
-| **`$disabled`**| The text color of the days in the calendar outside the current month. | <ColorPreview value="#888888" /> |
-| **`$main-text`**| The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$dark`** <small>From [`Calendar`](./docs/components/calendar)</small> | The text color of the days in the calendar. | <ColorPreview value="#333333" /> |
+| **`$disabled`** <small>From [`Calendar`](./docs/components/calendar)</small> | The text color of the days in the calendar outside the current month. | <ColorPreview value="#888888" /> |
+| **`$main-text`** <small>From [`Calendar`](./docs/components/calendar)</small> | The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
 
 <style src="../../../../static/css/routes/docs/components/date-picker.scss"></style>

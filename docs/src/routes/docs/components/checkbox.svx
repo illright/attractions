@@ -98,14 +98,13 @@ Falsy values passed to classes will be disregarded.
 The label for the checkbox. By default, the slot is positioned to the right of the checkbox, but its placement can be adjusted with the ==`slotLeft`== property.
 
 
-
 ## SCSS Variables {#scss-variables}
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **`$main`** | The fill color of the checked checkbox. | <ColorPreview value="#4300B0" /> |
 | **`$font`** | The font of the checkbox's label. | `'Ubuntu'` |
-| **`$disabled`**| The fill color of the disabled checkbox. | <ColorPreview value="#888888" /> |
-| **`$dark`**| The background color of the checkbox hover signifier. | <ColorPreview value="#333333" /> |
-| **`$light-contrast`**| The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
-| **`$main-text`**| The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$disabled`** | The fill color of the disabled checkbox. | <ColorPreview value="#888888" /> |
+| **`$dark`** | The background color of the checkbox hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** | The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** | The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |

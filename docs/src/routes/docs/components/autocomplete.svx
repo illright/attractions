@@ -102,9 +102,13 @@ All slots of [==`AutocompleteField`==](./docs/components/autocomplete-field#slot
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** | The bottom border color of the selected text field. | <ColorPreview value="#4300B0" /> |
-| **`$font`** | The font of the text field's content. | `'Ubuntu'` |
+| **`$main`** | The bottom border color of the selected text field and the highlight color in options. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the text field's content and the options. | `'Ubuntu'` |
 | **`$textfield-border`** | The bottom border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
 | **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" bordered /> |
+| **`$light-contrast`** <small>From [`AutocompleteField`](./docs/components/autocomplete-field)</small> | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
+| **`$thin-font-weight`** <small>From [`AutocompleteField`](./docs/components/autocomplete-field)</small> | The thin font weight of the status messages like 'type X characters to search'. | `300` |
+| **`$bold-font-weight`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
+
 
 <style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>

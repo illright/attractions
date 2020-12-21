@@ -8,6 +8,7 @@ relatedComponents:
 <script>
   import { RadioGroup } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 
   const items = [
@@ -95,5 +96,17 @@ Falsy values passed to classes will be disregarded.
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
 | **`change`** | `{ value, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a prop and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The fill color of the selected radio button. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The font of the radio button's label. | `'Ubuntu'` |
+| **`$disabled`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The fill color of the disabled radio button. | <ColorPreview value="#888888" /> |
+| **`$dark`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The background color of the radio button hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The border color of an unselected radio button, or the fill color of a selected disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The color of the dot inside the selected radio button. | <ColorPreview value="#FFFFFF" bordered /> |
 
 <style src="../../../../static/css/routes/docs/components/radio-group.scss"></style>
