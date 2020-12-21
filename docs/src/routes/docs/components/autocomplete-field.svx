@@ -130,5 +130,8 @@ Defaults to a button equipped with an `IntersectionObserver` to trigger the gene
 | ---- | ----------- | ------- |
 | **`$light-contrast`** | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
 | **`$thin-font-weight`** | The thin font weight of the status messages like 'type X characters to search'. | `300` |
+| **`$main`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The background color on hover and the color of the highlight in the options. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The font of the autocomplete options. | `'Ubuntu'` |
+| **`$bold-font-weight`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
 
 <style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>
