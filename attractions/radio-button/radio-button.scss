@@ -33,48 +33,51 @@
     }
   }
 
-  > input:disabled + .selector {
-    cursor: not-allowed;
-    background-color: lighten($light-contrast, 6%);
+  > input:checked + .selector::before {
+    content: '';
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input:disabled + .selector {
+  cursor: not-allowed;
+  background-color: lighten($light-contrast, 6%);
+}
+
+input:checked + .selector {
+  background-color: $main;
+  border-color: $main;
+
+  &::before {
+    background-color: $main-text;
+  }
+}
+
+input:disabled:checked + .selector {
+  background-color: $disabled;
+  border-color: lighten($disabled, 4%);
+}
+
+.radio:hover {
+  :not(:focus):not(:disabled) + .selector::after {
+    background-color: transparentize($dark, 0.95);
   }
 
-  > input:checked + .selector {
-    background-color: $main;
-    border-color: $main;
-
-    &::before {
-      content: '';
-      width: 0.5em;
-      height: 0.5em;
-      background-color: $main-text;
-      border-radius: 50%;
-      left: 50%;
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
+  :not(:focus):checked + .selector::after {
+    background-color: transparentize($main, 0.95);
   }
+}
 
-  > input:disabled:checked + .selector {
-    background-color: $disabled;
-    border-color: lighten($disabled, 4%);
-  }
+input:focus + .selector::after {
+  background-color: transparentize($dark, 0.875);
+}
 
-  &:hover {
-    > input:not(:disabled) + .selector::after {
-      background-color: transparentize($dark, 0.95);
-    }
-
-    > input:checked + .selector::after {
-      background-color: transparentize($main, 0.95);
-    }
-  }
-
-  > input:focus + .selector::after {
-    background-color: transparentize($dark, 0.875);
-  }
-
-  > input:focus:checked + .selector::after {
-    background-color: transparentize($main, 0.875);
-  }
+input:focus:checked + .selector::after {
+  background-color: transparentize($main, 0.875);
 }
