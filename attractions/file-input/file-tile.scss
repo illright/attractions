@@ -23,6 +23,8 @@
 
   .filename {
     align-self: end;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .properties {
