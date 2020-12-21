@@ -14,7 +14,9 @@
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "unpkg": "dist/custom-elements.js",
-  "sideEffects": ["./dist/custom-elements.js"],
+  "sideEffects": [
+    "./dist/custom-elements.js"
+  ],
   "keywords": [
     "svelte",
     "ui"
@@ -43,13 +45,14 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.30.0",
     "stylelint": "^13.6.1",
-    "svelte": "^3.24.0",
+    "svelte": "^3.29.1",
     "svelte-preprocess": "^4.5.2",
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
     "postcss": ">=7 <9",
     "sass": "^1.30.0",
+    "svelte": "^3.29.1",
     "svelte-preprocess": "^4.0.10"
   }
 }
