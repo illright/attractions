@@ -11,7 +11,7 @@
 </script>
 
 <div class="file-tile">
-  <div class="filename">{file.name}</div>
+  <div class="filename" title={file.name}>{file.name}</div>
   <div class="properties">
     {formatFileSize(file.size)}
     •
