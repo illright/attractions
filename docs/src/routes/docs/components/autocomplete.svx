@@ -95,26 +95,7 @@ Falsy values passed to classes will be disregarded.
 
 ## Slots {#slots}
 
-### `too-many-options` slot
-
-The message to show in the dropdown when the maximum amount of selected options has been reached.
-
-### `not-enough-input` slot
-
-The message to show in the dropdown when the minimum amount of characters to type for searching hasn't been reached.
-
-### `loading-options` slot
-
-The loading state of the dropdown while the next promise with suggestions is resolving.
-
-### `more-options` slot
-
-The element to display at the end of a list to trigger the option generator.
-Defaults to a button equipped with an `IntersectionObserver` to trigger the generator whenever it scrolls into view.
-
-| Prop Name | Type | Description |
-| --------- | ---- | ----------- |
-| **`loadMoreOptions`** | `Function` | A callback to trigger the option generator. |
+All slots of [==`AutocompleteField`==](./docs/components/autocomplete-field#slots) are available here with the same names.
 
 
 ## SCSS Variables {#scss-variables}
