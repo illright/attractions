@@ -4,6 +4,26 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- Autocomplete now supports the same slots as AutocompleteField.
+- A new utility `escapeRegExp` is now available in utils.
+
+### Changed
+
+- Dart Sass (`sass`) is now used instead of Node Sass (`node-sass`). Consider replacing (simply removing one and installing the other).
+- The pure-JS bundle with custom elements is renamed (`dist/bundle.js` → `dist/custom-elements.js`) and available directly through Unpkg.
+- Svelte 3.29.1 and higher is now required to support slot forwarding.
+
+### Fixed
+
+- The pure-JS bundles now contain styles (so that they are at least not useless).
+- The Autocomplete component doesn't throw an error when regex characters are written into it ([#184](https://github.com/illright/attractions/issues/184)).
+- The Autocomplete options weren't showing after selecting something when minimal search length was set to 0 ([#183](https://github.com/illright/attractions/issues/183)).
+- The FileTile component is now correctly clipping long filenames ([#125](https://github.com/illright/attractions/issues/125)).
+
 ## [2.2.4] - 2020-12-08
 
 ### Fixed
