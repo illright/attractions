@@ -67,6 +67,7 @@
     searchQuery = '';
     dispatch('change', { value: selection });
     if (selection.length < maxOptions) {
+      promises = promises;
       inputElement.focus();
     } else {
       focus = false;
