@@ -20,7 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Fixed
 
 - The pure-JS bundles now contain styles (so that they are at least not useless).
-- The Autocomplete component doesn't throw an error when regex characters are written into it ([#184](https://github.com/illright/attractions/issues/184)).
+- The Autocomplete component now doesn't throw an error when regex characters are written into it ([#184](https://github.com/illright/attractions/issues/184)).
 - The Autocomplete options weren't showing after selecting something when minimal search length was set to 0 ([#183](https://github.com/illright/attractions/issues/183)).
 - The FileTile component is now correctly clipping long filenames ([#125](https://github.com/illright/attractions/issues/125)).
 - The DatePicker was unexpectedly closing when a certain month change would happen.
