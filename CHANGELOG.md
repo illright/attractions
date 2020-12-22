@@ -4,7 +4,7 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [2.3.0] - 2020-12-22
 
 ### Added
 
@@ -85,7 +85,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v2.2.4...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v2.3.0...HEAD
+[2.3.0]: https://github.com/illright/attractions/releases/tag/v2.3.0
 [2.2.4]: https://github.com/illright/attractions/releases/tag/v2.2.4
 [2.2.3]: https://github.com/illright/attractions/releases/tag/v2.2.3
 [2.2.2]: https://github.com/illright/attractions/releases/tag/v2.2.2
