@@ -67,11 +67,15 @@
     searchQuery = '';
     dispatch('change', { value: selection });
     if (selection.length < maxOptions) {
-      promises = promises;
       inputElement.focus();
     } else {
       focus = false;
     }
+  }
+
+  function focusInputElement() {
+    promises = promises;
+    focus = true;
   }
 
   const dispatch = createEventDispatcher();
@@ -85,7 +89,7 @@
   <input
     bind:this={inputElement}
     bind:value={searchQuery}
-    on:focus={() => (focus = true)}
+    on:focus={focusInputElement}
     {...$$restProps}
   />
   <Dropdown>
