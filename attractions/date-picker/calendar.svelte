@@ -56,7 +56,7 @@
         <Button
           title={(datesEqual(day.value, today) && 'Today') || null}
           on:click={e => {
-            e.stopPropagation();
+            e.detail.nativeEvent.stopPropagation();
             dispatch('day-select', day.value);
           }}
         >
