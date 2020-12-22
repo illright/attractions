@@ -8,6 +8,7 @@ relatedComponents:
 <script>
   import { Tabs } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 
   let selectedTab = 'Main dishes';
@@ -68,3 +69,14 @@ Falsy values passed to classes will be disregarded.
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
 | **`change`** | `{ value, nativeEvent }` | Fired when selecting a different tab. The `value` contains the tab's `value` (from the `items` prop) and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the color of the ripple background, border color of the selected tab, and text color. | <ColorPreview value="#4300B0" /> |
+| **`$disabled`** <small>From [`Tab`](./docs/components/tab)</small> | The text color of disabled tabs. | <ColorPreview value="#888888" /> |
+| **`$off-state`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the background color of the tab when focused or hovered on and the default border color. | <ColorPreview value="#AAAAAA" /> |
+| **`$font`** <small>From [`Tab`](./docs/components/tab)</small> | The font family of the content text. | `'Ubuntu'` |
+| **`$bold-font-weight`** <small>From [`Tab`](./docs/components/tab)</small> | The font weight of the content text. | `500` |

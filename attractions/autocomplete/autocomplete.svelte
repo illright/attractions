@@ -46,7 +46,12 @@
     {optionComponent}
     {...$$restProps}
     on:change
-  />
+  >
+    <slot name="too-many-options" slot="too-many-options" />
+    <slot name="not-enough-input" slot="not-enough-input" />
+    <slot name="loading-options" slot="loading-options" />
+    <slot name="more-options" slot="more-options" />
+  </AutocompleteField>
 </div>
 
 <style src="./autocomplete.scss">

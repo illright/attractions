@@ -95,9 +95,9 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$chip-bg`** | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
-| **`$chip-fg`** | The text color of a chip. | <ColorPreview value="#656565" /> |
-| **`$chip-radius`** | The curvature radius of a chip. | `1.5625em` |
-| **`$font`** | The font of the chip text. | `'Ubuntu'` |
-| **`$main`** | The border color of outline chips and the selection color. | <ColorPreview value="#4300B0" /> |
-| **`$bold-font-weight`** | The bold font weight of the chips. | `500` |
+| **`$chip-bg`** <small>From [`CheckboxChip`](./docs/components/checkbox-chip)</small> | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** <small>From [`CheckboxChip`](./docs/components/checkbox-chip)</small> | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** <small>From [`CheckboxChip`](./docs/components/checkbox-chip)</small> | The curvature radius of a chip. | `1.5625em` |
+| **`$font`** <small>From [`CheckboxChip`](./docs/components/checkbox-chip)</small> | The font of the chip text. | `'Ubuntu'` |
+| **`$main`** <small>From [`CheckboxChip`](./docs/components/checkbox-chip)</small> | The border color of outline chips and the selection color. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** <small>From [`CheckboxChip`](./docs/components/checkbox-chip)</small> | The bold font weight of the chips. | `500` |

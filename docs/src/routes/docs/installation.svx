@@ -43,7 +43,7 @@ yarn add --dev attractions
     <CopyableCode>
 
 ```sh
-npm install --save-dev svelte-preprocess node-sass postcss
+npm install --save-dev svelte-preprocess sass postcss
 ```
 
     </CopyableCode>
@@ -51,7 +51,7 @@ npm install --save-dev svelte-preprocess node-sass postcss
     <CopyableCode>
 
 ```sh
-yarn add --dev svelte-preprocess node-sass postcss
+yarn add --dev svelte-preprocess sass postcss
 ```
 
     </CopyableCode>

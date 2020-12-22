@@ -19,11 +19,17 @@ relatedComponents:
 
 The wrapper element creating a context to show snackbars.
 
-The main piece of functionality is the `showSnackbar` function, which you can access through a variety of methods described below. This function accepts an object with the following fields:
+The main piece of functionality is the `showSnackbar` function. This function accepts an object with the following fields:
 
 - `component` (default: [==`Snackbar`==](./docs/components/snackbar)) – the component to render as a snackbar;
 - `props` (default: `{}`) – the props to be passed to the snackbar. The component also injects the `closeCallback` prop into this object, which is a function that can be called to force-close the snackbar;
 - `duration` (default: `4000`) – the duration to show the snackbar in milliseconds.
+
+You can obtain this function in three different ways:
+
+- **If you need it in the `<script>` of the component that has `SnackbarContainer` as a child**: <br /> Get ahold of the `SnackbarContainer` instance with [`bind:this`](https://svelte.dev/docs#bind_component) and access the `showSnackbar` property on the instance.
+- **If you need to pass it in a property to the immediate children**: <br /> Use an exposed slot property with `let:showSnackbar`.
+- **If you need to access it deep in the component tree**: <br /> Use [`getContext`](https://svelte.dev/docs#getContext) inside a child of this component.
 
 <RelatedComponents components={relatedComponents} />
 

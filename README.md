@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/illright/attractions/master/docs/static/logo-192.png" alt="Logo" align="right" width="80" />
+<img src="https://raw.githubusercontent.com/illright/attractions/master/docs/static/android-chrome-192x192.png" alt="Logo" align="right" width="80" />
 
 # Attractions
 

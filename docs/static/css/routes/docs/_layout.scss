@@ -22,4 +22,9 @@ main {
     margin-top: 2em;
     flex: 1;
   }
+
+  :global small {
+    display: block;
+    white-space: nowrap;
+  }
 }
