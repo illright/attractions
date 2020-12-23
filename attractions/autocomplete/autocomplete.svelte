@@ -72,19 +72,16 @@
         Loading...
       </li>
     </slot>
-    <div slot="more-options" let:loadMoreOptions>
+    <li class="more-options" slot="more-options" let:loadMoreOptions>
       <slot name="more-options" {loadMoreOptions}>
-        <li
-          class="more-options"
-          use:callOnSight={{ callback: loadMoreOptions }}
-        >
+        <div use:callOnSight={{ callback: loadMoreOptions }}>
           <Button on:click={loadMoreOptions}>
             <MoreHorizontal />
             load more options
           </Button>
-        </li>
+        </div>
       </slot>
-    </div>
+    </li>
   </AutocompleteField>
 </div>
 
