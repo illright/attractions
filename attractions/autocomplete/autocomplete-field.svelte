@@ -57,7 +57,7 @@
     promises = promises;
 
     if (click != null) {
-      click.stopPropagation();
+      click.detail.nativeEvent.stopPropagation();
     }
   }
 
