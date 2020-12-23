@@ -73,6 +73,11 @@
     }
   }
 
+  function focusInputElement() {
+    promises = promises;
+    focus = true;
+  }
+
   const dispatch = createEventDispatcher();
 </script>
 
@@ -84,7 +89,7 @@
   <input
     bind:this={inputElement}
     bind:value={searchQuery}
-    on:focus={() => (focus = true)}
+    on:focus={focusInputElement}
     {...$$restProps}
   />
   <Dropdown>
