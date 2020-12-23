@@ -5,7 +5,11 @@
   import AutocompleteField from './autocomplete-field.svelte';
   import AutocompleteOption from './autocomplete-option.svelte';
   import X from '../dialog/x.svelte';
+  import Loading from '../loading/loading.svelte';
+  import MoreHorizontal from './more-horizontal.svelte';
   import classes from '../utils/classes.js';
+  import s from '../utils/plural-s.js';
+  import callOnSight from '../utils/call-on-sight.js';
 
   let _class = null;
   export { _class as class };
@@ -47,10 +51,40 @@
     {...$$restProps}
     on:change
   >
-    <slot name="too-many-options" slot="too-many-options" />
-    <slot name="not-enough-input" slot="not-enough-input" />
-    <slot name="loading-options" slot="loading-options" />
-    <slot name="more-options" slot="more-options" />
+    <slot name="too-many-options" slot="too-many-options">
+      <div class="notice">
+        Cannot select more than
+        {maxOptions}
+        option{s(maxOptions)}
+      </div>
+    </slot>
+    <slot name="not-enough-input" slot="not-enough-input">
+      <div class="notice">
+        Type
+        {minSearchLength}
+        character{s(minSearchLength)}
+        to search
+      </div>
+    </slot>
+    <slot name="loading-options" slot="loading-options">
+      <li class="loading-options">
+        <Loading />
+        Loading...
+      </li>
+    </slot>
+    <div slot="more-options" let:loadMoreOptions>
+      <slot name="more-options" {loadMoreOptions}>
+        <li
+          class="more-options"
+          use:callOnSight={{ callback: loadMoreOptions }}
+        >
+          <Button on:click={loadMoreOptions}>
+            <MoreHorizontal />
+            load more options
+          </Button>
+        </li>
+      </slot>
+    </div>
   </AutocompleteField>
 </div>
 
