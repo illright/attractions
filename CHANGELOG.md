@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.3.1] - 2020-12-23
+
+### Fixed
+
+- The autocomplete wasn't filtering out selected options without typing ([#195](https://github.com/illright/attractions/issues/195), thanks to [@sallaben](https://github.com/sallaben) for reporting and fixing).
+- The slot forwarding of Autocomplete was breaking slot defaults.
+
 ## [2.3.0] - 2020-12-22
 
 ### Added
@@ -52,7 +59,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - [`<DropdownShell>`](https://illright.github.io/attractions/docs/components/dropdown-shell): Now closes the dropdown when pressing <kbd>Enter</kbd> or <kbd>Escape</kbd> buttons.
 - [`<TimePicker>`](https://illright.github.io/attractions/docs/components/time-picker): The currently selected value will now be highlighted in the dropdown. Labels are customizable as slots.
 
-(Thanks to [@RikuVan](https://github.com/RikuVan) for these 2 contributions - [#150](https://github.com/illright/attractions/pull/150))
+(Thanks to [@RikuVan](https://github.com/RikuVan) for these 2 contributions – [#150](https://github.com/illright/attractions/pull/150))
 
 ## [2.2.0] - 2020-11-10
 
@@ -85,7 +92,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v2.3.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v2.3.1...HEAD
+[2.3.1]: https://github.com/illright/attractions/releases/tag/v2.3.1
 [2.3.0]: https://github.com/illright/attractions/releases/tag/v2.3.0
 [2.2.4]: https://github.com/illright/attractions/releases/tag/v2.2.4
 [2.2.3]: https://github.com/illright/attractions/releases/tag/v2.2.3
