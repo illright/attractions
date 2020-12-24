@@ -1,9 +1,9 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_mixins';
 
-$hover-color: mix(white, $main, 60%);
-$selected-color: mix(white, $main, 20%);
+$hover-color: color.mix(white, vars.$main, 60%);
+$selected-color: color.mix(white, vars.$main, 20%);
 
 .star-rating {
   display: inline-flex;
@@ -13,29 +13,29 @@ $selected-color: mix(white, $main, 20%);
   fill: none;
 
   &:focus-within {
-    background: transparentize($main, 0.95);
+    background: color.adjust(vars.$main, $alpha: -0.95);
   }
 
   input {
-    @include hide-accessible;
+    @include mixins.hide-accessible;
   }
 
   label {
     padding: 0.5em;
     border-radius: 50%;
     cursor: pointer;
-    color: $off-state;
+    color: vars.$off-state;
 
     :global svg {
       display: block;
     }
 
     :global .ripple {
-      background: transparentize($main, 0.9);
+      background: color.adjust(vars.$main, $alpha: -0.9);
     }
 
     &:hover {
-      background: transparentize($main, 0.95);
+      background: color.adjust(vars.$main, $alpha: -0.95);
       color: $hover-color;
     }
 
@@ -47,7 +47,7 @@ $selected-color: mix(white, $main, 20%);
   input:disabled + label {
     cursor: not-allowed;
     background: none;
-    color: $disabled;
+    color: vars.$disabled;
   }
 
   input:checked + label,

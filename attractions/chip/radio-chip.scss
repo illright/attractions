@@ -1,10 +1,10 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
-@import './chip.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../mixins';
+@use 'chip';
 
 .input-chip > input {
-  @include hide-accessible;
+  @include mixins.hide-accessible;
 }
 
 .chip {
@@ -13,57 +13,57 @@
   -webkit-touch-callout: none;
 
   :global .ripple {
-    background: transparentize($main, 0.9);
+    background: color.adjust(vars.$main, $alpha: -0.9);
   }
 
   &.outline {
-    border-color: opacify($chip-bg, 0.1);
+    border-color: color.adjust(vars.$chip-bg, $alpha: 0.1);
   }
 }
 
 input + .chip {
   &:hover {
-    background: opacify($chip-bg, 0.05);
+    background: color.adjust(vars.$chip-bg, $alpha: 0.05);
   }
 
   &.outline:hover {
-    background: transparentize($chip-bg, 0.02);
+    background: color.adjust(vars.$chip-bg, $alpha: -0.02);
   }
 }
 
 input:disabled + .chip {
-  background: transparentize($chip-bg, 0.05);
-  color: lighten($chip-fg, 10%);
+  background: color.adjust(vars.$chip-bg, $alpha: -0.05);
+  color: color.scale(vars.$chip-fg, $lightness: 10%);
   cursor: not-allowed;
 
   &:hover {
-    background: transparentize($chip-bg, 0.05);
+    background: color.adjust(vars.$chip-bg, $alpha: -0.05);
   }
 }
 
 input:focus + .chip {
-  background: opacify($chip-bg, 0.1);
+  background: color.adjust(vars.$chip-bg, $alpha: 0.1);
 
   &.outline {
-    background: opacify($chip-bg, 0.02);
+    background: color.adjust(vars.$chip-bg, $alpha: 0.02);
   }
 }
 
 input:checked + .chip {
-  background: transparentize($main, 0.88);
-  color: $main;
+  background: color.adjust(vars.$main, $alpha: -0.88);
+  color: vars.$main;
 
   &.outline {
-    background: transparentize($main, 0.94);
-    color: $main;
-    border-color: $main;
+    background: color.adjust(vars.$main, $alpha: -0.94);
+    color: vars.$main;
+    border-color: vars.$main;
   }
 }
 
 input:focus:checked + .chip {
-  background-color: transparentize($main, 0.75);
+  background-color: color.adjust(vars.$main, $alpha: -0.75);
 
   &.outline {
-    background-color: transparentize($main, 0.88);
+    background-color: color.adjust(vars.$main, $alpha: -0.88);
   }
 }

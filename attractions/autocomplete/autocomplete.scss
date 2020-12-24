@@ -1,41 +1,34 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_appearances';
+@use './_slot-styles';
 
 .autocomplete {
-  padding: 0.25em 0.625em 0.0625em;
-  box-sizing: border-box;
-  border-bottom: 0.0625em solid $textfield-border;
-  background-color: $textfield-bg;
-  border-top-left-radius: 0.375em;
-  border-top-right-radius: 0.375em;
-  width: 100%;
+  @include appearances.text-field;
+
+  padding-top: 0.25em;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 
-  &:hover {
-    background-color: darken($textfield-bg, 3%);
+  &.focus {
+    @include appearances.text-field-focused;
   }
 
-  &.focus {
-    background-color: darken($textfield-bg, 8%);
-    border-bottom-width: 0.125em;
-    border-color: lighten($main, 4%);
-    padding-bottom: 0;
+  &[disabled] {
+    @include appearances.text-field-disabled;
   }
 
   :global .autocomplete-field {
     flex: 1;
 
     input {
+      @include appearances.text-field-input;
+
       border: 0;
       background: none;
-      outline: none;
       min-width: 13em;
-      height: 2.8em;
-      font-family: $font;
       width: 100%;
-      font-size: 1em;
     }
   }
 
@@ -57,30 +50,7 @@
   }
 }
 
-// Copied from autocomplete-field.scss to enable slot forwarding
-.notice {
-  font-size: 0.9em;
-  margin: 0.5em;
-  font-weight: $thin-font-weight;
-}
-
-.loading-options {
-  display: flex;
-  align-items: center;
-  font-size: 0.95em;
-  margin: 0.5em 1.2em;
-
-  :global .spinner {
-    margin: 0.3em 0.7em 0.3em 0;
-  }
-}
-
-.more-options {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  list-style: none;
-
-  :global svg {
-    margin-right: 0.5em;
-  }
-}
+// Included from autocomplete-field.scss to enable slot forwarding
+@include slot-styles.notice;
+@include slot-styles.loading-options;
+@include slot-styles.more-options;

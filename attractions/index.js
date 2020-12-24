@@ -72,3 +72,5 @@ export { default as Badge } from './badge/badge.svelte';
 export { default as Pagination } from './pagination/pagination.svelte';
 
 export * as utils from './utils';
+
+export { default as makeAttractionsImporter } from './importer.js';

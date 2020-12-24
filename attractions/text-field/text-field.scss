@@ -1,5 +1,6 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_appearances';
 
 .text-field {
   input[type='search']::-webkit-search-cancel-button {
@@ -9,56 +10,29 @@
     width: 1.25em;
     cursor: pointer;
     border-radius: 50%;
-
-    @if variable-exists(x-icon) {
-      appearance: none;
-      border: 0.1875em solid transparent;
-      background-image: url($x-icon);
-      background-size: contain;
-    }
+    appearance: none;
+    border: 0.1875em solid transparent;
+    background-image: url(vars.$x-icon);
+    background-size: contain;
 
     &:hover {
-      background-color: transparentize($dark, 0.9);
+      background-color: color.adjust(vars.$dark, $alpha: -0.9);
     }
   }
 
   input,
   textarea {
-    outline: none;
-    padding: 0 0.625em 0.0625em;
-    font-family: $font;
-    font-size: 1rem;
-    font-weight: $thin-font-weight;
-    box-sizing: border-box;
-    border: 0 solid $textfield-border; // to disable the global border
-    border-bottom-width: 0.0625em;
-    background-color: $textfield-bg;
-    border-top-left-radius: 0.375em;
-    border-top-right-radius: 0.375em;
-    width: 100%;
-    height: 2.8em;
-
-    &:hover {
-      background-color: darken($textfield-bg, 3%);
-    }
-
-    &:hover:disabled {
-      background-color: lighten($textfield-bg, 1%);
-    }
+    @include appearances.text-field;
+    @include appearances.text-field-input;
 
     &:focus {
-      background-color: darken($textfield-bg, 8%);
-      border-bottom-width: 0.125em;
-      border-color: lighten($main, 4%);
-      padding-bottom: 0;
+      @include appearances.text-field-focused;
     }
   }
 
   input:disabled,
   textarea:disabled {
-    background-color: lighten($textfield-bg, 1%);
-    border-color: transparentize($dark, 0.7);
-    color: $disabled;
+    @include appearances.text-field-disabled;
   }
 
   textarea {
@@ -83,7 +57,7 @@
 
       > :global .item {
         left: 0.625em;
-        font-weight: $bold-font-weight;
+        font-weight: vars.$bold-font-weight;
       }
     }
 
@@ -100,18 +74,18 @@
     }
 
     > :global .item {
-      color: $textfield-item;
+      color: vars.$textfield-item;
       height: 1.1em;
       position: absolute;
       top: 0.85em;
     }
 
     > input:focus + :global .item {
-      color: $main;
-      stroke: $main;
+      color: vars.$main;
+      stroke: vars.$main;
 
       :global svg {
-        stroke: $main;
+        stroke: vars.$main;
       }
     }
 
@@ -135,7 +109,7 @@
     }
 
     input:invalid + :global svg.item {
-      stroke: $danger;
+      stroke: vars.$danger;
     }
   }
 
@@ -144,9 +118,9 @@
     margin-top: 0.65em;
 
     label {
-      font-family: $font;
+      font-family: vars.$font;
       background-color: #fff;
-      color: $textfield-border;
+      color: vars.$textfield-border;
       padding: 0 0.25em;
       position: absolute;
       top: 0;
@@ -165,66 +139,66 @@
       }
 
       :global svg {
-        stroke: $disabled;
+        stroke: vars.$disabled;
       }
 
       > input:focus ~ :global .item {
-        color: $main;
+        color: vars.$main;
       }
     }
 
     input {
       border-radius: 1.5625em;
-      border: 1px solid $textfield-border;
+      border: 1px solid vars.$textfield-border;
       background-color: transparent;
       padding: 0 1.4em;
 
       &:hover {
-        border-color: transparentize(black, 0.3);
+        border-color: color.adjust(black, $alpha: -0.3);
 
         + label {
-          color: transparentize(black, 0.3);
+          color: color.adjust(black, $alpha: -0.3);
         }
       }
 
       &:focus {
-        border-color: $main;
+        border-color: vars.$main;
 
         + label {
-          color: $main;
+          color: vars.$main;
         }
       }
 
       &:invalid {
-        border-color: transparentize($danger, 0.3);
+        border-color: color.adjust(vars.$danger, $alpha: -0.3);
 
         + label {
-          color: transparentize($danger, 0.3);
+          color: color.adjust(vars.$danger, $alpha: -0.3);
         }
 
         ~ :global svg.item {
-          stroke: transparentize($danger, 0.3);
+          stroke: color.adjust(vars.$danger, $alpha: -0.3);
         }
 
         &:focus ~ :global svg.item {
-          stroke: transparentize($danger, 0.3);
+          stroke: color.adjust(vars.$danger, $alpha: -0.3);
         }
       }
     }
 
     input:focus ~ :global svg.item {
-      stroke: $main;
+      stroke: vars.$main;
     }
   }
 
   input:invalid {
     box-shadow: none;
-    border-bottom-color: $danger;
-    background: $textfield-bg-error;
+    border-bottom-color: vars.$danger;
+    background: vars.$textfield-bg-error;
   }
 
   input:not(.outline):invalid {
-    background-color: $textfield-bg-error;
+    background-color: vars.$textfield-bg-error;
   }
 
   :-moz-ui-invalid {
@@ -233,8 +207,8 @@
 
   > .error {
     font-size: 0.8rem;
-    color: transparentize($danger, 0.3);
-    font-weight: $bold-font-weight;
+    color: color.adjust(vars.$danger, $alpha: -0.3);
+    font-weight: vars.$bold-font-weight;
   }
 
   &.no-spinner > input[type='number'] {

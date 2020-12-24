@@ -1,6 +1,5 @@
 /* Adapted from SpinKit by @tobiasahlin: https://tobiasahlin.com/spinkit/ */
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 $dot-size: 0.4em;
 
@@ -8,7 +7,7 @@ $dot-size: 0.4em;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $main;
+  color: vars.$main;
 
   > div {
     width: $dot-size;

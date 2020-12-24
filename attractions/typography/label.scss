@@ -1,10 +1,9 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .label {
   text-transform: uppercase;
-  color: $main;
-  font-weight: $bold-font-weight;
+  color: vars.$main;
+  font-weight: vars.$bold-font-weight;
   font-size: 0.8em;
 
   &.small {

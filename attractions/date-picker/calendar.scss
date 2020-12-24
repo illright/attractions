@@ -1,5 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
 
 $day-size: 2.25rem;
 $day-gap: 0.0625rem;
@@ -37,7 +37,7 @@ $side-padding: 1rem;
     > :global .btn {
       font-weight: 400;
       font-size: 0.9em;
-      color: $dark;
+      color: vars.$dark;
       justify-content: center;
       margin: $day-gap;
       z-index: 2;
@@ -46,20 +46,20 @@ $side-padding: 1rem;
     }
 
     &.today > :global .btn {
-      color: $main;
+      color: vars.$main;
     }
 
     &.selected > :global .btn {
-      background-color: desaturate(lighten($main, 10%), 20%);
-      color: $main-text;
+      background-color: color.scale(vars.$main, $lightness: 10%, $saturation: -20%);
+      color: vars.$main-text;
     }
 
     &.outside > :global .btn {
-      color: $disabled;
+      color: vars.$disabled;
     }
 
     &.in-range::before {
-      background-color: transparentize($main, 0.75);
+      background-color: color.adjust(vars.$main, $alpha: -0.75);
       content: '';
       height: $day-size;
       position: absolute;
@@ -70,7 +70,7 @@ $side-padding: 1rem;
     }
 
     &.outside.selected > :global .btn {
-      color: $main-text;
+      color: vars.$main-text;
     }
 
     &.start {

@@ -1,6 +1,6 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_mixins';
 
 .file-input {
   display: inline-flex;
@@ -17,22 +17,22 @@
 }
 
 label {
-  font-family: $font;
-  font-weight: $bold-font-weight;
-  color: $main;
+  font-family: vars.$font;
+  font-weight: vars.$bold-font-weight;
+  color: vars.$main;
   margin-right: 0.5em;
   padding: 0.8em 1.1em;
-  border-radius: $button-radius;
+  border-radius: vars.$button-radius;
   display: flex;
   align-items: center;
   cursor: pointer;
 
   input {
-    @include hide-accessible;
+    @include mixins.hide-accessible;
   }
 
   :global .ripple {
-    background: transparentize($main, 0.9);
+    background: color.adjust(vars.$main, $alpha: -0.9);
   }
 
   &::-moz-focus-inner {
@@ -40,24 +40,24 @@ label {
   }
 
   &:hover {
-    background: transparentize($main, 0.95);
+    background: color.adjust(vars.$main, $alpha: -0.95);
   }
 
   &:focus-within {
-    background-color: transparentize($main, 0.88);
+    background-color: color.adjust(vars.$main, $alpha: -0.88);
   }
 
   &.disabled {
-    color: $disabled;
+    color: vars.$disabled;
     background: transparent;
     cursor: default;
 
     :global .icon {
-      stroke: $disabled;
+      stroke: vars.$disabled;
     }
   }
 
   :global .icon {
-    stroke: $main;
+    stroke: vars.$main;
   }
 }

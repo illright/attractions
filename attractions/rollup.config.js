@@ -35,7 +35,11 @@ const icons = [
 
 const sveltePreprocess = autoPreprocess({
   scss: {
-    includePaths: ['./'],
+    importer(url, prev) {
+      if (url === 'node_modules/attractions/_variables') {
+        return { file: path.resolve('_variables.scss') };
+      }
+    },
     renderSync: true,
   },
 });

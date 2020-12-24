@@ -1,26 +1,25 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .dot {
   width: 0.625em;
   height: 0.625em;
-  background: $main;
+  background: vars.$main;
   border-radius: 50%;
 
   &.info {
-    background: $info;
+    background: vars.$info;
   }
 
   &.attention {
-    background: $attention;
+    background: vars.$attention;
   }
 
   &.success {
-    background: $success;
+    background: vars.$success;
   }
 
   &.danger {
-    background: $danger;
+    background: vars.$danger;
   }
 
   &.small {

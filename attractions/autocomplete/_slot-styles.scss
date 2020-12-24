@@ -1,0 +1,34 @@
+@use 'node_modules/attractions/_variables' as vars;
+
+@mixin notice {
+  .notice {
+    font-size: 0.9em;
+    margin: 0.5em;
+    font-weight: vars.$thin-font-weight;
+  }
+}
+
+@mixin loading-options {
+  .loading-options {
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    margin: 0.5em 1.2em;
+
+    :global .spinner {
+      margin: 0.3em 0.7em 0.3em 0;
+    }
+  }
+}
+
+@mixin more-options {
+  .more-options {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    list-style: none;
+
+    :global svg {
+      margin-right: 0.5em;
+    }
+  }
+}

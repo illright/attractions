@@ -1,25 +1,38 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_mixins';
 
 .checkbox {
   position: relative;
   display: flex;
   align-items: center;
-  font-family: $font;
+  font-family: vars.$font;
   cursor: pointer;
 
   > input[type='checkbox'] {
-    @include hide-accessible;
+    @include mixins.hide-accessible;
   }
 
-  > .selector {
+  .selector {
     border-radius: 0.25em;
     width: 1em;
     height: 1em;
-    border: 0.125em solid $light-contrast;
+    border: 0.125em solid vars.$light-contrast;
     cursor: pointer;
     position: relative;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border: 0 solid vars.$main-text;
+      border-bottom-left-radius: 0.125em;
+      left: 50%;
+      position: absolute;
+      top: 45%;
+      transform: translate(-50%, -50%) rotate(-57deg) skew(-11deg);
+      transition: width 75ms;
+    }
 
     &::after {
       content: '';
@@ -39,50 +52,44 @@
     height: 1.375em;
   }
 
-  > input:disabled + .selector {
+  :disabled + .selector {
     cursor: not-allowed;
-    background-color: lighten($light-contrast, 6%);
+    background-color: color.scale(vars.$light-contrast, $lightness: 6%);
   }
 
-  > input:checked + .selector {
-    background-color: $main;
-    border-color: $main;
+  :checked + .selector {
+    background-color: vars.$main;
+    border-color: vars.$main;
 
     &::before {
-      content: '';
       width: 0.5625em;
       height: 0.375em;
-      border: 0 solid $main-text;
       border-bottom-width: 0.125em;
       border-left-width: 0.125em;
-      border-bottom-left-radius: 0.125em;
-      left: 50%;
-      position: absolute;
-      top: 45%;
-      transform: translate(-50%, -50%) rotate(-57deg) skew(-11deg);
     }
   }
 
-  > input:disabled:checked + .selector {
-    background-color: $disabled;
-    border-color: lighten($disabled, 4%);
+  :disabled:checked + .selector {
+    background-color: vars.$disabled;
+    border-color: color.scale(vars.$disabled, $lightness: 4%);
   }
 
   &:hover {
-    > input:not(:disabled) + .selector::after {
-      background-color: transparentize($dark, 0.95);
+    .selector::after,
+    :disabled + .selector::after {
+      background-color: color.adjust(vars.$dark, $alpha: -0.95);
     }
 
-    > input:checked + .selector::after {
-      background-color: transparentize($main, 0.95);
+    :checked + ::after {
+      background-color: color.adjust(vars.$main, $alpha: -0.95);
     }
   }
 
-  > input:focus + .selector::after {
-    background-color: transparentize($dark, 0.875);
+  :focus + .selector::after {
+    background-color: color.adjust(vars.$dark, $alpha: -0.875);
   }
 
-  > input:focus:checked + .selector::after {
-    background-color: transparentize($main, 0.875);
+  :focus:checked + ::after {
+    background-color: color.adjust(vars.$main, $alpha: -0.875);
   }
 }

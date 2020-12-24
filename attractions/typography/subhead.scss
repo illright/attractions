@@ -1,8 +1,7 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .subhead {
-  font-weight: $thin-font-weight;
+  font-weight: vars.$thin-font-weight;
   font-size: 0.95em;
   line-height: 1.2em;
 

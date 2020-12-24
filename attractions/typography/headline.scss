@@ -1,10 +1,9 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .headline {
-  color: $main;
+  color: vars.$main;
   font-size: 1.5em;
-  font-weight: $bold-font-weight;
+  font-weight: vars.$bold-font-weight;
   margin-bottom: 0.2em;
 
   @media only screen and (min-width: 640px) {
