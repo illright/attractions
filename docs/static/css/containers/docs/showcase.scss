@@ -1,9 +1,10 @@
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'attractions-theme' as vars;
 
 $border-radius: 0.5em;
 
 .showcase {
-  border: 1px solid transparentize($main, 0.75);
+  border: 1px solid color.adjust(vars.$main, $alpha: -0.75);
   border-radius: $border-radius;
   margin: 1em 0;
   display: grid;
@@ -15,13 +16,13 @@ $border-radius: 0.5em;
       padding: 0.5rem 1rem 0;
 
       &.code {
-        background: $code-bg;
+        background: vars.$code-bg;
       }
     }
 
     > [slot='showcase'] {
       overflow-x: auto;
-      border: 0 solid transparentize($main, 0.75);
+      border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
       border-bottom-width: 1px;
 
       &.padded {
@@ -36,7 +37,7 @@ $border-radius: 0.5em;
     > .copyable {
       overflow-x: auto;
       border-radius: $border-radius;
-      border: 0 solid transparentize($main, 0.75);
+      border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
 
       > [slot='source'] {
         height: 100%;

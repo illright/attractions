@@ -1,10 +1,10 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 mark {
   background: none;
-  color: $main;
+  color: vars.$main;
 
   :global code {
-    color: $main;
+    color: vars.$main;
   }
 }
