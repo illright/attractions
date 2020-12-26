@@ -19,6 +19,7 @@
   export let minSearchLength = 3;
   export let maxOptions = Infinity;
   export let searchQuery = '';
+  export let disabled = false;
   export let optionComponent = AutocompleteOption;
 
   let focus = false;
@@ -31,7 +32,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class:focus class={classes('autocomplete', _class)}>
+<div class:focus class={classes('autocomplete', _class)} {disabled}>
   {#each selection as item}
     <Chip noPadding>
       {item.name}
@@ -48,6 +49,7 @@
     {minSearchLength}
     {maxOptions}
     {optionComponent}
+    {disabled}
     {...$$restProps}
     on:change
   >

@@ -78,6 +78,7 @@ The [==`Autocomplete`==](./docs/components/autocomplete) component uses it to pr
 | **`searchQuery`** | `''` | `string` | The current value of the text field. Can be used to control the query programmatically. |
 | **`optionComponent`** | [==`AutocompleteOption`==](./docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
 | **`focus`** | `false` | `boolean` | Allows to programmatically control whether the suggestions dropdown is shown. |
+| **`disabled`** | `false` | `boolean` | Whether to disable the field. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
 
 <div class="required">* Required</div>
