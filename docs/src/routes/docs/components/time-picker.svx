@@ -99,7 +99,7 @@ Text on button to select the current time. Defaults to the text "`now`".
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" /> |
-| **`$main`** | The color of the bottom border of the focused text field border, the buttons and the labels. | <ColorPreview value="#4300B0" /> |
+| **`$main`** | The color of the bottom border of the focused text field border, the buttons, the selected tab and the labels. | <ColorPreview value="#4300B0" /> |
 | **`$light-contrast`** | The color of borders and WebKit scrollbars inside the dropdown. | <ColorPreview value="#DDDDDD" /> |
 | **`$background`** | The background of the WebKit scrollbars, to ensure they don'y stand out from the background. | <ColorPreview value="#FFFFFF" bordered /> |
 | **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the buttons' text and the text fields. | `'Ubuntu'` |
@@ -110,5 +110,6 @@ Text on button to select the current time. Defaults to the text "`now`".
 | **`$card-radius`** <small>From [`Dropdown`](./docs/components/dropdown)</small> | The curvature radius of the dropdown. | `1.25em` |
 | **`$textfield-border`** <small>From [`TextField`](./docs/components/text-field)</small> | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
 | **`$thin-font-weight`** <small>From [`TextField`](./docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
+| **`$off-state`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the background color of the unselected tab. | <ColorPreview value="#AAAAAA" /> |
 
 <style src="../../../../static/css/routes/docs/components/time-picker.scss"></style>
