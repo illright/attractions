@@ -47,7 +47,7 @@
 
 input:disabled + .selector {
   cursor: not-allowed;
-  background-color: color.scale(vars.$light-contrast, $lightness: 6%);
+  background-color: color.scale(vars.$light-contrast, $lightness: 45%);
 }
 
 input:checked + .selector {
@@ -69,8 +69,12 @@ input:disabled:checked + .selector {
     background-color: color.adjust(vars.$dark, $alpha: -0.95);
   }
 
-  :not(:focus):checked + .selector::after {
+  :not(:focus):not(:disabled):checked + .selector::after {
     background-color: color.adjust(vars.$main, $alpha: -0.95);
+  }
+
+  :disabled + .selector::after {
+    background: none;
   }
 }
 

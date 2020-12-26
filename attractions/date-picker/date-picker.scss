@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use 'node_modules/attractions/_variables' as vars;
 @use '../_mixins';
+@use '../_appearances';
 
 $side-padding: 1rem;
 
@@ -16,10 +17,7 @@ $side-padding: 1rem;
     }
 
     .text-field.in-focus input {
-      background-color: color.scale(vars.$textfield-bg, $lightness: -8%);
-      border-bottom-width: 0.125em;
-      border-color: color.scale(vars.$main, $lightness: 4%);
-      padding-bottom: 0;
+      @include appearances.text-field-focused;
     }
   }
 

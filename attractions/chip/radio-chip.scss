@@ -33,7 +33,7 @@ input + .chip {
 
 input:disabled + .chip {
   background: color.adjust(vars.$chip-bg, $alpha: -0.05);
-  color: color.scale(vars.$chip-fg, $lightness: 10%);
+  color: color.scale(vars.$chip-fg, $lightness: 30%);
   cursor: not-allowed;
 
   &:hover {

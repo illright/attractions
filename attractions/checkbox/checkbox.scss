@@ -54,7 +54,7 @@
 
   :disabled + .selector {
     cursor: not-allowed;
-    background-color: color.scale(vars.$light-contrast, $lightness: 6%);
+    background-color: color.scale(vars.$light-contrast, $lightness: 45%);
   }
 
   :checked + .selector {
@@ -75,13 +75,16 @@
   }
 
   &:hover {
-    .selector::after,
-    :disabled + .selector::after {
+    .selector::after {
       background-color: color.adjust(vars.$dark, $alpha: -0.95);
     }
-
+    
     :checked + ::after {
       background-color: color.adjust(vars.$main, $alpha: -0.95);
+    }
+
+    :disabled + .selector::after {
+      background: none;
     }
   }
 

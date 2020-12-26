@@ -24,12 +24,12 @@
 }
 
 @mixin text-field-disabled {
-  background-color: color.scale(vars.$textfield-bg, $lightness: 1%);
+  background-color: color.scale(vars.$textfield-bg, $lightness: 15%);
   border-color: color.adjust(vars.$dark, $alpha: -0.7);
   color: vars.$disabled;
 
   &:hover {
-    background-color: color.adjust(vars.$textfield-bg, $lightness: 1%);
+    background-color: color.scale(vars.$textfield-bg, $lightness: 15%);
   }
 }
 
