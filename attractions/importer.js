@@ -11,7 +11,11 @@ export default function makeAttractionsImporter(options = {}) {
 
     const modulePrefix = '~attractions/';
     if (url.startsWith(modulePrefix)) {
-      return { file: `${nodeModulesPath}/attractions/${url.slice(modulePrefix.length)}` };
+      return {
+        file: `${nodeModulesPath}/attractions/${url.slice(
+          modulePrefix.length
+        )}`,
+      };
     }
 
     return null;

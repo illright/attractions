@@ -85,7 +85,6 @@
   }
 
   &.filled {
-
     @include filled-interactive-background(vars.$main);
     box-shadow: vars.$shadow-1;
 

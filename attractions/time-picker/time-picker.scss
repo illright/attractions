@@ -39,7 +39,6 @@
       }
 
       > .column {
-
         @include mixins.slim-scrollbar;
         max-height: 10em;
         overflow-y: scroll;

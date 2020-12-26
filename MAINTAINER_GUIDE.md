@@ -4,8 +4,8 @@ Notes to self and quirks of the project's implementation in case all of the curr
 
 ## Why we use Sass
 
-* A lot of the colors are computed with Sass color functions, switching to CSS variables would mean a whole lot more variables.
-* Using Sass variables instead of CSS variables gives us more browser compatibility.
+- A lot of the colors are computed with Sass color functions, switching to CSS variables would mean a whole lot more variables.
+- Using Sass variables instead of CSS variables gives us more browser compatibility.
 
 ## Why we use Sass so strangely
 

@@ -22,7 +22,6 @@ input + :global .dropdown {
 }
 
 .options-list {
-
   @include mixins.slim-scrollbar;
 
   @include slot-styles.loading-options;

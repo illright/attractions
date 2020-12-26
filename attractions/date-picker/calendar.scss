@@ -50,7 +50,11 @@ $side-padding: 1rem;
     }
 
     &.selected > :global .btn {
-      background-color: color.scale(vars.$main, $lightness: 10%, $saturation: -20%);
+      background-color: color.scale(
+        vars.$main,
+        $lightness: 10%,
+        $saturation: -20%
+      );
       color: vars.$main-text;
     }
 
