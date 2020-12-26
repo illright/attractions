@@ -1,0 +1,53 @@
+@use 'sass:color';
+
+@mixin color-text-icon-ripple($color) {
+  color: $color;
+
+  .icon {
+    stroke: $color;
+  }
+
+  .ripple {
+    background: color.adjust($color, $alpha: -0.9);
+  }
+}
+
+@mixin filled-interactive-background($color) {
+  background: $color;
+  background: linear-gradient(
+    0deg,
+    $color 0%,
+    color.scale($color, $lightness: 10%) 100%
+  );
+
+  &:hover:not([disabled]) {
+    background: color.scale($color, $lightness: 5%);
+    background: linear-gradient(
+      0deg,
+      color.scale($color, $lightness: 5%) 0%,
+      color.scale($color, $lightness: 15%) 100%
+    );
+  }
+
+  &:focus:not([disabled]) {
+    background: color.adjust($color, $lightness: 10%);
+    background: linear-gradient(
+      0deg,
+      color.scale($color, $lightness: 10%) 0%,
+      color.scale($color, $lightness: 20%) 100%
+    );
+  }
+}
+
+@mixin flat-interactive-background($color) {
+  &,
+  &.outline {
+    &:hover:not([disabled]) {
+      background: color.adjust($color, $alpha: -0.95);
+    }
+
+    &:focus:not([disabled]) {
+      background: color.adjust($color, $alpha: -0.88);
+    }
+  }
+}

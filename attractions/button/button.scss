@@ -1,63 +1,12 @@
 @use 'sass:color';
 @use 'node_modules/attractions/_variables' as vars;
+@use './_mixins';
 @use '../_appearances';
-
-@mixin color-text-icon-ripple($color) {
-  color: $color;
-
-  .icon {
-    stroke: $color;
-  }
-
-  .ripple {
-    background: color.adjust($color, $alpha: -0.9);
-  }
-}
-
-@mixin filled-interactive-background($color) {
-  background: $color;
-  background: linear-gradient(
-    0deg,
-    $color 0%,
-    color.scale($color, $lightness: 10%) 100%
-  );
-
-  &:hover:not([disabled]) {
-    background: color.scale($color, $lightness: 5%);
-    background: linear-gradient(
-      0deg,
-      color.scale($color, $lightness: 5%) 0%,
-      color.scale($color, $lightness: 15%) 100%
-    );
-  }
-
-  &:focus:not([disabled]) {
-    background: color.adjust($color, $lightness: 10%);
-    background: linear-gradient(
-      0deg,
-      color.scale($color, $lightness: 10%) 0%,
-      color.scale($color, $lightness: 20%) 100%
-    );
-  }
-}
-
-@mixin flat-interactive-background($color) {
-  &,
-  &.outline {
-    &:hover:not([disabled]) {
-      background: color.adjust($color, $alpha: -0.95);
-    }
-
-    &:focus:not([disabled]) {
-      background: color.adjust($color, $alpha: -0.88);
-    }
-  }
-}
 
 .btn {
   @include appearances.button;
 
-  @include flat-interactive-background(vars.$main);
+  @include mixins.flat-interactive-background(vars.$main);
 
   font-size: 1rem;
   border-radius: vars.$button-radius;
@@ -65,27 +14,27 @@
   padding: 0.8em 1.1em;
 
   :global {
-    @include color-text-icon-ripple(vars.$main);
+    @include mixins.color-text-icon-ripple(vars.$main);
   }
 
   &.danger {
-    @include flat-interactive-background(vars.$danger);
+    @include mixins.flat-interactive-background(vars.$danger);
 
     :global {
-      @include color-text-icon-ripple(vars.$danger);
+      @include mixins.color-text-icon-ripple(vars.$danger);
     }
   }
 
   &.neutral {
-    @include flat-interactive-background(vars.$dark);
+    @include mixins.flat-interactive-background(vars.$dark);
 
     :global {
-      @include color-text-icon-ripple(vars.$dark);
+      @include mixins.color-text-icon-ripple(vars.$dark);
     }
   }
 
   &.filled {
-    @include filled-interactive-background(vars.$main);
+    @include mixins.filled-interactive-background(vars.$main);
     box-shadow: vars.$shadow-1;
 
     &:hover:not([disabled]),
@@ -94,15 +43,15 @@
     }
 
     &.danger {
-      @include filled-interactive-background(vars.$danger);
+      @include mixins.filled-interactive-background(vars.$danger);
     }
 
     &.neutral {
-      @include filled-interactive-background(vars.$dark);
+      @include mixins.filled-interactive-background(vars.$dark);
     }
 
     :global {
-      @include color-text-icon-ripple(vars.$main-text);
+      @include mixins.color-text-icon-ripple(vars.$main-text);
     }
 
     &[disabled] {
@@ -166,10 +115,6 @@ button.btn {
 
 a.btn {
   text-decoration: none;
-
-  // &:visited {
-  //   color: vars.$main;
-  // }
 
   &[disabled] {
     pointer-events: none;
