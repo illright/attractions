@@ -5,12 +5,14 @@ relatedComponents:
     link: ./docs/components/file-input
   - name: FileTile
     link: ./docs/components/file-tile
+shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 ---
 
 <script>
   import { FileDropzone } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 </script>
 
@@ -99,5 +101,12 @@ The plus icon inside the dropzone when there are files inside. ==Bonus==: if sup
 | **`$danger`** | The color of the "incorrect files uploaded" state of the dropzone. | <ColorPreview value="#B80000" /> |
 | **`$disabled`** | The color of the disabled state of the dropzone. | <ColorPreview value="#888888" /> |
 | **`$bold-font-weight`** | The bold font weight of the text in the empty layer. | `500` |
+| **`$dark`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The text color of the file tiles. | <ColorPreview value="#333333" /> |
+| **`$file-tile-radius`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The curvature radius of the file tiles. | `.625em` |
+| **`$shadow-1`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The shadow of the file tiles. | <ShadowPreview value={shadow1} /> |
+| **`$thin-font-weight`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The thinner font weight for the file details: size and type. | `300` |
+| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
+| **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
+
 
 <style src="../../../../static/css/routes/docs/components/file-dropzone.scss"></style>

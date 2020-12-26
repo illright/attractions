@@ -133,5 +133,7 @@ Defaults to a button equipped with an `IntersectionObserver` to trigger the gene
 | **`$main`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The background color on hover and the color of the highlight in the options. | <ColorPreview value="#4300B0" /> |
 | **`$font`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The font of the autocomplete options. | `'Ubuntu'` |
 | **`$bold-font-weight`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
+| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the buttons used for dismissing focus and loading more options. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of buttons used for dismissing focus and loading more options. | `1.5625em` |
 
 <style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>

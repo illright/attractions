@@ -117,8 +117,8 @@ If the ==`withItem`== property is specified, this holds the item for the text fi
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** | The color of the focused text field. | <ColorPreview value="#4300B0" /> |
-| **`$textfield-border`** | The bottom border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$main`** | The color of the focused text field border. | <ColorPreview value="#4300B0" /> |
+| **`$textfield-border`** | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
 | **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" bordered /> |
 | **`$textfield-item`** | The default color of the item inside the text field. | <ColorPreview value="#7A7A7A" /> |
 | **`$textfield-bg-error`** | The background color of the text field when an invalid value is entered. | <ColorPreview value="#FBEEEE" /> |
