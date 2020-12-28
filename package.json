@@ -49,14 +49,17 @@
   "lint-staged": {
     "[^.]*.js": [
       "eslint --format=pretty",
-      "eslint --max-warnings 0 --fix"
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
     ],
     "*.svelte": [
       "eslint --format=pretty",
-      "eslint --max-warnings 0 --fix"
+      "eslint --max-warnings 0 --fix",
+      "prettier --write"
     ],
     "*.scss": [
-      "stylelint --max-warnings 0 --fix"
+      "stylelint --max-warnings 0 --fix",
+      "prettier --write"
     ]
   }
 }

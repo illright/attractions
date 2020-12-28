@@ -12,9 +12,7 @@
 </script>
 
 <Popover position={PopoverPositions.LEFT}>
-  <div class="preview" bind:this={preview}>
-    hover me
-  </div>
+  <div class="preview" bind:this={preview}>hover me</div>
   <div slot="popover-content" class="value-popover">
     {value.replace(/\), /g, '),\n')}
   </div>
