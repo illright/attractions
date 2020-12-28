@@ -33,6 +33,7 @@ module.exports = {
       'error',
       { vars: 'all', args: 'none', ignoreRestSiblings: true },
     ],
+    'prefer-arrow-callback': 'off',
     'no-constant-condition': 'off',
     'keyword-spacing': 'error',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
