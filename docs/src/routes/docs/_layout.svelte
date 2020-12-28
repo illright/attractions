@@ -1,10 +1,16 @@
 <script>
+  import { Button } from 'attractions';
+  import { HomeIcon, ArrowUpIcon } from 'svelte-feather-icons';
   import Header from 'src/containers/docs/header.svelte';
   import MobileNavigation from 'src/containers/docs/mobile-navigation.svelte';
   import DesktopNavigation from 'src/containers/docs/desktop-navigation.svelte';
-  import { HomeIcon } from 'svelte-feather-icons';
 
   export let segment;
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+    // TODO: manage focus
+  }
 
   const places = [
     {
@@ -149,6 +155,10 @@
   <DesktopNavigation {places} segment={segment || ''} />
   <article>
     <slot />
+    <Button on:click={scrollToTop}>
+      <ArrowUpIcon size="24" class="mr" />
+      scroll to top
+    </Button>
   </article>
 </main>
 
