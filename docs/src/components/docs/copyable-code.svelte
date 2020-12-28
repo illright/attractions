@@ -1,15 +1,17 @@
 <script>
   import { onMount } from 'svelte';
   import { Button } from 'attractions';
-  import { CopyIcon, CheckIcon } from 'svelte-feather-icons';
+  import { CopyIcon, CheckIcon, FileTextIcon } from 'svelte-feather-icons';
   import { writeText } from 'clipboard-polyfill';
 
   let self;
   let text = null;
   let copied = false;
+  export let filename = null;
 
-  onMount(function extractCodeToCopy() {
-    text = self.children[0].textContent;
+  onMount(() => {
+    const preIndex = (filename == null ? 0 : 1);
+    text = self.children[preIndex].textContent;
   });
 
   async function copy() {
@@ -28,6 +30,12 @@
 </script>
 
 <div class="copyable" bind:this={self}>
+  {#if filename != null}
+    <div class="filename">
+      <FileTextIcon size="16" class="mr" />
+      {filename}
+    </div>
+  {/if}
   <slot />
   <Button small round title="Copy" on:click={copy}>
     {#if copied}
