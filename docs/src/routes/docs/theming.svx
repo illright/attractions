@@ -1,0 +1,134 @@
+---
+name: Theming with Sass
+---
+
+<script>
+  import CopyableCode from 'src/components/docs/copyable-code.svelte';
+</script>
+
+# Theming with Sass
+
+If you'd like to access/customize the Sass variables of the library or your `node_modules` folder is not in the root of your project, then you'll need a Sass importer. No stress though! We already built one for you.
+
+In your `rollup.config.js` (or wherever you configured `svelte-preprocess`), import the `makeAttractionsImporter` function:
+
+<CopyableCode filename="rollup.config.js">
+
+  ```js
+  import sveltePreprocess from 'svelte-preprocess';
+  import { makeAttractionsImporter } from 'attractions';
+  ```
+
+</CopyableCode>
+
+This function can be called with no arguments to allow importing Sass stuff from Attractions or with an option object to override the default theme and/or the `node_modules` path.
+
+## Importing Sass stuff
+
+What is there to import in Sass? Variables, mostly, however, if you ever have a need to mimic some component from Attractions with different functionality, you also have access to the mixins that are used internally. Feel free to explore the source code for more information.
+
+Create a default importer in your `rollup.config.js`:
+
+<CopyableCode filename="rollup.config.js">
+
+  ```js
+  const preprocess = sveltePreprocess({
+  	scss: {
+  		importer: makeAttractionsImporter(),
+  	}
+  });
+  ```
+
+</CopyableCode>
+
+Then in SCSS files you'll have `~attractions/*` imports:
+
+<CopyableCode>
+
+  ```scss
+  @use '~attractions/_variables';
+  @use '~attractions/_mixins';
+  @use '~attractions/_appearances';
+
+  .something {
+    color: variables.$main;
+
+    // See the source code to discover these internal mixins:
+    @include appearances.button;
+    @include mixins.show-on-focus;
+  }
+  ```
+
+</CopyableCode>
+
+For a list of variables to customize, refer to the documentation of each component, there's a table with all the variables that this component uses.
+
+## Overriding Sass variables
+
+If you want to tweak the appearance of components to your liking, you can override any SCSS variable in Attractions by configuring the `_variables` module. We suggest you create a separate SCSS file for that.
+
+<CopyableCode filename="theme.scss">
+
+  ```scss
+  @forward '~attractions/_variables' with (
+    $main: green,
+    $font: "'Open Sans', sans-serif",
+  );
+  $something-else: red;
+  ```
+
+</CopyableCode>
+
+<CopyableCode filename="rollup.config.js">
+
+  ```js
+  const preprocess = sveltePreprocess({
+  	scss: {
+  		importer: makeAttractionsImporter({
+        // specify the path to your theme file
+        themeFile: './static/css/theme.scss',
+      }),
+      // not mandatory but nice to have for concise imports
+      includePaths: ['./static/css'],
+  	}
+  });
+  ```
+
+</CopyableCode>
+
+<CopyableCode filename="some-component.svelte">
+
+  ```svelte
+  <div />
+  <style lang="scss">
+    /* because the directory of `theme.scss` is in `includePaths` */
+    @use 'theme.scss';
+
+    div {
+      color: theme.$main;
+    }
+  </style>
+  ```
+
+</CopyableCode>
+
+## Changing the `node_modules` location
+
+There might be cases where you would have your `node_modules` be in some other place than the project root (such as when you're using workspaces).
+
+In that case, you should inform the importer of the correct location with the `nodeModulesPath` option:
+
+<CopyableCode filename="rollup.config.js">
+
+  ```js
+  const preprocess = sveltePreprocess({
+  	scss: {
+  		importer: makeAttractionsImporter({
+  			themeFile: './static/css/theme.scss',
+  			nodeModulesPath: '../node_modules',
+  		}),
+  	}
+  });
+  ```
+
+</CopyableCode>
