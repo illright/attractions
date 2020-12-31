@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import { Button } from 'attractions';
   import { HomeIcon, ArrowUpIcon } from 'svelte-feather-icons';
   import Header from 'src/containers/docs/header.svelte';
@@ -11,6 +12,17 @@
     window.scrollTo(0, 0);
     // TODO: manage focus
   }
+
+  let scrollbarVisible;
+
+  function updateScrollbarVisibility() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    scrollbarVisible = window.innerHeight < document.body.scrollHeight;
+  }
+  onMount(updateScrollbarVisibility);
+  $: updateScrollbarVisibility(segment);
 
   const places = [
     {
@@ -155,10 +167,14 @@
   <DesktopNavigation {places} segment={segment || ''} />
   <article>
     <slot />
-    <Button on:click={scrollToTop}>
-      <ArrowUpIcon size="24" class="mr" />
-      scroll to top
-    </Button>
+    {#if scrollbarVisible}
+      <div class="center">
+        <Button filled on:click={scrollToTop}>
+          <ArrowUpIcon size="24" class="mr" />
+          scroll to top
+        </Button>
+      </div>
+    {/if}
   </article>
 </main>
 
