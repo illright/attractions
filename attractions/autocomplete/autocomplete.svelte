@@ -32,7 +32,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class:focus class={classes('autocomplete', _class)} {disabled}>
+<div class:focus class={classes('autocomplete', _class)} class:disabled>
   {#each selection as item}
     <Chip noPadding>
       {item.name}

@@ -15,7 +15,7 @@
     @include appearances.text-field-focused;
   }
 
-  &[disabled] {
+  &.disabled {
     @include appearances.text-field-disabled;
   }
 
