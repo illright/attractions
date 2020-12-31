@@ -9,13 +9,17 @@ shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 ---
 
 <script>
-  import { FileInput, FileTile } from 'attractions';
+  import { onMount } from 'svelte';
+  import { FileTile } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 
   let file = null;
+  onMount(() => {
+    file = new File([""], "filename.txt");
+  });
 </script>
 
 
@@ -27,8 +31,6 @@ A small tile displaying the name of a file, its size and format in human-readabl
 
 <Showcase>
   <div slot="showcase" class="padded">
-    <p>Upload any file to see the tile:</p>
-    <FileInput bind:value={file} />
     {#if file != null}
       <FileTile {file} />
     {/if}
@@ -37,11 +39,14 @@ A small tile displaying the name of a file, its size and format in human-readabl
 
 ```svelte
 <script>
+  import { onMount } from 'svelte';
+
   let file = null;
+  onMount(() => {
+    file = new File([""], "filename.txt");
+  });
 </script>
 
-<p>Upload any file to see the tile:</p>
-<FileInput bind:value={file} />
 {#if file != null}
   <FileTile {file} />
 {/if}
