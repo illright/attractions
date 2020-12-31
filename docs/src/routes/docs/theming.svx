@@ -33,9 +33,9 @@ Create a default importer in your `rollup.config.js`:
 
   ```js
   const preprocess = sveltePreprocess({
-  	scss: {
-  		importer: makeAttractionsImporter(),
-  	}
+    scss: {
+      importer: makeAttractionsImporter(),
+    }
   });
   ```
 
@@ -83,14 +83,14 @@ If you want to tweak the appearance of components to your liking, you can overri
 
   ```js
   const preprocess = sveltePreprocess({
-  	scss: {
-  		importer: makeAttractionsImporter({
+    scss: {
+      importer: makeAttractionsImporter({
         // specify the path to your theme file
         themeFile: './static/css/theme.scss',
       }),
       // not mandatory but nice to have for concise imports
       includePaths: ['./static/css'],
-  	}
+    }
   });
   ```
 
@@ -122,12 +122,12 @@ In that case, you should inform the importer of the correct location with the `n
 
   ```js
   const preprocess = sveltePreprocess({
-  	scss: {
-  		importer: makeAttractionsImporter({
-  			themeFile: './static/css/theme.scss',
-  			nodeModulesPath: '../node_modules',
-  		}),
-  	}
+    scss: {
+      importer: makeAttractionsImporter({
+        themeFile: './static/css/theme.scss',
+        nodeModulesPath: '../node_modules',
+      }),
+    }
   });
   ```
 
