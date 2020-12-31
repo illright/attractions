@@ -76,10 +76,9 @@ pnpm add --save-dev svelte-preprocess sass postcss
 
 **Step 3.** Add `svelte-preprocess` to your preprocessor chain ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md)):
 
-<CopyableCode>
+<CopyableCode filename="rollup.config.js">
 
   ```js
-  // rollup.config.js
   import sveltePreprocess from 'svelte-preprocess';
 
   export default {
