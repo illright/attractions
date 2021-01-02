@@ -1,10 +1,12 @@
 <script>
-  import { onMount } from 'svelte';
+  import { stores } from '@sapper/app';
   import { Button } from 'attractions';
   import { HomeIcon, ArrowUpIcon } from 'svelte-feather-icons';
   import Header from 'src/containers/docs/header.svelte';
   import MobileNavigation from 'src/containers/docs/mobile-navigation.svelte';
   import DesktopNavigation from 'src/containers/docs/desktop-navigation.svelte';
+
+  const { page } = stores();
 
   export let segment;
 
@@ -14,15 +16,12 @@
   }
 
   let scrollbarVisible;
-
-  function updateScrollbarVisibility() {
+  page.subscribe(function updateScrollbarVisibility() {
     if (typeof window === 'undefined') {
       return;
     }
     scrollbarVisible = window.innerHeight < document.body.scrollHeight;
-  }
-  onMount(updateScrollbarVisibility);
-  $: updateScrollbarVisibility(segment);
+  });
 
   const places = [
     {
