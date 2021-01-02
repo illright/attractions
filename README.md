@@ -16,11 +16,11 @@ Refer to the main documentation: <https://illright.github.io/attractions>
 **Step 1.** Install the library with your favorite package manager:
 
 ```bash
-npm install --save-dev attractions svelte-preprocess sass postcss
+npm install --save-dev attractions
 # -- or --
-yarn add -D attractions svelte-preprocess sass postcss
+yarn add -D attractions
 # -- or --
-pnpm add --save-dev attractions svelte-preprocess sass postcss
+pnpm add --save-dev attractions
 ```
 
 **Step 2.** Install `svelte-preprocess`, Dart Sass and PostCSS:
