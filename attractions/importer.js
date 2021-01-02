@@ -1,7 +1,7 @@
-export default function makeAttractionsImporter(options = {}) {
+module.exports = function makeAttractionsImporter(options = {}) {
   const { themeFile, nodeModulesPath = 'node_modules' } = options;
 
-  return function attractionsImporter(url, prev) {
+  return function attractionsImporter(url, _prev) {
     if (url === 'node_modules/attractions/_variables') {
       if (themeFile != null) {
         return { file: themeFile };
@@ -20,4 +20,4 @@ export default function makeAttractionsImporter(options = {}) {
 
     return null;
   };
-}
+};
