@@ -78,7 +78,7 @@
     .selector::after {
       background-color: color.adjust(vars.$dark, $alpha: -0.95);
     }
-    
+
     :checked + ::after {
       background-color: color.adjust(vars.$main, $alpha: -0.95);
     }

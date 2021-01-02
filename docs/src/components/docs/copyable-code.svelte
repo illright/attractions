@@ -10,7 +10,7 @@
   export let filename = null;
 
   onMount(() => {
-    const preIndex = (filename == null ? 0 : 1);
+    const preIndex = filename == null ? 0 : 1;
     text = self.children[preIndex].textContent;
   });
 

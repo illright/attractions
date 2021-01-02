@@ -43,10 +43,10 @@ export default {
   // ...,
   plugins: [
     svelte({
-      preprocess: sveltePreprocess()
-    })
-  ]
-}
+      preprocess: sveltePreprocess(),
+    }),
+  ],
+};
 ```
 
 **Step 4.** Import the desired components as named imports and use wherever you like!
