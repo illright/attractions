@@ -10,7 +10,7 @@ import pkg from './package.json';
 import alias from '@rollup/plugin-alias';
 import autoPreprocess from 'svelte-preprocess';
 import attractionsPkg from 'attractions/package.json';
-import { makeAttractionsImporter } from 'attractions';
+import makeAttractionsImporter from 'attractions/importer.js';
 import sapperEnv from 'sapper-environment';
 import { mdsvex } from 'mdsvex';
 import remarkMark from 'remark-mark-plus';

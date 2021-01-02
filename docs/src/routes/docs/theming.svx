@@ -16,7 +16,7 @@ In your `rollup.config.js` (or wherever you configured `svelte-preprocess`), imp
 
   ```js
   import sveltePreprocess from 'svelte-preprocess';
-  import { makeAttractionsImporter } from 'attractions';
+  import makeAttractionsImporter from 'attractions/importer.js';
   ```
 
 </CopyableCode>
