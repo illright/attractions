@@ -1,7 +1,21 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 .copyable {
   position: relative;
+  background: vars.$code-bg;
+
+  .filename {
+    padding: 0.5em 1rem;
+    font-size: 0.8em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+
+  :global .filename + pre {
+    margin-top: 0;
+    padding-top: 0.5em;
+  }
 
   > :global .btn {
     position: absolute;

@@ -1,6 +1,7 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_mixins';
+@use '../_appearances';
 
 .time-picker {
   display: inline-block;
@@ -15,10 +16,7 @@
       }
 
       .text-field.in-focus input {
-        background-color: darken($textfield-bg, 8%);
-        border-bottom-width: 0.125em;
-        border-color: lighten($main, 4%);
-        padding-bottom: 0;
+        @include appearances.text-field-focused;
       }
     }
 
@@ -39,32 +37,18 @@
       }
 
       > .column {
+        @include mixins.slim-scrollbar;
         max-height: 10em;
         overflow-y: scroll;
         overflow-x: hidden;
         overscroll-behavior: none;
         list-style: none;
-        border: 0 solid $light-contrast;
+        border: 0 solid vars.$light-contrast;
         border-bottom-width: 0.0625em;
         border-top-width: 0.0625em;
 
         @media only screen and (min-height: 620px) {
           max-height: 15em;
-        }
-
-        &::-webkit-scrollbar {
-          width: 0.3125em;
-          height: 0.5em;
-          background: $background;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: $light-contrast;
-          border-radius: 0.3125em;
-
-          &:hover {
-            background: darken($light-contrast, 10%);
-          }
         }
       }
 
@@ -77,11 +61,7 @@
       }
 
       .shown-on-focus > .btn {
-        @include hide-accessible;
-
-        &:focus {
-          @include show-accessible;
-        }
+        @include mixins.show-on-focus;
       }
 
       .btn,

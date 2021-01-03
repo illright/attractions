@@ -1,3 +1,6 @@
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+
 @mixin hide-accessible {
   clip: rect(0, 0, 0, 0);
   width: 1px;
@@ -14,4 +17,30 @@
   margin: 0;
   overflow: visible;
   position: static;
+}
+
+@mixin show-on-focus {
+  @include hide-accessible;
+
+  &:focus {
+    @include show-accessible;
+  }
+}
+
+@mixin slim-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.3125em;
+    height: 0.5em;
+    background: none;
+    margin: 1em 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: vars.$light-contrast;
+    border-radius: 0.3125em;
+
+    &:hover {
+      background: color.scale(vars.$light-contrast, $lightness: -10%);
+    }
+  }
 }

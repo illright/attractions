@@ -12,6 +12,7 @@
     "clipboard-polyfill": "^3.0.0-pre5",
     "compression": "^1.7.1",
     "polka": "next",
+    "prismjs": "^1.22.0",
     "sapper-environment": "^1.0.1",
     "sirv": "^1.0.1"
   },

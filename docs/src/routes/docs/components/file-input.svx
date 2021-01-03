@@ -102,5 +102,6 @@ The label of the main upload button. Defaults to the text "select a file" / "sel
 | **`$danger`** | The color of the clearing button. | <ColorPreview value="#B80000" /> |
 | **`$disabled`** | The color of the main upload button when the input is disabled. | <ColorPreview value="#888888" /> |
 | **`$bold-font-weight`** | The bold font weight of the buttons. | `500` |
+| **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "clear selection" buttons. | <ColorPreview value="#B80000" /> |
 
 <style src="../../../../static/css/routes/docs/components/file-tile.scss"></style>

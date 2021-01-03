@@ -9,6 +9,7 @@ relatedComponents:
   import { Accordion, AccordionSection, Button } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 </script>
 
@@ -95,7 +96,6 @@ Falsy values passed to classes will be disregarded.
 | **`panel-close`** | `{ close(), toggle() }` | Fired when the panel is closed. The detail object contains callbacks to close and toggle the panel respectively. |
 
 
-
 ## Slots {#slots}
 
 ### Default slot
@@ -109,5 +109,15 @@ The handle used for opening the hidden content. By default it contains a Button 
 | Prop Name | Type | Description |
 | --------- | ---- | ----------- |
 | **`toggle`** | `Function` | A callback to toggle the open state of the current panel. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`Button`](./docs/components/button)</small> | The color and hover background of the section handle. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the section handle. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the section handle. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`](./docs/components/button)</small> | The font weight of the section handle. | `500` |
 
 <style src="../../../../static/css/routes/docs/components/accordion.scss"></style>

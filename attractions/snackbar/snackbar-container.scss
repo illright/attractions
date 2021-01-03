@@ -1,5 +1,4 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .snackbar-stack {
   position: fixed;
@@ -8,12 +7,12 @@
   flex-direction: column;
 
   &.left {
-    left: $snackbar-horizontal-offset;
+    left: vars.$snackbar-horizontal-offset;
     align-items: flex-start;
   }
 
   &.right {
-    right: $snackbar-horizontal-offset;
+    right: vars.$snackbar-horizontal-offset;
     align-items: flex-end;
   }
 
@@ -24,11 +23,11 @@
   }
 
   &.top {
-    top: $snackbar-vertical-offset;
+    top: vars.$snackbar-vertical-offset;
   }
 
   &.bottom {
-    bottom: $snackbar-vertical-offset;
+    bottom: vars.$snackbar-vertical-offset;
   }
 
   &.v-middle {

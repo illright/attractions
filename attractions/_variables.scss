@@ -1,0 +1,53 @@
+@use 'sass:color';
+
+$font: 'Ubuntu', sans-serif !default;
+
+$main: #4300b0 !default;
+$background: #fff !default;
+$main-text: #fff !default;
+$danger: #b80000 !default;
+$dark: #333 !default;
+$disabled-bg: #d7d7d7 !default;
+$disabled: #888 !default;
+$info: #86d3ff !default;
+$attention: #ffb359 !default;
+$success: #9cde70 !default;
+$badge-default: #ff5757 !default;
+$light-contrast: #ddd !default;
+$textfield-bg: #f5f5f5 !default;
+$textfield-bg-error: #fbeeee !default;
+$textfield-border: color.adjust(black, $alpha: -0.58) !default;
+$textfield-item: #7a7a7a !default;
+$off-state: #aaa !default;
+$chip-bg: color.adjust(black, $alpha: -0.92) !default;
+$chip-fg: #656565 !default;
+$snackbar-bg: color.scale($dark, $lightness: 10%) !default;
+$snackbar-fg: #fff !default;
+$modal-overlay-bg: color.adjust(black, $alpha: -0.75) !default;
+$chip-radius: 1.5625em !default;
+$button-radius: 1.5625em !default;
+$snackbar-radius: 0.625em !default;
+$dialog-radius: 1.5625em !default;
+$dropzone-radius: 1.5625em !default;
+$card-radius: 1.25em !default;
+$file-tile-radius: 0.625em !default;
+
+$snackbar-horizontal-offset: 5% !default;
+$snackbar-vertical-offset: 3em !default;
+
+$bold-font-weight: 500 !default;
+$regular-font-weight: 400 !default;
+$thin-font-weight: 300 !default;
+
+$shadow-0: 0 2px 2px 0 color.adjust(black, $alpha: -0.86),
+  0 1px 5px 0 color.adjust(black, $alpha: -0.88) !default;
+
+$shadow-1: 0 2px 5px color.adjust(black, $alpha: -0.86),
+  0 1px 5px color.adjust(black, $alpha: -0.88) !default;
+
+$shadow-raised: 0 2px 4px -1px color.adjust(black, $alpha: -0.8),
+  0 3px 5px 0 color.adjust(black, $alpha: -0.86),
+  0 1px 10px 0 color.adjust(black, $alpha: -0.88) !default;
+
+/* X icon from Feather icons: https://feathericons.com/?query=x */
+$x-icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E";

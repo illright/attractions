@@ -1,5 +1,4 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .form-field {
   display: flex;
@@ -15,13 +14,13 @@
       display: block;
 
       .required {
-        color: $main;
+        color: vars.$main;
       }
     }
 
     .help {
       font-size: 0.95em;
-      font-weight: $thin-font-weight;
+      font-weight: vars.$thin-font-weight;
     }
   }
 
@@ -31,11 +30,11 @@
       font-size: 0.85em;
 
       &.info {
-        color: $main;
+        color: vars.$main;
       }
 
       &.error {
-        color: $danger;
+        color: vars.$danger;
       }
     }
   }

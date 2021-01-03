@@ -1,4 +1,4 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 .preview {
   display: flex;
@@ -9,16 +9,16 @@
   border-radius: 0.25em;
   font-weight: 300;
   font-size: 0.8em;
-  background: $background;
+  background: vars.$background;
 }
 
 .value-popover {
-  background: $background;
+  background: vars.$background;
   padding: 0.5em;
   margin-right: 0.25em;
-  box-shadow: $shadow-raised;
+  box-shadow: vars.$shadow-raised;
   white-space: pre;
   font-family: 'Roboto Mono', monospace;
   border-radius: 0.5em;
-  color: $dark;
+  color: vars.$dark;
 }

@@ -1,9 +1,8 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .dialog {
-  border-radius: $dialog-radius;
-  box-shadow: $shadow-raised;
+  border-radius: vars.$dialog-radius;
+  box-shadow: vars.$shadow-raised;
   padding: 1.4em 2em;
   position: relative;
   background-color: #fff;
@@ -11,9 +10,9 @@
   .title {
     display: flex;
     font-size: 1.2em;
-    font-weight: $bold-font-weight;
+    font-weight: vars.$bold-font-weight;
     margin-bottom: 0.7em;
-    color: $main;
+    color: vars.$main;
 
     &.close-padded {
       padding-right: 1.5em;
@@ -36,7 +35,7 @@
   }
 
   &.danger .title {
-    color: $danger;
+    color: vars.$danger;
   }
 
   .content {

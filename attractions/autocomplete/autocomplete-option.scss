@@ -1,5 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
 
 li {
   list-style: none;
@@ -10,7 +10,7 @@ button {
   border: 0;
   outline: none;
   cursor: pointer;
-  font-family: $font;
+  font-family: vars.$font;
   font-size: 1em;
   width: 100%;
   text-align: left;
@@ -19,20 +19,20 @@ button {
   .subtext {
     font-size: 0.95em;
     margin-top: 0.2em;
-    font-weight: $thin-font-weight;
+    font-weight: vars.$thin-font-weight;
   }
 
   &:hover {
-    background: transparentize($main, 0.95);
+    background: color.adjust(vars.$main, $alpha: -0.95);
   }
 
   &:focus {
-    background: transparentize($main, 0.925);
+    background: color.adjust(vars.$main, $alpha: -0.925);
   }
 
   mark {
     background: none;
-    color: $main;
-    font-weight: $bold-font-weight;
+    color: vars.$main;
+    font-weight: vars.$bold-font-weight;
   }
 }

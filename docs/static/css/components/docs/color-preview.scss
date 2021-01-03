@@ -1,4 +1,4 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 .preview {
   display: flex;
@@ -14,7 +14,7 @@
     flex-shrink: 0;
 
     &.bordered {
-      border-color: $main;
+      border-color: vars.$main;
     }
   }
 }

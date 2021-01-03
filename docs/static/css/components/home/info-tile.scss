@@ -1,4 +1,4 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 .info-tile {
   margin-bottom: 1em;
@@ -12,14 +12,14 @@
     transition: 150ms box-shadow;
 
     &:hover {
-      box-shadow: $shadow-raised;
+      box-shadow: vars.$shadow-raised;
     }
   }
 
   .icon {
     padding: 0.8em;
     border-radius: 50%;
-    background: $main;
+    background: vars.$main;
     color: white;
     grid-row: span 2;
     align-self: center;
@@ -31,8 +31,8 @@
 
   .subtitle {
     font-size: 0.9em;
-    font-weight: $thin-font-weight;
-    color: $main;
+    font-weight: vars.$thin-font-weight;
+    color: vars.$main;
   }
 
   @media only screen and (min-width: 640px) {

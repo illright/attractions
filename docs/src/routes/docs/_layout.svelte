@@ -37,6 +37,10 @@
       segment: 'installation',
     },
     {
+      title: 'Theming with Sass',
+      segment: 'theming',
+    },
+    {
       title: 'Components',
       sub: [
         {

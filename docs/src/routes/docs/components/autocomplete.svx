@@ -71,6 +71,7 @@ Builds upon the [==`AutocompleteField`==](./docs/components/autocomplete-field),
 | **`maxOptions`** | `Infinity` | `number` | The maximum amount of options than can be selected. |
 | **`searchQuery`** | `''` | `string` | The current value of the text field. Can be used to control the query programmatically. |
 | **`optionComponent`** | [==`AutocompleteOption`==](./docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
+| **`disabled`** | `false` | `boolean` | Whether to disable the field. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<AutocompleteField>` component. |
 
 <div class="required">* Required</div>
@@ -109,6 +110,10 @@ All slots of [==`AutocompleteField`==](./docs/components/autocomplete-field#slot
 | **`$light-contrast`** <small>From [`AutocompleteField`](./docs/components/autocomplete-field)</small> | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
 | **`$thin-font-weight`** <small>From [`AutocompleteField`](./docs/components/autocomplete-field)</small> | The thin font weight of the status messages like 'type X characters to search'. | `300` |
 | **`$bold-font-weight`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
+| **`$chip-bg`** <small>From [`Chip`](./docs/components/chip)</small> | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** <small>From [`Chip`](./docs/components/chip)</small> | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** <small>From [`Chip`](./docs/components/chip)</small> | The curvature radius of a chip. | `1.5625em` |
+| **`$dark`** <small>From [`Button`](./docs/components/button)</small> | The color of the Xs on the option chips. | <ColorPreview value="#333333" /> |
 
 
 <style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>

@@ -1,13 +1,12 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .chip {
-  border-radius: $chip-radius;
-  background: $chip-bg;
-  color: $chip-fg;
-  font-family: $font;
+  border-radius: vars.$chip-radius;
+  background: vars.$chip-bg;
+  color: vars.$chip-fg;
+  font-family: vars.$font;
   padding: 0.6em 0.9em;
-  font-weight: $bold-font-weight;
+  font-weight: vars.$bold-font-weight;
 
   &.small {
     padding: 0.4em 0.6em;
@@ -18,7 +17,7 @@
 
   &.outline {
     background: transparent;
-    border: 1px solid $main;
+    border: 1px solid vars.$main;
   }
 
   &.no-padding {
