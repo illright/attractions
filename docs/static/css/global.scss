@@ -1,6 +1,14 @@
 @use 'attractions-theme' as vars;
 
 :global {
+  html {
+    scroll-behavior: smooth;
+
+    @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
+  }
+  
   * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
