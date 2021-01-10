@@ -1,0 +1,9 @@
+---
+name: Migration Guide
+---
+
+<script>
+  import MigrationGuide from '#root/MIGRATION_GUIDE.md';
+</script>
+
+<MigrationGuide />

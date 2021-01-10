@@ -33,6 +33,10 @@
       segment: 'changelog',
     },
     {
+      title: 'Migration Guide',
+      segment: 'migration-guide',
+    },
+    {
       title: 'Installation',
       segment: 'installation',
     },

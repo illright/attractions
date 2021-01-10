@@ -4,6 +4,22 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.0.0] - 2021-01-10
+
+Not a large release, but still breaking. This will upgrade Attractions to use Sass modules which will allow zero-config installations.
+
+Refer to the [migration guide](./docs/migration-guide) for information on how to upgrade.
+
+### Added
+
+- New Sass variables for the X icon in the search fields and the regular font weight.
+- A slight animation for the checkbox component.
+- Autocompletes can now be disabled like regular text fields.
+
+### Changed
+
+- Sass modules are now used for styling. This is a **breaking** change.
+
 ## [2.3.1] - 2020-12-23
 
 ### Fixed
@@ -92,7 +108,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v2.3.1...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/illright/attractions/releases/tag/v3.0.0
 [2.3.1]: https://github.com/illright/attractions/releases/tag/v2.3.1
 [2.3.0]: https://github.com/illright/attractions/releases/tag/v2.3.0
 [2.2.4]: https://github.com/illright/attractions/releases/tag/v2.2.4
