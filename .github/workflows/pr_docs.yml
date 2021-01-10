@@ -11,12 +11,12 @@ jobs:
   deploy:
     name: Deploy docs
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download the docs artifact
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: pr_lint_build.yml
-          workflow_conclusion: success
           name: docs
           path: ./docs
 
@@ -24,7 +24,6 @@ jobs:
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: pr_lint_build.yml
-          workflow_conclusion: success
           name: pr_number
 
       - name: Add PR number to env
