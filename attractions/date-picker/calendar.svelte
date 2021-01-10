@@ -48,10 +48,12 @@
         class={classes('day', dayClass)}
         class:today={datesEqual(day.value, today)}
         class:outside={day.outside}
-        class:selected={datesEqual(day.value, selectionStart) || datesEqual(day.value, selectionEnd)}
+        class:selected={datesEqual(day.value, selectionStart) ||
+          datesEqual(day.value, selectionEnd)}
         class:start={datesEqual(day.value, selectionStart)}
         class:end={datesEqual(day.value, selectionEnd)}
-        class:in-range={datesLessEqual(selectionStart, day.value) && datesLessEqual(day.value, selectionEnd)}
+        class:in-range={datesLessEqual(selectionStart, day.value) &&
+          datesLessEqual(day.value, selectionEnd)}
       >
         <Button
           title={(datesEqual(day.value, today) && 'Today') || null}

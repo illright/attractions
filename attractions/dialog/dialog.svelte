@@ -27,7 +27,11 @@
   {/if}
   {#if title != null}
     <div
-      class={classes('title', closeCallback != null && 'close-padded', titleClass)}
+      class={classes(
+        'title',
+        closeCallback != null && 'close-padded',
+        titleClass
+      )}
     >
       <slot name="title-icon" />
       {title}

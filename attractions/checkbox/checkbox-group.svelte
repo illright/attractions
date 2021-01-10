@@ -41,7 +41,9 @@
         bind:checked={item.checked}
         disabled={item.disabled || (!item.checked && currentChecked >= max)}
         class={classes(color && 'colored', checkboxClass)}
-        title={!item.disabled && !item.checked && currentChecked >= max ? maxReachedTooltip : null}
+        title={!item.disabled && !item.checked && currentChecked >= max
+          ? maxReachedTooltip
+          : null}
         on:change
         {...$$restProps}
       >

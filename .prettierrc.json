@@ -1,6 +1,6 @@
 {
   "singleQuote": true,
   "arrowParens": "avoid",
-  "svelteSortOrder": "scripts-markup-styles",
+  "svelteSortOrder": "options-scripts-markup-styles",
   "svelteBracketNewLine": true
 }

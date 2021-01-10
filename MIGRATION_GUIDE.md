@@ -13,6 +13,7 @@ If you have existing code that used Sass for styling and was using the old `@imp
 Once your code is ready for Sass modules, replace Node Sass (`node-sass`) with Dart Sass (`sass`).
 
 Update your `rollup.config.js` to use the new Attractions importers:
+
 ```js
 import autoPreprocess from 'svelte-preprocess';
 import makeAttractionsImporter from 'attractions/importer.js';
@@ -37,14 +38,16 @@ const preprocessChain = [
 Lastly, if your `_attractions-theme.scss` had any variable overrides, move them to the module configuration.
 
 Before:
+
 ```scss
-@import "_attractions-theme.scss";
+@import '_attractions-theme.scss';
 $font: 'Open Sans', sans-serif;
 $main: green;
 $my-custom-variable: 1px;
 ```
 
 After:
+
 ```scss
 @forward "~attractions/_variables" with (
   $font: ('Open Sans', sans-serif),

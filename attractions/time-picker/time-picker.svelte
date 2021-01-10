@@ -131,7 +131,12 @@
 </script>
 
 <div
-  class={classes('time-picker', _class, f12hours && 'f12hours', seconds && 'seconds')}
+  class={classes(
+    'time-picker',
+    _class,
+    f12hours && 'f12hours',
+    seconds && 'seconds'
+  )}
 >
   <DropdownShell bind:open={focus} on:change={toggleKeyboardListener}>
     <div class="handle">
@@ -157,7 +162,11 @@
       <div class="column">
         {#each hourValues as hour}
           <Button
-            on:click={() => setHours(hour + 12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12)))}
+            on:click={() =>
+              setHours(
+                hour +
+                  12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12))
+              )}
             selected={matchesCurrentHour(hour, value)}
           >
             {hour.toString().padStart(2, '0')}
