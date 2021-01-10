@@ -16,7 +16,9 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Install and Build 🔧
         run: |
           yarn install
@@ -30,16 +32,16 @@ jobs:
           force_orphan: true
   release:
     runs-on: ubuntu-latest
-    name: Release to NPM
+    name: Release to npm
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: '14'
           registry-url: https://registry.npmjs.org/
       - name: Install and Build 🔧
         run: |
