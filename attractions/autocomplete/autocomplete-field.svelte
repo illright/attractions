@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
+   */
   import { createEventDispatcher } from 'svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Dropdown from '../dropdown/dropdown.svelte';

@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @slot {{ wrongType: boolean; dragActive: boolean }} empty-layer
+   */
   import Paperclip from './paperclip.svelte';
   import Plus from './plus.svelte';
   import FileTile from './file-tile.svelte';

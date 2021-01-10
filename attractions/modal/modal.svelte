@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @slot {{ closeCallback: () => void }}
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 

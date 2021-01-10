@@ -1,4 +1,14 @@
 <script>
+  /**
+   * @slot {{ showSnackbar: (options: {
+   *   component: typeof import("svelte").SvelteComponentDev,
+   *   props: Record<string, any>,
+   *   duration: number,
+   * }) => {
+   *   close: () => void,
+   *   expired: Promise<boolean>,
+   * } }}
+   */
   import { setContext } from 'svelte';
   import Snackbar from './snackbar.svelte';
   import snackbarContextKey from './snackbar-context-key.js';

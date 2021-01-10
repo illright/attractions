@@ -1,4 +1,10 @@
 <script>
+  /**
+   * @slot {{ }} loading-options
+   * @slot {{ }} more-options
+   * @slot {{ }} not-enough-input
+   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
+   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import Chip from '../chip/chip.svelte';

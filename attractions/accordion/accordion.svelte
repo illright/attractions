@@ -1,4 +1,8 @@
 <script>
+  /**
+   * @typedef {import('./accordion-section').default} AccordionSection
+   * @slot {{ closeOtherPanels: ({detail: AccordionSection }) => void }}
+   */
   import classes from '../utils/classes.js';
 
   let _class = null;

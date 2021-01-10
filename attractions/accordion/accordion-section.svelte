@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @slot {{ toggle: () => void }} handle
+   */
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
