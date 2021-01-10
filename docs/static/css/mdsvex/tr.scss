@@ -1,10 +1,11 @@
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'attractions-theme' as vars;
 
 $border-radius: 0.5em;
 
 tr {
   &:nth-child(even) {
-    background: transparentize($main, 0.97);
+    background: color.adjust(vars.$main, $alpha: -0.97);
   }
 
   &:first-child :global {

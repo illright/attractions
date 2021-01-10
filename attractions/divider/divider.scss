@@ -1,8 +1,7 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 hr {
-  border: 0 solid $light-contrast;
+  border: 0 solid vars.$light-contrast;
   border-top-width: 1px;
   margin-top: 1em;
   width: 100%;
@@ -13,7 +12,7 @@ hr {
 
     &::after {
       content: attr(data-text);
-      background: $background;
+      background: vars.$background;
       padding: 0 0.4em;
       position: absolute;
       top: 0;

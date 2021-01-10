@@ -1,22 +1,24 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 .preview {
   display: flex;
   align-items: center;
-  font-family: 'Roboto Mono', monospace;
-  width: 1.5em;
-  height: 1.5em;
+  justify-content: center;
+  width: 5em;
+  padding: 0.25em 0.5em;
   border-radius: 0.25em;
-  background: $background;
+  font-weight: 300;
+  font-size: 0.8em;
+  background: vars.$background;
 }
 
 .value-popover {
-  background: $background;
+  background: vars.$background;
   padding: 0.5em;
   margin-right: 0.25em;
-  box-shadow: $shadow-raised;
+  box-shadow: vars.$shadow-raised;
   white-space: pre;
   font-family: 'Roboto Mono', monospace;
   border-radius: 0.5em;
-  color: $dark;
+  color: vars.$dark;
 }

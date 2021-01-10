@@ -1,21 +1,17 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_appearances';
 
 .popover-button {
+  @include appearances.button;
+
   background: rgb(100, 100, 100);
   border-radius: 0.625em;
-  font-weight: $bold-font-weight;
   font-size: 0.9em;
-  font-family: $font;
-  box-shadow: $shadow-raised;
+  box-shadow: vars.$shadow-raised;
   border: 0;
-  outline: none;
   color: #fff;
   padding: 0.5em 0.625em;
   margin: 0.2em;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
 
   &:hover {
     background: rgb(70, 70, 70);

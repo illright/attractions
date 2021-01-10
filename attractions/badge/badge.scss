@@ -1,5 +1,4 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .badge {
   position: relative;
@@ -11,8 +10,8 @@
     width: 0.625em;
     height: 0.625em;
     border-radius: 50%;
-    background-color: $badge-default;
-    box-shadow: $shadow-raised;
+    background-color: vars.$badge-default;
+    box-shadow: vars.$shadow-raised;
     content: '';
   }
 

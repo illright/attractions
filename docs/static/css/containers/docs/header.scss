@@ -1,4 +1,5 @@
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'attractions-theme' as vars;
 
 $side-margin: 1em;
 
@@ -8,7 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid transparentize($main, 0.75);
+  border-bottom: 1px solid color.adjust(vars.$main, $alpha: -0.75);
 
   .logo,
   .clickables {
@@ -23,7 +24,7 @@ header {
     span {
       margin-left: 0.7em;
       font-size: 1.25em;
-      font-weight: $bold-font-weight;
+      font-weight: vars.$bold-font-weight;
       color: black;
     }
   }

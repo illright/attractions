@@ -8,7 +8,6 @@
   stroke="currentColor"
   stroke-width="2"
   stroke-linecap="round"
-  stroke-linejoin="round"
->
+  stroke-linejoin="round">
   <polyline points="9 18 15 12 9 6" />
 </svg>

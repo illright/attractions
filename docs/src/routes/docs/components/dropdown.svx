@@ -107,7 +107,7 @@ The content of the dropdown.
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **`$background`** | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
-| **`$shadow-raised`** | The shadow of the dropdown content. | <ShadowPreview value={shadowRaised} /> |
-| **`$card-radius`** | The curvature radius of the dropdown content. | `1.25em` |
+| **`$shadow-raised`** | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** | The curvature radius of the dropdown. | `1.25em` |
 
 <style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>

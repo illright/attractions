@@ -1,6 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
-@import './radio-chip.scss';
+@use 'node_modules/attractions/_variables' as vars;
+@use 'radio-chip';
 
 .chip {
   position: relative;
@@ -8,7 +7,7 @@
 
   &::before {
     transition: width 50ms;
-    border: 0 solid $main;
+    border: 0 solid vars.$main;
     width: 0;
     height: 0.5625em;
     content: '';

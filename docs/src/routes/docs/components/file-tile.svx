@@ -1,21 +1,25 @@
 ---
 name: FileTile
-shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 relatedComponents:
   - name: FileInput
     link: ./docs/components/file-input
   - name: FileDropzone
     link: ./docs/components/file-dropzone
+shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 ---
 
 <script>
-  import { FileInput, FileTile } from 'attractions';
+  import { onMount } from 'svelte';
+  import { FileTile } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
 
   let file = null;
+  onMount(() => {
+    file = new File([""], "filename.txt");
+  });
 </script>
 
 
@@ -27,8 +31,6 @@ A small tile displaying the name of a file, its size and format in human-readabl
 
 <Showcase>
   <div slot="showcase" class="padded">
-    <p>Upload any file to see the tile:</p>
-    <FileInput bind:value={file} />
     {#if file != null}
       <FileTile {file} />
     {/if}
@@ -37,11 +39,14 @@ A small tile displaying the name of a file, its size and format in human-readabl
 
 ```svelte
 <script>
+  import { onMount } from 'svelte';
+
   let file = null;
+  onMount(() => {
+    file = new File([""], "filename.txt");
+  });
 </script>
 
-<p>Upload any file to see the tile:</p>
-<FileInput bind:value={file} />
 {#if file != null}
   <FileTile {file} />
 {/if}
@@ -81,5 +86,7 @@ All `<FileTile>` components use the `.file-tile` class.
 | **`$file-tile-radius`** | The curvature radius of the tile. | `.625em` |
 | **`$shadow-1`** | The shadow of the tile. | <ShadowPreview value={shadow1} /> |
 | **`$thin-font-weight`** | The thinner font weight for the file details: size and type. | `300` |
+| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
+| **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
 
 <style src="../../../../static/css/routes/docs/components/file-tile.scss"></style>

@@ -28,6 +28,7 @@ The most basic form element – taking text input.
     <TextField outline label="Username" withItem>
       <AtSignIcon size="24" class="item" />
     </TextField>
+    <TextField type="search" />
   </div>
   <div slot="source">
 
@@ -47,6 +48,7 @@ The most basic form element – taking text input.
 <TextField outline label="Username" withItem>
   <AtSignIcon size="24" class="item" />
 </TextField>
+<TextField type="search" />
 ```
 
   </div>
@@ -115,8 +117,8 @@ If the ==`withItem`== property is specified, this holds the item for the text fi
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** | The color of the focused text field. | <ColorPreview value="#4300B0" /> |
-| **`$textfield-border`** | The bottom border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$main`** | The color of the focused text field border. | <ColorPreview value="#4300B0" /> |
+| **`$textfield-border`** | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
 | **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" bordered /> |
 | **`$textfield-item`** | The default color of the item inside the text field. | <ColorPreview value="#7A7A7A" /> |
 | **`$textfield-bg-error`** | The background color of the text field when an invalid value is entered. | <ColorPreview value="#FBEEEE" /> |
@@ -126,6 +128,6 @@ If the ==`withItem`== property is specified, this holds the item for the text fi
 | **`$font`** | The font family of the text inside the text field. | `'Ubuntu'` |
 | **`$thin-font-weight`** | The thin font weight for the text inside the text field. | `300` |
 | **`$bold-font-weight`** | The bold font weight for the error text and the item that's positioned to the left of the input area. | `500` |
-| **`$x-icon`** | **Only applicable to `<input type="search">` in WebKit browsers**. If you wish to use a custom icon for the X that clears the field's value, supply a URL to the icon here. | N/A |
+| **`$x-icon`** | **Only applicable to `<input type="search">` in WebKit browsers**. If you wish to use a custom icon for the X that clears the field's value, supply a URL to the icon here. | [Feather Icons' X](https://feathericons.com/?query=x) as a data URL |
 
 <style src="../../../../static/css/routes/docs/components/text-field.scss"></style>

@@ -19,6 +19,7 @@
   export let maxOptions = Infinity;
   export let searchQuery = '';
   export let optionComponent = AutocompleteOption;
+  export let disabled = false;
   export let focus = false;
 
   let moreOptions = false;
@@ -87,6 +88,7 @@
   on:change={({ detail }) => (focus = detail.value)}
 >
   <input
+    {disabled}
     bind:this={inputElement}
     bind:value={searchQuery}
     on:focus={focusInputElement}

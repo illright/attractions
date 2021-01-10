@@ -1,10 +1,27 @@
 <script>
+  import { stores } from '@sapper/app';
+  import { Button } from 'attractions';
+  import { HomeIcon, ArrowUpIcon } from 'svelte-feather-icons';
   import Header from 'src/containers/docs/header.svelte';
   import MobileNavigation from 'src/containers/docs/mobile-navigation.svelte';
   import DesktopNavigation from 'src/containers/docs/desktop-navigation.svelte';
-  import { HomeIcon } from 'svelte-feather-icons';
+
+  const { page } = stores();
 
   export let segment;
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+    // TODO: manage focus
+  }
+
+  let scrollbarVisible;
+  page.subscribe(function updateScrollbarVisibility() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    scrollbarVisible = window.innerHeight < document.body.scrollHeight;
+  });
 
   const places = [
     {
@@ -16,8 +33,16 @@
       segment: 'changelog',
     },
     {
+      title: 'Migration Guide',
+      segment: 'migration-guide',
+    },
+    {
       title: 'Installation',
       segment: 'installation',
+    },
+    {
+      title: 'Theming with Sass',
+      segment: 'theming',
     },
     {
       title: 'Components',
@@ -149,6 +174,14 @@
   <DesktopNavigation {places} segment={segment || ''} />
   <article>
     <slot />
+    {#if scrollbarVisible}
+      <div class="center">
+        <Button filled on:click={scrollToTop}>
+          <ArrowUpIcon size="24" class="mr" />
+          scroll to top
+        </Button>
+      </div>
+    {/if}
   </article>
 </main>
 

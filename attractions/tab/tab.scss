@@ -1,25 +1,25 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../_mixins';
 
 .tab {
   display: flex;
   align-items: stretch;
 
   > input {
-    @include hide-accessible;
+    @include mixins.hide-accessible;
   }
 
   :global .ripple {
-    background: transparentize($main, 0.9);
+    background: color.adjust(vars.$main, $alpha: -0.9);
   }
 
   > .content {
-    border: 0 solid lighten($off-state, 25%);
+    border: 0 solid color.scale(vars.$off-state, $lightness: 75%);
     border-bottom-width: 0.125em;
-    font-family: $font;
-    font-weight: $bold-font-weight;
-    color: $main;
+    font-family: vars.$font;
+    font-weight: vars.$bold-font-weight;
+    color: vars.$main;
     padding: 0.7em 0.6em 0.5em;
     display: flex;
     align-items: center;
@@ -28,20 +28,20 @@
     border-top-right-radius: 0.3125em;
 
     &:hover {
-      background: transparentize($off-state, 0.9);
+      background: color.adjust(vars.$off-state, $alpha: -0.9);
     }
   }
 
   > input:disabled + .content {
     cursor: not-allowed;
-    color: $disabled;
+    color: vars.$disabled;
   }
 
   > input:focus + .content {
-    background: transparentize($off-state, 0.85);
+    background: color.adjust(vars.$off-state, $alpha: -0.85);
   }
 
   > input:checked + .content {
-    border-color: transparentize($main, 0.4);
+    border-color: color.adjust(vars.$main, $alpha: -0.4);
   }
 }

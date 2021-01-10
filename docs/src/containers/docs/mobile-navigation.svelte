@@ -25,7 +25,9 @@
   <nav class="mobile padded">
     {#each places as place}
       <Tab
-        class={currentPlace != null && place.sub === currentPlace.sub && 'selected'}
+        class={currentPlace != null &&
+          place.sub === currentPlace.sub &&
+          'selected'}
         value={place}
         name="nav-mobile"
         bind:group={currentPlace}

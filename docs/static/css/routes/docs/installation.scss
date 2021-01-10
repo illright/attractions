@@ -1,4 +1,4 @@
-@import '_attractions-theme.scss';
+@use 'attractions-theme' as vars;
 
 .installation {
   margin-top: 0.5em;
@@ -16,5 +16,5 @@
 }
 
 strong {
-  color: $main;
+  color: vars.$main;
 }

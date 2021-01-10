@@ -1,15 +1,15 @@
-@import '../var-defaults.scss';
-@import '../_mixins.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use '../mixins';
 
 .switch {
   display: flex;
   align-items: center;
-  font-family: $font;
+  font-family: vars.$font;
   cursor: pointer;
 
   input {
-    @include hide-accessible;
+    @include mixins.hide-accessible;
   }
 
   .track {
@@ -17,7 +17,7 @@
     width: 2em;
     height: 1.125em;
     border-radius: 0.75em;
-    border: 0.125em solid $off-state;
+    border: 0.125em solid vars.$off-state;
     cursor: pointer;
 
     &::before {
@@ -35,7 +35,7 @@
       border-radius: 50%;
       width: 0.75em;
       height: 0.75em;
-      background: $off-state;
+      background: vars.$off-state;
       position: absolute;
       top: 50%;
       left: 0.25em;
@@ -45,21 +45,21 @@
   }
 
   input:checked ~ .track {
-    border-color: $main;
+    border-color: vars.$main;
 
     > .thumb {
-      background-color: $main;
+      background-color: vars.$main;
       transform: translateY(-50%) translateX(100%);
     }
   }
 
   input:disabled ~ .track {
     cursor: not-allowed;
-    border-color: $disabled;
+    border-color: vars.$disabled;
 
     > .thumb {
       background: none;
-      border: 0.125em solid $disabled;
+      border: 0.125em solid vars.$disabled;
       width: 0.5em;
       height: 0.5em;
       position: relative;
@@ -70,7 +70,7 @@
         height: 0.125em;
         left: 0;
         top: (0.5em - 0.125em) / 2;
-        background: $disabled;
+        background: vars.$disabled;
         position: absolute;
         transform: rotate(-45deg);
       }
@@ -78,20 +78,20 @@
   }
 
   input:focus ~ .track::before {
-    background: transparentize(black, 0.9);
+    background: color.adjust(black, $alpha: -0.9);
   }
 
   input:focus:checked ~ .track::before {
-    background: transparentize($main, 0.9);
+    background: color.adjust(vars.$main, $alpha: -0.9);
   }
 }
 
 .switch:hover {
   .track::before {
-    background: transparentize(black, 0.95);
+    background: color.adjust(black, $alpha: -0.9);
   }
 
   input:checked:not(:disabled) ~ .track::before {
-    background: transparentize($main, 0.95);
+    background: color.adjust(vars.$main, $alpha: -0.95);
   }
 }

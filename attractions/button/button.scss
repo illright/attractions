@@ -1,210 +1,99 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+@use './_mixins';
+@use '../_appearances';
 
 .btn {
-  font-family: $font;
-  font-weight: $bold-font-weight;
+  @include appearances.button;
+
+  @include mixins.flat-interactive-background(vars.$main);
+
   font-size: 1rem;
-  color: $main;
-  text-decoration: none;
-  outline: none;
+  border-radius: vars.$button-radius;
   background: none;
   padding: 0.8em 1.1em;
-  border-radius: $button-radius;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 
-  :global .ripple {
-    background: transparentize($main, 0.9);
+  :global {
+    @include mixins.color-text-icon-ripple(vars.$main);
   }
 
-  &::-moz-focus-inner {
-    border: 0;
-  }
+  &.danger {
+    @include mixins.flat-interactive-background(vars.$danger);
 
-  &:visited {
-    color: $main;
-  }
-
-  &.neutral :global {
-    color: $dark;
-
-    .icon {
-      stroke: $dark;
-    }
-
-    .ripple {
-      background: transparentize($dark, 0.9);
+    :global {
+      @include mixins.color-text-icon-ripple(vars.$danger);
     }
   }
 
-  &.danger :global {
-    color: $danger;
+  &.neutral {
+    @include mixins.flat-interactive-background(vars.$dark);
 
-    .icon {
-      stroke: $danger;
+    :global {
+      @include mixins.color-text-icon-ripple(vars.$dark);
     }
-
-    .ripple {
-      background: transparentize($danger, 0.9);
-    }
-  }
-
-  &.rectangle {
-    border-radius: $button-radius / 2;
-    padding: 1.2em;
-    font-size: 1.1rem;
   }
 
   &.filled {
-    background: $main;
-    background: linear-gradient(0deg, $main 0%, lighten($main, 5%) 100%);
-    box-shadow: $shadow-1;
-    color: $main-text;
+    @include mixins.filled-interactive-background(vars.$main);
+    box-shadow: vars.$shadow-1;
 
-    &:hover:not([disabled]) {
-      background: lighten($main, 2%);
-      background: linear-gradient(
-        0deg,
-        lighten($main, 2%) 0%,
-        lighten($main, 7%) 100%
-      );
-      box-shadow: $shadow-raised;
-    }
-
+    &:hover:not([disabled]),
     &:focus:not([disabled]) {
-      background: lighten($main, 5%);
-      background: linear-gradient(
-        0deg,
-        lighten($main, 5%) 0%,
-        lighten($main, 10%) 100%
-      );
-      box-shadow: $shadow-raised;
+      box-shadow: vars.$shadow-raised;
     }
 
     &.danger {
-      background: $danger;
-      background: linear-gradient(0deg, $danger 0%, lighten($danger, 5%) 100%);
-
-      &:hover:not([disabled]) {
-        background: lighten($danger, 2%);
-        background: linear-gradient(
-          0deg,
-          lighten($danger, 2%) 0%,
-          lighten($danger, 7%) 100%
-        );
-      }
-
-      &:focus:not([disabled]) {
-        background: lighten($danger, 5%);
-        background: linear-gradient(
-          0deg,
-          lighten($danger, 5%) 0%,
-          lighten($danger, 10%) 100%
-        );
-      }
+      @include mixins.filled-interactive-background(vars.$danger);
     }
 
     &.neutral {
-      background: $dark;
-      background: linear-gradient(0deg, $dark 0%, lighten($dark, 5%) 100%);
+      @include mixins.filled-interactive-background(vars.$dark);
+    }
 
-      &:hover:not([disabled]) {
-        background: lighten($dark, 2%);
-        background: linear-gradient(
-          0deg,
-          lighten($dark, 2%) 0%,
-          lighten($dark, 7%) 100%
-        );
-      }
-
-      &:focus:not([disabled]) {
-        background: lighten($dark, 5%);
-        background: linear-gradient(
-          0deg,
-          lighten($dark, 5%) 0%,
-          lighten($dark, 10%) 100%
-        );
-      }
+    :global {
+      @include mixins.color-text-icon-ripple(vars.$main-text);
     }
 
     &[disabled] {
-      background: $disabled-bg;
+      background: vars.$disabled-bg;
       box-shadow: none;
-    }
-
-    :global .icon {
-      stroke: $main-text;
-    }
-
-    :global .ripple {
-      background: transparentize($main-text, 0.75);
     }
   }
 
   &.outline {
-    border: 1px solid $main;
+    border: 1px solid vars.$main;
 
     &.danger {
-      border-color: $danger;
+      border-color: vars.$danger;
     }
 
     &.neutral {
-      border-color: $dark;
+      border-color: vars.$dark;
     }
 
     &[disabled] {
-      border-color: $disabled-bg;
-    }
-  }
-
-  &:hover:not([disabled]) {
-    &,
-    &.outline {
-      background: transparentize($main, 0.95);
-    }
-
-    &.danger,
-    &.outline.danger {
-      background: transparentize($danger, 0.95);
-    }
-
-    &.neutral,
-    &.outline.neutral {
-      background-color: transparentize($dark, 0.95);
-    }
-  }
-
-  &:focus:not([disabled]) {
-    &,
-    &.outline {
-      background-color: transparentize($main, 0.88);
-    }
-
-    &.danger,
-    &.outline.danger {
-      background: transparentize($danger, 0.88);
-    }
-
-    &.neutral,
-    &.outline.neutral {
-      background-color: transparentize($dark, 0.88);
+      border-color: vars.$disabled-bg;
     }
   }
 
   &[disabled] {
-    color: $disabled;
+    color: vars.$disabled;
     background: transparent;
     cursor: default;
 
     :global .icon {
-      stroke: $disabled;
+      stroke: vars.$disabled;
     }
   }
 
   &.round {
     padding: 0.7em;
+  }
+
+  &.rectangle {
+    border-radius: vars.$button-radius / 2;
+    padding: 1.2em;
+    font-size: 1.1rem;
   }
 
   &.small {
@@ -216,11 +105,7 @@
   }
 
   &.selected:not(.filled) {
-    background: transparentize($main, 0.88);
-  }
-
-  :global .icon {
-    stroke: $main;
+    background: color.adjust(vars.$main, $alpha: -0.88);
   }
 }
 
@@ -228,6 +113,10 @@ button.btn {
   border: 0;
 }
 
-a.btn[disabled] {
-  pointer-events: none;
+a.btn {
+  text-decoration: none;
+
+  &[disabled] {
+    pointer-events: none;
+  }
 }

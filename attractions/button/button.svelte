@@ -54,8 +54,7 @@
     on:click={e => dispatch('click', { nativeEvent: e })}
     use:eventsAction={events}
     use:ripple={{ disabled: noRipple || disabled }}
-    {...$$restProps}
-  >
+    {...$$restProps}>
     <slot />
   </a>
 {:else}
@@ -74,8 +73,7 @@
     on:click={e => dispatch('click', { nativeEvent: e })}
     use:ripple={{ disabled: noRipple || disabled }}
     use:eventsAction={events}
-    {...$$restProps}
-  >
+    {...$$restProps}>
     <slot />
   </button>
 {/if}

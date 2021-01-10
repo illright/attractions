@@ -1,8 +1,5 @@
-@import '_attractions-theme.scss';
-
-:global {
-  @import 'global.scss';
-}
+@use 'attractions-theme' as vars;
+@use 'global';
 
 main {
   display: flex;
@@ -14,7 +11,7 @@ main {
   }
 
   :global .required {
-    color: $main;
+    color: vars.$main;
     font-size: 0.9em;
   }
 
@@ -27,4 +24,9 @@ main {
     display: block;
     white-space: nowrap;
   }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }

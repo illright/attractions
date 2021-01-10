@@ -10,6 +10,7 @@ import pkg from './package.json';
 import alias from '@rollup/plugin-alias';
 import autoPreprocess from 'svelte-preprocess';
 import attractionsPkg from 'attractions/package.json';
+import makeAttractionsImporter from 'attractions/importer.js';
 import sapperEnv from 'sapper-environment';
 import { mdsvex } from 'mdsvex';
 import remarkMark from 'remark-mark-plus';
@@ -37,8 +38,12 @@ const commonSubstitutions = {
 const preprocess = [
   autoPreprocess({
     scss: {
-      includePaths: ['./static/css'],
       renderSync: true,
+      importer: makeAttractionsImporter({
+        themeFile: './static/css/attractions-theme.scss',
+        nodeModulesPath: '../node_modules',
+      }),
+      includePaths: ['./static/css'],
     },
     sourceMap: dev,
   }),

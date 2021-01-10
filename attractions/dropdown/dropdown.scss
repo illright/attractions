@@ -1,11 +1,10 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'node_modules/attractions/_variables' as vars;
 
 .dropdown {
   position: absolute;
-  background: $background;
-  box-shadow: $shadow-raised;
-  border-radius: $card-radius;
+  background: vars.$background;
+  box-shadow: vars.$shadow-raised;
+  border-radius: vars.$card-radius;
   z-index: 900;
   margin-top: 0.3125em;
 

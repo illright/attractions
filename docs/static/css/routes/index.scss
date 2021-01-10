@@ -1,18 +1,16 @@
-@import '_attractions-theme.scss';
-
-:global {
-  @import 'global.scss';
-}
+@use 'sass:color';
+@use 'attractions-theme' as vars;
+@use 'global';
 
 $mobile-top-padding: 2.4em;
 
 main {
-  background: transparentize($main, 0.93);
+  background: color.adjust(vars.$main, $alpha: -0.93);
   padding: $mobile-top-padding 0.5em;
 
   mark {
     background: none;
-    color: $main;
+    color: vars.$main;
   }
 
   > :global .card {
@@ -44,7 +42,7 @@ main {
 
     p {
       margin-top: 1.5em;
-      font-weight: $thin-font-weight;
+      font-weight: vars.$thin-font-weight;
     }
 
     .actions {
@@ -53,7 +51,7 @@ main {
   }
 
   .strip {
-    background: $main;
+    background: vars.$main;
     height: 3.6em;
     width: 100%;
     position: absolute;

@@ -5,7 +5,10 @@
   import { GridIcon, Edit2Icon, FeatherIcon } from 'svelte-feather-icons';
   import InfoTile from 'src/components/home/info-tile.svelte';
 
-  const totalComponents = Object.keys(attractions).length;
+  const totalComponents =
+    Object.keys(attractions).length -
+    1 - // utils
+    1; // importer
   let bundleSizePromise = Promise.resolve(Infinity);
 
   onMount(() => {

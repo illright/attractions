@@ -1,5 +1,5 @@
-@import '../var-defaults.scss';
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
 
 .pagination {
   margin: 2em 1em;
@@ -27,14 +27,14 @@
     }
 
     > .page.current {
-      background: transparentize($main, 0.95);
+      background: color.adjust(vars.$main, $alpha: -0.95);
 
       &:hover {
-        background: transparentize($main, 0.9);
+        background: color.adjust(vars.$main, $alpha: -0.9);
       }
 
       &:focus {
-        background: transparentize($main, 0.85);
+        background: color.adjust(vars.$main, $alpha: -0.85);
       }
     }
 

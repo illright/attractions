@@ -91,7 +91,7 @@ export default function ripple(node, options = {}) {
       style.borderBottomRightRadius;
     rippleContainer.style.direction = 'ltr';
 
-    setTimeout(function () {
+    setTimeout(() => {
       ripple.style.width = radius * 2 + 'px';
       ripple.style.height = radius * 2 + 'px';
       ripple.style.marginLeft = dx - radius + 'px';
@@ -99,18 +99,18 @@ export default function ripple(node, options = {}) {
     }, 0);
 
     function clearRipple() {
-      setTimeout(function () {
+      setTimeout(() => {
         ripple.style.backgroundColor = 'rgba(0, 0, 0, 0)';
       }, 250);
 
       // Timeout set to get a smooth removal of the ripple
-      setTimeout(function () {
+      setTimeout(() => {
         rippleContainer.parentNode.removeChild(rippleContainer);
       }, transition + 250);
 
       // After removing event set position to target to it's original one
       // Timeout it's needed to avoid jerky effect of ripple jumping out parent target
-      setTimeout(function () {
+      setTimeout(() => {
         let clearPosition = true;
         for (let i = 0; i < target.childNodes.length; i++) {
           if (target.childNodes[i].className === 'ripple-container') {

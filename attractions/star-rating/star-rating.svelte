@@ -56,8 +56,7 @@
     <label
       class={classes(starClass)}
       for={`${name}-${i}`}
-      use:ripple={{ disabled }}
-    >
+      use:ripple={{ disabled }}>
       <slot name="icon">
         <Star />
       </slot>

@@ -1,4 +1,5 @@
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'attractions-theme' as vars;
 
 nav {
   display: none;
@@ -8,7 +9,7 @@ nav {
     margin-right: 3em;
     padding: 0.5em 0.5em 0.5em 0;
     min-width: 13em;
-    border-right: 1px solid transparentize($main, 0.75);
+    border-right: 1px solid color.adjust(vars.$main, $alpha: -0.75);
 
     :global .btn {
       white-space: nowrap;
@@ -23,7 +24,7 @@ nav {
       section {
         margin: 0.5em 0 0.5em 1em;
         padding-left: 0.5em;
-        border-left: 1px solid $light-contrast;
+        border-left: 1px solid vars.$light-contrast;
         display: flex;
         flex-direction: column;
         align-items: flex-start;

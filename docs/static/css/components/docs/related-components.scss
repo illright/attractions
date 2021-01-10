@@ -1,9 +1,10 @@
-@import '_attractions-theme.scss';
+@use 'sass:color';
+@use 'attractions-theme' as vars;
 
 .related-components {
   margin-top: 1.5em;
   padding: 1em 1em 1em 2em;
-  background: transparentize($main, 0.97);
+  background: color.adjust(vars.$main, $alpha: -0.97);
   border-radius: 1em;
   display: flex;
   flex-wrap: wrap;

@@ -152,7 +152,10 @@
         }}
         class={classes(startFocus && 'in-focus')}
         on:change={({ detail }) => {
-          startValue = applyDate(parseDateTime(detail.value, format, startValue), startValue);
+          startValue = applyDate(
+            parseDateTime(detail.value, format, startValue),
+            startValue
+          );
           fixRange();
           shiftShownCalendar(startValue);
         }}
@@ -168,7 +171,10 @@
           }}
           class={classes(endFocus && 'in-focus')}
           on:change={({ detail }) => {
-            endValue = applyDate(parseDateTime(detail.value, format, endValue), endValue);
+            endValue = applyDate(
+              parseDateTime(detail.value, format, endValue),
+              endValue
+            );
             fixRange();
             shiftShownCalendar(endValue);
           }}
