@@ -1211,11 +1211,6 @@ astral-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-attractions@^2.2.3:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/attractions/-/attractions-2.3.1.tgz#e634a487883a73a1fc6d420812fa7dcbbdce029f"
-  integrity sha512-PnFHJ2wIwiNKcVCsEY+zSTlyg9lvzF2EJu3aXUs+HkDFMMz4YzuuO5KvSNz9zUd2nif6j+QHPKsZjVPk26Avkg==
-
 autoprefixer@^9.8.6:
   version "9.8.6"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.6.tgz#3b73594ca1bf9266320c5acf1588d74dea74210f"

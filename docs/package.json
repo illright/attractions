@@ -27,7 +27,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.2.0",
-    "attractions": "^2.2.3",
+    "attractions": "^3.0.0",
     "eslint-config-prettier": "^7.1.0",
     "mdsvex": "^0.8.7",
     "postcss": "^8.2.4",
