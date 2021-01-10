@@ -3,6 +3,7 @@ import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import autoPreprocess from 'svelte-preprocess';
+import sveld from 'sveld';
 import pkg from './package.json';
 
 const name = pkg.name
@@ -77,6 +78,7 @@ export default [
         preprocess: [prependTagOption(icons), sveltePreprocess],
       }),
       resolve(),
+      sveld(),
       terser({
         module: true,
       }),
