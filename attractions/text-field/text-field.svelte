@@ -25,7 +25,7 @@
   }
 
   export let value = null;
-  export let events = null;
+  export let events = [];
 
   let inputElement;
   onMount(() => autofocus && inputElement.focus());

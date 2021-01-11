@@ -14,7 +14,7 @@
   export let value = null;
   export let name;
   export let disabled = false;
-  export let events = null;
+  export let events = [];
 
   function reverseArrowKeys(event) {
     switch (event.key) {

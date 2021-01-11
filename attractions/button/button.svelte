@@ -20,7 +20,7 @@
   export let href = null;
   export let noPrefetch = false;
 
-  export let events = null;
+  export let events = [];
 
   if (filled && outline) {
     console.error('A button may not be filled and outlined at the same time');
