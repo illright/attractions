@@ -1,0 +1,40 @@
+name: Manual deployment of docs
+on:
+  workflow_dispatch:
+    inputs:
+      prefix:
+        description: 'The URL prefix to deploy the docs to'
+        required: false
+      keep_files:
+        description: 'Keep other deployments on the branch (true/false)?'
+        required: false
+        default: 'true'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs
+    name: Deploy docs to GitHub Pages
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install and Build 🔧
+        run: |
+          yarn install
+          SAPPER_APP_BASEPATH=attractions/${{ github.event.inputs.prefix }} yarn export --basepath attractions/${{ github.event.inputs.prefix }}
+
+      - name: Publish docs
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
+          destination_dir: ${{ github.event.inputs.prefix }}
+          keep_files: ${{ github.event.inputs.keep_files }}
