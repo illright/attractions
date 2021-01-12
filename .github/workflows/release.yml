@@ -9,7 +9,7 @@ jobs:
     defaults:
       run:
         working-directory: docs
-    name: Deploy docs to Pages
+    name: Deploy docs to GitHub Pages
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -32,7 +32,7 @@ jobs:
           force_orphan: true
   release:
     runs-on: ubuntu-latest
-    name: Release to npm
+    name: Publish the release on npm if needed
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -49,6 +49,8 @@ jobs:
           cd attractions
           yarn install
           yarn build
-          yarn publish
+          node ensure-verison-unpublished $(yarn info attractions version --silent) \
+          && yarn publish \
+          || echo 'Version already published!'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
