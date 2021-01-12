@@ -37,7 +37,6 @@
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
     "eslint": "^7.17.0",
-    "pkg-versions": "^2.1.0",
     "prettier-plugin-svelte": "^2.0.3",
     "rollup": "^2.36.1",
     "rollup-plugin-svelte": "^7.0.0",
