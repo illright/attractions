@@ -1,4 +1,4 @@
-name: Deploy docs to GH Pages
+name: Deploy PR docs to GitHub Pages
 
 on:
   workflow_run:
