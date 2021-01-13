@@ -56,12 +56,12 @@
           segment: 'components/autocomplete',
         },
         {
-          title: 'Button',
-          segment: 'components/button',
-        },
-        {
           title: 'Badge',
           segment: 'components/badge',
+        },
+        {
+          title: 'Button',
+          segment: 'components/button',
         },
         {
           title: 'Card',
@@ -96,12 +96,12 @@
           segment: 'components/dropdown',
         },
         {
-          title: 'FileInput',
-          segment: 'components/file-input',
-        },
-        {
           title: 'FileDropzone',
           segment: 'components/file-dropzone',
+        },
+        {
+          title: 'FileInput',
+          segment: 'components/file-input',
         },
         {
           title: 'FormField',
