@@ -42,7 +42,7 @@ module.exports = {
     'comma-spacing': ['error', { before: false, after: true }],
     'computed-property-spacing': ['error', 'never'],
     'eol-last': ['error', 'always'],
-    'max-len': ['error', { code: 100 }],
+    'max-len': ['error', { code: 100, ignoreComments: true }],
     'no-tabs': 'error',
     'operator-assignment': ['error', 'always'],
     'object-curly-spacing': [
