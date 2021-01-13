@@ -64,7 +64,7 @@ An individual radio button.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`value`** | `null` | `string` | The value assigned to the radio button input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information. |
+| ==**`value`**==&nbsp;<span class="required">*</span> | | `string` | The value assigned to the radio button input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information. |
 | **`group`** | `null` | `string` | The value of the currently selected radio button in the `name` group. Similar to Svelte's `bind:group` binding on native radio buttons. |
 | **`disabled`** | `false` | `boolean` | Disables the radio button. |
 | **`title`** | `null` | `string` | Adds a tooltip to the radio button. |
