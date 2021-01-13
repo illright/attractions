@@ -5,13 +5,41 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to assign to the `<input>` element.
+   * @type {string}
+   */
   export let inputClass = null;
+  /**
+   * A class string to add to the content of the tab.
+   * @type {string}
+   */
   export let contentClass = null;
 
+  /**
+   * The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information.
+   * @type {string}
+   */
   export let value;
+  /**
+   * The name assigned to the `<input type="radio">`'s [name attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).
+   * @type {string}
+   */
   export let name = null;
+  /**
+   * The `value` of the currently selected tab. Use with `bind:group`.
+   * @type {string}
+   */
   export let group = null;
+  /**
+   * Disallows selecting this tab.
+   * @type {boolean}
+   */
   export let disabled = false;
+  /**
+   * Disables the ripple on the tab when clicking on it.
+   * @type {boolean}
+   */
   export let noRipple = false;
 
   const dispatch = createEventDispatcher();

@@ -1,6 +1,8 @@
 <script>
   /**
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
+   * @typedef {typeof import('./autocomplete-option').Option} Option
+   * @typedef {(q: string) => Generator<Promise<Option[]>, never, never>} OptionsGetter
    */
   import { createEventDispatcher } from 'svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
@@ -16,13 +18,49 @@
   let _class = null;
   export { _class as class };
 
+  /**
+   * An async generator of suggestions.
+   * Receives the input from the text field and is expected to yield promises that resolve to arrays of objects
+   * @type {OptionsGetter}
+   */
   export let getOptions;
+  /**
+   * The current selection as an array of objects.
+   * Can be used to set the selection programmatically.
+   * @type {Option[]}
+   */
   export let selection = [];
+  /**
+   * The minimum amount of characters to call `getOptions`
+   * @type {number}
+   */
   export let minSearchLength = 3;
+  /**
+   * The maximum amount of options than can be selected.
+   * @type {number}
+   */
   export let maxOptions = Infinity;
+  /**
+   * The current value of the text field. Can be used to control the query programmatically.
+   * @type {string}
+   */
   export let searchQuery = '';
+  /**
+   * The component used to render a suggestion in the list.
+   * Receives two props: the option object ({ name, details }) and the current query.
+   * Expected to dispatch click events on selection
+   * @type {SvelteComponentTyped<{option: Option; query: string}, {click: MouseEvent}, {}>}
+   */
   export let optionComponent = AutocompleteOption;
+  /**
+   * Whether to disable the field.
+   * @type {boolean}
+   */
   export let disabled = false;
+  /**
+   * Allows to programmatically control whether the suggestions dropdown is shown.
+   * @type {boolean}
+   */
   export let focus = false;
 
   let moreOptions = false;

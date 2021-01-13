@@ -8,12 +8,36 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to assign to the `<label>` element containing the star icon.
+   * @type {string}
+   */
   export let starClass = null;
 
+  /**
+   * How many stars to be displayed.
+   * @type {number}
+   */
   export let max = 5;
+  /**
+   * Current amount of selected stars.
+   * @type {number}
+   */
   export let value = null;
+  /**
+   * The name to assign to all stars belonging to the same group. Check MDN docs for more information.
+   * @type {string}
+   */
   export let name;
+  /**
+   * Disables star selection.
+   * @type {boolean}
+  */
   export let disabled = false;
+  /**
+   * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action
+   * @type {Array<{name: string; handler: (e:Event) => void }>}
+   */
   export let events = [];
 
   function reverseArrowKeys(event) {

@@ -19,10 +19,32 @@
   let _class = null;
   export { _class as class };
 
+  /**
+   * Aligns the dropdown content such that it opens to the top of the text field, extending up.
+   * @type {boolean}
+   */
   export let top = false;
+  /**
+   * Aligns the dropdown with the right edge of the text field.
+   * @type {boolean}
+   */
   export let right = false;
+  /**
+   * The currently selected time value. Even though a whole `Date` object is needed, only the time part will be considered.
+   * @type {Date}
+   */
   export let value = null;
+  /**
+   * The format used to display time and consume input.
+   * The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%H`, `%M`, `%S`, `%P` and `%p` allowed. `%P` stands for AM/PM, while `%p` stands for am/pm.
+   * @type {string}
+   */
   export let format = '%H:%M';
+  /**
+   * If the `%P` or `%p` modifier is used in the format, the dropdown will contain tabs to switch between AM and PM.
+   * You may change the name of the radio group for these tabs to avoid collisions.
+   * @type {string}
+   */
   export let amPmTabName = 'am-pm';
   $: readableFormat = format
     .replace('%H', 'HH')

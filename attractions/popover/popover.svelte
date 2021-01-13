@@ -4,8 +4,16 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to add to the popover.
+   * @type {string}
+   */
   export let popoverClass = null;
 
+  /**
+   * The position of the popover content relative to the triggering handle.
+   * @type {typeof import("../../popover/popover-positions").default}
+   */
   export let position = PopoverPositions.TOP;
 </script>
 

@@ -14,6 +14,10 @@
   import snackbarContextKey from './snackbar-context-key.js';
   import SnackbarPositions from './snackbar-positions.js';
 
+  /**
+   * The position of the snackbar stack inside the window.
+   * @type {typeof import('../../snackbar/snackbar-positions').default}
+   */
   export let position = SnackbarPositions.BOTTOM_LEFT;
   let registeredSnackbars = new Set();
 

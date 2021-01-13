@@ -5,26 +5,83 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to assign to the `<input>` or `<textarea>` element.
+   * @type {string}
+   */
   export let inputClass = null;
+  /**
+   * A class string to assign to the `<label>` for the outline text fields.
+   * @type {string}
+   */
   export let labelClass = null;
+  /**
+   * A class string to add to the error message under the text field.
+   * @type {string}
+   */
   export let errorClass = null;
 
+  /**
+   * Whether the text field should have outline styling.
+   * @type {boolean}
+   */
   export let outline = false;
+  /**
+   * Whether there will be something permanent inside the field like an icon.
+   * By default, this item is placed to the left of the input area.
+   * @type {boolean}
+   */
   export let withItem = false;
+  /**
+   * Whether the item should be placed to the right of the input area.
+   * @type {boolean}
+   */
   export let itemRight = false;
 
+  /**
+   * The ID to assign to the input.
+   * @type {string}
+   */
   export let id = null;
+  /**
+   * Whether to hide the spinner (arrow buttons inside `<input type="number">`).
+   * @type {boolean}
+   */
   export let noSpinner = false;
+  /**
+   * The label to show above the text field. Only works with `outline` text fields.
+   * @type {string}
+   */
   export let label = null;
+  /**
+   * The error message to show under the text field.
+   * @type {string}
+   */
   export let error = null;
+  /**
+   * Whether the text field should allow multiple lines (`<textarea>` will be used instead of the `<input>`).
+   * @type {boolean}
+   */
   export let multiline = null;
+  /**
+   * Whether the field should be focused on mount.
+   * @type {boolean}
+   */
   export let autofocus = false;
 
   if (!outline && label != null) {
     console.error('Labels are only available for outlined text fields');
   }
 
+  /**
+   * The current value of the text field. Converted to a number if `type="number"`.
+   * @type {string | number}
+   */
   export let value = null;
+  /**
+   * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action
+   * @type {Array<{name: string; handler: (e:Event) => void }>}
+   */
   export let events = [];
 
   let inputElement;

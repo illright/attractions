@@ -9,15 +9,55 @@
     getCalendar,
   } from '../utils/datetime-utils.js';
 
+  /**
+   * A class string to add to the list of weekdays above the calendar.
+   * @type {string}
+   */
   export let weekdaysClass = null;
+  /**
+   * A class string to add to the element containing each row of days in the calendar.
+   * @type {string}
+   */
   export let weekClass = null;
+  /**
+   * A class string to add to each day in the calendar.
+   * @type {string}
+   */
   export let dayClass = null;
 
+  /**
+   * The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used.
+   * This will affect the weekdays and the day number representations.
+   * @type {string | undefined}
+   */
   export let locale = undefined;
+  /**
+   * The index of the weekday to start the week at.
+   * 0 is for Sunday and 6 is for Saturday.
+   * Defaults to 1 (Monday)
+   * @type {number}
+   */
   export let firstWeekday = 1; // 1 corresponds to Monday
+  /**
+   * An index of the desired month.
+   * 0 is for January, 11 is for December.
+   * @type {number}
+   */
   export let month;
+  /**
+   * The desired year.
+   * @type {number}
+   */
   export let year;
+  /**
+   * If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days).
+   * @type {Date}
+   */
   export let selectionStart = null;
+  /**
+   * If a selection should be displayed, this should be a `Date` object signifying the end of the selection (can be outside the shown days).
+   * @type {Date}
+   */
   export let selectionEnd = null;
 
   const weekdays = getWeekdays(locale, firstWeekday);

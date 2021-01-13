@@ -1,4 +1,8 @@
 <script>
+  /**
+   * Adds a text to the middle of the line.
+   * @type {string}
+   */
   export let text = null;
 </script>
 

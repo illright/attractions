@@ -4,12 +4,36 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to add to the `<input>` inside.
+   * @type {string}
+   */
   export let inputClass = null;
+  /**
+   * A class string to add to the [track](https://material.io/components/selection-controls#switches) of the switch.
+   * @type {string}
+   */
   export let trackClass = null;
+  /**
+   * A class string to add to the [thumb](https://material.io/components/selection-controls#switches) of the switch.
+   * @type {string}
+   */
   export let thumbClass = null;
 
+  /**
+   * Whether the switch is currently on.
+   * @type {boolean}
+   */
   export let value = false;
+  /**
+   * Disables the switch.
+   * @type {boolean}
+   */
   export let disabled = false;
+  /**
+   * Whether to place the default slot to the left of the switch or to the right.
+   * @type {boolean}
+   */
   export let slotLeft = false;
 
   const dispatch = createEventDispatcher();

@@ -5,11 +5,31 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * Adds a title to the dialog.
+   * @type {string}
+   */
   export let titleClass = null;
 
+  /**
+   * Applies the danger color to the title (including the icon slot if it is stylable with the CSS `color` property).
+   * @type {boolean}
+   */
   export let danger = false;
+  /**
+   * Adds a close button to the dialog and calls this function when it is clicked.
+   * @type {(e: MouseEvent) => void}
+   */
   export let closeCallback = null;
+  /**
+   * Adds a title to the dialog.
+   * @type {string}
+   */
   export let title = null;
+  /**
+   * Gives the dialog a `max-width` of `30em`.
+   * @type {boolean}
+   */
   export let constrainWidth = false;
 </script>
 

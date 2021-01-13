@@ -13,11 +13,39 @@
   let _class = null;
   export { _class as class };
 
+  /**
+   * The user's selection as an array of [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) objects.
+   * Note: this is an actual `Array`, not a `FileList`, as opposed to the native `<input type="file">`.
+   * @type {File[]}
+   */
   export let files = [];
+  /**
+   * The component used to render a selected file.
+   * Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
+   * Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail.
+   * @type {SvelteComponentTyped<{file: File}, {delete: CustomEvent<File>}>}
+   */
   export let fileComponent = FileTile;
+  /**
+   * Limits the allowed files to particular types. For guidelines on the value of the attribute, consult the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept).
+   * @type {string}
+   */
   export let accept = null;
+  /**
+   * A callback to call for each file that passes the `accept` check before it is added to the `files`.
+   * If it returns a Promise, they will be started for every file, but awaited at the end.
+   * @type {(file: File) => any}
+   */
   export let beforeChange = null;
+  /**
+   * Whether the input should accept files.
+   * @type {boolean}
+   */
   export let disabled = false;
+  /**
+   * The maximum amount of files that the user can upload.
+   * @type {number}
+   */
   export let max = Infinity;
 
   let dragActive = false;

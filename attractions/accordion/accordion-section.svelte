@@ -9,7 +9,16 @@
   let _class = null;
   export { _class as class };
 
+  /**
+   * The label text to use on the button that toggles the section.
+   * Not used if the handle slot is provided.
+   * @type {string}
+   */
   export let label = null;
+  /**
+   * The state of the section: opened or closed.
+   * @type {boolean}
+   */
   export let open = false;
 
   const selfControl = {

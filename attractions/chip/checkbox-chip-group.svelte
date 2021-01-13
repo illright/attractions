@@ -5,11 +5,33 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to add to the `CheckboxChip` components inside.
+   * @type {string}
+   */
   export let checkboxClass = null;
+  /**
+   * A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added.
+   * @type {string}
+   */
   export let labelClass = null;
 
+  /**
+   * An array of items, where only the value field is required.
+   * Must contain at least one value.
+   * @type {Array<{value: string; label: string; checked: boolean; disabled: boolean}>}
+   */
   export let items;
+  /**
+   * The name to assign to all checkboxes belonging to the same group.
+   * Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
+   * @type {string}
+   */
   export let name;
+  /**
+   * The maximum allowed number of chips to select.
+   * @type {number}
+   */
   export let max = Infinity;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
