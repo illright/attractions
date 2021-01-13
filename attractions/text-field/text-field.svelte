@@ -62,7 +62,7 @@
    * Whether the text field should allow multiple lines (`<textarea>` will be used instead of the `<input>`).
    * @type {boolean}
    */
-  export let multiline = null;
+  export let multiline = false;
   /**
    * Whether the field should be focused on mount.
    * @type {boolean}
