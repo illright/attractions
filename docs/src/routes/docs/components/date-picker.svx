@@ -58,7 +58,7 @@ If you need to display the calendar differently, check out the [`Calendar`](./do
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`range`** | `false` | `boolean` | If this is set, the date picker will have two fields – for the start and the end of the date range. |
-| **`value`** | `null` | `Date` or `{ start, end }` | Depending on the value of the ==`range`== prop, this is either a Date object or an object with two fields, `start` and `date`, containing Date objects. |
+| **`value`** | `null` | `Date` or `{ start, end }` | Depending on the value of the ==`range`== prop, this is either a Date object or an object with two fields, `start` and `end`, containing Date objects. |
 | **`locale`** | `undefined` | `string` | The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used. <br /> This will affect the weekdays and the day number representations as well as the spelling of the selected month.  |
 | **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
 | **`format`** | `'%d.%m.%Y'` | `string` | The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed. |
