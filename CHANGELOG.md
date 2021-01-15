@@ -4,6 +4,16 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- **TypeScript support**: We now provide our own type declaration (`.d.ts`) files so that TypeScript users will have a more delightful development experience! Note that other users are not affected since the components are written in plain JS. Also, you might face some difficulties when using `--strictNullChecks` for the time being (this has not been verified; please open an issue if it is indeed the case). ([#211](https://github.com/illright/attractions/pull/211)).
+
+### Fixed
+
+- Documentation: [`RadioButton`](https://illright.github.io/attractions/docs/components/radio-button)'s `value` was incorrectly marked as optional.
+
 ## [3.0.0] - 2021-01-10
 
 Not a large release, but still breaking. This will upgrade Attractions to use Sass modules which will allow zero-config installations.
