@@ -25,9 +25,11 @@ jobs:
         uses: c-hive/gha-yarn-cache@v1
 
       - name: Build docs 🔧
+        env:
+          SAPPER_APP_BASEPATH: attractions
         run: |
           yarn install
-          SAPPER_APP_BASEPATH=attractions yarn export --basepath attractions
+          yarn export --basepath attractions
 
       - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@v3
