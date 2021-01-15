@@ -7,20 +7,22 @@ jobs:
     name: Build and lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout PR
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - name: Set up Node 14 📦
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Install and Build
+
+      - name: Build bundles 🔧
         run: |
           yarn install
           yarn build
 
-      - name: Lint
+      - name: Lint 🔬
         run: yarn lint
 
   docs:
@@ -30,30 +32,32 @@ jobs:
       run:
         working-directory: docs
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout PR
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - name: Set up Node 14 📦
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Install and Build
+
+      - name: Build docs 🔧
         run: |
           yarn install
           SAPPER_APP_BASEPATH=attractions/${{ github.event.number }} yarn export --basepath attractions/${{ github.event.number }}
 
-      - name: Save PR number
+      - name: Save the PR number 📩
         run: echo "${{ github.event.number }}" > ../pr_number.txt
         # The ".." is to go outside the docs directory
 
-      - name: Upload PR number
+      - name: Upload the PR number 📤
         uses: actions/upload-artifact@v2
         with:
           name: pr_number
           path: pr_number.txt
 
-      - name: Upload built docs
+      - name: Upload the built docs 📤
         uses: actions/upload-artifact@v2
         with:
           name: docs

@@ -16,15 +16,17 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - name: Set up Node 14 📦
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Install and Build 🔧
+
+      - name: Build docs 🔧
         run: |
           yarn install
           SAPPER_APP_BASEPATH=attractions yarn export --basepath attractions
 
-      - name: Deploy demo to GitHub Pages 🚀
+      - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,11 +41,13 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - name: Set up Node 14 📦
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
-      - name: Install and Build 🔧
+
+      - name: Build bundles 🔧
         run: |
           cp README.md LICENSE attractions/
           cd attractions
