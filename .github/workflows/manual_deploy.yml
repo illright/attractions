@@ -32,10 +32,11 @@ jobs:
         uses: c-hive/gha-yarn-cache@v1
 
       - name: Install and build 🔧
+        env:
+          SAPPER_APP_BASEPATH: attractions/${{ github.event.inputs.prefix }}
         run: |
           yarn install
-          SAPPER_APP_BASEPATH=attractions/${{ github.event.inputs.prefix }} \
-            yarn export --basepath attractions/${{ github.event.inputs.prefix }}
+          yarn export --basepath attractions/${{ github.event.inputs.prefix }}
 
       - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@v3.7.3
