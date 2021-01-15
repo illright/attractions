@@ -2,3 +2,4 @@ node_modules
 __sapper__
 dist
 README.md
+types
