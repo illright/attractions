@@ -86,13 +86,12 @@ export default {
         },
         emitCss: true,
       }),
+      pathAlias,
       resolve({
         browser: true,
         dedupe: ['svelte'],
       }),
       commonjs(),
-      pathAlias,
-
       legacy &&
         babel({
           extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -144,11 +143,11 @@ export default {
           generate: 'ssr',
         },
       }),
+      pathAlias,
       resolve({
         dedupe: ['svelte'],
       }),
       commonjs(),
-      pathAlias,
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules
