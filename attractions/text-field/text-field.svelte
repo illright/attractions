@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @restProps {textarea | input}
+   */
   import { createEventDispatcher, onMount } from 'svelte';
   import eventsAction from '../utils/events.js';
   import classes from '../utils/classes.js';

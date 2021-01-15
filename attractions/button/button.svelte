@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @restProps {a | button}
+   */
   import { createEventDispatcher } from 'svelte';
   import ripple from '../utils/ripple.js';
   import eventsAction from '../utils/events.js';
