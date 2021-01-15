@@ -1,4 +1,4 @@
-name: Manual deployment of docs
+name: Deploy docs manually
 on:
   workflow_dispatch:
     inputs:
@@ -11,30 +11,34 @@ on:
         default: 'true'
 
 jobs:
-  docs:
+  deploy-docs:
+    name: Deploy docs to GitHub Pages
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: docs
-    name: Deploy docs to GitHub Pages
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@v2
+      - name: Set up Node 14 📦
+        uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Install and Build 🔧
+
+      - name: Install and build 🔧
         run: |
           yarn install
-          SAPPER_APP_BASEPATH=attractions/${{ github.event.inputs.prefix }} yarn export --basepath attractions/${{ github.event.inputs.prefix }}
+          SAPPER_APP_BASEPATH=attractions/${{ github.event.inputs.prefix }} \
+            yarn export --basepath attractions/${{ github.event.inputs.prefix }}
 
-      - name: Publish docs
+      - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs
+          publish_dir: docs/__sapper__/export/attractions/${{ github.event.inputs.prefix }}
           destination_dir: ${{ github.event.inputs.prefix }}
-          keep_files: ${{ github.event.inputs.keep_files }}
+          keep_files: ${{ github.event.inputs.keep_files == 'true' }}
+          force_orphan: ${{ github.event.inputs.keep_files != 'true' }}
