@@ -4,12 +4,12 @@ on:
     types: [published]
 
 jobs:
-  docs:
+  deploy-docs:
+    name: Deploy docs to GitHub Pages
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: docs
-    name: Deploy docs to Pages
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
@@ -32,9 +32,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/__sapper__/export/attractions/
           force_orphan: true
+          
   release:
-    runs-on: ubuntu-latest
     name: Release to npm
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2

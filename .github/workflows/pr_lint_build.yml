@@ -1,10 +1,9 @@
 name: Lint & Build PR docs
-
 on: pull_request
 
 jobs:
   lint:
-    name: Build and lint
+    name: Build bundles and lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -25,7 +24,7 @@ jobs:
       - name: Lint 🔬
         run: yarn lint
 
-  docs:
+  build-docs:
     name: Build docs
     runs-on: ubuntu-latest
     defaults:

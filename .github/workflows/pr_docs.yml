@@ -1,5 +1,4 @@
-name: Deploy docs to GH Pages
-
+name: Deploy PR docs to GitHub Pages
 on:
   workflow_run:
     workflows:
@@ -8,8 +7,8 @@ on:
       - completed
 
 jobs:
-  deploy:
-    name: Deploy docs
+  deploy-built-docs:
+    name: Deploy built docs to GitHub Pages
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
