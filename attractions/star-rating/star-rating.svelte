@@ -35,7 +35,7 @@
   /**
    * Disables star selection.
    * @type {boolean}
-  */
+   */
   export let disabled = false;
   /**
    * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action

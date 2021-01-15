@@ -36,7 +36,7 @@
    * @type {Option[]}
    */
   export let selection = [];
-  
+
   /**
    * The minimum amount of characters to call `getOptions`
    * @type {number}
