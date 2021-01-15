@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Fetch Yarn cache 🗄
+        uses: c-hive/gha-yarn-cache@v1
+
       - name: Install and build 🔧
         run: |
           yarn install
