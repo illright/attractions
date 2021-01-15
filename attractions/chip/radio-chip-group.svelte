@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @extends {'./radio-chip'} RadioChipProps
+   */
   import classes from '../utils/classes.js';
   import RadioChip from './radio-chip.svelte';
 

@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @extends {'./radio-button'} RadioButtonProps
+   */
   import classes from '../utils/classes.js';
   import getColorPickerStyles from '../utils/color-picker-styles.js';
   import RadioButton from './radio-button.svelte';

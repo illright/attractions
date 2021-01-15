@@ -4,6 +4,7 @@
    * @slot {{ }} more-options
    * @slot {{ }} not-enough-input
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
+   * @extends {'./autocomplete-field'} AutocompleteFieldProps
    * @typedef {import('./autocomplete-field').OptionsGetter} OptionsGetter
    * @typedef {import('./autocomplete-option').Option} Option
    */

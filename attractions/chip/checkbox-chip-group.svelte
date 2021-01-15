@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @extends {'./checkbox-chip'} CheckboxChipProps
+   */
   import s from '../utils/plural-s.js';
   import classes from '../utils/classes.js';
   import CheckboxChip from './checkbox-chip.svelte';
