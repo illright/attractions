@@ -17,7 +17,7 @@ jobs:
           node-version: '14'
 
       - name: Fetch Yarn cache 🗄
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@f23816cdbc6d287b7982b4a08096db01a6329c12
 
       - name: Build bundles 🔧
         run: |
@@ -45,7 +45,7 @@ jobs:
           node-version: '14'
 
       - name: Fetch Yarn cache 🗄
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@f23816cdbc6d287b7982b4a08096db01a6329c12
 
       - name: Build docs 🔧
         env:

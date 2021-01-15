@@ -13,14 +13,14 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download the docs artifact 📥
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@891cccee4b25d3306cf5edafa174ddc1d969871f
         with:
           workflow: pr_lint_build.yml
           name: docs
           path: ./docs
 
       - name: Download the PR number artifact 📥
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@891cccee4b25d3306cf5edafa174ddc1d969871f
         with:
           workflow: pr_lint_build.yml
           name: pr_number
@@ -29,7 +29,7 @@ jobs:
         run: echo "PR_NUMBER=$(cat pr_number.txt)" >> $GITHUB_ENV
 
       - name: Publish 🚀
-        uses: peaceiris/actions-gh-pages@v3.7.3
+        uses: peaceiris/actions-gh-pages@3baf8509207c681b15ebd4ae9de17052cca8181f
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
