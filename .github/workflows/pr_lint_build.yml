@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Fetch Yarn cache 🗄
+        uses: c-hive/gha-yarn-cache@v1
+
       - name: Build bundles 🔧
         run: |
           yarn install
@@ -40,6 +43,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+
+      - name: Fetch Yarn cache 🗄
+        uses: c-hive/gha-yarn-cache@v1
 
       - name: Build docs 🔧
         run: |
