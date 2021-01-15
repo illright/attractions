@@ -1,5 +1,10 @@
 <script>
   /**
+   * @event {{ value: string | number; nativeEvent: Event }} input
+   * @event {{ value: string | number; nativeEvent: Event }} change
+   * @event {{ nativeEvent: FocusEvent }} focus
+   * @event {{ nativeEvent: KeyboardEvent }} keydown
+   * @event {{ nativeEvent: FocusEvent }} blur
    * @restProps {textarea | input}
    */
   import { createEventDispatcher, onMount } from 'svelte';

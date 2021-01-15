@@ -1,4 +1,8 @@
 <script>
+  /**
+   * @typedef {{start: Date; end: Date}} DateRange
+   * @event {{ value: Date | DateRange }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
   import Button from '../button/button.svelte';
@@ -69,7 +73,7 @@
   export let right = false;
   /**
    * Depending on the value of the range prop, this is either a `Date` object or an object with two fields, `start` and `end`, containing Date objects.
-   * @type {Date | {start: Date; end: Date}}
+   * @type {Date | DateRange}
    */
   export let value = null;
   /**

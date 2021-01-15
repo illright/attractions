@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {Date} day-select
+   */
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';

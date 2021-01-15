@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: Date }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
   import Button from '../button/button.svelte';

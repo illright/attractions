@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: any; nativeEvent: Event }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
   import ripple from '../utils/ripple.js';

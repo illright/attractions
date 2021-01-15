@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: string; nativeEvent: Event }} change
+   */
   import classes from '../utils/classes.js';
   import Tab from './tab.svelte';
 

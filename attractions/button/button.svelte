@@ -1,5 +1,6 @@
 <script>
   /**
+   * @event {{ nativeEvent: MouseEvent }} click
    * @restProps {a | button}
    */
   import { createEventDispatcher } from 'svelte';

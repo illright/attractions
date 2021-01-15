@@ -1,4 +1,8 @@
 <script>
+  /**
+   * @event {{ value: string; nativeEvent: Event }} change
+   * @event {{ nativeEvent: MouseEvent }} click
+   */
   import { createEventDispatcher } from 'svelte';
   import rippleEffect from '../utils/ripple.js';
   import classes from '../utils/classes.js';

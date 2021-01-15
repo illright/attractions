@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ nativeEvent: MouseEvent }} click
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 

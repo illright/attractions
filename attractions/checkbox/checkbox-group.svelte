@@ -1,5 +1,6 @@
 <script>
   /**
+   * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
    * @extends {'./checkbox'} CheckboxProps
    */
   import classes from '../utils/classes.js';

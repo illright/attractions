@@ -1,5 +1,6 @@
 <script>
   /**
+   * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
    * @extends {'./checkbox-chip'} CheckboxChipProps
    */
   import s from '../utils/plural-s.js';

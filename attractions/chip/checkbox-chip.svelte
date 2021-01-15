@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 

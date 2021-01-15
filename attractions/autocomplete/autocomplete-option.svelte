@@ -1,6 +1,7 @@
 <script>
   /**
    * @typedef {{name: string; details: string}} Option
+   * @event {{ nativeEvent: MouseEvent }} click
    */
   import { createEventDispatcher } from 'svelte';
   import escapeRegExp from '../utils/escape-regexp.js';

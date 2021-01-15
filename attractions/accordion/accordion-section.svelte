@@ -1,6 +1,8 @@
 <script>
   /**
    * @slot {{ toggle: () => void }} handle
+   * @event {{ close: () => void; toggle: () => void }} panel-open
+   * @event {{ close: () => void; toggle: () => void }} panel-close
    */
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';

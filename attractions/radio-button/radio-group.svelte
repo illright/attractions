@@ -1,5 +1,6 @@
 <script>
   /**
+   * @event {{ value: string; nativeEvent: Event }} change
    * @extends {'./radio-button'} RadioButtonProps
    */
   import classes from '../utils/classes.js';

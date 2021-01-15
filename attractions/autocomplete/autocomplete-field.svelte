@@ -1,8 +1,9 @@
 <script>
   /**
-   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
    * @typedef {typeof import('./autocomplete-option').Option} Option
    * @typedef {(q: string) => Generator<Promise<Option[]>, never, never>} OptionsGetter
+   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
+   * @event {{ value: Option[] }} change
    */
   import { createEventDispatcher } from 'svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';

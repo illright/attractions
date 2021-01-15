@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: number; nativeEvent: Event }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import Star from './star.svelte';
   import range from '../utils/range.js';

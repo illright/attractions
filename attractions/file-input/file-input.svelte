@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: File | FileList; nativeEvent: Event }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import ripple from '../utils/ripple.js';

@@ -1,6 +1,7 @@
 <script>
   /**
    * @slot {{ wrongType: boolean; dragActive: boolean }} empty-layer
+   * @event {{ files: File[]; nativeEvent?: Event }} change
    */
   import Paperclip from './paperclip.svelte';
   import Plus from './plus.svelte';

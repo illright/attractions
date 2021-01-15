@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {File} delete
+   */
   import Trash2 from './trash-2.svelte';
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
