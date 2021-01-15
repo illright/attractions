@@ -1,7 +1,7 @@
 <script>
   /**
    * @typedef {import('./accordion-section').default} AccordionSection
-   * @slot {{ closeOtherPanels: ({detail: AccordionSection }) => void }}
+   * @slot {{ closeOtherPanels: (e: CustomEvent<AccordionSection>) => void }}
    */
   import classes from '../utils/classes.js';
 
