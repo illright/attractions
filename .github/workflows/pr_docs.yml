@@ -13,23 +13,23 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: Download the docs artifact
+      - name: Download the docs artifact 📥
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: pr_lint_build.yml
           name: docs
           path: ./docs
 
-      - name: Download the PR number artifact
+      - name: Download the PR number artifact 📥
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: pr_lint_build.yml
           name: pr_number
 
-      - name: Add PR number to env
+      - name: Add PR number to environment 🌎
         run: echo "PR_NUMBER=$(cat pr_number.txt)" >> $GITHUB_ENV
 
-      - name: Publish docs
+      - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -37,7 +37,7 @@ jobs:
           destination_dir: ${{ env.PR_NUMBER }}
           keep_files: true
 
-      - name: Post URL on PR
+      - name: Post the URL on the PR 🖊
         uses: jungwinter/comment@v1
         id: create
         with:
