@@ -35,7 +35,7 @@
   /**
    * A callback to call for each file that passes the `accept` check before it is added to the `files`.
    * If it returns a Promise, they will be started for every file, but awaited at the end.
-   * @type {(file: File) => any}
+   * @type {(file: File) => void | Promise<void>}
    */
   export let beforeChange = null;
   /**
