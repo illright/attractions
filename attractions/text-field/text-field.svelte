@@ -87,7 +87,7 @@
    */
   export let value = null;
   /**
-   * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action
+   * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action.
    * @type {Array<{name: string; handler: (e:Event) => void }>}
    */
   export let events = [];
