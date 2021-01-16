@@ -25,7 +25,6 @@
   export let checked = false;
   /**
    * The value of this checkbox. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information.
-   * Included in events unaltered (won't be stringified if not a string).
    * @type {string}
    */
   export let value;

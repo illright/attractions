@@ -21,7 +21,7 @@
 
   /**
    * The value of this radio button. Included in events and can be bound to using `bind:group`.
-   * @type {any}
+   * @type {string}
    */
   export let value;
   /**

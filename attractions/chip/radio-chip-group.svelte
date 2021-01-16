@@ -27,7 +27,7 @@
   export let items;
   /**
    * The currently selected value of the group.
-   * @type {any}
+   * @type {string}
    */
   export let value = null;
   /**
