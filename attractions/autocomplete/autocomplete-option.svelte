@@ -7,7 +7,8 @@
   import escapeRegExp from '../utils/escape-regexp.js';
 
   /**
-   * @type {Option} The option data to render
+   * The option data to render.
+   * @type {Option}
    */
   export let option;
   /**
