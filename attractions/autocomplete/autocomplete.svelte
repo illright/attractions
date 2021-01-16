@@ -3,9 +3,9 @@
    * @typedef {import('./autocomplete-field').OptionsGetter} OptionsGetter
    * @typedef {import('./autocomplete-option').Option} Option
    * @slot {{ }} loading-options
-   * @slot {{ }} more-options
+   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} more-options
    * @slot {{ }} not-enough-input
-   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} too-many-options
+   * @slot {{ }} too-many-options
    * @event {{ value: Option[] }} change
    * @extends {'./autocomplete-field'} AutocompleteFieldProps
    */
