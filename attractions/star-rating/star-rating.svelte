@@ -28,7 +28,7 @@
    */
   export let value = null;
   /**
-   * The name to assign to all stars belonging to the same group. Check MDN docs for more information.
+   * The name to assign to all stars belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
    * @type {string}
    */
   export let name;
