@@ -1,0 +1,3 @@
+paths:
+  - attractions/dist
+  - docs/__sapper__
