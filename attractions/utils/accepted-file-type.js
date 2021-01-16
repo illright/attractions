@@ -1,4 +1,9 @@
-/* Validates a File object against an `accept` parameter value. */
+/**
+ * Validates a File object against an `accept` parameter value.
+ * @param {string} references comma-delimited list of reference MIME types (similar to `input`'s `accept` attribute)
+ * @param {string} subject The MIME type of the file to be checked
+ * @returns {boolean} Whether the file should be accepted
+ */
 export default function accepted(references, subject) {
   if (references == null) {
     return true;
@@ -10,7 +15,12 @@ export default function accepted(references, subject) {
   return referencesArray.some(reference => matches(reference, subject));
 }
 
-/* Handles the check with either an extension (beginning with a dot ".") or a MIME type pattern. */
+/**
+ * Handles the check with either an extension (beginning with a dot ".") or a MIME type pattern.
+ * @param {string} reference The reference pattern
+ * @param {string} subject The pattern to be checked
+ * @returns {boolean} Whether the MIME types match
+ */
 function matches(reference, subject) {
   if (reference.startsWith('.')) {
     return subject.name.toLowerCase().endsWith(reference);
@@ -22,9 +32,14 @@ function matches(reference, subject) {
   );
 }
 
-/* Checks for compatibility of the reference MIME type pattern with the subject MIME type.
-   Adapted from Chromium sources:
-     https://source.chromium.org/chromium/chromium/src/+/master:net/base/mime_util.cc;l=413 */
+/**
+ * Checks for compatibility of the reference MIME type pattern with the subject MIME type.
+ *   Adapted from Chromium sources:
+ *     https://source.chromium.org/chromium/chromium/src/+/master:net/base/mime_util.cc;l=413
+ * @param {string} reference The reference pattern
+ * @param {string} subject The pattern to be checked
+ * @returns {boolean} Whether the MIME types are compatible
+ */
 function checkMimeType(reference, subject) {
   if (reference === '*' || reference === '*/*') {
     return true;
