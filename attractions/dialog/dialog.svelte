@@ -18,7 +18,7 @@
   export let danger = false;
   /**
    * Adds a close button to the dialog and calls this function when it is clicked.
-   * @type {(e: MouseEvent) => void}
+   * @type {(e: CustomEvent<{ nativeEvent: MouseEvent }>) => void}
    */
   export let closeCallback = null;
   /**
