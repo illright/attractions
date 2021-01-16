@@ -32,7 +32,7 @@
   /**
    * An array of items, where only the value field is required.
    * Must contain at least one value.
-   * @type {Array<{value: string; label: string; checked: boolean; disabled: boolean}>}
+   * @type {Array<{ value: string; label?: string; checked?: boolean; disabled?: boolean }>}
    */
   export let items;
   /**
