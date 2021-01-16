@@ -40,7 +40,7 @@
   export let closeCallback;
   /**
    * The transition to use to animate the in and out of the snackbar.
-   * @type {() => import('svelte/transition').TransitionConfig}
+   * @type {(...args: any[]) => import('svelte/transition').TransitionConfig}
    */
   export let transition = fly;
   /**
