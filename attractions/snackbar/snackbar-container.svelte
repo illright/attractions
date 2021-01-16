@@ -15,7 +15,7 @@
   import SnackbarPositions from './snackbar-positions.js';
 
   /**
-   * The position of the snackbar stack inside the window.
+   * The position of the snackbar stack inside the container.
    * @type {typeof import('../../snackbar').SnackbarPositions}
    */
   export let position = SnackbarPositions.BOTTOM_LEFT;

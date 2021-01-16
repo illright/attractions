@@ -21,18 +21,18 @@
 
   /**
    * An async generator of suggestions.
-   * Receives the input from the text field and is expected to yield promises that resolve to arrays of objects
+   * Receives the input from the text field and is expected to yield promises that resolve to arrays of `Option` objects.
    * @type {OptionsGetter}
    */
   export let getOptions;
   /**
-   * The current selection as an array of objects.
+   * The current selection as an array of `Option` objects.
    * Can be used to set the selection programmatically.
    * @type {Option[]}
    */
   export let selection = [];
   /**
-   * The minimum amount of characters to call `getOptions`
+   * The minimum length the search query must be to call `getOptions`.
    * @type {number}
    */
   export let minSearchLength = 3;
@@ -48,8 +48,8 @@
   export let searchQuery = '';
   /**
    * The component used to render a suggestion in the list.
-   * Receives two props: the option object ({ name, details }) and the current query.
-   * Expected to dispatch click events on selection
+   * Receives two props: `option` – the `Option` object ({ name, details }) and `query` – the current query.
+   * Expected to dispatch click events on selection.
    * @type {SvelteComponentTyped<{option: Option; query: string}, {click: Event}, {}>}
    */
   export let optionComponent = AutocompleteOption;

@@ -9,7 +9,7 @@
   let _class = null;
   export { _class as class };
   /**
-   * A class string to add to the `RadioChip` components inside.
+   * A class string to add to the `<RadioChip>` components inside.
    * @type {string}
    */
   export let radioClass = null;

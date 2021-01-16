@@ -37,7 +37,7 @@
   /**
    * The index of the weekday to start the week at.
    * 0 is for Sunday and 6 is for Saturday.
-   * Defaults to 1 (Monday)
+   * Defaults to 1 (Monday).
    * @type {0 | 1 | 2 | 3 | 4 | 5 | 6}
    */
   export let firstWeekday = 1; // 1 corresponds to Monday
