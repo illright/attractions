@@ -32,7 +32,7 @@ jobs:
           yarn export --basepath attractions
 
       - name: Publish 🚀
-        uses: peaceiris/actions-gh-pages@3baf8509207c681b15ebd4ae9de17052cca8181f
+        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/__sapper__/export/attractions/
