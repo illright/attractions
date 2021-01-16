@@ -13,7 +13,7 @@
    */
   export let inputClass = null;
   /**
-   * A class string to add to the underlying Chip element.
+   * A class string to add to the underlying `<Chip>` component.
    * @type {string}
    */
   export let chipClass = null;

@@ -10,7 +10,7 @@
   let _class = null;
   export { _class as class };
   /**
-   * A class string to add to the `CheckboxChip` components inside.
+   * A class string to add to the `<CheckboxChip>` components inside.
    * @type {string}
    */
   export let checkboxClass = null;
