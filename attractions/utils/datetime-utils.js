@@ -138,7 +138,7 @@ export function formatDateTime(datetime, format) {
 /**
  * Generates an array with the names of the days of the week for the given locale.
  * @param {string | string[]} locale The locale(s) in which the day names should be output. Pass an empty array to use the default locale. Read more on the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument)
- * @param {number} firstWeekday First day of the week. 1 = Monday.
+ * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday.
  * @returns {[string, string, string, string, string, string, string]}
  */
 export function getWeekdays(locale, firstWeekday) {
@@ -208,9 +208,9 @@ export function datesLessEqual(date1, date2) {
 
 /**
  * Generates a calendar view of a given month.
- * @param {number} month Zero-based numeric value for month. 0 = January
+ * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} month Zero-based numeric value for month. 0 = January
  * @param {number} year
- * @param {number} firstWeekday First day of the week. 1 = Monday
+ * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday
  * @returns {Array<Array<{value: Date; outside: boolean}>>}
  */
 export function getCalendar(month, year, firstWeekday) {
