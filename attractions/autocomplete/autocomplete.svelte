@@ -25,12 +25,6 @@
   export { _class as class };
 
   /**
-   * An async generator of suggestions.
-   * Receives the input from the text field and is expected to yield promises that resolve to arrays of objects
-   * @type {OptionsGetter}
-   */
-  export let getOptions;
-  /**
    * The current selection as an array of objects.
    * Can be used to set the selection programmatically.
    * @type {Option[]}
@@ -57,13 +51,6 @@
    * @type {boolean}
    */
   export let disabled = false;
-  /**
-   * The component used to render a suggestion in the list.
-   * Receives two props: the option object ({ name, details }) and the current query.
-   * Expected to dispatch click events on selection
-   * @type {SvelteComponentTyped<{option: Option; query: string}, {click: MouseEvent}, {}>}
-   */
-  export let optionComponent = AutocompleteOption;
 
   let focus = false;
 
@@ -88,10 +75,8 @@
     bind:selection
     bind:searchQuery
     bind:focus
-    {getOptions}
     {minSearchLength}
     {maxOptions}
-    {optionComponent}
     {disabled}
     {...$$restProps}
     on:change
