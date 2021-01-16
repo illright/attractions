@@ -16,7 +16,7 @@
 
   /**
    * The position of the snackbar stack inside the window.
-   * @type {typeof import('../../snackbar/snackbar-positions').default}
+   * @type {typeof import('../../snackbar').SnackbarPositions}
    */
   export let position = SnackbarPositions.BOTTOM_LEFT;
   let registeredSnackbars = new Set();
