@@ -24,7 +24,7 @@
    * The component used to render a selected file.
    * Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
    * Expected to dispatch `delete` events to delete this file from the selection with the `file` prop as the detail.
-   * @type {SvelteComponentTyped<{file: File}, {delete: CustomEvent<File>}>}
+   * @type {SvelteComponentTyped<{ file: File }, { delete: CustomEvent<File> }>}
    */
   export let fileComponent = FileTile;
   /**

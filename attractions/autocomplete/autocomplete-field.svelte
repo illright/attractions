@@ -2,7 +2,7 @@
   /**
    * @typedef {typeof import('./autocomplete-option').Option} Option
    * @typedef {(q: string) => Generator<Promise<Option[]>, never, never>} OptionsGetter
-   * @slot {{ loadMoreOptions: (click?: CustomEvent<{nativeEvent: MouseEvent}>) => void }} more-options
+   * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
    * @event {{ value: Option[] }} change
    */
   import { createEventDispatcher } from 'svelte';
@@ -50,7 +50,7 @@
    * The component used to render a suggestion in the list.
    * Receives two props: `option` – the `Option` object ({ name, details }) and `query` – the current query.
    * Expected to dispatch click events on selection.
-   * @type {SvelteComponentTyped<{option: Option; query: string}, {click: Event}, {}>}
+   * @type {SvelteComponentTyped<{ option: Option; query: string }, { click: Event }, {}>}
    */
   export let optionComponent = AutocompleteOption;
   /**

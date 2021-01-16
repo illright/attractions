@@ -1,6 +1,6 @@
 <script>
   /**
-   * @typedef {{start: Date; end: Date}} DateRange
+   * @typedef {{ start: Date; end: Date }} DateRange
    * @event {{ value: Date | DateRange }} change
    */
   import { createEventDispatcher } from 'svelte';

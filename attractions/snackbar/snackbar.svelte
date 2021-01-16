@@ -24,7 +24,7 @@
   export let text;
   /**
    * The action for the button on the snackbar. If this is null, the button is not rendered. Otherwise it has text as a label and calls callback on click.
-   * @type {{text: string; callback: () => void}}
+   * @type {{ text: string; callback: () => void }}
    */
   export let action = null;
   /**

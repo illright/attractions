@@ -1,6 +1,6 @@
 <script>
   /**
-   * @typedef {{name: string; details?: string}} Option
+   * @typedef {{ name: string; details?: string }} Option
    * @event {{ nativeEvent: MouseEvent }} click
    */
   import { createEventDispatcher } from 'svelte';
