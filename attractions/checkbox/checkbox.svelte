@@ -19,7 +19,7 @@
   export let selectorClass = null;
   /**
    * A CSS style string to assign to the selector box element.
-   * Can be used to make the checkbox represent a color (in conjunction with the `getColorPickerStyles` utility).
+   * Can be used to make the checkbox represent a color (in conjunction with the [`getColorPickerStyles`](https://illright.github.io/attractions/docs/utilities) utility).
    * @type {string}
    */
   export let selectorStyle = null;
