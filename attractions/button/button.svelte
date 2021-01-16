@@ -63,6 +63,7 @@
 
   /**
    * Disables the button, styling it appropriately and disabling click events.
+   * @type {boolean}
    */
   export let disabled = false;
   /**
@@ -72,6 +73,7 @@
   export let href = null;
   /**
    * Disables Sapper prefetching for link buttons (those with an href prop).
+   * @type {boolean}
    */
   export let noPrefetch = false;
 
