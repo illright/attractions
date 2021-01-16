@@ -1,6 +1,6 @@
 <script>
   /**
-   * @event {{ value: any; nativeEvent: Event }} change
+   * @event {{ value: string; nativeEvent: Event }} change
    * @extends {'./radio-chip'} RadioChipProps
    */
   import classes from '../utils/classes.js';
