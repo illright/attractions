@@ -33,7 +33,7 @@
    * The value assigned to the checkbox input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information.
    * @type {string}
    */
-  export let value = null;
+  export let value;
   /**
    * Disables the checkbox, freezing its current `checked` state.
    * @type {boolean}
