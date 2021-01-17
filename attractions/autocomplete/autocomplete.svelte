@@ -13,7 +13,6 @@
   import Button from '../button/button.svelte';
   import Chip from '../chip/chip.svelte';
   import AutocompleteField from './autocomplete-field.svelte';
-  import AutocompleteOption from './autocomplete-option.svelte';
   import X from '../dialog/x.svelte';
   import Loading from '../loading/loading.svelte';
   import MoreHorizontal from './more-horizontal.svelte';
