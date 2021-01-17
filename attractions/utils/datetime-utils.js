@@ -211,7 +211,7 @@ export function datesLessEqual(date1, date2) {
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} month Zero-based numeric value for month. 0 = January
  * @param {number} year
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday
- * @returns {Array<Array<{value: Date; outside: boolean}>>}
+ * @returns {Array<Array<{ value: Date; outside: boolean }>>}
  */
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];

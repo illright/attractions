@@ -3,7 +3,7 @@
  * Uses the IntersectionObserver API, which might not be available in older browsers like IE11.
  * If it is not available, the action will be silently ignored.
  * @param {Element} node The HTML element to be observed
- * @param {{ callback: (...args: any[]) => void; args: any[]}} options Callback and its args
+ * @param {{ callback: (...args: any[]) => void; args: any[] }} options Callback and its args
  * @returns {{ destroy: () => void }}
  */
 export default function callOnSight(node, { callback, args = [] }) {

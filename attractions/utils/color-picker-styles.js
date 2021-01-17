@@ -1,6 +1,6 @@
 /**
  * Generates the styles needed for displaying a radiobutton or a checkbox
- *  with the given color
+ *  with the given color.
  * @param {string} hexColor The color (in `#XXXXXX` format)
  * @returns {string} The `style` string to be used on the element
  */

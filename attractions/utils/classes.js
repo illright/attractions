@@ -1,7 +1,7 @@
 const consecutiveSpace = / {2,}/;
 
 /**
- * Removes extra whitespace in class strings
+ * Removes extra whitespace in class strings.
  * @param {string} classString The string to be trimmed
  * @returns {string} Clean class string
  */
@@ -10,8 +10,8 @@ export function stripClassWhitespace(classString) {
 }
 
 /**
- * Filters out falsy classes
- * @param  {...string|false} args The classes to be filtered
+ * Filters out falsy classes.
+ * @param {...(string | false)} args The classes to be filtered
  * @return {string} The classes without the falsy values
  */
 export default function classes(...args) {
