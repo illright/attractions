@@ -45,7 +45,7 @@
   export let transition = fly;
   /**
    * The options to use with the given transition.
-   * @type {Record<string, any>}
+   * @type {any}
    */
   export let transitionOptions = { x: -20, duration: 150 };
 </script>
