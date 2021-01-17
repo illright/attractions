@@ -1,0 +1,52 @@
+name: Release automatically
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+    paths:
+      - 'attractions/package.json'
+
+jobs:
+  release-from-pr:
+    name: Release from a PR that is marked with [new release]
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'new release')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Fetch the version number 📝
+        id: fetch-version
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script:
+            const package = JSON.parse(require('fs').readFileSync('attractions/package.json'));
+            return `v${package.version}`;
+
+      - name: Fetch the changelog 📝
+        id: fetch-changelog
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script:
+            const changelog = require('fs').readFileSync('CHANGELOG.md').split('\n');
+            const start = changelog.findIndex(line => line.startsWith('## '));
+            const end = changelog.findIndex((line, index) => line.startsWith('## ') && index > start);
+            return changelog.slice(startIndex, endIndex).join('\n');
+
+      - name: Create a release 🔖
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.set-result.outputs.result }}
+          release_name: ${{ steps.set-result.outputs.result }}
+          body: ${{ steps.set-changelog.outputs.result }}
+          commitish: main
