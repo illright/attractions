@@ -42,8 +42,8 @@
    */
   export let optional = false;
   /**
-   * An array of error messages to display under the field. Falsy elements are not shown.
-   * @type {string[]}
+   * An array of error messages to display under the field. False elements are not shown.
+   * @type {Array<string | false>}
    */
   export let errors = [];
 </script>
