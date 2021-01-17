@@ -78,6 +78,7 @@
   export let value = null;
   /**
    * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
+   * @type {string}
    */
   export let format = '%d.%m.%Y';
   $: readableFormat = format
