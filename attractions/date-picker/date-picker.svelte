@@ -93,7 +93,6 @@
   let startValue;
   let endValue;
 
-  $: editedValue = startFocus ? startValue : endValue;
   $: unpackValue(value);
   $: registerChange(startValue, endValue);
 
