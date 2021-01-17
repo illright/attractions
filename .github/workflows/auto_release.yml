@@ -26,7 +26,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: string
           script:
-            const package = JSON.parse(require('fs').readFileSync('attractions/package.json'));
+            const package = require(`${process.env.GITHUB_WORKSPACE}/attractions/package.json`);
             return `v${package.version}`;
 
       - name: Fetch the changelog 📝
@@ -46,7 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.set-result.outputs.result }}
-          release_name: ${{ steps.set-result.outputs.result }}
-          body: ${{ steps.set-changelog.outputs.result }}
+          tag_name: ${{ steps.fetch-version.outputs.result }}
+          release_name: ${{ steps.fetch-version.outputs.result }}
+          body: ${{ steps.fetch-changelog.outputs.result }}
           commitish: main
