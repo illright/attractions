@@ -23,7 +23,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const package = JSON.parse(require('fs').readFileSync('attractions/package.json'));
+            const package = require(`${process.env.GITHUB_WORKSPACE}/attractions/package.json`);
             const currentVersion = `v${package.version}`;
             const tags = (await github.repos.listTags({
               owner: context.repo.owner,
@@ -35,5 +35,13 @@ jobs:
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
                 labels: ['new release'],
+              });
+              await github.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: |
+                  This pull request will automatically trigger a release on merge!
+                  If it shouldn't, remove the [new release] label.
               });
             }
