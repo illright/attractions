@@ -1,5 +1,4 @@
 import path from 'path';
-import { appendFileSync } from 'fs';
 import { spawnSync } from 'child_process';
 import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
@@ -80,31 +79,15 @@ export default [
         preprocess: [prependTagOption(icons), sveltePreprocess],
       }),
       resolve(),
-      sveld(),
+      sveld({
+        typesOptions: {
+          preamble: 'export * as utils from "./utils";\n',
+        },
+      }),
       {
         name: 'utilsTypings',
         writeBundle() {
-          // Note that this fails silently on Windows due to poor glob support
-          //  which is strange because it works in tsconfig's `include` option
-          spawnSync(
-            'tsc',
-            [
-              'utils/*.js',
-              '--declaration',
-              '--allowJs',
-              '--emitDeclarationOnly',
-              '--outDir',
-              'types',
-            ],
-            { shell: true }
-          );
-          // Since writeBundle hook is parallel, we need to wait for sveld to finish first
-          setTimeout(() => {
-            appendFileSync(
-              './types/index.d.ts',
-              'export * as utils from "./utils";\n'
-            );
-          }, 1000);
+          spawnSync('tsc', { shell: true });
         },
       },
       terser({
