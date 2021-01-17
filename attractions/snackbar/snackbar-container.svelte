@@ -1,9 +1,23 @@
 <script>
+  /**
+   * @slot {{ showSnackbar: (options: {
+   *   component: typeof import("svelte").SvelteComponentDev,
+   *   props: Record<string, any>,
+   *   duration: number,
+   * }) => {
+   *   close: () => void,
+   *   expired: Promise<boolean>,
+   * } }}
+   */
   import { setContext } from 'svelte';
   import Snackbar from './snackbar.svelte';
   import snackbarContextKey from './snackbar-context-key.js';
   import SnackbarPositions from './snackbar-positions.js';
 
+  /**
+   * The position of the snackbar stack inside the container.
+   * @type {typeof import('../../snackbar').SnackbarPositions}
+   */
   export let position = SnackbarPositions.BOTTOM_LEFT;
   let registeredSnackbars = new Set();
 
@@ -15,6 +29,18 @@
     registeredSnackbars = registeredSnackbars;
   }
 
+  /**
+   * Show the snackbar with the given options
+   * @type {(options: {
+   *   component: typeof import("svelte").SvelteComponentDev,
+   *   props: Record<string, any>,
+   *   duration: number,
+   * }) => {
+   *   close: () => void,
+   *   expired: Promise<boolean>,
+   * }}
+   * @readonly
+   */
   export function showSnackbar(options) {
     const { component = Snackbar, props = {}, duration = 4000 } = options;
 

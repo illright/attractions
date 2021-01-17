@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: number }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import TextField from '../text-field/text-field.svelte';
@@ -6,8 +9,20 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * The amount of pages to allow for navigation.
+   * @type {number}
+   */
   export let pages;
+  /**
+   * The currently selected page (starting from 1).
+   * @type {number}
+   */
   export let currentPage = 1;
+  /**
+   * Whether the pagination component should be displayed when there's only one page.
+   * @type {boolean}
+   */
   export let showLonePage = true;
 
   // clamp currentPage between [1; pages]

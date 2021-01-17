@@ -1,14 +1,39 @@
 <script>
+  /**
+   * @event {{ value: string; nativeEvent: Event }} change
+   * @extends {'./radio-chip'} RadioChipProps
+   */
   import classes from '../utils/classes.js';
   import RadioChip from './radio-chip.svelte';
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to add to the `<RadioChip>` components inside.
+   * @type {string}
+   */
   export let radioClass = null;
+  /**
+   * A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added.
+   * @type {string}
+   */
   export let labelClass = null;
 
+  /**
+   * An array of items, where only the value field is required.
+   * Must contain at least one value.
+   * @type {Array<{ value: string; label?: string; disabled?: boolean }>}
+   */
   export let items;
+  /**
+   * The currently selected value of the group.
+   * @type {string}
+   */
   export let value = null;
+  /**
+   * The name of this radio button group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
+   * @type {string}
+   */
   export let name;
 
   if (!items || items.length === 0) {

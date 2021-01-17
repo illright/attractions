@@ -3,6 +3,10 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * Whether the badge is shown or hidden. Useful for controlling its appearance without modifying the DOM tree.
+   * @type {boolean}
+   */
   export let hidden = false;
 </script>
 

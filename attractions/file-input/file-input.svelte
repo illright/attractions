@@ -1,4 +1,7 @@
 <script>
+  /**
+   * @event {{ value: File | FileList; nativeEvent: Event }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import ripple from '../utils/ripple.js';
@@ -6,11 +9,31 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to add to the `<label>` element wrapping the `<input>`.
+   * @type {string}
+   */
   export let labelClass = null;
 
+  /**
+   * Allows the user to select multiple files.
+   * @type {boolean}
+   */
   export let multiple = false;
+  /**
+   * Decides if the _select a file_ and _clear selection_ buttons will be laid out in a row or a column (upload a file to see the two buttons).
+   * @type {boolean}
+   */
   export let vertical = false;
+  /**
+   * The user's selection. If `multiple` is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`.
+   * @type {File | FileList}
+   */
   export let value = multiple ? [] : null;
+  /**
+   * Whether the input should accept files.
+   * @type {boolean}
+   */
   export let disabled = false;
 
   let input;

@@ -1,8 +1,20 @@
 <script>
+  /**
+   * @typedef {{ name: string; details?: string }} Option
+   * @event {{ nativeEvent: MouseEvent }} click
+   */
   import { createEventDispatcher } from 'svelte';
   import escapeRegExp from '../utils/escape-regexp.js';
 
+  /**
+   * The option data to render.
+   * @type {Option}
+   */
   export let option;
+  /**
+   * The substring to seek out and highlight among the name and the details.
+   * @type {string}
+   */
   export let query = null;
   $: matchRegex = query ? new RegExp(`(${escapeRegExp(query)})`, 'ig') : null;
 

@@ -1,11 +1,24 @@
 <script>
+  /**
+   * @slot {{ toggle: () => void }}
+   * @event {{ value: boolean }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
   let _class = null;
   export { _class as class };
+  /**
+   * Controls whether the dropdown content is shown or hidden.
+   * @type {boolean}
+   */
   export let open = false;
 
+  /**
+   * A callback to toggle the open state of the dropdown.
+   * @type {() => void}
+   * @readonly
+   */
   export function toggle() {
     open = !open;
   }

@@ -2,5 +2,6 @@
   "singleQuote": true,
   "arrowParens": "avoid",
   "svelteSortOrder": "options-scripts-markup-styles",
-  "svelteBracketNewLine": true
+  "svelteBracketNewLine": true,
+  "endOfLine": "auto"
 }

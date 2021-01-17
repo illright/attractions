@@ -1,9 +1,18 @@
 <script>
+  /**
+   * @typedef {import('./autocomplete-field').OptionsGetter} OptionsGetter
+   * @typedef {import('./autocomplete-option').Option} Option
+   * @slot {{ }} loading-options
+   * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
+   * @slot {{ }} not-enough-input
+   * @slot {{ }} too-many-options
+   * @event {{ value: Option[] }} change
+   * @extends {'./autocomplete-field'} AutocompleteFieldProps
+   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import Chip from '../chip/chip.svelte';
   import AutocompleteField from './autocomplete-field.svelte';
-  import AutocompleteOption from './autocomplete-option.svelte';
   import X from '../dialog/x.svelte';
   import Loading from '../loading/loading.svelte';
   import MoreHorizontal from './more-horizontal.svelte';
@@ -14,13 +23,33 @@
   let _class = null;
   export { _class as class };
 
-  export let getOptions;
+  /**
+   * The current selection as an array of `Option` objects.
+   * Can be used to set the selection programmatically.
+   * @type {Option[]}
+   */
   export let selection = [];
+
+  /**
+   * The minimum length the search query must be to call `getOptions`.
+   * @type {number}
+   */
   export let minSearchLength = 3;
+  /**
+   * The maximum amount of options than can be selected.
+   * @type {number}
+   */
   export let maxOptions = Infinity;
+  /**
+   * The current value of the text field. Can be used to control the query programmatically.
+   * @type {string}
+   */
   export let searchQuery = '';
+  /**
+   * Whether to disable the field.
+   * @type {boolean}
+   */
   export let disabled = false;
-  export let optionComponent = AutocompleteOption;
 
   let focus = false;
 
@@ -45,10 +74,8 @@
     bind:selection
     bind:searchQuery
     bind:focus
-    {getOptions}
     {minSearchLength}
     {maxOptions}
-    {optionComponent}
     {disabled}
     {...$$restProps}
     on:change

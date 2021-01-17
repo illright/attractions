@@ -1,4 +1,8 @@
 <script>
+  /**
+   * @typedef {{ start: Date; end: Date }} DateRange
+   * @event {{ value: Date | DateRange }} change
+   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
   import Button from '../button/button.svelte';
@@ -18,17 +22,64 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to add to the list of weekdays above the calendar.
+   * @type {string}
+   */
   export let weekdaysClass = null;
+  /**
+   * A class string to add to each element containing a row of days in the calendar.
+   * @type {string}
+   */
   export let weekClass = null;
+  /**
+   * A class string to add to each day in the calendar.
+   * @type {string}
+   */
   export let dayClass = null;
 
+  /**
+   * If this is set to `true`, the date picker will have two fields – for the start and the end of the date range.
+   * @type {boolean}
+   */
   export let range = false;
+  /**
+   * The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used.
+   * This will affect the weekdays and the day number representations.
+   * @type {string | undefined}
+   */
   export let locale = undefined;
+  /**
+   * The index of the weekday to start the week at.
+   * 0 is for Sunday and 6 is for Saturday.
+   * Defaults to 1 (Monday).
+   * @type {0 | 1 | 2 | 3 | 4 | 5 | 6}
+   */
   export let firstWeekday = 1; // 1 corresponds to Monday
+  /**
+   * Whether to hide the calendar dropdown and only keep the text input.
+   * @type {boolean}
+   */
   export let noCalendar = false;
+  /**
+   * Whether to show the calendar dropdown above or below the text field.
+   * @type {boolean}
+   */
   export let top = false;
+  /**
+   * Whether to align the calendar dropdown to the right or the left side of the text field.
+   * @type {boolean}
+   */
   export let right = false;
+  /**
+   * Depending on the value of the range prop, this is either a `Date` object or an object with two fields, `start` and `end`, containing Date objects.
+   * @type {Date | DateRange}
+   */
   export let value = null;
+  /**
+   * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
+   * @type {string}
+   */
   export let format = '%d.%m.%Y';
   $: readableFormat = format
     .replace('%d', 'dd')
