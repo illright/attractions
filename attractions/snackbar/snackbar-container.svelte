@@ -29,6 +29,18 @@
     registeredSnackbars = registeredSnackbars;
   }
 
+  /**
+   * Show the snackbar with the given options
+   * @type {(options: {
+   *   component: typeof import("svelte").SvelteComponentDev,
+   *   props: Record<string, any>,
+   *   duration: number,
+   * }) => {
+   *   close: () => void,
+   *   expired: Promise<boolean>,
+   * }}
+   * @readonly
+   */
   export function showSnackbar(options) {
     const { component = Snackbar, props = {}, duration = 4000 } = options;
 
