@@ -42,11 +42,11 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script:
             | # yeah, I know it's weird how you get PR comments with `.issues`
-            const prComments = await github.issues.listComments({
+            const prComments = (await github.issues.listComments({
               issue_number: ${{ env.PR_NUMBER }},
               owner: context.repo.owner,
               repo: context.repo.repo,
-            });
+            })).data;
             const docsURL = /Docs available on https:\/\/illright\.github\.io\/attractions\/\d+\//;
             if (prComments.find(
               comment => comment.user.login === 'github-actions[bot]' && docsURL.test(comment.body)
