@@ -21,7 +21,7 @@ The wrapper element creating a context to show snackbars.
 
 The main piece of functionality is the `showSnackbar` function. This function accepts an object with the following fields:
 
-- `component` (default: [==`Snackbar`==](./docs/components/snackbar)) – the component to render as a snackbar;
+- `component` (default: [<mark>`Snackbar`</mark>](./docs/components/snackbar)) – the component to render as a snackbar;
 - `props` (default: `{}`) – the props to be passed to the snackbar. The component also injects the `closeCallback` prop into this object, which is a function that can be called to force-close the snackbar;
 - `duration` (default: `4000`) – the duration to show the snackbar in milliseconds.
 
@@ -61,7 +61,7 @@ You can obtain this function in three different ways:
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`position`** | `SnackbarPositions.BOTTOM_LEFT` | [==`SnackbarPositions`==](#snackbar-positions) | The position of the snackbar stack inside the window. |
+| **`position`** | `SnackbarPositions.BOTTOM_LEFT` | [<mark>`SnackbarPositions`</mark>](#snackbar-positions) | The position of the snackbar stack inside the window. |
 
 ### Class Properties
 

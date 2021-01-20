@@ -13,7 +13,6 @@ import attractionsPkg from 'attractions/package.json';
 import makeAttractionsImporter from 'attractions/importer.js';
 import sapperEnv from 'sapper-environment';
 import { mdsvex } from 'mdsvex';
-import remarkMark from 'remark-mark-plus';
 import remarkHeadingID from 'remark-heading-id';
 import 'prismjs';
 import 'prism-svelte';
@@ -56,7 +55,7 @@ const preprocess = [
       quotes: false,
       ellipses: true,
     },
-    remarkPlugins: [remarkMark, remarkHeadingID],
+    remarkPlugins: [remarkHeadingID],
     extensions: ['.svx', '.md'],
   }),
 ];

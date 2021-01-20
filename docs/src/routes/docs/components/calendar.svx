@@ -41,8 +41,8 @@ If you're seeking a ready-to-use date picking solution, consider using [`DatePic
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`month`**==&nbsp;<span class="required">*</span> |  | `number` | An index of the desired month. <br /> 0 is for January, 11 is for December. |
-| ==**`year`**==&nbsp;<span class="required">*</span> |  | `number` | The desired year. |
+| <mark>**`month`**</mark>&nbsp;<span class="required">*</span> |  | `number` | An index of the desired month. <br /> 0 is for January, 11 is for December. |
+| <mark>**`year`**</mark>&nbsp;<span class="required">*</span> |  | `number` | The desired year. |
 | **`locale`** | `undefined` | `string` | The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used. <br /> This will affect the weekdays and the day number representations. |
 | **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
 | **`selectionStart`** | `null` | `Date` | If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days). |

@@ -78,7 +78,7 @@ Falsy values passed to classes will be disregarded.
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
 
-==Bonus==: use the `.dropdown-chevron` class for the chevrons on the dropdown handle to get a nice rotation animation (see showcase).
+<mark>Bonus</mark>: use the `.dropdown-chevron` class for the chevrons on the dropdown handle to get a nice rotation animation (see showcase).
 
 ## Events {#events}
 

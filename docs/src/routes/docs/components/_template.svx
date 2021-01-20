@@ -48,7 +48,7 @@ Text.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`prop`**==&nbsp;<span class="required">*</span> | `value` | `type` | Description. |
+| <mark>**`prop`**</mark>&nbsp;<span class="required">*</span> | `value` | `type` | Description. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<element>` element. |
 
 <div class="required">* Required</div>
@@ -61,7 +61,7 @@ All `<TEMPLATE>` components use the `.template` class.
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |
 
-==Bonus==: something.
+<mark>Bonus</mark>: something.
 
 
 ## Events {#events}

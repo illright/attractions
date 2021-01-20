@@ -38,7 +38,7 @@ A page navigating component that supports random page access.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`pages`**==&nbsp;<span class="required">*</span> |  | `number` | The amount of pages to allow for navigation. |
+| <mark>**`pages`**</mark>&nbsp;<span class="required">*</span> |  | `number` | The amount of pages to allow for navigation. |
 | **`currentPage`** | `1` | `number` | The currently selected page (starting from 1). |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<nav>` element. |
 

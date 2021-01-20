@@ -16,7 +16,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 
 # PopoverButton
 
-A button designed to be used as the [==`Popover`==](./docs/components/popover) content.
+A button designed to be used as the [<mark>`Popover`</mark>](./docs/components/popover) content.
 
 <RelatedComponents components={relatedComponents} />
 

@@ -22,7 +22,7 @@ relatedComponents:
 
 Tiny piece of additional information.
 
-For radio/checkbox selecting capabilities, take a look at [==`RadioChipGroup`==](./docs/components/radio-chip-group) and [==`CheckboxChipGroup`==](./docs/components/checkbox-chip-group) components.
+For radio/checkbox selecting capabilities, take a look at [<mark>`RadioChipGroup`</mark>](./docs/components/radio-chip-group) and [<mark>`CheckboxChipGroup`</mark>](./docs/components/checkbox-chip-group) components.
 
 <RelatedComponents components={relatedComponents} />
 

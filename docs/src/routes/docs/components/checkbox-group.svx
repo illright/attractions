@@ -30,7 +30,7 @@ relatedComponents:
 
 A group of checkboxes from an array of items to select.
 
-If you need more control over the labels and checkbox layout, you may use the individual [==`Checkbox`==](./docs/components/checkbox) component.
+If you need more control over the labels and checkbox layout, you may use the individual [<mark>`Checkbox`</mark>](./docs/components/checkbox) component.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -100,8 +100,8 @@ If you need more control over the labels and checkbox layout, you may use the in
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`items`**==&nbsp;<span class="required">*</span> | | `Array` | An array of `{ value, label, checked, disabled }` objects, where only the value is required. Must contain at least one value. |
-| ==**`name`**==&nbsp;<span class="required">*</span> | | `string` | The name to assign to all checkboxes belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| <mark>**`items`**</mark>&nbsp;<span class="required">*</span> | | `Array` | An array of `{ value, label, checked, disabled }` objects, where only the value is required. Must contain at least one value. |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> | | `string` | The name to assign to all checkboxes belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`max`** | `Infinity` | `number` | The maximum allowed number of checkboxes to select. |
 | **`color`** | `false` | `boolean` | Designates the checkboxes as color choices. Labels are ignored and values are expected to be `"#RRGGBB"`. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<Checkbox>` components. |

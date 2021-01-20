@@ -56,7 +56,7 @@ Extra content revealed on hover or focus within.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`position`** | `PopoverPositions.TOP` | [==`PopoverPositions`==](#popover-positions) | The position of the popover content relative to the triggering handle. |
+| **`position`** | `PopoverPositions.TOP` | [<mark>`PopoverPositions`</mark>](#popover-positions) | The position of the popover content relative to the triggering handle. |
 
 ### Class Properties
 

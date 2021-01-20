@@ -79,7 +79,7 @@ Note that this component doesn't add any form handling capabilities; it is merel
 | ---- | ------- | ---- | ----------- |
 | **`name`** | `null` | `string` | The name of the form field. Displayed prominently next to the actual field. |
 | **`help`** | `null` | `string` | The subtitle text under the name providing extra guidance. |
-| **`id`** | `null` | `string` | The ID to add the the `for` attribute of the `<label>` element containing the ==`name`==. Useful if you pass an ID to the actual field inside and want to connect it with the label. |
+| **`id`** | `null` | `string` | The ID to add the the `for` attribute of the `<label>` element containing the <mark>`name`</mark>. Useful if you pass an ID to the actual field inside and want to connect it with the label. |
 | **`required`** | `false` | `boolean` | Marks the form field as required, adding an asterisk to the name and text under the field indicating that the field is mandatory. |
 | **`optional`** | `false` | `boolean` | Marks the form field as optional, explicitly stating the optionality of the field in the text under the field. |
 | **`errors`** | `[]` | `Array` | An array of error messages to display under the field. Falsy elements are not shown. |
@@ -105,7 +105,7 @@ The content of the form field – the actual field itself.
 
 ### `description` slot
 
-Additional content to put in the form field description block, after the name and the help. If you want a completely custom description, don't pass the ==`name`== and ==`help`== props and just use this slot.
+Additional content to put in the form field description block, after the name and the help. If you want a completely custom description, don't pass the <mark>`name`</mark> and <mark>`help`</mark> props and just use this slot.
 
 ### `message` slot
 

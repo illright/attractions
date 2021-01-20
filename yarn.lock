@@ -2641,11 +2641,6 @@ is-typedarray@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
 
-is-whitespace-character@^1.0.0:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/is-whitespace-character/-/is-whitespace-character-1.0.4.tgz#0858edd94a95594c7c9dd0b5c174ec6e45ee4aa7"
-  integrity sha512-SDweEzfIZM0SJV0EUga669UTKlmL0Pq8Lno0QDQsPnvECB3IM2aP0gdx5TrU0A01MAPfViaZiI2V1QMZLaKK5w==
-
 isarray@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
@@ -3715,13 +3710,6 @@ remark-heading-id@^1.0.0:
   integrity sha512-86QaOiL+8jTV9P5Y0S25kSIcykCd/XmnqiFltWZRWKHmsVT4sevN7QJnkpUjkCJUpIeWte/LYH7pVlCTGz89fw==
   dependencies:
     unist-util-visit "^1.4.0"
-
-remark-mark-plus@^1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/remark-mark-plus/-/remark-mark-plus-1.0.21.tgz#5b1f50f4e80d2e195272bfcd3a4c164bf9e44d80"
-  integrity sha512-jQMoLARvb4wSP/mlSR6Fd8j2oGQadmX8nOQumsBfDZQpu/UQgvKirt14luHCcg9WD5mYtTi4YHQvFh9gDdsbog==
-  dependencies:
-    is-whitespace-character "^1.0.0"
 
 remark-parse@^9.0.0:
   version "9.0.0"

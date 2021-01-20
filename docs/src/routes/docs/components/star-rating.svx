@@ -47,7 +47,7 @@ An input element used for rating with a number of stars.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name to assign to all stars belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name to assign to all stars belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`max`** | `5` | `number` | How many stars to be displayed. |
 | **`value`** | `null` | `number` | Current amount of selected stars. |
 | **`disabled`** | `false` | `boolean` | Disables star selection. |

@@ -25,7 +25,7 @@ relatedComponents:
 
 A list item representing an autocomplete suggestion.
 
-It's unlikely that this component will be used by itself, but it is a part of the larger [==`Autocomplete`==](./docs/components/autocomplete) component.
+It's unlikely that this component will be used by itself, but it is a part of the larger [<mark>`Autocomplete`</mark>](./docs/components/autocomplete) component.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -61,7 +61,7 @@ It's unlikely that this component will be used by itself, but it is a part of th
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`option`**==&nbsp;<span class="required">*</span> |  | `Object` | The option object, containing a `name` field and, optionally, a `details` field, both strings. |
+| <mark>**`option`**</mark>&nbsp;<span class="required">*</span> |  | `Object` | The option object, containing a `name` field and, optionally, a `details` field, both strings. |
 | **`query`** | `null` | `string` | The substring to seek out and highlight among the name and the details. |
 
 <div class="required">* Required</div>
@@ -71,7 +71,7 @@ It's unlikely that this component will be used by itself, but it is a part of th
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`click`** | `{ nativeEvent }` | Fired when the element is clicked. A necessary part of conforming to the [==`AutocompleteField`=='s](./docs/components/autocomplete-field) interface. |
+| **`click`** | `{ nativeEvent }` | Fired when the element is clicked. A necessary part of conforming to the [<mark>`AutocompleteField`</mark>'s](./docs/components/autocomplete-field) interface. |
 
 
 ## SCSS Variables {#scss-variables}
