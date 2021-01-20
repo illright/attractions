@@ -3,110 +3,322 @@ name: Installation
 ---
 
 <script>
-  import { Tabs } from 'attractions';
+  import { Tabs, Label } from 'attractions';
   import CopyableCode from 'src/components/docs/copyable-code.svelte';
 
-  const packageManagers = ['npm', 'Yarn', 'pnpm']
-  let packageManager = packageManagers[0];
+  const PackageManager = {
+    npm: 'npm',
+    yarn: 'Yarn',
+    pnpm: 'pnpm',
+  };
+
+  const Bundler = {
+    rollup: 'Rollup',
+    webpack: 'Webpack',
+  };
+
+  const Framework = {
+    svelte: 'Svelte',
+    sapper: 'Sapper',
+    other: 'Other'
+  };
+
+  let yourPackageManager = PackageManager.npm;
+  let yourBundler = Bundler.rollup;
+  let yourFramework = Framework.svelte;
 </script>
 
 # Installation
 
-**Step 1.** Install the library with your favourite package manager:
+<div class="toolchain">
+  <Label>Package manager</Label>
+  <Tabs
+    items={Object.values(PackageManager)}
+    bind:value={yourPackageManager}
+    name="package-managers"
+  />
 
-<div class="installation">
-  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers" />
-  {#if packageManager === packageManagers[0]}
-    <CopyableCode>
+  <Label>Bundler</Label>
+  <Tabs
+    items={Object.values(Bundler)}
+    bind:value={yourBundler}
+    name="bundlers"
+  />
 
-```sh
-npm install --save-dev attractions
-```
-
-    </CopyableCode>
-  {:else if packageManager === packageManagers[1]}
-    <CopyableCode>
-
-```sh
-yarn add --dev attractions
-```
-
-    </CopyableCode>
-  {:else}
-    <CopyableCode>
-
-```sh
-pnpm add --save-dev attractions
-```
-
-    </CopyableCode>
-  {/if}
+  <Label>Framework</Label>
+  <Tabs
+    items={Object.values(Framework)}
+    bind:value={yourFramework}
+    name="frameworks"
+  />
 </div>
 
-**Step 2.** Install `svelte-preprocess`, Dart Sass and PostCSS:
+{#if yourFramework === Framework.other}
+  <div class="prelude">
 
-<div class="installation">
-  <Tabs items={packageManagers} bind:value={packageManager} name="package-managers2" />
-  {#if packageManager === packageManagers[0]}
-    <CopyableCode>
+    You can use Attractions with other JS frameworks such as React and Vue, however, this usage is rather restricted in capabilities.
 
-```sh
-npm install --save-dev svelte-preprocess sass postcss
+    If you're experiencing trouble, see if you can wrap the entire usage of this library
+    in its own Svelte component that does minimal interactions with the world (as few props/events as possible)
+    and integrate that component into your page rendered with another framework.
+
+  </div>
+{/if}
+
+**Step 1.** Add Attractions {#if yourFramework !== Framework.other} and its peer dependencies {/if}
+to your {@html yourFramework === Framework.other ? '`dependencies`' : '`devDependencies`'}:
+
+{#if yourPackageManager === PackageManager.npm}
+  <CopyableCode>
+    {#if yourFramework === Framework.other}
+
+```shell
+npm install --save attractions
 ```
 
-    </CopyableCode>
-  {:else if packageManager === packageManagers[1]}
-    <CopyableCode>
+    {:else}
 
-```sh
-yarn add --dev svelte-preprocess sass postcss
+```shell
+npm install --save-dev attractions svelte-preprocess sass postcss
 ```
 
-    </CopyableCode>
+    {/if}
+  </CopyableCode>
+{:else if yourPackageManager === PackageManager.yarn}
+  <CopyableCode>
+    {#if yourFramework === Framework.other}
+
+```shell
+yarn add attractions
+```
+
+    {:else}
+
+```shell
+yarn add --dev attractions svelte-preprocess sass postcss
+```
+
+    {/if}
+  </CopyableCode>
+{:else}
+  <CopyableCode>
+    {#if yourFramework === Framework.other}
+
+```shell
+pnpm add attractions
+```
+
+    {:else}
+
+```shell
+pnpm add --save-dev attractions svelte-preprocess sass postcss
+```
+
+    {/if}
+  </CopyableCode>
+{/if}
+
+{#if yourFramework !== Framework.other}
+
+  **Step 2.** Add `svelte-preprocess` to your preprocessor chain
+  {#if yourBundler === Bundler.rollup}
+    {#if yourFramework === Framework.svelte}
+      ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-rollup-plugin-svelte)):
+    {:else}
+      ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-sapper)):
+    {/if}
   {:else}
-    <CopyableCode>
+    ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-svelte-loader)):
+  {/if}
 
-```sh
-pnpm add --save-dev svelte-preprocess sass postcss
+  <CopyableCode filename="svelte.config.js">
+
+```js
+const sveltePreprocess = require('svelte-preprocess');
+
+module.exports = {
+  preprocess: [sveltePreprocess()],
+};
 ```
 
-    </CopyableCode>
-  {/if}
-</div>
+  </CopyableCode>
 
-**Step 3.** Add `svelte-preprocess` to your preprocessor chain ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md)):
+  {#if yourBundler === Bundler.rollup}
+    {#if yourFramework === Framework.svelte}
+      <CopyableCode filename="rollup.config.js">
 
-<CopyableCode filename="rollup.config.js">
+```js
+import svelte from 'rollup-plugin-svelte';
+import svelteConfig from './svelte.config.js';
 
-  ```js
-  import sveltePreprocess from 'svelte-preprocess';
+export default {
+  // ...,
+  plugins: [
+    svelte({
+      ...svelteConfig,
+      // ...,
+    }),
+  ],
+};
+```
 
-  export default {
+      </CopyableCode>
+    {:else}
+      <CopyableCode filename="rollup.config.js">
+
+```js
+import svelte from 'rollup-plugin-svelte';
+import svelteConfig from './svelte.config.js';
+
+export default {
+  client: {
     // ...,
     plugins: [
       svelte({
-        preprocess: sveltePreprocess()
-      })
-    ]
-  }
-  ```
+        ...svelteConfig,
+        // ...,
+      }),
+    ],
+  },
+  server: {
+    // ...,
+    plugins: [
+      svelte({
+        ...svelteConfig,
+        // ...,
+      }),
+    ],
+  },
+  serviceworker: {
+    // ...
+  },
+};
+```
 
-</CopyableCode>
+      </CopyableCode>
+    {/if}
+  {:else if yourBundler === Bundler.webpack}
+    {#if yourFramework === Framework.svelte}
+      <CopyableCode filename="webpack.config.js">
 
-**Step 4.** Import the desired components as named imports and use wherever you like!
+```js
+const svelteConfig = require('./svelte.config.js');
 
-<CopyableCode>
+module.exports = {
+  // ...,
+  module: {
+    rules: [
+      // ...,
+      {
+        test: /\\.(svelte|html)$/,
+        exclude: [],
+        use: {
+          loader: 'svelte-loader',
+          options: {
+            ...svelteConfig,
+            // ...,
+          },
+        },
+      },
+    ],
+  },
+};
+```
 
-  ```svelte
-  <script>
-    import { Button } from 'attractions';
-  </script>
+      </CopyableCode>
+    {:else}
+      <CopyableCode filename="webpack.config.js">
 
-  <Button>click me</Button>
-  ```
+```js
+const svelteConfig = require('./svelte.config.js');
 
-</CopyableCode>
+module.exports = {
+  client: {
+    // ...,
+    module: {
+      rules: [
+        // ...,
+        {
+          test: /\\.(svelte|html)$/,
+          exclude: [],
+          use: {
+            loader: 'svelte-loader',
+            options: {
+              ...svelteConfig,
+              // ...,
+            },
+          },
+        },
+      ],
+    },
+  },
+  server: {
+    // ...,
+    module: {
+      rules: [
+        // ...,
+        {
+          test: /\\.(svelte|html)$/,
+          exclude: [],
+          use: {
+            loader: 'svelte-loader',
+            options: {
+              ...svelteConfig,
+              // ...,
+            },
+          },
+        },
+      ],
+    },
+  },
+  serviceworker: {
+    // ...
+  },
+}
+```
+      </CopyableCode>
+    {/if}
+  {/if}
 
-If you'd like to use/edit the Sass variables that Attractions uses for theming or if your `node_modules` folder is not in the root of your project, take a look at the [**Theming with Sass**](./docs/theming) section.
+  **Step 3.** Import the desired components as named imports and use wherever you like!
+
+  <CopyableCode>
+
+```svelte
+<script>
+  import { Button } from 'attractions';
+</script>
+
+<Button>click me</Button>
+```
+
+  </CopyableCode>
+
+  If you'd like to use/edit the Sass variables that Attractions uses for theming or if your `node_modules` folder is not in the root of your project, take a look at the [**Theming with Sass**](./docs/theming) section.
+
+{:else}
+
+  **Step 2.** Import the desired components as named imports and use with the [Component API](https://svelte.dev/docs#Client-side_component_API):
+
+  <CopyableCode>
+
+```js
+import { DatePicker } from 'attractions';
+
+const picker = new DatePicker({
+  target: document.getElementById('container'),
+  props: {
+    firstWeekday: 0,
+  },
+});
+
+// Listening to events
+picker.$on('change', (e) => {
+  console.log(e.detail);
+});
+```
+
+  </CopyableCode>
+{/if}
 
 <style src="../../../static/css/routes/docs/installation.scss"></style>
