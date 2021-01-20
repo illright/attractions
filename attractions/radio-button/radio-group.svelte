@@ -68,6 +68,7 @@
         selectorStyle={color ? getColorPickerStyles(item.value) : null}
         bind:group={value}
         value={item.value}
+        checked={item.value === value}
         disabled={item.disabled}
         class={classes(color && 'colored', radioClass)}
         on:change
