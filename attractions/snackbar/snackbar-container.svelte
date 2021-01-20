@@ -45,9 +45,13 @@
     const { component = Snackbar, props = {}, duration = 4000 } = options;
 
     const key = { component, props };
+    const originalCloseCallback = props.closeCallback;
     key.props.closeCallback = function close() {
       clearTimeout(key.timeoutID);
       removeSnackbar(key, true);
+      if (typeof originalCloseCallback === 'function') {
+        originalCloseCallback();
+      }
     };
     key.timeoutID = setTimeout(removeSnackbar, duration, key, false);
     registeredSnackbars.add(key);
