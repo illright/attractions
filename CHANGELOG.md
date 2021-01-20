@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
-- **TypeScript support**: We now provide our own type declaration (`.d.ts`) files so that TypeScript users will have a more delightful development experience! Note that other users are not affected since the components are written in plain JS. ([#211](https://github.com/illright/attractions/pull/211))
+- **TypeScript support**: We now provide our own type declaration (`.d.ts`) files so that TypeScript users will have a more delightful development experience! Note that other users are not affected since the components are written in plain JS ([#211](https://github.com/illright/attractions/pull/211)).
+- Allow passing a `closeCallback` for snackbars ([#216](https://github.com/illright/attractions/pull/216)).
 
 ### Fixed
 
