@@ -62,7 +62,7 @@ A small tile displaying the name of a file, its size and format in human-readabl
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`file`**==&nbsp;<span class="required">*</span> |  | [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) | The File object to display. |
+| <mark>**`file`**</mark>&nbsp;<span class="required">*</span> |  | [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) | The File object to display. |
 
 <div class="required">* Required</div>
 

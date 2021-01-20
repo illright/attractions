@@ -31,7 +31,7 @@ relatedComponents:
 
 A text field suggesting options to select.
 
-Builds upon the [==`AutocompleteField`==](./docs/components/autocomplete-field), prefer that instead if you need more customization freedom.
+Builds upon the [<mark>`AutocompleteField`</mark>](./docs/components/autocomplete-field), prefer that instead if you need more customization freedom.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -65,12 +65,12 @@ Builds upon the [==`AutocompleteField`==](./docs/components/autocomplete-field),
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`getOptions`**==&nbsp;<span class="required">*</span> |  | `async function*` | An async generator of suggestions. <br /> Receives the input from the text field and is expected to yield promises that resolve to arrays of objects `{ name, details }`. |
+| <mark>**`getOptions`**</mark>&nbsp;<span class="required">*</span> |  | `async function*` | An async generator of suggestions. <br /> Receives the input from the text field and is expected to yield promises that resolve to arrays of objects `{ name, details }`. |
 | **`selection`** | `[]` | `Array` | The current selection as an array of objects `{ name, details }`. <br /> Can be used to set the selection programmatically. |
-| **`minSearchLength`** | `3` | `number` | The minimum amount of characters to call ==`getOptions`==. |
+| **`minSearchLength`** | `3` | `number` | The minimum amount of characters to call <mark>`getOptions`</mark>. |
 | **`maxOptions`** | `Infinity` | `number` | The maximum amount of options than can be selected. |
 | **`searchQuery`** | `''` | `string` | The current value of the text field. Can be used to control the query programmatically. |
-| **`optionComponent`** | [==`AutocompleteOption`==](./docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
+| **`optionComponent`** | [<mark>`AutocompleteOption`</mark>](./docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
 | **`disabled`** | `false` | `boolean` | Whether to disable the field. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<AutocompleteField>` component. |
 
@@ -96,7 +96,7 @@ Falsy values passed to classes will be disregarded.
 
 ## Slots {#slots}
 
-All slots of [==`AutocompleteField`==](./docs/components/autocomplete-field#slots) are available here with the same names.
+All slots of [<mark>`AutocompleteField`</mark>](./docs/components/autocomplete-field#slots) are available here with the same names.
 
 
 ## SCSS Variables {#scss-variables}

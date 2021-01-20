@@ -62,7 +62,7 @@ For a larger, more functional and visual file uploader, check out the [`FileDrop
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`multiple`** | `false` | `boolean` | Allows the user to select multiple files. |
-| **`value`** | `null` or `[]` | [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) or [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList) | The user's selection. If ==`multiple`== is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`. |
+| **`value`** | `null` or `[]` | [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) or [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList) | The user's selection. If <mark>`multiple`</mark> is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`. |
 | **`disabled`** | `false` | `boolean` | Whether the input should accept files. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
 
@@ -89,7 +89,7 @@ Falsy values passed to classes will be disregarded.
 
 ### Default slot
 
-The label of the main upload button. Defaults to the text "select a file" / "select files" depending on the value of the ==`multiple`== property.
+The label of the main upload button. Defaults to the text "select a file" / "select files" depending on the value of the <mark>`multiple`</mark> property.
 
 
 ## SCSS Variables {#scss-variables}

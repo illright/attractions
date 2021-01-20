@@ -66,14 +66,14 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`change`** | `{ value, nativeEvent }` | Fires when a switch is toggled. The `value` corresponds to the current value of the ==`value`== property, the `nativeEvent` contains the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`change`** | `{ value, nativeEvent }` | Fires when a switch is toggled. The `value` corresponds to the current value of the <mark>`value`</mark> property, the `nativeEvent` contains the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
 
 
 ## Slots {#slots}
 
 ### Default slot
 
-The label of the switch. Positioned to the right of the switch by default, but can be moved to the left using the ==`slotLeft`== property.
+The label of the switch. Positioned to the right of the switch by default, but can be moved to the left using the <mark>`slotLeft`</mark> property.
 
 
 ## SCSS Variables {#scss-variables}

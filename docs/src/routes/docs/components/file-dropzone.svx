@@ -51,10 +51,10 @@ For a simpler file input without the built-in representation of the file selecti
 | ---- | ------- | ---- | ----------- |
 | **`accept`** | `null` | `string` | Limits the allowed files to particular types. For guidelines on the value of the attribute, consult the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept). |
 | **`files`** | `[]` | `Array` | The user's selection as an array of [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) objects. Note: this is an actual `Array`, not a `FileList`, as opposed to the native `<input type="file">`. |
-| **`beforeChange`** | `null` | `Function` | A callback to call for each file that passes the ==`accept`== check before it is added to the ==`files`==. <br /> If it returns a Promise, they will be started for every file, but awaited at the end. |
+| **`beforeChange`** | `null` | `Function` | A callback to call for each file that passes the <mark>`accept`</mark> check before it is added to the <mark>`files`</mark>. <br /> If it returns a Promise, they will be started for every file, but awaited at the end. |
 | **`disabled`** | `false` | `boolean` | Whether the input should accept files. |
 | **`max`** | `Infinity` | `number` | The maximum amount of files that the user can upload. |
-| **`fileComponent`** | [==`FileTile`==](./docs/components/file-tile) | Svelte component | The component used to render a selected file. <br /> Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object. <br /> Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail. |
+| **`fileComponent`** | [<mark>`FileTile`</mark>](./docs/components/file-tile) | Svelte component | The component used to render a selected file. <br /> Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object. <br /> Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
 
 ### Class Properties
@@ -88,7 +88,7 @@ The inner content of the dropzone when no files are selected. Defaults to a mess
 
 ### `plus-icon` slot
 
-The plus icon inside the dropzone when there are files inside. ==Bonus==: if supplied with a `plus` class, rotates 45 degrees to become an X when an incorrect file is uploaded. Defaults to [Feather icons](https://feathericons.com/?query=plus)' `Plus`.
+The plus icon inside the dropzone when there are files inside. <mark>Bonus</mark>: if supplied with a `plus` class, rotates 45 degrees to become an X when an incorrect file is uploaded. Defaults to [Feather icons](https://feathericons.com/?query=plus)' `Plus`.
 
 
 ## SCSS Variables {#scss-variables}

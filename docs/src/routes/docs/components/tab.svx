@@ -14,7 +14,7 @@ relatedComponents:
 
 # Tab
 
-Allows for finer control over individual tabs when the default [==`Tabs`==](./docs/components/tabs) is not good enough.
+Allows for finer control over individual tabs when the default [<mark>`Tabs`</mark>](./docs/components/tabs) is not good enough.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -56,7 +56,7 @@ Allows for finer control over individual tabs when the default [==`Tabs`==](./do
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`value`**==&nbsp;<span class="required">*</span> |  | `string` | The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information. |
+| <mark>**`value`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information. |
 | **`name`** | `null` | `string` | The name assigned to the `<input type="radio">`'s [`name` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname). |
 | **`group`** | `null` | `string` | The `value` of the currently selected tab. Use with `bind:group`. |
 | **`disabled`** | `false` | `boolean` | Disallows selecting this tab. |

@@ -48,8 +48,8 @@ Tabs are used to organize content and navigate between it.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`name`**==&nbsp;<span class="required">*</span> |  | `string` | The name passed to each of the underlying `<Tab>`s, which in turn becomes assigned to the `<input type="radio">`s' [`name` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname). |
-| ==**`items`**==&nbsp;<span class="required">*</span> |  | `Array` | An array of strings that act as the labels of the tabs. |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name passed to each of the underlying `<Tab>`s, which in turn becomes assigned to the `<input type="radio">`s' [`name` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname). |
+| <mark>**`items`**</mark>&nbsp;<span class="required">*</span> |  | `Array` | An array of strings that act as the labels of the tabs. |
 | **`value`** | `null` | `string` | The currently selected tab. |
 
 <div class="required">* Required</div>

@@ -35,7 +35,6 @@
     "prettier": "2.2.1",
     "prism-svelte": "^0.4.6",
     "remark-heading-id": "^1.0.0",
-    "remark-mark-plus": "^1.0.21",
     "rollup": "^2.36.1",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",

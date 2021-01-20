@@ -64,7 +64,7 @@ Falsy values passed to classes will be disregarded.
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the handle. |
 
-==Bonus==: use the `.icon` class for the icons inside the badge to set `display: block` on them and avoid unexpected space at the bottom.
+<mark>Bonus</mark>: use the `.icon` class for the icons inside the badge to set `display: block` on them and avoid unexpected space at the bottom.
 
 
 ## Slots {#slots}

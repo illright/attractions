@@ -24,6 +24,15 @@ main {
     display: block;
     white-space: nowrap;
   }
+
+  :global mark {
+    background: none;
+    color: vars.$main;
+
+    code {
+      color: vars.$main;
+    }
+  }
 }
 
 .center {

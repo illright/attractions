@@ -73,7 +73,7 @@ The most basic form element – taking text input.
 | **`multiline`** | `false` | `boolean` | Whether the text field should allow multiple lines (`<textarea>` will be used instead of the `<input>`). |
 | **`id`** | `null` | `string` | The ID to assign to the input. |
 | **`noSpinner`** | `false` | `boolean` | Whether to hide the spinner (arrow buttons inside `<input type="number">`). |
-| **`label`** | `null` | `string` | The label to show above the text field. Only works with ==`outline`== text fields. |
+| **`label`** | `null` | `string` | The label to show above the text field. Only works with <mark>`outline`</mark> text fields. |
 | **`error`** | `null` | `string` | The error message to show under the text field. |
 | **`autofocus`** | `false` | `boolean` | Whether the field should be focused on mount. |
 | **`events`** | `[]` | `Array` | List of handlers for the [Events action](./docs/utilities): `[{ name, handler }]`. |
@@ -97,8 +97,8 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`input`** | `{ value, nativeEvent }` | Fired when any character is added or removed in the text field. The `value` has the current value of the ==`value`== property and `nativeEvent` holds the [native input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event). |
-| **`change`** | `{ value, nativeEvent }` | Fired when a change to the field's value is confirmed (with Enter or by unfocusing). The `value` has the current value of the ==`value`== property and `nativeEvent` holds the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`input`** | `{ value, nativeEvent }` | Fired when any character is added or removed in the text field. The `value` has the current value of the <mark>`value`</mark> property and `nativeEvent` holds the [native input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event). |
+| **`change`** | `{ value, nativeEvent }` | Fired when a change to the field's value is confirmed (with Enter or by unfocusing). The `value` has the current value of the <mark>`value`</mark> property and `nativeEvent` holds the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
 | **`focus`** | `{ nativeEvent }` | Fired when the field gains focus. The `nativeEvent` holds the [native focus event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event). |
 | **`blur`** | `{ nativeEvent }` | Fired when the field loses focus. The `nativeEvent` holds the [native blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event). |
 | **`keydown`** | `{ nativeEvent }` | Fired when any key is pressed inside the text field (not necessarily printable). Can be used to handle Enter key presses. The `nativeEvent` holds the [native keydown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event). |
@@ -108,7 +108,7 @@ Falsy values passed to classes will be disregarded.
 
 ### Default slot
 
-If the ==`withItem`== property is specified, this holds the item for the text field. By default it is positioned to the left of the input area, but can be moved to the right with the ==`itemRight`== property.
+If the <mark>`withItem`</mark> property is specified, this holds the item for the text field. By default it is positioned to the left of the input area, but can be moved to the right with the <mark>`itemRight`</mark> property.
 
 **Important**: for correct positioning, the element that is placed inside this slot should have the `.icon` class.
 

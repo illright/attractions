@@ -72,14 +72,14 @@ Comes in three flavours: filled, outline and flat.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`filled`** | `false` | `boolean` | Adds a filled background to the button. <br /> Mutually exclusive with ==`outline`== and ==`selected`==. |
-| **`outline`** | `false` | `boolean` | Adds a border to the button. <br /> Mutually exclusive with ==`filled`==. |
-| **`danger`** | `false` | `boolean` | Gives the button a color of danger (red by default) <br /> Mutually exclusive with ==`neutral`==. |
-| **`neutral`** | `false` | `boolean` | Gives the button a neutral color (very dark gray by default). <br /> Mutually exclusive with ==`danger`==. |
+| **`filled`** | `false` | `boolean` | Adds a filled background to the button. <br /> Mutually exclusive with <mark>`outline`</mark> and <mark>`selected`</mark>. |
+| **`outline`** | `false` | `boolean` | Adds a border to the button. <br /> Mutually exclusive with <mark>`filled`</mark>. |
+| **`danger`** | `false` | `boolean` | Gives the button a color of danger (red by default) <br /> Mutually exclusive with <mark>`neutral`</mark>. |
+| **`neutral`** | `false` | `boolean` | Gives the button a neutral color (very dark gray by default). <br /> Mutually exclusive with <mark>`danger`</mark>. |
 | **`round`** | `false` | `boolean` | Adjusts the padding to be equal on all sides. Great for icon-only buttons. |
 | **`rectangle`** | `false` | `boolean` | Halves the border radius and increases the padding. Well-suited for large menus. |
 | **`small`** | `false` | `boolean` | Cuts the padding to make the button smaller. |
-| **`selected`** | `false` | `boolean` | Gives the button a tinted background. Suitable for indicating the selected item. <br /> Mutually exclusive with ==`filled`==. |
+| **`selected`** | `false` | `boolean` | Gives the button a tinted background. Suitable for indicating the selected item. <br /> Mutually exclusive with <mark>`filled`</mark>. |
 | **`noRipple`** | `false` | `boolean` | Disables the ripple effect. |
 
 ### Functional Properties
@@ -88,7 +88,7 @@ Comes in three flavours: filled, outline and flat.
 | ---- | ------- | ---- | ----------- |
 | **`disabled`** | `false` | `boolean` | Disables the button, styling it appropriately and disabling click events. |
 | **`href`** | `null` | `string` | Turns the button into a link (prefetch-enabled for Sapper). |
-| **`noPrefetch`** | `false` | `boolean` | Disables Sapper prefetching for link buttons (those with an ==`href`== prop). |
+| **`noPrefetch`** | `false` | `boolean` | Disables Sapper prefetching for link buttons (those with an <mark>`href`</mark> prop). |
 | **`events`** | `[]` | `Array` | List of handlers for the [Events action](./docs/utilities): `[{ name, handler }]`. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<button>` or `<a>` element. |
 
@@ -105,7 +105,7 @@ Falsy values passed to classes will be disregarded.
 
 ## Events {#events}
 
-Native DOM events of buttons and links may be handled using the Events action through the ==`events`== property.
+Native DOM events of buttons and links may be handled using the Events action through the <mark>`events`</mark> property.
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |

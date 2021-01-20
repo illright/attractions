@@ -81,7 +81,7 @@ Falsy values passed to classes will be disregarded.
 
 ### Default slot
 
-The content of the Accordion. Pass one or more [==`AccordionSection`==](./docs/components/accordion-section) components or something miscellaneous.
+The content of the Accordion. Pass one or more [<mark>`AccordionSection`</mark>](./docs/components/accordion-section) components or something miscellaneous.
 
 | Prop Name | Type | Description |
 | --------- | ---- | ----------- |

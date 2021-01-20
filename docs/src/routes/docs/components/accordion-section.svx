@@ -85,7 +85,7 @@ Falsy values passed to classes will be disregarded.
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the handle. |
 
-==Bonus==: use the `.accordion-chevron` class for the chevrons on the handle to get a nice rotation animation (see showcase).
+<mark>Bonus</mark>: use the `.accordion-chevron` class for the chevrons on the handle to get a nice rotation animation (see showcase).
 
 
 ## Events {#events}

@@ -58,7 +58,7 @@ A colorful dot to signal about all your important events.
 
 ### Style Properties
 
-Only one of ==`info`==, ==`attention`==, ==`danger`==, and ==`success`== props may be specified at a time.
+Only one of <mark>`info`</mark>, <mark>`attention`</mark>, <mark>`danger`</mark>, and <mark>`success`</mark> props may be specified at a time.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |

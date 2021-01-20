@@ -20,7 +20,7 @@ A small snackbar to display status messages.
 
 <RelatedComponents components={relatedComponents} class="mb" />
 
-Note: below is not the intended way of using this component. It is meant to be passed into the `showSnackbar` function of the [==`SnackbarContainer`==](./docs/components/snackbar-container) component.
+Note: below is not the intended way of using this component. It is meant to be passed into the `showSnackbar` function of the [<mark>`SnackbarContainer`</mark>](./docs/components/snackbar-container) component.
 
 <Showcase>
   <div slot="showcase" class="padded">
@@ -56,10 +56,10 @@ Note: below is not the intended way of using this component. It is meant to be p
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| ==**`text`**==&nbsp;<span class="required">*</span> |  | `string` | The text to show on the snackbar. |
-| ==**`closeCallback`**==&nbsp;<span class="required">*</span> |  | `Function` | The callback to call to close the snackbar in the `SnackbarContainer`. Passed internally by the `SnackbarContainer` when using the `showSnackbar` function. |
+| <mark>**`text`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The text to show on the snackbar. |
+| <mark>**`closeCallback`**</mark>&nbsp;<span class="required">*</span> |  | `Function` | The callback to call to close the snackbar in the `SnackbarContainer`. Passed internally by the `SnackbarContainer` when using the `showSnackbar` function. |
 | **`action`** | `null` | <code>{'{'}<br />  text: string,<br />  callback: Function<br />{'}'}</code> | The action for the button on the snackbar. If this is `null`, the button is not rendered. Otherwise it has `text` as a label and calls `callback` on click. |
-| **`closeOnAction`** | `true` | `boolean` | Whether to call the ==`closeCallback`== when an action button is pressed, after its callback. |
+| **`closeOnAction`** | `true` | `boolean` | Whether to call the <mark>`closeCallback`</mark> when an action button is pressed, after its callback. |
 | **`transition`** | [`fly`](https://svelte.dev/docs#fly) | Svelte transition | The transition to use to animate the in and out of the snackbar. |
 | **`transitionOptions`** | <code>{'{'}<br />  x: -20,<br />  duration: 150<br />{'}'}</code> | `object` | The options to use with the given transition. |
 
