@@ -18,7 +18,10 @@
         v{process.latest_version}
       </a>
     </header>
-    <p>A <mark>pretty cool</mark> UI kit for Svelte.</p>
+    <p>
+      A <mark>pretty cool</mark> UI kit for
+      <a href="https://svelte.dev">Svelte</a>.
+    </p>
     <div class="actions">
       <Button filled href="./docs">
         <BookOpenIcon size="24" class="mr" />
