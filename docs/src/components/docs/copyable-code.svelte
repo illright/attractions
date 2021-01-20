@@ -1,13 +1,19 @@
 <script>
   import { onMount } from 'svelte';
   import { Button } from 'attractions';
-  import { CopyIcon, CheckIcon, FileTextIcon } from 'svelte-feather-icons';
+  import {
+    CopyIcon,
+    CheckIcon,
+    FileTextIcon,
+    TerminalIcon,
+  } from 'svelte-feather-icons';
   import { writeText } from 'clipboard-polyfill';
 
   let self;
   let text = null;
   let copied = false;
   export let filename = null;
+  export let terminal = false;
 
   onMount(() => {
     const preIndex = filename == null ? 0 : 1;
@@ -34,6 +40,11 @@
     <div class="filename">
       <FileTextIcon size="16" class="mr" />
       {filename}
+    </div>
+  {:else if terminal}
+    <div class="filename">
+      <TerminalIcon size="16" class="mr" />
+      Terminal
     </div>
   {/if}
   <slot />
