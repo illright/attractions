@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'attractions-theme' as vars;
 
 .toolchain {
@@ -5,12 +6,29 @@
   grid-template: auto auto / 1fr 1fr 1fr;
   grid-auto-flow: column;
   justify-items: center;
-  gap: 0.25em;
+  gap: 0.35em;
   margin: 2em 0;
+  padding: 1.5em 1em;
+  background: color.adjust(vars.$main, $alpha: -0.97);
+  border-radius: 1em;
 }
 
 .prelude {
   margin-bottom: 1.5em;
+}
+
+.caution {
+  margin: 2em 0;
+  padding: 1.5em;
+  background: color.adjust(vars.$attention, $alpha: -0.93);
+  border-radius: 1em;
+  font-weight: 300;
+  font-size: 0.9em;
+
+  :global .label {
+    color: color.scale(vars.$attention, $lightness: -30%);
+    margin-bottom: 0.5em;
+  }
 }
 
 strong {

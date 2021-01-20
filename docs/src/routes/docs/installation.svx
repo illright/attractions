@@ -65,11 +65,69 @@ name: Installation
   </div>
 {/if}
 
+{#if yourFramework !== Framework.other && yourBundler === Bundler.webpack}
+  <div class="caution">
+    <Label>Caution</Label>
+
+    Webpack 4.x.x doesn't support the following ES Modules syntax: `export * as X from 'Y'`.
+    Thus, in order to use Attractions with Webpack 4, you need to transpile its index file with Babel.
+
+    Install Babel (if you don't have it already):
+
+    <CopyableCode terminal>
+      {#if yourPackageManager === PackageManager.npm}
+
+```shell
+npm install --save-dev babel-loader @babel/core @babel/preset-env
+```
+
+      {:else if yourPackageManager === PackageManager.yarn}
+
+```shell
+yarn add --dev babel-loader @babel/core @babel/preset-env
+```
+
+      {:else}
+
+```shell
+pnpm add --save-dev babel-loader @babel/core @babel/preset-env
+```
+
+      {/if}
+    </CopyableCode>
+
+    And add the following rule:
+
+    <CopyableCode filename="webpack.config.js">
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      // ...,
+      {
+        test: /attractions\\/index\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          },
+        },
+      },
+    ],
+  },
+};
+```
+
+    </CopyableCode>
+  </div>
+{/if}
+
 **Step 1.** Add Attractions {#if yourFramework !== Framework.other} and its peer dependencies {/if}
 to your {@html yourFramework === Framework.other ? '`dependencies`' : '`devDependencies`'}:
 
 {#if yourPackageManager === PackageManager.npm}
-  <CopyableCode>
+  <CopyableCode terminal>
     {#if yourFramework === Framework.other}
 
 ```shell
@@ -85,7 +143,7 @@ npm install --save-dev attractions svelte-preprocess sass postcss
     {/if}
   </CopyableCode>
 {:else if yourPackageManager === PackageManager.yarn}
-  <CopyableCode>
+  <CopyableCode terminal>
     {#if yourFramework === Framework.other}
 
 ```shell
@@ -101,7 +159,7 @@ yarn add --dev attractions svelte-preprocess sass postcss
     {/if}
   </CopyableCode>
 {:else}
-  <CopyableCode>
+  <CopyableCode terminal>
     {#if yourFramework === Framework.other}
 
 ```shell
