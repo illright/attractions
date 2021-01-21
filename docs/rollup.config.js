@@ -8,12 +8,9 @@ import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 
 import alias from '@rollup/plugin-alias';
-import autoPreprocess from 'svelte-preprocess';
 import attractionsPkg from 'attractions/package.json';
-import makeAttractionsImporter from 'attractions/importer.js';
+const svelteConfig = require('./svelte.config.js');
 import sapperEnv from 'sapper-environment';
-import { mdsvex } from 'mdsvex';
-import remarkHeadingID from 'remark-heading-id';
 import 'prismjs';
 import 'prism-svelte';
 
@@ -34,32 +31,6 @@ const commonSubstitutions = {
   'process.license': JSON.stringify(attractionsPkg.license),
 };
 
-const preprocess = [
-  autoPreprocess({
-    scss: {
-      renderSync: true,
-      importer: makeAttractionsImporter({
-        themeFile: './static/css/attractions-theme.scss',
-        nodeModulesPath: '../node_modules',
-      }),
-      includePaths: ['./static/css'],
-    },
-    sourceMap: dev,
-  }),
-  mdsvex({
-    layout: {
-      docs: './src/mdsvex/layout.svelte',
-      _: './src/mdsvex/layout-no-head.svelte',
-    },
-    smartypants: {
-      quotes: false,
-      ellipses: true,
-    },
-    remarkPlugins: [remarkHeadingID],
-    extensions: ['.svx', '.md'],
-  }),
-];
-
 const pathAlias = alias({
   entries: [
     { find: /^src\//, replacement: __dirname + '/src/' },
@@ -77,8 +48,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
-        extensions: ['.svelte', '.svx', '.md'],
-        preprocess,
+        ...svelteConfig,
         compilerOptions: {
           dev,
           hydratable: true,
@@ -134,8 +104,7 @@ export default {
         ...commonSubstitutions,
       }),
       svelte({
-        extensions: ['.svelte', '.svx', '.md'],
-        preprocess,
+        ...svelteConfig,
         compilerOptions: {
           dev,
           hydratable: true,
