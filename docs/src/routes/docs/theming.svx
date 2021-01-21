@@ -86,16 +86,18 @@ $something-else: red;
 <CopyableCode filename="svelte.config.js">
 
 ```js
+const path = require('path');
+
 module.exports = {
   preprocess: [
     sveltePreprocess({
       scss: {
         importer: makeAttractionsImporter({
-          // specify the path to your theme file
-          themeFile: './static/css/theme.scss',
+          // specify the path to your theme file, relative to this file
+          themeFile: path.join(__dirname, 'static/css/theme.scss'),
         }),
         // not mandatory but nice to have for concise imports
-        includePaths: ['./static/css'],
+        includePaths: [path.join(__dirname, './static/css')],
       },
     }),
   ],
@@ -129,13 +131,15 @@ In that case, you should inform the importer of the correct location with the `n
 <CopyableCode filename="svelte.config.js">
 
 ```js
+const path = require('path');
+
 module.exports = {
   preprocess: [
     sveltePreprocess({
       scss: {
         importer: makeAttractionsImporter({
-          themeFile: './static/css/theme.scss',
-          nodeModulesPath: '../node_modules',
+          themeFile: path.join(__dirname, 'static/css/theme.scss'),
+          nodeModulesPath: path.join(__dirname, '../node_modules'),
         }),
       },
     }),
