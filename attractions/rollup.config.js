@@ -3,9 +3,9 @@ import { spawnSync } from 'child_process';
 import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
-import autoPreprocess from 'svelte-preprocess';
 import sveld from 'sveld';
 import pkg from './package.json';
+const svelteConfig = require('./svelte.config.js');
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
@@ -35,17 +35,6 @@ const icons = [
   'clock',
 ];
 
-const sveltePreprocess = autoPreprocess({
-  scss: {
-    importer(url, _prev) {
-      if (url === 'node_modules/attractions/_variables') {
-        return { file: path.resolve('_variables.scss') };
-      }
-    },
-    renderSync: true,
-  },
-});
-
 export default [
   {
     input: 'index.js',
@@ -55,7 +44,7 @@ export default [
     ],
     plugins: [
       svelte({
-        preprocess: sveltePreprocess,
+        ...svelteConfig,
         emitCss: false,
       }),
       resolve(),
@@ -73,10 +62,11 @@ export default [
     },
     plugins: [
       svelte({
+        ...svelteConfig,
         compilerOptions: {
           customElement: true,
         },
-        preprocess: [prependTagOption(icons), sveltePreprocess],
+        preprocess: [prependTagOption(icons), ...svelteConfig.preprocess],
       }),
       resolve(),
       sveld({
