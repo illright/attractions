@@ -2,7 +2,7 @@ name: Deploy PR docs to GitHub Pages
 on:
   workflow_run:
     workflows:
-      - 'Lint & Build PR docs'
+      - 'Build docs from a pull request'
     types:
       - completed
 
