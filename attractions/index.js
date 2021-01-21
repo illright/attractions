@@ -71,4 +71,7 @@ export { default as Badge } from './badge/badge.svelte';
 
 export { default as Pagination } from './pagination/pagination.svelte';
 
+export { default as Row } from './layout/row.svelte';
+export { default as Column } from './layout/column.svelte';
+
 export * as utils from './utils';

@@ -76,6 +76,10 @@
           segment: 'components/chip',
         },
         {
+          title: 'Column',
+          segment: 'components/column',
+        },
+        {
           title: 'DatePicker',
           segment: 'components/date-picker',
         },
@@ -126,6 +130,10 @@
         {
           title: 'RadioGroup',
           segment: 'components/radio-group',
+        },
+        {
+          title: 'Row',
+          segment: 'components/row',
         },
         {
           title: 'SnackbarContainer',

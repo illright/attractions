@@ -1,0 +1,114 @@
+---
+name: Row
+relatedComponents:
+  - name: Column
+    link: ./docs/components/column
+---
+
+<script>
+  import { onMount } from 'svelte';
+  import { Row, Card } from 'attractions';
+  import { MainAxisAlignment, CrossAxisAlignment } from 'attractions/layout';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+  import RelatedComponents from 'src/components/docs/related-components.svelte';
+  import fixAnchorLinks from 'src/utils/fix-anchor-links.js';
+
+  onMount(fixAnchorLinks);
+</script>
+
+# Row
+
+Provides quick access to trivial Flexbox row layouts.
+
+**Note**: this component doesn't provide full capabilities of Flexbox such as wrapping.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Row
+      justifyContent={MainAxisAlignment.SPACE_BETWEEN}
+      alignItems={CrossAxisAlignment.CENTER}
+    >
+      <Card />
+      <Card />
+    </Row>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  import { MainAxisAlignment, CrossAxisAlignment } from 'attractions/layout';
+</script>
+
+<Row
+  justifyContent={MainAxisAlignment.SPACE_BETWEEN}
+  alignItems={CrossAxisAlignment.CENTER}
+>
+  <Card />
+  <Card />
+</Row>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`justifyContent`** | `MainAxisAlignment.START` | [==`MainAxisAlignment`==](#main-axis-alignment) | The main (horizontal) axis alignment (the `justify-content` Flexbox property). |
+| **`alignItems`** | `CrossAxisAlignment.STRETCH` | [==`CrossAxisAlignment`==](#cross-axis-alignment) | The cross (vertical) axis alignment (the `align-items` Flexbox property). |
+| **`reverse`** | `false` | `boolean` | Whether to reverse the direction of the flex axes. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<div>` element. |
+
+### Class Properties
+
+All `<Row>` components use the `.row` class.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the row.
+
+
+## Related Objects {#related-objects}
+
+The following objects are available as named exports in `'attractions/layout'`.
+
+### `MainAxisAlignment` {#main-axis-alignment}
+
+| Field | Description |
+| ----- | ----------- |
+| **`START`** | Pack items tightly at the start of the main axis. |
+| **`CENTER`** | Pack items tightly in the center of the main axis. |
+| **`END`** | Pack items tightly at the end of the main axis. |
+| **`SPACE_AROUND`** | Create an equal amount of space on each side of each item. |
+| **`SPACE_BETWEEN`** | Space out every item at an equal distance, spanning the entire main axis. |
+| **`SPACE_EVENLY`** | Space out every item at an equal distance, making the same distance before the first and after the last item. |
+
+### `CrossAxisAlignment` {#cross-axis-alignment}
+
+| Field | Description |
+| ----- | ----------- |
+| **`START`** | Align all items at the start of the cross axis. |
+| **`CENTER`** | Center all items within the row. |
+| **`END`** | Align all items at the end of the cross axis. |
+| **`STRETCH`** | Make each item span the entire length of the cross axis. |
+| **`BASELINE`** | Align all items by the baseline of their inner text. |
+
+<style src="../../../../static/css/routes/docs/components/row.scss"></style>

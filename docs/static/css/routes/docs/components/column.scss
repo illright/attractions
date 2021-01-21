@@ -1,0 +1,8 @@
+[slot='showcase'] {
+  display: flex;
+  width: 5em;
+
+  :global .column {
+    flex: 1;
+  }
+}

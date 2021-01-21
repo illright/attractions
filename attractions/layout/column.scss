@@ -1,0 +1,6 @@
+@use 'flex-alignments';
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
