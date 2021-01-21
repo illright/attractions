@@ -1405,7 +1405,7 @@ character-reference-invalid@^1.0.0:
   resolved "https://registry.yarnpkg.com/character-reference-invalid/-/character-reference-invalid-1.1.4.tgz#083329cda0eae272ab3dbbf37e9a382c13af1560"
   integrity sha512-mKKUkUbhPpQlCOfIuZkvSEgktjPFIsZKRRbC6KWVEMvlzblj3i3asQv5ODsrwt0N3pHAEvjP8KTQPHkp0+6jOg==
 
-"chokidar@>=2.0.0 <4.0.0":
+"chokidar@>=2.0.0 <4.0.0", chokidar@^3.4.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.1.tgz#ee9ce7bbebd2b79f49f304799d5468e31e14e68a"
   integrity sha512-9+s+Od+W0VJJzawDma/gvBNQqkTiqYTWLuZoyAsivsI4AaWTCzHG06/TMjsf1cYe9Cb97UCEhjz7HvnPk2p/tw==
@@ -3992,7 +3992,7 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-source-map@~0.7.2:
+source-map@^0.7.3, source-map@~0.7.2:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
@@ -4270,12 +4270,26 @@ sveld@^0.6.1:
     rollup-plugin-svelte "^7.0.0"
     svelte "^3.31.2"
 
+svelte-check@^1.1.28:
+  version "1.1.28"
+  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-1.1.28.tgz#f7ef1cff9a0b05368880c6a4a523cdc9c1edeb1a"
+  integrity sha512-jp1i8JImIwyH8gp2G9nLZ1+HXUgxPbuuT4StzeAvHdQ27b0u8XANoODcjl2w15i1J33EiH4S4CE9M3o9kau4cg==
+  dependencies:
+    chalk "^4.0.0"
+    chokidar "^3.4.1"
+    glob "^7.1.6"
+    import-fresh "^3.2.1"
+    minimist "^1.2.5"
+    source-map "^0.7.3"
+    svelte-preprocess "^4.0.0"
+    typescript "*"
+
 svelte-feather-icons@^3.2.2:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/svelte-feather-icons/-/svelte-feather-icons-3.3.0.tgz#77789da8f96c087ce20ff9dd6cb02b9df02928cf"
   integrity sha512-9zlgrWK34YXDjvYgvjHG0HFhol5FrapK0VEiZEUN0m2iUpifqMefLojBhAxB+zSh7lK3TohvIJBoqhFTZtgljA==
 
-svelte-preprocess@^4.0.8, svelte-preprocess@^4.5.2:
+svelte-preprocess@^4.0.0, svelte-preprocess@^4.0.8, svelte-preprocess@^4.5.2:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.6.1.tgz#a7de4d91b32d5608b6637da960ee81e6089ae276"
   integrity sha512-s7KdhR2pOsffyOzZIMEb315f6pfgeDnOWN47m6YKFeSEx3NMf/79Znc3vuG/Ai79SL/vsi86WDrjFPLGRfDesg==
@@ -4424,7 +4438,7 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.1.3:
+typescript@*, typescript@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.3.tgz#519d582bd94cba0cf8934c7d8e8467e473f53bb7"
   integrity sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg==
