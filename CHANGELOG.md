@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Documentation: [`RadioButton`](https://illright.github.io/attractions/docs/components/radio-button)'s `value` was incorrectly marked as optional.
 
+### Changed
+
+- The recommended installation procedure now involves separating the Svelte configuration into a separate file, `svelte.config.js`. This allows the Svelte Language Server to reliably analyze your source code, so your editor becomes smarter.
+
 ---
 
 ### Known issues
