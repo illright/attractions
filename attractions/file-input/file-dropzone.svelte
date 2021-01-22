@@ -108,7 +108,8 @@
   class:has-content={files && files.length !== 0}
   class:wrong-type={wrongType}
   class:disabled={disabled || files.length >= max}
-  on:click={blockOnTiles}>
+  on:click={blockOnTiles}
+>
   <input
     type="file"
     multiple

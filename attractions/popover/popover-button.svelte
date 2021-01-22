@@ -15,7 +15,8 @@
   type="button"
   class={classes('popover-button', _class)}
   on:click={e => dispatch('click', { nativeEvent: e })}
-  {...$$restProps}>
+  {...$$restProps}
+>
   <slot />
 </button>
 
