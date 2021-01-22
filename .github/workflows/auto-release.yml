@@ -25,7 +25,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: string
-          script:
+          script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/attractions/package.json`);
             return `v${package.version}`;
 
@@ -35,7 +35,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: string
-          script:
+          script: |
             const changelog = require('fs').readFileSync('CHANGELOG.md', { encoding: 'utf-8' }).split('\n');
             const start = changelog.findIndex(line => line.startsWith('## '));
             const end = changelog.findIndex((line, index) => line.startsWith('## ') && index > start);
