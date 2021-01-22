@@ -81,7 +81,7 @@
     }
   }
 
-  function tryNavigate(e) {
+  function tryNavigate(_event) {
     const parsed = parseInt(inputValue);
     if (!isNaN(parsed)) {
       goTo(parsed);
