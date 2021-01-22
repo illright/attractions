@@ -51,6 +51,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Fetch Yarn cache 🗄
         uses: c-hive/gha-yarn-cache@f23816cdbc6d287b7982b4a08096db01a6329c12
