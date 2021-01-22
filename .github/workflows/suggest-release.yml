@@ -18,7 +18,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Post the URL on the PR 🖊
+      - name: Add the [new release] tag 🔖
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
             const tags = (await github.repos.listTags({
               owner: context.repo.owner,
               repo: context.repo.repo,
-            }).data;
+            })).data;
             if (tags.find(tag => tag.name === currentVersion) == null) {
               await github.issues.addLabels({
                 owner: context.repo.owner,
@@ -40,8 +40,9 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.issue.number,
-                body: |
-                  This pull request will automatically trigger a release on merge!
-                  If it shouldn't, remove the [new release] label.
+                body: (
+                  'This pull request will automatically trigger a release on merge!\n'
+                  + 'If it shouldn\'t, remove the [new release] label.'
+                ),
               });
             }
