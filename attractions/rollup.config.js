@@ -72,6 +72,7 @@ export default [
       sveld({
         typesOptions: {
           preamble: 'export * as utils from "./utils";\n',
+          outDir: '.',
         },
       }),
       {
