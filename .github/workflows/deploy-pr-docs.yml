@@ -15,14 +15,14 @@ jobs:
       - name: Download the docs artifact 📥
         uses: dawidd6/action-download-artifact@891cccee4b25d3306cf5edafa174ddc1d969871f
         with:
-          workflow: pr_lint_build.yml
+          workflow: build-pr-docs.yml
           name: docs
           path: ./docs
 
       - name: Download the PR number artifact 📥
         uses: dawidd6/action-download-artifact@891cccee4b25d3306cf5edafa174ddc1d969871f
         with:
-          workflow: pr_lint_build.yml
+          workflow: build-pr-docs.yml
           name: pr_number
 
       - name: Add PR number to environment 🌎
