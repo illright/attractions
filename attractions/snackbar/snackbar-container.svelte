@@ -1,7 +1,7 @@
 <script>
   /**
    * @slot {{ showSnackbar: (options: {
-   *   component: typeof import("svelte").SvelteComponentDev,
+   *   component: typeof import('svelte').SvelteComponentDev,
    *   props: Record<string, any>,
    *   duration: number,
    * }) => {
@@ -16,7 +16,7 @@
 
   /**
    * The position of the snackbar stack inside the container.
-   * @type {typeof import('../../snackbar').SnackbarPositions}
+   * @type {typeof import('./snackbar-positions').default}
    */
   export let position = SnackbarPositions.BOTTOM_LEFT;
   let registeredSnackbars = new Set();
@@ -32,7 +32,7 @@
   /**
    * Show the snackbar with the given options
    * @type {(options: {
-   *   component: typeof import("svelte").SvelteComponentDev,
+   *   component: typeof import('svelte').SvelteComponentDev,
    *   props: Record<string, any>,
    *   duration: number,
    * }) => {
