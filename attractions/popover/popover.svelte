@@ -12,7 +12,7 @@
 
   /**
    * The position of the popover content relative to the triggering handle.
-   * @type {typeof import("../../popover").PopoverPositions}
+   * @type {typeof import('./popover-positions').default}
    */
   export let position = PopoverPositions.TOP;
 </script>
