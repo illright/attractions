@@ -25,7 +25,6 @@
     "@sveltejs/eslint-config": "sveltejs/eslint-config",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
-    "babel-eslint": "^10.1.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^7.2.0",
