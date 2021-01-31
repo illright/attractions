@@ -5,7 +5,18 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['@sveltejs', 'prettier'],
+  extends: ['prettier'],
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
+  },
+  plugins: ['svelte3'],
+  overrides: [
+    {
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3',
+    },
+  ],
   settings: {
     'svelte3/ignore-styles': attrs => attrs.lang === 'scss',
   },

@@ -942,10 +942,6 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
-"@sveltejs/eslint-config@sveltejs/eslint-config":
-  version "5.6.0"
-  resolved "https://codeload.github.com/sveltejs/eslint-config/tar.gz/609b6675607551e3fcd98e4e322fa1ccd923388d"
-
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
