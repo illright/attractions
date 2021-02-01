@@ -9,18 +9,18 @@
   export { _class as class };
   /**
    * A class string to assign to the `<input>` element.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let inputClass = null;
   /**
    * A class string to add to the selector circle.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let selectorClass = null;
   /**
    * A CSS style string to assign to the selector circle.
    * Can be used to make the radio button represent a color (in conjunction with the `getColorPickerStyles` utility).
-   * @type {string}
+   * @type {string | null}
    */
   export let selectorStyle = null;
 
@@ -37,7 +37,7 @@
   /**
    * The value of the currently selected radio button in the `name` group.
    * Similar to Svelte's `bind:group` binding on native radio buttons.
-   * @type {string}
+   * @type {string | null}
    */
   export let group = null;
   /**
@@ -47,7 +47,7 @@
   export let slotLeft = false;
   /**
    * Adds a tooltip to the radio button.
-   * @type {string}
+   * @type {string | null}
    */
   export let title = null;
 

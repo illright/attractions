@@ -13,7 +13,7 @@
   export let option;
   /**
    * The substring to seek out and highlight among the name and the details.
-   * @type {string}
+   * @type {string | null}
    */
   export let query = null;
   $: matchRegex = query ? new RegExp(`(${escapeRegExp(query)})`, 'ig') : null;

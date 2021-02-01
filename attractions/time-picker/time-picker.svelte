@@ -34,7 +34,7 @@
   export let right = false;
   /**
    * The currently selected time value. Even though a whole `Date` object is needed, only the time part will be considered.
-   * @type {Date}
+   * @type {Date | null}
    */
   export let value = null;
   /**

@@ -14,17 +14,17 @@
 
   /**
    * A class string to add to the list of weekdays above the calendar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let weekdaysClass = null;
   /**
    * A class string to add to the element containing each row of days in the calendar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let weekClass = null;
   /**
    * A class string to add to each day in the calendar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let dayClass = null;
 
@@ -54,12 +54,12 @@
   export let year;
   /**
    * If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days).
-   * @type {Date}
+   * @type {Date | null}
    */
   export let selectionStart = null;
   /**
    * If a selection should be displayed, this should be a `Date` object signifying the end of the selection (can be outside the shown days).
-   * @type {Date}
+   * @type {Date | null}
    */
   export let selectionEnd = null;
 

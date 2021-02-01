@@ -68,7 +68,7 @@
   export let disabled = false;
   /**
    * Turns the button into a link (prefetch-enabled for Sapper).
-   * @type {string}
+   * @type {string | null}
    */
   export let href = null;
   /**

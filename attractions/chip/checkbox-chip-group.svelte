@@ -11,12 +11,12 @@
   export { _class as class };
   /**
    * A class string to add to the `<CheckboxChip>` components inside.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let checkboxClass = null;
   /**
    * A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let labelClass = null;
 

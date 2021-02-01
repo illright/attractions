@@ -9,12 +9,12 @@
   export { _class as class };
   /**
    * A class string to add to the `<input>` element.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let inputClass = null;
   /**
    * A class string to add to the underlying `<Chip>` component.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let chipClass = null;
 
@@ -40,7 +40,7 @@
   export let disabled = false;
   /**
    * The tooltip to give to a chip.
-   * @type {string}
+   * @type {string | null}
    */
   export let title = null;
 

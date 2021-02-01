@@ -29,13 +29,13 @@
   export let fileComponent = FileTile;
   /**
    * Limits the allowed files to particular types. For guidelines on the value of the attribute, consult the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept).
-   * @type {string}
+   * @type {string | null}
    */
   export let accept = null;
   /**
    * A callback to call for each file that passes the `accept` check before it is added to the `files`.
    * If it returns a Promise, they will be started for every file in parallel and awaited together at the end.
-   * @type {(file: File) => void | Promise<void>}
+   * @type {(file: File) => void | Promise<void> | null}
    */
   export let beforeChange = null;
   /**

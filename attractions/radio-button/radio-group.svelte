@@ -11,13 +11,13 @@
   export { _class as class };
   /**
    * A class string to add to the `<RadioButton>` components.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let radioClass = null;
   /**
    * A class string to assign to the labels' wrapping `<span>`s.
    * If this is not passed, the labels are not wrapped in a `<span>`.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let labelClass = null;
 
@@ -34,7 +34,7 @@
   export let items;
   /**
    * The currently selected value of the group.
-   * @type {string}
+   * @type {string | null}
    */
   export let value = null;
   /**

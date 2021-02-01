@@ -8,12 +8,12 @@
   export { _class as class };
   /**
    * A class string to add to the label of the snackbar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let textClass = null;
   /**
    * A class string to add to the action button of the snackbar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let buttonClass = null;
 
@@ -24,7 +24,7 @@
   export let text;
   /**
    * The action for the button on the snackbar. If this is null, the button is not rendered. Otherwise it has text as a label and calls callback on click.
-   * @type {{ text: string; callback: () => void }}
+   * @type {{ text: string; callback: () => void } | null}
    */
   export let action = null;
   /**

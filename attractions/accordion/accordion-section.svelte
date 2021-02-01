@@ -14,7 +14,7 @@
   /**
    * The label text to use on the button that toggles the section.
    * Not used if the handle slot is provided.
-   * @type {string}
+   * @type {string | null}
    */
   export let label = null;
   /**

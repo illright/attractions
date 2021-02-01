@@ -15,17 +15,17 @@
   export { _class as class };
   /**
    * A class string to assign to the `<input>` or `<textarea>` element.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let inputClass = null;
   /**
    * A class string to assign to the `<label>` for the outline text fields.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let labelClass = null;
   /**
    * A class string to add to the error message under the text field.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let errorClass = null;
 
@@ -48,7 +48,7 @@
 
   /**
    * The ID to assign to the input.
-   * @type {string}
+   * @type {string | null}
    */
   export let id = null;
   /**
@@ -58,12 +58,12 @@
   export let noSpinner = false;
   /**
    * The label to show above the text field. Only works with `outline` text fields.
-   * @type {string}
+   * @type {string | null}
    */
   export let label = null;
   /**
    * The error message to show under the text field.
-   * @type {string}
+   * @type {string | null}
    */
   export let error = null;
   /**
@@ -83,7 +83,7 @@
 
   /**
    * The current value of the text field. Converted to a number if `type="number"`.
-   * @type {string | number}
+   * @type {string | number | null}
    */
   export let value = null;
   /**
