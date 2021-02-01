@@ -12,13 +12,13 @@
   export { _class as class };
   /**
    * A class string to add to the `<Checkbox>` components.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let checkboxClass = null;
   /**
    * A class string to assign to the labels' wrapping `<span>`s.
    * If this is not passed, the labels are not wrapped in a `<span>`.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let labelClass = null;
 

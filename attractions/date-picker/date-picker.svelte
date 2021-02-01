@@ -24,17 +24,17 @@
   export { _class as class };
   /**
    * A class string to add to the list of weekdays above the calendar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let weekdaysClass = null;
   /**
    * A class string to add to each element containing a row of days in the calendar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let weekClass = null;
   /**
    * A class string to add to each day in the calendar.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let dayClass = null;
 
@@ -73,7 +73,7 @@
   export let right = false;
   /**
    * Depending on the value of the range prop, this is either a `Date` object or an object with two fields, `start` and `end`, containing Date objects.
-   * @type {Date | DateRange}
+   * @type {Date | DateRange | null}
    */
   export let value = null;
   /**

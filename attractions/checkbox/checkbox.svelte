@@ -9,18 +9,18 @@
   export { _class as class };
   /**
    * A class string to assign to the `<input>` element.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let inputClass = null;
   /**
    * A class string to add to the selector box element.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let selectorClass = null;
   /**
    * A CSS style string to assign to the selector box element.
    * Can be used to make the checkbox represent a color (in conjunction with the [`getColorPickerStyles`](https://illright.github.io/attractions/docs/utilities) utility).
-   * @type {string}
+   * @type {string | null}
    */
   export let selectorStyle = null;
 
@@ -51,7 +51,7 @@
   export let round = false;
   /**
    * Adds a tooltip to the checkbox.
-   * @type {string}
+   * @type {string | null}
    */
   export let title = null;
 

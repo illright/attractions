@@ -9,13 +9,13 @@
   export { _class as class };
   /**
    * A class string to pass to each `<Tab>` component.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let tabClass = null;
 
   /**
    * The currently selected tab.
-   * @type {string}
+   * @type {string | null}
    */
   export let value = null;
   /**

@@ -13,7 +13,7 @@
   export { _class as class };
   /**
    * A class string to assign to the `<label>` element containing the star icon.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let starClass = null;
 
@@ -24,7 +24,7 @@
   export let max = 5;
   /**
    * Current amount of selected stars.
-   * @type {number}
+   * @type {number | null}
    */
   export let value = null;
   /**

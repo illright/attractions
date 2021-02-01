@@ -10,12 +10,12 @@
   export { _class as class };
   /**
    * A class string to add to the `<RadioChip>` components inside.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let radioClass = null;
   /**
    * A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let labelClass = null;
 
@@ -27,7 +27,7 @@
   export let items;
   /**
    * The currently selected value of the group.
-   * @type {string}
+   * @type {string | null}
    */
   export let value = null;
   /**

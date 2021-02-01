@@ -11,7 +11,7 @@
   export { _class as class };
   /**
    * A class string to add to the `<label>` element wrapping the `<input>`.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let labelClass = null;
 
@@ -27,7 +27,7 @@
   export let vertical = false;
   /**
    * The user's selection. If `multiple` is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`.
-   * @type {File | FileList}
+   * @type {File | FileList | null}
    */
   export let value = multiple ? [] : null;
   /**

@@ -5,29 +5,29 @@
   export { _class as class };
   /**
    * A class string to add to the `<label>` containing the form field name.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let nameClass = null;
   /**
    * A class string to add to the help text of the form field.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let helpClass = null;
 
   /**
    * The name of the form field. Displayed prominently next to the actual field.
-   * @type {string}
+   * @type {string | null}
    */
   export let name = null;
   /**
    * The subtitle text under the name providing extra guidance.
-   * @type {string}
+   * @type {string | null}
    */
   export let help = null;
   /**
    * The ID to add the the `for` attribute of the `<label>` element containing the `name`.
    * Useful if you pass an ID to the actual field inside and want to connect it with the label.
-   * @type {string}
+   * @type {string | null}
    */
   export let id = null;
 

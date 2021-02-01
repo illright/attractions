@@ -6,7 +6,7 @@
   export { _class as class };
   /**
    * A class string to add to the popover.
-   * @type {string}
+   * @type {string | false | null}
    */
   export let popoverClass = null;
 
