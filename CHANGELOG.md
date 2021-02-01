@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Changed
 
-- Improved TypeScript declaration files. They should now work when importing nested modules such as `attractions/utils` or even `attractions/snackbar/snackbar-positions`. They also now specify `null` as a valid value whereever it is accepted. You may (and should) enable `--strictNullChecks` again!
+- Improved TypeScript declaration files. They should now work when importing nested modules such as `attractions/utils` or even `attractions/snackbar/snackbar-positions`. They also now specify `null` as a valid value wherever it is accepted. You may (and should) enable `--strictNullChecks` again!
 
 ## [3.1.0] - 2021-01-22
 
