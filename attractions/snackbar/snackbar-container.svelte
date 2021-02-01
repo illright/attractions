@@ -1,8 +1,8 @@
 <script>
   /**
-   * @slot {{ showSnackbar: (options: {
-   *   component: typeof import('svelte').SvelteComponentDev,
-   *   props: Record<string, any>,
+   * @slot {{ showSnackbar: <Props extends Record<string, any>>(options: {
+   *   component: import('svelte').SvelteComponentTyped<Props>,
+   *   props: Props,
    *   duration: number,
    * }) => {
    *   close: () => void,
@@ -31,9 +31,9 @@
 
   /**
    * Show the snackbar with the given options
-   * @type {(options: {
-   *   component: typeof import('svelte').SvelteComponentDev,
-   *   props: Record<string, any>,
+   * @type {<Props extends Record<string, any>>(options: {
+   *   component: import('svelte').SvelteComponentTyped<Props>,
+   *   props: Props,
    *   duration: number,
    * }) => {
    *   close: () => void,
