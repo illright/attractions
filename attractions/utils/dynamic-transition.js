@@ -1,9 +1,12 @@
 /**
+ * @typedef {{ delay: number; duration: number; css: () => string }} Transition
+ */
+/**
  * Create a transition that allows specifying a transition programmatically
  *  or disable it altogether.
- * @typedef {{ delay: number; duration: number; css: () => string }} Transition
+ * @template T
  * @param {Element} node
- * @param {{ transition: (node: Element; options: any) => Transition; options: any }} options
+ * @param {{ transition: (node: Element; options: T) => Transition; options: T }} options
  * @returns {Transition}
  */
 export default function dynamic(node, { transition = null, options = null }) {
