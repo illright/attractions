@@ -1,6 +1,6 @@
 /**
- * Creates a custom Sass importer for painless configurations
- * @param {{themeFile?: string; nodeModulesPath?: string}} [options]
+ * Creates a custom Sass importer for painless configurations.
+ * @param {{ themeFile?: string; nodeModulesPath?: string }} [options]
  * @returns {(url: string, prev?: string) => ({ file: string } | null)}
  */
 module.exports = function makeAttractionsImporter(options = {}) {
