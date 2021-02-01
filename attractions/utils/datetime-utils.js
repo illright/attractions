@@ -7,7 +7,7 @@ const daysInWeek = 7;
  * @param {string} string The date-time string to be parsed
  * @param {string} format The format against which to parse the date-time string
  * @param {Date} [defaultValue] If the string cannot be properly parsed against the format string, this is returned
- * @returns {?Date} The date object representing the given string
+ * @returns {Date | null} The date object representing the given string
  */
 export function parseDateTime(string, format, defaultValue) {
   const century = Math.floor(new Date().getFullYear() / 100);
@@ -158,8 +158,8 @@ export function getWeekdays(locale, firstWeekday) {
 
 /**
  * Check for equality between 2 `Date` objects, disregarding the time.
- * @param {?Date} date1
- * @param {?Date} date2
+ * @param {Date | null} date1
+ * @param {Date | null} date2
  * @returns {boolean}
  */
 export function datesEqual(date1, date2) {
@@ -176,8 +176,8 @@ export function datesEqual(date1, date2) {
 
 /**
  * Check for equality between 2 `Date` objects, including the time (hours, minutes, and seconds only).
- * @param {?Date} date1
- * @param {?Date} date2
+ * @param {Date | null} date1
+ * @param {Date | null} date2
  * @returns {boolean}
  */
 export function dateTimesEqual(dt1, dt2) {
@@ -191,8 +191,8 @@ export function dateTimesEqual(dt1, dt2) {
 
 /**
  * Checks if the date of the first `Date` object came before the date of the second (disregards time).
- * @param {?Date} date1
- * @param {?Date} date2
+ * @param {Date | null} date1
+ * @param {Date | null} date2
  * @returns {boolean}
  */
 export function datesLessEqual(date1, date2) {
@@ -240,9 +240,9 @@ export function getCalendar(month, year, firstWeekday) {
 
 /**
  * Copies the date (day, month, and year) from the first `Date` object to the second.
- * @param {?Date} source The object to copy the date from
- * @param {?Date} destination The object to which the date will be copied, modified in-place
- * @returns {?Date} The modified object
+ * @param {Date | null} source The object to copy the date from
+ * @param {Date | null} destination The object to which the date will be copied, modified in-place
+ * @returns {Date | null} The modified object
  */
 export function applyDate(source, destination) {
   if (source == null || destination == null) {
@@ -258,9 +258,9 @@ export function applyDate(source, destination) {
 
 /**
  * Copies the time (hour, minute, and second) from the first `Date` object to the second.
- * @param {?Date} source The object to copy the time from
- * @param {?Date} destination The object to which the time will be copied, modified in-place
- * @returns {?Date} The modified object
+ * @param {Date | null} source The object to copy the time from
+ * @param {Date | null} destination The object to which the time will be copied, modified in-place
+ * @returns {Date | null} The modified object
  */
 export function applyTime(source, destination) {
   if (source == null || destination == null) {
@@ -276,8 +276,8 @@ export function applyTime(source, destination) {
 
 /**
  * Copy a Date object, respecting null values.
- * @param {?Date} date The object from which a copy should be made
- * @returns {?Date} The clone of the given object
+ * @param {Date | null} date The object from which a copy should be made
+ * @returns {Date | null} The clone of the given object
  */
 export function copyDate(date) {
   if (date == null) {
