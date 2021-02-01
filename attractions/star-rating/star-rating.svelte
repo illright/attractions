@@ -24,9 +24,9 @@
   export let max = 5;
   /**
    * Current amount of selected stars.
-   * @type {number | null}
+   * @type {number}
    */
-  export let value = null;
+  export let value = 0;
   /**
    * The name to assign to all stars belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
    * @type {string}
