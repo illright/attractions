@@ -11,7 +11,7 @@ export function stripClassWhitespace(classString) {
 
 /**
  * Filters out falsy classes.
- * @param {...(string | false)} args The classes to be filtered
+ * @param {...(string | false | null)} args The classes to be filtered
  * @return {string} The classes without the falsy values
  */
 export default function classes(...args) {
