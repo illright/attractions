@@ -1,7 +1,7 @@
 <script>
   /**
-   * @event {{ value: string | number; nativeEvent: Event }} input
-   * @event {{ value: string | number; nativeEvent: Event }} change
+   * @event {{ value: string | number | null; nativeEvent: Event }} input
+   * @event {{ value: string | number | null; nativeEvent: Event }} change
    * @event {{ nativeEvent: FocusEvent }} focus
    * @event {{ nativeEvent: KeyboardEvent }} keydown
    * @event {{ nativeEvent: FocusEvent }} blur
@@ -63,7 +63,7 @@
   export let label = null;
   /**
    * The error message to show under the text field.
-   * @type {string | null}
+   * @type {string | false | null}
    */
   export let error = null;
   /**
