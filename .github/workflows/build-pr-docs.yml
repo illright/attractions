@@ -2,8 +2,8 @@ name: Build docs from a pull request
 on:
   pull_request:
     paths:
-      - attractions/*
-      - docs/*
+      - attractions/**
+      - docs/**
       - CHANGELOG.md
       - MIGRATION_GUIDE.md
       - package.json
