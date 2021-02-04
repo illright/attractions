@@ -207,7 +207,7 @@ module.exports = {
 
 ```js
 import svelte from 'rollup-plugin-svelte';
-import svelteConfig from './svelte.config.js';
+const svelteConfig = require('./svelte.config.js');  // it has to be a CommonJS import
 
 export default {
   // ...,
@@ -226,7 +226,7 @@ export default {
 
 ```js
 import svelte from 'rollup-plugin-svelte';
-import svelteConfig from './svelte.config.js';
+const svelteConfig = require('./svelte.config.js');  // it has to be a CommonJS import
 
 export default {
   client: {
