@@ -215,14 +215,12 @@ export function datesLessEqual(date1, date2) {
  */
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];
-  const dayCursor = new Date(0);
-  dayCursor.setFullYear(year, month);
+  const dayCursor = new Date();
 
   // Offset the start of the month to the closest left `firstWeekday`
-  dayCursor.setDate(
-    1 - ((daysInWeek + dayCursor.getDay() - firstWeekday) % daysInWeek)
-  );
-
+  const date = 1 - ((daysInWeek + dayCursor.getDay() - firstWeekday) % daysInWeek);
+  dayCursor.setFullYear(year, month, date);
+  
   do {
     const week = [];
     for (let i = 0; i < daysInWeek; ++i) {
