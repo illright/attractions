@@ -218,7 +218,7 @@ export function getCalendar(month, year, firstWeekday) {
   const dayCursor = new Date();
 
   // Offset the start of the month to the closest left `firstWeekday`
-  const date = 1 - ((daysInWeek + dayCursor.getDay() - firstWeekday) % daysInWeek);
+  const date = 1 - (firstWeekday % daysInWeek);
   dayCursor.setFullYear(year, month, date);
   
   do {
