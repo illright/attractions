@@ -216,11 +216,13 @@ export function datesLessEqual(date1, date2) {
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];
   const dayCursor = new Date();
+  dayCursor.setFullYear(year, month, 1);
 
   // Offset the start of the month to the closest left `firstWeekday`
-  const date = 1 - (firstWeekday % daysInWeek);
-  dayCursor.setFullYear(year, month, date);
-  
+  dayCursor.setDate(
+    0 - ((dayCursor.getDay() + firstWeekday) % daysInWeek)
+  );
+
   do {
     const week = [];
     for (let i = 0; i < daysInWeek; ++i) {
