@@ -145,7 +145,7 @@ export function getWeekdays(locale, firstWeekday) {
   const weekdayFormatter = new Intl.DateTimeFormat(locale, {
     weekday: 'short',
   });
-  const anchor = new Date(0); // Initially set to the UNIX epoch – Thursday
+  const anchor = new Date(1970, 0, 1); // Initially set to the UNIX epoch – Thursday
   const mondayOffset = 5; // How many days to add to the epoch to get a Monday
   const weekdays = [];
   for (let i = 0; i < daysInWeek; ++i) {
@@ -215,8 +215,7 @@ export function datesLessEqual(date1, date2) {
  */
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];
-  const dayCursor = new Date(0);
-  dayCursor.setFullYear(year, month);
+  const dayCursor = new Date(year, month, 1);
 
   // Offset the start of the month to the closest left `firstWeekday`
   dayCursor.setDate(
