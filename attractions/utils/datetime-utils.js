@@ -215,8 +215,7 @@ export function datesLessEqual(date1, date2) {
  */
 export function getCalendar(month, year, firstWeekday) {
   const calendar = [];
-  const dayCursor = new Date(1970, 0, 1);
-  dayCursor.setFullYear(year, month);
+  const dayCursor = new Date(year, month, 1);
 
   // Offset the start of the month to the closest left `firstWeekday`
   dayCursor.setDate(
