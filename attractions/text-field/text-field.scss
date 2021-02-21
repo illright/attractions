@@ -119,14 +119,13 @@
 
     label {
       font-family: vars.$font;
-      background-color: #fff;
+      background-color: vars.$textfield-outline-label-bg;
       color: vars.$textfield-border;
       padding: 0 0.25em;
       position: absolute;
       top: 0;
       left: 1.4em;
       transform: translate(-0.25em, -55%);
-      border-radius: 0.3125em;
     }
 
     &.with-item.left {
@@ -148,7 +147,7 @@
     }
 
     input {
-      border-radius: 1.5625em;
+      border-radius: vars.$textfield-outline-radius;
       border: 1px solid vars.$textfield-border;
       background-color: transparent;
       padding: 0 1.4em;
