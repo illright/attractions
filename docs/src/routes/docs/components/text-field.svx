@@ -129,5 +129,7 @@ If the <mark>`withItem`</mark> property is specified, this holds the item for th
 | **`$thin-font-weight`** | The thin font weight for the text inside the text field. | `300` |
 | **`$bold-font-weight`** | The bold font weight for the error text and the item that's positioned to the left of the input area. | `500` |
 | **`$x-icon`** | **Only applicable to `<input type="search">` in WebKit browsers**. If you wish to use a custom icon for the X that clears the field's value, supply a URL to the icon here. | [Feather Icons' X](https://feathericons.com/?query=x) as a data URL |
+| **`$textfield-outline-radius`** | The `border-radius` of the text field when using the `outline` variant | `1.5625em` |
+| **`$textfield-outline-label-bg`** | The `background-color` of the associated label when using the `outline` variant | `#fff` |
 
 <style src="../../../../static/css/routes/docs/components/text-field.scss"></style>
