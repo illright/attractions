@@ -43,7 +43,7 @@
 
 @mixin button {
   font-family: vars.$font;
-  font-weight: vars.$bold-font-weight;
+  font-weight: vars.$button-font-weight;
   outline: none;
   display: flex;
   align-items: center;
