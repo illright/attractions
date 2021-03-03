@@ -1,7 +1,7 @@
-name: Release
+name: Post-release chores
 on:
   release:
-    types: [published]
+    types: [released]
 
 jobs:
   deploy-docs:
