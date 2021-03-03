@@ -39,7 +39,7 @@ $snackbar-vertical-offset: 3em !default;
 $bold-font-weight: 500 !default;
 $regular-font-weight: 400 !default;
 $thin-font-weight: 300 !default;
-$button-font-weight: 500 !default;
+$button-font-weight: $bold-font-weight !default;
 
 $shadow-0: 0 2px 2px 0 color.adjust(black, $alpha: -0.86),
   0 1px 5px 0 color.adjust(black, $alpha: -0.88) !default;
