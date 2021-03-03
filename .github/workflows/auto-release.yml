@@ -44,7 +44,7 @@ jobs:
       - name: Create a release 🔖
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.fetch-version.outputs.result }}
           release_name: ${{ steps.fetch-version.outputs.result }}
