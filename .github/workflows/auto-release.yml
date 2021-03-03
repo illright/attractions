@@ -5,8 +5,6 @@ on:
       - main
     types:
       - closed
-    paths:
-      - 'attractions/package.json'
 
 jobs:
   release-from-pr:
