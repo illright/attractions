@@ -18,7 +18,7 @@ Refer to the main documentation: <https://illright.github.io/attractions>
 ```bash
 npm install --save-dev attractions
 # -- or --
-yarn add -D attractions
+yarn add --dev attractions
 # -- or --
 pnpm add --save-dev attractions
 ```
