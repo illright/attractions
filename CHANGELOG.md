@@ -4,11 +4,22 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [3.2.0] - 2021-03-03
+
+### Added
+
+- New SCSS variables for customizing the curvature radius of the outline [`TextField`](https://illright.github.io/attractions/docs/components/text-field) and the font weight of the [`Button`](https://illright.github.io/attractions/docs/components/button) ([#245](https://github.com/illright/attractions/issues/245) and [#246](https://github.com/illright/attractions/issues/246)).
+
+### Fixed
+
+- The [`DatePicker`](https://illright.github.io/attractions/docs/components/date-picker) component wasn't generating the days of the month correctly in certain timezones ([#243](https://github.com/illright/attractions/issues/243)).
+- The outline [`TextField`](https://illright.github.io/attractions/docs/components/text-field) didn't respect the background color ([#246](https://github.com/illright/attractions/issues/246)).
 
 ### Changed
 
 - Improved TypeScript declaration files. They should now work when importing nested modules such as `attractions/utils` or even `attractions/snackbar/snackbar-positions`. They also now specify `null` as a valid value wherever it is accepted. You may (and should) enable `--strictNullChecks` again!
+
+Thanks to [@sallaben](https://github.com/sallaben) and [@damonbauer](https://github.com/damonbauer) for contributing to this release!
 
 ## [3.1.0] - 2021-01-22
 
@@ -136,7 +147,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.1.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/illright/attractions/releases/tag/v3.2.0
 [3.1.0]: https://github.com/illright/attractions/releases/tag/v3.1.0
 [3.0.0]: https://github.com/illright/attractions/releases/tag/v3.0.0
 [2.3.1]: https://github.com/illright/attractions/releases/tag/v2.3.1
