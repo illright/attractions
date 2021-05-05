@@ -1,3 +1,4 @@
+import { readdirSync, rmSync } from 'fs';
 import path from 'path';
 import { spawnSync } from 'child_process';
 import svelte from 'rollup-plugin-svelte';
@@ -21,6 +22,20 @@ function prependTagOption(exceptions = []) {
       return { code: optionsTag + '\n\n' + content };
     },
   };
+}
+
+/**
+ * Recursively traverses all subdirectories of a given directory, listing all files it contains
+ * @param {string} dir Path to the directory whose files to list
+ * @returns {string[]} The list of files
+ */
+function getFiles(dir) {
+  const dirents = readdirSync(dir, { withFileTypes: true });
+  const files = dirents.map(dirent => {
+    const res = path.resolve(dir, dirent.name);
+    return dirent.isDirectory() ? getFiles(res) : res;
+  });
+  return files.flat();
 }
 
 const icons = [
@@ -78,6 +93,11 @@ export default [
       {
         name: 'utilsTypings',
         writeBundle() {
+          // Delete all existing .d.ts files as TypeScript is afraid of overwriting them
+          const files = getFiles('.').filter(filename =>
+            filename.endsWith('.d.ts')
+          );
+          files.forEach(path => rmSync(path)); // Arrow function is not redundant. Extra params will cause side-effects
           spawnSync('tsc', { shell: true });
         },
       },
