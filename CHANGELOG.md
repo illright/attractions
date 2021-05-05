@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.2.1] - 2021-05-05
+
+### Fixed
+
+- **Typings**: The [`SnackbarContainer`](https://illright.github.io/attractions/docs/components/snackbar-container)'s `position` prop was typed as expecting the entire [`SnackbarPositions`](https://illright.github.io/attractions/docs/components/snackbar-container/#snackbar-positions) enum object. It has been fixed to expect only one of its values, and similarly so for [`PopoverPositions`](https://illright.github.io/attractions/docs/components/popover#popover-positions) ([#257](https://github.com/illright/attractions/pull/257)).
+
 ## [3.2.0] - 2021-03-04
 
 ### Added
@@ -147,7 +153,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.2.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.2.1...HEAD
+[3.2.1]: https://github.com/illright/attractions/releases/tag/v3.2.1
 [3.2.0]: https://github.com/illright/attractions/releases/tag/v3.2.0
 [3.1.0]: https://github.com/illright/attractions/releases/tag/v3.1.0
 [3.0.0]: https://github.com/illright/attractions/releases/tag/v3.0.0
