@@ -44,8 +44,11 @@ export default {
     output: config.client.output(),
     plugins: [
       replace({
-        'process.browser': true,
-        ...commonSubstitutions,
+        values: {
+          'process.browser': true,
+          ...commonSubstitutions,
+        },
+        preventAssignment: true,
       }),
       svelte({
         ...svelteConfig,
@@ -100,8 +103,11 @@ export default {
     output: config.server.output(),
     plugins: [
       replace({
-        'process.browser': false,
-        ...commonSubstitutions,
+        values: {
+          'process.browser': false,
+          ...commonSubstitutions,
+        },
+        preventAssignment: true,
       }),
       svelte({
         ...svelteConfig,
@@ -131,8 +137,11 @@ export default {
     plugins: [
       resolve(),
       replace({
-        'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        values: {
+          'process.browser': true,
+          'process.env.NODE_ENV': JSON.stringify(mode),
+        },
+        preventAssignment: true,
       }),
       commonjs(),
       !dev && terser(),
