@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 @use 'node_modules/attractions/_variables' as vars;
 @use './_mixins';
 @use '../_appearances';
@@ -91,7 +92,7 @@
   }
 
   &.rectangle {
-    border-radius: vars.$button-radius / 2;
+    border-radius: math.div(vars.$button-radius, 2);
     padding: 1.2em;
     font-size: 1.1rem;
   }

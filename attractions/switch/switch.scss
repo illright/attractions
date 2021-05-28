@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 @use 'node_modules/attractions/_variables' as vars;
 @use '../mixins';
 
@@ -69,7 +70,7 @@
         width: 100%;
         height: 0.125em;
         left: 0;
-        top: (0.5em - 0.125em) / 2;
+        top: math.div(0.5em - 0.125em, 2);
         background: vars.$disabled;
         position: absolute;
         transform: rotate(-45deg);
