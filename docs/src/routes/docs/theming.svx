@@ -15,7 +15,7 @@ In your `svelte.config.js` (or wherever you configured `svelte-preprocess`), imp
 <CopyableCode filename="svelte.config.js">
 
 ```js
-const sveltePreprocess = reqiure('svelte-preprocess');
+const sveltePreprocess = require('svelte-preprocess');
 const makeAttractionsImporter = require('attractions/importer.js');
 ```
 
@@ -71,7 +71,7 @@ For a list of variables to customize, refer to the documentation of each compone
 
 If you want to tweak the appearance of components to your liking, you can override any SCSS variable in Attractions by configuring the `_variables` module. We suggest you create a separate SCSS file for that.
 
-<CopyableCode filename="theme.scss">
+<CopyableCode filename="static/css/theme.scss">
 
 ```scss
 @forward '~attractions/_variables' with (
