@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ## [3.2.2] - 2021-05-28
 
-This release only contains internal changes and documentation fixes. Boring :o
+This release fixes a Sass deprecation. You'll have to bump your `sass` dependency to `>= 1.33.0` in order to upgrade to this version.
 
 ### Fixed
 

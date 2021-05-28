@@ -52,7 +52,7 @@
   },
   "peerDependencies": {
     "postcss": ">=7 <9",
-    "sass": "^1.33.0",
+    "sass": ">=1.33.0",
     "svelte": "^3.31.0",
     "svelte-preprocess": "^4.0.10"
   }
