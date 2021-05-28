@@ -4,6 +4,15 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.2.2] - 2021-05-28
+
+This release only contains internal changes and documentation fixes. Boring :o
+
+### Fixed
+
+- **Deprecated Sass features**: The division in Sass with the slash operator [was deprecated](https://sass-lang.com/d/slash-div).
+- **A typo in the documentation**: A code sample suggested users to use `reqiure`.
+
 ## [3.2.1] - 2021-05-05
 
 ### Fixed
@@ -153,7 +162,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.2.1...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.2.2...HEAD
+[3.2.2]: https://github.com/illright/attractions/releases/tag/v3.2.2
 [3.2.1]: https://github.com/illright/attractions/releases/tag/v3.2.1
 [3.2.0]: https://github.com/illright/attractions/releases/tag/v3.2.0
 [3.1.0]: https://github.com/illright/attractions/releases/tag/v3.1.0
