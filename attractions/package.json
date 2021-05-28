@@ -32,23 +32,23 @@
     "*"
   ],
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.9",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
-    "eslint": "^7.21.0",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
     "pkg-versions": "^2.1.0",
-    "prettier-plugin-svelte": "^2.2.0",
-    "rollup": "^2.40.0",
+    "prettier-plugin-svelte": "^2.3.0",
+    "rollup": "^2.50.3",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.32.8",
+    "sass": "^1.34.0",
     "stylelint": "^13.11.0",
     "sveld": "^0.7.1",
     "svelte": "^3.35.0",
     "svelte-preprocess": "^4.6.9",
-    "typescript": "^4.2.2"
+    "typescript": "^4.3.2"
   },
   "peerDependencies": {
     "postcss": ">=7 <9",

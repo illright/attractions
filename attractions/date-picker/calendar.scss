@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 @use 'node_modules/attractions/_variables' as vars;
 
 $day-size: 2.25rem;
@@ -11,7 +12,7 @@ $side-padding: 1rem;
   font-size: 0.85em;
 
   > .weekday {
-    width: percentage(1 / 7);
+    width: percentage(math.div(1, 7));
     text-align: center;
   }
 }
@@ -20,7 +21,7 @@ $side-padding: 1rem;
   display: flex;
 
   .day {
-    width: percentage(1 / 7);
+    width: percentage(math.div(1, 7));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,11 +82,11 @@ $side-padding: 1rem;
       &::before {
         right: 0;
         left: unset;
-        width: $day-size / 2 + $day-gap;
+        width: math.div($day-size, 2) + $day-gap;
       }
 
       &:last-child::before {
-        width: $day-size / 2 + $day-gap + $side-padding;
+        width: math.div($day-size, 2) + $day-gap + $side-padding;
       }
     }
 
@@ -93,14 +94,14 @@ $side-padding: 1rem;
       &::before {
         left: 0;
         right: unset;
-        width: $day-size / 2 + $day-gap;
+        width: math.div($day-size, 2) + $day-gap;
       }
     }
 
     &.start:last-child,
     &.end:first-child {
       &::before {
-        width: $day-size / 2 + $day-gap + $side-padding;
+        width: math.div($day-size, 2) + $day-gap + $side-padding;
       }
     }
 
