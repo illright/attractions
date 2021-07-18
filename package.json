@@ -4,13 +4,11 @@
   "scripts": {
     "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .; prettier --check .; svelte-check --workspace attractions --output human --fail-on-warnings; svelte-check --workspace docs --output human --fail-on-warnings",
     "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js'; stylelint --fix .; prettier --write .; svelte-check --workspace attractions --output human-verbose; svelte-check --workspace docs --output human-verbose",
-    "docs:export": "yarn workspace attractions-docs export",
-    "docs:build": "yarn workspace attractions-docs build",
-    "docs:dev": "yarn workspace attractions-docs dev",
-    "build": "yarn workspace attractions build",
-    "postinstall": "is-ci || husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "docs:export": "pnpm run --dir docs export",
+    "docs:build": "pnpm run --dir docs build",
+    "docs:dev": "pnpm run --dir docs dev",
+    "build": "pnpm run --dir attractions build",
+    "prepare": "is-ci || husky install"
   },
   "workspaces": [
     "attractions",
@@ -31,11 +29,10 @@
     "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-svelte3": "^3.1.2",
-    "husky": "^6.0.0",
+    "husky": "^7.0.1",
     "is-ci": "^3.0.0",
     "lint-staged": "^11.0.0",
-    "pinst": "^2.1.6",
-    "prettier": "2.3.0",
+    "prettier": "2.3.2",
     "prettier-plugin-svelte": "^2.3.0",
     "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",
