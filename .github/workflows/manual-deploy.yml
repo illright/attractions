@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
 
       - name: Install pnpm 🧰
-      - uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.10.0
 
