@@ -7,7 +7,7 @@ on:
       - CHANGELOG.md
       - MIGRATION_GUIDE.md
       - package.json
-      - yarn.lock
+      - pnpm-lock.yaml
 
 jobs:
   build-docs:
@@ -26,16 +26,28 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+      
+      - name: Cache pnpm modules 🗄
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pnpm-modules
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
 
-      - name: Fetch Yarn cache 🗄
-        uses: c-hive/gha-yarn-cache@f23816cdbc6d287b7982b4a08096db01a6329c12
+      - name: Install pnpm 🧰
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.10.0
 
       - name: Build docs 🔧
         env:
           SAPPER_APP_BASEPATH: attractions/${{ github.event.number }}
         run: |
-          yarn install
-          yarn export --basepath attractions/${{ github.event.number }}
+          pnpm install
+          pnpm export --basepath attractions/${{ github.event.number }}
 
       - name: Save the PR number 📩
         run: echo "${{ github.event.number }}" > ../pr_number.txt
