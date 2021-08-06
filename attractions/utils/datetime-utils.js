@@ -157,6 +157,15 @@ export function getWeekdays(locale, firstWeekday) {
 }
 
 /**
+ * Check if the given object is a date.
+ * @param {*} date The object to check
+ * @returns {date is Date} `true` if the given object is a valid `Date`, `false` otherwise
+ */
+export function isDate(date) {
+  return date instanceof Date && !isNaN(date.valueOf());
+}
+
+/**
  * Check for equality between 2 `Date` objects, disregarding the time.
  * @param {Date | null} date1
  * @param {Date | null} date2
