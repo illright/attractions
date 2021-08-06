@@ -2,8 +2,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .; prettier --check .; svelte-check --workspace attractions --output human --fail-on-warnings; svelte-check --workspace docs --output human --fail-on-warnings",
-    "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js'; stylelint --fix .; prettier --write .; svelte-check --workspace attractions --output human-verbose; svelte-check --workspace docs --output human-verbose",
+    "lint": "eslint --format=pretty . --ext \".svelte,.js\"; stylelint .; prettier --check .; svelte-check --workspace attractions --output human --fail-on-warnings; svelte-check --workspace docs --output human --fail-on-warnings",
+    "lint:fix": "eslint --format=pretty --fix . --ext \".svelte,.js\"; stylelint --fix .; prettier --write .; svelte-check --workspace attractions --output human-verbose; svelte-check --workspace docs --output human-verbose",
     "docs:export": "yarn workspace attractions-docs export",
     "docs:build": "yarn workspace attractions-docs build",
     "docs:dev": "yarn workspace attractions-docs dev",
