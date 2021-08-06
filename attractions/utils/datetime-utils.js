@@ -220,9 +220,10 @@ export function datesLessEqual(date1, date2) {
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} month Zero-based numeric value for month. 0 = January
  * @param {number} year
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday
+ * @param {Array<Date | {start?: Date; end?: Date}>} disabledDates
  * @returns {Array<Array<{ value: Date; outside: boolean }>>}
  */
-export function getCalendar(month, year, firstWeekday) {
+export function getCalendar(month, year, firstWeekday, disabledDates = []) {
   const calendar = [];
   const dayCursor = new Date(year, month, 1);
 
@@ -237,6 +238,15 @@ export function getCalendar(month, year, firstWeekday) {
       week.push({
         value: new Date(dayCursor.valueOf()),
         outside: dayCursor.getMonth() !== month,
+        // TODO: is this fine or should it be moved to a separate function?
+        disabled: disabledDates.some(disabledDate =>
+          isDate(disabledDate)
+            ? datesEqual(disabledDate, dayCursor)
+            : (disabledDate.start == null ||
+                datesLessEqual(disabledDate.start, dayCursor)) &&
+              (disabledDate.end == null ||
+                datesLessEqual(dayCursor, disabledDate.end))
+        ),
       });
       dayCursor.setDate(dayCursor.getDate() + 1);
     }

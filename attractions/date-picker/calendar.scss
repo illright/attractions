@@ -44,6 +44,9 @@ $side-padding: 1rem;
       z-index: 2;
       width: $day-size;
       height: $day-size;
+      &:disabled {
+        color: vars.$disabled;
+      }
     }
 
     &.today > :global .btn {
