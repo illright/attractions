@@ -62,6 +62,11 @@
    * @type {Date | null}
    */
   export let selectionEnd = null;
+  /**
+   * A range of dates to disable.
+   * @type {Array<Date | {start?: Date; end?: Date}>}
+   */
+  export let disabledDates = [];
 
   const weekdays = getWeekdays(locale, firstWeekday);
   const today = new Date();
@@ -75,7 +80,7 @@
     <span class="weekday">{dayName}</span>
   {/each}
 </div>
-{#each getCalendar(month, year, firstWeekday) as week}
+{#each getCalendar(month, year, firstWeekday, disabledDates) as week}
   <div class={classes('week', weekClass)}>
     <!--
       The following .day elements may have one of the classes:
@@ -104,6 +109,7 @@
             e.detail.nativeEvent.stopPropagation();
             dispatch('day-select', day.value);
           }}
+          disabled={day.disabled}
         >
           {dayNumberFormatter.format(day.value)}
         </Button>
