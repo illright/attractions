@@ -104,6 +104,7 @@ If you need more control over the labels and checkbox layout, you may use the in
 | <mark>**`name`**</mark>&nbsp;<span class="required">*</span> | | `string` | The name to assign to all checkboxes belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`max`** | `Infinity` | `number` | The maximum allowed number of checkboxes to select. |
 | **`color`** | `false` | `boolean` | Designates the checkboxes as color choices. Labels are ignored and values are expected to be `"#RRGGBB"`. |
+| **`maxReachedTooltip`** | `` `Can only select ${max} value${s(max)}.` `` | `string` | The tooltip to display when the maximum number of checkboxes has been selected. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<Checkbox>` components. |
 
 <div class="required">* Required</div>
