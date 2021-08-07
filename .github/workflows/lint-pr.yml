@@ -29,13 +29,13 @@ jobs:
       - name: Install pnpm 🧰
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.10.0
+          version: 6.12.0
 
       - name: Install dependencies 🧰
         run: pnpm install
 
       - name: Lint 🔬
-        run: pnpm lint
+        run: pnpm run lint
 
       - name: Build bundles 🔧
-        run: pnpm build
+        run: pnpm run build
