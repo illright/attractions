@@ -10,6 +10,9 @@ relatedComponents:
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
+
+  // I absolutely hate this workaround, but it was the only way to get it to work because of MDSveX :(
+  const disabledDatesType = 'Array<Date | {start?: Date; end?: Date}>';
 </script>
 
 
@@ -47,7 +50,7 @@ If you're seeking a ready-to-use date picking solution, consider using [`DatePic
 | **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
 | **`selectionStart`** | `null` | `Date` | If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days). |
 | **`selectionEnd`** | `null` | `Date` | If a selection should be displayed, this should be a `Date` object signifying the end of the selection (can be outside the shown days). |
-| **`disabledDates`** | `[]` | `Array<Date | {start?: Date; end?: Date}>` | A range of dates (or date ranges) for which to disable selection. |
+| **`disabledDates`** | `[]` | <code>{disabledDatesType}</code> | A range of dates (or date ranges) for which to disable selection. |
 
 <div class="required">* Required</div>
 
