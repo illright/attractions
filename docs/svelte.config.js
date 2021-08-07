@@ -15,7 +15,6 @@ module.exports = {
         renderSync: true,
         importer: makeAttractionsImporter({
           themeFile: path.join(__dirname, 'static/css/attractions-theme.scss'),
-          nodeModulesPath: path.join(__dirname, '../node_modules'),
         }),
         includePaths: [path.join(__dirname, 'static/css')],
       },
