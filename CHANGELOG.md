@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Added
 
 - The `hours`, `minutes` and `seconds` props of the `TimePicker` component allow you to specify what values the user can choose from.
+- `disabledDates` prop for the `Calendar` component to disable specific dates (or ranges of dates).
 
 ## [3.3.0] - 2021-05-28
 
