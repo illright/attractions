@@ -216,6 +216,26 @@ export function datesLessEqual(date1, date2) {
 }
 
 /**
+ * Checks if the date is included in the given array of dates or ranges.
+ * @param {Date} date The date object, which inclusion to check
+ * @param {Array<Date | { start?: Date; end?: Date; }>} dateRanges The set of dates
+ * @returns {boolean}
+ */
+export function dateIncluded(date, dateRanges) {
+  return dateRanges.some(dateOrRange => {
+    if (isDate(dateOrRange)) {
+      return datesEqual(dateOrRange, date);
+    }
+
+    return (
+      (dateOrRange.start == null ||
+        datesLessEqual(dateOrRange.start, dayCursor)) &&
+      (dateOrRange.end == null || datesLessEqual(dayCursor, dateOrRange.end))
+    );
+  });
+}
+
+/**
  * Generates a calendar view of a given month.
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} month Zero-based numeric value for month. 0 = January
  * @param {number} year
@@ -238,15 +258,7 @@ export function getCalendar(month, year, firstWeekday, disabledDates = []) {
       week.push({
         value: new Date(dayCursor.valueOf()),
         outside: dayCursor.getMonth() !== month,
-        // TODO: is this fine or should it be moved to a separate function?
-        disabled: disabledDates.some(disabledDate =>
-          isDate(disabledDate)
-            ? datesEqual(disabledDate, dayCursor)
-            : (disabledDate.start == null ||
-                datesLessEqual(disabledDate.start, dayCursor)) &&
-              (disabledDate.end == null ||
-                datesLessEqual(dayCursor, disabledDate.end))
-        ),
+        disabled: dateIncluded(dayCursor, disabledDates),
       });
       dayCursor.setDate(dayCursor.getDate() + 1);
     }
