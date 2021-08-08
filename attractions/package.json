@@ -24,9 +24,7 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "lint": "eslint --format=pretty . --ext '.svelte,.js'; stylelint .",
-    "lint:fix": "eslint --format=pretty --fix . --ext '.svelte,.js,.json'; stylelint --fix .",
-    "prepublishOnly": "npm run build && node --unhandled-rejections=strict check-version.js"
+    "prepublishOnly": "pnpm run build && node --unhandled-rejections=strict check-version.js"
   },
   "files": [
     "*"

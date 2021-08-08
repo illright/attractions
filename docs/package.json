@@ -2,11 +2,11 @@
   "name": "attractions-docs",
   "description": "The documentation for the Attractions UI kit",
   "license": "MIT",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "sapper dev --ext '.svelte .svx .md'",
-    "build": "sapper build --legacy --ext '.svelte .svx .md'",
-    "export": "sapper export --legacy --ext '.svelte .svx .md'",
+    "dev": "sapper dev --ext \".svelte .svx .md\"",
+    "build": "sapper build --legacy --ext \".svelte .svx .md\"",
+    "export": "sapper export --legacy --ext \".svelte .svx .md\"",
     "start": "node __sapper__/build"
   },
   "dependencies": {
