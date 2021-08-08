@@ -44,9 +44,6 @@ $side-padding: 1rem;
       z-index: 2;
       width: $day-size;
       height: $day-size;
-      &:disabled {
-        color: vars.$disabled;
-      }
     }
 
     &.today > :global .btn {
@@ -64,6 +61,22 @@ $side-padding: 1rem;
 
     &.outside > :global .btn {
       color: vars.$disabled;
+    }
+
+    &.disabled > :global .btn {
+      color: vars.$danger;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) rotate(-30deg);
+        background: vars.$danger;
+      }
     }
 
     &.in-range::before {
