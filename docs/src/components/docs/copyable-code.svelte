@@ -16,7 +16,7 @@
   export let terminal = false;
 
   onMount(() => {
-    const preIndex = filename == null ? 0 : 1;
+    const preIndex = filename == null && terminal == false ? 0 : 1;
     text = self.children[preIndex].textContent;
   });
 

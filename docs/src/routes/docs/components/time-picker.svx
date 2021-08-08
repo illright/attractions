@@ -52,6 +52,11 @@ A time picker that supports both the text input and a dropdown with buttons.
 | **`value`** | `null` | `Date` | The currently selected time value. Even though a whole `Date` object is needed, only the time part will be considered. |
 | **`format`** | `'%H:%M'` | `string` | The format used to display time and consume input. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%H`, `%M`, `%S`, `%P` and `%p` allowed. `%P` stands for AM/PM, while `%p` stands for am/pm. |
 | **`amPmTabName`** | `'am-pm'` | `string` | If the `%P` or `%p` modifier is used in the format, the dropdown will contain tabs to switch between AM and PM. You may change the name of the radio group for these tabs to avoid collisions. |
+| **`hours`** | `[1..12]` (12 hours mode) or `[0..23]` (24 hours mode) | `number[]` | The list of possible hours to choose from. |
+| **`minutes`** | `[0, 5, ..., 55]` | `number[]` | The list of possible minutes to choose from. |
+| **`seconds`** | `[0, 5, ..., 55]` if using seconds or `[]` otherwise | `number[]` | The list of possible seconds to choose from. |
+
+_Hint_: use `range` from the [utils](/docs/utilities) to generate a range of numbers.
 
 ### Class Properties
 
