@@ -55,7 +55,9 @@
    * The text displayed in the tooltip when hovering over the checkboxes
    *   after the maximum allowed selection has been reached.
    */
-  export let maxReachedTooltip = `Can only select ${max} value${s(max)}.`;
+  export let maxReachedTooltip = null;
+  $: maxReachedTooltipFinal =
+    maxReachedTooltip ?? `Can only select ${max} value${s(max)}.`;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
 
@@ -82,7 +84,7 @@
         disabled={item.disabled || (!item.checked && currentChecked >= max)}
         class={classes(color && 'colored', checkboxClass)}
         title={!item.disabled && !item.checked && currentChecked >= max
-          ? maxReachedTooltip
+          ? maxReachedTooltipFinal
           : null}
         on:change
         {...$$restProps}
