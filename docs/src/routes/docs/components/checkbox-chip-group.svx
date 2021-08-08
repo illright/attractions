@@ -69,6 +69,7 @@ Any properties of `CheckboxChip` can be specified – they will be passed down.
 | <mark>**`items`**</mark>&nbsp;<span class="required">*</span> |  | `Array` | An array of `{ value, label, disabled, checked }` objects, where only the value is required. Must contain at least one value. |
 | <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name of this checkbox group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
 | **`max`** | `Infinity` | `number` | The maximum number of chips that can be selected. |
+| **`maxReachedTooltip`** | `` `Can only select ${max} value${s(max)}.` `` | `string` | The tooltip to display when the maximum number of checkboxes has been selected. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `CheckboxChip` component. |
 
 <div class="required">* Required</div>
