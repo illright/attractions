@@ -77,6 +77,11 @@
    */
   export let value = null;
   /**
+   * A set of dates to disable.
+   * @type {Array<Date | { start?: Date; end?: Date }>}
+   */
+  export let disabledDates = [];
+  /**
    * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
    * @type {string}
    */
@@ -258,6 +263,7 @@
           year={shownCalendar.getFullYear()}
           selectionStart={startValue}
           selectionEnd={endValue}
+          {disabledDates}
           {weekdaysClass}
           {weekClass}
           {dayClass}
