@@ -58,12 +58,31 @@
     .replace('%%', '%');
 
   const f12hours = /%p/i.test(format);
-  const seconds = /%S/.test(format);
+  const hasSeconds = /%S/.test(format);
   let focus = false;
   $: currentAmPm = value && (value.getHours() < 12 ? 'AM' : 'PM');
 
-  const hourValues = [...rangeGenerator(f12hours ? 1 : 0, f12hours ? 13 : 24)];
-  const minuteValues = [...rangeGenerator(0, 60, 5), 59];
+  /**
+   * The list of possible hours to choose from.
+   * Defaults to `[1..12]` in 12 hours mode, or `[0..23]` in 24 hours mode.
+   * Hint: use `range` from utils to generate a range of numbers.
+   * @type {Array<number>}
+   */
+  export let hours = [...rangeGenerator(f12hours ? 1 : 0, f12hours ? 13 : 24)];
+  /**
+   * The list of possible minutes to choose from.
+   * Defaults to `[0, 5, ..., 55]`.
+   * Hint: use `range` from utils to generate a range of numbers.
+   * @type {Array<number>}
+   */
+  export let minutes = [...rangeGenerator(0, 60, 5)];
+  /**
+   * The list of possible seconds to choose from.
+   * Defaults to `[0, 5, ..., 55]` if seconds are included in the format, or `[]` otherwise.
+   * Hint: use `range` from utils to generate a range of numbers.
+   * @type {Array<number>}
+   */
+  export let seconds = hasSeconds ? [...rangeGenerator(0, 60, 5)] : [];
 
   function setHours(hourValue, minuteValue = null, secondValue = null) {
     hourValue %= 24;
@@ -160,7 +179,7 @@
     'time-picker',
     _class,
     f12hours && 'f12hours',
-    seconds && 'seconds'
+    hasSeconds && 'seconds'
   )}
 >
   <DropdownShell bind:open={focus} on:change={toggleKeyboardListener}>
@@ -185,7 +204,7 @@
         <Label>Hours</Label>
       </slot>
       <div class="column">
-        {#each hourValues as hour}
+        {#each hours as hour}
           <Button
             on:click={() =>
               setHours(
@@ -202,7 +221,7 @@
         <Label>Minutes</Label>
       </slot>
       <div class="column">
-        {#each minuteValues as mins}
+        {#each minutes as mins}
           <Button
             on:click={() => setMinutes(mins)}
             selected={value && mins === value.getMinutes()}
@@ -211,12 +230,12 @@
           </Button>
         {/each}
       </div>
-      {#if seconds}
+      {#if hasSeconds}
         <slot name="seconds-label">
           <Label>Seconds</Label>
         </slot>
         <div class="column">
-          {#each minuteValues as secs}
+          {#each seconds as secs}
             <Button
               on:click={() => setSeconds(secs)}
               selected={value && secs === value.getSeconds()}

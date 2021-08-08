@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
-- `maxReachedTooltip` prop for the `CheckboxGroup` component.
+- `maxReachedTooltip` prop for the `CheckboxGroup` and `CheckboxChipGroup` component.
+- The `hours`, `minutes` and `seconds` props of the `TimePicker` component allow you to specify what values the user can choose from.
 
 ## [3.3.0] - 2021-05-28
 
