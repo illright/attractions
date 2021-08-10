@@ -217,7 +217,7 @@ export function datesLessEqual(date1, date2) {
 
 /**
  * Checks if the date is included in the given array of dates or ranges.
- * @param {Date} date The date object, which inclusion to check
+ * @param {Date} date The date object whose inclusion is to be checked
  * @param {Array<Date | { start?: Date; end?: Date; }>} dateRanges The set of dates
  * @returns {boolean}
  */
