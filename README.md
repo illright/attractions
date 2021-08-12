@@ -7,6 +7,8 @@
 [![npm bundle size](https://img.shields.io/bundlephobia/min/attractions)](https://bundlephobia.com/result?p=attractions)
 [![npm bundle zipped size](https://img.shields.io/bundlephobia/minzip/attractions)](https://bundlephobia.com/result?p=attractions)
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/illright/attractions)
+
 A pretty cool UI kit for Svelte.
 
 Refer to the main documentation: <https://illright.github.io/attractions>
