@@ -8,8 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
-- The `hours`, `minutes` and `seconds` props of the `TimePicker` component allow you to specify what values the user can choose from.
-- `disabledDates` prop for the `Calendar` component to disable specific dates (or ranges of dates).
+- The `hours`, `minutes` and `seconds` props of the `TimePicker` component allow you to specify what values the user can choose from ([#120](https://github.com/illright/attractions/issues/120)).
+- `disabledDates` prop for the `Calendar` component to disable specific dates or ranges of dates ([#34](https://github.com/illright/attractions/issues/34)).
+- `inputClass` prop for the `TimePicker` and `DatePicker` components to pass them down to the `TextField` ([#269](https://github.com/illright/attractions/issues/269)).
 
 ### Fixed
 

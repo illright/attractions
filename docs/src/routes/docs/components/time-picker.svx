@@ -67,6 +67,7 @@ Falsy values passed to classes will be disregarded.
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
 | **`class`** | `null` | `string` | A class string to add to the component. |
+| **`inputClass`** | `null` | `string` | A class string to pass down to the `TextField`. |
 
 
 ## Events {#events}

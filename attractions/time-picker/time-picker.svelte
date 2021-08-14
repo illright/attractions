@@ -21,6 +21,11 @@
 
   let _class = null;
   export { _class as class };
+  /**
+   * A class string to pass down to the `TextField`.
+   * @type {string | false | null}
+   */
+   export let inputClass = null;
 
   /**
    * Aligns the dropdown content such that it opens to the top of the text field, extending up.
@@ -189,6 +194,7 @@
         value={formatDateTime(value, format)}
         on:focus={() => (focus = true)}
         class={classes(focus && 'in-focus')}
+        {inputClass}
         on:change={({ detail }) => {
           value = applyTime(parseDateTime(detail.value, format, value), value);
         }}
