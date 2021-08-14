@@ -58,7 +58,7 @@
     "*.svelte": [
       "eslint --format=pretty",
       "eslint --max-warnings 0 --fix",
-      "prettier --write"
+      "prettier --write --plugin-search-dir=."
     ],
     "*.scss": [
       "stylelint --max-warnings 0 --fix",
