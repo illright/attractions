@@ -25,7 +25,7 @@
    * A class string to pass down to the `TextField`.
    * @type {string | false | null}
    */
-   export let inputClass = null;
+  export let inputClass = null;
 
   /**
    * Aligns the dropdown content such that it opens to the top of the text field, extending up.
