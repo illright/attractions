@@ -79,6 +79,7 @@ Falsy values passed to classes will be disregarded.
 | **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. |
 | **`weekClass`** | `null` | `string` | A class string to add to each element containing a row of days in the calendar. |
 | **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
+| **`inputClass`** | `null` | `string` | A class string to pass down to the `TextField`(s). |
 
 
 ## Events {#events}

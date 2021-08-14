@@ -37,6 +37,11 @@
    * @type {string | false | null}
    */
   export let dayClass = null;
+  /**
+   * A class string to pass down to the `TextField`(s).
+   * @type {string | false | null}
+   */
+  export let inputClass = null;
 
   /**
    * If this is set to `true`, the date picker will have two fields – for the start and the end of the date range.
@@ -206,6 +211,7 @@
           endFocus = false;
         }}
         class={classes(startFocus && 'in-focus')}
+        {inputClass}
         on:change={({ detail }) => {
           startValue = applyDate(
             parseDateTime(detail.value, format, startValue),
@@ -225,6 +231,7 @@
             endFocus = true;
           }}
           class={classes(endFocus && 'in-focus')}
+          {inputClass}
           on:change={({ detail }) => {
             endValue = applyDate(
               parseDateTime(detail.value, format, endValue),
