@@ -54,6 +54,8 @@
   /**
    * The text displayed in the tooltip when hovering over the checkboxes
    *   after the maximum allowed selection has been reached.
+   * Leaving it as `null` defaults to `Can only select ${max} value${s(max)}.`
+   * @type {string | null}
    */
   export let maxReachedTooltip = null;
   $: maxReachedTooltipFinal =
