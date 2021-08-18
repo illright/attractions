@@ -37,9 +37,15 @@
    * @type {number}
    */
   export let max = Infinity;
+  /**
+   * The text displayed in the tooltip when hovering over the checkboxes
+   *   after the maximum allowed selection has been reached.
+   */
+  export let maxReachedTooltip = null;
+  $: maxReachedTooltipFinal =
+    maxReachedTooltip ?? `Can only select ${max} value${s(max)}.`;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
-  $: maxReachedTooltip = `Can only select ${max} value${s(max)}.`;
 
   if (!items || items.length === 0) {
     console.error('Must have at least one item in the checkbox chip group');
@@ -56,7 +62,7 @@
         disabled={item.disabled || (!item.checked && currentChecked >= max)}
         class={classes(checkboxClass)}
         title={!item.disabled && !item.checked && currentChecked >= max
-          ? maxReachedTooltip
+          ? maxReachedTooltipFinal
           : null}
         on:change
         {...$$restProps}
