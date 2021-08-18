@@ -14,6 +14,9 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
   import ColorPreview from 'src/components/docs/color-preview.svelte';
   import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
   import RelatedComponents from 'src/components/docs/related-components.svelte';
+
+  // I absolutely hate this workaround, but it was the only way to get it to work because of MDSveX :(
+  const disabledDatesType = 'Array<Date | {start?: Date; end?: Date}>';
 </script>
 
 
@@ -61,6 +64,7 @@ If you need to display the calendar differently, check out the [`Calendar`](./do
 | **`value`** | `null` | `Date` or `{ start, end }` | Depending on the value of the <mark>`range`</mark> prop, this is either a Date object or an object with two fields, `start` and `end`, containing Date objects. |
 | **`locale`** | `undefined` | `string` | The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used. <br /> This will affect the weekdays and the day number representations as well as the spelling of the selected month.  |
 | **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
+| **`disabledDates`** | `[]` | <code>{disabledDatesType}</code> | A range of dates (or date ranges) for which to disable selection. |
 | **`format`** | `'%d.%m.%Y'` | `string` | The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed. |
 
 ### Class Properties
@@ -75,6 +79,7 @@ Falsy values passed to classes will be disregarded.
 | **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. |
 | **`weekClass`** | `null` | `string` | A class string to add to each element containing a row of days in the calendar. |
 | **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
+| **`inputClass`** | `null` | `string` | A class string to pass down to the `TextField`(s). |
 
 
 ## Events {#events}
@@ -108,6 +113,7 @@ The icon to use for switching to the next month in the calendar.
 | **`$bold-font-weight`** | The bold font weight of the selected month in the calendar. | `500` |
 | **`$dark`** <small>From [`Calendar`](./docs/components/calendar)</small> | The text color of the days in the calendar. | <ColorPreview value="#333333" /> |
 | **`$disabled`** <small>From [`Calendar`](./docs/components/calendar)</small> | The text color of the days in the calendar outside the current month. | <ColorPreview value="#888888" /> |
+| **`$danger`** | The color of the disabled days in the calendar. | <ColorPreview value="#B80000" /> |
 | **`$main-text`** <small>From [`Calendar`](./docs/components/calendar)</small> | The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
 | **`$regular-font-weight`** <small>From [`Calendar`](./docs/components/calendar)</small> | The font weight of the days. | `400` |
 | **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the days in the calendar and the text of the text field. | `'Ubuntu'` |

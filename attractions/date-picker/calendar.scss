@@ -63,6 +63,22 @@ $side-padding: 1rem;
       color: vars.$disabled;
     }
 
+    &.disabled > :global .btn {
+      color: vars.$danger;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) rotate(-30deg);
+        background: vars.$danger;
+      }
+    }
+
     &.in-range::before {
       background-color: color.adjust(vars.$main, $alpha: -0.75);
       content: '';

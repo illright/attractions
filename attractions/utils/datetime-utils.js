@@ -157,6 +157,15 @@ export function getWeekdays(locale, firstWeekday) {
 }
 
 /**
+ * Check if the given object is a date.
+ * @param {*} date The object to check
+ * @returns {date is Date} `true` if the given object is a valid `Date`, `false` otherwise
+ */
+export function isDate(date) {
+  return date instanceof Date && !isNaN(date.valueOf());
+}
+
+/**
  * Check for equality between 2 `Date` objects, disregarding the time.
  * @param {Date | null} date1
  * @param {Date | null} date2
@@ -207,13 +216,34 @@ export function datesLessEqual(date1, date2) {
 }
 
 /**
+ * Checks if the date is included in the given array of dates or ranges.
+ * @param {Date} date The date object whose inclusion is to be checked
+ * @param {Array<Date | { start?: Date; end?: Date; }>} dateRanges The set of dates
+ * @returns {boolean}
+ */
+export function dateIncluded(date, dateRanges) {
+  return dateRanges.some(dateOrRange => {
+    if (isDate(dateOrRange)) {
+      return datesEqual(dateOrRange, date);
+    }
+
+    return (
+      (dateOrRange.start == null ||
+        datesLessEqual(dateOrRange.start, dayCursor)) &&
+      (dateOrRange.end == null || datesLessEqual(dayCursor, dateOrRange.end))
+    );
+  });
+}
+
+/**
  * Generates a calendar view of a given month.
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} month Zero-based numeric value for month. 0 = January
  * @param {number} year
  * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday
+ * @param {Array<Date | {start?: Date; end?: Date}>} disabledDates
  * @returns {Array<Array<{ value: Date; outside: boolean }>>}
  */
-export function getCalendar(month, year, firstWeekday) {
+export function getCalendar(month, year, firstWeekday, disabledDates = []) {
   const calendar = [];
   const dayCursor = new Date(year, month, 1);
 
@@ -228,6 +258,7 @@ export function getCalendar(month, year, firstWeekday) {
       week.push({
         value: new Date(dayCursor.valueOf()),
         outside: dayCursor.getMonth() !== month,
+        disabled: dateIncluded(dayCursor, disabledDates),
       });
       dayCursor.setDate(dayCursor.getDate() + 1);
     }

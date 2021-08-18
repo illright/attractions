@@ -62,9 +62,30 @@
    * @type {Date | null}
    */
   export let selectionEnd = null;
+  /**
+   * A set of dates to disable.
+   * @type {Array<Date | { start?: Date; end?: Date }>}
+   */
+  export let disabledDates = [];
 
   const weekdays = getWeekdays(locale, firstWeekday);
   const today = new Date();
+
+  function computeTitle(day) {
+    if (datesEqual(day.value, today)) {
+      if (day.disabled) {
+        return 'Today, not available';
+      } else {
+        return 'Today';
+      }
+    }
+
+    if (day.disabled) {
+      return 'Not available';
+    }
+
+    return null;
+  }
 
   const dayNumberFormatter = Intl.DateTimeFormat(locale, { day: 'numeric' });
   const dispatch = createEventDispatcher();
@@ -75,10 +96,11 @@
     <span class="weekday">{dayName}</span>
   {/each}
 </div>
-{#each getCalendar(month, year, firstWeekday) as week}
+{#each getCalendar(month, year, firstWeekday, disabledDates) as week}
   <div class={classes('week', weekClass)}>
     <!--
       The following .day elements may have one of the classes:
+      * .disabled: day is not available for selection
       * .in-range: day is in range for range pickers
       * .selected: day is selected or is a range boundary
       * .outside:  day is not in this month
@@ -97,13 +119,15 @@
         class:end={datesEqual(day.value, selectionEnd)}
         class:in-range={datesLessEqual(selectionStart, day.value) &&
           datesLessEqual(day.value, selectionEnd)}
+        class:disabled={day.disabled}
       >
         <Button
-          title={(datesEqual(day.value, today) && 'Today') || null}
+          title={computeTitle(day)}
           on:click={e => {
             e.detail.nativeEvent.stopPropagation();
             dispatch('day-select', day.value);
           }}
+          disabled={day.disabled}
         >
           {dayNumberFormatter.format(day.value)}
         </Button>

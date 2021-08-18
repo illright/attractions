@@ -37,6 +37,11 @@
    * @type {string | false | null}
    */
   export let dayClass = null;
+  /**
+   * A class string to pass down to the `TextField`(s).
+   * @type {string | false | null}
+   */
+  export let inputClass = null;
 
   /**
    * If this is set to `true`, the date picker will have two fields – for the start and the end of the date range.
@@ -76,6 +81,11 @@
    * @type {Date | DateRange | null}
    */
   export let value = null;
+  /**
+   * A set of dates to disable.
+   * @type {Array<Date | { start?: Date; end?: Date }>}
+   */
+  export let disabledDates = [];
   /**
    * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
    * @type {string}
@@ -201,6 +211,7 @@
           endFocus = false;
         }}
         class={classes(startFocus && 'in-focus')}
+        {inputClass}
         on:change={({ detail }) => {
           startValue = applyDate(
             parseDateTime(detail.value, format, startValue),
@@ -220,6 +231,7 @@
             endFocus = true;
           }}
           class={classes(endFocus && 'in-focus')}
+          {inputClass}
           on:change={({ detail }) => {
             endValue = applyDate(
               parseDateTime(detail.value, format, endValue),
@@ -258,6 +270,7 @@
           year={shownCalendar.getFullYear()}
           selectionStart={startValue}
           selectionEnd={endValue}
+          {disabledDates}
           {weekdaysClass}
           {weekClass}
           {dayClass}

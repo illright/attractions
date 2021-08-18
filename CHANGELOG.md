@@ -8,8 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ### Added
 
-- `maxReachedTooltip` prop for the `CheckboxGroup` and `CheckboxChipGroup` components to customize the tooltip text that appears on hover when the maximum amount of checkboxes have been checked.
-- The `hours`, `minutes` and `seconds` props of the `TimePicker` component allow you to specify what values the user can choose from.
+- `maxReachedTooltip` prop for the `CheckboxGroup` and `CheckboxChipGroup` components to customize the tooltip text that appears on hover when the maximum amount of checkboxes have been checked ([#13](https://github.com/illright/attractions/issues/13)).
+- The `hours`, `minutes` and `seconds` props of the `TimePicker` component allow you to specify what values the user can choose from ([#120](https://github.com/illright/attractions/issues/120)).
+- `disabledDates` prop for the `Calendar` component to disable specific dates or ranges of dates ([#34](https://github.com/illright/attractions/issues/34)).
+- `inputClass` prop for the `TimePicker` and `DatePicker` components to pass them down to the `TextField` ([#269](https://github.com/illright/attractions/issues/269)).
+
+### Fixed
+
+- _[For contributors on Windows]_ The scripts in `package.json` should now work on CMD as well.
 
 ## [3.3.0] - 2021-05-28
 
