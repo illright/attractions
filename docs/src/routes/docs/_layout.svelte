@@ -60,6 +60,10 @@
           segment: 'components/badge',
         },
         {
+          title: 'Breadcrumbs',
+          segment: 'components/breadcrumbs',
+        },
+        {
           title: 'Button',
           segment: 'components/button',
         },
