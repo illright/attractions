@@ -6,8 +6,6 @@
   export let segment;
 
   const logoSize = 30;
-
-  $: segments = [{ href: '/docs' }, { text: segmentToName(segment || '') }];
 </script>
 
 <header class="padded">
@@ -16,7 +14,7 @@
     <span class="hide-on-less-tb">Attractions</span>
   </a>
   {#if segment != null}
-    <Breadcrumbs items={segments}>
+    <Breadcrumbs items={[{ href: '/docs' }, { text: segmentToName(segment) }]}>
       <div slot="item" let:item>
         {#if item.href === '/docs'}
           <Button href="/docs" round small>
