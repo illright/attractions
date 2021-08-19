@@ -40,7 +40,6 @@
    *   close: () => void,
    *   expired: Promise<boolean>,
    * }}
-   * @readonly
    */
   export function showSnackbar(options) {
     const { component = Snackbar, props = {}, duration = 4000 } = options;
