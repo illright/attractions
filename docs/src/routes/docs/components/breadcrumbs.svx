@@ -98,4 +98,4 @@ If a string separator is not enough, use this slot to add a custom component sep
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$thin-font-weight`** | Description. | `300` |
+| **`$thin-font-weight`** | The font size of the separator and the segments without `href`. | `300` |
