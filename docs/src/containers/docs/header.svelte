@@ -1,11 +1,13 @@
 <script>
-  import { Button } from 'attractions';
-  import { GithubIcon } from 'svelte-feather-icons';
-  import Breadcrumbs from 'src/components/docs/breadcrumbs.svelte';
+  import { Button, Breadcrumbs } from 'attractions';
+  import { GithubIcon, HomeIcon } from 'svelte-feather-icons';
+  import segmentToName from 'src/utils/segment-to-name.js';
+
+  export let segment;
 
   const logoSize = 30;
 
-  export let segment;
+  $: segments = [{ href: '/docs' }, { text: segmentToName(segment || '') }];
 </script>
 
 <header class="padded">
@@ -13,7 +15,19 @@
     <img src="logo-no-bg.svg" width={logoSize} height={logoSize} alt="Logo" />
     <span class="hide-on-less-tb">Attractions</span>
   </a>
-  <Breadcrumbs {segment} />
+  {#if segment != null}
+    <Breadcrumbs items={segments}>
+      <div slot="item" let:item>
+        {#if item.href === '/docs'}
+          <Button href="/docs" round small>
+            <HomeIcon size="20" />
+          </Button>
+        {:else}
+          <div class="node">{item.text}</div>
+        {/if}
+      </div>
+    </Breadcrumbs>
+  {/if}
   <div class="clickables">
     <!-- TODO: add the versions here
     <DropdownShell let:toggle>
