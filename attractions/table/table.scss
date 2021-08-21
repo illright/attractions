@@ -1,0 +1,72 @@
+@use 'sass:color';
+@use 'node_modules/attractions/_variables' as vars;
+
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 1em;
+
+  th {
+    text-align: start;
+    padding: 0.5em 1em;
+    &.center {
+      text-align: center;
+    }
+    &.end {
+      text-align: end;
+    }
+  }
+
+  tr {
+    &.alternating {
+      &:nth-child(even) {
+        background: color.adjust(vars.$main, $alpha: -0.97);
+      }
+    }
+
+    &:first-child :global {
+      > td:first-child {
+        border-top-left-radius: vars.$table-radius;
+      }
+
+      > td:last-child {
+        border-top-right-radius: vars.$table-radius;
+      }
+    }
+
+    &:last-child :global {
+      > td {
+        border-bottom-width: 1px;
+      }
+
+      > td:first-child {
+        border-bottom-left-radius: vars.$table-radius;
+      }
+
+      > td:last-child {
+        border-bottom-right-radius: vars.$table-radius;
+      }
+    }
+  }
+
+  td {
+    padding: 1em;
+    border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
+    border-width: 1px 0 0 1px;
+    line-height: 1.3em;
+
+    text-align: start;
+    &.center {
+      text-align: center;
+    }
+    &.end {
+      text-align: end;
+    }
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+}

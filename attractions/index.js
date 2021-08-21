@@ -26,6 +26,8 @@ export { default as AccordionSection } from './accordion/accordion-section.svelt
 
 export { default as Modal } from './modal/modal.svelte';
 
+export { default as Table } from './table/table.svelte';
+
 export { default as Tab } from './tab/tab.svelte';
 export { default as Tabs } from './tab/tabs.svelte';
 

@@ -144,6 +144,10 @@
           segment: 'components/switch',
         },
         {
+          title: 'Table',
+          segment: 'components/table',
+        },
+        {
           title: 'Tabs',
           segment: 'components/tabs',
         },
