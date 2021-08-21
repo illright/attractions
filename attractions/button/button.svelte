@@ -72,7 +72,7 @@
    */
   export let href = null;
   /**
-   * Disables Sapper prefetching for link buttons (those with an href prop).
+   * Disables Sapper (or SvelteKit) prefetching for link buttons (those with an href prop).
    * @type {boolean}
    */
   export let noPrefetch = false;
@@ -103,6 +103,7 @@
     href={disabled ? null : href}
     rel={noPrefetch ? null : 'prefetch'}
     sapper:prefetch={noPrefetch ? null : true}
+    sveltekit:prefetch={noPrefetch ? null : true}
     disabled={disabled ? true : null}
     class={classes('btn', _class)}
     class:filled
