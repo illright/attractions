@@ -1,15 +1,17 @@
-{
-  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
-  "rules": {
-    "color-named": null,
-    "scss/at-import-partial-extension-blacklist": null,
-    "scss/at-import-no-partial-leading-underscore": null,
-    "number-leading-zero": "always",
-    "order/properties-alphabetical-order": null,
-    "max-nesting-depth": null,
-    "selector-no-qualifying-type": null,
-    "selector-max-compound-selectors": null,
-    "selector-list-comma-newline-after": null,
-    "string-quotes": "single"
-  }
-}
+extends:
+  - stylelint-config-standard
+  - stylelint-config-sass-guidelines
+  - stylelint-config-prettier
+
+rules:
+  selector-pseudo-class-no-unknown:
+    - true
+    - ignorePseudoClasses: [global]
+
+  rule-empty-line-before: always
+
+  max-nesting-depth: null
+
+  selector-max-compound-selectors: null
+
+  selector-no-qualifying-type: null
