@@ -9,7 +9,7 @@
     "lint-svelte": "svelte-check --workspace attractions --output human --fail-on-warnings && svelte-check --workspace docs --output human --fail-on-warnings",
     "lint-svelte:fix": "svelte-check --workspace attractions && svelte-check --workspace docs",
     "lint-format": "prettier --plugin-search-dir=. --check .",
-    "lint-format:fix": "prettier --plugin-search-dir=. --write .",
+    "lint-format:fix": "prettier --plugin-search-dir=. --write --loglevel silent .",
     "lint": "pnpm run lint-js && pnpm run lint-css && pnpm run lint-svelte && pnpm run lint-format",
     "lint:fix": "pnpm run lint-js:fix && pnpm run lint-css:fix && pnpm run lint-svelte:fix && pnpm run lint-format:fix",
     "docs:export": "pnpm run --dir docs export",
