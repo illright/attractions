@@ -8,10 +8,18 @@ rules:
     - true
     - ignorePseudoClasses: [global]
 
-  rule-empty-line-before: always
-
   max-nesting-depth: null
 
   selector-max-compound-selectors: null
 
+  # Prettier can't enforce that, so we do it here
+  rule-empty-line-before:
+    - always
+    - except:
+        - first-nested
+
+  # We should be able to write `a.btn`
   selector-no-qualifying-type: null
+
+  # Doesn't always make sense with Sass nesting
+  no-descending-specificity: null
