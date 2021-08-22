@@ -14,7 +14,12 @@
    */
 
   /**
-   * The header row of the table. `text` is the text to display, and `value` is used to link the row data.
+   * The labels for the column headers.
+   *
+   * Each column header is an object with the following fields:
+   * - `text` is the text to display;
+   * - `value` is the name of the field to take from each object in `items` to put in this column;
+   * - `align` is the alignment of the text in the column (`"start" | "center" | "end"`) and defaults to `"start"`.
    * @type {Array<Header>}
    */
   export let headers = [];
@@ -26,7 +31,7 @@
   export let items = [];
 
   /**
-   * Rows should have alternating background colors.
+   * Whether the table rows should have alternating background colors.
    * @type {boolean}
    */
   export let alternatingRows = true;

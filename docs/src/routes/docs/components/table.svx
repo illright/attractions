@@ -72,7 +72,7 @@ const items = [
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`headers`** | `[]` | <code>{headersType}</code> | The header row of the table. |
+| **`headers`** | `[]` | <code>{headersType}</code> | The labels for the column headers. Each column header is an object with the following fields:<br /><ul><li>`text` is the text to display;</li><li>`value` is the name of the field to take from each object in `items` to put in this column;</li><li>`align` is the alignment of the text in the column (`"start" &#124; "center" &#124; "end"`), defaulting to `"start"`.</li></ul> |
 | **`items`** | `[]` | <code>{itemsType}</code> | The actual rows of data to be displayed. It is an array of objects, where each object must have as its keys the content of the `value` property of the headers, and the value is the text to be displayed. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<table>` element. |
 
