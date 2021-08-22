@@ -78,30 +78,17 @@ const items = [
 
 ## Slots {#slots}
 
-### Default slot
+### `header-item` slot
 
-The full content of the table. Providing this slot defeats the purpose of the component, but it can be useful if you want to make use of the same styles with highly customized content.
-Other -more refined- slots are also available for more convenience.
-
-### `header` slot
-
-The header row that defaults to a `<thead>` element with the row of headers.
-
-### `body` slot
-
-The entire body of the table that defaults to a `<tbody>` element.
-
-### `row` slot
-
-Customizes the entire row of data that defaults to a `<tr>` element.
+Customizes the content of the `<th>` elements. Defaults to a `<Label>` component with the text content of the header.
 
 | Prop Name | Type | Description |
 | --------- | ---- | ----------- |
-| **`item`** | <code>{itemType}</code> | The row object passed as part of the `items` array. |
+| **`header`** | <code>{headerType}</code> | The header object passed as part of the `headers` array. |
 
 ### `item` slot
 
-Used to customize each data cell on its own. This will probably be the most useful slot.
+Used to customize each data cell (contents of `<td>`) on its own.
 The intersection of `header` and `item` can be used to identify the data cell.
 
 | Prop Name | Type | Description |

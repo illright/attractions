@@ -38,42 +38,36 @@
 </script>
 
 <table {...$$restProps}>
-  <slot>
-    <slot name="header">
-      <thead>
-        <tr>
-          {#each headers as header (header.value)}
-            <th
-              class:center={header.align === 'center'}
-              class:end={header.align === 'end'}
-            >
-              <Label>{header.text}</Label>
-            </th>
-          {/each}
-        </tr>
-      </thead>
-    </slot>
-    <slot name="body">
-      <tbody>
-        {#each items as item}
-          <slot name="row" {item}>
-            <tr class:alternating={alternatingRows}>
-              {#each headers as header (header.value)}
-                <slot name="item" {header} {item}>
-                  <td
-                    class:center={header.align === 'center'}
-                    class:end={header.align === 'end'}
-                  >
-                    {item[header.value]}
-                  </td>
-                </slot>
-              {/each}
-            </tr>
+  <thead>
+    <tr>
+      {#each headers as header (header.value)}
+        <th
+          class:center={header.align === 'center'}
+          class:end={header.align === 'end'}
+        >
+          <slot name="header-item" {header}>
+            <Label>{header.text}</Label>
           </slot>
+        </th>
+      {/each}
+    </tr>
+  </thead>
+  <tbody>
+    {#each items as item}
+      <tr class:alternating={alternatingRows}>
+        {#each headers as header (header.value)}
+          <td
+            class:center={header.align === 'center'}
+            class:end={header.align === 'end'}
+          >
+            <slot name="item" {header} {item}>
+              {item[header.value]}
+            </slot>
+          </td>
         {/each}
-      </tbody>
-    </slot>
-  </slot>
+      </tr>
+    {/each}
+  </tbody>
 </table>
 
 <style src="./table.scss">
