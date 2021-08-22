@@ -7,7 +7,7 @@
     "lint-css": "stylelint . --cache",
     "lint-css:fix": "pnpm run lint-css -- --fix",
     "lint-svelte": "svelte-check --workspace attractions --output human --fail-on-warnings && svelte-check --workspace docs --output human --fail-on-warnings",
-    "lint-svelte:fix": "svelte-check --workspace attractions --output human-verbose && svelte-check --workspace docs --output human-verbose",
+    "lint-svelte:fix": "svelte-check --workspace attractions && svelte-check --workspace docs",
     "lint-format": "prettier --plugin-search-dir=. --check .",
     "lint-format:fix": "prettier --plugin-search-dir=. --write .",
     "lint": "pnpm run lint-js && pnpm run lint-css && pnpm run lint-svelte && pnpm run lint-format",
