@@ -11,9 +11,11 @@ table {
   th {
     text-align: start;
     padding: 0.5em 1em;
+
     &.center {
       text-align: center;
     }
+
     &.end {
       text-align: end;
     }
@@ -58,9 +60,11 @@ table {
     line-height: 1.3em;
 
     text-align: start;
+
     &.center {
       text-align: center;
     }
+
     &.end {
       text-align: end;
     }
