@@ -37,6 +37,21 @@ $table-radius: 0.5em !default;
 $snackbar-horizontal-offset: 5% !default;
 $snackbar-vertical-offset: 3em !default;
 
+$slider-handle-size: 10px !default;
+$slider-handle-border-width: 4px !default;
+$slider-handle-tooltip-size: 12px !default;
+$slider-handle-tooltip-font-size: 14px !default;
+$slider-handle-tooltip-disabled: #aaa !default;
+$slider-rail-size: 4px !default;
+$slider-rail-bg: #aaa !default;
+$slider-disabled: #cfcfcf !default;
+$slider-tick-bg: #7a7a7a !default;
+$slider-tick-length: 8px !default;
+$slider-sub-tick-length: 4px !default;
+$slider-tick-value-color: #7a7a7a !default;
+$slider-tick-value-font-size: 12px !default;
+$slider-tick-width: 1px !default;
+
 $bold-font-weight: 500 !default;
 $regular-font-weight: 400 !default;
 $thin-font-weight: 300 !default;
