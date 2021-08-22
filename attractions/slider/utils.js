@@ -12,13 +12,6 @@ export function validateProps({ min, max, step, orientation }) {
   if (step !== undefined && typeof step !== 'number') {
     warnOnce('step must be of type number: ', typeof step);
   }
-  if (
-    orientation !== undefined &&
-    orientation !== 'horizontal' &&
-    orientation !== 'vertical'
-  ) {
-    warnOnce('orientation must be either "horizontal" or "vertical"');
-  }
 }
 
 /**

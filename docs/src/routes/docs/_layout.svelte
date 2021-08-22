@@ -132,6 +132,10 @@
           segment: 'components/radio-group',
         },
         {
+          title: 'Slider',
+          segment: 'components/slider',
+        },
+        {
           title: 'SnackbarContainer',
           segment: 'components/snackbar-container',
         },

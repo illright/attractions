@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import { createEventDispatcher } from 'svelte';
-  import Handle from './Handle.svelte';
+  import Handle from './handle.svelte';
   import {
     getPosition,
     stopEvent,

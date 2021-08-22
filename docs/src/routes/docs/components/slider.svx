@@ -1,0 +1,100 @@
+---
+name: Slider
+---
+
+<script>
+  import { Slider } from 'attractions';
+  import Showcase from 'src/containers/docs/showcase.svelte';
+import { tick } from 'svelte';
+import Changelog from '../changelog.svx';
+</script>
+
+# Slider
+
+An slider for selecting a value or a range.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <div style="margin-left: 1.5em; height: 90%;">
+      <Slider
+        value={5}
+        min={1}
+        max={10}
+        step={1}
+        vertical
+        tooltips="active"
+        ticks={{mode: 'step', step: 1}}
+      />
+  </div>
+  </div>
+<div slot="source">
+
+```svelte
+  <Slider
+    value={5}
+    min={1}
+    max={10}
+    step={1}
+    vertical
+    tooltips="active"
+    ticks={{mode: 'step', step: 1}}
+  />
+```
+</Showcase>
+
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`vertical`** | `false` | `boolean` | To position the slider vertically with values from top to bottom. |
+| **`rectangularHandle`** | `false` | `boolean` | To have rectangular handles instead of the default round ones. |
+| **`disabled`** | `false` | `boolean` | Will disabled the slider in tones of grey, with cursor not-allowed on slider controls. | 
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`min`** | `0` | `number` | The min value of the slider. |
+| **`max`** | `100` | `number` | The max value of the slider. |
+| **`value`** | `50` | `number | [number, number]` | Provide two numbers to create a range slider. |
+| **`step`** | `1` | `number` | The step the slider will move between the min and the max. |
+| **`tooltips`** | `"none"` | `"none" - "active" - "always"` | Active tooltips will show above a handle when it is active, always will cause all tooltips to be visible. |
+| **`ticks`** | `{mode: "none"}` | ***`See below`*** | Ticks with values and sub-ticks without can be added with fine-grained control. |
+| **`rangeBehavior`** | `"block"` | `"block" - "free" - "push"` | Defines how two handles interact with each other. |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+### Ticks configuration has three modes, defined with the `mode` key on an object provided as the `ticks` prop.
+
+1. `none`, this is optional as leaving the config out will also achieve the same result.
+2. `step`, you must provide a key on the object of "step" with a number.
+3. `values`, with values you must provide an array of values which define each tick.
+4. Additionally, with `step` and `values` you made provide a `subDensity` which tells the density of the ticks on a 0-100 percent scale, e.g. 2 is every 2%.   
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`start`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user begins interacting with the slider. |
+| **`change`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when ever a slider handle value changes. |
+| **`stop`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user stops interacting with the slider. |   
+
+
+## Slots {#slots}
+
+### `tick-value` slot
+
+Receives the tick value as a prop in order to map or append a unit.
+
+### `tooltip-content` slot
+
+Recieves the value for the handle as a prop in order to format or append a unit.
+
+### `range-content` slot
+
+The content of the popover.
+
+<style src="../../../../static/css/routes/docs/components/slider.scss"></style>
