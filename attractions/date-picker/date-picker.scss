@@ -9,8 +9,8 @@ $side-padding: 1rem;
   display: inline-block;
 
   :global .dropdown-shell .handle {
-    display: flex;
     align-items: center;
+    display: flex;
 
     > span {
       margin: 1em;
@@ -31,12 +31,12 @@ $side-padding: 1rem;
   }
 
   .month-header {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-weight: vars.$bold-font-weight;
-    padding: 0 $side-padding 0.5em;
     color: vars.$main;
+    display: flex;
+    font-weight: vars.$bold-font-weight;
+    justify-content: space-between;
+    padding: 0 $side-padding 0.5em;
 
     :global .btn {
       flex: 0;

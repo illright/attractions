@@ -10,27 +10,27 @@
 
 code,
 pre[class*='language-'] {
-  color: #4d4d4c;
   background: none;
+  color: #4d4d4c;
   font-family: 'Roboto Mono', monospace;
   font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
+  hyphens: none;
   line-height: 1.5;
   tab-size: 2;
-  hyphens: none;
+  text-align: left;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
 }
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
+  background: #d6d6d6;
   color: inherit;
   text-shadow: none;
-  background: #d6d6d6;
 }
 
 @media print {
@@ -41,10 +41,11 @@ code[class*='language-'] ::selection {
 }
 
 /* Code blocks */
+
 pre[class*='language-'] {
-  padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
+  padding: 1em;
 }
 
 :not(pre) > code,
@@ -54,6 +55,7 @@ pre[class*='language-'] {
 }
 
 /* Inline code */
+
 :not(pre) > code {
   padding: 0 0.1em 0.1em;
 }
@@ -67,8 +69,8 @@ pre[class*='language-'] {
 .token.entity,
 .language-css .token.string,
 .style .token.string {
-  color: #969896;
   background: #e0e0e0;
+  color: #969896;
 }
 
 .token.punctuation {

@@ -9,9 +9,9 @@
     margin-bottom: 0.75em;
 
     .name {
+      display: block;
       font-size: 1.1em;
       margin-bottom: 0.2em;
-      display: block;
 
       .required {
         color: vars.$main;
@@ -26,8 +26,8 @@
 
   .field {
     .message {
-      margin: 0.3em 0.5em;
       font-size: 0.85em;
+      margin: 0.3em 0.5em;
 
       &.info {
         color: vars.$main;

@@ -3,51 +3,51 @@
 @use '../_mixins';
 
 .radio {
-  display: flex;
   align-items: center;
+  cursor: pointer;
+  display: flex;
   font-family: vars.$font;
   position: relative;
-  cursor: pointer;
 
   > input[type='radio'] {
     @include mixins.hide-accessible;
   }
 
   > .selector {
-    border-radius: 50%;
-    width: 1.25em;
-    height: 1.25em;
-    cursor: pointer;
     border: 0.125em solid vars.$light-contrast;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 1.25em;
     position: relative;
+    width: 1.25em;
 
     &::after {
-      content: '';
-      width: 2.25em;
-      height: 2.25em;
       border-radius: 50%;
+      content: '';
+      height: 2.25em;
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 2.25em;
     }
   }
 
   > input:checked + .selector::before {
-    content: '';
-    width: 0.5em;
-    height: 0.5em;
     border-radius: 50%;
+    content: '';
+    height: 0.5em;
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 0.5em;
   }
 }
 
 input:disabled + .selector {
-  cursor: not-allowed;
   background-color: color.scale(vars.$light-contrast, $lightness: 45%);
+  cursor: not-allowed;
 }
 
 input:checked + .selector {

@@ -6,8 +6,8 @@ main {
   margin: 1em 0 2em;
 
   article {
-    width: 100%;
     padding: 1em 0;
+    width: 100%;
   }
 
   :global .required {
@@ -16,8 +16,8 @@ main {
   }
 
   @media only screen and (min-width: 1024px) {
-    margin-top: 2em;
     flex: 1;
+    margin-top: 2em;
   }
 
   :global small {

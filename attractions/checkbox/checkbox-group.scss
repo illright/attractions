@@ -4,7 +4,7 @@ div[role='group'] :global {
   }
 
   .checkbox.colored > input + .selector::before {
-    border-color: lightgray;
+    border-color: #d3d3d3;
     border-color: rgb(var(--before-r), var(--before-g), var(--before-b));
   }
 

@@ -9,8 +9,8 @@
 
 .chip {
   cursor: pointer;
-  user-select: none;
   -webkit-touch-callout: none;
+  user-select: none;
 
   :global .ripple {
     background: color.adjust(vars.$main, $alpha: -0.9);
@@ -55,8 +55,8 @@ input:checked + .chip {
 
   &.outline {
     background: color.adjust(vars.$main, $alpha: -0.94);
-    color: vars.$main;
     border-color: vars.$main;
+    color: vars.$main;
   }
 }
 

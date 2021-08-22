@@ -6,15 +6,15 @@
   transition: padding-left 50ms;
 
   &::before {
-    transition: width 50ms;
     border: 0 solid vars.$main;
-    width: 0;
-    height: 0.5625em;
     content: '';
-    transform: translateY(-50%) rotate(45deg);
-    position: absolute;
+    height: 0.5625em;
     left: 0.9em;
+    position: absolute;
     top: 45%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: width 50ms;
+    width: 0;
   }
 }
 
@@ -22,8 +22,8 @@ input:checked + .chip {
   padding-left: 2em;
 
   &::before {
-    width: 0.3125em;
     border-bottom-width: 0.125em;
     border-right-width: 0.125em;
+    width: 0.3125em;
   }
 }

@@ -2,12 +2,12 @@
   position: relative;
 
   > .popover {
-    position: absolute;
     display: none;
+    position: absolute;
 
     &.top {
-      top: 0;
       left: 50%;
+      top: 0;
       transform: translate(-50%, -100%);
     }
 

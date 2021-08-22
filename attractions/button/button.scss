@@ -9,9 +9,9 @@
 
   @include mixins.flat-interactive-background(vars.$main);
 
-  font-size: 1rem;
-  border-radius: vars.$button-radius;
   background: none;
+  border-radius: vars.$button-radius;
+  font-size: 1rem;
   padding: 0.8em 1.1em;
 
   :global {
@@ -36,6 +36,7 @@
 
   &.filled {
     @include mixins.filled-interactive-background(vars.$main);
+
     box-shadow: vars.$shadow-1;
 
     &:hover:not([disabled]),
@@ -78,8 +79,8 @@
   }
 
   &[disabled] {
-    color: vars.$disabled;
     background: transparent;
+    color: vars.$disabled;
     cursor: default;
 
     :global .icon {
@@ -93,8 +94,8 @@
 
   &.rectangle {
     border-radius: math.div(vars.$button-radius, 2);
-    padding: 1.2em;
     font-size: 1.1rem;
+    padding: 1.2em;
   }
 
   &.small {

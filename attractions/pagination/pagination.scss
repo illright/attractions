@@ -2,27 +2,27 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .pagination {
-  margin: 2em 1em;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
+  margin: 2em 1em;
 
   :global {
     > .page {
-      width: 2.5em;
-      height: 2.5em;
-      margin: 0 0.2em;
-      justify-content: center;
-      padding: 0;
       flex-shrink: 0;
+      height: 2.5em;
+      justify-content: center;
+      margin: 0 0.2em;
+      padding: 0;
+      width: 2.5em;
     }
 
     > .text-field {
       margin: 0 0.2em;
 
       input {
-        width: 2.8em !important;
         height: 2.8em !important;
+        width: 2.8em !important;
       }
     }
 

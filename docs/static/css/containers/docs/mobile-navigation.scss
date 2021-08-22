@@ -1,8 +1,8 @@
 nav {
   display: flex;
   justify-content: space-between;
-  overflow: auto;
   margin: 0.5em 0 0;
+  overflow: auto;
   padding-bottom: 0.5em;
 
   :global .tab {
@@ -21,10 +21,10 @@ nav {
     padding-right: 0;
 
     &::after {
-      display: block;
       content: '';
-      width: 0.5em;
+      display: block;
       flex: 1 0 0.5em;
+      width: 0.5em;
     }
   }
 
@@ -34,9 +34,9 @@ nav {
 }
 
 nav + :global .dropdown {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   margin: -0.25em 0.5em 0.5em;
   padding: 0.5em;
 

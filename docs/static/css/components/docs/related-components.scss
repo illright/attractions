@@ -2,17 +2,17 @@
 @use 'attractions-theme' as vars;
 
 .related-components {
-  margin-top: 1.5em;
-  padding: 1em 1em 1em 2em;
   background: color.adjust(vars.$main, $alpha: -0.97);
   border-radius: 1em;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1.5em;
+  padding: 1em 1em 1em 2em;
 
   :global {
     .label {
-      width: 100%;
       margin-bottom: 0.75em;
+      width: 100%;
     }
 
     .card {

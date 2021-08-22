@@ -5,29 +5,29 @@ nav {
   display: none;
 
   @media only screen and (min-width: 1024px) {
+    border-right: 1px solid color.adjust(vars.$main, $alpha: -0.75);
     display: block;
     margin-right: 3em;
-    padding: 0.5em 0.5em 0.5em 0;
     min-width: 13em;
-    border-right: 1px solid color.adjust(vars.$main, $alpha: -0.75);
+    padding: 0.5em 0.5em 0.5em 0;
 
     :global .btn {
-      white-space: nowrap;
       margin-bottom: 0.25em;
+      white-space: nowrap;
     }
 
     :global .accordion {
+      align-items: flex-start;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
 
       section {
-        margin: 0.5em 0 0.5em 1em;
-        padding-left: 0.5em;
+        align-items: flex-start;
         border-left: 1px solid vars.$light-contrast;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        margin: 0.5em 0 0.5em 1em;
+        padding-left: 0.5em;
       }
     }
   }

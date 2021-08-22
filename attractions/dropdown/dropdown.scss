@@ -1,17 +1,17 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .dropdown {
-  position: absolute;
   background: vars.$background;
-  box-shadow: vars.$shadow-raised;
   border-radius: vars.$card-radius;
-  z-index: 900;
+  box-shadow: vars.$shadow-raised;
   margin-top: 0.3125em;
+  position: absolute;
+  z-index: 900;
 
   &.top {
+    margin-top: -0.3125em;
     top: 0;
     transform: translateY(-100%);
-    margin-top: -0.3125em;
   }
 
   &:not(.right) {

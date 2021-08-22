@@ -25,11 +25,12 @@ input + :global .dropdown {
 
   @include slot-styles.loading-options;
   @include slot-styles.more-options;
-  padding: 0;
+
   margin: 0;
   max-height: 15em;
   overflow-y: scroll;
   overscroll-behavior: none;
+  padding: 0;
 
   :global li {
     &:first-child {

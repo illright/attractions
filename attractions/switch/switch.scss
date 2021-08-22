@@ -4,44 +4,44 @@
 @use '../mixins';
 
 .switch {
-  display: flex;
   align-items: center;
-  font-family: vars.$font;
   cursor: pointer;
+  display: flex;
+  font-family: vars.$font;
 
   input {
     @include mixins.hide-accessible;
   }
 
   .track {
+    border: 0.125em solid vars.$off-state;
+    border-radius: 0.75em;
+    cursor: pointer;
+    height: 1.125em;
     position: relative;
     width: 2em;
-    height: 1.125em;
-    border-radius: 0.75em;
-    border: 0.125em solid vars.$off-state;
-    cursor: pointer;
 
     &::before {
-      content: '';
-      width: 3.25em;
-      height: 2.375em;
       border-radius: 1.125em;
+      content: '';
+      height: 2.375em;
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 3.25em;
     }
 
     > .thumb {
-      border-radius: 50%;
-      width: 0.75em;
-      height: 0.75em;
       background: vars.$off-state;
+      border-radius: 50%;
+      height: 0.75em;
+      left: 0.25em;
       position: absolute;
       top: 50%;
-      left: 0.25em;
       transform: translateY(-50%);
       transition: transform 100ms;
+      width: 0.75em;
     }
   }
 
@@ -55,31 +55,31 @@
   }
 
   input:disabled ~ .track {
-    cursor: not-allowed;
     border-color: vars.$disabled;
+    cursor: not-allowed;
 
     > .thumb {
       background: none;
       border: 0.125em solid vars.$disabled;
-      width: 0.5em;
       height: 0.5em;
       position: relative;
+      width: 0.5em;
 
       &::before {
+        background: vars.$disabled;
         content: '';
-        width: 100%;
         height: 0.125em;
         left: 0;
-        top: math.div(0.5em - 0.125em, 2);
-        background: vars.$disabled;
         position: absolute;
+        top: math.div(0.5em - 0.125em, 2);
         transform: rotate(-45deg);
+        width: 100%;
       }
     }
   }
 
   input:focus ~ .track::before {
-    background: color.adjust(black, $alpha: -0.9);
+    background: color.adjust(#000, $alpha: -0.9);
   }
 
   input:focus:checked ~ .track::before {
@@ -89,7 +89,7 @@
 
 .switch:hover {
   .track::before {
-    background: color.adjust(black, $alpha: -0.9);
+    background: color.adjust(#000, $alpha: -0.9);
   }
 
   input:checked:not(:disabled) ~ .track::before {
