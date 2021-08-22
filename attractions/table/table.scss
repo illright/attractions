@@ -28,7 +28,7 @@ table {
       }
     }
 
-    &:first-child :global {
+    &:first-child {
       > td:first-child {
         border-top-left-radius: vars.$table-radius;
       }
@@ -38,7 +38,7 @@ table {
       }
     }
 
-    &:last-child :global {
+    &:last-child {
       > td {
         border-bottom-width: 1px;
       }
