@@ -228,9 +228,8 @@ export function dateIncluded(date, dateRanges) {
     }
 
     return (
-      (dateOrRange.start == null ||
-        datesLessEqual(dateOrRange.start, dayCursor)) &&
-      (dateOrRange.end == null || datesLessEqual(dayCursor, dateOrRange.end))
+      (dateOrRange.start == null || datesLessEqual(dateOrRange.start, date)) &&
+      (dateOrRange.end == null || datesLessEqual(date, dateOrRange.end))
     );
   });
 }

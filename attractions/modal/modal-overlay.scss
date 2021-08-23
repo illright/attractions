@@ -1,19 +1,19 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .modal-overlay {
-  position: fixed;
+  background-color: vars.$modal-overlay-bg;
+  display: none;
+  height: 100%;
   left: 0;
+  overflow: hidden;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: vars.$modal-overlay-bg;
   z-index: 1000;
-  display: none;
 
   &.open {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
 
     :global .dialog {

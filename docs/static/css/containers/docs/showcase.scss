@@ -6,10 +6,10 @@ $border-radius: 0.5em;
 .showcase {
   border: 1px solid color.adjust(vars.$main, $alpha: -0.75);
   border-radius: $border-radius;
-  margin: 1em 0;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: repeat(4, auto);
+  margin: 1em 0;
 
   :global {
     > .label {
@@ -21,9 +21,9 @@ $border-radius: 0.5em;
     }
 
     > [slot='showcase'] {
-      overflow-x: auto;
       border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
       border-bottom-width: 1px;
+      overflow-x: auto;
 
       &.padded {
         padding: 1em;
@@ -35,14 +35,14 @@ $border-radius: 0.5em;
     }
 
     > .copyable {
-      overflow-x: auto;
-      border-radius: $border-radius;
       border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
+      border-radius: $border-radius;
+      overflow-x: auto;
 
       > [slot='source'] {
-        height: 100%;
         background: #fcfcfc;
         display: flex;
+        height: 100%;
       }
 
       pre {
@@ -53,9 +53,9 @@ $border-radius: 0.5em;
 
   @media only screen and (min-width: 920px) {
     border-width: 0;
+    grid-auto-flow: column;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
-    grid-auto-flow: column;
 
     :global {
       > .label {
@@ -67,16 +67,16 @@ $border-radius: 0.5em;
       }
 
       > [slot='showcase'] {
-        border-width: 1px;
-        border-top-left-radius: $border-radius;
         border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+        border-width: 1px;
       }
 
       > .copyable {
+        border-bottom-left-radius: 0;
         border-width: 1px;
         border-left-width: 0;
         border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
       }
     }
   }

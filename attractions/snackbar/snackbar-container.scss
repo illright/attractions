@@ -1,25 +1,25 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .snackbar-stack {
-  position: fixed;
-  z-index: 2000;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  z-index: 2000;
 
   &.left {
-    left: vars.$snackbar-horizontal-offset;
     align-items: flex-start;
+    left: vars.$snackbar-horizontal-offset;
   }
 
   &.right {
-    right: vars.$snackbar-horizontal-offset;
     align-items: flex-end;
+    right: vars.$snackbar-horizontal-offset;
   }
 
   &.h-middle {
+    align-items: center;
     left: 50%;
     transform: translateX(-50%);
-    align-items: center;
   }
 
   &.top {

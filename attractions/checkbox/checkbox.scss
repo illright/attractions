@@ -3,58 +3,58 @@
 @use '../_mixins';
 
 .checkbox {
-  position: relative;
-  display: flex;
   align-items: center;
-  font-family: vars.$font;
   cursor: pointer;
+  display: flex;
+  font-family: vars.$font;
+  position: relative;
 
   > input[type='checkbox'] {
     @include mixins.hide-accessible;
   }
 
   .selector {
-    border-radius: 0.25em;
-    width: 1em;
-    height: 1em;
     border: 0.125em solid vars.$light-contrast;
+    border-radius: 0.25em;
     cursor: pointer;
+    height: 1em;
     position: relative;
+    width: 1em;
 
     &::before {
-      content: '';
-      width: 0;
-      height: 0;
       border: 0 solid vars.$main-text;
       border-bottom-left-radius: 0.125em;
+      content: '';
+      height: 0;
       left: 50%;
       position: absolute;
       top: 45%;
       transform: translate(-50%, -50%) rotate(-57deg) skew(-11deg);
       transition: width 75ms;
+      width: 0;
     }
 
     &::after {
-      content: '';
-      width: 2.25em;
-      height: 2.25em;
       border-radius: 50%;
+      content: '';
+      height: 2.25em;
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 2.25em;
     }
   }
 
   &.round > .selector {
     border-radius: 50%;
-    width: 1.375em;
     height: 1.375em;
+    width: 1.375em;
   }
 
   :disabled + .selector {
-    cursor: not-allowed;
     background-color: color.scale(vars.$light-contrast, $lightness: 45%);
+    cursor: not-allowed;
   }
 
   :checked + .selector {
@@ -62,10 +62,10 @@
     border-color: vars.$main;
 
     &::before {
-      width: 0.5625em;
-      height: 0.375em;
       border-bottom-width: 0.125em;
       border-left-width: 0.125em;
+      height: 0.375em;
+      width: 0.5625em;
     }
   }
 

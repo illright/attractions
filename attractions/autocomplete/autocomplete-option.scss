@@ -8,18 +8,18 @@ li {
 button {
   background: none;
   border: 0;
-  outline: none;
   cursor: pointer;
   font-family: vars.$font;
   font-size: 1em;
-  width: 100%;
-  text-align: left;
+  outline: none;
   padding: 0.7em 1.2em;
+  text-align: left;
+  width: 100%;
 
   .subtext {
     font-size: 0.95em;
-    margin-top: 0.2em;
     font-weight: vars.$thin-font-weight;
+    margin-top: 0.2em;
   }
 
   &:hover {

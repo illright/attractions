@@ -1,17 +1,17 @@
 @use 'attractions-theme' as vars;
 
 .preview {
-  display: flex;
   align-items: center;
+  display: flex;
   font-family: 'Roboto Mono', monospace;
 
   .color {
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
     border: 1px solid transparent;
-    margin-right: 0.8em;
+    border-radius: 50%;
     flex-shrink: 0;
+    height: 1.5em;
+    margin-right: 0.8em;
+    width: 1.5em;
 
     &.bordered {
       border-color: vars.$main;

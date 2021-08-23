@@ -3,8 +3,8 @@
 @use '../_mixins';
 
 .tab {
-  display: flex;
   align-items: stretch;
+  display: flex;
 
   > input {
     @include mixins.hide-accessible;
@@ -15,17 +15,17 @@
   }
 
   > .content {
+    align-items: center;
     border: 0 solid color.scale(vars.$off-state, $lightness: 75%);
     border-bottom-width: 0.125em;
-    font-family: vars.$font;
-    font-weight: vars.$bold-font-weight;
-    color: vars.$main;
-    padding: 0.7em 0.6em 0.5em;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
     border-top-left-radius: 0.3125em;
     border-top-right-radius: 0.3125em;
+    color: vars.$main;
+    cursor: pointer;
+    display: flex;
+    font-family: vars.$font;
+    font-weight: vars.$bold-font-weight;
+    padding: 0.7em 0.6em 0.5em;
 
     &:hover {
       background: color.adjust(vars.$off-state, $alpha: -0.9);
@@ -33,8 +33,8 @@
   }
 
   > input:disabled + .content {
-    cursor: not-allowed;
     color: vars.$disabled;
+    cursor: not-allowed;
   }
 
   > input:focus + .content {

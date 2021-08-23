@@ -78,7 +78,7 @@ jobs:
       - name: Install pnpm 🧰
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.12.0
+          version: 6.14.2
 
       - name: Build bundles 🔧
         run: |

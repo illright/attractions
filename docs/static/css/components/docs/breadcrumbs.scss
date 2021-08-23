@@ -4,11 +4,11 @@ nav {
   display: none;
 
   @media only screen and (min-width: 1024px) {
-    display: flex;
     align-items: center;
+    display: flex;
     flex: 1;
-    margin: 0 2em;
     font-weight: vars.$thin-font-weight;
+    margin: 0 2em;
 
     .node {
       margin: 0 0.25em;

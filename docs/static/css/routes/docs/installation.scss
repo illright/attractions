@@ -2,15 +2,15 @@
 @use 'attractions-theme' as vars;
 
 .toolchain {
-  display: grid;
-  grid-template: auto auto / 1fr 1fr 1fr;
-  grid-auto-flow: column;
-  justify-items: center;
-  gap: 0.35em;
-  margin: 2em 0;
-  padding: 1.5em 1em;
   background: color.adjust(vars.$main, $alpha: -0.97);
   border-radius: 1em;
+  display: grid;
+  gap: 0.35em;
+  grid-auto-flow: column;
+  grid-template: auto auto / 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 2em 0;
+  padding: 1.5em 1em;
 }
 
 .prelude {
@@ -18,12 +18,12 @@
 }
 
 .caution {
-  margin: 2em 0;
-  padding: 1.5em;
   background: color.adjust(vars.$attention, $alpha: -0.93);
   border-radius: 1em;
-  font-weight: 300;
   font-size: 0.9em;
+  font-weight: 300;
+  margin: 2em 0;
+  padding: 1.5em;
 
   :global .label {
     color: color.scale(vars.$attention, $lightness: -30%);

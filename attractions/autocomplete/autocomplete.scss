@@ -6,10 +6,10 @@
 .autocomplete {
   @include appearances.text-field;
 
-  padding-top: 0.25em;
-  display: flex;
   align-items: center;
+  display: flex;
   flex-wrap: wrap;
+  padding-top: 0.25em;
 
   &.focus {
     @include appearances.text-field-focused;
@@ -25,27 +25,27 @@
     input {
       @include appearances.text-field-input;
 
-      border: 0;
       background: none;
+      border: 0;
       min-width: 13em;
       width: 100%;
     }
   }
 
   :global .chip.no-padding {
-    display: flex;
     align-items: center;
-    padding-left: 0.7em;
-    margin: 0.2em 0.4em 0.2em 0;
+    display: flex;
     font-size: 0.95em;
+    margin: 0.2em 0.4em 0.2em 0;
+    padding-left: 0.7em;
 
     .btn {
       margin-left: 0.3em;
     }
 
     svg {
-      width: 1.2em;
       height: 1.2em;
+      width: 1.2em;
     }
   }
 }

@@ -4,17 +4,17 @@
 $side-margin: 1em;
 
 header {
-  padding-top: 0.6em;
-  padding-bottom: 0.5em;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid color.adjust(vars.$main, $alpha: -0.75);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+  padding-top: 0.6em;
 
   .logo,
   .clickables {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 
   .logo {
@@ -22,10 +22,10 @@ header {
     text-decoration: none;
 
     span {
-      margin-left: 0.7em;
+      color: #000;
       font-size: 1.25em;
       font-weight: vars.$bold-font-weight;
-      color: black;
+      margin-left: 0.7em;
     }
   }
 

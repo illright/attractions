@@ -3,15 +3,15 @@
 @mixin notice {
   .notice {
     font-size: 0.9em;
-    margin: 0.5em;
     font-weight: vars.$thin-font-weight;
+    margin: 0.5em;
   }
 }
 
 @mixin loading-options {
   .loading-options {
-    display: flex;
     align-items: center;
+    display: flex;
     font-size: 0.95em;
     margin: 0.5em 1.2em;
 
@@ -23,9 +23,9 @@
 
 @mixin more-options {
   .more-options {
+    list-style: none;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    list-style: none;
 
     :global svg {
       margin-right: 0.5em;

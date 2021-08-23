@@ -2,21 +2,21 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .snackbar {
+  align-items: center;
+  background: vars.$snackbar-bg;
+  border-radius: vars.$snackbar-radius;
+  box-shadow: vars.$shadow-raised;
+  display: flex;
+  margin-top: 1em;
   min-width: 16em;
   padding: 0.375em;
-  margin-top: 1em;
-  display: flex;
-  align-items: center;
-  border-radius: vars.$snackbar-radius;
-  background: vars.$snackbar-bg;
-  box-shadow: vars.$shadow-raised;
 
   .text {
-    padding: 0.8em 0;
-    margin: 0 0.625em;
     color: vars.$snackbar-fg;
     flex: 1;
     font-size: 0.95em;
+    margin: 0 0.625em;
+    padding: 0.8em 0;
   }
 
   :global .btn {

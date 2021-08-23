@@ -4,7 +4,7 @@ div[role='radiogroup'] :global {
   }
 
   .radio.colored > input + .selector::before {
-    background-color: lightgray;
+    background-color: #d3d3d3;
     background-color: rgb(var(--before-r), var(--before-g), var(--before-b));
   }
 

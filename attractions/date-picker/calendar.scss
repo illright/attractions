@@ -7,13 +7,13 @@ $day-gap: 0.0625rem;
 $side-padding: 1rem;
 
 .weekdays {
-  padding: 0.5em 1em;
   display: flex;
   font-size: 0.85em;
+  padding: 0.5em 1em;
 
   > .weekday {
-    width: percentage(math.div(1, 7));
     text-align: center;
+    width: percentage(math.div(1, 7));
   }
 }
 
@@ -21,11 +21,11 @@ $side-padding: 1rem;
   display: flex;
 
   .day {
-    width: percentage(math.div(1, 7));
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     position: relative;
+    width: percentage(math.div(1, 7));
 
     &:last-child {
       padding-right: $side-padding;
@@ -36,14 +36,14 @@ $side-padding: 1rem;
     }
 
     > :global .btn {
-      font-weight: vars.$regular-font-weight;
-      font-size: 0.9em;
       color: vars.$dark;
+      font-size: 0.9em;
+      font-weight: vars.$regular-font-weight;
+      height: $day-size;
       justify-content: center;
       margin: $day-gap;
-      z-index: 2;
       width: $day-size;
-      height: $day-size;
+      z-index: 2;
     }
 
     &.today > :global .btn {
@@ -68,14 +68,14 @@ $side-padding: 1rem;
       position: relative;
 
       &::before {
-        position: absolute;
+        background: vars.$danger;
         content: '';
         height: 1px;
-        width: 50%;
-        top: 50%;
         left: 50%;
+        position: absolute;
+        top: 50%;
         transform: translateX(-50%) rotate(-30deg);
-        background: vars.$danger;
+        width: 50%;
       }
     }
 
@@ -83,8 +83,8 @@ $side-padding: 1rem;
       background-color: color.adjust(vars.$main, $alpha: -0.75);
       content: '';
       height: $day-size;
-      position: absolute;
       left: 0;
+      position: absolute;
       right: 0;
       top: $day-gap;
       z-index: 1;
@@ -96,8 +96,8 @@ $side-padding: 1rem;
 
     &.start {
       &::before {
-        right: 0;
         left: unset;
+        right: 0;
         width: math.div($day-size, 2) + $day-gap;
       }
 

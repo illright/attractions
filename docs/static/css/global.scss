@@ -14,16 +14,16 @@
   }
 
   body {
-    margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: vars.$font;
+    margin: 0;
+    min-height: 100vh;
   }
 
   p {
-    line-height: 1.45em;
     letter-spacing: 0.1px;
+    line-height: 1.45em;
   }
 
   strong {

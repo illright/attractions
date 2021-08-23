@@ -1,17 +1,17 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .chip {
-  border-radius: vars.$chip-radius;
   background: vars.$chip-bg;
+  border-radius: vars.$chip-radius;
   color: vars.$chip-fg;
   font-family: vars.$font;
-  padding: 0.6em 0.9em;
   font-weight: vars.$bold-font-weight;
+  padding: 0.6em 0.9em;
 
   &.small {
-    padding: 0.4em 0.6em;
     font-size: 0.9rem;
     min-width: 0.9em;
+    padding: 0.4em 0.6em;
     text-align: center;
   }
 

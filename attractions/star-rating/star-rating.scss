@@ -2,15 +2,15 @@
 @use 'node_modules/attractions/_variables' as vars;
 @use '../_mixins';
 
-$hover-color: color.mix(white, vars.$main, 60%);
-$selected-color: color.mix(white, vars.$main, 20%);
+$hover-color: color.mix(#fff, vars.$main, 60%);
+$selected-color: color.mix(#fff, vars.$main, 20%);
 
 .star-rating {
+  border-radius: 1.5em;
   display: inline-flex;
+  fill: none;
   flex-direction: row-reverse;
   justify-content: flex-end;
-  border-radius: 1.5em;
-  fill: none;
 
   &:focus-within {
     background: color.adjust(vars.$main, $alpha: -0.95);
@@ -21,10 +21,10 @@ $selected-color: color.mix(white, vars.$main, 20%);
   }
 
   label {
-    padding: 0.5em;
     border-radius: 50%;
-    cursor: pointer;
     color: vars.$off-state;
+    cursor: pointer;
+    padding: 0.5em;
 
     :global svg {
       display: block;
@@ -45,9 +45,9 @@ $selected-color: color.mix(white, vars.$main, 20%);
   }
 
   input:disabled + label {
-    cursor: not-allowed;
     background: none;
     color: vars.$disabled;
+    cursor: not-allowed;
   }
 
   input:checked + label,

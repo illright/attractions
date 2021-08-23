@@ -2,14 +2,14 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 @mixin text-field {
-  padding: 0 0.625em 0.0625em;
-  box-sizing: border-box;
-  width: 100%;
+  background-color: vars.$textfield-bg;
   border: 0 solid vars.$textfield-border; // to disable the global border
   border-bottom-width: 0.0625em;
   border-top-left-radius: 0.375em;
   border-top-right-radius: 0.375em;
-  background-color: vars.$textfield-bg;
+  box-sizing: border-box;
+  padding: 0 0.625em 0.0625em;
+  width: 100%;
 
   &:hover {
     background-color: color.scale(vars.$textfield-bg, $lightness: -3%);
@@ -34,20 +34,20 @@
 }
 
 @mixin text-field-input {
-  outline: none;
   font-family: vars.$font;
   font-size: 1rem;
   font-weight: vars.$thin-font-weight;
   height: 2.8em;
+  outline: none;
 }
 
 @mixin button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
   font-family: vars.$font;
   font-weight: vars.$button-font-weight;
   outline: none;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 
   &::-moz-focus-inner {
     border: 0;

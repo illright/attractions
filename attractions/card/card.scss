@@ -2,18 +2,18 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .card {
-  box-shadow: vars.$shadow-0;
   background-color: #fff;
   border-radius: vars.$card-radius;
-  padding: 1.5em;
+  box-shadow: vars.$shadow-0;
   overflow: hidden;
+  padding: 1.5em;
 
   &.no-padding {
     padding: 0;
   }
 
   &.outline {
-    box-shadow: none;
     border: 1px solid color.adjust(vars.$main, $alpha: -0.7);
+    box-shadow: none;
   }
 }

@@ -4,3 +4,4 @@ dist
 README.md
 types
 pnpm-lock.yaml
+*.d.ts

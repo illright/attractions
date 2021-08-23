@@ -4,5 +4,7 @@
   "editor.tabSize": 2,
   "files.associations": {
     "*.svx": "svelte"
-  }
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

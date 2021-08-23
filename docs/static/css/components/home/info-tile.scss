@@ -1,14 +1,14 @@
 @use 'attractions-theme' as vars;
 
 .info-tile {
-  margin-bottom: 1em;
   cursor: pointer;
+  margin-bottom: 1em;
 
   :global .card {
+    column-gap: 1em;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
-    column-gap: 1em;
     transition: 150ms box-shadow;
 
     &:hover {
@@ -17,12 +17,12 @@
   }
 
   .icon {
-    padding: 0.8em;
-    border-radius: 50%;
-    background: vars.$main;
-    color: white;
-    grid-row: span 2;
     align-self: center;
+    background: vars.$main;
+    border-radius: 50%;
+    color: #fff;
+    grid-row: span 2;
+    padding: 0.8em;
 
     :global svg {
       display: block;
@@ -30,9 +30,9 @@
   }
 
   .subtitle {
+    color: vars.$main;
     font-size: 0.9em;
     font-weight: vars.$thin-font-weight;
-    color: vars.$main;
   }
 
   @media only screen and (min-width: 640px) {

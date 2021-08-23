@@ -5,13 +5,13 @@
   @include appearances.button;
 
   background: rgb(100, 100, 100);
-  border-radius: 0.625em;
-  font-size: 0.9em;
-  box-shadow: vars.$shadow-raised;
   border: 0;
+  border-radius: 0.625em;
+  box-shadow: vars.$shadow-raised;
   color: #fff;
-  padding: 0.5em 0.625em;
+  font-size: 0.9em;
   margin: 0.2em;
+  padding: 0.5em 0.625em;
 
   &:hover {
     background: rgb(70, 70, 70);
@@ -22,8 +22,8 @@
   }
 
   > :global svg {
-    width: 1.125em;
     height: 1.125em;
     stroke: #fff;
+    width: 1.125em;
   }
 }

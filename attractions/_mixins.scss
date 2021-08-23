@@ -3,20 +3,20 @@
 
 @mixin hide-accessible {
   clip: rect(0, 0, 0, 0);
-  width: 1px;
   height: 1px;
   margin: -1px;
   overflow: hidden;
   position: absolute;
+  width: 1px;
 }
 
 @mixin show-accessible {
   clip: auto;
-  width: auto;
   height: auto;
   margin: 0;
   overflow: visible;
   position: static;
+  width: auto;
 }
 
 @mixin show-on-focus {
@@ -29,10 +29,10 @@
 
 @mixin slim-scrollbar {
   &::-webkit-scrollbar {
-    width: 0.3125em;
-    height: 0.5em;
     background: none;
+    height: 0.5em;
     margin: 1em 0;
+    width: 0.3125em;
   }
 
   &::-webkit-scrollbar-thumb {

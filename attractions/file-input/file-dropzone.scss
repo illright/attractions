@@ -3,16 +3,16 @@
 @use '../_mixins';
 
 .file-dropzone {
+  border: 0.125em dashed currentColor;
+  border-radius: vars.$dropzone-radius;
   color: vars.$main;
   display: block;
-  border: 0.125em dashed currentColor;
   margin: 2em 0 0.5em;
   position: relative;
-  border-radius: vars.$dropzone-radius;
 
   &:focus-within {
-    border-style: solid;
     border-color: color.adjust(vars.$main, $alpha: -0.5);
+    border-style: solid;
   }
 
   &.disabled {
@@ -28,32 +28,32 @@
   }
 
   .empty-layer {
-    display: flex;
     align-items: center;
-    z-index: 1;
+    display: flex;
     padding: 2em 1em;
+    z-index: 1;
 
     .title {
-      font-weight: vars.$bold-font-weight;
       color: currentColor;
-      text-align: center;
-      margin-left: 0.5em;
       flex: 1;
+      font-weight: vars.$bold-font-weight;
+      margin-left: 0.5em;
+      text-align: center;
     }
   }
 
   .dropzone-layer {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
-    cursor: pointer;
     border-radius: vars.$dropzone-radius;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 
     &:hover {
       background: color.adjust(vars.$main, $alpha: -0.975);
@@ -69,10 +69,10 @@
 
     :global svg {
       margin-right: 1em;
-      stroke: currentColor;
-      transition: transform 150ms;
       opacity: 0;
       pointer-events: none;
+      stroke: currentColor;
+      transition: transform 150ms;
     }
   }
 
@@ -88,8 +88,8 @@
   &.has-content {
     display: grid;
     gap: 0.5em;
-    padding: 1em;
     grid-template-columns: repeat(auto-fill, 12em);
+    padding: 1em;
 
     .empty-layer {
       display: none;
