@@ -2,15 +2,15 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 table {
-  border-spacing: 0;
   border-collapse: separate;
+  border-spacing: 0;
   display: block;
-  overflow-x: auto;
   margin-bottom: 1em;
+  overflow-x: auto;
 
   th {
-    text-align: start;
     padding: 0.5em 1em;
+    text-align: start;
 
     &.center {
       text-align: center;
@@ -54,11 +54,10 @@ table {
   }
 
   td {
-    padding: 1em;
     border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
     border-width: 1px 0 0 1px;
     line-height: 1.3em;
-
+    padding: 1em;
     text-align: start;
 
     &.center {
