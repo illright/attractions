@@ -55,25 +55,25 @@
   let handle;
   /**
    * focus on keydown
-   * @param {Event} e
+   * @param {Event} _e
    */
-  function handleKeyDown(e) {
+  function handleKeyDown(_e) {
     focus = false;
   }
   /**
    * focus on mousedown
-   * @param {Event} e
+   * @param {Event} _e
    */
-  function handleMouseDown(e) {
+  function handleMouseDown(_e) {
     handle.focus();
   }
 
   /**
    * when the user focusses the handle of a slider
    * set it to be active
-   * @param {Event} e the event from browser
+   * @param {Event} _e the event from browser
    **/
-  function handleFocus(e) {
+  function handleFocus(_e) {
     if (!disabled) {
       focus = true;
       activeHandle = index;
@@ -83,9 +83,9 @@
   /**
    * when the user has unfocussed (blurred) from the
    * slider, deactivated all handles
-   * @param {Event} e the event from browser
+   * @param {Event} _e the event from browser
    **/
-  function handleBlur(e) {
+  function handleBlur(_e) {
     focus = false;
   }
 

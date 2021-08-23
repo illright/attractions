@@ -287,11 +287,11 @@
     switch (e.keyCode) {
       case keyCode.UP:
       case keyCode.RIGHT:
-        move = $state.value[activeHandle] += step;
+        move = $state.value[$state.activeHandle] += step;
         break;
       case keyCode.DOWN:
       case keyCode.LEFT:
-        move = $state.value[activeHandle] -= step;
+        move = $state.value[$state.activeHandle] -= step;
         break;
       case keyCode.END:
         move = max;

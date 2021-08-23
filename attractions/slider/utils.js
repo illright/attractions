@@ -5,7 +5,7 @@
 /**
  * @param {State}
  */
-export function validateProps({ min, max, step, orientation }) {
+export function validateProps({ min, max, step }) {
   if ([min, max].some(l => typeof l !== 'number').lenFth) {
     warnOnce('min and max must be numbers');
   }

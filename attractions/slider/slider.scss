@@ -1,26 +1,25 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .slider {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
-  user-select: none;
   box-sizing: border-box;
-  height: 10px;
-  position: relative;
-  padding: 4px 0;
   cursor: pointer;
+  height: 100%;
+  height: 10px;
+  padding: 4px 0;
+  position: relative;
   touch-action: none;
+  user-select: none;
+  width: 100%;
+  z-index: 1;
 
   &-horizontal {
-    width: 100%;
     height: 10px;
+    width: 100%;
   }
 
   &-vertical {
-    width: 10px;
     height: 100%;
+    width: 10px;
   }
 
   &-disabled {
@@ -29,21 +28,21 @@
 }
 
 .rail {
-  position: absolute;
   background: vars.$slider-rail-bg;
   border-radius: 2px;
+  position: absolute;
 
   &-horizontal {
-    width: 100%;
     height: vars.$slider-rail-size;
     top: 0;
+    width: 100%;
   }
 
   &-vertical {
     height: 100%;
-    width: vars.$slider-rail-size;
     left: 0;
     top: 0;
+    width: vars.$slider-rail-size;
   }
 
   &-disabled {
@@ -53,21 +52,21 @@
 }
 
 .range-selection {
-  position: absolute;
   background: vars.$main;
   border-radius: 2px;
   pointer-events: none;
+  position: absolute;
 
   &-horizontal {
     height: vars.$slider-rail-size;
-    right: auto;
     left: 0;
+    right: auto;
     top: 0;
   }
 
   &-vertical {
-    top: auto;
     bottom: 0;
+    top: auto;
     width: vars.$slider-rail-size;
   }
 
@@ -77,17 +76,17 @@
 }
 
 .tick {
-  position: absolute;
   background: vars.$slider-tick-bg;
+  position: absolute;
 
   &-horizontal {
-    position: absolute;
-    height: vars.$slider-tick-length;
-    right: auto;
     bottom: auto;
+    height: vars.$slider-tick-length;
+    position: absolute;
+    right: auto;
     top: 10px;
-    width: 1px;
     white-space: nowrap;
+    width: 1px;
 
     &-sub {
       height: vars.$slider-sub-tick-length;
@@ -95,11 +94,11 @@
   }
 
   &-vertical {
+    bottom: 100%;
     height: 1px;
-    width: vars.$slider-tick-length;
     left: 10px;
     right: auto;
-    bottom: 100%;
+    width: vars.$slider-tick-length;
 
     &-sub {
       width: vars.$slider-sub-tick-length;
@@ -107,21 +106,21 @@
   }
 
   &-value {
-    position: absolute;
-    color: vars.$slider-tick-value-color;
     background: none;
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
+    color: vars.$slider-tick-value-color;
     font-size: vars.$slider-tick-value-font-size;
+    font-variant-numeric: tabular-nums;
+    position: absolute;
+    white-space: nowrap;
 
     &-horizontal {
-      transform: translate(-50%, 50%);
       top: 2px;
+      transform: translate(-50%, 50%);
     }
 
     &-vertical {
-      top: 0;
       left: 12px;
+      top: 0;
       transform: translate(0%, -50%);
     }
 
@@ -136,67 +135,68 @@
 }
 
 .handle-tooltip {
-  z-index: 1;
-  line-height: 16px;
-  font-weight: 600;
-  position: absolute;
+  align-items: center;
+  background: vars.$main;
   border: 0;
   border-radius: 0;
-  background: vars.$main;
-  color: #fff;
-  white-space: nowrap;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0 1px 2px 0 rgb(8 11 13 / 25%);
+  color: #fff;
   display: flex;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 16px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
 
   &::after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    width: vars.$slider-handle-tooltip-size;
-    height: vars.$slider-handle-tooltip-size;
-    z-index: -1;
-    transform: rotate(45deg) translateY(50%);
     background: vars.$main;
     box-shadow: 0 1px 2px 0 rgb(8 11 13 / 25%);
+    content: '';
+    display: inline-block;
+    height: vars.$slider-handle-tooltip-size;
+    position: absolute;
+    transform: rotate(45deg) translateY(50%);
+    width: vars.$slider-handle-tooltip-size;
+    z-index: -1;
   }
 
   &-horizontal {
-    transform: translate(-50%, 0);
     left: 50%;
     top: -40px;
+    transform: translate(-50%, 0);
 
     // pointer with box-shadow matching tooltip container
+
     &::after {
       bottom: -2px;
-      left: calc(50% - 2px);
       clip-path: inset(0 -15px -15px 0);
+      left: calc(50% - 2px);
     }
   }
 
   &-vertical {
-    transform: translate(0, -50%);
-    top: 50%;
     right: 24px;
+    top: 50%;
+    transform: translate(0, -50%);
 
     &::after {
-      right: -10px;
       bottom: 45%;
       clip-path: inset(-15px -15px 0 0);
+      right: -10px;
     }
   }
 
   &-content {
-    width: 100%;
-    height: 100%;
     background: vars.$main;
-    padding: 5px;
-    z-index: 2;
-    line-height: 16px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
     font-size: vars.$slider-handle-tooltip-font-size;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    height: 100%;
+    line-height: 16px;
+    padding: 5px;
+    width: 100%;
+    z-index: 2;
   }
 
   &-disabled {

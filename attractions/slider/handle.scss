@@ -2,20 +2,20 @@
 @use 'sass:math';
 
 .handle {
-  position: absolute;
+  backface-visibility: hidden;
+  background: #fff;
+  border: vars.$slider-handle-border-width solid vars.$main;
+  border-radius: 50%;
   display: block;
   height: vars.$slider-handle-size;
+  position: absolute;
   width: vars.$slider-handle-size;
-  border-radius: 50%;
   z-index: 2;
-  border: vars.$slider-handle-border-width solid vars.$main;
-  background: #fff;
-  backface-visibility: hidden;
 
   &-rectangular {
+    border-radius: 1px;
     height: 12px;
     width: 4px;
-    border-radius: 1px;
   }
 
   &-horizontal {
@@ -29,13 +29,13 @@
   }
 
   &:hover {
-    cursor: pointer;
     box-shadow: 0 0 0 8px rgb(131, 141, 231, 16%);
+    cursor: pointer;
   }
 
   &:focus {
-    outline: none;
     box-shadow: 0 0 0 8px rgb(131, 141, 231, 16%);
+    outline: none;
   }
 
   &-active {
@@ -45,9 +45,9 @@
   &-disabled,
   &-disabled:hover,
   &-disabled:active {
-    cursor: not-allowed;
+    background: #fff;
     border-color: vars.$disabled;
     box-shadow: none;
-    background: white;
+    cursor: not-allowed;
   }
 }
