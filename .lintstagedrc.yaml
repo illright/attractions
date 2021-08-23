@@ -1,8 +1,6 @@
 '**/*.{js,svelte}':
-  - pnpm lint-js:fix --silent -- --max-warnings 0
+  - eslint --ext ".svelte,.js" --cache --fix --max-warnings 0
 '**/*.{css,scss}':
-  - pnpm lint-css:fix --silent -- --max-warnings 0
-'**/*.svelte':
-  - pnpm lint-svelte
+  - stylelint . --cache --fix --max-warnings 0
 '**/*':
-  - pnpm lint-format:fix --silent -- --ignore-unknown
+  - prettier --plugin-search-dir=. --write --loglevel warn --ignore-unknown
