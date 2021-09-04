@@ -57,9 +57,9 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`min`** | `0` | `number` | The min value of the slider. |
-| **`max`** | `100` | `number` | The max value of the slider. |
-| **`value`** | `50` | `number | [number, number]` | Provide two numbers to create a range slider. |
+| **`min`** | | `number` | The min value of the slider. |
+| **`max`** | | `number` | The max value of the slider. |
+| **`value`** | | `number | [number, number]` | Provide two numbers to create a range slider. |
 | **`step`** | `1` | `number` | The step the slider will move between the min and the max. |
 | **`tooltips`** | `"none"` | `"none" - "active" - "always"` | Active tooltips will show above a handle when it is active, always will cause all tooltips to be visible. |
 | **`ticks`** | `{mode: "none"}` | ***`See below`*** | Ticks with values and sub-ticks without can be added with fine-grained control. |
