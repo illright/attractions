@@ -64,11 +64,11 @@ export function getPrecision(step) {
   return precision;
 }
 /**
- *
- * @param {any} v
- * @returns {any}
+ * @template T
+ * @param {T} x - A generic parameter that flows through to the return type
+ * @return {T}
  */
-export function noop(v) {
+export function id(v) {
   return v;
 }
 
@@ -100,7 +100,7 @@ export function getSteps(step, { min, max }) {
  */
 export function getTickValues(ticks, min, max) {
   const { mode, step, filter, values } = ticks;
-  const f = filter ? list => list.filter(filter) : noop;
+  const f = filter ? list => list.filter(filter) : id;
   return mode === 'step'
     ? f(getSteps(step, { min, max }))
     : mode === 'values' && values
