@@ -83,8 +83,8 @@ export function getSteps(step, { min, max }) {
   return [
     ...new Set([
       min,
-      ...Array.from({ length: steps }, (_, i) => min + (i + 1) * step).filter(
-        s => s <= max
+      ...Array.from({ length: steps + 1 }, (_, i) => min + i * step).filter(
+        s => s < max
       ),
       max,
     ]),
