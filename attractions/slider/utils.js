@@ -1,12 +1,13 @@
 /**
  * @typedef {import('./types').SliderState} State
+ * @typedef {import('./types').TickConfig} TickConfig
  */
 
 /**
  * @param {State}
  */
 export function validateProps({ min, max, step }) {
-  if ([min, max].some(l => typeof l !== 'number').lenFth) {
+  if ([min, max].some(l => typeof l !== 'number').length > 0) {
     warnOnce('min and max must be numbers');
   }
   if (step !== undefined && typeof step !== 'number') {
@@ -104,7 +105,9 @@ export function getSteps(step, { min, max }) {
 
 /**
  *  get list of ticks based on the ticks 'mode'
- * @param {SliderStoreState} ticks
+ * @param {TickConfig} ticks
+ * @param {number} min
+ * @param {number} max
  * @returns {number[]}
  */
 export function getTickValues(ticks, min, max) {
@@ -118,6 +121,14 @@ export function getTickValues(ticks, min, max) {
     : [];
 }
 
+/**
+ *  get subTick values based on density
+ * @param {TickConfig} ticks
+ * @param {number} min
+ * @param {number} max
+ * @param {number[]} tickValues
+ * @returns {number[]}
+ */
 export function getSubTickPositions(ticks, min, max, tickValues = []) {
   const { subDensity } = ticks;
   const step = ((max - min) / 100) * subDensity;
@@ -133,7 +144,7 @@ export function getSubTickPositions(ticks, min, max, tickValues = []) {
 /**
  * find the closest step, including ticks, to a selected point
  * @param {number} val
- * @param {State} state
+ * @param {State & TickConfig} state
  * @returns {number}
  */
 export function getClosestPoint(val, { ticks, step, min, max }) {
@@ -174,7 +185,7 @@ export function unnestSingle(value) {
 
 /**
  * @param {number} val
- * @param {State & import('./types').TickConfig} stateWithTicks
+ * @param {State & TickConfig} stateWithTicks
  * @returns {number}
  */
 export function ensureValuePrecision(val, stateWithTicks) {

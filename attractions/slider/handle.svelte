@@ -1,8 +1,11 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
   import { calcPercentOfRange } from './utils';
   import { tweened } from 'svelte/motion';
   import { sineOut } from 'svelte/easing';
   import { handleStyle } from './actions';
+
+  const dispatch = createEventDispatcher();
 
   /**
    * @type {number}
@@ -21,13 +24,13 @@
    */
   export let index = 0;
   /**
-   * @type {number}
+   * @type {boolean}
    */
-  export let activeHandle;
+  export let active;
   /**
    * @type {boolean}
    */
-  export let disabled;
+  export let disabled = false;
   /**
    * @type {number}
    */
@@ -37,9 +40,9 @@
    */
   export let rectangular = false;
   /**
-   * @type {'horizontal' | 'vertical'}
+   * @type {boolean}
    */
-  export let orientation = 'horizontal';
+  export let vertical = true;
 
   /**
    * @type {boolean}
@@ -76,7 +79,7 @@
   function handleFocus(_e) {
     if (!disabled) {
       focus = true;
-      activeHandle = index;
+      dispatch('focus');
     }
   }
 
@@ -104,10 +107,6 @@
   const tween = tweened(initialPosition, { duration: 120, easing: sineOut });
 
   /**
-   * @type {boolean}
-   */
-  $: active = activeHandle === index;
-  /**
    * @type {number}
    */
   $: offset = calcPercentOfRange(value, { min, max });
@@ -116,6 +115,10 @@
    * @type {boolean}
    */
   $: canShowActiveTooltip = (active && focus) || hovered;
+  /**
+   * @type {'vertical' | 'horizontal'}
+   */
+  $: orientation = vertical ? 'vertical' : 'horizontal';
 </script>
 
 <div
@@ -125,7 +128,7 @@
   use:handleStyle={{
     value: $tween,
     active,
-    vertical: orientation === 'vertical',
+    vertical,
   }}
   bind:this={handle}
   on:keydown={handleKeyDown}

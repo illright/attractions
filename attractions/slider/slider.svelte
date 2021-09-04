@@ -33,11 +33,11 @@
   /**
    * @type {number}
    */
-  export let min = 0;
+  export let min;
   /**
    * @type {number}
    */
-  export let max = 100;
+  export let max;
   /**
    * @type {number}
    */
@@ -53,7 +53,7 @@
   /**
    * @type {number | [number, number]}
    */
-  export let value = 50;
+  export let value;
   /**
    * in 'step' mode, a value step which is used to add a tick at that interval from min to max
    * in 'values' mode, a list of all the values where ticks should be placed is provided from min to max
@@ -336,10 +336,11 @@
       value={val}
       min={$state.min}
       max={$state.max}
-      {orientation}
+      {vertical}
       {disabled}
-      activeHandle={$state.activeHandle}
+      active={$state.activeHandle === index}
       rectangular={rectangularHandle}
+      on:focus={() => ($state.activeHandle = index)}
     >
       <div slot="tooltips" let:value let:canShowActiveTooltip>
         {#if tooltips === 'always' || (tooltips === 'active' && canShowActiveTooltip)}
