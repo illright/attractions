@@ -23,7 +23,7 @@ function normalizeEvent(e) {
  */
 export function getPosition(vertical, e) {
   const normalizedE = normalizeEvent(e);
-  return vertical ? normalizedE.clientY : normalizedE.pageX;
+  return vertical ? normalizedE.clientY : normalizedE.clientX;
 }
 
 /**
