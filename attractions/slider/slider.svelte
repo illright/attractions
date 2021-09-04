@@ -9,7 +9,6 @@
     ensureValueInRange,
     ensureValuePrecision,
     keyCode,
-    validateProps,
     getClosestHandle,
     calcPercentOfRange,
     getTickValues,
@@ -110,7 +109,6 @@
   $: $state.max = max;
 
   onMount(() => {
-    validateProps($$props);
     const unsubscribe = state.subscribe(s => {
       const changedState = { ...s, value: unnestSingle(s.value) };
       dispatch('change', changedState);

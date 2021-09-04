@@ -4,18 +4,6 @@
  */
 
 /**
- * @param {State}
- */
-export function validateProps({ min, max, step }) {
-  if ([min, max].some(l => typeof l !== 'number').length > 0) {
-    warnOnce('min and max must be numbers');
-  }
-  if (step !== undefined && typeof step !== 'number') {
-    warnOnce('step must be of type number: ', typeof step);
-  }
-}
-
-/**
  * to use mouse and touch events in same handler
  * @param {MouseEvent | TouchEvent} e
  * @returns {Event}
