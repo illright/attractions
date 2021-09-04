@@ -8,7 +8,6 @@
     stopEvent,
     ensureValueInRange,
     ensureValuePrecision,
-    keyCode,
     getClosestHandle,
     calcPercentOfRange,
     getTickValues,
@@ -282,25 +281,27 @@
       return;
     }
     let move = undefined;
-    switch (e.keyCode) {
-      case keyCode.UP:
-      case keyCode.RIGHT:
+    switch (e.key) {
+      case 'Up':
+      case 'ArrowUp':
+      case 'Right':
         move = $state.value[$state.activeHandle] += step;
         break;
-      case keyCode.DOWN:
-      case keyCode.LEFT:
+      case 'Down':
+      case 'ArrowDown':
+      case 'Left':
         move = $state.value[$state.activeHandle] -= step;
         break;
-      case keyCode.END:
+      case 'End':
         move = max;
         break;
-      case keyCode.HOME:
+      case 'Home':
         move = min;
         break;
-      case keyCode.PAGE_UP:
+      case 'PageUp':
         move = $state.value[$state.activeHandle] += step * 2;
         break;
-      case keyCode.PAGE_DOWN:
+      case 'PageDown':
         move = $state.value[$state.activeHandle] -= step * 2;
         break;
     }
