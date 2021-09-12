@@ -1,6 +1,6 @@
 {
   "name": "attractions",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "A UI kit for Svelte",
   "homepage": "https://illright.github.io/attractions/",
   "bugs": "https://github.com/illright/attractions/issues",
@@ -30,23 +30,23 @@
     "*"
   ],
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
     "@rollup/plugin-node-resolve": "^13.0.4",
-    "@typescript-eslint/eslint-plugin": "^4.29.0",
-    "@typescript-eslint/parser": "^4.29.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
     "pkg-versions": "^2.1.0",
-    "prettier-plugin-svelte": "^2.3.0",
-    "rollup": "^2.56.0",
+    "prettier-plugin-svelte": "^2.4.0",
+    "rollup": "^2.56.3",
     "rollup-plugin-svelte": "^7.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.37.5",
+    "sass": "^1.39.2",
     "stylelint": "^13.11.0",
-    "sveld": "^0.8.3",
-    "svelte": "^3.42.1",
-    "svelte-preprocess": "^4.6.9",
-    "typescript": "^4.3.2"
+    "sveld": "^0.10.2",
+    "svelte": "^3.42.5",
+    "svelte-preprocess": "^4.9.4",
+    "typescript": "^4.4.3"
   },
   "peerDependencies": {
     "postcss": ">=7 <9",
