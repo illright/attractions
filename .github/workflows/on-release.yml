@@ -41,7 +41,7 @@ jobs:
           SAPPER_APP_BASEPATH: attractions
         run: |
           pnpm install
-          pnpm export -- --basepath attractions
+          pnpm run export -- --basepath attractions
 
       - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
