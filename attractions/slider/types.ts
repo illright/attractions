@@ -18,4 +18,4 @@ export type SliderState = {
   max: number;
   sliderActive: boolean;
 };
-export type Tooltips = 'active' | 'always' | 'never' | undefined;
+export type Tooltips = 'active' | 'always' | 'never';

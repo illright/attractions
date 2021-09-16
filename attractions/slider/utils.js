@@ -4,19 +4,20 @@
  */
 
 /**
- * to use mouse and touch events in same handler
+ * Normalizes the event to be able to use the same handler for both mouse and touch events.
  * @param {MouseEvent | TouchEvent} e
- * @returns {Event}
+ * @returns {Pick<MouseEvent, 'clientY' | 'clientX'>}
  */
 function normalizeEvent(e) {
   if (e.type.includes('touch')) {
-    return e.touches[0];
+    return /** @type {TouchEvent}*/ (e).touches[0];
   } else {
-    return e;
+    return /** @type {MouseEvent}*/ (e);
   }
 }
+
 /**
- * get position of mouse or touch event
+ * Get position of mouse or touch event.
  * @param {boolean} vertical
  * @param {MouseEvent | TouchEvent} e
  * @returns {number}
@@ -27,17 +28,18 @@ export function getPosition(vertical, e) {
 }
 
 /**
- *  stop event
+ * Stop event propagation and cancel default operation.
  * @param {Event} e
  */
 export function stopEvent(e) {
   e.stopPropagation();
   e.preventDefault();
 }
+
 /**
- * if value is outside of range return min or max limit
+ * Clamps the value to the provided min/max limits
  * @param {number} val
- * @param {State} state
+ * @param {{ min: number, max: number }} state
  * @returns {number}
  */
 export function ensureValueInRange(val, { min, max }) {
@@ -45,7 +47,7 @@ export function ensureValueInRange(val, { min, max }) {
 }
 
 /**
- * adjust resolution in-line with step
+ * Adjust resolution in-line with step.
  * @param {number} step
  * @returns {number}
  */
@@ -57,20 +59,21 @@ export function getPrecision(step) {
   }
   return precision;
 }
+
 /**
- * @template T
- * @param {T} x - A generic parameter that flows through to the return type
- * @return {T}
+ * @template T A generic parameter that flows through to the return type.
+ * @param {T} v A value.
+ * @return {T} The same value.
  */
 export function id(v) {
   return v;
 }
 
 /**
- * calculate all the possible values on the scale
- * @param {number} step
- * @param {State} state
- * @returns {number[]}
+ * Calculate all the possible values in the range.
+ * @param {number} step The increment between each value and the next.
+ * @param {{ min: number, max: number }} state The minimum and maximum values.
+ * @returns {number[]} An array of all the possible values.
  */
 export function getSteps(step, { min, max }) {
   const steps = (max - min) / step;
@@ -78,8 +81,8 @@ export function getSteps(step, { min, max }) {
 }
 
 /**
- *  get list of ticks based on the ticks 'mode'
- * @param {TickConfig} ticks
+ * Get the list of ticks depending on the ticks' `mode`.
+ * @param {TickConfig} ticks The ticks configuration.
  * @param {number} min
  * @param {number} max
  * @returns {number[]}
@@ -92,11 +95,11 @@ export function getTickValues(ticks, min, max) {
 }
 
 /**
- *  get subTick values based on density
- * @param {TickConfig} ticks
+ * Get the subTick values depending on the density.
+ * @param {TickConfig} ticks The ticks configuration.
  * @param {number} min
  * @param {number} max
- * @param {number[]} tickValues
+ * @param {number[]} [tickValues=[]] The values of the major ticks (to avoid collision).
  * @returns {number[]}
  */
 export function getSubTickPositions(ticks, min, max, tickValues = []) {
@@ -111,9 +114,9 @@ export function getSubTickPositions(ticks, min, max, tickValues = []) {
 }
 
 /**
- * find the closest step, including ticks, to a selected point
- * @param {number} val
- * @param {State & TickConfig} state
+ * Find the closest step, including ticks, to the given value.
+ * @param {number} val The value to find the closest step for.
+ * @param {{ ticks: TickConfig, step: number, min: number, max: number }} state
  * @returns {number}
  */
 export function getClosestPoint(val, { ticks, step, min, max }) {
@@ -132,10 +135,10 @@ export function getClosestPoint(val, { ticks, step, min, max }) {
 }
 
 /**
- * convert from slider value to percentage of min between max
+ * Convert from slider value to percentage of the range [min .. max]
  * used for ticks too which are not an array value
  * @param {number} value
- * @param {State} state
+ * @param {{ min: number, max: number }} state
  * @returns {number}
  */
 export function calcPercentOfRange(value, { min, max }) {
@@ -144,9 +147,9 @@ export function calcPercentOfRange(value, { min, max }) {
 }
 
 /**
- * if a single handle give user value unnested
- * @param {number | number[]} value
- * @returns {number | number[]}
+ * If using a single handle for the slider, give the user the value unnested.
+ * @param {[number] | [number, number]} value
+ * @returns {number | [number, number]}
  */
 export function unnestSingle(value) {
   return value.length === 1 ? value[0] : value;
@@ -154,7 +157,7 @@ export function unnestSingle(value) {
 
 /**
  * @param {number} val
- * @param {State & TickConfig} stateWithTicks
+ * @param {{ ticks: TickConfig, step: number, min: number, max: number }} stateWithTicks
  * @returns {number}
  */
 export function ensureValuePrecision(val, stateWithTicks) {

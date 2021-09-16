@@ -49,7 +49,7 @@ An slider for selecting a value or a range.
 | ---- | ------- | ---- | ----------- |
 | **`vertical`** | `false` | `boolean` | To position the slider vertically with values from top to bottom. |
 | **`rectangularHandle`** | `false` | `boolean` | To have rectangular handles instead of the default round ones. |
-| **`disabled`** | `false` | `boolean` | Will disabled the slider in tones of grey, with cursor not-allowed on slider controls. | 
+| **`disabled`** | `false` | `boolean` | Will disabled the slider in tones of grey, with cursor not-allowed on slider controls. |
 
 ### Class Properties
 
@@ -71,7 +71,7 @@ Falsy values passed to classes will be disregarded.
 1. `none`, this is optional as leaving the config out will also achieve the same result.
 2. `step`, you must provide a key on the object of "step" with a number.
 3. `values`, with values you must provide an array of values which define each tick.
-4. Additionally, with `step` and `values` you made provide a `subDensity` which tells the density of the ticks on a 0-100 percent scale, e.g. 2 is every 2%.   
+4. Additionally, with `step` and `values` you made provide a `subDensity` which tells the density of the ticks on a 0-100 percent scale, e.g. 2 is every 2%.
 
 
 ## Events {#events}
@@ -80,7 +80,7 @@ Falsy values passed to classes will be disregarded.
 | ---- | ------------ | ----------- |
 | **`start`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user begins interacting with the slider. |
 | **`change`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when ever a slider handle value changes. |
-| **`stop`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user stops interacting with the slider. |   
+| **`stop`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user stops interacting with the slider. |
 
 
 ## Slots {#slots}
@@ -96,5 +96,3 @@ Recieves the value for the handle as a prop in order to format or append a unit.
 ### `range-content` slot
 
 The content of the popover.
-
-<style src="../../../../static/css/routes/docs/components/slider.scss"></style>

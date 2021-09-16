@@ -1,6 +1,6 @@
 {
   // Change this to match your project
-  "include": ["./**/*.js"],
+  "include": ["./**/*.js", "./**/*.ts"],
   "exclude": [
     "node_modules",
     "./rollup.config.js",
@@ -14,6 +14,7 @@
     // normally they are ignored as source files
     "allowJs": true,
     "checkJs": true,
+    "downlevelIteration": true,
     // Generate d.ts files
     "declaration": true,
     // This compiler run should

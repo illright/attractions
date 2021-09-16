@@ -53,10 +53,11 @@
    */
   export let value;
   /**
-   * in 'step' mode, a value step which is used to add a tick at that interval from min to max
-   * in 'values' mode, a list of all the values where ticks should be placed is provided from min to max
-   * subDensity creates sub-ticks with a number that represents a percent interval on a 0-100 scale, e.g. 3 is every 3 percent
-   * in order for sub-ticks to be in sync with with ticks the tick should be a multiple of the sub-ticks
+   * Defines the ticks that appear on the slider track.
+   * In `'step'` mode, the value step is used to add a tick at that interval.
+   * In `'values'` mode, a list of all the values where ticks should be placed is provided (from min to max).
+   * `subDensity` creates sub-ticks with a number that represents a percent interval on a 0-100 scale, e.g. 3 is every 3 percent.
+   * In order for sub-ticks to be in sync with with ticks, the tick should be a multiple of the sub-ticks.
    * @type {import('./types').TickConfig}
    */
   export let ticks = {
@@ -71,6 +72,7 @@
    */
   export let tooltips = 'never';
   /**
+   * Gives the handle a rectangular shape.
    * @type {boolean}
    */
   export let rectangularHandle = false;
@@ -126,19 +128,21 @@
   /**
    * @type {number[]}
    */
-  $: subTicks = ticks.subDensity
-    ? getSubTickPositions(ticks, min, max, tickValues)
-    : [];
+  $: subTicks =
+    ticks.mode !== 'none' && ticks.subDensity
+      ? getSubTickPositions(ticks, min, max, tickValues)
+      : [];
 
   /**
-   * @param {number | number[]}
+   * @param {number | number[]} v
    * @return {number[]}
    */
   function toValue(v) {
     return typeof v === 'number' ? [v] : v.slice(0, 2);
   }
+
   /**
-   * @param {Event} e
+   * @param {MouseEvent | TouchEvent} e
    */
   function onStart(e) {
     if (!$state.sliderActive) {
@@ -151,18 +155,19 @@
   }
 
   /**
-   * normalize value
+   * Normalize value.
    * @param {number} v
    */
   function trimAlignValue(v) {
     if (v === null) {
-      return null;
+      return 0;
     }
     const val = ensureValueInRange(v, $state);
     return ensureValuePrecision(val, { ...$state, ticks, step });
   }
+
   /**
-   * get the position of min in dom
+   * Get the position of min in the document
    * @return {number}
    */
   function getSliderStart() {
@@ -174,7 +179,7 @@
   }
 
   /**
-   * get length of slider from min to max in dom
+   * Get the total length of the slider from min to max in the document
    * @return {number}
    */
   function getSliderLength() {
@@ -186,7 +191,7 @@
   }
 
   /**
-   * @param {number}
+   * @param {number} offset
    * @return {number}
    */
   function calcValue(offset) {
@@ -199,7 +204,7 @@
   }
 
   /**
-   * @param {number}
+   * @param {number} position
    * @return {number}
    */
   function calcValByPos(position) {
@@ -209,7 +214,7 @@
 
   /**
    * change value based on mouse position, causing handle to move
-   * @param {Event} e
+   * @param {MouseEvent | TouchEvent} e
    */
   function onMove(e) {
     if (disabled || !$state.sliderActive) {
@@ -260,7 +265,7 @@
   }
 
   /**
-   * @param {Event}
+   * @param {MouseEvent | TouchEvent} e
    */
   function onEnd(e) {
     const el = e.target;
@@ -274,7 +279,7 @@
   }
 
   /**
-   * @param {Event}
+   * @param {KeyboardEvent} e
    */
   function onKeyDown(e) {
     if (disabled) {

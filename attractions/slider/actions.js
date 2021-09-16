@@ -1,10 +1,13 @@
 import { calcPercentOfRange } from './utils';
 /**
- *
- * @param {HTMLElement} node
- * @param {{active: boolean, vertical: boolean, value: number, min: number, max: number}} props
+ * An action that sets the position styles of the slider's handle depending on the slider value.
+ * @param {HTMLElement} node The handle element
+ * @param {{active: boolean, vertical: boolean, value: number}} props
  */
 export function handleStyle(node, props) {
+  /**
+   * @param {{active: boolean, vertical: boolean, value: number}} props
+   */
   function applyStyles({ vertical, value, active }) {
     if (vertical) {
       node.style.setProperty('bottom', `${value}%`);
@@ -21,17 +24,18 @@ export function handleStyle(node, props) {
 }
 
 /**
- * converts current value range to styles on the range element
- * @param {HTMLElement} node
- * @param {{min: number, max: number, value: [number] | [number, number], vertical: boolean}} props
- * @returns {void}
+ * Converts the current value range to styles on the range element
+ * @param {HTMLElement} node The range element
+ * @param {{value: [number] | [number, number], vertical: boolean, min: number, max: number}} props
  */
 export function rangeStyle(node, props) {
   /**
    * @type {Map<string, string>}
    */
   const styles = new Map();
-
+  /**
+   * @param {{value: [number] | [number, number], vertical: boolean}} props
+   */
   function applyStyles({ value, vertical }) {
     const isRange = value.length > 1;
     for (const property of styles.keys()) {

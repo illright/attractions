@@ -1,9 +1,9 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { calcPercentOfRange } from './utils';
   import { tweened } from 'svelte/motion';
   import { sineOut } from 'svelte/easing';
   import { handleStyle } from './actions';
+  import { calcPercentOfRange } from './utils';
 
   const dispatch = createEventDispatcher();
 
@@ -72,10 +72,9 @@
   }
 
   /**
-   * when the user focusses the handle of a slider
-   * set it to be active
+   * When the user focuses the handle of a slider, set it to active
    * @param {Event} _e the event from browser
-   **/
+   */
   function handleFocus(_e) {
     if (!disabled) {
       focus = true;
@@ -84,10 +83,9 @@
   }
 
   /**
-   * when the user has unfocussed (blurred) from the
-   * slider, deactivated all handles
+   * When the user has unfocused (blurred) from the slider, deactivate all handles
    * @param {Event} _e the event from browser
-   **/
+   */
   function handleBlur(_e) {
     focus = false;
   }
