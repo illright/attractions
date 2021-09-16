@@ -319,7 +319,7 @@
 <div
   bind:this={slider}
   class={classes(`slider slider-${orientation}`, _class)}
-  on:ontouchstart={onStart}
+  on:touchstart={onStart}
   on:mousedown={onStart}
   on:keydown={onKeyDown}
   class:slider-active={$state.sliderActive}

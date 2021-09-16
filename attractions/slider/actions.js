@@ -16,9 +16,7 @@ export function handleStyle(node, props) {
 
   applyStyles(props);
   return {
-    update(props) {
-      applyStyles(props);
-    },
+    update: applyStyles,
   };
 }
 
@@ -36,30 +34,23 @@ export function rangeStyle(node, props) {
 
   function applyStyles({ value, vertical }) {
     const isRange = value.length > 1;
-    if (styles.size > 0) {
-      for (const property of styles.keys()) {
-        node.style.setProperty(property, '');
-      }
-      styles.clear();
+    for (const property of styles.keys()) {
+      node.style.removeProperty(property);
     }
-    const offsets = value.map((_, i) => calcPercentOfRange(value[i], props));
+    styles.clear();
+    const offsets = value.map(v => calcPercentOfRange(v, props));
     // if offsets have crossed over
     offsets.sort();
+
     // this offset is the percent length of the track
     const offset = isRange ? offsets[1] - offsets[0] : offsets[0];
-    if (vertical) {
-      styles.set('height', `${offset}%`);
-    } else {
-      styles.set('width', `${offset}%`);
-    }
-    if (isRange) {
-      if (vertical) {
-        styles.set('bottom', `${offsets[0]}%`);
-      } else {
-        styles.set('left', `${offsets[0]}%`);
-      }
-    }
+    const sizeKey = vertical ? 'height' : 'width';
+    styles.set(sizeKey, `${offset}%`);
 
+    if (isRange) {
+      const offsetKey = vertical ? 'bottom' : 'left';
+      styles.set(offsetKey, `${offsets[0]}%`);
+    }
     for (const [property, value] of styles.entries()) {
       node.style.setProperty(property, value);
     }
@@ -68,8 +59,6 @@ export function rangeStyle(node, props) {
   applyStyles(props);
 
   return {
-    update(props) {
-      applyStyles(props);
-    },
+    update: applyStyles,
   };
 }

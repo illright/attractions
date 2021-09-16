@@ -41,13 +41,7 @@ export function stopEvent(e) {
  * @returns {number}
  */
 export function ensureValueInRange(val, { min, max }) {
-  if (val <= min) {
-    return min;
-  }
-  if (val >= max) {
-    return max;
-  }
-  return val;
+  return Math.min(Math.max(val, min), max);
 }
 
 /**
@@ -80,15 +74,7 @@ export function id(v) {
  */
 export function getSteps(step, { min, max }) {
   const steps = (max - min) / step;
-  return [
-    ...new Set([
-      min,
-      ...Array.from({ length: steps + 1 }, (_, i) => min + i * step).filter(
-        s => s < max
-      ),
-      max,
-    ]),
-  ];
+  return Array.from({ length: steps + 1 }, (_, i) => min + i * step);
 }
 
 /**
@@ -99,14 +85,10 @@ export function getSteps(step, { min, max }) {
  * @returns {number[]}
  */
 export function getTickValues(ticks, min, max) {
-  const { mode, step, filter, values } = ticks;
-  const f = filter ? list => list.filter(filter) : id;
-  return mode === 'step'
-    ? f(getSteps(step, { min, max }))
-    : mode === 'values' && values
-    ? // important to create new array here!
-      f([...values])
-    : [];
+  if (ticks.mode === 'steps') return getSteps(ticks.step, { min, max });
+  if (ticks.mode === 'values' && Array.isArray(ticks.values))
+    return [...ticks.values];
+  return [];
 }
 
 /**
@@ -118,14 +100,13 @@ export function getTickValues(ticks, min, max) {
  * @returns {number[]}
  */
 export function getSubTickPositions(ticks, min, max, tickValues = []) {
+  if (ticks.mode === 'none') return [];
   const { subDensity } = ticks;
+  if (!subDensity) return [];
   const step = ((max - min) / 100) * subDensity;
-  const subTicks = [];
-  for (let i = min; i < max; i += step) {
-    if (!tickValues.includes(Math.floor(i))) {
-      subTicks.push(i);
-    }
-  }
+  const subTicks = getSteps(step, { min, max }).filter(
+    tick => !tickValues.includes(tick)
+  );
   return subTicks;
 }
 
@@ -136,7 +117,7 @@ export function getSubTickPositions(ticks, min, max, tickValues = []) {
  * @returns {number}
  */
 export function getClosestPoint(val, { ticks, step, min, max }) {
-  const points = getTickValues({ ticks, min, max });
+  const points = getTickValues(ticks, min, max);
   if (step !== null) {
     const baseNum = 10 ** getPrecision(step);
     const maxSteps = Math.floor(
@@ -186,26 +167,7 @@ export function ensureValuePrecision(val, stateWithTicks) {
 }
 
 /**
- * @type {Record<string, string>}
- */
-export const warnOnceWarnings = {};
-/**
- * warn once in development
- * @param {string} msg
- */
-export function warnOnce(msg) {
-  if (
-    process.env.NODE_ENV === 'development' &&
-    Boolean(msg) &&
-    !warnOnceWarnings[msg]
-  ) {
-    warnOnceWarnings[msg] = true;
-    // eslint-disable-next-line no-console
-    console.warn(`slider: ${msg}`);
-  }
-}
-
-/**
+ * Find the handle closest to the given value.
  * @param {number} value
  * @param {[number] | [number, number]} handleValues
  * @returns {number}
