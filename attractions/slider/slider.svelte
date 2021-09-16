@@ -336,7 +336,6 @@
   </div>
   {#each $state.value as val, index}
     <Handle
-      {index}
       value={val}
       min={$state.min}
       max={$state.max}

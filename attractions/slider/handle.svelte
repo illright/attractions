@@ -20,10 +20,6 @@
    */
   export let max;
   /**
-   * @type {number}
-   */
-  export let index = 0;
-  /**
    * @type {boolean}
    */
   export let active;
@@ -34,7 +30,7 @@
   /**
    * @type {number}
    */
-  export let tabIndex = index;
+  export let tabIndex = 0;
   /**
    * @type {boolean}
    */
@@ -42,7 +38,7 @@
   /**
    * @type {boolean}
    */
-  export let vertical = true;
+  export let vertical = false;
 
   /**
    * @type {boolean}
@@ -83,7 +79,7 @@
   }
 
   /**
-   * When the user has unfocused (blurred) from the slider, deactivate all handles
+   * When the user has unfocused (blurred) from the slider, deactivate all handles.
    * @param {Event} _e the event from browser
    */
   function handleBlur(_e) {
@@ -135,12 +131,11 @@
   on:mouseleave={handleMouseLeave}
   on:focus={handleFocus}
   on:blur={handleBlur}
-  data-handle={index}
   class:handle-active={active}
   class:handle-focus={focus}
   class:handle-disabled={disabled}
   class:handle-rectangular={rectangular}
-  aria-valuenow={value[index]}
+  aria-valuenow={value}
   aria-orientation={orientation}
   aria-disabled={disabled}
 >
