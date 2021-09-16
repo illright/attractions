@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from 'svelte';
-  import { writable } from 'svelte/store';
   import { createEventDispatcher } from 'svelte';
   import Handle from './handle.svelte';
   import {
@@ -90,32 +88,6 @@
    */
   let slider;
 
-  /**
-   * putting key deps in writable store allows injecting them
-   * without adding reactive labels to all the functions with these deps
-   * and dealing with circular dependencies
-   * @type {import('svelte/store').Writable<State>}
-   */
-  const state = writable({
-    min,
-    max,
-    value: toValue(value),
-    activeHandle: value[0] === max ? 0 : value.length - 1,
-    sliderActive: false,
-  });
-
-  // ensure state can be updated via props
-  $: $state.value = toValue(value);
-  $: $state.min = min;
-  $: $state.max = max;
-
-  onMount(() => {
-    const unsubscribe = state.subscribe(s => {
-      const changedState = { ...s, value: unnestSingle(s.value) };
-      dispatch('change', changedState);
-    });
-    return () => unsubscribe();
-  });
 
   /**
    * @type {'vertical' | 'horizontal'}
@@ -145,12 +117,12 @@
    * @param {MouseEvent | TouchEvent} e
    */
   function onStart(e) {
-    if (!$state.sliderActive) {
-      $state.sliderActive = true;
+    if (!sliderActive) {
+      sliderActive = true;
       const pos = getPosition(vertical, e);
       const nextValue = calcValByPos(pos);
-      $state.activeHandle = getClosestHandle(nextValue, $state.value);
-      dispatch('start', $state);
+      activeHandle = getClosestHandle(nextValue, value);
+      // dispatch('start', $state);
     }
   }
 
@@ -162,8 +134,8 @@
     if (v === null) {
       return 0;
     }
-    const val = ensureValueInRange(v, $state);
-    return ensureValuePrecision(val, { ...$state, ticks, step });
+    const val = ensureValueInRange(v, { min, max });
+    return ensureValuePrecision(val, { min, max, ticks, step });
   }
 
   /**
@@ -195,8 +167,7 @@
    * @return {number}
    */
   function calcValue(offset) {
-    const { min, max } = $state;
-    const ratio = Math.abs(Math.max(offset, 0) / getSliderLength());
+    const ratio = Math.max(offset, 0) / getSliderLength();
     const value = vertical
       ? (1 - ratio) * (max - min) + min
       : ratio * (max - min) + min;
@@ -217,13 +188,13 @@
    * @param {MouseEvent | TouchEvent} e
    */
   function onMove(e) {
-    if (disabled || !$state.sliderActive) {
+    if (disabled || !sliderActive) {
       return;
     }
     const pos = getPosition(vertical, e);
     const nextValue = calcValByPos(pos);
     stopEvent(e);
-    moveHandle($state.activeHandle, nextValue);
+    moveHandle(activeHandle, nextValue);
   }
 
   /**
@@ -231,7 +202,6 @@
    * @param {number} nextValue
    */
   function moveHandle(index, nextValue) {
-    const { value } = $state;
     if (nextValue === value[index]) {
       return;
     }
@@ -260,7 +230,7 @@
       });
     }
     if (!skip) {
-      $state.value = next;
+      value = next;
     }
   }
 
@@ -269,12 +239,12 @@
    */
   function onEnd(e) {
     const el = e.target;
-    if ($state.sliderActive) {
-      if (el === slider || slider.contains(el)) {
+    if (sliderActive) {
+      if (el === slider || slider.contains(/** @type {HTMLElement} */(el))) {
         onMove(e);
       }
-      dispatch('stop', $state);
-      $state.sliderActive = false;
+      dispatch('stop');
+      sliderActive = false;
     }
   }
 
@@ -285,34 +255,35 @@
     if (disabled) {
       return;
     }
-    let move = undefined;
+    let delta = 0;
     switch (e.key) {
-      case 'Up':
+      case 'Up': // IE/Edge specific
       case 'ArrowUp':
-      case 'Right':
-        move = $state.value[$state.activeHandle] += step;
+      case 'Right': // IE/Edge specific
+      case 'ArrowRight':
+        delta = step;
         break;
-      case 'Down':
+      case 'Down': // IE/Edge specific
       case 'ArrowDown':
-      case 'Left':
-        move = $state.value[$state.activeHandle] -= step;
+      case 'Left': // IE/Edge specific
+      case 'ArrowLeft':
+        delta = -step;
         break;
       case 'End':
-        move = max;
+        delta = max - internalValue[activeHandle];
         break;
       case 'Home':
-        move = min;
+        delta = min - internalValue[activeHandle];
         break;
       case 'PageUp':
-        move = $state.value[$state.activeHandle] += step * 2;
+        delta = step * 2;
         break;
       case 'PageDown':
-        move = $state.value[$state.activeHandle] -= step * 2;
+        delta = -step * 2;
         break;
     }
-    if (move !== undefined) {
-      moveHandle($state.activeHandle, move);
-    }
+    const move = ensureValueInRange(value[activeHandle] + delta, { min, max });
+    moveHandle(activeHandle, move);
     stopEvent(e);
   }
 
@@ -327,23 +298,23 @@
   on:touchstart={onStart}
   on:mousedown={onStart}
   on:keydown={onKeyDown}
-  class:slider-active={$state.sliderActive}
+  class:slider-active={sliderActive}
   class:slider-disabled={disabled}
   {...$$restProps}
 >
   <div class={`rail rail-${orientation}`} class:rail-disabled={disabled}>
     <slot name="rail-content" />
   </div>
-  {#each $state.value as val, index}
+  {#each value as val, index}
     <Handle
       value={val}
-      min={$state.min}
-      max={$state.max}
+      {min}
+      {max}
       {vertical}
       {disabled}
-      active={$state.activeHandle === index}
+      active={activeHandle === index}
       rectangular={rectangularHandle}
-      on:focus={() => ($state.activeHandle = index)}
+      on:focus={() => (activeHandle = index)}
     >
       <div slot="tooltips" let:value let:canShowActiveTooltip>
         {#if tooltips === 'always' || (tooltips === 'active' && canShowActiveTooltip)}
@@ -364,7 +335,7 @@
   <div
     class={`range-selection range-selection-${orientation}`}
     class:range-selection-disabled={disabled}
-    use:rangeStyle={{ ...$state, vertical }}
+    use:rangeStyle={{ value, vertical, min, max }}
   />
   {#each tickValues as tick}
     <span
@@ -372,7 +343,7 @@
       class:tick-disabled={disabled}
       style="{vertical ? 'bottom' : 'left'}: {calcPercentOfRange(
         tick,
-        $state
+        { min, max }
       )}%;"
     >
       <span
@@ -389,9 +360,7 @@
     <span
       class={`tick tick-${orientation} tick-${orientation}-sub`}
       class:tick-disabled={disabled}
-      style="{orientation === 'vertical'
-        ? 'bottom'
-        : 'left'}: {calcPercentOfRange(sub, $state)}%;"
+      style="{vertical ? 'bottom' : 'left'}: {calcPercentOfRange(sub, { min, max })}%;"
     />
   {/each}
 </div>
