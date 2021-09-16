@@ -81,13 +81,17 @@
   let _class = null;
   export { _class as class };
 
-  $: value = typeof value === 'number' ? [value] : value.slice(0, 2);
+  let internalValue = [];
+  /** @type {[number] | [number, number]} */
+  $: internalValue = typeof value === 'number' ? [value] : value;
 
   /**
    * @type {HTMLDivElement}
    */
   let slider;
 
+  let activeHandle = value[0] === max ? 0 : internalValue.length - 1;
+  let sliderActive = false;
 
   /**
    * @type {'vertical' | 'horizontal'}
@@ -121,7 +125,7 @@
       sliderActive = true;
       const pos = getPosition(vertical, e);
       const nextValue = calcValByPos(pos);
-      activeHandle = getClosestHandle(nextValue, value);
+      activeHandle = getClosestHandle(nextValue, internalValue);
       // dispatch('start', $state);
     }
   }
@@ -205,10 +209,11 @@
     if (nextValue === value[index]) {
       return;
     }
-    const next = [...value];
+    /** @type {[number] | [number, number]} */
+    const next = [...internalValue];
     next[index] = nextValue;
     let skip = false;
-    if (value.length > 1 && rangeBehavior !== 'free') {
+    if (internalValue.length > 1 && rangeBehavior !== 'free') {
       next.forEach((handle, handleIndex) => {
         if (handleIndex === index) {
           return;
@@ -230,7 +235,8 @@
       });
     }
     if (!skip) {
-      value = next;
+      internalValue = next;
+      value = unnestSingle(internalValue);
     }
   }
 
@@ -282,7 +288,7 @@
         delta = -step * 2;
         break;
     }
-    const move = ensureValueInRange(value[activeHandle] + delta, { min, max });
+    const move = ensureValueInRange(internalValue[activeHandle] + delta, { min, max });
     moveHandle(activeHandle, move);
     stopEvent(e);
   }
@@ -305,7 +311,7 @@
   <div class={`rail rail-${orientation}`} class:rail-disabled={disabled}>
     <slot name="rail-content" />
   </div>
-  {#each value as val, index}
+  {#each internalValue as val, index}
     <Handle
       value={val}
       {min}
@@ -335,7 +341,7 @@
   <div
     class={`range-selection range-selection-${orientation}`}
     class:range-selection-disabled={disabled}
-    use:rangeStyle={{ value, vertical, min, max }}
+    use:rangeStyle={{ value: internalValue, vertical, min, max }}
   />
   {#each tickValues as tick}
     <span
