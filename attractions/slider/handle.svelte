@@ -64,6 +64,7 @@
    * @param {Event} _e
    */
   function handleMouseDown(_e) {
+    focus = true;
     handle.focus();
   }
 
@@ -74,7 +75,7 @@
   function handleFocus(_e) {
     if (!disabled) {
       focus = true;
-      dispatch('focus');
+      dispatch('focus', focus);
     }
   }
 
@@ -84,6 +85,7 @@
    */
   function handleBlur(_e) {
     focus = false;
+    dispatch('focus', focus);
   }
 
   function handleMouseEnter() {
