@@ -81,7 +81,6 @@
   let _class = null;
   export { _class as class };
 
-  let internalValue = [];
   /** @type {[number] | [number, number]} */
   $: internalValue = typeof value === 'number' ? [value] : value;
 
