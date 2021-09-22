@@ -96,7 +96,7 @@
    * @type {number}
    */
   const initialPosition = calcPercentOfRange(value, { min, max });
-  const tween = tweened(initialPosition, { duration: 120, easing: sineOut });
+  const tween = tweened(initialPosition, { duration: 60, easing: sineOut });
 
   /**
    * @type {number}
