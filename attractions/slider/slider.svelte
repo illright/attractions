@@ -110,14 +110,6 @@
       : [];
 
   /**
-   * @param {number | number[]} v
-   * @return {number[]}
-   */
-  function toValue(v) {
-    return typeof v === 'number' ? [v] : v.slice(0, 2);
-  }
-
-  /**
    * @param {MouseEvent | TouchEvent} e
    */
   function onStart(e) {
@@ -246,7 +238,7 @@
   function onEnd(e) {
     const el = e.target;
     if (sliderActive) {
-      if (el === slider || slider.contains(/** @type {HTMLElement} */(el))) {
+      if (el === slider || slider.contains(/** @type {HTMLElement} */ (el))) {
         onMove(e);
       }
       dispatch('stop');
@@ -288,7 +280,10 @@
         delta = -step * 2;
         break;
     }
-    const move = ensureValueInRange(internalValue[activeHandle] + delta, { min, max });
+    const move = ensureValueInRange(internalValue[activeHandle] + delta, {
+      min,
+      max,
+    });
     moveHandle(activeHandle, move);
     stopEvent(e);
   }
@@ -347,10 +342,10 @@
     <span
       class={`tick tick-${orientation}`}
       class:tick-disabled={disabled}
-      style="{vertical ? 'bottom' : 'left'}: {calcPercentOfRange(
-        tick,
-        { min, max }
-      )}%;"
+      style="{vertical ? 'bottom' : 'left'}: {calcPercentOfRange(tick, {
+        min,
+        max,
+      })}%;"
     >
       <span
         class={`tick-value tick-value-${orientation}`}
@@ -366,7 +361,10 @@
     <span
       class={`tick tick-${orientation} tick-${orientation}-sub`}
       class:tick-disabled={disabled}
-      style="{vertical ? 'bottom' : 'left'}: {calcPercentOfRange(sub, { min, max })}%;"
+      style="{vertical ? 'bottom' : 'left'}: {calcPercentOfRange(sub, {
+        min,
+        max,
+      })}%;"
     />
   {/each}
 </div>
