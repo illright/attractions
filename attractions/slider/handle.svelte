@@ -34,10 +34,6 @@
   /**
    * @type {boolean}
    */
-  export let rectangular = false;
-  /**
-   * @type {boolean}
-   */
   export let vertical = false;
 
   /**
@@ -136,7 +132,6 @@
   class:handle-active={active}
   class:handle-focus={focus}
   class:handle-disabled={disabled}
-  class:handle-rectangular={rectangular}
   aria-valuenow={value}
   aria-orientation={orientation}
   aria-disabled={disabled}

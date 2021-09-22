@@ -69,11 +69,6 @@
    * @type {import('./types').Tooltips}
    */
   export let tooltips = 'never';
-  /**
-   * Gives the handle a rectangular shape.
-   * @type {boolean}
-   */
-  export let rectangularHandle = false;
 
   /**
    * @type {string | null}
@@ -313,7 +308,6 @@
       {vertical}
       {disabled}
       active={activeHandle === index}
-      rectangular={rectangularHandle}
       on:focus={() => (activeHandle = index)}
     >
       <div slot="tooltips" let:value let:canShowActiveTooltip>

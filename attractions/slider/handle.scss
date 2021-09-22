@@ -12,12 +12,6 @@
   width: vars.$slider-handle-size;
   z-index: 2;
 
-  &-rectangular {
-    border-radius: 1px;
-    height: 12px;
-    width: 4px;
-  }
-
   &-horizontal {
     top: -(math.div(vars.$slider-handle-size + vars.$slider-rail-size, 2));
     transform: translateX(-50%);
