@@ -2,7 +2,7 @@
 node_modules
 dist
 demo/public/build
-*.d.ts
+attractions/**/*.d.ts
 *.d.ts.map
 .stylelintcache
 .eslintcache
