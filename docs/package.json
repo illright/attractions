@@ -1,47 +1,26 @@
 {
-  "name": "attractions-docs",
+  "name": "@attractions/docs",
   "description": "The documentation for the Attractions UI kit",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "sapper dev --ext \".svelte .svx .md\"",
-    "build": "sapper build --legacy --ext \".svelte .svx .md\"",
-    "export": "sapper export --legacy --ext \".svelte .svx .md\"",
-    "start": "node __sapper__/build"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
   },
   "dependencies": {
     "clipboard-polyfill": "^3.0.2",
-    "compression": "^1.7.1",
-    "polka": "next",
-    "prismjs": "^1.24.0",
-    "sapper-environment": "^1.0.1",
-    "sirv": "^1.0.17"
+    "prismjs": "^1.24.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "@babel/preset-env": "^7.15.6",
-    "@babel/runtime": "^7.15.4",
-    "@rollup/plugin-alias": "^3.1.5",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@rollup/plugin-replace": "^3.0.0",
+    "@sveltejs/kit": "next",
     "attractions": "^3.0.0",
-    "eslint-config-prettier": "^8.1.0",
     "mdsvex": "^0.9.6",
-    "postcss": "^8.3.6",
-    "prettier": "2.4.0",
     "prism-svelte": "^0.4.6",
     "remark-heading-id": "^1.0.0",
-    "rollup": "^2.56.3",
-    "rollup-plugin-svelte": "^7.1.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "sapper": "^0.29.2",
     "sass": "^1.39.2",
-    "svelte": "^3.42.5",
-    "svelte-feather-icons": "^3.2.2",
-    "svelte-preprocess": "^4.9.4"
+    "svelte": "^3.43.0",
+    "svelte-feather-icons": "^3.2.2"
   }
 }
