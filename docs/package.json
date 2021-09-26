@@ -21,6 +21,7 @@
     "remark-heading-id": "^1.0.0",
     "sass": "^1.39.2",
     "svelte": "^3.43.0",
-    "svelte-feather-icons": "^3.2.2"
+    "svelte-feather-icons": "^3.2.2",
+    "svelte-preprocess": "^4.9.4"
   }
 }
