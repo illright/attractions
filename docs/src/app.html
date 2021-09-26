@@ -2,8 +2,7 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    %sapper.base%
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#4300b0" />
     <meta property="og:site_name" content="Attractions" />
     <meta property="og:type" content="website" />
@@ -52,9 +51,9 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    %sapper.styles% %sapper.head% %sapper.scripts%
+    %svelte.head%
   </head>
   <body>
-    %sapper.html%
+    %svelte.body%
   </body>
 </html>
