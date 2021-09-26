@@ -5,6 +5,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const attractionsPkg = require('attractions/package.json');
 
+import resolve from './resolve.js';
 import mdsvexConfig from './mdsvex.config.js';
 import sveltePreprocessConfig from './svelte-preprocess.config.js';
 
@@ -20,6 +21,11 @@ const config = {
     target: 'body',
     vite: {
       define: environment,
+      resolve: {
+        alias: {
+          $root: resolve(import.meta.url, '..'),
+        },
+      },
     },
   },
   preprocess: [autoPreprocess(sveltePreprocessConfig), mdsvex(mdsvexConfig)],

@@ -4,8 +4,8 @@ name: Modal
 
 <script>
   import { Button, Modal, Dialog } from 'attractions';
-  import Showcase from 'src/containers/docs/showcase.svelte';
-  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
+  import ColorPreview from '$lib/components/docs/color-preview.svelte';
 
   let modalOpen = false;
 </script>

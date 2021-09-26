@@ -8,8 +8,8 @@ relatedComponents:
 <script>
   import { Accordion, AccordionSection, Button } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
-  import Showcase from 'src/containers/docs/showcase.svelte';
-  import RelatedComponents from 'src/components/docs/related-components.svelte';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
+  import RelatedComponents from '$lib/components/docs/related-components.svelte';
 </script>
 
 

@@ -1,7 +1,7 @@
 <script>
   import { Button, Breadcrumbs } from 'attractions';
   import { GithubIcon, HomeIcon } from 'svelte-feather-icons';
-  import segmentToName from 'src/utils/segment-to-name.js';
+  import segmentToName from '$lib/utils/segment-to-name.js';
 
   export let segment;
 

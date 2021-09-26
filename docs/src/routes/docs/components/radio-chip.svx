@@ -13,9 +13,9 @@ relatedComponents:
 
 <script>
   import { RadioChip } from 'attractions';
-  import Showcase from 'src/containers/docs/showcase.svelte';
-  import ColorPreview from 'src/components/docs/color-preview.svelte';
-  import RelatedComponents from 'src/components/docs/related-components.svelte';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
+  import ColorPreview from '$lib/components/docs/color-preview.svelte';
+  import RelatedComponents from '$lib/components/docs/related-components.svelte';
 </script>
 
 # RadioChip

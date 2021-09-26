@@ -1,12 +1,10 @@
 <script>
-  import { stores } from '@sapper/app';
+  import { page } from '$app/stores';
   import { Button } from 'attractions';
   import { HomeIcon, ArrowUpIcon } from 'svelte-feather-icons';
-  import Header from 'src/containers/docs/header.svelte';
-  import MobileNavigation from 'src/containers/docs/mobile-navigation.svelte';
-  import DesktopNavigation from 'src/containers/docs/desktop-navigation.svelte';
-
-  const { page } = stores();
+  import Header from '$lib/containers/docs/header.svelte';
+  import MobileNavigation from '$lib/containers/docs/mobile-navigation.svelte';
+  import DesktopNavigation from '$lib/containers/docs/desktop-navigation.svelte';
 
   export let segment;
 
@@ -193,5 +191,5 @@
   </article>
 </main>
 
-<style src="../../../static/css/routes/docs/_layout.scss">
+<style $lib="../../../static/css/routes/docs/_layout.scss">
 </style>

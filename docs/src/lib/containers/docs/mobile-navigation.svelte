@@ -1,5 +1,5 @@
 <script>
-  import { goto } from '@sapper/app';
+  import { goto } from '$app/navigation';
   import { Tab, DropdownShell, Dropdown, Button } from 'attractions';
   import { ChevronDownIcon } from 'svelte-feather-icons';
 

@@ -5,8 +5,8 @@ name: StarRating
 <script>
   import { StarRating } from 'attractions';
   import { ThumbsUpIcon } from 'svelte-feather-icons';
-  import Showcase from 'src/containers/docs/showcase.svelte';
-  import ColorPreview from 'src/components/docs/color-preview.svelte';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
+  import ColorPreview from '$lib/components/docs/color-preview.svelte';
 
   let restaurantRating = 1;
 </script>

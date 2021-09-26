@@ -5,7 +5,7 @@ name: Breadcrumbs
 <script>
   import { Breadcrumbs, Button, Chip } from 'attractions';
   import { ArrowRightIcon, HomeIcon } from 'svelte-feather-icons';
-  import Showcase from 'src/containers/docs/showcase.svelte';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
 
   const items = [
     { href: '/', text: 'Home' },

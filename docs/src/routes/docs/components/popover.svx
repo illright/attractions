@@ -9,9 +9,9 @@ relatedComponents:
   import { onMount } from 'svelte';
   import { Popover, Button } from 'attractions';
   import { PopoverPositions } from 'attractions/popover';
-  import Showcase from 'src/containers/docs/showcase.svelte';
-  import RelatedComponents from 'src/components/docs/related-components.svelte';
-  import fixAnchorLinks from 'src/utils/fix-anchor-links.js';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
+  import RelatedComponents from '$lib/components/docs/related-components.svelte';
+  import fixAnchorLinks from '$lib/utils/fix-anchor-links.js';
 
   onMount(fixAnchorLinks);
 </script>

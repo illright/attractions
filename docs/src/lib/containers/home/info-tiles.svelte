@@ -3,7 +3,7 @@
   import * as attractions from 'attractions';
   import { s, formatFileSize } from 'attractions/utils';
   import { GridIcon, Edit2Icon, FeatherIcon } from 'svelte-feather-icons';
-  import InfoTile from 'src/components/home/info-tile.svelte';
+  import InfoTile from '$lib/components/home/info-tile.svelte';
   import { latestVersion } from '$lib/environment.js';
 
   const totalComponents =

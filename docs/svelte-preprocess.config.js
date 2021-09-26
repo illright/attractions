@@ -1,15 +1,5 @@
-import { URL } from 'url';
 import makeAttractionsImporter from 'attractions/importer.js';
-
-/**
- * `path.resolve(__dirname, ...)` functionality for ES Modules.
- *
- * @param {string} path The path to resolve relative to the current file.
- * @returns The absolute path corresponding to the given relative path.
- */
-function resolve(path) {
-  return decodeURIComponent(new URL(path, import.meta.url).pathname);
-}
+import resolve from './resolve.js';
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -18,10 +8,13 @@ const config = {
   scss: {
     renderSync: true,
     importer: makeAttractionsImporter({
-      themeFile: resolve('./static/css/attractions-theme.scss'),
-      nodeModulesPath: resolve('./node_modules'),
+      themeFile: resolve(
+        import.meta.url,
+        './static/css/attractions-theme.scss'
+      ),
+      nodeModulesPath: resolve(import.meta.url, './node_modules'),
     }),
-    includePaths: [resolve('./static/css')],
+    includePaths: [resolve(import.meta.url, './static/css')],
   },
   sourceMap: dev,
 };

@@ -10,10 +10,10 @@ shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 
 <script>
   import { FileDropzone } from 'attractions';
-  import Showcase from 'src/containers/docs/showcase.svelte';
-  import ColorPreview from 'src/components/docs/color-preview.svelte';
-  import ShadowPreview from 'src/components/docs/shadow-preview.svelte';
-  import RelatedComponents from 'src/components/docs/related-components.svelte';
+  import Showcase from '$lib/containers/docs/showcase.svelte';
+  import ColorPreview from '$lib/components/docs/color-preview.svelte';
+  import ShadowPreview from '$lib/components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$lib/components/docs/related-components.svelte';
 </script>
 
 
