@@ -1,0 +1,90 @@
+@use 'attractions-theme' as vars;
+
+:global {
+  html {
+    scroll-behavior: smooth;
+
+    @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
+  }
+
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    font-family: vars.$font;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  p {
+    letter-spacing: 0.1px;
+    line-height: 1.45em;
+  }
+
+  strong {
+    font-weight: vars.$bold-font-weight;
+  }
+
+  a {
+    color: vars.$main;
+
+    &:visited {
+      color: vars.$link-visited;
+    }
+  }
+
+  .ml {
+    margin-left: 0.4em;
+  }
+
+  .mr {
+    margin-right: 0.4em;
+  }
+
+  .mb {
+    margin-bottom: 0.4em;
+  }
+
+  .padded {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    &.extra {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+
+    @media only screen and (min-width: 640px) {
+      &,
+      &.extra {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      &,
+      &.extra {
+        padding-left: 8%;
+        padding-right: 8%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 639px) {
+    .hide-on-less-tb {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 640px) {
+    .hide-on-tb-more {
+      display: none;
+    }
+  }
+}

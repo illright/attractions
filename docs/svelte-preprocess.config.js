@@ -8,13 +8,10 @@ const config = {
   scss: {
     renderSync: true,
     importer: makeAttractionsImporter({
-      themeFile: resolve(
-        import.meta.url,
-        './static/css/attractions-theme.scss'
-      ),
+      themeFile: resolve(import.meta.url, './src/lib/attractions-theme.scss'),
       nodeModulesPath: resolve(import.meta.url, './node_modules'),
     }),
-    includePaths: [resolve(import.meta.url, './static/css')],
+    includePaths: [resolve(import.meta.url, './src/lib')],
   },
   sourceMap: dev,
 };
