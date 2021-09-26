@@ -4,6 +4,7 @@
   import { s, formatFileSize } from 'attractions/utils';
   import { GridIcon, Edit2Icon, FeatherIcon } from 'svelte-feather-icons';
   import InfoTile from 'src/components/home/info-tile.svelte';
+  import { latestVersion } from '$lib/environment.js';
 
   const totalComponents =
     Object.keys(attractions).length -
@@ -13,7 +14,7 @@
 
   onMount(() => {
     bundleSizePromise = fetch(
-      `https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`
+      `https://bundlephobia.com/api/size?package=attractions@${latestVersion}`
     ).then(response => response.json());
   });
 </script>

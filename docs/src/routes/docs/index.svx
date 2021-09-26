@@ -5,11 +5,12 @@ name: Home
 <script>
   import { formatFileSize } from 'attractions/utils';
   import { onMount } from 'svelte';
+  import { latestVersion, license } from '$lib/environment.js';
 
   let bundleSizePromise = Promise.resolve(Infinity);
 
   onMount(() => {
-    bundleSizePromise = fetch(`https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`)
+    bundleSizePromise = fetch(`https://bundlephobia.com/api/size?package=attractions@${latestVersion}`)
       .then(response => response.json());
   });
 </script>
@@ -20,7 +21,7 @@ Attractions is a stylish and functional UI kit for Svelte, built to solve interf
 
 Given the compiling nature of Svelte, the components can be used for any framework using the JavaScript API.
 
-This library is MIT licensed.
+This library is {license} licensed.
 
 - Weighs only
   {#await bundleSizePromise}

@@ -2,6 +2,7 @@
   import { Card, Button, H1 } from 'attractions';
   import { BookOpenIcon, GithubIcon } from 'svelte-feather-icons';
   import InfoTiles from 'src/containers/home/info-tiles.svelte';
+  import { latestVersion, license } from '$lib/environment.js';
 </script>
 
 <svelte:head>
@@ -15,7 +16,7 @@
       <img src="logo-no-bg.svg" alt="Attractions logo" />
       <H1>Attractions</H1>
       <a href="./docs/changelog" class="hide-on-tb-more" sapper:prefetch>
-        v{process.latest_version}
+        v{latestVersion}
       </a>
     </header>
     <p>
@@ -43,9 +44,9 @@
       <a href="https://github.com/illright">@illright</a>
     </p>
     <p>
-      {process.license}
+      {license}
       licensed &nbsp;•&nbsp;
-      <a href="./docs/changelog" sapper:prefetch>v{process.latest_version}</a>
+      <a href="./docs/changelog" sapper:prefetch>v{latestVersion}</a>
     </p>
   </footer>
 </main>

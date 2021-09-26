@@ -30,7 +30,7 @@
     <!-- TODO: add the versions here
     <DropdownShell let:toggle>
       <Button small on:click={toggle}>
-        v{process.latest_version}
+        v{latestVersion}
         <ChevronDownIcon size="20" class="dropdown-chevron ml" />
       </Button>
       <Dropdown>
