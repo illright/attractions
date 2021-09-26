@@ -87,4 +87,14 @@ The content of the Accordion. Pass one or more [<mark>`AccordionSection`</mark>]
 | --------- | ---- | ----------- |
 | **`closeOtherPanels`** | `Function` | A callback to force-close all panels except for the calling one. |
 
-<style src="../../../../static/css/routes/docs/components/accordion.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    display: flex;
+    padding: 1em;
+
+    :global .accordion section {
+      padding: 0.5em;
+      text-align: center;
+    }
+  }
+</style>

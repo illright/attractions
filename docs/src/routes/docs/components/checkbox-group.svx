@@ -138,4 +138,19 @@ Falsy values passed to classes will be disregarded.
 | **`$light-contrast`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
 | **`$main-text`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |
 
-<style src="../../../../static/css/routes/docs/components/checkbox-group.scss"></style>
+<style lang="scss">
+  [slot='showcase'] :global {
+    .checkbox {
+      margin-bottom: 0.5em;
+    }
+
+    .colored {
+      display: flex;
+      flex-wrap: wrap;
+
+      .checkbox {
+        margin: 0.5em;
+      }
+    }
+  }
+</style>

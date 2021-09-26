@@ -18,5 +18,28 @@
   </div>
 {/if}
 
-<style src="../../../static/css/components/docs/related-components.scss">
+<style lang="scss">
+  @use 'sass:color';
+  @use 'attractions-theme' as vars;
+
+  .related-components {
+    background: color.adjust(vars.$main, $alpha: -0.97);
+    border-radius: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.5em;
+    padding: 1em 1em 1em 2em;
+
+    :global {
+      .label {
+        margin-bottom: 0.75em;
+        width: 100%;
+      }
+
+      .card {
+        margin: 0 0.5em 0.5em 0;
+        padding: 0.5em;
+      }
+    }
+  }
 </style>

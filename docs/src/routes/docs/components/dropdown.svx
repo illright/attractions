@@ -110,4 +110,10 @@ The content of the dropdown.
 | **`$shadow-raised`** | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
 | **`$card-radius`** | The curvature radius of the dropdown. | `1.25em` |
 
-<style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    .padded {
+      padding: 1em;
+    }
+  }
+</style>

@@ -2,5 +2,8 @@
   <slot />
 </ul>
 
-<style src="../../static/css/mdsvex/ul.scss">
+<style lang="scss">
+  ul {
+    padding-left: 1.8em;
+  }
 </style>

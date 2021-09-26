@@ -56,5 +56,51 @@
   </Dropdown>
 </DropdownShell>
 
-<style src="../../../static/css/containers/docs/mobile-navigation.scss">
+<style lang="scss">
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0 0;
+    overflow: auto;
+    padding-bottom: 0.5em;
+
+    :global .tab {
+      margin: 0 0.25em;
+
+      .tab-chevron {
+        transition: transform 150ms;
+      }
+
+      &.selected .tab-chevron {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media only screen and (max-width: 479px) {
+      padding-right: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        flex: 1 0 0.5em;
+        width: 0.5em;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  nav + :global .dropdown {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: -0.25em 0.5em 0.5em;
+    padding: 0.5em;
+
+    .btn {
+      margin-top: 0.25em;
+    }
+  }
 </style>

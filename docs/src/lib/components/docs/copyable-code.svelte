@@ -57,5 +57,31 @@
   </Button>
 </div>
 
-<style src="../../../static/css/components/docs/copyable-code.scss">
+<style lang="scss">
+  @use 'attractions-theme' as vars;
+
+  .copyable {
+    background: vars.$code-bg;
+    border-radius: 0.3em;
+    position: relative;
+
+    .filename {
+      align-items: center;
+      display: flex;
+      font-size: 0.8em;
+      font-weight: 500;
+      padding: 0.5em 1rem;
+    }
+
+    :global .filename + pre {
+      margin-top: 0;
+      padding-top: 0.5em;
+    }
+
+    > :global .btn {
+      position: absolute;
+      right: 0.3em;
+      top: 0.3em;
+    }
+  }
 </style>

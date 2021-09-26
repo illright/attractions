@@ -109,4 +109,19 @@ Falsy values passed to classes will be disregarded.
 | **`$light-contrast`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The border color of an unselected radio button, or the fill color of a selected disabled one. | <ColorPreview value="#DDDDDD" /> |
 | **`$main-text`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The color of the dot inside the selected radio button. | <ColorPreview value="#FFFFFF" bordered /> |
 
-<style src="../../../../static/css/routes/docs/components/radio-group.scss"></style>
+<style lang="scss">
+  [slot='showcase'] :global {
+    .radio {
+      margin-bottom: 0.5em;
+    }
+
+    .colored {
+      display: flex;
+      flex-wrap: wrap;
+
+      .radio {
+        margin: 0.5em;
+      }
+    }
+  }
+</style>

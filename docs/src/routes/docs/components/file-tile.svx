@@ -89,4 +89,10 @@ All `<FileTile>` components use the `.file-tile` class.
 | **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
 | **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
 
-<style src="../../../../static/css/routes/docs/components/file-tile.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    :global .file-tile {
+      max-width: 16em;
+    }
+  }
+</style>

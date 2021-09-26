@@ -8,5 +8,9 @@
   </Label>
 </th>
 
-<style src="../../static/css/mdsvex/th.scss">
+<style lang="scss">
+  th {
+    padding: 0.5em 1em;
+    text-align: left;
+  }
 </style>

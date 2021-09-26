@@ -18,5 +18,25 @@
   {#if href != null}<a {href} class="ml">#</a>{/if}
 </h1>
 
-<style src="../../static/css/mdsvex/h1.scss">
+<style lang="scss">
+  @use 'attractions-theme' as vars;
+
+  h1 {
+    color: vars.$main;
+    font-size: 1.4em;
+    font-weight: vars.$bold-font-weight;
+    margin: 0 0 0.5em;
+
+    @media only screen and (min-width: 640px) {
+      font-size: 1.55em;
+    }
+
+    @media only screen and (min-width: 840px) {
+      font-size: 1.7em;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      font-size: 1.8em;
+    }
+  }
 </style>

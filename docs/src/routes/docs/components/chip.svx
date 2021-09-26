@@ -82,4 +82,13 @@ The content of the chip.
 | **`$bold-font-weight`** | The bold font weight of the chips. | `500` |
 
 
-<style src="../../../../static/css/routes/docs/components/chip.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    align-items: flex-start;
+    display: flex;
+
+    :global .chip {
+      margin-right: 0.5em;
+    }
+  }
+</style>

@@ -124,4 +124,15 @@ The icon to use for switching to the next month in the calendar.
 | **`$textfield-border`** <small>From [`TextField`](./docs/components/text-field)</small> | The color of the bottom border of the unfocused text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
 | **`$thin-font-weight`** <small>From [`TextField`](./docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
 
-<style src="../../../../static/css/routes/docs/components/date-picker.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    overflow: visible !important;
+
+    @media only screen and (max-width: 340px) {
+      padding: 0.25em !important;
+    }
+  }
+</style>

@@ -91,4 +91,8 @@ Falsy values passed to classes will be disregarded.
 | **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the action button. | `1.5625em` |
 | **`$bold-font-weight`** <small>From [`Button`](./docs/components/button)</small> | The font weight of the action button. | `500` |
 
-<style src="../../../../static/css/routes/docs/components/snackbar.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    max-width: 20em;
+  }
+</style>

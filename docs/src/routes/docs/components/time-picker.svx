@@ -118,4 +118,11 @@ Text on button to select the current time. Defaults to the text "`now`".
 | **`$thin-font-weight`** <small>From [`TextField`](./docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
 | **`$off-state`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the background color of the unselected tab. | <ColorPreview value="#AAAAAA" /> |
 
-<style src="../../../../static/css/routes/docs/components/time-picker.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    overflow: visible !important;
+  }
+</style>

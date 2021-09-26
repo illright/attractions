@@ -116,4 +116,13 @@ All slots of [<mark>`AutocompleteField`</mark>](./docs/components/autocomplete-f
 | **`$dark`** <small>From [`Button`](./docs/components/button)</small> | The color of the Xs on the option chips. | <ColorPreview value="#333333" /> |
 
 
-<style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>
+<style lang="scss">
+  [slot='showcase'] {
+    min-height: 10em;
+    padding: 1em;
+
+    :global .autocomplete {
+      max-width: 20em;
+    }
+  }
+</style>

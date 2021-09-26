@@ -108,5 +108,18 @@ The plus icon inside the dropzone when there are files inside. <mark>Bonus</mark
 | **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
 | **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
 
+<style lang="scss">
+  [slot='showcase'] {
+    p {
+      margin: 2em 0 0;
+    }
 
-<style src="../../../../static/css/routes/docs/components/file-dropzone.scss"></style>
+    :global .file-dropzone {
+      margin-top: 1em;
+    }
+
+    @media only screen and (min-width: 340px) {
+      min-width: 17em;
+    }
+  }
+</style>

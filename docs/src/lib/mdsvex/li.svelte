@@ -2,5 +2,8 @@
   <slot />
 </li>
 
-<style src="../../static/css/mdsvex/li.scss">
+<style lang="scss">
+  li {
+    margin-bottom: 0.25em;
+  }
 </style>

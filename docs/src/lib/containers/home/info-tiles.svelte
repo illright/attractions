@@ -56,5 +56,16 @@
   {/await}
 </div>
 
-<style src="../../../static/css/containers/home/info-tiles.scss">
+<style lang="scss">
+  .info-tiles {
+    margin-top: 3em;
+
+    @media only screen and (min-width: 640px) {
+      margin-top: 6em;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      margin-top: 0;
+    }
+  }
 </style>
