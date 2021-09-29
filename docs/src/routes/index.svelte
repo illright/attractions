@@ -28,7 +28,12 @@
         <BookOpenIcon size="24" class="mr" />
         docs
       </Button>
-      <Button outline class="ml" href="https://github.com/illright/attractions">
+      <Button
+        outline
+        noPrefetch
+        class="ml"
+        href="https://github.com/illright/attractions"
+      >
         <GithubIcon size="24" class="mr" />
         GitHub
       </Button>
