@@ -84,7 +84,7 @@
    */
   let slider;
 
-  let activeHandle = value[0] === max ? 0 : internalValue.length - 1;
+  let activeHandle = 0;
   let sliderActive = false;
 
   /**
