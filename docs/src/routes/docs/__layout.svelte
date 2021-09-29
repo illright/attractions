@@ -1,3 +1,13 @@
+<script context="module">
+  /** @type {import('@sveltejs/kit').Load} */
+  export async function load({ page }) {
+    const relativePathSegment = page.path.slice('/docs/'.length);
+    return {
+      props: { segment: relativePathSegment.length === 0 ? null : relativePathSegment },
+    };
+  }
+</script>
+
 <script>
   import { page } from '$app/stores';
   import { Button } from 'attractions';
