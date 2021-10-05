@@ -96,9 +96,9 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`start`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user begins interacting with the slider. |
-| **`change`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when ever a slider handle value changes. |
-| **`stop`** | `{ min, max, value, activeHandle, sliderActive }` | Fires when a user stops interacting with the slider. |
+| **`focus`** | None | Fires when a user begins interacting with the slider. |
+| **`change`** | `number` | Fires when ever a slider handle value changes. |
+| **`blur`** | None | Fires when a user stops interacting with the slider. |
 
 
 ## Slots {#slots}

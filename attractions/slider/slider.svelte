@@ -16,14 +16,11 @@
   import classes from '../utils/classes.js';
 
   /**
-   * @typedef {import('./types').SliderState} State
+   * @event {number | [number, number]} change
+   * @event {void} focus
+   * @event {void} blur
    */
 
-  /**
-   * @event {State} change
-   * @event {State} start
-   * @event {State} stop
-   */
   const dispatch = createEventDispatcher();
 
   /**
@@ -112,7 +109,7 @@
       const pos = getPosition(vertical, e);
       const nextValue = calcValByPos(pos);
       activeHandle = getClosestHandle(nextValue, internalValue);
-      // dispatch('start', $state);
+      dispatch('focus');
     }
   }
 
@@ -223,6 +220,7 @@
     if (!skip) {
       internalValue = next;
       value = unnestSingle(internalValue);
+      dispatch('change', value);
     }
   }
 
@@ -235,7 +233,7 @@
       if (el === slider || slider.contains(/** @type {HTMLElement} */ (el))) {
         onMove(e);
       }
-      dispatch('stop');
+      dispatch('blur');
       sliderActive = false;
     }
   }
