@@ -5,6 +5,7 @@ name: Slider
 <script>
   import { Slider } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
+  import ColorPreview from 'src/components/docs/color-preview.svelte';
 
   let val = 4;
   const valueType = 'number | [number, number]';
@@ -148,3 +149,21 @@ Recieves the value for the handle as a prop in order to format or append a unit.
 ### `rail-content` slot
 
 The content of the rail.
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | Background of the tooltip. | <ColorPreview value="#4300b0" /> |
+| **`$slider-handle-size`** | The side length of the handle. | `16px` |
+| **`$slider-handle-tooltip-size`** | The side length of the tooltip. | `12px` |
+| **`$slider-handle-tooltip-font-size`** | Font size of the tooltip content. | `14px` |
+| **`$slider-handle-tooltip-disabled`** | Background color of the tooltip when disabled. | <ColorPreview value="#aaa" /> |
+| **`$slider-rail-size`** | `// TODO`. | `4px` |
+| **`$slider-rail-bg`** | Background color of the rail. | <ColorPreview value="#aaa" /> |
+| **`$slider-disabled`** | The color assigned to the rail and tick content when the slider is disabled. | <ColorPreview value="#cfcfcf" /> |
+| **`$slider-tick-bg`** | Regular background color of the ticks. | <ColorPreview value="#7a7a7a" /> |
+| **`$slider-tick-length`** | Length of the ticks. | `8px` |
+| **`$slider-sub-tick-length`** | Length of the sub-ticks. | `4px` |
+| **`$slider-tick-value-color`** | Regular color of the tick content. | <ColorPreview value="#7a7a7a" /> |
+| **`$slider-tick-value-font-size`** | Font size of the tick content. | `12px` |
