@@ -107,10 +107,18 @@ Falsy values passed to classes will be disregarded.
 
 Receives the tick value as a prop in order to map or append a unit.
 
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`value`** | `number` | The tick. |
+
 ### `tooltip-content` slot
 
 Recieves the value for the handle as a prop in order to format or append a unit.
 
-### `range-content` slot
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`value`** | `number` | The current value the handle is at. |
 
-The content of the popover.
+### `rail-content` slot
+
+The content of the rail.

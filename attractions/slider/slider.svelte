@@ -282,6 +282,7 @@
 
   /**
    * @slot {{ value: number; }} tooltip-content
+   * @slot {{ value: number; }} tick-value
    */
 </script>
 
