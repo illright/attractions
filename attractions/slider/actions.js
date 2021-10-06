@@ -44,7 +44,7 @@ export function rangeStyle(node, props) {
     styles.clear();
     const offsets = value.map(v => calcPercentOfRange(v, props));
     // if offsets have crossed over
-    offsets.sort();
+    offsets.sort((a, b) => a - b);
 
     // this offset is the percent length of the track
     const offset = isRange ? offsets[1] - offsets[0] : offsets[0];
