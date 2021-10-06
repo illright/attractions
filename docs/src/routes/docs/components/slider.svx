@@ -47,7 +47,6 @@ An slider for selecting a value or a range.
         max={6}
         step={0.5}
         tooltips="always"
-        rectangularHandle
       />
       <br/>
       <Slider
@@ -78,7 +77,6 @@ An slider for selecting a value or a range.
   max={6}
   step={0.5}
   tooltips="always"
-  rectangularHandle
 />
 <Slider
   value={[2,4]}
@@ -123,9 +121,9 @@ With `ticks.mode` value of `step` or `values`, a `subDensity` property may be pr
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`focus`** | None | Fires when a user begins interacting with the slider. |
+| **`focus`** | None | Fires when the slider is focused. |
 | **`change`** | `number` | Fires when ever a slider handle value changes. |
-| **`blur`** | None | Fires when a user stops interacting with the slider. |
+| **`blur`** | None | Fires when the slider loses focus. |
 
 
 ## Slots {#slots}
@@ -154,16 +152,16 @@ The content of the rail.
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** | Background of the tooltip. | <ColorPreview value="#4300b0" /> |
-| **`$slider-handle-size`** | The side length of the handle. | `16px` |
+| **`$main`** | The background of the tooltip. | <ColorPreview value="#4300b0" /> |
+| **`$slider-handle-size`** | The diameter of the handle. | `16px` |
 | **`$slider-handle-tooltip-size`** | The side length of the tooltip. | `12px` |
-| **`$slider-handle-tooltip-font-size`** | Font size of the tooltip content. | `14px` |
-| **`$slider-handle-tooltip-disabled`** | Background color of the tooltip when disabled. | <ColorPreview value="#aaa" /> |
-| **`$slider-rail-size`** | `// TODO`. | `4px` |
-| **`$slider-rail-bg`** | Background color of the rail. | <ColorPreview value="#aaa" /> |
+| **`$slider-handle-tooltip-font-size`** | The font size of the tooltip content. | `14px` |
+| **`$slider-handle-tooltip-disabled`** | The background color of the tooltip when disabled. | <ColorPreview value="#aaa" /> |
+| **`$slider-rail-size`** | The thickness of the slider rail. | `4px` |
+| **`$slider-rail-bg`** | The background color of the rail. | <ColorPreview value="#aaa" /> |
 | **`$slider-disabled`** | The color assigned to the rail and tick content when the slider is disabled. | <ColorPreview value="#cfcfcf" /> |
-| **`$slider-tick-bg`** | Regular background color of the ticks. | <ColorPreview value="#7a7a7a" /> |
-| **`$slider-tick-length`** | Length of the ticks. | `8px` |
-| **`$slider-sub-tick-length`** | Length of the sub-ticks. | `4px` |
-| **`$slider-tick-value-color`** | Regular color of the tick content. | <ColorPreview value="#7a7a7a" /> |
-| **`$slider-tick-value-font-size`** | Font size of the tick content. | `12px` |
+| **`$slider-tick-bg`** | The regular background color of the ticks. | <ColorPreview value="#7a7a7a" /> |
+| **`$slider-tick-length`** | The length of the ticks. | `8px` |
+| **`$slider-sub-tick-length`** | The length of the sub-ticks. | `4px` |
+| **`$slider-tick-value-color`** | The regular color of the tick content. | <ColorPreview value="#7a7a7a" /> |
+| **`$slider-tick-value-font-size`** | The font size of the tick content. | `12px` |
