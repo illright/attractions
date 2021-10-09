@@ -6,7 +6,7 @@
     "lint-js:fix": "pnpm run lint-js -- --fix",
     "lint-css": "stylelint . --cache",
     "lint-css:fix": "pnpm run lint-css -- --fix",
-    "lint-svelte": "svelte-check --workspace attractions --output human --fail-on-warnings && svelte-check --workspace docs --output human --fail-on-warnings --ignore \"src/node_modules\"",
+    "lint-svelte": "svelte-check --workspace attractions --diagnostic-sources svelte,css --output human --fail-on-warnings && svelte-check --workspace docs --diagnostic-sources svelte,css --output human --fail-on-warnings --ignore \"src/node_modules\"",
     "lint-svelte:fix": "svelte-check --workspace attractions && svelte-check --workspace docs --ignore \"src/node_modules\"",
     "lint-format": "prettier --plugin-search-dir=. --check .",
     "lint-format:fix": "prettier --plugin-search-dir=. --write --loglevel warn .",
