@@ -1,0 +1,208 @@
+@use 'node_modules/attractions/_variables' as vars;
+
+.slider {
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 4px 0;
+  position: relative;
+  touch-action: none;
+  user-select: none;
+  z-index: 1;
+
+  &-horizontal {
+    height: 10px;
+    width: 100%;
+  }
+
+  &-vertical {
+    height: 100%;
+    width: 10px;
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+  }
+}
+
+.rail {
+  background: vars.$slider-rail-bg;
+  border-radius: 2px;
+  position: absolute;
+
+  &-horizontal {
+    height: vars.$slider-rail-size;
+    top: 0;
+    width: 100%;
+  }
+
+  &-vertical {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: vars.$slider-rail-size;
+  }
+
+  &-disabled {
+    background: vars.$slider-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.range-selection {
+  background: vars.$main;
+  border-radius: 2px;
+  pointer-events: none;
+  position: absolute;
+
+  &-horizontal {
+    height: vars.$slider-rail-size;
+    left: 0;
+    right: auto;
+    top: 0;
+  }
+
+  &-vertical {
+    bottom: 0;
+    top: auto;
+    width: vars.$slider-rail-size;
+  }
+
+  &-disabled {
+    background: darken(vars.$slider-disabled, 15%);
+  }
+}
+
+.tick {
+  background: vars.$slider-tick-bg;
+  position: absolute;
+
+  &-horizontal {
+    bottom: auto;
+    height: vars.$slider-tick-length;
+    position: absolute;
+    right: auto;
+    top: 10px;
+    white-space: nowrap;
+    width: 1px;
+
+    &-sub {
+      height: vars.$slider-sub-tick-length;
+    }
+  }
+
+  &-vertical {
+    bottom: 100%;
+    height: 1px;
+    left: 10px;
+    right: auto;
+    width: vars.$slider-tick-length;
+
+    &-sub {
+      width: vars.$slider-sub-tick-length;
+    }
+  }
+
+  &-value {
+    background: none;
+    color: vars.$slider-tick-value-color;
+    font-size: vars.$slider-tick-value-font-size;
+    font-variant-numeric: tabular-nums;
+    position: absolute;
+    white-space: nowrap;
+
+    &-horizontal {
+      top: 2px;
+      transform: translate(-50%, 50%);
+    }
+
+    &-vertical {
+      left: 12px;
+      top: 0;
+      transform: translate(0%, -50%);
+    }
+
+    &-disabled {
+      color: vars.$slider-disabled;
+    }
+  }
+
+  &-disabled {
+    background: vars.$slider-disabled;
+  }
+}
+
+.handle-tooltip {
+  align-items: center;
+  background: vars.$main;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 1px 2px 0 rgb(8 11 13 / 25%);
+  color: #fff;
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 16px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+
+  &::after {
+    background: vars.$main;
+    box-shadow: 0 1px 2px 0 rgb(8 11 13 / 25%);
+    content: '';
+    display: inline-block;
+    height: vars.$slider-handle-tooltip-size;
+    position: absolute;
+    transform: rotate(45deg) translateY(50%);
+    width: vars.$slider-handle-tooltip-size;
+    z-index: -1;
+  }
+
+  &-horizontal {
+    left: 50%;
+    top: -40px;
+    transform: translate(-50%, 0);
+
+    // pointer with box-shadow matching tooltip container
+
+    &::after {
+      bottom: -2px;
+      clip-path: inset(0 -15px -15px 0);
+      left: calc(50% - 2px);
+    }
+  }
+
+  &-vertical {
+    right: 24px;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    &::after {
+      bottom: 45%;
+      clip-path: inset(-15px -15px 0 0);
+      right: -10px;
+    }
+  }
+
+  &-content {
+    background: vars.$main;
+    font-size: vars.$slider-handle-tooltip-font-size;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    height: 100%;
+    line-height: 16px;
+    padding: 5px;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &-disabled {
+    .handle-tooltip-content {
+      background: vars.$slider-handle-tooltip-disabled;
+    }
+  }
+
+  &-disabled.handle-tooltip::after {
+    background: vars.$slider-handle-tooltip-disabled;
+  }
+}

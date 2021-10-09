@@ -75,4 +75,6 @@ export { default as Breadcrumbs } from './breadcrumbs/breadcrumbs.svelte';
 
 export { default as Pagination } from './pagination/pagination.svelte';
 
+export { default as Slider } from './slider/slider.svelte';
+
 export * as utils from './utils';
