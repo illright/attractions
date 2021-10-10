@@ -7,10 +7,10 @@
 
   :global .dropdown-chevron {
     margin-bottom: -0.125em;
-    transition: transform 100ms;
+    transition: transform 150ms;
   }
 
   &.open :global .dropdown-chevron {
-    transform: rotate(180deg);
+    transform: scaleY(-1);
   }
 }
