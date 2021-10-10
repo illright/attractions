@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - The [`Slider`](https://illright.github.io/attractions/docs/components/slider) component has been added, allowing you to create a slider similar to the one you would get with `<input type="range">`. It also support inputting a range by supplying a tuple for the `value` prop (Thanks to [@RikuVan](https://github.com/RikuVan) for the contribution - [#290](https://github.com/illright/attractions/pull/290)).
 
+### Changed
+
+- Change the [`Dropdown`](https://illright.github.io/attractions/docs/components/dropdown) chevron transition animation to a `scaleY(-1)` for `150ms` ([#310](https://github.com/illright/attractions/pull/310))
+
 ## [3.4.0] - 2021-09-12
 
 ### Added
