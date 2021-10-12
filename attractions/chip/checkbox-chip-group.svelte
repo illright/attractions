@@ -40,6 +40,7 @@
   /**
    * The text displayed in the tooltip when hovering over the checkboxes
    *   after the maximum allowed selection has been reached.
+   * @type {string | null}
    */
   export let maxReachedTooltip = null;
   $: maxReachedTooltipFinal =
