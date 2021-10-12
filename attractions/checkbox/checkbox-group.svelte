@@ -59,6 +59,7 @@
    */
   export let maxReachedTooltip = null;
   $: maxReachedTooltipFinal =
+    // TODO: switch back to `??` after https://github.com/pastelsky/bundlephobia/issues/530 is merged
     maxReachedTooltip || `Can only select ${max} value${s(max)}.`;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
