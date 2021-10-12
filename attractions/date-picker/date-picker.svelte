@@ -90,7 +90,7 @@
    * If `true`, the dropdown will be automatically closed after a date is selected.
    * @type {boolean}
    */
-  export let closeOnClick = false;
+  export let closeOnSelection = false;
   /**
    * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
    * @type {string}
@@ -141,7 +141,11 @@
       }
     }
 
-    if (closeOnClick && startValue != null && (!range || endValue != null)) {
+    if (
+      closeOnSelection &&
+      startValue != null &&
+      (!range || endValue != null)
+    ) {
       startFocus = endFocus = false;
     }
 
