@@ -30,14 +30,14 @@ If you need to display the calendar differently, check out the [`Calendar`](./do
 
 <Showcase>
   <div slot="showcase" class="padded">
-    <DatePicker format="%m/%d/%Y" />
+    <DatePicker format="%m/%d/%Y" closeOnSelection />
     <DatePicker format="%m/%d" noCalendar />
     <DatePicker range top />
   </div>
   <div slot="source">
 
 ```svelte
-<DatePicker format="%m/%d/%Y" />
+<DatePicker format="%m/%d/%Y" closeOnSelection />
 <DatePicker format="%m/%d" noCalendar />
 <DatePicker range top />
 ```
@@ -65,6 +65,7 @@ If you need to display the calendar differently, check out the [`Calendar`](./do
 | **`locale`** | `undefined` | `string` | The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used. <br /> This will affect the weekdays and the day number representations as well as the spelling of the selected month.  |
 | **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
 | **`disabledDates`** | `[]` | <code>{disabledDatesType}</code> | A range of dates (or date ranges) for which to disable selection. |
+| **`closeOnSelection`** | `false` | `boolean` | If `true`, the dropdown will be automatically closed after a date is selected. |
 | **`format`** | `'%d.%m.%Y'` | `string` | The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed. |
 
 ### Class Properties
