@@ -43,7 +43,7 @@
    */
   export let maxReachedTooltip = null;
   $: maxReachedTooltipFinal =
-    maxReachedTooltip ?? `Can only select ${max} value${s(max)}.`;
+    maxReachedTooltip || `Can only select ${max} value${s(max)}.`;
 
   $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
 
