@@ -1,7 +1,7 @@
 <script>
   /**
-   * @typedef {import('./accordion-section').default} AccordionSection
-   * @slot {{ closeOtherPanels: (e: CustomEvent<AccordionSection>) => void }}
+   * @typedef {{ close: () => void; toggle: () => void }} AccordionSectionControl
+   * @slot {{ closeOtherPanels: (e: CustomEvent<AccordionSectionControl>) => void }}
    */
   import classes from '../utils/classes.js';
 
@@ -13,6 +13,9 @@
    */
   export let multiple = false;
 
+  /**
+   * @type {AccordionSectionControl | null}
+   */
   let currentlyOpenPanel = null;
 
   function closeOtherPanels({ detail: thisPanel }) {
