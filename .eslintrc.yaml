@@ -12,6 +12,7 @@ env:
 extends:
   - eslint:recommended
   - prettier
+  - ./.eslint-svelte-hacks.js
 
 plugins:
   - svelte3
