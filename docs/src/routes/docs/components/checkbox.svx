@@ -2,7 +2,7 @@
 name: Checkbox
 relatedComponents:
   - name: CheckboxGroup
-    link: ./docs/components/checkbox-group
+    link: /docs/components/checkbox-group
 ---
 
 <script>

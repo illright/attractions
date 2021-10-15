@@ -352,7 +352,7 @@ module.exports = {
 
   </CopyableCode>
 
-  If you'd like to use/edit the Sass variables that Attractions uses for theming or if your `node_modules` folder is not in the root of your project, take a look at the [**Theming with Sass**](./docs/theming) section.
+  If you'd like to use/edit the Sass variables that Attractions uses for theming or if your `node_modules` folder is not in the root of your project, take a look at the [**Theming with Sass**](/docs/theming) section.
 
 {:else}
 

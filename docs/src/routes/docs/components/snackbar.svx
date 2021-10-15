@@ -2,7 +2,7 @@
 name: Snackbar
 relatedComponents:
   - name: SnackbarContainer
-    link: ./docs/components/snackbar-container
+    link: /docs/components/snackbar-container
 shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
 ---
 
@@ -20,7 +20,7 @@ A small snackbar to display status messages.
 
 <RelatedComponents components={relatedComponents} class="mb" />
 
-Note: below is not the intended way of using this component. It is meant to be passed into the `showSnackbar` function of the [<mark>`SnackbarContainer`</mark>](./docs/components/snackbar-container) component.
+Note: below is not the intended way of using this component. It is meant to be passed into the `showSnackbar` function of the [<mark>`SnackbarContainer`</mark>](/docs/components/snackbar-container) component.
 
 <Showcase>
   <div slot="showcase" class="padded">
@@ -87,9 +87,9 @@ Falsy values passed to classes will be disregarded.
 | **`$shadow-raised`** | The shadow of the snackbar. | <ShadowPreview value={shadowRaised} /> |
 | **`$main`** | The action button color (75% lighter). | <ColorPreview value="#4300B0" /> |
 | **`$snackbar-radius`** | The curvature radius of the snackbar. | `.625em` |
-| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the action button text. | `'Ubuntu'` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the action button. | `1.5625em` |
-| **`$bold-font-weight`** <small>From [`Button`](./docs/components/button)</small> | The font weight of the action button. | `500` |
+| **`$font`** <small>From [`Button`](/docs/components/button)</small> | The font of the action button text. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`](/docs/components/button)</small> | The curvature radius of the action button. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`](/docs/components/button)</small> | The font weight of the action button. | `500` |
 
 <style lang="scss">
   [slot='showcase'] {

@@ -2,7 +2,7 @@
 name: CheckboxGroup
 relatedComponents:
   - name: Checkbox
-    link: ./docs/components/checkbox
+    link: /docs/components/checkbox
 ---
 
 <script>
@@ -30,7 +30,7 @@ relatedComponents:
 
 A group of checkboxes from an array of items to select.
 
-If you need more control over the labels and checkbox layout, you may use the individual [<mark>`Checkbox`</mark>](./docs/components/checkbox) component.
+If you need more control over the labels and checkbox layout, you may use the individual [<mark>`Checkbox`</mark>](/docs/components/checkbox) component.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -131,12 +131,12 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The fill color of the checked checkbox. | <ColorPreview value="#4300B0" /> |
-| **`$font`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The font of the checkbox's label. | `'Ubuntu'` |
-| **`$disabled`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The fill color of the disabled checkbox. | <ColorPreview value="#888888" /> |
-| **`$dark`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The background color of the checkbox hover signifier. | <ColorPreview value="#333333" /> |
-| **`$light-contrast`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
-| **`$main-text`** <small>From [`Checkbox`](./docs/components/checkbox)</small> | The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$main`** <small>From [`Checkbox`](/docs/components/checkbox)</small> | The fill color of the checked checkbox. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Checkbox`](/docs/components/checkbox)</small> | The font of the checkbox's label. | `'Ubuntu'` |
+| **`$disabled`** <small>From [`Checkbox`](/docs/components/checkbox)</small> | The fill color of the disabled checkbox. | <ColorPreview value="#888888" /> |
+| **`$dark`** <small>From [`Checkbox`](/docs/components/checkbox)</small> | The background color of the checkbox hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`Checkbox`](/docs/components/checkbox)</small> | The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** <small>From [`Checkbox`](/docs/components/checkbox)</small> | The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |
 
 <style lang="scss">
   [slot='showcase'] :global {

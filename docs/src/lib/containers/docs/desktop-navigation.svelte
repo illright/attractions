@@ -22,7 +22,7 @@
             </div>
             {#each place.sub as entry}
               <Button
-                href="./docs/{entry.segment}"
+                href="/docs/{entry.segment}"
                 selected={place === currentPlace}
               >
                 {entry.title}
@@ -31,7 +31,7 @@
           </AccordionSection>
         {:else}
           <Button
-            href="./docs/{place.segment}"
+            href="/docs/{place.segment}"
             selected={place === currentPlace}
           >
             {place.title}

@@ -2,7 +2,7 @@
 name: Calendar
 relatedComponents:
   - name: DatePicker
-    link: ./docs/components/date-picker
+    link: /docs/components/date-picker
 ---
 
 <script>
@@ -20,7 +20,7 @@ relatedComponents:
 
 A calendar component representing a month with selectable days.
 
-If you're seeking a ready-to-use date picking solution, consider using [`DatePicker`](./docs/components/date-picker).
+If you're seeking a ready-to-use date picking solution, consider using [`DatePicker`](/docs/components/date-picker).
 
 <RelatedComponents components={relatedComponents} />
 
@@ -82,5 +82,5 @@ Falsy values passed to classes will be disregarded.
 | **`$main-text`** | The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
 | **`$main`** | The tint color of the selected days in the calendar and on hover. | <ColorPreview value="#4300B0" /> |
 | **`$regular-font-weight`** | The font weight of the days. | `400` |
-| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the days in the calendar. | `'Ubuntu'` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of a button. | `1.5625em` |
+| **`$font`** <small>From [`Button`](/docs/components/button)</small> | The font of the days in the calendar. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`](/docs/components/button)</small> | The curvature radius of a button. | `1.5625em` |

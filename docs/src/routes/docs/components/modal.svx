@@ -15,7 +15,7 @@ name: Modal
 
 An overlay allowing any modal content to appear on the screen prominently.
 
-Works well with the [<mark>`Dialog`</mark>](./docs/components/dialog) component.
+Works well with the [<mark>`Dialog`</mark>](/docs/components/dialog) component.
 
 <Showcase>
   <div slot="showcase" class="padded">

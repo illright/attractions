@@ -48,7 +48,7 @@
   <Dropdown right>
     {#if currentPlace != null && currentPlace.sub != null}
       {#each currentPlace.sub as entry (entry.segment)}
-        <Button href="./docs/{entry.segment}" on:click={toggle}>
+        <Button href="/docs/{entry.segment}" on:click={toggle}>
           {entry.title}
         </Button>
       {/each}

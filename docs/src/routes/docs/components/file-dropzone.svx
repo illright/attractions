@@ -2,9 +2,9 @@
 name: FileDropzone
 relatedComponents:
   - name: FileInput
-    link: ./docs/components/file-input
+    link: /docs/components/file-input
   - name: FileTile
-    link: ./docs/components/file-tile
+    link: /docs/components/file-tile
 shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 ---
 
@@ -21,7 +21,7 @@ shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 
 A large, prominent area for uploading files either by clicking or by dragging them into the area. <br /> Allows uploading files in several takes (that is, the value of the input isn't cleared every time a new selection is made).
 
-For a simpler file input without the built-in representation of the file selection, check out the [`FileInput`](./docs/components/file-input).
+For a simpler file input without the built-in representation of the file selection, check out the [`FileInput`](/docs/components/file-input).
 
 <RelatedComponents components={relatedComponents} />
 
@@ -54,7 +54,7 @@ For a simpler file input without the built-in representation of the file selecti
 | **`beforeChange`** | `null` | `Function` | A callback to call for each file that passes the <mark>`accept`</mark> check before it is added to the <mark>`files`</mark>. <br /> If it returns a Promise, they will be started for every file, but awaited at the end. |
 | **`disabled`** | `false` | `boolean` | Whether the input should accept files. |
 | **`max`** | `Infinity` | `number` | The maximum amount of files that the user can upload. |
-| **`fileComponent`** | [<mark>`FileTile`</mark>](./docs/components/file-tile) | Svelte component | The component used to render a selected file. <br /> Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object. <br /> Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail. |
+| **`fileComponent`** | [<mark>`FileTile`</mark>](/docs/components/file-tile) | Svelte component | The component used to render a selected file. <br /> Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object. <br /> Expected to dispatch `delete` events on to delete this file from the selection with the `file` prop as the detail. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
 
 ### Class Properties
@@ -101,12 +101,12 @@ The plus icon inside the dropzone when there are files inside. <mark>Bonus</mark
 | **`$danger`** | The color of the "incorrect files uploaded" state of the dropzone. | <ColorPreview value="#B80000" /> |
 | **`$disabled`** | The color of the disabled state of the dropzone. | <ColorPreview value="#888888" /> |
 | **`$bold-font-weight`** | The bold font weight of the text in the empty layer. | `500` |
-| **`$dark`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The text color of the file tiles. | <ColorPreview value="#333333" /> |
-| **`$file-tile-radius`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The curvature radius of the file tiles. | `.625em` |
-| **`$shadow-1`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The shadow of the file tiles. | <ShadowPreview value={shadow1} /> |
-| **`$thin-font-weight`** <small>From [`FileTile`](./docs/components/file-tile)</small> | The thinner font weight for the file details: size and type. | `300` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
-| **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
+| **`$dark`** <small>From [`FileTile`](/docs/components/file-tile)</small> | The text color of the file tiles. | <ColorPreview value="#333333" /> |
+| **`$file-tile-radius`** <small>From [`FileTile`](/docs/components/file-tile)</small> | The curvature radius of the file tiles. | `.625em` |
+| **`$shadow-1`** <small>From [`FileTile`](/docs/components/file-tile)</small> | The shadow of the file tiles. | <ShadowPreview value={shadow1} /> |
+| **`$thin-font-weight`** <small>From [`FileTile`](/docs/components/file-tile)</small> | The thinner font weight for the file details: size and type. | `300` |
+| **`$button-radius`** <small>From [`Button`](/docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
+| **`$danger`** <small>From [`Button`](/docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
 
 <style lang="scss">
   [slot='showcase'] {

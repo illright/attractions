@@ -2,13 +2,13 @@
 name: CheckboxChip
 relatedComponents:
   - name: Chip
-    link: ./docs/components/chip
+    link: /docs/components/chip
   - name: RadioChip
-    link: ./docs/components/radio-chip
+    link: /docs/components/radio-chip
   - name: RadioChipGroup
-    link: ./docs/components/radio-chip-group
+    link: /docs/components/radio-chip-group
   - name: CheckboxChipGroup
-    link: ./docs/components/checkbox-chip-group
+    link: /docs/components/checkbox-chip-group
 ---
 
 <script>
@@ -22,7 +22,7 @@ relatedComponents:
 
 An option to select in an inline fashion, as opposed to regular checkboxes.
 
-If you don't need too much customization, consider using [<mark>`CheckboxChipGroup`</mark>](./docs/components/checkbox-chip-group), which offers a nice way to generate lists of options.
+If you don't need too much customization, consider using [<mark>`CheckboxChipGroup`</mark>](/docs/components/checkbox-chip-group), which offers a nice way to generate lists of options.
 
 <RelatedComponents components={relatedComponents} />
 

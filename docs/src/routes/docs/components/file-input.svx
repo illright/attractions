@@ -2,9 +2,9 @@
 name: FileInput
 relatedComponents:
   - name: FileDropzone
-    link: ./docs/components/file-dropzone
+    link: /docs/components/file-dropzone
   - name: FileTile
-    link: ./docs/components/file-tile
+    link: /docs/components/file-tile
 ---
 
 <script>
@@ -21,7 +21,7 @@ relatedComponents:
 
 A regular file input matching the theme of the kit. Comes with buttons to select and deselect files.
 
-For a larger, more functional and visual file uploader, check out the [`FileDropzone`](./docs/components/file-dropzone). It also supports drag'n'drop file upload.
+For a larger, more functional and visual file uploader, check out the [`FileDropzone`](/docs/components/file-dropzone). It also supports drag'n'drop file upload.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -102,6 +102,6 @@ The label of the main upload button. Defaults to the text "select a file" / "sel
 | **`$danger`** | The color of the clearing button. | <ColorPreview value="#B80000" /> |
 | **`$disabled`** | The color of the main upload button when the input is disabled. | <ColorPreview value="#888888" /> |
 | **`$bold-font-weight`** | The bold font weight of the buttons. | `500` |
-| **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "clear selection" buttons. | <ColorPreview value="#B80000" /> |
+| **`$danger`** <small>From [`Button`](/docs/components/button)</small> | The color of the "clear selection" buttons. | <ColorPreview value="#B80000" /> |
 
 <style src="../../../../static/css/routes/docs/components/file-tile.scss"></style>

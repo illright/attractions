@@ -2,7 +2,7 @@
 name: Tab
 relatedComponents:
   - name: Tabs
-    link: ./docs/components/tabs
+    link: /docs/components/tabs
 ---
 
 <script>
@@ -14,7 +14,7 @@ relatedComponents:
 
 # Tab
 
-Allows for finer control over individual tabs when the default [<mark>`Tabs`</mark>](./docs/components/tabs) is not good enough.
+Allows for finer control over individual tabs when the default [<mark>`Tabs`</mark>](/docs/components/tabs) is not good enough.
 
 <RelatedComponents components={relatedComponents} />
 

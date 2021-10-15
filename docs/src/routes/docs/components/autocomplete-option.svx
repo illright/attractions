@@ -2,9 +2,9 @@
 name: AutocompleteOption
 relatedComponents:
   - name: Autocomplete
-    link: ./docs/components/autocomplete
+    link: /docs/components/autocomplete
   - name: AutocompleteField
-    link: ./docs/components/autocomplete-field
+    link: /docs/components/autocomplete-field
 ---
 
 <script>
@@ -25,7 +25,7 @@ relatedComponents:
 
 A list item representing an autocomplete suggestion.
 
-It's unlikely that this component will be used by itself, but it is a part of the larger [<mark>`Autocomplete`</mark>](./docs/components/autocomplete) component.
+It's unlikely that this component will be used by itself, but it is a part of the larger [<mark>`Autocomplete`</mark>](/docs/components/autocomplete) component.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -71,7 +71,7 @@ It's unlikely that this component will be used by itself, but it is a part of th
 
 | Name | Event Detail | Description |
 | ---- | ------------ | ----------- |
-| **`click`** | `{ nativeEvent }` | Fired when the element is clicked. A necessary part of conforming to the [<mark>`AutocompleteField`</mark>'s](./docs/components/autocomplete-field) interface. |
+| **`click`** | `{ nativeEvent }` | Fired when the element is clicked. A necessary part of conforming to the [<mark>`AutocompleteField`</mark>'s](/docs/components/autocomplete-field) interface. |
 
 
 ## SCSS Variables {#scss-variables}

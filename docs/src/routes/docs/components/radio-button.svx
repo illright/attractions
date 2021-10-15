@@ -2,7 +2,7 @@
 name: RadioButton
 relatedComponents:
   - name: RadioGroup
-    link: ./docs/components/radio-group
+    link: /docs/components/radio-group
 ---
 
 <script>

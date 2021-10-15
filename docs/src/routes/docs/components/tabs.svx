@@ -2,7 +2,7 @@
 name: Tabs
 relatedComponents:
   - name: Tab
-    link: ./docs/components/tab
+    link: /docs/components/tab
 ---
 
 <script>
@@ -75,8 +75,8 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the color of the ripple background, border color of the selected tab, and text color. | <ColorPreview value="#4300B0" /> |
-| **`$disabled`** <small>From [`Tab`](./docs/components/tab)</small> | The text color of disabled tabs. | <ColorPreview value="#888888" /> |
-| **`$off-state`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the background color of the tab when focused or hovered on and the default border color. | <ColorPreview value="#AAAAAA" /> |
-| **`$font`** <small>From [`Tab`](./docs/components/tab)</small> | The font family of the content text. | `'Ubuntu'` |
-| **`$bold-font-weight`** <small>From [`Tab`](./docs/components/tab)</small> | The font weight of the content text. | `500` |
+| **`$main`** <small>From [`Tab`](/docs/components/tab)</small> | Affects the color of the ripple background, border color of the selected tab, and text color. | <ColorPreview value="#4300B0" /> |
+| **`$disabled`** <small>From [`Tab`](/docs/components/tab)</small> | The text color of disabled tabs. | <ColorPreview value="#888888" /> |
+| **`$off-state`** <small>From [`Tab`](/docs/components/tab)</small> | Affects the background color of the tab when focused or hovered on and the default border color. | <ColorPreview value="#AAAAAA" /> |
+| **`$font`** <small>From [`Tab`](/docs/components/tab)</small> | The font family of the content text. | `'Ubuntu'` |
+| **`$bold-font-weight`** <small>From [`Tab`](/docs/components/tab)</small> | The font weight of the content text. | `500` |

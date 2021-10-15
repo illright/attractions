@@ -2,7 +2,7 @@
 name: AccordionSection
 relatedComponents:
   - name: Accordion
-    link: ./docs/components/accordion
+    link: /docs/components/accordion
 ---
 
 <script>
@@ -115,9 +115,9 @@ The handle used for opening the hidden content. By default it contains a Button 
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** <small>From [`Button`](./docs/components/button)</small> | The color and hover background of the section handle. | <ColorPreview value="#4300B0" /> |
-| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the section handle. | `'Ubuntu'` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the section handle. | `1.5625em` |
-| **`$bold-font-weight`** <small>From [`Button`](./docs/components/button)</small> | The font weight of the section handle. | `500` |
+| **`$main`** <small>From [`Button`](/docs/components/button)</small> | The color and hover background of the section handle. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Button`](/docs/components/button)</small> | The font of the section handle. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`](/docs/components/button)</small> | The curvature radius of the section handle. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`](/docs/components/button)</small> | The font weight of the section handle. | `500` |
 
 <style src="../../../../static/css/routes/docs/components/accordion.scss"></style>

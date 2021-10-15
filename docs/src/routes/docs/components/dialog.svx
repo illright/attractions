@@ -101,5 +101,5 @@ The icon prepended before the title. Only used when `title` is supplied.
 | **`$dialog-radius`** | The curvature radius of a dialog. | `1.5625em` |
 | **`$bold-font-weight`** | The title's font weight. | `500` |
 | **`$danger`** | The color of the title when using the danger variant of a dialog. | <ColorPreview value="#B80000" /> |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the X button (if the close callback is supplied). | `1.5625em` |
-| **`$dark`** <small>From [`Button`](./docs/components/button)</small> | The color of the X button (if the close callback is supplied). | <ColorPreview value="#333333" /> |
+| **`$button-radius`** <small>From [`Button`](/docs/components/button)</small> | The curvature radius of the X button (if the close callback is supplied). | `1.5625em` |
+| **`$dark`** <small>From [`Button`](/docs/components/button)</small> | The color of the X button (if the close callback is supplied). | <ColorPreview value="#333333" /> |

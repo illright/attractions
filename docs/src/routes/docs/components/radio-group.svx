@@ -2,7 +2,7 @@
 name: RadioGroup
 relatedComponents:
   - name: RadioButton
-    link: ./docs/components/radio-button
+    link: /docs/components/radio-button
 ---
 
 <script>
@@ -102,12 +102,12 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The fill color of the selected radio button. | <ColorPreview value="#4300B0" /> |
-| **`$font`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The font of the radio button's label. | `'Ubuntu'` |
-| **`$disabled`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The fill color of the disabled radio button. | <ColorPreview value="#888888" /> |
-| **`$dark`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The background color of the radio button hover signifier. | <ColorPreview value="#333333" /> |
-| **`$light-contrast`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The border color of an unselected radio button, or the fill color of a selected disabled one. | <ColorPreview value="#DDDDDD" /> |
-| **`$main-text`** <small>From [`RadioButton`](./docs/components/radio-button)</small> | The color of the dot inside the selected radio button. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$main`** <small>From [`RadioButton`](/docs/components/radio-button)</small> | The fill color of the selected radio button. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`RadioButton`](/docs/components/radio-button)</small> | The font of the radio button's label. | `'Ubuntu'` |
+| **`$disabled`** <small>From [`RadioButton`](/docs/components/radio-button)</small> | The fill color of the disabled radio button. | <ColorPreview value="#888888" /> |
+| **`$dark`** <small>From [`RadioButton`](/docs/components/radio-button)</small> | The background color of the radio button hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`RadioButton`](/docs/components/radio-button)</small> | The border color of an unselected radio button, or the fill color of a selected disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** <small>From [`RadioButton`](/docs/components/radio-button)</small> | The color of the dot inside the selected radio button. | <ColorPreview value="#FFFFFF" bordered /> |
 
 <style lang="scss">
   [slot='showcase'] :global {

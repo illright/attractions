@@ -2,7 +2,7 @@
 name: DropdownShell
 relatedComponents:
   - name: Dropdown
-    link: ./docs/components/dropdown
+    link: /docs/components/dropdown
 ---
 
 <script>
@@ -16,7 +16,7 @@ relatedComponents:
 
 # DropdownShell
 
-The container for the [`Dropdown`](./docs/components/dropdown) and its activating handle.
+The container for the [`Dropdown`](/docs/components/dropdown) and its activating handle.
 
 <RelatedComponents components={relatedComponents} />
 

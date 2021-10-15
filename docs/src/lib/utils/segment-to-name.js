@@ -8,5 +8,5 @@ function capitalize(word) {
 }
 
 export default function segmentToName(segment) {
-  return segment.split('-').map(capitalize).join(' ');
+  return segment.split('/')[0].split('-').map(capitalize).join(' ');
 }

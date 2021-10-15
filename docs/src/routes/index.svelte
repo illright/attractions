@@ -15,7 +15,7 @@
     <header>
       <img src="logo-no-bg.svg" alt="Attractions logo" />
       <H1>Attractions</H1>
-      <a href="./docs/changelog" class="hide-on-tb-more" sveltekit:prefetch>
+      <a href="/docs/changelog" class="hide-on-tb-more" sveltekit:prefetch>
         v{latestVersion}
       </a>
     </header>
@@ -24,7 +24,7 @@
       <a href="https://svelte.dev">Svelte</a>.
     </p>
     <div class="actions">
-      <Button filled href="./docs">
+      <Button filled href="/docs">
         <BookOpenIcon size="24" class="mr" />
         docs
       </Button>
@@ -51,7 +51,7 @@
     <p>
       {license}
       licensed &nbsp;•&nbsp;
-      <a href="./docs/changelog" sveltekit:prefetch>v{latestVersion}</a>
+      <a href="/docs/changelog" sveltekit:prefetch>v{latestVersion}</a>
     </p>
   </footer>
 </main>

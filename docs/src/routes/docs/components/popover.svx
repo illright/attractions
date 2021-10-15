@@ -2,7 +2,7 @@
 name: Popover
 relatedComponents:
   - name: PopoverButton
-    link: ./docs/components/popover-button
+    link: /docs/components/popover-button
 ---
 
 <script>

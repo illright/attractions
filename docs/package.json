@@ -20,8 +20,8 @@
     "prism-svelte": "^0.4.6",
     "remark-heading-id": "^1.0.0",
     "sass": "^1.39.2",
-    "svelte": "^3.43.0",
+    "svelte": "^3.43.2",
     "svelte-feather-icons": "^3.2.2",
-    "svelte-preprocess": "^4.9.4"
+    "svelte-preprocess": "^4.9.8"
   }
 }
