@@ -105,5 +105,3 @@ These attributes can be accessed from variables holding component instances boun
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | **`toggle`** | `Function` | Toggles the dropdown's "open" state. In addition to being exposed as a slot prop, this function is exported to allow toggling the dropdown from same component where the shell is created. |
-
-<style src="../../../../static/css/routes/docs/components/dropdown.scss"></style>

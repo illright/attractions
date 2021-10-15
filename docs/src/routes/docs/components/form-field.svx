@@ -120,4 +120,3 @@ Additional text to put underneath the actual field along with the messages like 
 | **`$danger`** | The color of error messages. | <ColorPreview value="#B80000" /> |
 | **`$thin-font-weight`** | The thin font weight of the help text and the status messages under the field'. | `300` |
 
-<style src="../../../../static/css/routes/docs/components/autocomplete.scss"></style>

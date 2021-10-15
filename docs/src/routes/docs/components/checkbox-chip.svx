@@ -104,6 +104,3 @@ The content of the chip. Contains the string representation of the value by defa
 | **`$font`** | The font of the chip text. | `'Ubuntu'` |
 | **`$main`** | The border color of outline chips and the selection color. | <ColorPreview value="#4300B0" /> |
 | **`$bold-font-weight`** | The bold font weight of the chips. | `500` |
-
-
-<style src="../../../../static/css/routes/docs/components/chip.scss"></style>
