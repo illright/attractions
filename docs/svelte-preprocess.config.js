@@ -1,5 +1,5 @@
 import makeAttractionsImporter from 'attractions/importer.js';
-import resolve from './resolve.js';
+import { resolve } from 'path';
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -8,10 +8,10 @@ const config = {
   scss: {
     renderSync: true,
     importer: makeAttractionsImporter({
-      themeFile: resolve(import.meta.url, './src/lib/attractions-theme.scss'),
-      nodeModulesPath: resolve(import.meta.url, './node_modules'),
+      themeFile: resolve('./src/lib/attractions-theme.scss'),
+      nodeModulesPath: resolve('./node_modules'),
     }),
-    includePaths: [resolve(import.meta.url, './src/lib')],
+    includePaths: [resolve('./src/lib')],
   },
   sourceMap: dev,
 };

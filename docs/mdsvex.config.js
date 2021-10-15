@@ -1,6 +1,5 @@
 import remarkHeadingID from 'remark-heading-id';
-
-import resolve from './resolve.js';
+import { resolve } from 'path';
 
 /** @type {Parameters<typeof import('mdsvex').mdsvex>[0]} */
 const config = {
@@ -11,8 +10,8 @@ const config = {
     ellipses: true,
   },
   layout: {
-    docs: resolve(import.meta.url, './src/lib/mdsvex/layout.svelte'),
-    _: resolve(import.meta.url, './src/lib/mdsvex/layout-no-head.svelte'),
+    docs: resolve('./src/lib/mdsvex/layout.svelte'),
+    _: resolve('./src/lib/mdsvex/layout-no-head.svelte'),
   },
 };
 
