@@ -1,0 +1,22 @@
+{
+  "name": "@attractions/import-expander",
+  "description": "A hack for SvelteKit to optimize imports from large libraries",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "acorn": "^8.5.0",
+    "acorn-walk": "^8.2.0",
+    "astring": "^1.7.5"
+  },
+  "devDependencies": {
+    "@types/estree": "^0.0.50",
+    "svelte": "^3.43.2",
+    "typescript": "^4.4.3"
+  }
+}

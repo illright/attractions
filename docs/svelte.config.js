@@ -1,11 +1,13 @@
+import { resolve } from 'path';
 import { mdsvex } from 'mdsvex';
 import autoPreprocess from 'svelte-preprocess';
+import importExpander from '@attractions/import-expander';
 
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const attractionsPkg = require('attractions/package.json');
 
-import { resolve } from 'path';
+import importExpanderConfig from './import-expander.config.js';
 import mdsvexConfig from './mdsvex.config.js';
 import sveltePreprocessConfig from './svelte-preprocess.config.js';
 
@@ -28,7 +30,11 @@ const config = {
       },
     },
   },
-  preprocess: [autoPreprocess(sveltePreprocessConfig), mdsvex(mdsvexConfig)],
+  preprocess: [
+    importExpander(importExpanderConfig),
+    autoPreprocess(sveltePreprocessConfig),
+    mdsvex(mdsvexConfig),
+  ],
 };
 
 export default config;

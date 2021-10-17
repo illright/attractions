@@ -1,3 +1,4 @@
 packages:
   - 'attractions/**'
   - 'docs/**'
+  - 'import-expander/**'

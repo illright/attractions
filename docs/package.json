@@ -14,6 +14,7 @@
     "prismjs": "^1.24.0"
   },
   "devDependencies": {
+    "@attractions/import-expander": "workspace:^0.1.0",
     "@sveltejs/kit": "next",
     "attractions": "^3.0.0",
     "mdsvex": "^0.9.6",
