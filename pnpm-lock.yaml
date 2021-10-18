@@ -86,7 +86,8 @@ importers:
 
   docs:
     specifiers:
-      '@attractions/import-expander': workspace:^undefined
+      '@attractions/import-expander': workspace:^0.1.0
+      '@sveltejs/adapter-static': ^1.0.0-next.21
       '@sveltejs/kit': next
       attractions: ^3.0.0
       clipboard-polyfill: ^3.0.2
@@ -103,6 +104,7 @@ importers:
       prismjs: 1.24.1
     devDependencies:
       '@attractions/import-expander': link:../import-expander
+      '@sveltejs/adapter-static': 1.0.0-next.21
       '@sveltejs/kit': 1.0.0-next.184_sass@1.39.2+svelte@3.43.2
       attractions: link:../attractions
       mdsvex: 0.9.8_svelte@3.43.2
@@ -2393,6 +2395,10 @@ packages:
       unist-util-find-all-after: 3.0.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@sveltejs/adapter-static/1.0.0-next.21:
+    resolution: {integrity: sha512-B4+QoUVAaANKx+mHntG8SqF45zbj3Ct4Akg/cGauo6COyfKZRhO5OsMa+wPuT2TKJBZC4eEDK0p+p9nyQBkxKQ==}
     dev: true
 
   /@sveltejs/kit/1.0.0-next.184_sass@1.39.2+svelte@3.43.2:

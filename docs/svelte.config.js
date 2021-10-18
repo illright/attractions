@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import { mdsvex } from 'mdsvex';
+import staticAdapter from '@sveltejs/adapter-static';
 import autoPreprocess from 'svelte-preprocess';
 import importExpander from '@attractions/import-expander';
 
@@ -21,6 +22,10 @@ const config = {
   extensions: ['.svelte', ...mdsvexConfig.extensions],
   kit: {
     target: 'body',
+    adapter: staticAdapter(),
+    paths: {
+      base: process.env.APP_BASEPATH ?? '',
+    },
     vite: {
       define: environment,
       resolve: {
