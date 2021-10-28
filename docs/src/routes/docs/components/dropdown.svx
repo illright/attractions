@@ -38,7 +38,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
       <Button on:click={toggle}>
         look up there
       </Button>
-      <Dropdown top>
+      <Dropdown verticalAlignment="top">
         <div class="padded">
           right here
         </div>
@@ -63,7 +63,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
   <Button on:click={toggle}>
     look up there
   </Button>
-  <Dropdown top>
+  <Dropdown verticalAlignment="top">
     <div class="padded">
       right here
     </div>
