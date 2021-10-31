@@ -51,11 +51,7 @@
   const isDropdownOpen = getContext(CONTEXT_IS_DROPDOWN_OPEN);
   const dropdownShellElement = getContext(CONTEXT_DROPDOWN_SHELL);
 
-  let dropdownElement,
-    screenWidth,
-    screenHeight,
-    isVerticalAlignTop,
-    isHorizontalAlignEnd;
+  let dropdownElement, isVerticalAlignTop, isHorizontalAlignEnd;
 
   function getIsVerticalAlignTop(dropdownBound, dropdownShellBound) {
     const { height } = dropdownBound;
@@ -70,7 +66,7 @@
         return height <= top;
       default:
         // auto-bottom by default
-        return height > screenHeight - bottom;
+        return height > window.innerHeight - bottom;
     }
   }
 
@@ -87,7 +83,7 @@
         return width <= left;
       default:
         // auto-start by default
-        return width > screenWidth - right;
+        return width > window.innerWidth - right;
     }
   }
 
@@ -104,8 +100,6 @@
     }
   }
 </script>
-
-<svelte:window bind:innerHeight={screenHeight} bind:innerWidth={screenWidth} />
 
 <div
   class:right={isHorizontalAlignEnd}
