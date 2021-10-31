@@ -1,9 +1,15 @@
+<script context="module">
+  export const CONTEXT_DROPDOWN_SHELL = 'dropdownShell';
+  export const CONTEXT_IS_DROPDOWN_OPEN = 'isDropdownOpen';
+</script>
+
 <script>
   /**
    * @slot {{ toggle: () => void }}
    * @event {{ value: boolean }} change
    */
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, setContext } from 'svelte';
+  import { writable } from 'svelte/store';
   import classes from '../utils/classes.js';
 
   let _class = null;
@@ -24,13 +30,13 @@
 
   $: dispatch('change', { value: open });
 
-  let self = null;
+  const self = writable(null);
   function clickOutside(event) {
     if (!self) {
       return;
     }
 
-    const isClickInside = self.contains(event.target);
+    const isClickInside = $self.contains(event.target);
     if (!isClickInside && open) {
       toggle();
     }
@@ -49,11 +55,18 @@
       : document.removeEventListener('keydown', handleKeyPress));
 
   const dispatch = createEventDispatcher();
+
+  const isDropdownOpen = writable(open);
+
+  setContext(CONTEXT_DROPDOWN_SHELL, self);
+  setContext(CONTEXT_IS_DROPDOWN_OPEN, isDropdownOpen);
+
+  $: isDropdownOpen.set(open);
 </script>
 
 <svelte:window on:click={clickOutside} />
 
-<div bind:this={self} class:open class={classes('dropdown-shell', _class)}>
+<div bind:this={$self} class:open class={classes('dropdown-shell', _class)}>
   <slot {toggle} />
 </div>
 

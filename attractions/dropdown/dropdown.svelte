@@ -18,7 +18,12 @@
 </script>
 
 <script>
+  import { getContext } from 'svelte';
   import classes from '../utils/classes.js';
+  import {
+    CONTEXT_DROPDOWN_SHELL,
+    CONTEXT_IS_DROPDOWN_OPEN,
+  } from './dropdown-shell.svelte';
 
   let _class = null;
   export { _class as class };
@@ -42,12 +47,71 @@
    * @type {string}
    */
   export let verticalAlignment = VerticalAlignment.autoBottom;
+
+  const isDropdownOpen = getContext(CONTEXT_IS_DROPDOWN_OPEN);
+  const dropdownShellElement = getContext(CONTEXT_DROPDOWN_SHELL);
+
+  let dropdownElement,
+    screenWidth,
+    screenHeight,
+    isVerticalAlignTop,
+    isHorizontalAlignEnd;
+
+  function getIsVerticalAlignTop(dropdownBound, dropdownShellBound) {
+    const { height } = dropdownBound;
+    const { top, bottom } = dropdownShellBound;
+
+    switch (verticalAlignment) {
+      case VerticalAlignment.top:
+        return true;
+      case VerticalAlignment.bottom:
+        return false;
+      case VerticalAlignment.autoTop:
+        return height <= top;
+      default:
+        // auto-bottom by default
+        return height > screenHeight - bottom;
+    }
+  }
+
+  function getIsHorizontalAlignEnd(dropdownBound, dropdownShellBound) {
+    const { width } = dropdownBound;
+    const { left, right } = dropdownShellBound;
+
+    switch (horizontalAlignment) {
+      case HorizontalAlignment.end:
+        return true;
+      case HorizontalAlignment.start:
+        return false;
+      case HorizontalAlignment.autoEnd:
+        return width <= left;
+      default:
+        // auto-start by default
+        return width > screenWidth - right;
+    }
+  }
+
+  $: {
+    if ($isDropdownOpen) {
+      const dropdownBound = dropdownElement.getBoundingClientRect();
+      const dropdownShellBound = $dropdownShellElement.getBoundingClientRect();
+
+      isVerticalAlignTop =
+        top || getIsVerticalAlignTop(dropdownBound, dropdownShellBound);
+
+      isHorizontalAlignEnd =
+        right || getIsHorizontalAlignEnd(dropdownBound, dropdownShellBound);
+    }
+  }
 </script>
 
+<svelte:window bind:innerHeight={screenHeight} bind:innerWidth={screenWidth} />
+
 <div
-  class:right={right || horizontalAlignment === HorizontalAlignment.end}
-  class:top={top || verticalAlignment === VerticalAlignment.top}
+  class:right={isHorizontalAlignEnd}
+  class:top={isVerticalAlignTop}
   class={classes('dropdown', _class)}
+  bind:this={dropdownElement}
 >
   <slot />
 </div>
