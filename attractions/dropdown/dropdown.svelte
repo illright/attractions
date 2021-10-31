@@ -92,7 +92,7 @@
   $: {
     if ($isDropdownOpen) {
       const dropdownBound = dropdownElement.getBoundingClientRect();
-      const dropdownShellBound = $getDropdownShellBoundary();
+      const dropdownShellBound = getDropdownShellBoundary();
 
       isVerticalAlignTop =
         top || getIsVerticalAlignTop(dropdownBound, dropdownShellBound);

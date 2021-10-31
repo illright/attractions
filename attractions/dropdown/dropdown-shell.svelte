@@ -57,13 +57,12 @@
   const dispatch = createEventDispatcher();
 
   const isDropdownOpen = writable(open);
-  const getDropdownShellBoundary = writable(() => {});
+  const getDropdownShellBoundary = () => self?.getBoundingClientRect();
 
   setContext(CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY, getDropdownShellBoundary);
   setContext(CONTEXT_IS_DROPDOWN_OPEN, isDropdownOpen);
 
   $: isDropdownOpen.set(open);
-  $: self && getDropdownShellBoundary.set(() => self.getBoundingClientRect());
 </script>
 
 <svelte:window on:click={clickOutside} />
