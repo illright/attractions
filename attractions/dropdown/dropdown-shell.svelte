@@ -1,5 +1,5 @@
 <script context="module">
-  export const CONTEXT_DROPDOWN_SHELL = 'dropdownShell';
+  export const CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY = 'getDropdownShellBoundary';
   export const CONTEXT_IS_DROPDOWN_OPEN = 'isDropdownOpen';
 </script>
 
@@ -30,13 +30,13 @@
 
   $: dispatch('change', { value: open });
 
-  const self = writable(null);
+  let self = null;
   function clickOutside(event) {
     if (!self) {
       return;
     }
 
-    const isClickInside = $self.contains(event.target);
+    const isClickInside = self.contains(event.target);
     if (!isClickInside && open) {
       toggle();
     }
@@ -57,16 +57,18 @@
   const dispatch = createEventDispatcher();
 
   const isDropdownOpen = writable(open);
+  const getDropdownShellBoundary = writable(() => {});
 
-  setContext(CONTEXT_DROPDOWN_SHELL, self);
+  setContext(CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY, getDropdownShellBoundary);
   setContext(CONTEXT_IS_DROPDOWN_OPEN, isDropdownOpen);
 
   $: isDropdownOpen.set(open);
+  $: self && getDropdownShellBoundary.set(() => self.getBoundingClientRect());
 </script>
 
 <svelte:window on:click={clickOutside} />
 
-<div bind:this={$self} class:open class={classes('dropdown-shell', _class)}>
+<div bind:this={self} class:open class={classes('dropdown-shell', _class)}>
   <slot {toggle} />
 </div>
 

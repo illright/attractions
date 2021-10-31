@@ -21,7 +21,7 @@
   import { getContext } from 'svelte';
   import classes from '../utils/classes.js';
   import {
-    CONTEXT_DROPDOWN_SHELL,
+    CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY,
     CONTEXT_IS_DROPDOWN_OPEN,
   } from './dropdown-shell.svelte';
 
@@ -49,7 +49,9 @@
   export let verticalAlignment = VerticalAlignment.autoBottom;
 
   const isDropdownOpen = getContext(CONTEXT_IS_DROPDOWN_OPEN);
-  const dropdownShellElement = getContext(CONTEXT_DROPDOWN_SHELL);
+  const getDropdownShellBoundary = getContext(
+    CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY
+  );
 
   let dropdownElement, isVerticalAlignTop, isHorizontalAlignEnd;
 
@@ -90,7 +92,7 @@
   $: {
     if ($isDropdownOpen) {
       const dropdownBound = dropdownElement.getBoundingClientRect();
-      const dropdownShellBound = $dropdownShellElement.getBoundingClientRect();
+      const dropdownShellBound = $getDropdownShellBoundary();
 
       isVerticalAlignTop =
         top || getIsVerticalAlignTop(dropdownBound, dropdownShellBound);
