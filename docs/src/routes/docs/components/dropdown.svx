@@ -36,11 +36,21 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
     </DropdownShell>
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        look up there
+        Look up there
+      </Button>
+      <Dropdown verticalAlignment="top">
+        <div class="padded">
+          Right here
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        Look up if there is enough space
       </Button>
       <Dropdown verticalAlignment="auto-top">
         <div class="padded">
-          right here
+          Hello!
         </div>
       </Dropdown>
     </DropdownShell>
@@ -61,11 +71,21 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 </DropdownShell>
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    look up there
+    Look up there
+  </Button>
+  <Dropdown verticalAlignment="top">
+    <div class="padded">
+      Right here
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    Look up if there is enough space
   </Button>
   <Dropdown verticalAlignment="auto-top">
     <div class="padded">
-      right here
+      Hello!
     </div>
   </Dropdown>
 </DropdownShell>
@@ -81,8 +101,28 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`right`** | `false` | `boolean` | Aligns the dropdown content with the right edge of the shell. |
-| **`top`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the top of the shell, extending up. |
+| **`horizontalAlignment`** | `auto-start` | `auto-start`, `auto-end`, `start`, `end` | Dropdown content alignment on horizontal axis. |
+| **`verticalAlignment`** | `auto-bottom` | `auto-bottom`, `auto-top`, `bottom`, `top` | Dropdown content alignment on vertical axis. |
+| **`right`** | `false` | `boolean` | **`DEPRECATED`** Aligns the dropdown content with the right edge of the shell. |
+| **`top`** | `false` | `boolean` | **`DEPRECATED`** Aligns the dropdown content such that it opens to the top of the shell, extending up. |
+
+**NOTE:** For the alignment props. Auto-[preferable] will align content base on available space with preferable position. The alignment values can be specified using string or `HorizontalAlignment` and `VerticalAlignment` constants exported from the components with the following definition:
+
+```svelte
+export const HorizontalAlignment = {
+  autoStart: 'auto-start',
+  autoEnd: 'auto-end',
+  start: 'start',
+  end: 'end',
+};
+
+export const VerticalAlignment = {
+  autoBottom: 'auto-bottom',
+  autoTop: 'auto-top',
+  bottom: 'bottom',
+  top: 'top',
+};
+```
 
 ### Class Properties
 
