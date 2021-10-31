@@ -25,7 +25,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
   <div slot="showcase" class="padded">
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        I toggle a dropdown
+        i toggle a dropdown
         <ChevronDownIcon size="24" class="ml dropdown-chevron" />
       </Button>
       <Dropdown>
@@ -36,21 +36,21 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
     </DropdownShell>
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        Look up there
+        look up there
       </Button>
       <Dropdown verticalAlignment="top">
         <div class="padded">
-          Right here
+          right here
         </div>
       </Dropdown>
     </DropdownShell>
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        Look up if there is enough space
+        look up if there is enough space
       </Button>
       <Dropdown verticalAlignment="auto-top">
         <div class="padded">
-          Hello!
+          hello!
         </div>
       </Dropdown>
     </DropdownShell>
@@ -60,7 +60,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 ```svelte
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    I toggle a dropdown
+    i toggle a dropdown
     <ChevronDownIcon size="24" class="ml dropdown-chevron" />
   </Button>
   <Dropdown>
@@ -71,21 +71,21 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 </DropdownShell>
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    Look up there
+    look up there
   </Button>
   <Dropdown verticalAlignment="top">
     <div class="padded">
-      Right here
+      right here
     </div>
   </Dropdown>
 </DropdownShell>
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    Look up if there is enough space
+    look up if there is enough space
   </Button>
   <Dropdown verticalAlignment="auto-top">
     <div class="padded">
-      Hello!
+      hello!
     </div>
   </Dropdown>
 </DropdownShell>
