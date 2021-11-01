@@ -1,16 +1,16 @@
 <script context="module">
   export const HorizontalAlignment = {
-    autoStart: 'auto-start',
-    autoEnd: 'auto-end',
-    start: 'start',
-    end: 'end',
+    AUTO_START: 'auto-start',
+    AUTO_END: 'auto-end',
+    START: 'start',
+    END: 'end',
   };
 
   export const VerticalAlignment = {
-    autoBottom: 'auto-bottom',
-    autoTop: 'auto-top',
-    bottom: 'bottom',
-    top: 'top',
+    AUTO_BOTTOM: 'auto-bottom',
+    AUTO_TOP: 'auto-top',
+    BOTTOM: 'bottom',
+    TOP: 'top',
   };
 
   Object.freeze(HorizontalAlignment);
@@ -41,12 +41,12 @@
    * Dropdown horizontal alignment relative to the shell.
    * @type {string}
    */
-  export let horizontalAlignment = HorizontalAlignment.autoStart;
+  export let horizontalAlignment = HorizontalAlignment.AUTO_START;
   /**
    * Dropdown vertical alignment relative to the shell.
    * @type {string}
    */
-  export let verticalAlignment = VerticalAlignment.autoBottom;
+  export let verticalAlignment = VerticalAlignment.AUTO_BOTTOM;
 
   const isDropdownOpen = getContext(CONTEXT_IS_DROPDOWN_OPEN);
   const getDropdownShellBoundary = getContext(
@@ -60,11 +60,11 @@
     const { top, bottom } = dropdownShellBound;
 
     switch (verticalAlignment) {
-      case VerticalAlignment.top:
+      case VerticalAlignment.TOP:
         return true;
-      case VerticalAlignment.bottom:
+      case VerticalAlignment.BOTTOM:
         return false;
-      case VerticalAlignment.autoTop:
+      case VerticalAlignment.AUTO_TOP:
         return height <= top;
       default:
         // auto-bottom by default
@@ -77,11 +77,11 @@
     const { left, right } = dropdownShellBound;
 
     switch (horizontalAlignment) {
-      case HorizontalAlignment.end:
+      case HorizontalAlignment.END:
         return true;
-      case HorizontalAlignment.start:
+      case HorizontalAlignment.START:
         return false;
-      case HorizontalAlignment.autoEnd:
+      case HorizontalAlignment.AUTO_END:
         return width <= left;
       default:
         // auto-start by default

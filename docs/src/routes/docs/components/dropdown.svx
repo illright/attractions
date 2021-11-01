@@ -25,7 +25,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
   <div slot="showcase" class="padded">
     <DropdownShell let:toggle>
       <Button on:click={toggle}>
-        i toggle a dropdown
+        I toggle a dropdown
         <ChevronDownIcon size="24" class="ml dropdown-chevron" />
       </Button>
       <Dropdown>
@@ -60,7 +60,7 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 ```svelte
 <DropdownShell let:toggle>
   <Button on:click={toggle}>
-    i toggle a dropdown
+    I toggle a dropdown
     <ChevronDownIcon size="24" class="ml dropdown-chevron" />
   </Button>
   <Dropdown>
@@ -101,28 +101,10 @@ Toggleable, contextual overlays for displaying additional details or actions. Mu
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **`horizontalAlignment`** | `auto-start` | `auto-start`, `auto-end`, `start`, `end` | Dropdown content alignment on horizontal axis. |
-| **`verticalAlignment`** | `auto-bottom` | `auto-bottom`, `auto-top`, `bottom`, `top` | Dropdown content alignment on vertical axis. |
+| **`horizontalAlignment`** | `auto-start` | `auto-start` \| `auto-end` \| `start` \| `end` | Dropdown content alignment on horizontal axis. |
+| **`verticalAlignment`** | `auto-bottom` | `auto-bottom` \| `auto-top` \| `bottom` \| `top` | Dropdown content alignment on vertical axis. |
 | **`right`** | `false` | `boolean` | **`DEPRECATED`** Aligns the dropdown content with the right edge of the shell. |
 | **`top`** | `false` | `boolean` | **`DEPRECATED`** Aligns the dropdown content such that it opens to the top of the shell, extending up. |
-
-**NOTE:** For the alignment props. Auto-[preferable] will align content base on available space with preferable position. The alignment values can be specified using string or `HorizontalAlignment` and `VerticalAlignment` constants exported from the components with the following definition:
-
-```svelte
-export const HorizontalAlignment = {
-  autoStart: 'auto-start',
-  autoEnd: 'auto-end',
-  start: 'start',
-  end: 'end',
-};
-
-export const VerticalAlignment = {
-  autoBottom: 'auto-bottom',
-  autoTop: 'auto-top',
-  bottom: 'bottom',
-  top: 'top',
-};
-```
 
 ### Class Properties
 
@@ -141,6 +123,30 @@ Falsy values passed to classes will be disregarded.
 
 The content of the dropdown.
 
+### Related Objects
+
+The following objects are available as named exports in 'attractions/dropdown'.
+
+
+#### HorizontalAlignment
+Dropdown content alignment on horizontal axis.
+
+| Field | Description |
+| ---- | ------- |
+| **`AUTO_START`** | Align content based on available space, preferable start. |
+| **`AUTO_END`** | Align content based on available space, preferable end. |
+| **`START`** | Align content start |
+| **`END`** | Align content end. |
+
+#### VerticalAlignment
+Dropdown content alignment on vertical axis.
+
+| Field | Description |
+| ---- | ------- |
+| **`AUTO_BOTTOM`** | Align content based on available space, preferable bottom. |
+| **`AUTO_TOP`** | Align content based on available space, preferable top. |
+| **`BOTTOM`** | Align content bottom. |
+| **`TOP`** | Align content top. |
 
 ## SCSS Variables {#scss-variables}
 
