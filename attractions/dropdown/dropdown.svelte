@@ -1,29 +1,14 @@
-<script context="module">
-  export const HorizontalAlignment = {
-    AUTO_START: 'auto-start',
-    AUTO_END: 'auto-end',
-    START: 'start',
-    END: 'end',
-  };
-
-  export const VerticalAlignment = {
-    AUTO_BOTTOM: 'auto-bottom',
-    AUTO_TOP: 'auto-top',
-    BOTTOM: 'bottom',
-    TOP: 'top',
-  };
-
-  Object.freeze(HorizontalAlignment);
-  Object.freeze(VerticalAlignment);
-</script>
-
 <script>
   import { getContext } from 'svelte';
   import classes from '../utils/classes.js';
   import {
+    HorizontalAlignment,
+    VerticalAlignment,
+  } from './dropdown-alignment.js';
+  import {
     CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY,
     CONTEXT_IS_DROPDOWN_OPEN,
-  } from './dropdown-shell.svelte';
+  } from './dropdown-context-key';
 
   let _class = null;
   export { _class as class };

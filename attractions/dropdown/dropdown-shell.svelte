@@ -1,8 +1,3 @@
-<script context="module">
-  export const CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY = 'getDropdownShellBoundary';
-  export const CONTEXT_IS_DROPDOWN_OPEN = 'isDropdownOpen';
-</script>
-
 <script>
   /**
    * @slot {{ toggle: () => void }}
@@ -11,6 +6,10 @@
   import { createEventDispatcher, setContext } from 'svelte';
   import { writable } from 'svelte/store';
   import classes from '../utils/classes.js';
+  import {
+    CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY,
+    CONTEXT_IS_DROPDOWN_OPEN,
+  } from './dropdown-context-key.js';
 
   let _class = null;
   export { _class as class };
