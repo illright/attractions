@@ -59,7 +59,7 @@
 
   function getIsHorizontalAlignEnd(dropdownBound, dropdownShellBound) {
     const { width } = dropdownBound;
-    const { left, right } = dropdownShellBound;
+    const { left } = dropdownShellBound;
 
     switch (horizontalAlignment) {
       case HorizontalAlignment.END:
@@ -70,7 +70,7 @@
         return width <= left;
       default:
         // auto-start by default
-        return width > window.innerWidth - right;
+        return width > window.innerWidth - left;
     }
   }
 

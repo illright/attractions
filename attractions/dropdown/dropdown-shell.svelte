@@ -56,7 +56,7 @@
   const dispatch = createEventDispatcher();
 
   const isDropdownOpen = writable(open);
-  const getDropdownShellBoundary = () => self?.getBoundingClientRect();
+  const getDropdownShellBoundary = () => self && self.getBoundingClientRect();
 
   setContext(CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY, getDropdownShellBoundary);
   setContext(CONTEXT_IS_DROPDOWN_OPEN, isDropdownOpen);
