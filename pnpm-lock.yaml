@@ -96,7 +96,7 @@ importers:
       '@rollup/plugin-commonjs': ^20.0.0
       '@rollup/plugin-node-resolve': ^13.0.6
       '@rollup/plugin-replace': ^3.0.0
-      attractions: workspace:^3.4.0
+      attractions: workspace:^3.5.0
       clipboard-polyfill: ^3.0.3
       compression: ^1.7.4
       eslint-config-prettier: ^8.3.0
