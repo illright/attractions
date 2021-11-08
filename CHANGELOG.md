@@ -9,11 +9,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 ### Added
 
 - The [`Slider`](https://illright.github.io/attractions/docs/components/slider) component has been added, allowing you to create a slider similar to the one you would get with `<input type="range">`. It also support inputting a range by supplying a tuple for the `value` prop (Thanks to [@RikuVan](https://github.com/RikuVan) for the contribution - [#290](https://github.com/illright/attractions/pull/290)).
-- The `closeOnSelection` prop to the `DatePicker` component has been added.
+- The `closeOnSelection` prop to the `DatePicker` component has been added to close the dropdown after a selection has been made.
 
 ### Changed
 
-- Change the [`Dropdown`](https://illright.github.io/attractions/docs/components/dropdown) chevron transition animation to a `scaleY(-1)` for `150ms` ([#310](https://github.com/illright/attractions/pull/310))
+- Change the [`Dropdown`](https://illright.github.io/attractions/docs/components/dropdown) chevron transition animation to a `scaleY(-1)` for `150ms` ([#310](https://github.com/illright/attractions/pull/310)).
+- The [`Card`](https://illright.github.io/attractions/docs/components/card) component will now use the SCSS `$background` variable as its default background color instead of the hard-coded white color.
+
+### Fixed
+
+- Fixed some types and documentation mistakes for the [`Accordion`](https://illright.github.io/attractions/docs/components/accordion) component ([#316](https://github.com/illright/attractions/pull/316)).
 
 ## [3.4.0] - 2021-09-12
 
