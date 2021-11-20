@@ -1,6 +1,5 @@
 <script>
   /**
-   * @typedef {import('./autocomplete-field').OptionsGetter} OptionsGetter
    * @typedef {import('./autocomplete-option.svelte').Option} Option
    * @slot {{ }} loading-options
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
