@@ -28,7 +28,7 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.0",
-    "attractions": "workspace:^3.5.0",
+    "attractions": "workspace:^3.5.1",
     "eslint-config-prettier": "^8.3.0",
     "mdsvex": "^0.9.8",
     "postcss": "^8.3.11",
