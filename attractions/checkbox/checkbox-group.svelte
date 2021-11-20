@@ -1,7 +1,7 @@
 <script>
   /**
    * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
-   * @extends {'./checkbox'} CheckboxProps
+   * @extends {'./checkbox.svelte'} CheckboxProps
    */
   import classes from '../utils/classes.js';
   import getColorPickerStyles from '../utils/color-picker-styles.js';
