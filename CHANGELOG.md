@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.5.1] - 2021-11-20
+
+### Fixed
+
+- Fixed a minor regression in the types of components that extend other components ([#325](https://github.com/illright/attractions/issues/325)).
+
 ## [3.5.0] - 2021-11-08
 
 ### Added

@@ -1,13 +1,12 @@
 <script>
   /**
-   * @typedef {import('./autocomplete-field').OptionsGetter} OptionsGetter
-   * @typedef {import('./autocomplete-option').Option} Option
+   * @typedef {import('./autocomplete-option.svelte').Option} Option
    * @slot {{ }} loading-options
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
    * @slot {{ }} not-enough-input
    * @slot {{ }} too-many-options
    * @event {{ value: Option[] }} change
-   * @extends {'./autocomplete-field'} AutocompleteFieldProps
+   * @extends {'./autocomplete-field.svelte'} AutocompleteFieldProps
    */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
