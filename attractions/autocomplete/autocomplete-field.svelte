@@ -1,7 +1,7 @@
 <script>
   /**
    * @typedef {import('./autocomplete-option.svelte').Option} Option
-   * @typedef {(q: string) => Generator<Promise<Option[]>, never, never>} OptionsGetter
+   * @typedef {(q: string) => AsyncGenerator<Option[], void, void>} OptionsGetter
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
    * @event {{ value: Option[] }} change
    */
