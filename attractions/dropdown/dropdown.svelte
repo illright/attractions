@@ -6,8 +6,8 @@
     VerticalAlignment,
   } from './dropdown-alignment.js';
   import {
-    CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY,
-    CONTEXT_IS_DROPDOWN_OPEN,
+    getDropdownShellBoundaryKey,
+    isDropdownOpenKey,
   } from './dropdown-context-key';
 
   let _class = null;
@@ -33,10 +33,8 @@
    */
   export let verticalAlignment = VerticalAlignment.AUTO_BOTTOM;
 
-  const isDropdownOpen = getContext(CONTEXT_IS_DROPDOWN_OPEN);
-  const getDropdownShellBoundary = getContext(
-    CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY
-  );
+  const isDropdownOpen = getContext(isDropdownOpenKey);
+  const getDropdownShellBoundary = getContext(getDropdownShellBoundaryKey);
 
   let dropdownElement, isVerticalAlignTop, isHorizontalAlignEnd;
 

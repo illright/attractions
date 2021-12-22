@@ -7,8 +7,8 @@
   import { writable } from 'svelte/store';
   import classes from '../utils/classes.js';
   import {
-    CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY,
-    CONTEXT_IS_DROPDOWN_OPEN,
+    getDropdownShellBoundaryKey,
+    isDropdownOpenKey,
   } from './dropdown-context-key.js';
 
   let _class = null;
@@ -58,8 +58,8 @@
   const isDropdownOpen = writable(open);
   const getDropdownShellBoundary = () => self && self.getBoundingClientRect();
 
-  setContext(CONTEXT_GET_DROPDOWN_SHELL_BOUNDARY, getDropdownShellBoundary);
-  setContext(CONTEXT_IS_DROPDOWN_OPEN, isDropdownOpen);
+  setContext(getDropdownShellBoundaryKey, getDropdownShellBoundary);
+  setContext(isDropdownOpenKey, isDropdownOpen);
 
   $: isDropdownOpen.set(open);
 </script>
