@@ -129,17 +129,17 @@ The following objects are available as named exports in 'attractions/dropdown'.
 
 
 #### HorizontalAlignment
-Dropdown content alignment on horizontal axis.
+Dropdown alignment along the horizontal axis.
 
 | Field | Description |
 | ---- | ------- |
-| **`AUTO_START`** | Align content based on available space, preferable start. |
-| **`AUTO_END`** | Align content based on available space, preferable end. |
+| **`AUTO_START`** | Align the dropdown based on available space around, preferably, at text start (left edge for LTR languages). |
+| **`AUTO_END`** | Align dropdown based on available space around, preferably, at text end (right edge for LTR languages). |
 | **`START`** | Align content start |
 | **`END`** | Align content end. |
 
 #### VerticalAlignment
-Dropdown content alignment on vertical axis.
+Dropdown alignment along the vertical axis.
 
 | Field | Description |
 | ---- | ------- |
