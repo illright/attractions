@@ -18,6 +18,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ## [3.5.0] - 2021-11-08
 
+### Changed
+
+- Change the [Dropdown](https://illright.github.io/attractions/docs/components/dropdown/)'s alignment props from ~~`right`~~ and ~~`top`~~ to `horizontalAlignment` and `verticalAlignment`, with values coming from `HorizontalAlignment` and `VerticalAlignment` that can be imported from `attractions/dropdown` ([#318](https://github.com/illright/attractions/pull/318)).
+
+## [3.5.2] - 2021-11-21
+
+### Fixed
+
+- One more issue with the type of `AutocompleteField`'s `OptionGetter` (the type of the `getOptions` prop).
+
+## [3.5.1] - 2021-11-20
+
+### Fixed
+
+- Fixed a minor regression in the types of components that extend other components ([#325](https://github.com/illright/attractions/issues/325)).
+
+## [3.5.0] - 2021-11-08
+
 ### Added
 
 - The [`Slider`](https://illright.github.io/attractions/docs/components/slider) component has been added, allowing you to create a slider similar to the one you would get with `<input type="range">`. It also support inputting a range by supplying a tuple for the `value` prop (Thanks to [@RikuVan](https://github.com/RikuVan) for the contribution - [#290](https://github.com/illright/attractions/pull/290)).
@@ -206,7 +224,10 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.4.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.5.2...HEAD
+[3.5.2]: https://github.com/illright/attractions/releases/tag/v3.5.2
+[3.5.1]: https://github.com/illright/attractions/releases/tag/v3.5.1
+[3.5.0]: https://github.com/illright/attractions/releases/tag/v3.5.0
 [3.4.0]: https://github.com/illright/attractions/releases/tag/v3.4.0
 [3.3.0]: https://github.com/illright/attractions/releases/tag/v3.3.0
 [3.2.1]: https://github.com/illright/attractions/releases/tag/v3.2.1
