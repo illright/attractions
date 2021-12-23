@@ -1,7 +1,7 @@
 <script>
   /**
    * @event {{ value: string; nativeEvent: Event }} change
-   * @extends {'./radio-button'} RadioButtonProps
+   * @extends {'./radio-button.svelte'} RadioButtonProps
    */
   import classes from '../utils/classes.js';
   import getColorPickerStyles from '../utils/color-picker-styles.js';
