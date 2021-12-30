@@ -4,13 +4,13 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [3.7.0] – 2021-12-30
 
 ### Added
 
 - The `hideNow` prop to the `TimePicker` component has been added to hide the `now` button (Thanks to [@CuriousCI](https://github.com/CuriousCI) for the contribution - [#331](https://github.com/illright/attractions/pull/331)).
 
-## [3.6.0] - 2021-11-08
+## [3.6.0] - 2021-12-23
 
 ### Changed
 
@@ -218,7 +218,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.6.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.7.0...HEAD
+[3.7.0]: https://github.com/illright/attractions/releases/tag/v3.7.0
 [3.6.0]: https://github.com/illright/attractions/releases/tag/v3.6.0
 [3.5.2]: https://github.com/illright/attractions/releases/tag/v3.5.2
 [3.5.1]: https://github.com/illright/attractions/releases/tag/v3.5.1
