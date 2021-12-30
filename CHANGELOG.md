@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.7.0] - 2021-12-30
+
+### Added
+
+- The `hideNow` prop to the `TimePicker` component has been added to hide the `now` button from the component.
+
 ## [3.6.0] - 2021-11-08
 
 ### Changed
