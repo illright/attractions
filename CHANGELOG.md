@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- The `hideNow` prop to the `TimePicker` component has been added to hide the `now` button (Thanks to [@CuriousCI](https://github.com/CuriousCI) for the contribution - [#331](https://github.com/illright/attractions/pull/331)).
+
 ## [3.6.0] - 2021-11-08
 
 ### Changed

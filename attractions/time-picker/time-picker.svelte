@@ -28,6 +28,11 @@
   export let inputClass = null;
 
   /**
+   * Hides the `now` button from the component.
+   * @type {boolean}
+   */
+  export let hideNow = false;
+  /**
    * Aligns the dropdown content such that it opens to the top of the text field, extending up.
    * @type {boolean}
    */
@@ -267,12 +272,14 @@
           />
         </div>
       {/if}
-      <Button on:click={setToNow}>
-        <slot name="now-icon">
-          <Clock />
-        </slot>
-        <slot name="now-label">now</slot>
-      </Button>
+      {#if !hideNow}
+        <Button on:click={setToNow}>
+          <slot name="now-icon">
+            <Clock />
+          </slot>
+          <slot name="now-label">now</slot>
+        </Button>
+      {/if}
     </Dropdown>
   </DropdownShell>
 </div>
