@@ -61,7 +61,7 @@ importers:
       rollup-plugin-terser: ^7.0.2
       sass: ^1.45.2
       stylelint: ^13.13.1
-      sveld: ^0.10.2
+      sveld: ^0.12.0
       svelte: ^3.44.3
       svelte-preprocess: ^4.10.1
       typescript: ^4.5.4
@@ -79,7 +79,7 @@ importers:
       rollup-plugin-terser: 7.0.2_rollup@2.62.0
       sass: 1.45.2
       stylelint: 13.13.1
-      sveld: 0.10.2_@babel+core@7.16.7+sass@1.45.2
+      sveld: 0.12.0_@babel+core@7.16.7+sass@1.45.2
       svelte: 3.44.3
       svelte-preprocess: 4.10.1_ef2df3af8174419ee229f08801b36846
       typescript: 4.5.4
@@ -6004,8 +6004,8 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /sveld/0.10.2_@babel+core@7.16.7+sass@1.45.2:
-    resolution: {integrity: sha512-51pf6aNw9Ks13/7DiA7UvriqittW6320g/14a9XxiN5/f7Yg6/IfByoKkFHyTf2RdeREvjITuJT5G8Me0tDvxw==}
+  /sveld/0.12.0_@babel+core@7.16.7+sass@1.45.2:
+    resolution: {integrity: sha512-pDgnrzG9lhN9astpIW1l5riH3wdJ0LtS0tO1Uvc9AuOCnlX2z1y/I8BsDN8wC2DAmaHd/vH46dRjs4CmUkAQlg==}
     hasBin: true
     dependencies:
       '@rollup/plugin-node-resolve': 11.2.1_rollup@2.62.0
