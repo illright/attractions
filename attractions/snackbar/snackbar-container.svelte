@@ -42,7 +42,11 @@
    * }}
    */
   export function showSnackbar(options) {
-    const { component = Snackbar, props = {}, duration = 4000 } = options;
+    const {
+      component = Snackbar,
+      props = /** @type {Record<string, any>} */ ({}),
+      duration = 4000,
+    } = options;
 
     const key = { component, props };
     const originalCloseCallback = props.closeCallback;

@@ -60,7 +60,7 @@
     <Button
       class={classes(buttonClass)}
       on:click={() => {
-        if (typeof action.callback === 'function') {
+        if (action != null && typeof action.callback === 'function') {
           action.callback();
         }
 

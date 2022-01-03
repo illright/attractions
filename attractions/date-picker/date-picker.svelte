@@ -1,6 +1,6 @@
 <script>
   /**
-   * @typedef {{ start: Date; end: Date }} DateRange
+   * @typedef {{ start: Date | null; end: Date | null }} DateRange
    * @event {{ value: Date | DateRange }} change
    */
   import { createEventDispatcher } from 'svelte';
@@ -113,7 +113,9 @@
   $: registerChange(startValue, endValue);
 
   let shownCalendar =
-    (range && value != null ? value.start : value) || new Date();
+    (range && value != null
+      ? /** @type {DateRange}*/ (value).start
+      : /** @type {Date}*/ (value)) || new Date();
 
   function unpackValue(value) {
     startValue = copyDate(range ? value && value.start : value);
@@ -179,11 +181,15 @@
       }
     } else {
       if (range) {
-        if (datesEqual(start, value.start) && datesEqual(end, value.end)) {
+        const dateRange = /** @type {DateRange} */ (value);
+        if (
+          datesEqual(start, dateRange.start) &&
+          datesEqual(end, dateRange.end)
+        ) {
           return;
         }
       } else {
-        if (datesEqual(start, value)) {
+        if (datesEqual(start, /** @type {Date} */ (value))) {
           return;
         }
       }

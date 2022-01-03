@@ -3,7 +3,7 @@
  * @param {number} start The beginning of the range (included)
  * @param {number} [end] The end of the range (excluded)
  * @param {number} [step=1] The distance between the numbers in the range
- * @returns {Generator<number, void, never>}
+ * @returns {Generator<number, void, void>}
  */
 export default function* range(start, end, step = 1) {
   if (end == null) {

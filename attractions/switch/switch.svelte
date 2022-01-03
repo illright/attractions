@@ -54,7 +54,7 @@
     {disabled}
     on:change={e =>
       dispatch('change', {
-        value: e.target.checked,
+        value: e.currentTarget.checked,
         nativeEvent: e,
       })}
     {...$$restProps}
