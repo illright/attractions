@@ -12,6 +12,7 @@
   import accepted from '../utils/accepted-file-type.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
 
   /**

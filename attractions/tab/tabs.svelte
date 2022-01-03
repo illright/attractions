@@ -6,6 +6,7 @@
   import Tab from './tab.svelte';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to pass to each `<Tab>` component.

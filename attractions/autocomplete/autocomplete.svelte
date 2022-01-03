@@ -20,6 +20,7 @@
   import callOnSight from '../utils/call-on-sight.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
 
   /**

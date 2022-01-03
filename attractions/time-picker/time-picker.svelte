@@ -20,6 +20,7 @@
   import { default as rangeGenerator } from '../utils/range.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to pass down to the `TextField`.
