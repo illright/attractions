@@ -3,12 +3,6 @@ const formatSpecifierRegex = /%[HMSpPdmyY%]/g;
 const daysInWeek = 7;
 
 /**
- * @template T1
- * @template T2
- * @typedef {T1 extends null ? T1 : T2 extends null ? T1 : T2} NullFirst
- */
-
-/**
  * Parses a string representing a timestamp using the given format into a `Date` object.
  * @param {string} string The date-time string to be parsed
  * @param {string} format The format against which to parse the date-time string
@@ -279,7 +273,7 @@ export function getCalendar(month, year, firstWeekday, disabledDates = []) {
  * @template {Date | null} T2
  * @param {T1} source The object to copy the date from
  * @param {T2} destination The object to which the date will be copied, modified in-place
- * @returns {NullFirst<T1, T2>} The modified object
+ * @returns {T1 extends null ? T1 : T2 extends null ? T1 : T2} The modified object
  */
 export function applyDate(source, destination) {
   if (source == null || destination == null) {
@@ -299,7 +293,7 @@ export function applyDate(source, destination) {
  * @template {Date | null} T2
  * @param {T1} source The object to copy the time from
  * @param {T2} destination The object to which the time will be copied, modified in-place
- * @returns {NullFirst<T1, T2>} The modified object
+ * @returns {T1 extends null ? T1 : T2 extends null ? T1 : T2} The modified object
  */
 export function applyTime(source, destination) {
   if (source == null || destination == null) {
