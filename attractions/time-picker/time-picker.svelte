@@ -20,6 +20,7 @@
   import { default as rangeGenerator } from '../utils/range.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to pass down to the `TextField`.
@@ -94,6 +95,11 @@
    */
   export let seconds = hasSeconds ? [...rangeGenerator(0, 60, 5)] : [];
 
+  /**
+   * @param hourValue {number}
+   * @param [minuteValue] {number|null}
+   * @param [secondValue] {number|null}
+   */
   function setHours(hourValue, minuteValue = null, secondValue = null) {
     hourValue %= 24;
     if (value == null) {
@@ -220,7 +226,10 @@
             on:click={() =>
               setHours(
                 hour +
-                  12 * (f12hours && (currentAmPm === 'PM') ^ (value === 12))
+                  12 *
+                    Number(
+                      (f12hours && currentAmPm === 'PM') !== (value === 12)
+                    )
               )}
             selected={matchesCurrentHour(hour, value)}
           >
@@ -235,7 +244,7 @@
         {#each minutes as mins}
           <Button
             on:click={() => setMinutes(mins)}
-            selected={value && mins === value.getMinutes()}
+            selected={(value && mins === value.getMinutes()) || undefined}
           >
             {mins.toString().padStart(2, '0')}
           </Button>
@@ -249,7 +258,7 @@
           {#each seconds as secs}
             <Button
               on:click={() => setSeconds(secs)}
-              selected={value && secs === value.getSeconds()}
+              selected={(value && secs === value.getSeconds()) || undefined}
             >
               {secs.toString().padStart(2, '0')}
             </Button>

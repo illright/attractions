@@ -11,6 +11,7 @@
   } from './dropdown-context-key';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * Aligns the dropdown content with the right edge of the shell.

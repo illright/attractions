@@ -4,6 +4,12 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Improved typings for some components and utils ([#334](https://github.com/illright/attractions/pull/334)).
+
 ## [3.7.0] – 2021-12-30
 
 ### Added

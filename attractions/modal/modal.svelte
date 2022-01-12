@@ -7,6 +7,7 @@
   import classes from '../utils/classes.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * Whether the modal is open or not.

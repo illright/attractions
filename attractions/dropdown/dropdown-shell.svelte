@@ -12,6 +12,7 @@
   } from './dropdown-context-key.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * Controls whether the dropdown content is shown or hidden.

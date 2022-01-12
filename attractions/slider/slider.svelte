@@ -71,6 +71,7 @@
    * @type {string | null}
    */
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
 
   /** @type {[number] | [number, number]} */

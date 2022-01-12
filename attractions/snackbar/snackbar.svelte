@@ -5,6 +5,7 @@
   import classes from '../utils/classes.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to add to the label of the snackbar.
@@ -59,7 +60,7 @@
     <Button
       class={classes(buttonClass)}
       on:click={() => {
-        if (typeof action.callback === 'function') {
+        if (action != null && typeof action.callback === 'function') {
           action.callback();
         }
 

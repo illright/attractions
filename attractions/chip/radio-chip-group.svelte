@@ -7,6 +7,7 @@
   import RadioChip from './radio-chip.svelte';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to add to the `<RadioChip>` components inside.

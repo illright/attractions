@@ -2,6 +2,7 @@
   import classes from '../utils/classes.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * Makes the chip smaller.
