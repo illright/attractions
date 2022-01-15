@@ -24,12 +24,14 @@ A time picker that supports both the text input and a dropdown with buttons.
   <div slot="showcase" class="padded">
     <TimePicker right />
     <TimePicker format="%H.%M.%S %P" />
+    <TimePicker hideNow />
   </div>
   <div slot="source">
 
 ```svelte
 <TimePicker right />
 <TimePicker format="%H.%M.%S %P" />
+<TimePicker hideNow />
 ```
 
   </div>
@@ -42,6 +44,7 @@ A time picker that supports both the text input and a dropdown with buttons.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
+| **`hideNow`** | `false` | `boolean` | Hides the `now` button from the component. |
 | **`right`** | `false` | `boolean` | Aligns the dropdown with the right edge of the text field. |
 | **`top`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the top of the text field, extending up. |
 

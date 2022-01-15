@@ -1,13 +1,14 @@
 <script>
   /**
    * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
-   * @extends {'./checkbox-chip'} CheckboxChipProps
+   * @extends {'./checkbox-chip.svelte'} CheckboxChipProps
    */
   import s from '../utils/plural-s.js';
   import classes from '../utils/classes.js';
   import CheckboxChip from './checkbox-chip.svelte';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to add to the `<CheckboxChip>` components inside.
@@ -40,12 +41,17 @@
   /**
    * The text displayed in the tooltip when hovering over the checkboxes
    *   after the maximum allowed selection has been reached.
+   * @type {string | null}
    */
   export let maxReachedTooltip = null;
   $: maxReachedTooltipFinal =
-    maxReachedTooltip ?? `Can only select ${max} value${s(max)}.`;
+    // TODO: switch back to `??` after https://github.com/pastelsky/bundlephobia/issues/530 is merged
+    maxReachedTooltip || `Can only select ${max} value${s(max)}.`;
 
-  $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
+  $: currentChecked = items.reduce(
+    (acc, elt) => acc + Number(elt.checked || 0),
+    0
+  );
 
   if (!items || items.length === 0) {
     console.error('Must have at least one item in the checkbox chip group');

@@ -3,7 +3,9 @@
   import { classes } from 'attractions/utils';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
+  /** @type {Array<{ link: string; name: string; }>} */
   export let components;
 </script>
 

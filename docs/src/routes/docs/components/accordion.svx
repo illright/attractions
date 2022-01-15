@@ -23,8 +23,8 @@ A controller for multiple collapsible elements, allowing either one open panel a
   <div slot="showcase">
     <Accordion let:closeOtherPanels>
       {#each [0, 1, 2, 3, 4] as idx}
-        <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
-          <div slot="handle">
+        <AccordionSection on:panel-open={closeOtherPanels}>
+          <div slot="handle" let:toggle>
             <Button on:click={toggle}>
               open panel {idx}
               <ChevronDownIcon size="20" class="ml accordion-chevron" />
@@ -40,8 +40,8 @@ A controller for multiple collapsible elements, allowing either one open panel a
 ```svelte
 <Accordion let:closeOtherPanels>
   {#each [0, 1, 2, 3, 4] as idx}
-    <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
-      <div slot="handle">
+    <AccordionSection on:panel-open={closeOtherPanels}>
+      <div slot="handle" let:toggle>
         <Button on:click={toggle}>
           open panel {idx}
           <ChevronDownIcon size="20" class="ml accordion-chevron" />

@@ -1,7 +1,7 @@
 <script>
   /**
    * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
-   * @extends {'./checkbox'} CheckboxProps
+   * @extends {'./checkbox.svelte'} CheckboxProps
    */
   import classes from '../utils/classes.js';
   import getColorPickerStyles from '../utils/color-picker-styles.js';
@@ -9,6 +9,7 @@
   import Checkbox from './checkbox.svelte';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to add to the `<Checkbox>` components.
@@ -59,9 +60,13 @@
    */
   export let maxReachedTooltip = null;
   $: maxReachedTooltipFinal =
-    maxReachedTooltip ?? `Can only select ${max} value${s(max)}.`;
+    // TODO: switch back to `??` after https://github.com/pastelsky/bundlephobia/issues/530 is merged
+    maxReachedTooltip || `Can only select ${max} value${s(max)}.`;
 
-  $: currentChecked = items.reduce((acc, elt) => acc + elt.checked, 0);
+  $: currentChecked = items.reduce(
+    (acc, elt) => acc + Number(elt.checked || 0),
+    0
+  );
 
   if (!items || items.length === 0) {
     console.error('Must have at least one item in the checkbox group');

@@ -10,6 +10,7 @@
   import eventsAction from '../utils/events.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to assign to the `<label>` element containing the star icon.

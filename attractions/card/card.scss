@@ -2,7 +2,7 @@
 @use 'node_modules/attractions/_variables' as vars;
 
 .card {
-  background-color: #fff;
+  background-color: vars.$background;
   border-radius: vars.$card-radius;
   box-shadow: vars.$shadow-0;
   overflow: hidden;

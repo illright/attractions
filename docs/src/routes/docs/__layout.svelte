@@ -3,7 +3,9 @@
   export async function load({ page }) {
     const relativePathSegment = page.path.slice('/docs/'.length);
     return {
-      props: { segment: relativePathSegment.length === 0 ? null : relativePathSegment },
+      props: {
+        segment: relativePathSegment.length === 0 ? null : relativePathSegment,
+      },
     };
   }
 </script>
@@ -138,6 +140,10 @@
         {
           title: 'RadioGroup',
           segment: 'components/radio-group',
+        },
+        {
+          title: 'Slider',
+          segment: 'components/slider',
         },
         {
           title: 'SnackbarContainer',

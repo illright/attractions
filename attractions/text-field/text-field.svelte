@@ -12,6 +12,7 @@
   import classes from '../utils/classes.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to assign to the `<input>` or `<textarea>` element.

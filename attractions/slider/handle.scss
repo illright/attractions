@@ -1,0 +1,45 @@
+@use 'node_modules/attractions/_variables' as vars;
+@use 'sass:math';
+
+.handle {
+  backface-visibility: hidden;
+  background: vars.$main;
+  border-radius: 50%;
+  display: block;
+  height: vars.$slider-handle-size;
+  position: absolute;
+  width: vars.$slider-handle-size;
+  z-index: 2;
+
+  &-horizontal {
+    top: -(math.div(vars.$slider-handle-size - vars.$slider-rail-size, 2));
+    transform: translateX(-50%);
+  }
+
+  &-vertical {
+    left: -(math.div(vars.$slider-handle-size - vars.$slider-rail-size, 2));
+    transform: translateY(50%);
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 8px rgb(131, 141, 231, 16%);
+    cursor: pointer;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 8px rgb(131, 141, 231, 16%);
+    outline: none;
+  }
+
+  &-active {
+    background: vars.$main;
+  }
+
+  &-disabled,
+  &-disabled:hover,
+  &-disabled:active {
+    background: vars.$disabled;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}

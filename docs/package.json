@@ -10,20 +10,23 @@
     "preview": "svelte-kit preview"
   },
   "dependencies": {
-    "clipboard-polyfill": "^3.0.2",
-    "prismjs": "^1.24.0"
+    "clipboard-polyfill": "^3.0.3",
+    "prismjs": "^1.25.0"
   },
   "devDependencies": {
     "@attractions/import-expander": "workspace:^0.1.0",
     "@sveltejs/adapter-static": "^1.0.0-next.21",
     "@sveltejs/kit": "next",
-    "attractions": "^3.0.0",
-    "mdsvex": "^0.9.6",
-    "prism-svelte": "^0.4.6",
+    "attractions": "workspace:^3.5.1",
+    "eslint-config-prettier": "^8.3.0",
+    "mdsvex": "^0.9.8",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.0",
+    "prism-svelte": "^0.4.7",
     "remark-heading-id": "^1.0.0",
-    "sass": "^1.39.2",
-    "svelte": "^3.43.2",
-    "svelte-feather-icons": "^3.2.2",
+    "sass": "^1.43.4",
+    "svelte": "^3.44.1",
+    "svelte-feather-icons": "^3.5.0",
     "svelte-preprocess": "^4.9.8"
   }
 }

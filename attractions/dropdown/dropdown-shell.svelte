@@ -3,10 +3,16 @@
    * @slot {{ toggle: () => void }}
    * @event {{ value: boolean }} change
    */
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, setContext } from 'svelte';
+  import { writable } from 'svelte/store';
   import classes from '../utils/classes.js';
+  import {
+    getDropdownShellBoundaryKey,
+    isDropdownOpenKey,
+  } from './dropdown-context-key.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * Controls whether the dropdown content is shown or hidden.
@@ -49,6 +55,14 @@
       : document.removeEventListener('keydown', handleKeyPress));
 
   const dispatch = createEventDispatcher();
+
+  const isDropdownOpen = writable(open);
+  const getDropdownShellBoundary = () => self && self.getBoundingClientRect();
+
+  setContext(getDropdownShellBoundaryKey, getDropdownShellBoundary);
+  setContext(isDropdownOpenKey, isDropdownOpen);
+
+  $: isDropdownOpen.set(open);
 </script>
 
 <svelte:window on:click={clickOutside} />

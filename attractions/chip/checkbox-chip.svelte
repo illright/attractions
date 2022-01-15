@@ -6,6 +6,7 @@
   import classes from '../utils/classes.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to add to the `<input>` element.
@@ -73,8 +74,8 @@
     {disabled}
     on:change={e =>
       dispatch('change', {
-        value: e.target.value,
-        checked: e.target.checked,
+        value: e.currentTarget.value,
+        checked: e.currentTarget.checked,
         nativeEvent: e,
       })}
     {...$$restProps}

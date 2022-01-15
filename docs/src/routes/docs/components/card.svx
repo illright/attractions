@@ -68,5 +68,6 @@ The content of the card.
 | Name | Description | Default |
 | ---- | ----------- | ------- |
 | **`$main`** | The color of the border for outline cards. | <ColorPreview value="#4300B0" /> |
+| **`$background`** | The background color of the card. | <ColorPreview value="#FFFFFF" bordered /> |
 | **`$shadow-0`** | The shadow of regular cards. | <ShadowPreview value={shadow0} /> |
 | **`$card-radius`** | The curvature radius of a card. | `1.25em` |

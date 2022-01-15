@@ -1,7 +1,7 @@
 <script>
   /**
-   * @typedef {typeof import('./autocomplete-option').Option} Option
-   * @typedef {(q: string) => Generator<Promise<Option[]>, never, never>} OptionsGetter
+   * @typedef {import('./autocomplete-option.svelte').Option} Option
+   * @typedef {(q: string) => AsyncGenerator<Option[], void, void>} OptionsGetter
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
    * @event {{ value: Option[] }} change
    */
@@ -17,6 +17,7 @@
   import classes from '../utils/classes.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
 
   /**

@@ -4,6 +4,52 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Improved typings for some components and utils ([#334](https://github.com/illright/attractions/pull/334)).
+
+## [3.7.0] – 2021-12-30
+
+### Added
+
+- The `hideNow` prop to the `TimePicker` component has been added to hide the `now` button (Thanks to [@CuriousCI](https://github.com/CuriousCI) for the contribution - [#331](https://github.com/illright/attractions/pull/331)).
+
+## [3.6.0] - 2021-12-23
+
+### Changed
+
+- Implement automatic positioning of the [Dropdown](https://illright.github.io/attractions/docs/components/dropdown/). This will prevent it from going off-screen in certain cases. This is also the new default behaviour; the previous alignment props (`right` and `top`) are now deprecated (Thanks to [@Th1nkK1D](https://github.com/Th1nkK1D) for the contribution - [#318](https://github.com/illright/attractions/pull/318)).
+
+## [3.5.2] - 2021-11-21
+
+### Fixed
+
+- One more issue with the type of `AutocompleteField`'s `OptionGetter` (the type of the `getOptions` prop).
+
+## [3.5.1] - 2021-11-20
+
+### Fixed
+
+- Fixed a minor regression in the types of components that extend other components ([#325](https://github.com/illright/attractions/issues/325)).
+
+## [3.5.0] - 2021-11-08
+
+### Added
+
+- The [`Slider`](https://illright.github.io/attractions/docs/components/slider) component has been added, allowing you to create a slider similar to the one you would get with `<input type="range">`. It also support inputting a range by supplying a tuple for the `value` prop (Thanks to [@RikuVan](https://github.com/RikuVan) for the contribution - [#290](https://github.com/illright/attractions/pull/290)).
+- The `closeOnSelection` prop to the `DatePicker` component has been added to close the dropdown after a selection has been made.
+
+### Changed
+
+- Change the [`Dropdown`](https://illright.github.io/attractions/docs/components/dropdown) chevron transition animation to a `scaleY(-1)` for `150ms` ([#310](https://github.com/illright/attractions/pull/310)).
+- The [`Card`](https://illright.github.io/attractions/docs/components/card) component will now use the SCSS `$background` variable as its default background color instead of the hard-coded white color.
+
+### Fixed
+
+- Fixed some types and documentation mistakes for the [`Accordion`](https://illright.github.io/attractions/docs/components/accordion) component ([#316](https://github.com/illright/attractions/pull/316)).
+
 ## [3.4.0] - 2021-09-12
 
 ### Added
@@ -178,7 +224,12 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.4.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.7.0...HEAD
+[3.7.0]: https://github.com/illright/attractions/releases/tag/v3.7.0
+[3.6.0]: https://github.com/illright/attractions/releases/tag/v3.6.0
+[3.5.2]: https://github.com/illright/attractions/releases/tag/v3.5.2
+[3.5.1]: https://github.com/illright/attractions/releases/tag/v3.5.1
+[3.5.0]: https://github.com/illright/attractions/releases/tag/v3.5.0
 [3.4.0]: https://github.com/illright/attractions/releases/tag/v3.4.0
 [3.3.0]: https://github.com/illright/attractions/releases/tag/v3.3.0
 [3.2.1]: https://github.com/illright/attractions/releases/tag/v3.2.1

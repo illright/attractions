@@ -1,6 +1,6 @@
 <script>
   /**
-   * @typedef {{ start: Date; end: Date }} DateRange
+   * @typedef {{ start: Date | null; end: Date | null }} DateRange
    * @event {{ value: Date | DateRange }} change
    */
   import { createEventDispatcher } from 'svelte';
@@ -21,6 +21,7 @@
   } from '../utils/datetime-utils.js';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * A class string to add to the list of weekdays above the calendar.
@@ -87,6 +88,11 @@
    */
   export let disabledDates = [];
   /**
+   * If `true`, the dropdown will be automatically closed after a date is selected.
+   * @type {boolean}
+   */
+  export let closeOnSelection = false;
+  /**
    * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
    * @type {string}
    */
@@ -107,7 +113,9 @@
   $: registerChange(startValue, endValue);
 
   let shownCalendar =
-    (range && value != null ? value.start : value) || new Date();
+    (range && value != null
+      ? /** @type {DateRange}*/ (value).start
+      : /** @type {Date}*/ (value)) || new Date();
 
   function unpackValue(value) {
     startValue = copyDate(range ? value && value.start : value);
@@ -134,6 +142,14 @@
         endFocus = false;
         startFocus = true;
       }
+    }
+
+    if (
+      closeOnSelection &&
+      startValue != null &&
+      (!range || endValue != null)
+    ) {
+      startFocus = endFocus = false;
     }
 
     range && fixRange();
@@ -165,11 +181,15 @@
       }
     } else {
       if (range) {
-        if (datesEqual(start, value.start) && datesEqual(end, value.end)) {
+        const dateRange = /** @type {DateRange} */ (value);
+        if (
+          datesEqual(start, dateRange.start) &&
+          datesEqual(end, dateRange.end)
+        ) {
           return;
         }
       } else {
-        if (datesEqual(start, value)) {
+        if (datesEqual(start, /** @type {Date} */ (value))) {
           return;
         }
       }

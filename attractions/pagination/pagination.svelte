@@ -8,6 +8,7 @@
   import { classes } from '../utils';
 
   let _class = null;
+  /** @type {string | false | null} */
   export { _class as class };
   /**
    * The amount of pages to allow for navigation.
