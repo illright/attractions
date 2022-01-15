@@ -5,16 +5,16 @@ div[role='group'] :global {
 
   .checkbox.colored > input + .selector::before {
     border-color: #d3d3d3;
-    border-color: rgb(var(--before-r), var(--before-g), var(--before-b));
+    border-color: rgb(var(--before-r) var(--before-g) var(--before-b));
   }
 
   .checkbox.colored:hover > input + .selector::after {
-    background-color: rgba(0, 0, 0, 0.05);
-    background-color: rgba(var(--r), var(--g), var(--b), 0.05);
+    background-color: rgb(0 0 0 / 5%);
+    background-color: rgb(var(--r) var(--g) var(--b) / 5%);
   }
 
   .checkbox.colored > input:focus + .selector::after {
-    background-color: rgba(0, 0, 0, 0.125);
-    background-color: rgba(var(--r), var(--g), var(--b), 0.125);
+    background-color: rgb(0 0 0 / 12.5%);
+    background-color: rgb(var(--r) var(--g) var(--b) / 12.5%);
   }
 }

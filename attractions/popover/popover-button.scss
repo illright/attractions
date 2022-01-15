@@ -4,7 +4,7 @@
 .popover-button {
   @include appearances.button;
 
-  background: rgb(100, 100, 100);
+  background: rgb(100 100 100);
   border: 0;
   border-radius: 0.625em;
   box-shadow: vars.$shadow-raised;
@@ -14,11 +14,11 @@
   padding: 0.5em 0.625em;
 
   &:hover {
-    background: rgb(70, 70, 70);
+    background: rgb(70 70 70);
   }
 
   &:focus {
-    background: rgb(50, 50, 50);
+    background: rgb(50 50 50);
   }
 
   > :global svg {

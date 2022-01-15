@@ -22,12 +22,12 @@
   }
 
   &:hover {
-    box-shadow: 0 0 0 8px rgb(131, 141, 231, 16%);
+    box-shadow: 0 0 0 8px rgb(131 141 231 / 16%);
     cursor: pointer;
   }
 
   &:focus {
-    box-shadow: 0 0 0 8px rgb(131, 141, 231, 16%);
+    box-shadow: 0 0 0 8px rgb(131 141 231 / 16%);
     outline: none;
   }
 
