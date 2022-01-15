@@ -10,7 +10,6 @@
     "preview": "svelte-kit preview"
   },
   "dependencies": {
-    "clipboard-polyfill": "^3.0.3",
     "prismjs": "^1.26.0"
   },
   "devDependencies": {

@@ -7,7 +7,6 @@
     FileTextIcon,
     TerminalIcon,
   } from 'svelte-feather-icons';
-  import { writeText } from 'clipboard-polyfill';
 
   let self;
   let text = null;
@@ -26,7 +25,7 @@
     }
 
     try {
-      await writeText(text);
+      await navigator.clipboard.writeText(text);
       copied = true;
       setTimeout(() => (copied = false), 1000);
     } catch (e) {
