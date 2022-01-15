@@ -93,10 +93,8 @@ importers:
       '@sveltejs/kit': next
       attractions: workspace:^3.5.1
       clipboard-polyfill: ^3.0.3
-      eslint-config-prettier: ^8.3.0
       mdsvex: ^0.9.8
       postcss: ^8.4.5
-      prettier: ^2.5.1
       prism-svelte: ^0.4.7
       prismjs: ^1.26.0
       remark-heading-id: ^1.0.0
@@ -112,10 +110,8 @@ importers:
       '@sveltejs/adapter-static': 1.0.0-next.26
       '@sveltejs/kit': 1.0.0-next.230_sass@1.48.0+svelte@3.46.2
       attractions: link:../attractions
-      eslint-config-prettier: 8.3.0_eslint@8.6.0
       mdsvex: 0.9.8_svelte@3.46.2
       postcss: 8.4.5
-      prettier: 2.5.1
       prism-svelte: 0.4.7
       remark-heading-id: 1.0.0
       sass: 1.48.0
