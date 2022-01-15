@@ -1,7 +1,7 @@
 <script context="module">
   /** @type {import('@sveltejs/kit').Load} */
-  export async function load({ page }) {
-    const relativePathSegment = page.path.slice('/docs/'.length);
+  export async function load({ url }) {
+    const relativePathSegment = url.pathname.slice('/docs/'.length);
     return {
       props: {
         segment: relativePathSegment.length === 0 ? null : relativePathSegment,
