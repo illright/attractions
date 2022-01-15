@@ -12,7 +12,6 @@
     "lint-format:fix": "prettier --plugin-search-dir=. --write --loglevel warn .",
     "lint": "pnpm run lint-js && pnpm run lint-css && pnpm run lint-svelte && pnpm run lint-format",
     "lint:fix": "pnpm run lint-js:fix && pnpm run lint-css:fix && pnpm run lint-svelte:fix && pnpm run lint-format:fix",
-    "docs:export": "pnpm run --dir docs export",
     "docs:build": "pnpm run --dir docs build",
     "docs:dev": "pnpm run --dir docs dev",
     "build": "pnpm run --dir attractions build",
