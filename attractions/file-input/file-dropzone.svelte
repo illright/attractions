@@ -125,12 +125,14 @@
       <Paperclip class="icon" />
       <div class="title">
         {#if disabled}
-          file upload unavailable
+          <slot name="upload-unavailable-message">file upload unavailable</slot>
         {:else if wrongType}
-          incorrect file type
+          <slot name="incorrect-file-message">incorrect file type</slot>
         {:else if dragActive}
-          release to upload
-        {:else}drag &amp; drop here or click to upload files{/if}
+          <slot name="release-to-upload-message">release to upload</slot>
+        {:else}
+          <slot name="drag-and-drop-message">drag &amp; drop here or click to upload files</slot>
+        {/if}
       </div>
     </slot>
   </div>

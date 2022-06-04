@@ -98,7 +98,7 @@
     <slot name="loading-options" slot="loading-options">
       <li class="loading-options">
         <Loading />
-        Loading...
+        <slot name="loading-message">Loading...</slot>
       </li>
     </slot>
     <li class="more-options" slot="more-options" let:loadMoreOptions>
@@ -106,7 +106,7 @@
         <div use:callOnSight={{ callback: loadMoreOptions }}>
           <Button on:click={loadMoreOptions}>
             <MoreHorizontal />
-            load more options
+            <slot name="load-more-options-message">load more options</slot>
           </Button>
         </div>
       </slot>

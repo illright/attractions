@@ -69,9 +69,13 @@
       {/if}
     {/each}
     {#if required}
-      <div class="message info">* Required</div>
+      <div class="message info">
+        <slot name="required-message">* Required</slot>
+      </div>
     {:else if optional}
-      <div class="message info">Optional</div>
+      <div class="message info">
+        <slot name="optional-message">Optional</slot>
+      </div> 
     {/if}
     <slot name="message" />
   </div>
