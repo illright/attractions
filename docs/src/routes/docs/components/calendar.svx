@@ -38,7 +38,7 @@ If you're seeking a ready-to-use date picking solution, consider using [`DatePic
 </Showcase>
 
 
-## Properties {#properties}
+## Properties {#properties} 
 
 ### Functional Properties
 
@@ -63,6 +63,14 @@ Falsy values passed to classes will be disregarded.
 | **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. |
 | **`weekClass`** | `null` | `string` | A class string to add to the element containing each row of days in the calendar. |
 | **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
+
+### Translation Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **titleTodayNotAvailableMessage** | `Today, not available` | `string` | Translation for title message |
+| **titleTodayMessage** | `Today` | `string` | Translation for title message |
+| **titleNotAvailableMessage** | `Not available` | `string` | Translation for title message |
 
 
 ## Events {#events}

@@ -87,6 +87,14 @@ Falsy values passed to classes will be disregarded.
 
 ## Slots {#slots}
 
+### `select-files-message` slot
+
+For translate the "select file" message.
+
+### `select-one-file-message` slot
+
+For translate the "select one file" message.
+
 ### Default slot
 
 The label of the main upload button. Defaults to the text "select a file" / "select files" depending on the value of the <mark>`multiple`</mark> property.

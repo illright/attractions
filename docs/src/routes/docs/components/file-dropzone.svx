@@ -90,6 +90,22 @@ The inner content of the dropzone when no files are selected. Defaults to a mess
 
 The plus icon inside the dropzone when there are files inside. <mark>Bonus</mark>: if supplied with a `plus` class, rotates 45 degrees to become an X when an incorrect file is uploaded. Defaults to [Feather icons](https://feathericons.com/?query=plus)' `Plus`.
 
+### `upload-unavailable-message` slot
+
+For translate the "upload unvailable" message.
+
+### `incorrect-file-message` slot
+
+For translate the "incorrect file" message.
+
+### `release-to-upload-message` slot
+
+For translate the "release to upload" message.
+
+### `drag-and-drop-message` slot
+
+For translate the "drag and drop" message.
+
 
 ## SCSS Variables {#scss-variables}
 

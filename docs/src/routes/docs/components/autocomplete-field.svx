@@ -120,6 +120,18 @@ The loading state of the dropdown while the next promise with suggestions is res
 The element to display at the end of a list to trigger the option generator.
 Defaults to a button equipped with an `IntersectionObserver` to trigger the generator whenever it scrolls into view.
 
+### `close-message` slot
+
+For translate the "close" message.
+
+### `loading-message` slot
+
+For translate the "loading" message.
+
+### `load-more-options-message` slot
+
+For translate the "load more option" message.
+
 | Prop Name | Type | Description |
 | --------- | ---- | ----------- |
 | **`loadMoreOptions`** | `Function` | A callback to trigger the option generator. |
