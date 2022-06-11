@@ -87,13 +87,9 @@ Falsy values passed to classes will be disregarded.
 
 ## Slots {#slots}
 
-### `select-files-message` slot
+### `select-file-message` slot
 
-For translate the "select file" message.
-
-### `select-one-file-message` slot
-
-For translate the "select one file" message.
+Use this slot to translate the "select file" message that appears when tabbing into the dropdown of options.
 
 ### Default slot
 

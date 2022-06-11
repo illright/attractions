@@ -122,15 +122,15 @@ Defaults to a button equipped with an `IntersectionObserver` to trigger the gene
 
 ### `close-message` slot
 
-For translate the "close" message.
+Use this slot to translate the "close the options" message that appears when tabbing into the dropdown of options.
 
 ### `loading-message` slot
 
-For translate the "loading" message.
+Use this slot to translate the "loading" message that appears when the options are loading.
 
 ### `load-more-options-message` slot
 
-For translate the "load more option" message.
+Use this slot to translate the "load more options" message.
 
 | Prop Name | Type | Description |
 | --------- | ---- | ----------- |

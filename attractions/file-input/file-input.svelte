@@ -68,11 +68,11 @@
       {...$$restProps}
       on:change={e => dispatch('change', { value, nativeEvent: e })}
     />
-    <slot>
+    <slot name="select-file-message">
       {#if multiple}
-        <slot name="select-files-message">select files</slot>
+        select files
       {:else}
-        <slot name="select-one-file-message">select a file</slot>
+        select a file
       {/if}
     </slot>
   </label>

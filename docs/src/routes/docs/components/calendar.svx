@@ -68,7 +68,7 @@ Falsy values passed to classes will be disregarded.
 
 | Name | Default | Type | Description |
 | ---- | ------- | ---- | ----------- |
-| **titleTodayNotAvailableMessage** | `Today, not available` | `string` | Translation for title message |
+| **titleTodayNotAvailableMessage** | `Today, not available` | `string` | The tooltip text that appears when hovering over the current day when it is disabled. |
 | **titleTodayMessage** | `Today` | `string` | Translation for title message |
 | **titleNotAvailableMessage** | `Not available` | `string` | Translation for title message |
 
