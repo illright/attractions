@@ -75,7 +75,7 @@
     {:else if optional}
       <div class="message info">
         <slot name="optional-message">Optional</slot>
-      </div> 
+      </div>
     {/if}
     <slot name="message" />
   </div>

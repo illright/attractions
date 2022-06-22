@@ -191,7 +191,9 @@
               >
                 <Button on:click={loadMoreOptions}>
                   <MoreHorizontal />
-                  <slot name="load-more-options-message">load more options</slot>
+                  <slot name="load-more-options-message">
+                    load more options
+                  </slot>
                 </Button>
               </li>
             </slot>

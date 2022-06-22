@@ -131,7 +131,9 @@
         {:else if dragActive}
           <slot name="release-to-upload-message">release to upload</slot>
         {:else}
-          <slot name="drag-and-drop-message">drag &amp; drop here or click to upload files</slot>
+          <slot name="drag-and-drop-message">
+            drag &amp; drop here or click to upload files
+          </slot>
         {/if}
       </div>
     </slot>
