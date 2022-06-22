@@ -64,6 +64,14 @@ Falsy values passed to classes will be disregarded.
 | **`weekClass`** | `null` | `string` | A class string to add to the element containing each row of days in the calendar. |
 | **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
 
+### Translation Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **titleTodayNotAvailableMessage** | `"Today, not available"` | `string` | The tooltip text that appears when hovering over the current day when it is disabled. |
+| **titleTodayMessage** | `"Today"` | `string` | The tooltip text that appears when hovering over the current day. |
+| **titleNotAvailableMessage** | `"Not available"` | `string` | The tooltip text that appears when hovering over a day that is disabled. |
+
 
 ## Events {#events}
 

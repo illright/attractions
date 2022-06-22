@@ -124,6 +124,18 @@ Defaults to a button equipped with an `IntersectionObserver` to trigger the gene
 | --------- | ---- | ----------- |
 | **`loadMoreOptions`** | `Function` | A callback to trigger the option generator. |
 
+### `close-message` slot
+
+Use this slot to translate the "close the options" message that appears when tabbing into the dropdown of options.
+
+### `loading-message` slot
+
+Use this slot to translate the "loading" message that appears while the options are loading.
+
+### `load-more-options-message` slot
+
+Use this slot to translate the "load more options" message that appears when you scroll to the bottom of the list of options before the infinite scroll triggers loading itself.
+
 
 ## SCSS Variables {#scss-variables}
 

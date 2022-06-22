@@ -87,6 +87,10 @@ Falsy values passed to classes will be disregarded.
 
 ## Slots {#slots}
 
+### `select-file-message` slot
+
+Use this slot to translate the "select file" message that appears when tabbing into the dropdown of options.
+
 ### Default slot
 
 The label of the main upload button. Defaults to the text "select a file" / "select files" depending on the value of the <mark>`multiple`</mark> property.

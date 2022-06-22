@@ -67,6 +67,18 @@
    * @type {Array<Date | { start?: Date; end?: Date }>}
    */
   export let disabledDates = [];
+  /**
+   * Messages translation for "today not available".
+   */
+  export let titleTodayNotAvailableMessage = 'Today, not available';
+  /**
+   * Messages translation for "today".
+   */
+  export let titleTodayMessage = 'Today';
+  /**
+   * Messages translation for "not available".
+   */
+  export let titleNotAvailableMessage = 'Not available';
 
   const weekdays = getWeekdays(locale, firstWeekday);
   const today = new Date();
@@ -74,14 +86,14 @@
   function computeTitle(day) {
     if (datesEqual(day.value, today)) {
       if (day.disabled) {
-        return 'Today, not available';
+        return titleTodayNotAvailableMessage;
       } else {
-        return 'Today';
+        return titleTodayMessage;
       }
     }
 
     if (day.disabled) {
-      return 'Not available';
+      return titleNotAvailableMessage;
     }
 
     return null;

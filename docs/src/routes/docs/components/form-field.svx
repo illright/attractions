@@ -111,6 +111,14 @@ Additional content to put in the form field description block, after the name an
 
 Additional text to put underneath the actual field along with the messages like "required", "optional" and errors.
 
+### `required-message` slot
+
+Text to display under the field when it is marked as required. Defaults to "`* Required`".
+
+### `optional-message` slot
+
+Text to display under the field when it is marked as optional. Defaults to "`Optional`".
+
 
 ## SCSS Variables {#scss-variables}
 

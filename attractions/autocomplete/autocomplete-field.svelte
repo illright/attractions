@@ -140,7 +140,7 @@
   <Dropdown>
     <div class="shown-on-focus">
       <Button noRipple on:click={() => (focus = false)}>
-        close the options
+        <slot name="close-message">close the options</slot>
       </Button>
     </div>
     {#if selection.length >= maxOptions}
@@ -167,7 +167,7 @@
             <slot name="loading-options">
               <li class="loading-options">
                 <Loading />
-                Loading...
+                <slot name="loading-message">Loading...</slot>
               </li>
             </slot>
           {:then options}
@@ -191,7 +191,9 @@
               >
                 <Button on:click={loadMoreOptions}>
                   <MoreHorizontal />
-                  load more options
+                  <slot name="load-more-options-message">
+                    load more options
+                  </slot>
                 </Button>
               </li>
             </slot>

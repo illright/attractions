@@ -68,7 +68,13 @@
       {...$$restProps}
       on:change={e => dispatch('change', { value, nativeEvent: e })}
     />
-    <slot>{multiple ? 'select files' : 'select a file'}</slot>
+    <slot name="select-file-message">
+      {#if multiple}
+        select files
+      {:else}
+        select a file
+      {/if}
+    </slot>
   </label>
   {#if value != null && value.length !== 0}
     <Button danger on:click={clearSelection}>clear selection</Button>
