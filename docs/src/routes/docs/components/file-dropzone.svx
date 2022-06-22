@@ -92,19 +92,19 @@ The plus icon inside the dropzone when there are files inside. <mark>Bonus</mark
 
 ### `upload-unavailable-message` slot
 
-For translate the "upload unvailable" message.
+The text to display when the dropzone is disabled. Defaults to "`upload unavailable`".
 
 ### `incorrect-file-message` slot
 
-For translate the "incorrect file" message.
+The text to display when the file being dropped is of an incorrect type. Defaults to "`incorrect file type`".
 
 ### `release-to-upload-message` slot
 
-For translate the "release to upload" message.
+The text to display when a file is of the correct file is dragged over the dropzone. Defaults to "`release to upload`".
 
 ### `drag-and-drop-message` slot
 
-For translate the "drag and drop" message.
+The default message to display when the dropzone is enabled but nothing is being dragged over it. Defaults to "`drag & drop here or click to upload files`".
 
 
 ## SCSS Variables {#scss-variables}

@@ -113,11 +113,11 @@ Additional text to put underneath the actual field along with the messages like 
 
 ### `required-message` slot
 
-For translate the "required" message.
+Text to display under the field when it is marked as required. Defaults to "`* Required`".
 
 ### `optional-message` slot
 
-For translate the "optional" message.
+Text to display under the field when it is marked as optional. Defaults to "`Optional`".
 
 
 ## SCSS Variables {#scss-variables}
