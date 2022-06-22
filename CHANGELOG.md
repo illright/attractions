@@ -6,9 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ## [Unreleased]
 
+### Added
+
+- Slots and props for various components to better support localization (Thanks to [@Bluzzi](https://github.com/Bluzzi) for [#345](https://github.com/illright/attractions/pull/345)).
+
 ### Fixed
 
 - Improved typings for some components and utils ([#334](https://github.com/illright/attractions/pull/334)).
+- Required props will now be marked as such in the component typings.
 
 ## [3.7.0] – 2021-12-30
 
