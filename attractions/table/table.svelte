@@ -35,12 +35,6 @@
    * @type {boolean}
    */
   export let alternatingRows = true;
-
-  /**
-   * Support for custom table body rows.
-   * @type {boolean}
-   */
-  export let customBody = false;
 </script>
 
 <table {...$$restProps}>
@@ -58,26 +52,24 @@
       {/each}
     </tr>
   </thead>
-  {#if customBody}
-      <slot name="body" />
-  {:else}
-  <tbody>
-    {#each items as item}
-      <tr class:alternating={alternatingRows}>
-        {#each headers as header (header.value)}
-          <td
-            class:center={header.align === 'center'}
-            class:end={header.align === 'end'}
-          >
-            <slot name="item" {header} {item}>
-              {item[header.value]}
-            </slot>
-          </td>
-        {/each}
-      </tr>
-    {/each}
-  </tbody>
-  {/if}
+  <slot name="body">
+    <tbody>
+      {#each items as item}
+        <tr class:alternating={alternatingRows}>
+          {#each headers as header (header.value)}
+            <td
+              class:center={header.align === 'center'}
+              class:end={header.align === 'end'}
+            >
+              <slot name="item" {header} {item}>
+                {item[header.value]}
+              </slot>
+            </td>
+          {/each}
+        </tr>
+      {/each}
+    </tbody>
+  </slot>
 </table>
 
 <style src="./table.scss">

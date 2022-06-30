@@ -3,7 +3,7 @@ name: Table
 ---
 
 <script>
-  import { Table } from 'attractions';
+  import { Table, Button } from 'attractions';
   import Showcase from 'src/containers/docs/showcase.svelte';
   import ColorPreview from 'src/components/docs/color-preview.svelte';
 
@@ -12,12 +12,20 @@ name: Table
     { text: 'Last Name', value: 'lastName' },
     { text: 'Age', value: 'age', align: 'end' },
   ];
+
   const items = [
     { firstName: 'John', lastName: 'Doe', age: 694 },
     { firstName: 'Leo', lastName: 'Tolstoy', age: new Date().getFullYear() - 1828 },
     { firstName: 'فلان', lastName: 'الفلاني', age: 42 },
     { firstName: 'Иван', lastName: 'Иванов', age: 69 },
   ];
+
+  const customTableHeaders = [
+    { text: 'First Name', value: 'firstName' },
+    { text: 'Last Name', value: 'lastName' },
+    { text: 'Action', value: '', align: 'end' },
+  ];
+
   const headerType = '{ text: string; value: string}';
   const headersType = `Array<{
   text: string;
@@ -35,6 +43,21 @@ Simple data table.
 <Showcase>
   <div slot="showcase" class="padded">
     <Table {headers} {items} />
+    <Table headers={customTableHeaders} class="custom">
+      <tbody slot="body">
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>Leo</td>
+          <td>Tolstoy</td>
+          <td>
+            <Button filled>Edit</Button>
+          </td>
+        </tr>
+      </tbody>
+    </Table>
   </div>
   <div slot="source">
 
@@ -51,9 +74,33 @@ Simple data table.
     { firstName: 'فلان', lastName: 'الفلاني', age: 42 },
     { firstName: 'Иван', lastName: 'Иванов', age: 69 },
   ];
+
+  const customTableHeaders = [
+    { text: 'First Name', value: 'firstName' },
+    { text: 'Last Name', value: 'lastName' },
+    { text: 'Action', value: '', align: 'end' },
+  ];
+
 </script>
 
 <Table {headers} {items} />
+
+<!-- alternatively, you can use the `body` slot to define a custom table body -->
+<Table headers={customTableHeaders}>
+  <tbody slot="body" class="custom">
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+    </tr>
+    <tr>
+      <td>Leo</td>
+      <td>Tolstoy</td>
+      <td>
+        <Button filled>Edit</Button>
+      </td>
+    </tr>
+  </tbody>
+</Table>
 ```
 
   </div>
