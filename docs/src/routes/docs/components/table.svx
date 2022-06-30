@@ -43,8 +43,8 @@ Simple data table.
 <Showcase>
   <div slot="showcase" class="padded">
     <Table {headers} {items} />
-    <Table headers={customTableHeaders} class="attractions-table">
-      <tbody slot="body">
+    <Table headers={customTableHeaders}>
+      <tbody slot="body" class="attractions-table">
         <tr>
           <td>John</td>
           <td>Doe</td>
@@ -63,7 +63,6 @@ Simple data table.
     </Table>
   </div>
   <div slot="source">
-
 
 ```svelte
 <script>
@@ -111,11 +110,18 @@ Simple data table.
     </tr>
   </tbody>
 </Table>
+
+<!-- include the source SCSS stylesheet when using a custom table body -->
+<style lang="scss" src="/node_modules/attractions/table/table.scss">
+</style>
 ```
 
   </div>
 </Showcase>
 
+<style lang="scss" src="../../../../node_modules/attractions/table/table.scss">
+
+</style>
 
 ## Properties {#properties}
 

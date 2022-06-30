@@ -1,7 +1,8 @@
 @use 'sass:color';
 @use 'node_modules/attractions/_variables' as vars;
 
-table {
+table,
+.attractions-table {
   border-collapse: separate;
   border-spacing: 0;
   display: block;
@@ -72,59 +73,4 @@ table {
       border-right-width: 1px;
     }
   }
-}
-
-// style for custom table body
-// rewrite the above using :global
-
-:global(table.attractions-table) {
-  border-collapse: separate;
-  border-spacing: 0;
-  display: block;
-  margin-bottom: 1em;
-  overflow-x: auto;
-}
-
-:global(table.attractions-table td) {
-  border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
-  border-width: 1px 0 0 1px;
-  line-height: 1.3em;
-  padding: 1em;
-  text-align: start;
-}
-
-:global(table.attractions-table td .center) {
-  text-align: center;
-}
-
-:global(table.attractions-table td .end) {
-  text-align: end;
-}
-
-:global(table.attractions-table td:last-child) {
-  border-right-width: 1px;
-}
-
-:global(table.attractions-table tr.alternating :nth-child(even)) {
-  background: color.adjust(vars.$main, $alpha: -0.97);
-}
-
-:global(table.attractions-table tr:first-child td:first-child) {
-  border-top-left-radius: vars.$table-radius;
-}
-
-:global(table.attractions-table tr:first-child td:last-child) {
-  border-top-right-radius: vars.$table-radius;
-}
-
-:global(table.attractions-table tr:last-child td) {
-  border-bottom-width: 1px;
-}
-
-:global(table.attractions-table tr:last-child td:first-child) {
-  border-bottom-left-radius: vars.$table-radius;
-}
-
-:global(table.attractions-table tr:last-child td:last-child) {
-  border-bottom-right-radius: vars.$table-radius;
 }
