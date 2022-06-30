@@ -43,13 +43,16 @@ Simple data table.
 <Showcase>
   <div slot="showcase" class="padded">
     <Table {headers} {items} />
-    <Table headers={customTableHeaders} class="custom">
+    <Table headers={customTableHeaders} class="attractions-table">
       <tbody slot="body">
         <tr>
           <td>John</td>
           <td>Doe</td>
+          <td>
+            <Button filled>Edit</Button>
+          </td>
         </tr>
-        <tr>
+        <tr class="alternating">
           <td>Leo</td>
           <td>Tolstoy</td>
           <td>
@@ -60,6 +63,7 @@ Simple data table.
     </Table>
   </div>
   <div slot="source">
+
 
 ```svelte
 <script>
@@ -85,17 +89,23 @@ Simple data table.
 
 <Table {headers} {items} />
 
-<!-- alternatively, you can use the `body` slot to define a custom table body -->
+<!-- 
+  alternatively, you can use the `body` slot to define a custom table body 
+  Please note that you would need to apply the `alternating` class to each row manually
+-->
 <Table headers={customTableHeaders}>
-  <tbody slot="body" class="custom">
+  <tbody slot="body" class="attractions-table">
     <tr>
       <td>John</td>
       <td>Doe</td>
+      <td >
+        <Button filled>Edit</Button>
+      </td>
     </tr>
-    <tr>
+    <tr class="alternating">
       <td>Leo</td>
       <td>Tolstoy</td>
-      <td>
+      <td >
         <Button filled>Edit</Button>
       </td>
     </tr>
