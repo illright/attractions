@@ -49,9 +49,13 @@ const config = {
   ],
   kit: {
     adapter: adapter(),
+    prerender: {
+      default: true,
+    },
     paths: {
       // base: '',
     },
+    trailingSlash: 'always',
     alias: {
       $mdsvex: './src/mdsvex',
       $components: './src/components',
