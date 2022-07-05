@@ -4,6 +4,7 @@
    * @slot {{ closeOtherPanels: (e: CustomEvent<AccordionSectionControl>) => void }}
    */
   import classes from '../utils/classes.js';
+  import type { AccordionSectionControl } from './accordion-section-control';
 
   let _class: string | false | null = null;
   export { _class as class };
@@ -12,12 +13,11 @@
    */
   export let multiple = false;
 
-  /**
-   * @type {AccordionSectionControl | null}
-   */
-  let currentlyOpenPanel = null;
+  let currentlyOpenPanel: AccordionSectionControl | null = null;
 
-  function closeOtherPanels({ detail: thisPanel }) {
+  function closeOtherPanels({
+    detail: thisPanel,
+  }: CustomEvent<AccordionSectionControl>) {
     if (
       currentlyOpenPanel != null &&
       currentlyOpenPanel !== thisPanel &&

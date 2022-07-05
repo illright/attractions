@@ -91,16 +91,15 @@
 
   let startFocus = false;
   let endFocus = false;
-  let startValue;
-  let endValue;
+  let startValue: Date | null;
+  let endValue: Date | null;
 
   $: unpackValue(value);
   $: registerChange(startValue, endValue);
 
   let shownCalendar =
-    (range && value != null
-      ? /** @type {DateRange}*/ (value).start
-      : /** @type {Date}*/ (value)) || new Date();
+    (range && value != null ? (value as DateRange).start : (value as Date)) ||
+    new Date();
 
   function unpackValue(value) {
     startValue = copyDate(range ? value && value.start : value);
@@ -166,7 +165,7 @@
       }
     } else {
       if (range) {
-        const dateRange = /** @type {DateRange} */ (value);
+        const dateRange = value as DateRange;
         if (
           datesEqual(start, dateRange.start) &&
           datesEqual(end, dateRange.end)
@@ -174,7 +173,7 @@
           return;
         }
       } else {
-        if (datesEqual(start, /** @type {Date} */ (value))) {
+        if (datesEqual(start, value as Date)) {
           return;
         }
       }

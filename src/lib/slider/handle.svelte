@@ -7,61 +7,35 @@
 
   const dispatch = createEventDispatcher();
 
-  /**
-   */
   export let value: number;
-  /**
-   */
   export let min: number;
-  /**
-   */
   export let max: number;
-  /**
-   */
   export let active: boolean;
-  /**
-   */
   export let disabled = false;
-  /**
-   */
   export let tabIndex = 0;
-  /**
-   */
   export let vertical = false;
 
-  /**
-   * @type {boolean}
-   */
   let focus = false;
-  /**
-   * @type {boolean}
-   */
   let hovered = false;
-  /**
-   * @type {HTMLDivElement}
-   */
-  let handle;
+  let handle: HTMLDivElement;
   /**
    * focus on keydown
-   * @param {Event} _e
    */
-  function handleKeyDown(_e) {
+  function handleKeyDown(_e: Event) {
     focus = false;
   }
   /**
    * focus on mousedown
-   * @param {Event} _e
    */
-  function handleMouseDown(_e) {
+  function handleMouseDown(_e: Event) {
     focus = true;
     handle.focus();
   }
 
   /**
    * When the user focuses the handle of a slider, set it to active
-   * @param {Event} _e the event from browser
    */
-  function handleFocus(_e) {
+  function handleFocus(_e: Event) {
     if (!disabled) {
       focus = true;
       dispatch('focus', focus);
@@ -70,9 +44,8 @@
 
   /**
    * When the user has unfocused (blurred) from the slider, deactivate all handles.
-   * @param {Event} _e the event from browser
    */
-  function handleBlur(_e) {
+  function handleBlur(_e: Event) {
     focus = false;
     dispatch('focus', focus);
   }

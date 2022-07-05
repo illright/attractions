@@ -22,7 +22,7 @@
   export let query: string | null = null;
   $: matchRegex = query ? new RegExp(`(${escapeRegExp(query)})`, 'ig') : null;
 
-  function markMatch(string) {
+  function markMatch(string: string) {
     if (matchRegex == null) {
       return [{ content: string, marked: false }];
     }

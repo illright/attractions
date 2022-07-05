@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @slot {{ showSnackbar: <Props extends Record<string, any>>(options: {
    *   component: import('svelte').SvelteComponentTyped<Props>,
@@ -9,15 +9,13 @@
    *   expired: Promise<boolean>,
    * } }}
    */
-  import { setContext } from 'svelte';
+  import { setContext, type SvelteComponentTyped } from 'svelte';
   import Snackbar from './snackbar.svelte';
   import snackbarContextKey from './snackbar-context-key.js';
   import SnackbarPositions from './snackbar-positions.js';
 
   /**
    * The position of the snackbar stack inside the container.
-   * @typedef {typeof import('./snackbar-positions').default} SnackbarPositions
-   * @type {SnackbarPositions[keyof SnackbarPositions]}
    */
   export let position = SnackbarPositions.BOTTOM_LEFT;
   let registeredSnackbars = new Set();
@@ -32,19 +30,18 @@
 
   /**
    * Show the snackbar with the given options
-   * @type {<Props extends Record<string, any>>(options: {
-   *   component: import('svelte').SvelteComponentTyped<Props>,
-   *   props: Props,
-   *   duration: number,
-   * }) => {
-   *   close: () => void,
-   *   expired: Promise<boolean>,
-   * }}
    */
-  export function showSnackbar(options) {
+  export function showSnackbar<Props extends Record<string, any>>(options: {
+    component: typeof SvelteComponentTyped<Props>;
+    props: Props;
+    duration: number;
+  }): {
+    close: () => void;
+    expired: Promise<boolean>;
+  } {
     const {
       component = Snackbar,
-      props = /** @type {Record<string, any>} */ ({}),
+      props = {} as Record<string, any>,
       duration = 4000,
     } = options;
 

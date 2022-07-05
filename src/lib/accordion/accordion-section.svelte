@@ -7,6 +7,7 @@
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
+  import type { AccordionSectionControl } from './accordion-section-control';
 
   let _class: string | false | null = null;
   export { _class as class };
@@ -21,7 +22,7 @@
    */
   export let open = false;
 
-  const selfControl = {
+  const selfControl: AccordionSectionControl = {
     close() {
       open = false;
     },

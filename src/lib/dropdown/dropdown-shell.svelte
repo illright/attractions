@@ -20,7 +20,6 @@
 
   /**
    * A callback to toggle the open state of the dropdown.
-   * @type {() => void}
    */
   export function toggle() {
     open = !open;

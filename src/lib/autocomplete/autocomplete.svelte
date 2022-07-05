@@ -9,6 +9,7 @@
    * @extends {'./autocomplete-field.svelte'} AutocompleteFieldProps
    */
   import { createEventDispatcher } from 'svelte';
+  import type { Option } from './autocomplete-option.svelte';
   import Button from '../button/button.svelte';
   import Chip from '../chip/chip.svelte';
   import AutocompleteField from './autocomplete-field.svelte';
@@ -47,7 +48,7 @@
 
   let focus = false;
 
-  function deselect(item) {
+  function deselect(item: Option) {
     selection = selection.filter(thisItem => thisItem !== item);
     dispatch('change', { value: selection });
   }

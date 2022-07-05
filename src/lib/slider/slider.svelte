@@ -14,6 +14,7 @@
   } from './utils';
   import { rangeStyle } from './actions';
   import classes from '../utils/classes.js';
+  import type { TickConfig, RangeBehavior, Tooltips } from './types';
 
   /**
    * @event {number | [number, number]} change
@@ -23,23 +24,11 @@
 
   const dispatch = createEventDispatcher();
 
-  /**
-   */
   export let min: number;
-  /**
-   */
   export let max: number;
-  /**
-   */
   export let step = 1;
-  /**
-   */
   export let vertical = false;
-  /**
-   */
   export let disabled = false;
-  /**
-   */
   export let value: number | [number, number] =
     max < min ? min : min + (max - min) / 2;
   /**
@@ -48,57 +37,33 @@
    * In `'values'` mode, a list of all the values where ticks should be placed is provided (from min to max).
    * `subDensity` creates sub-ticks with a number that represents a percent interval on a 0-100 scale, e.g. 3 is every 3 percent.
    * In order for sub-ticks to be in sync with with ticks, the tick should be a multiple of the sub-ticks.
-   * @type {import('./types').TickConfig}
    */
-  export let ticks = {
+  export let ticks: TickConfig = {
     mode: 'none',
   };
-  /**
-   * @type {import('./types').RangeBehavior}
-   */
-  export let rangeBehavior = 'block';
-  /**
-   * @type {import('./types').Tooltips}
-   */
-  export let tooltips = 'never';
+  export let rangeBehavior: RangeBehavior = 'block';
+  export let tooltips: Tooltips = 'never';
 
-  /**
-   * @type {string | null}
-   */
   let _class: string | false | null = null;
   export { _class as class };
 
-  /** @type {[number] | [number, number]} */
-  $: internalValue = typeof value === 'number' ? [value] : value;
+  $: internalValue = (typeof value === 'number' ? [value] : value) as
+    | [number]
+    | [number, number];
 
-  /**
-   * @type {HTMLDivElement}
-   */
-  let slider;
+  let slider: HTMLDivElement;
 
   let activeHandle = 0;
   let sliderActive = false;
 
-  /**
-   * @type {'vertical' | 'horizontal'}
-   */
-  $: orientation = vertical ? 'vertical' : 'horizontal';
-  /**
-   * @type {number[]}
-   */
+  $: orientation = vertical ? ('vertical' as const) : ('horizontal' as const);
   $: tickValues = getTickValues(ticks, min, max);
-  /**
-   * @type {number[]}
-   */
   $: subTicks =
     ticks.mode !== 'none' && ticks.subDensity
       ? getSubTickPositions(ticks, min, max, tickValues)
       : [];
 
-  /**
-   * @param {MouseEvent | TouchEvent} e
-   */
-  function onStart(e) {
+  function onStart(e: MouseEvent | TouchEvent) {
     if (!sliderActive) {
       sliderActive = true;
       const pos = getPosition(vertical, e);
@@ -110,9 +75,8 @@
 
   /**
    * Normalize value.
-   * @param {number} v
    */
-  function trimAlignValue(v) {
+  function trimAlignValue(v: number) {
     if (v === null) {
       return 0;
     }
@@ -144,11 +108,7 @@
     return vertical ? height : width;
   }
 
-  /**
-   * @param {number} offset
-   * @return {number}
-   */
-  function calcValue(offset) {
+  function calcValue(offset: number) {
     const ratio = Math.max(offset, 0) / getSliderLength();
     const value = vertical
       ? (1 - ratio) * (max - min) + min
@@ -156,20 +116,15 @@
     return value;
   }
 
-  /**
-   * @param {number} position
-   * @return {number}
-   */
-  function calcValByPos(position) {
+  function calcValByPos(position: number) {
     const pixelOffset = position - getSliderStart();
     return trimAlignValue(calcValue(pixelOffset));
   }
 
   /**
    * change value based on mouse position, causing handle to move
-   * @param {MouseEvent | TouchEvent} e
    */
-  function onMove(e) {
+  function onMove(e: MouseEvent | TouchEvent) {
     if (disabled || !sliderActive) {
       return;
     }
@@ -179,16 +134,11 @@
     moveHandle(activeHandle, nextValue);
   }
 
-  /**
-   * @param {number} index
-   * @param {number} nextValue
-   */
-  function moveHandle(index, nextValue) {
+  function moveHandle(index: number, nextValue: number) {
     if (nextValue === value[index]) {
       return;
     }
-    /** @type {[number] | [number, number]} */
-    const next = [...internalValue];
+    const next: [number] | [number, number] = [...internalValue];
     next[index] = nextValue;
     let skip = false;
     if (internalValue.length > 1 && rangeBehavior !== 'free') {
@@ -219,13 +169,10 @@
     }
   }
 
-  /**
-   * @param {MouseEvent | TouchEvent} e
-   */
-  function onEnd(e) {
+  function onEnd(e: MouseEvent | TouchEvent) {
     const el = e.target;
     if (sliderActive) {
-      if (el === slider || slider.contains(/** @type {HTMLElement} */ (el))) {
+      if (el === slider || slider.contains(el as HTMLElement)) {
         onMove(e);
       }
       dispatch('blur');
@@ -233,10 +180,7 @@
     }
   }
 
-  /**
-   * @param {KeyboardEvent} e
-   */
-  function onKeyDown(e) {
+  function onKeyDown(e: KeyboardEvent) {
     if (disabled) {
       return;
     }

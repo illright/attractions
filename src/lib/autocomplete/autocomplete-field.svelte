@@ -5,7 +5,8 @@
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
    * @event {{ value: Option[] }} change
    */
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, SvelteComponentTyped } from 'svelte';
+  import type { Option } from './autocomplete-option.svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Dropdown from '../dropdown/dropdown.svelte';
   import Button from '../button/button.svelte';
@@ -48,8 +49,8 @@
    * Receives two props: `option` – the `Option` object ({ name, details }) and `query` – the current query.
    * Expected to dispatch click events on selection.
    */
-  export let optionComponent: SvelteComponentTyped<
-    { option: Option; query: string },
+  export let optionComponent: typeof SvelteComponentTyped<
+    { option: Option; query?: string | null | undefined },
     { click: Event },
     {}
   > = AutocompleteOption;
@@ -63,14 +64,14 @@
   export let focus = false;
 
   let moreOptions = false;
-  let promises = [];
-  let optionGenerator = null;
+  let promises: Promise<IteratorResult<Option[], void>>[] = [];
+  let optionGenerator: AsyncGenerator<Option[], void, void> | null = null;
 
   $: updateOptionGenerator(searchQuery);
 
-  let inputElement = null;
+  let inputElement: HTMLInputElement;
 
-  function updateOptionGenerator(query) {
+  function updateOptionGenerator(query: string) {
     if (query.length >= minSearchLength) {
       optionGenerator = getOptions(query);
     } else {
@@ -82,7 +83,7 @@
     }
   }
 
-  function filterOutSelected(generatorState) {
+  function filterOutSelected(generatorState: IteratorResult<Option[], void>) {
     moreOptions = !generatorState.done;
     if (generatorState.value == null) {
       return [];
@@ -93,8 +94,8 @@
     );
   }
 
-  function loadMoreOptions(click) {
-    promises.push(optionGenerator.next());
+  function loadMoreOptions(click: CustomEvent<{ nativeEvent: MouseEvent }>) {
+    promises.push(optionGenerator!.next());
     promises = promises;
 
     if (click != null) {
@@ -102,7 +103,7 @@
     }
   }
 
-  function select(option) {
+  function select(option: Option) {
     selection.push(option);
     selection = selection;
     searchQuery = '';
@@ -159,7 +160,7 @@
       </slot>
     {:else}
       <ul class="options-list">
-        {#each promises as promise (promise)}
+        {#each promises as promise}
           {#await promise}
             <slot name="loading-options">
               <li class="loading-options">
