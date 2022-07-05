@@ -1,6 +1,7 @@
 node_modules
 public
-__sapper__
+/build
+/package
 dist
 *.*
 LICENSE

@@ -4,7 +4,7 @@
   export let id = null;
 
   let href = id && `#${id}`;
-  onMount(function createSapperCompatiblePermalink() {
+  onMount(function createSvelteKitCompatiblePermalink() {
     if (id == null) {
       return;
     }

@@ -68,12 +68,12 @@
    */
   export let disabled = false;
   /**
-   * Turns the button into a link (prefetch-enabled for Sapper).
+   * Turns the button into a link (prefetch-enabled for SvelteKit).
    * @type {string | null}
    */
   export let href = null;
   /**
-   * Disables Sapper (or SvelteKit) prefetching for link buttons (those with an href prop).
+   * Disables SvelteKit prefetching for link buttons (those with an href prop).
    * @type {boolean}
    */
   export let noPrefetch = false;
