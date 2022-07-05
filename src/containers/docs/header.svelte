@@ -1,18 +1,18 @@
-<script>
+<script lang="ts">
   import { Button, Breadcrumbs } from '$lib';
   import { GithubIcon, HomeIcon } from 'svelte-feather-icons';
 
-  function capitalize(word) {
+  function capitalize(word: string) {
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   }
-  function segmentToName(segment) {
+  function segmentToName(segment: string) {
     if (segment === '') {
       return '';
     }
     return segment.split('-').map(capitalize).join(' ');
   }
 
-  export let segment;
+  export let segment: string;
 
   const logoSize = 30;
 </script>

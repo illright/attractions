@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { Popover } from '$lib';
   import { PopoverPositions } from '$lib/popover';
 
-  export let value;
-  let preview;
+  export let value: string;
+  let preview: HTMLDivElement;
 
   onMount(function setBoxShadow() {
     preview.style.boxShadow = value.slice(0, -1);

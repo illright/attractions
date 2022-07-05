@@ -1,12 +1,10 @@
-<script>
+<script lang="ts">
   import { Label, Card, Button } from '$lib';
   import { classes } from '$lib/utils';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
-  /** @type {Array<{ link: string; name: string; }>} */
-  export let components;
+  export let components: Array<{ link: string; name: string }>;
 </script>
 
 {#if components.length !== 0}

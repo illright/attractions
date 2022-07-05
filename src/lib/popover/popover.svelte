@@ -12,7 +12,7 @@
   /**
    * The position of the popover content relative to the triggering handle.
    */
-  export let position = PopoverPositions.TOP;
+  export let position: PopoverPositions = PopoverPositions.TOP;
 </script>
 
 <div class={classes('popover-container', _class)}>

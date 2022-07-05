@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { Button } from '$lib';
   import {
@@ -8,10 +8,11 @@
     TerminalIcon,
   } from 'svelte-feather-icons';
 
-  let self;
-  let text = null;
+  let self: HTMLDivElement;
+  let text: string | null = null;
   let copied = false;
-  export let filename = null;
+
+  export let filename: string | null = null;
   export let terminal = false;
 
   onMount(() => {

@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
   import { goto } from '$app/navigation';
   import { Card } from '$lib';
+  import type { SvelteComponentTyped } from 'svelte';
 
-  export let icon;
-  export let title;
-  export let subtitle;
-  export let href;
+  export let icon: typeof SvelteComponentTyped<{ size?: string }, any, any>;
+  export let title: string;
+  export let subtitle: string;
+  export let href: string;
 </script>
 
 <div class="info-tile" on:click={() => goto(href)}>

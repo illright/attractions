@@ -1,20 +1,21 @@
-<script>
+<script lang="ts">
   import { goto } from '$app/navigation';
   import { Tab, DropdownShell, Dropdown, Button } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
+  import type { Place } from './place';
 
-  export let places;
-  export let segment;
+  export let places: Place[];
+  export let segment: string;
 
   let currentPlace = places.find(place => place.segment === segment);
 
-  function handleTabClick(place) {
+  function handleTabClick(place: Place) {
     if (place.segment != null) {
       goto(`./docs/${place.segment}`);
     }
   }
 
-  function clearSubmenu({ detail }) {
+  function clearSubmenu({ detail }: CustomEvent<{ value: boolean }>) {
     if (!detail.value) {
       currentPlace = places.find(place => place.segment === segment);
     }

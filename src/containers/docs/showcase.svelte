@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Label } from '$lib';
   import CopyableCode from '$components/docs/copyable-code.svelte';
 </script>

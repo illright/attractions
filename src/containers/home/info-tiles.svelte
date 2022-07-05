@@ -1,15 +1,12 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import * as attractions from '$lib';
   import { s, formatFileSize } from '$lib/utils';
   import { GridIcon, Edit2Icon, FeatherIcon } from 'svelte-feather-icons';
   import InfoTile from '$components/home/info-tile.svelte';
 
-  const totalComponents =
-    Object.keys(attractions).length -
-    1 - // utils
-    1; // importer
-  let bundleSizePromise = Promise.resolve(Infinity);
+  const totalComponents = Object.keys(attractions).length - 1; // utils
+  let bundleSizePromise = Promise.resolve({ size: Infinity, gzip: Infinity });
 
   onMount(() => {
     bundleSizePromise = fetch(

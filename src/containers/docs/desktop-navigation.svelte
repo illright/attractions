@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
   import { Button, Accordion, AccordionSection } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
+  import type { Place } from './place';
 
-  export let places;
-  export let segment;
+  export let places: Place[];
+  export let segment: string;
 
   $: currentPlace = places.find(place => place.segment === segment);
 </script>
@@ -13,8 +14,8 @@
     {#each places as place}
       {#if typeof place.title === 'string'}
         {#if place.sub != null}
-          <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
-            <div slot="handle">
+          <AccordionSection on:panel-open={closeOtherPanels}>
+            <div slot="handle" let:toggle>
               <Button on:click={toggle}>
                 {place.title}
                 <ChevronDownIcon size="18" class="accordion-chevron ml" />
