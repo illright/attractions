@@ -10,9 +10,6 @@ relatedComponents:
   import { Button, SnackbarContainer } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import RelatedComponents from '$components/docs/related-components.svelte';
-  import fixAnchorLinks from 'src/utils/fix-anchor-links.js';
-
-  onMount(fixAnchorLinks);
 </script>
 
 # SnackbarContainer

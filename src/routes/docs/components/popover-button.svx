@@ -8,7 +8,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 
 <script>
   import { Popover, PopoverButton, Button } from '$lib';
-  import { PopoverPositions } from 'attractions/popover';
+  import { PopoverPositions } from '$lib/popover';
   import Showcase from '$containers/docs/showcase.svelte';
   import ShadowPreview from '$components/docs/shadow-preview.svelte';
   import RelatedComponents from '$components/docs/related-components.svelte';
@@ -33,7 +33,7 @@ A button designed to be used as the [<mark>`Popover`</mark>](./docs/components/p
 
 ```svelte
 <script>
-  import { PopoverPositions } from 'attractions/popover';
+  import { PopoverPositions } from '$libpopover';
 </script>
 
 <Popover position={PopoverPositions.BOTTOM}>
