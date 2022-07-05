@@ -20,12 +20,13 @@
   /** @type {string | false | null} */
   export { _class as class };
 
+  type OptionsGetter = (q: string) => AsyncGenerator<Option[], void, void>;
+
   /**
    * An async generator of suggestions.
    * Receives the input from the text field and is expected to yield promises that resolve to arrays of `Option` objects.
-   * @type {OptionsGetter}
    */
-  export let getOptions;
+  export let getOptions: OptionsGetter;
   /**
    * The current selection as an array of `Option` objects.
    * Can be used to set the selection programmatically.

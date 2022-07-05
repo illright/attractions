@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
    */
@@ -26,14 +26,12 @@
   export let checked = false;
   /**
    * The value of this checkbox. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information.
-   * @type {string}
    */
-  export let value;
+  export let value: string;
   /**
    * The name of the group to relate this checkbox chip to. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
-   * @type {string}
    */
-  export let name;
+  export let name: string;
   /**
    * Disables the chip and disallows selection.
    * @type {boolean}

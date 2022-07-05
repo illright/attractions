@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import Handle from './handle.svelte';
   import {
@@ -24,13 +24,11 @@
   const dispatch = createEventDispatcher();
 
   /**
-   * @type {number}
    */
-  export let min;
+  export let min: number;
   /**
-   * @type {number}
    */
-  export let max;
+  export let max: number;
   /**
    * @type {number}
    */

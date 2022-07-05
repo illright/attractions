@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { tweened } from 'svelte/motion';
   import { sineOut } from 'svelte/easing';
@@ -8,21 +8,17 @@
   const dispatch = createEventDispatcher();
 
   /**
-   * @type {number}
    */
-  export let value;
+  export let value: number;
   /**
-   * @type {number}
    */
-  export let min;
+  export let min: number;
   /**
-   * @type {number}
    */
-  export let max;
+  export let max: number;
   /**
-   * @type {boolean}
    */
-  export let active;
+  export let active: boolean;
   /**
    * @type {boolean}
    */

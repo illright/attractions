@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {File} delete
    */
@@ -10,9 +10,8 @@
 
   /**
    * The File object to display.
-   * @type {File}
    */
-  export let file;
+  export let file: File;
 
   const dispatch = createEventDispatcher();
 </script>

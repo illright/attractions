@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; nativeEvent: Event }} change
    * @event {{ nativeEvent: MouseEvent }} click
@@ -23,9 +23,8 @@
 
   /**
    * The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information.
-   * @type {string}
    */
-  export let value;
+  export let value: string;
   /**
    * The name assigned to the `<input type="radio">`'s [name attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).
    * @type {string | null}

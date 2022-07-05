@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; nativeEvent: Event }} change
    * @extends {'./radio-chip.svelte'} RadioChipProps
@@ -23,9 +23,12 @@
   /**
    * An array of items, where only the value field is required.
    * Must contain at least one value.
-   * @type {Array<{ value: string; label?: string; disabled?: boolean }>}
    */
-  export let items;
+  export let items: Array<{
+    value: string;
+    label?: string;
+    disabled?: boolean;
+  }>;
   /**
    * The currently selected value of the group.
    * @type {string | null}
@@ -33,9 +36,8 @@
   export let value = null;
   /**
    * The name of this radio button group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
-   * @type {string}
    */
-  export let name;
+  export let name: string;
 
   if (!items || items.length === 0) {
     console.error('Must have at least one item in the radio chip group');

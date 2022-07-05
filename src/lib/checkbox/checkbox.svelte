@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
    */
@@ -32,9 +32,8 @@
   export let checked = false;
   /**
    * The value assigned to the checkbox input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information.
-   * @type {string}
    */
-  export let value;
+  export let value: string;
   /**
    * Disables the checkbox, freezing its current `checked` state.
    * @type {boolean}

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; nativeEvent: Event }} change
    * @extends {'./radio-button.svelte'} RadioButtonProps
@@ -30,9 +30,12 @@
 
   /**
    * An array of objects, where only the `value` field is required. Must contain at least one value.
-   * @type {Array<{ value: string; label?: string; disabled?: boolean }>}
    */
-  export let items;
+  export let items: Array<{
+    value: string;
+    label?: string;
+    disabled?: boolean;
+  }>;
   /**
    * The currently selected value of the group.
    * @type {string | null}
@@ -40,9 +43,8 @@
   export let value = null;
   /**
    * The name to assign to all radio buttons belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
-   * @type {string}
    */
-  export let name;
+  export let name: string;
   /**
    * Places the labels to the left of the radio buttons.
    * @type {boolean}

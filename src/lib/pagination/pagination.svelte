@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: number }} change
    */
@@ -12,9 +12,8 @@
   export { _class as class };
   /**
    * The amount of pages to allow for navigation.
-   * @type {number}
    */
-  export let pages;
+  export let pages: number;
   /**
    * The currently selected page (starting from 1).
    * @type {number}

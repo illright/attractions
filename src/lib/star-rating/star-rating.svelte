@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: number; nativeEvent: Event }} change
    */
@@ -30,9 +30,8 @@
   export let value = 0;
   /**
    * The name to assign to all stars belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
-   * @type {string}
    */
-  export let name;
+  export let name: string;
   /**
    * Disables star selection.
    * @type {boolean}

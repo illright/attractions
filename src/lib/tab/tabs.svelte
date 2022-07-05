@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; nativeEvent: Event }} change
    */
@@ -21,14 +21,12 @@
   export let value = null;
   /**
    * An array of strings that act as the labels of the tabs.
-   * @type {string[]}
    */
-  export let items;
+  export let items: string[];
   /**
    * The name passed to each of the underlying `<Tab>`s, which in turn becomes assigned to the `<input type="radio">`s' [name attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).
-   * @type {string}
    */
-  export let name;
+  export let name: string;
 </script>
 
 <nav class={classes(_class)} role="group">

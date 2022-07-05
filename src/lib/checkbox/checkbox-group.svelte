@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
    * @extends {'./checkbox.svelte'} CheckboxProps
@@ -33,15 +33,18 @@
   /**
    * An array of items, where only the value field is required.
    * Must contain at least one value.
-   * @type {Array<{ value: string; label?: string; checked?: boolean; disabled?: boolean }>}
    */
-  export let items;
+  export let items: Array<{
+    value: string;
+    label?: string;
+    checked?: boolean;
+    disabled?: boolean;
+  }>;
   /**
    * The name to assign to all checkboxes belonging to the same group.
    * Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
-   * @type {string}
    */
-  export let name;
+  export let name: string;
   /**
    * Places the labels to the left of the checkboxes.
    * @type {boolean}

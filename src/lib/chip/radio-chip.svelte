@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; nativeEvent: Event }} change
    */
@@ -22,14 +22,12 @@
 
   /**
    * The value of this radio button. Included in events and can be bound to using `bind:group`.
-   * @type {string}
    */
-  export let value;
+  export let value: string;
   /**
    * The name of the group to relate this radio chip to. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
-   * @type {string}
    */
-  export let name;
+  export let name: string;
   /**
    * Disables the chip and disallows selection.
    * @type {boolean}

@@ -1,6 +1,12 @@
-<script>
+<script lang="ts" context="module">
+  export interface Option {
+    name: string;
+    details?: string;
+  }
+</script>
+
+<script lang="ts">
   /**
-   * @typedef {{ name: string; details?: string }} Option
    * @event {{ nativeEvent: MouseEvent }} click
    */
   import { createEventDispatcher } from 'svelte';
@@ -8,12 +14,10 @@
 
   /**
    * The option data to render.
-   * @type {Option}
    */
-  export let option;
+  export let option: Option;
   /**
    * The substring to seek out and highlight among the name and the details.
-   * @type {string | null}
    */
   export let query = null;
   $: matchRegex = query ? new RegExp(`(${escapeRegExp(query)})`, 'ig') : null;

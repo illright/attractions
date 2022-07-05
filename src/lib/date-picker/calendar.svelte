@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {Date} day-select
    */
@@ -44,14 +44,13 @@
   /**
    * An index of the desired month.
    * 0 is for January, 11 is for December.
-   * @type {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11}
+   * @type {}
    */
-  export let month;
+  export let month: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
   /**
    * The desired year.
-   * @type {number}
    */
-  export let year;
+  export let year: number;
   /**
    * If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days).
    * @type {Date | null}

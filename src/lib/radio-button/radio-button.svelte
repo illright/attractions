@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string; nativeEvent: Event }} change
    */
@@ -27,9 +27,8 @@
 
   /**
    * The value assigned to the radio button input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information.
-   * @type {string}
    */
-  export let value;
+  export let value: string;
   /**
    * Disables the radio button.
    * @type {boolean}
