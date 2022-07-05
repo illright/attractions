@@ -14,18 +14,6 @@
   /** @type {string | false | null} */
   export { _class as class };
   /**
-   * Aligns the dropdown content with the right edge of the shell.
-   * @deprecated
-   * @type {boolean}
-   */
-  export let right = false;
-  /**
-   * Aligns the dropdown content such that it opens to the top of the shell, extending up.
-   * @deprecated
-   * @type {boolean}
-   */
-  export let top = false;
-  /**
    * Dropdown horizontal alignment relative to the shell.
    * @type {string}
    */
@@ -80,11 +68,15 @@
       const dropdownBound = dropdownElement.getBoundingClientRect();
       const dropdownShellBound = getDropdownShellBoundary();
 
-      isVerticalAlignTop =
-        top || getIsVerticalAlignTop(dropdownBound, dropdownShellBound);
+      isVerticalAlignTop = getIsVerticalAlignTop(
+        dropdownBound,
+        dropdownShellBound
+      );
 
-      isHorizontalAlignEnd =
-        right || getIsHorizontalAlignEnd(dropdownBound, dropdownShellBound);
+      isHorizontalAlignEnd = getIsHorizontalAlignEnd(
+        dropdownBound,
+        dropdownShellBound
+      );
     }
   }
 </script>
