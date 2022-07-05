@@ -6,7 +6,8 @@
   import MobileNavigation from '$containers/docs/mobile-navigation.svelte';
   import DesktopNavigation from '$containers/docs/desktop-navigation.svelte';
 
-  export let segment;
+  $: segments = $page.url.pathname.split('/');
+  $: segment = segments[segments.length - 1];
 
   function scrollToTop() {
     window.scrollTo(0, 0);

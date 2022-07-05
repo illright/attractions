@@ -1,8 +1,9 @@
 <script>
-  export let status;
-  export let error;
+  import { page } from '$app/stores';
+  import { dev } from '$app/env';
 
-  const dev = process.env.NODE_ENV === 'development';
+  $: status = $page.status;
+  $: error = $page.error;
 </script>
 
 <svelte:head>
