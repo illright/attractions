@@ -1,8 +1,4 @@
-<script>
-  /**
-   * @typedef {{ close: () => void; toggle: () => void }} AccordionSectionControl
-   * @slot {{ closeOtherPanels: (e: CustomEvent<AccordionSectionControl>) => void }}
-   */
+<script lang="ts">
   import classes from '../utils/classes.js';
   import type { AccordionSectionControl } from './accordion-section-control';
 

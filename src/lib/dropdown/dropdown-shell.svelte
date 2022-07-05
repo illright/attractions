@@ -1,7 +1,6 @@
 <script lang="ts">
   /**
    * @slot {{ toggle: () => void }}
-   * @event {{ value: boolean }} change
    */
   import { createEventDispatcher, setContext } from 'svelte';
   import { writable } from 'svelte/store';
@@ -51,7 +50,7 @@
       ? document.addEventListener('keydown', handleKeyPress)
       : document.removeEventListener('keydown', handleKeyPress));
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ change: { value: boolean } }>();
 
   const isDropdownOpen = writable(open);
   const getDropdownShellBoundary = () => self && self.getBoundingClientRect();

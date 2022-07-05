@@ -1,15 +1,13 @@
 <script lang="ts">
-  /**
-   * @event {{ nativeEvent: MouseEvent }} click
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
   let _class: string | false | null = null;
   export { _class as class };
 
-  /** */
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    click: { nativeEvent: MouseEvent };
+  }>();
 </script>
 
 <button

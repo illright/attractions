@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {Date} day-select
-   */
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
@@ -90,7 +87,7 @@
   }
 
   const dayNumberFormatter = Intl.DateTimeFormat(locale, { day: 'numeric' });
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ 'day-select': Date }>();
 </script>
 
 <div class={classes('weekdays', weekdaysClass)}>

@@ -1,8 +1,8 @@
+<script lang="ts" context="module">
+  type DateRange = { start: Date | null; end: Date | null };
+</script>
+
 <script lang="ts">
-  /**
-   * @typedef {{ start: Date | null; end: Date | null }} DateRange
-   * @event {{ value: Date | DateRange }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
   import Button from '../button/button.svelte';
@@ -201,7 +201,9 @@
     month: 'long',
     year: 'numeric',
   });
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: Date | DateRange };
+  }>();
 </script>
 
 <div class={classes('date-picker', _class)}>

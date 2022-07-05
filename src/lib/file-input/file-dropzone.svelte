@@ -1,7 +1,6 @@
 <script lang="ts">
   /**
    * @slot {{ wrongType: boolean; dragActive: boolean }} empty-layer
-   * @event {{ files: File[]; nativeEvent?: Event }} change
    */
   import Paperclip from './paperclip.svelte';
   import Plus from './plus.svelte';
@@ -97,7 +96,9 @@
     }
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { files: File[]; nativeEvent?: Event };
+  }>();
 </script>
 
 <label

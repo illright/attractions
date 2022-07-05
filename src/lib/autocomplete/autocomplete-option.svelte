@@ -6,9 +6,6 @@
 </script>
 
 <script lang="ts">
-  /**
-   * @event {{ nativeEvent: MouseEvent }} click
-   */
   import { createEventDispatcher } from 'svelte';
   import escapeRegExp from '../utils/escape-regexp.js';
 
@@ -34,7 +31,9 @@
     }));
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    click: { nativeEvent: MouseEvent };
+  }>();
 </script>
 
 <li on:click|stopPropagation={e => dispatch('click', { nativeEvent: e })}>

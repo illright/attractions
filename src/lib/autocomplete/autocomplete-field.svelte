@@ -1,10 +1,4 @@
 <script lang="ts">
-  /**
-   * @typedef {import('./autocomplete-option.svelte').Option} Option
-   * @typedef {(q: string) => AsyncGenerator<Option[], void, void>} OptionsGetter
-   * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
-   * @event {{ value: Option[] }} change
-   */
   import { createEventDispatcher, SvelteComponentTyped } from 'svelte';
   import type { Option } from './autocomplete-option.svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
@@ -120,7 +114,7 @@
     focus = true;
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ change: { value: Option[] } }>();
 </script>
 
 <DropdownShell

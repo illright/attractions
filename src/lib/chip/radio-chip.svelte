@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: string; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
   import ripple from '../utils/ripple.js';
@@ -51,7 +48,9 @@
    */
   export let noPadding = false;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: string; nativeEvent: Event };
+  }>();
 </script>
 
 <label class={classes('input-chip radio-chip', _class)}>

@@ -5,7 +5,7 @@
   import { handleStyle } from './actions';
   import { calcPercentOfRange } from './utils';
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ focus: boolean }>();
 
   export let value: number;
   export let min: number;
@@ -58,25 +58,13 @@
     hovered = false;
   }
 
-  /**
-   * @type {number}
-   */
   const initialPosition = calcPercentOfRange(value, { min, max });
   const tween = tweened(initialPosition, { duration: 60, easing: sineOut });
 
-  /**
-   * @type {number}
-   */
   $: offset = calcPercentOfRange(value, { min, max });
   $: tween.set(offset);
-  /**
-   * @type {boolean}
-   */
   $: canShowActiveTooltip = (active && focus) || hovered;
-  /**
-   * @type {'vertical' | 'horizontal'}
-   */
-  $: orientation = vertical ? 'vertical' : 'horizontal';
+  $: orientation = vertical ? ('vertical' as const) : ('horizontal' as const);
 </script>
 
 <div

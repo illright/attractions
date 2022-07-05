@@ -1,10 +1,5 @@
 <script lang="ts">
   /**
-   * @event {{ value: string | number; nativeEvent: Event }} input
-   * @event {{ value: string | number; nativeEvent: Event }} change
-   * @event {{ nativeEvent: FocusEvent }} focus
-   * @event {{ nativeEvent: KeyboardEvent }} keydown
-   * @event {{ nativeEvent: FocusEvent }} blur
    * @restProps {textarea | input}
    */
   import { createEventDispatcher, onMount } from 'svelte';
@@ -103,10 +98,16 @@
       $$restProps.type === 'number'
         ? toNumber(event.currentTarget.value)
         : event.currentTarget.value;
-    dispatch('input', { value, nativeEvent: event });
+    dispatch('input', { value: value!, nativeEvent: event });
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    input: { value: string | number; nativeEvent: Event };
+    change: { value: string | number; nativeEvent: Event };
+    focus: { nativeEvent: FocusEvent };
+    keydown: { nativeEvent: KeyboardEvent };
+    blur: { nativeEvent: FocusEvent };
+  }>();
 </script>
 
 <div

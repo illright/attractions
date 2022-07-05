@@ -16,13 +16,11 @@
   import classes from '../utils/classes.js';
   import type { TickConfig, RangeBehavior, Tooltips } from './types';
 
-  /**
-   * @event {number | [number, number]} change
-   * @event {void} focus
-   * @event {void} blur
-   */
-
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: number | [number, number];
+    focus: void;
+    blur: void;
+  }>();
 
   export let min: number;
   export let max: number;

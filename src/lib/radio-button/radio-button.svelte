@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: string; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
@@ -43,7 +40,9 @@
    */
   export let title: string | null = null;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: string; nativeEvent: Event };
+  }>();
 </script>
 
 <label class={classes('radio', _class)} {title}>

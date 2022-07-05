@@ -1,9 +1,4 @@
-<script>
-  /**
-   * @slot {{ toggle: () => void }} handle
-   * @event {{ close: () => void; toggle: () => void }} panel-open
-   * @event {{ close: () => void; toggle: () => void }} panel-close
-   */
+<script lang="ts">
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
@@ -32,7 +27,10 @@
     },
   };
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    'panel-open': AccordionSectionControl;
+    'panel-close': AccordionSectionControl;
+  }>();
 </script>
 
 <li class:open class={classes('panel', _class)}>

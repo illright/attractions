@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: boolean; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
@@ -33,7 +30,9 @@
    */
   export let slotLeft = false;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: boolean; nativeEvent: Event };
+  }>();
 </script>
 
 <label class={classes('switch', _class)}>

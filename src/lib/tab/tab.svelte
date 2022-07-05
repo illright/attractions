@@ -1,8 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: string; nativeEvent: Event }} change
-   * @event {{ nativeEvent: MouseEvent }} click
-   */
   import { createEventDispatcher } from 'svelte';
   import rippleEffect from '../utils/ripple.js';
   import classes from '../utils/classes.js';
@@ -39,7 +35,10 @@
    */
   export let noRipple = false;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: string; nativeEvent: Event };
+    click: { nativeEvent: MouseEvent };
+  }>();
 </script>
 
 <label class={classes('tab', _class)}>

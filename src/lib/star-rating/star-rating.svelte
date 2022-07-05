@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: number; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import Star from './star.svelte';
   import range from '../utils/range.js';
@@ -37,7 +34,7 @@
    */
   export let events: Array<{ name: string; handler: (e: Event) => void }> = [];
 
-  function reverseArrowKeys(event) {
+  function reverseArrowKeys(event: KeyboardEvent) {
     switch (event.key) {
       case 'ArrowLeft':
       case 'ArrowDown':
@@ -57,7 +54,9 @@
     value = Math.max(value, 1);
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: number; nativeEvent: Event };
+  }>();
 </script>
 
 <div role="group" class={classes('star-rating', _class)}>

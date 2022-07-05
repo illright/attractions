@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: File | FileList; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import ripple from '../utils/ripple.js';
@@ -48,7 +45,9 @@
     dispatch('change', { value, nativeEvent: e });
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: File | FileList; nativeEvent: Event };
+  }>();
 </script>
 
 <span class={classes('file-input', _class)} class:vertical>

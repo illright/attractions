@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: number }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import Button from '../button/button.svelte';
   import TextField from '../text-field/text-field.svelte';
@@ -102,7 +99,7 @@
     rightInputActive = true;
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ change: { value: number } }>();
 </script>
 
 {#if pages > 1 || (pages == 1 && showLonePage)}

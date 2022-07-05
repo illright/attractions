@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
@@ -46,7 +43,9 @@
    */
   export let title: string | null = null;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: string; checked: boolean; nativeEvent: Event };
+  }>();
 </script>
 
 <label class={classes('checkbox', _class)} class:round {title}>

@@ -1,6 +1,5 @@
 <script lang="ts">
   /**
-   * @event {{ nativeEvent: MouseEvent }} click
    * @restProps {a | button}
    */
   import { createEventDispatcher } from 'svelte';
@@ -82,7 +81,9 @@
     console.error('A button may not be filled and selected at the same time');
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    click: { nativeEvent: MouseEvent };
+  }>();
 </script>
 
 {#if href}

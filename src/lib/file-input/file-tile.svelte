@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {File} delete
-   */
   import Trash2 from './trash-2.svelte';
   import Button from '../button/button.svelte';
   import { createEventDispatcher } from 'svelte';
@@ -13,7 +10,7 @@
    */
   export let file: File;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ delete: File }>();
 </script>
 
 <div class="file-tile">

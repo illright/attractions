@@ -1,11 +1,9 @@
 <script lang="ts">
   /**
-   * @typedef {import('./autocomplete-option.svelte').Option} Option
    * @slot {{ }} loading-options
    * @slot {{ loadMoreOptions: (click?: CustomEvent<{ nativeEvent: MouseEvent }>) => void }} more-options
    * @slot {{ }} not-enough-input
    * @slot {{ }} too-many-options
-   * @event {{ value: Option[] }} change
    * @extends {'./autocomplete-field.svelte'} AutocompleteFieldProps
    */
   import { createEventDispatcher } from 'svelte';
@@ -53,7 +51,7 @@
     dispatch('change', { value: selection });
   }
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ change: { value: Option[] } }>();
 </script>
 
 <div class:focus class={classes('autocomplete', _class)} class:disabled>

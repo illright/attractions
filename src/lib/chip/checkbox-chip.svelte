@@ -1,7 +1,4 @@
 <script lang="ts">
-  /**
-   * @event {{ value: string; checked: boolean; nativeEvent: Event }} change
-   */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
@@ -50,7 +47,9 @@
    */
   export let noPadding = false;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{
+    change: { value: string; checked: boolean; nativeEvent: Event };
+  }>();
 </script>
 
 <label class={classes('input-chip checkbox-chip', _class)}>
