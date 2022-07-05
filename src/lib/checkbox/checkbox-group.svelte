@@ -23,7 +23,6 @@
   /**
    * Designates the checkboxes as color choices.
    * Labels are ignored and values are expected to be `"#RRGGBB"`.
-   * @type {boolean}
    */
   export let color = false;
 
@@ -44,12 +43,10 @@
   export let name: string;
   /**
    * Places the labels to the left of the checkboxes.
-   * @type {boolean}
    */
   export let labelsLeft = false;
   /**
    * The maximum allowed number of checkboxes to select.
-   * @type {number}
    */
   export let max = Infinity;
   /**

@@ -30,15 +30,12 @@
    */
   export let max: number;
   /**
-   * @type {number}
    */
   export let step = 1;
   /**
-   * @type {boolean}
    */
   export let vertical = false;
   /**
-   * @type {boolean}
    */
   export let disabled = false;
   /**

@@ -18,12 +18,10 @@
 
   /**
    * How many stars to be displayed.
-   * @type {number}
    */
   export let max = 5;
   /**
    * Current amount of selected stars.
-   * @type {number}
    */
   export let value = 0;
   /**
@@ -32,7 +30,6 @@
   export let name: string;
   /**
    * Disables star selection.
-   * @type {boolean}
    */
   export let disabled = false;
   /**

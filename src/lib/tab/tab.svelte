@@ -34,12 +34,10 @@
   export let group = null;
   /**
    * Disallows selecting this tab.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
    * Disables the ripple on the tab when clicking on it.
-   * @type {boolean}
    */
   export let noRipple = false;
 

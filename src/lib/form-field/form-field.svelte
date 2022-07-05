@@ -31,12 +31,10 @@
 
   /**
    * Marks the form field as required, adding an asterisk to the name and text under the field indicating that the field is mandatory.
-   * @type {boolean}
    */
   export let required = false;
   /**
    * Marks the form field as optional, explicitly stating the optionality of the field in the text under the field.
-   * @type {boolean}
    */
   export let optional = false;
   /**

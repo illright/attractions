@@ -40,12 +40,10 @@
   export let beforeChange = null;
   /**
    * Whether the input should accept files.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
    * The maximum amount of files that the user can upload.
-   * @type {number}
    */
   export let max = Infinity;
 

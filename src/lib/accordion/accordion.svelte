@@ -9,7 +9,6 @@
   export { _class as class };
   /**
    * Setting this to true allows multiple panels to be open at the same time.
-   * @type {boolean}
    */
   export let multiple = false;
 

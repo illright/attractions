@@ -22,17 +22,14 @@
 
   /**
    * Whether the switch is currently on.
-   * @type {boolean}
    */
   export let value = false;
   /**
    * Disables the switch.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
    * Whether to place the default slot to the left of the switch or to the right.
-   * @type {boolean}
    */
   export let slotLeft = false;
 

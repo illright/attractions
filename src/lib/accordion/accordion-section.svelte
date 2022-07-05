@@ -19,7 +19,6 @@
   export let label = null;
   /**
    * The state of the section: opened or closed.
-   * @type {boolean}
    */
   export let open = false;
 

@@ -12,7 +12,6 @@
 
   /**
    * Applies the danger color to the title (including the icon slot if it is stylable with the CSS `color` property).
-   * @type {boolean}
    */
   export let danger = false;
   /**
@@ -27,7 +26,6 @@
   export let title = null;
   /**
    * Gives the dialog a `max-width` of `30em`.
-   * @type {boolean}
    */
   export let constrainWidth = false;
 </script>

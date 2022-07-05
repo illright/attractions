@@ -34,17 +34,14 @@
   export let selection = [];
   /**
    * The minimum length the search query must be to call `getOptions`.
-   * @type {number}
    */
   export let minSearchLength = 3;
   /**
    * The maximum amount of options than can be selected.
-   * @type {number}
    */
   export let maxOptions = Infinity;
   /**
    * The current value of the text field. Can be used to control the query programmatically.
-   * @type {string}
    */
   export let searchQuery = '';
   /**
@@ -56,12 +53,10 @@
   export let optionComponent = AutocompleteOption;
   /**
    * Whether to disable the field.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
    * Allows to programmatically control whether the suggestions dropdown is shown.
-   * @type {boolean}
    */
   export let focus = false;
 

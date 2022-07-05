@@ -28,7 +28,6 @@
   export let value: string;
   /**
    * Disables the radio button.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
@@ -39,7 +38,6 @@
   export let group = null;
   /**
    * Places the default slot (label) to the left of the radio button.
-   * @type {boolean}
    */
   export let slotLeft = false;
   /**

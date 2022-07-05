@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Button from '../button/button.svelte';
 
   /**
@@ -8,7 +8,6 @@
   export let items = [];
   /**
    * The separator between segments.
-   * @type {string}
    */
   export let separator = '/';
 

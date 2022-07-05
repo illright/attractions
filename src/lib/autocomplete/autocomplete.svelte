@@ -36,17 +36,14 @@
   export let minSearchLength = 3;
   /**
    * The maximum amount of options than can be selected.
-   * @type {number}
    */
   export let maxOptions = Infinity;
   /**
    * The current value of the text field. Can be used to control the query programmatically.
-   * @type {string}
    */
   export let searchQuery = '';
   /**
    * Whether to disable the field.
-   * @type {boolean}
    */
   export let disabled = false;
 

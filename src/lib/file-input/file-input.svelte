@@ -16,12 +16,10 @@
 
   /**
    * Allows the user to select multiple files.
-   * @type {boolean}
    */
   export let multiple = false;
   /**
    * Decides if the _select a file_ and _clear selection_ buttons will be laid out in a row or a column (upload a file to see the two buttons).
-   * @type {boolean}
    */
   export let vertical = false;
   /**
@@ -31,7 +29,6 @@
   export let value = multiple ? [] : null;
   /**
    * Whether the input should accept files.
-   * @type {boolean}
    */
   export let disabled = false;
 

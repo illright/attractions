@@ -24,7 +24,6 @@
 
   /**
    * Whether the checkbox is checked or not.
-   * @type {boolean}
    */
   export let checked = false;
   /**
@@ -33,17 +32,14 @@
   export let value: string;
   /**
    * Disables the checkbox, freezing its current `checked` state.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
    * Places the default slot (label) to the left of the checkbox.
-   * @type {boolean}
    */
   export let slotLeft = false;
   /**
    * Makes the checkbox round (and slightly larger).
-   * @type {boolean}
    */
   export let round = false;
   /**

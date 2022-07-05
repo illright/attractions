@@ -35,7 +35,6 @@
   export let name: string;
   /**
    * The maximum allowed number of chips to select.
-   * @type {number}
    */
   export let max = Infinity;
   /**

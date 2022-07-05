@@ -15,7 +15,6 @@
   export { _class as class };
   /**
    * Controls whether the dropdown content is shown or hidden.
-   * @type {boolean}
    */
   export let open = false;
 

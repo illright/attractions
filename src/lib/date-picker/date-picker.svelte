@@ -41,7 +41,6 @@
 
   /**
    * If this is set to `true`, the date picker will have two fields – for the start and the end of the date range.
-   * @type {boolean}
    */
   export let range = false;
   /**
@@ -59,17 +58,14 @@
   export let firstWeekday = 1; // 1 corresponds to Monday
   /**
    * Whether to hide the calendar dropdown and only keep the text input.
-   * @type {boolean}
    */
   export let noCalendar = false;
   /**
    * Whether to show the calendar dropdown above or below the text field.
-   * @type {boolean}
    */
   export let top = false;
   /**
    * Whether to align the calendar dropdown to the right or the left side of the text field.
-   * @type {boolean}
    */
   export let right = false;
   /**
@@ -84,12 +80,10 @@
   export let disabledDates = [];
   /**
    * If `true`, the dropdown will be automatically closed after a date is selected.
-   * @type {boolean}
    */
   export let closeOnSelection = false;
   /**
    * The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed.
-   * @type {string}
    */
   export let format = '%d.%m.%Y';
   $: readableFormat = format

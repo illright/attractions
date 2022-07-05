@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Label from '../typography/label.svelte';
 
   /**
@@ -32,7 +32,6 @@
 
   /**
    * Whether the table rows should have alternating background colors.
-   * @type {boolean}
    */
   export let alternatingRows = true;
 </script>

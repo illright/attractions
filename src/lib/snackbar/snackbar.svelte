@@ -26,7 +26,6 @@
   export let action = null;
   /**
    * Whether to call the `closeCallback` when an action button is pressed, after its callback.
-   * @type {boolean}
    */
   export let closeOnAction = true;
   /**

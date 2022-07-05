@@ -27,7 +27,6 @@
   export let name: string;
   /**
    * Disables the chip and disallows selection.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
@@ -43,17 +42,14 @@
 
   /**
    * Makes the chip smaller.
-   * @type {boolean}
    */
   export let small = false;
   /**
    * Adds a border to the chip instead of the background.
-   * @type {boolean}
    */
   export let outline = false;
   /**
    * Clears the internal padding. Useful if you want to handle spacing yourself.
-   * @type {boolean}
    */
   export let noPadding = false;
 

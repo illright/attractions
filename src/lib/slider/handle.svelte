@@ -20,15 +20,12 @@
    */
   export let active: boolean;
   /**
-   * @type {boolean}
    */
   export let disabled = false;
   /**
-   * @type {number}
    */
   export let tabIndex = 0;
   /**
-   * @type {boolean}
    */
   export let vertical = false;
 

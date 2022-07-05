@@ -13,57 +13,47 @@
   /**
    * Adds a filled background to the button.
    * Mutually exclusive with `outline` and `selected`.
-   * @type {boolean}
    */
   export let filled = false;
   /**
    * Adds a border to the button.
    * Mutually exclusive with `filled`.
-   * @type {boolean}
    */
   export let outline = false;
   /**
    * Gives the button a color of danger (red by default).
    * Mutually exclusive with `neutral`.
-   * @type {boolean}
    */
   export let danger = false;
   /**
    * Gives the button a neutral color (very dark gray by default).
    * Mutually exclusive with `danger`.
-   * @type {boolean}
    */
   export let neutral = false;
   /**
    * Adjusts the padding to be equal on all sides. Great for icon-only buttons.
-   * @type {boolean}
    */
   export let round = false;
   /**
    * Halves the border radius and increases the padding. Well-suited for large menus.
-   * @type {boolean}
    */
   export let rectangle = false;
   /**
    * Cuts the padding to make the button smaller.
-   * @type {boolean}
    */
   export let small = false;
   /**
    * Gives the button a tinted background. Suitable for indicating the selected item.
    * Mutually exclusive with `filled`.
-   * @type {boolean}
    */
   export let selected = false;
   /**
    * Disables the ripple effect.
-   * @type {boolean}
    */
   export let noRipple = false;
 
   /**
    * Disables the button, styling it appropriately and disabling click events.
-   * @type {boolean}
    */
   export let disabled = false;
   /**
@@ -73,7 +63,6 @@
   export let href = null;
   /**
    * Disables SvelteKit prefetching for link buttons (those with an href prop).
-   * @type {boolean}
    */
   export let noPrefetch = false;
 

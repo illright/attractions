@@ -5,7 +5,6 @@
   export { _class as class };
   /**
    * Makes the `<Label>` smaller.
-   * @type {boolean}
    */
   export let small = false;
 </script>

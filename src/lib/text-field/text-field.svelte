@@ -28,18 +28,15 @@
 
   /**
    * Whether the text field should have outline styling.
-   * @type {boolean}
    */
   export let outline = false;
   /**
    * Whether there will be something permanent inside the field like an icon.
    * By default, this item is placed to the left of the input area.
-   * @type {boolean}
    */
   export let withItem = false;
   /**
    * Whether the item should be placed to the right of the input area.
-   * @type {boolean}
    */
   export let itemRight = false;
 
@@ -50,7 +47,6 @@
   export let id = null;
   /**
    * Whether to hide the spinner (arrow buttons inside `<input type="number">`).
-   * @type {boolean}
    */
   export let noSpinner = false;
   /**
@@ -65,12 +61,10 @@
   export let error = null;
   /**
    * Whether the text field should allow multiple lines (`<textarea>` will be used instead of the `<input>`).
-   * @type {boolean}
    */
   export let multiline = false;
   /**
    * Whether the field should be focused on mount.
-   * @type {boolean}
    */
   export let autofocus = false;
 
