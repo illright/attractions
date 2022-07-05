@@ -106,14 +106,14 @@
     endValue = copyDate(range ? value && value.end : null);
   }
 
-  function clearFocus({ detail: open }) {
+  function clearFocus({ detail: open }: CustomEvent<{ value: boolean }>) {
     if (!open.value) {
       startFocus = false;
       endFocus = false;
     }
   }
 
-  function select({ detail: date }) {
+  function select({ detail: date }: CustomEvent<Date>) {
     if (startFocus) {
       startValue = applyDate(date, startValue);
       if (range && endValue == null) {
@@ -183,7 +183,7 @@
       ? { start: copyDate(start), end: copyDate(end) }
       : copyDate(start);
     if (!range || (start != null && end != null)) {
-      dispatch('change', { value });
+      dispatch('change', { value: value! });
     }
   }
 
@@ -250,7 +250,11 @@
       {/if}
     </div>
     {#if !noCalendar}
-      <Dropdown class="calendar" {top} {right}>
+      <Dropdown
+        class="calendar"
+        verticalAlignment="auto-{top ? 'top' : 'bottom'}"
+        horizontalAlignment="auto-{right ? 'right' : 'left'}"
+      >
         <div class="shown-on-focus">
           <Button noRipple on:click={clearFocus}>close the date picker</Button>
         </div>

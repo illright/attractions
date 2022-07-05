@@ -73,27 +73,28 @@
    */
   export let events: Array<{ name: string; handler: (e: Event) => void }> = [];
 
-  let inputElement;
+  let inputElement: HTMLInputElement | HTMLTextAreaElement;
   onMount(() => autofocus && inputElement.focus());
 
-  function toNumber(string) {
+  function toNumber(string: string) {
     if (string === '') {
       return null;
     }
     return parseFloat(string);
   }
 
-  function toString(value) {
+  function toString(value: string | number | null) {
     if (value == null) {
       return '';
     }
     return value.toString();
   }
 
-  /**
-   * @param event {Event & { currentTarget: EventTarget & (HTMLInputElement | HTMLTextAreaElement); }}
-   */
-  function handleInput(event) {
+  function handleInput(
+    event: Event & {
+      currentTarget: EventTarget & (HTMLInputElement | HTMLTextAreaElement);
+    }
+  ) {
     value =
       $$restProps.type === 'number'
         ? toNumber(event.currentTarget.value)

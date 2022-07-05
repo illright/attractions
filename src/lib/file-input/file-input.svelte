@@ -28,12 +28,12 @@
    */
   export let disabled = false;
 
-  let input;
-  let files;
+  let input: HTMLInputElement;
+  let files: FileList;
   $: handleOutsideClearing(value);
   $: value = multiple ? files || [] : files && files[0];
 
-  function handleOutsideClearing(value) {
+  function handleOutsideClearing(value: File | FileList | null) {
     if (value == null && input != null) {
       input.value = '';
     }

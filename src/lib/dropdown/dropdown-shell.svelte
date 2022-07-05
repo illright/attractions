@@ -26,19 +26,21 @@
 
   $: dispatch('change', { value: open });
 
-  let self = null;
-  function clickOutside(event) {
+  let self: HTMLDivElement | null = null;
+  function clickOutside(
+    event: MouseEvent & { currentTarget: EventTarget & Window }
+  ) {
     if (!self) {
       return;
     }
 
-    const isClickInside = self.contains(event.target);
+    const isClickInside = self.contains(event.currentTarget);
     if (!isClickInside && open) {
       toggle();
     }
   }
 
-  function handleKeyPress(evt) {
+  function handleKeyPress(evt: KeyboardEvent) {
     if (evt.key === 'Escape' && open) {
       evt.preventDefault();
       toggle();

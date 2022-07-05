@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getContext } from 'svelte';
+  import type { Writable } from 'svelte/store';
   import classes from '../utils/classes.js';
   import {
     HorizontalAlignment,
@@ -14,21 +15,28 @@
   export { _class as class };
   /**
    * Dropdown horizontal alignment relative to the shell.
-   * @type {string}
    */
-  export let horizontalAlignment = HorizontalAlignment.AUTO_START;
+  export let horizontalAlignment: HorizontalAlignment =
+    HorizontalAlignment.AUTO_START;
   /**
    * Dropdown vertical alignment relative to the shell.
-   * @type {string}
    */
-  export let verticalAlignment = VerticalAlignment.AUTO_BOTTOM;
+  export let verticalAlignment: VerticalAlignment =
+    VerticalAlignment.AUTO_BOTTOM;
 
-  const isDropdownOpen = getContext(isDropdownOpenKey);
-  const getDropdownShellBoundary = getContext(getDropdownShellBoundaryKey);
+  const isDropdownOpen = getContext<Writable<boolean>>(isDropdownOpenKey);
+  const getDropdownShellBoundary = getContext<() => DOMRect | null>(
+    getDropdownShellBoundaryKey
+  );
 
-  let dropdownElement, isVerticalAlignTop, isHorizontalAlignEnd;
+  let dropdownElement: HTMLDivElement;
+  let isVerticalAlignTop: boolean;
+  let isHorizontalAlignEnd: boolean;
 
-  function getIsVerticalAlignTop(dropdownBound, dropdownShellBound) {
+  function getIsVerticalAlignTop(
+    dropdownBound: DOMRect,
+    dropdownShellBound: DOMRect
+  ) {
     const { height } = dropdownBound;
     const { top, bottom } = dropdownShellBound;
 
@@ -45,7 +53,10 @@
     }
   }
 
-  function getIsHorizontalAlignEnd(dropdownBound, dropdownShellBound) {
+  function getIsHorizontalAlignEnd(
+    dropdownBound: DOMRect,
+    dropdownShellBound: DOMRect
+  ) {
     const { width } = dropdownBound;
     const { left, right } = dropdownShellBound;
 
@@ -69,12 +80,12 @@
 
       isVerticalAlignTop = getIsVerticalAlignTop(
         dropdownBound,
-        dropdownShellBound
+        dropdownShellBound!
       );
 
       isHorizontalAlignEnd = getIsHorizontalAlignEnd(
         dropdownBound,
-        dropdownShellBound
+        dropdownShellBound!
       );
     }
   }

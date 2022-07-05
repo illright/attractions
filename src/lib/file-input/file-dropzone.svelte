@@ -5,7 +5,7 @@
   import Paperclip from './paperclip.svelte';
   import Plus from './plus.svelte';
   import FileTile from './file-tile.svelte';
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, SvelteComponentTyped } from 'svelte';
   import classes from '../utils/classes.js';
   import ripple from '../utils/ripple.js';
   import accepted from '../utils/accepted-file-type.js';
@@ -23,7 +23,7 @@
    * Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
    * Expected to dispatch `delete` events to delete this file from the selection with the `file` prop as the detail.
    */
-  export let fileComponent: SvelteComponentTyped<
+  export let fileComponent: typeof SvelteComponentTyped<
     { file: File },
     { delete: CustomEvent<File> }
   > = FileTile;
@@ -48,15 +48,15 @@
   let dragActive = false;
   let wrongType = false;
 
-  let emptyLayer;
-  let dropzoneLayer;
-  let inputElement;
+  let emptyLayer: HTMLDivElement;
+  let dropzoneLayer: HTMLDivElement;
+  let inputElement: HTMLInputElement;
 
-  function checkTypesEarly(e) {
+  function checkTypesEarly(e: DragEvent) {
     wrongType = [...e.dataTransfer.items].some(file => !accepted(accept, file));
   }
 
-  async function acceptUpload(e) {
+  async function acceptUpload(e: Event) {
     const incomingFiles = Array.from((e.dataTransfer || e.target).files);
     await Promise.all(
       incomingFiles.map(async file => {
@@ -81,12 +81,12 @@
     dragActive = false;
   }
 
-  function deleteFile({ detail: thatFile }) {
+  function deleteFile({ detail: thatFile }: CustomEvent<File>) {
     files = files.filter(thisFile => thisFile !== thatFile);
     dispatch('change', { files });
   }
 
-  function blockOnTiles(e) {
+  function blockOnTiles(e: MouseEvent) {
     if (
       e.target != emptyLayer &&
       e.target != dropzoneLayer &&

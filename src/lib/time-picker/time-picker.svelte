@@ -157,14 +157,14 @@
     return hour === currentHour;
   }
 
-  function handleKeyPress(evt) {
+  function handleKeyPress(evt: KeyboardEvent) {
     if (evt.key === 'Enter') {
       evt.preventDefault();
       focus = !focus;
     }
   }
 
-  function toggleKeyboardListener({ detail }) {
+  function toggleKeyboardListener({ detail }: CustomEvent<{ value: boolean }>) {
     if (detail.value) {
       document.addEventListener('keydown', handleKeyPress);
     } else {

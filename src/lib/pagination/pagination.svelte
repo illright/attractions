@@ -22,15 +22,15 @@
   // clamp currentPage between [1; pages]
   $: currentPage = Math.min(Math.max(currentPage, 1), pages);
 
-  let inputValue = null;
+  let inputValue: string = '';
   let leftInputActive = false;
   let rightInputActive = false;
 
   const leftEllipsisKey = {};
   const rightEllipsisKey = {};
 
-  function generateButtonList(pageCount, current = 1) {
-    const list = [];
+  function generateButtonList(pageCount: number, current = 1) {
+    const list: number[] = [];
     if (current !== 1) {
       list.push(1);
     }
@@ -66,7 +66,7 @@
 
   $: pageList = generateButtonList(pages, currentPage);
 
-  function goTo(page) {
+  function goTo(page: number) {
     if (page >= 1 && page <= pages) {
       leftInputActive = false;
       rightInputActive = false;
@@ -75,14 +75,16 @@
     }
   }
 
-  function tryNavigate(_event) {
+  function tryNavigate(_event?: Event) {
     const parsed = parseInt(inputValue);
     if (!isNaN(parsed)) {
       goTo(parsed);
     }
   }
 
-  function navigateOnEnter({ detail }) {
+  function navigateOnEnter({
+    detail,
+  }: CustomEvent<{ nativeEvent: KeyboardEvent }>) {
     if (detail.nativeEvent.key === 'Enter') {
       tryNavigate();
       inputValue = '';
