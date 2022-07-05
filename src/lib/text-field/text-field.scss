@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use '$lib/_variables' as vars;
-@use '../_appearances';
+@use '$lib/_appearances';
 
 .text-field {
   input[type='search']::-webkit-search-cancel-button {

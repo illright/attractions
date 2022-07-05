@@ -1,7 +1,7 @@
 @use 'sass:color';
 @use 'sass:math';
 @use '$lib/_variables' as vars;
-@use '../mixins';
+@use '$lib/_mixins';
 
 .switch {
   align-items: center;

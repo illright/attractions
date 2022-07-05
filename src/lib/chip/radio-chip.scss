@@ -1,6 +1,6 @@
 @use 'sass:color';
 @use '$lib/_variables' as vars;
-@use '../_mixins';
+@use '$lib/_mixins';
 @use 'chip';
 
 .input-chip > input {

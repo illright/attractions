@@ -1,8 +1,8 @@
 @use 'sass:color';
 @use '$lib/_variables' as vars;
-@use '../_mixins';
-@use '../_appearances';
-@use '../button/_mixins' as button-mixins;
+@use '$lib/_mixins';
+@use '$lib/_appearances';
+@use '$lib/button/_mixins' as button-mixins;
 
 .file-input {
   align-items: center;
