@@ -171,10 +171,10 @@
       title: 'Utilities',
       segment: 'utilities',
     },
-    {
+    /* {
       title: 'Custom Elements',
       segment: 'custom-elements',
-    },
+    }, */
   ];
 </script>
 
