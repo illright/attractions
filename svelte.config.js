@@ -2,6 +2,7 @@ import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import remarkHeadingID from 'remark-heading-id';
+import pkg from './package.json' assert { type: 'json' };
 
 const scssAliases = aliases => {
   return url => {
@@ -56,6 +57,18 @@ const config = {
       $components: './src/components',
       $containers: './src/containers',
       '#root': './',
+    },
+    vite: {
+      server: {
+        fs: {
+          // https://github.com/vitejs/vite/issues/5689
+          allow: ['.'],
+        },
+      },
+      define: {
+        'process.latest_version': JSON.stringify(pkg.version),
+        'process.license': JSON.stringify(pkg.license),
+      },
     },
   },
   experimental: {
