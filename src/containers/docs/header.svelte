@@ -6,6 +6,9 @@
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
   }
   function segmentToName(segment) {
+    if (segment === '') {
+      return '';
+    }
     return segment.split('-').map(capitalize).join(' ');
   }
 
