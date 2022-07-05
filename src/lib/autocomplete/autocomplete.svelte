@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @typedef {import('./autocomplete-option.svelte').Option} Option
    * @slot {{ }} loading-options
@@ -19,8 +19,7 @@
   import s from '../utils/plural-s.js';
   import callOnSight from '../utils/call-on-sight.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
 
   /**

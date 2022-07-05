@@ -1,28 +1,24 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: boolean; nativeEvent: Event }} change
    */
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<input>` inside.
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
   /**
    * A class string to add to the [track](https://material.io/components/selection-controls#switches) of the switch.
-   * @type {string | false | null}
    */
-  export let trackClass = null;
+  export let trackClass: string | false | null = null;
   /**
    * A class string to add to the [thumb](https://material.io/components/selection-controls#switches) of the switch.
-   * @type {string | false | null}
    */
-  export let thumbClass = null;
+  export let thumbClass: string | false | null = null;
 
   /**
    * Whether the switch is currently on.

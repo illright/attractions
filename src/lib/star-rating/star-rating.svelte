@@ -9,14 +9,12 @@
   import ripple from '../utils/ripple.js';
   import eventsAction from '../utils/events.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to assign to the `<label>` element containing the star icon.
-   * @type {string | false | null}
    */
-  export let starClass = null;
+  export let starClass: string | false | null = null;
 
   /**
    * How many stars to be displayed.

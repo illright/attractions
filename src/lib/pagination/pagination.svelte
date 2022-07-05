@@ -7,8 +7,7 @@
   import TextField from '../text-field/text-field.svelte';
   import { classes } from '../utils';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * The amount of pages to allow for navigation.

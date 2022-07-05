@@ -5,8 +5,7 @@
    */
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * Setting this to true allows multiple panels to be open at the same time.

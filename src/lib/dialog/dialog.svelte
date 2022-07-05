@@ -1,16 +1,14 @@
-<script>
+<script lang="ts">
   import Button from '../button/button.svelte';
   import X from './x.svelte';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * Adds a title to the dialog.
-   * @type {string | false | null}
    */
-  export let titleClass = null;
+  export let titleClass: string | false | null = null;
 
   /**
    * Applies the danger color to the title (including the icon slot if it is stylable with the CSS `color` property).

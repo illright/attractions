@@ -14,19 +14,16 @@
 
   /**
    * A class string to add to the list of weekdays above the calendar.
-   * @type {string | false | null}
    */
-  export let weekdaysClass = null;
+  export let weekdaysClass: string | false | null = null;
   /**
    * A class string to add to the element containing each row of days in the calendar.
-   * @type {string | false | null}
    */
-  export let weekClass = null;
+  export let weekClass: string | false | null = null;
   /**
    * A class string to add to each day in the calendar.
-   * @type {string | false | null}
    */
-  export let dayClass = null;
+  export let dayClass: string | false | null = null;
 
   /**
    * The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used.

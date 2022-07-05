@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @slot {{ wrongType: boolean; dragActive: boolean }} empty-layer
    * @event {{ files: File[]; nativeEvent?: Event }} change
@@ -11,8 +11,7 @@
   import ripple from '../utils/ripple.js';
   import accepted from '../utils/accepted-file-type.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
 
   /**

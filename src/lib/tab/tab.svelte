@@ -7,19 +7,16 @@
   import rippleEffect from '../utils/ripple.js';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to assign to the `<input>` element.
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
   /**
    * A class string to add to the content of the tab.
-   * @type {string | false | null}
    */
-  export let contentClass = null;
+  export let contentClass: string | false | null = null;
 
   /**
    * The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information.

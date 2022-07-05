@@ -1,15 +1,13 @@
-<script>
+<script lang="ts">
   import classes from '../utils/classes.js';
   import PopoverPositions from './popover-positions.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the popover.
-   * @type {string | false | null}
    */
-  export let popoverClass = null;
+  export let popoverClass: string | false | null = null;
 
   /**
    * The position of the popover content relative to the triggering handle.

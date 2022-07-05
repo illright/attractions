@@ -68,8 +68,7 @@
   /**
    * @type {string | null}
    */
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
 
   /** @type {[number] | [number, number]} */

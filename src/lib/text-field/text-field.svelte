@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: string | number; nativeEvent: Event }} input
    * @event {{ value: string | number; nativeEvent: Event }} change
@@ -11,24 +11,20 @@
   import eventsAction from '../utils/events.js';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to assign to the `<input>` or `<textarea>` element.
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
   /**
    * A class string to assign to the `<label>` for the outline text fields.
-   * @type {string | false | null}
    */
-  export let labelClass = null;
+  export let labelClass: string | false | null = null;
   /**
    * A class string to add to the error message under the text field.
-   * @type {string | false | null}
    */
-  export let errorClass = null;
+  export let errorClass: string | false | null = null;
 
   /**
    * Whether the text field should have outline styling.

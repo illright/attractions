@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { getContext } from 'svelte';
   import classes from '../utils/classes.js';
   import {
@@ -10,8 +10,7 @@
     isDropdownOpenKey,
   } from './dropdown-context-key';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * Dropdown horizontal alignment relative to the shell.

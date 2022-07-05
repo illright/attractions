@@ -7,20 +7,17 @@
   import getColorPickerStyles from '../utils/color-picker-styles.js';
   import RadioButton from './radio-button.svelte';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<RadioButton>` components.
-   * @type {string | false | null}
    */
-  export let radioClass = null;
+  export let radioClass: string | false | null = null;
   /**
    * A class string to assign to the labels' wrapping `<span>`s.
    * If this is not passed, the labels are not wrapped in a `<span>`.
-   * @type {string | false | null}
    */
-  export let labelClass = null;
+  export let labelClass: string | false | null = null;
 
   /**
    * Designates the radio buttons as color choices. Labels are ignored and values are expected to be `"#RRGGBB"`.

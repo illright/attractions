@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @slot {{ toggle: () => void }}
    * @event {{ value: boolean }} change
@@ -11,8 +11,7 @@
     isDropdownOpenKey,
   } from './dropdown-context-key.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * Controls whether the dropdown content is shown or hidden.

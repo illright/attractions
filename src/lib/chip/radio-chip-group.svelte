@@ -6,19 +6,16 @@
   import classes from '../utils/classes.js';
   import RadioChip from './radio-chip.svelte';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<RadioChip>` components inside.
-   * @type {string | false | null}
    */
-  export let radioClass = null;
+  export let radioClass: string | false | null = null;
   /**
    * A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added.
-   * @type {string | false | null}
    */
-  export let labelClass = null;
+  export let labelClass: string | false | null = null;
 
   /**
    * An array of items, where only the value field is required.

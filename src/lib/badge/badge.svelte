@@ -1,8 +1,7 @@
-<script>
+<script lang="ts">
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * Whether the badge is shown or hidden. Useful for controlling its appearance without modifying the DOM tree.

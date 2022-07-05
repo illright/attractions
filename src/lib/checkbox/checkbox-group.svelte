@@ -8,20 +8,17 @@
   import s from '../utils/plural-s.js';
   import Checkbox from './checkbox.svelte';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<Checkbox>` components.
-   * @type {string | false | null}
    */
-  export let checkboxClass = null;
+  export let checkboxClass: string | false | null = null;
   /**
    * A class string to assign to the labels' wrapping `<span>`s.
    * If this is not passed, the labels are not wrapped in a `<span>`.
-   * @type {string | false | null}
    */
-  export let labelClass = null;
+  export let labelClass: string | false | null = null;
 
   /**
    * Designates the checkboxes as color choices.

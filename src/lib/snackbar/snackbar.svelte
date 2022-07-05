@@ -4,19 +4,16 @@
   import dynamic from '../utils/dynamic-transition.js';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the label of the snackbar.
-   * @type {string | false | null}
    */
-  export let textClass = null;
+  export let textClass: string | false | null = null;
   /**
    * A class string to add to the action button of the snackbar.
-   * @type {string | false | null}
    */
-  export let buttonClass = null;
+  export let buttonClass: string | false | null = null;
 
   /**
    * The text to show on the snackbar.

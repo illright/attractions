@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @typedef {import('./autocomplete-option.svelte').Option} Option
    * @typedef {(q: string) => AsyncGenerator<Option[], void, void>} OptionsGetter
@@ -16,8 +16,7 @@
   import callOnSight from '../utils/call-on-sight.js';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
 
   type OptionsGetter = (q: string) => AsyncGenerator<Option[], void, void>;

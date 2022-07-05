@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: Date }} change
    */
@@ -19,14 +19,12 @@
   } from '../utils/datetime-utils.js';
   import { default as rangeGenerator } from '../utils/range.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to pass down to the `TextField`.
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
 
   /**
    * Hides the `now` button from the component.

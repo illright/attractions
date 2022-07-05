@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @event {{ value: File | FileList; nativeEvent: Event }} change
    */
@@ -7,14 +7,12 @@
   import ripple from '../utils/ripple.js';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<label>` element wrapping the `<input>`.
-   * @type {string | false | null}
    */
-  export let labelClass = null;
+  export let labelClass: string | false | null = null;
 
   /**
    * Allows the user to select multiple files.

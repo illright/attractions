@@ -1,19 +1,16 @@
-<script>
+<script lang="ts">
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<label>` containing the form field name.
-   * @type {string | false | null}
    */
-  export let nameClass = null;
+  export let nameClass: string | false | null = null;
   /**
    * A class string to add to the help text of the form field.
-   * @type {string | false | null}
    */
-  export let helpClass = null;
+  export let helpClass: string | false | null = null;
 
   /**
    * The name of the form field. Displayed prominently next to the actual field.

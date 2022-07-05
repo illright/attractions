@@ -6,19 +6,16 @@
   import classes from '../utils/classes.js';
   import ripple from '../utils/ripple.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the `<input>` element.
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
   /**
    * A class string to add to the underlying <Chip> component.
-   * @type {string | false | null}
    */
-  export let chipClass = null;
+  export let chipClass: string | false | null = null;
 
   /**
    * The value of this radio button. Included in events and can be bound to using `bind:group`.

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /**
    * @typedef {{ start: Date | null; end: Date | null }} DateRange
    * @event {{ value: Date | DateRange }} change
@@ -20,29 +20,24 @@
     parseDateTime,
   } from '../utils/datetime-utils.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to add to the list of weekdays above the calendar.
-   * @type {string | false | null}
    */
-  export let weekdaysClass = null;
+  export let weekdaysClass: string | false | null = null;
   /**
    * A class string to add to each element containing a row of days in the calendar.
-   * @type {string | false | null}
    */
-  export let weekClass = null;
+  export let weekClass: string | false | null = null;
   /**
    * A class string to add to each day in the calendar.
-   * @type {string | false | null}
    */
-  export let dayClass = null;
+  export let dayClass: string | false | null = null;
   /**
    * A class string to pass down to the `TextField`(s).
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
 
   /**
    * If this is set to `true`, the date picker will have two fields – for the start and the end of the date range.

@@ -5,19 +5,16 @@
   import { createEventDispatcher } from 'svelte';
   import classes from '../utils/classes.js';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to assign to the `<input>` element.
-   * @type {string | false | null}
    */
-  export let inputClass = null;
+  export let inputClass: string | false | null = null;
   /**
    * A class string to add to the selector box element.
-   * @type {string | false | null}
    */
-  export let selectorClass = null;
+  export let selectorClass: string | false | null = null;
   /**
    * A CSS style string to assign to the selector box element.
    * Can be used to make the checkbox represent a color (in conjunction with the [`getColorPickerStyles`](https://illright.github.io/attractions/docs/utilities) utility).

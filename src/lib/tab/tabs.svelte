@@ -5,14 +5,12 @@
   import classes from '../utils/classes.js';
   import Tab from './tab.svelte';
 
-  let _class = null;
-  /** @type {string | false | null} */
+  let _class: string | false | null = null;
   export { _class as class };
   /**
    * A class string to pass to each `<Tab>` component.
-   * @type {string | false | null}
    */
-  export let tabClass = null;
+  export let tabClass: string | false | null = null;
 
   /**
    * The currently selected tab.
