@@ -1,0 +1,76 @@
+---
+name: Custom Elements
+---
+
+<script>
+// This page is removed from the docs due to 2 issues:
+//  1- SvelteKit doesn't support Custom Elements yet (https://github.com/sveltejs/kit/issues/4502)
+//  2- There is a problem where nested components do not render correctly with custom elements (https://github.com/sveltejs/svelte/issues/3520).
+</script>
+
+# Custom Elements
+
+Attractions components can also be used as Web Components directly using the [Custom Elements API](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements). This use case is most convenient when a quick prototype is needed without including any frameworks or bundlers, where you just need to include a `script` tag and then use the components right away.
+An example usage is as follows:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://unpkg.com/attractions"></script>
+</head>
+
+<body>
+  <a-card>
+    <a-button filled="true" danger="true">
+      Alert
+      <a-dot style="margin-left: 10px;" attention="attention" />
+    </a-button>
+
+    <!-- camelCase props do not work (HTML is case-insensitive) -->
+    <a-switch slotLeft="true">
+      On?
+    </a-switch>
+
+    <!-- Cannot use the self-closing syntax! -->
+    <a-divider></a-divider>
+    <a-calendar id="calendar"></a-calendar>
+  </a-card>
+
+  <div id="container">
+    <!-- more elements will be injected here -->
+  </div>
+
+  <script>
+    // Or using the normal constructor
+    const { Button } = attractions;
+    new Button({
+      target: document.getElementById('container'),
+      props: {
+        filled: true,
+      },
+    });
+
+    const calendar = document.getElementById('calendar');
+    // Setting props that aren't string
+    calendar.$$set({
+      year: 2020,
+      month: 11,
+    });
+
+    // Listening to events
+    calendar.$on('day-select', (e) => {
+      alert(`You selected ${e.detail}`);
+    });
+
+    // Utils are also exposed
+    const { range } = attractions.utils;
+    for (const val of range(2, 9, 3)) {
+      console.log(val);
+    }
+  </script>
+</body>
+</html>
+```
+
+As shown in the example above, events must be listened to using `$on` and not `addEventListener`. Additionally, props that are passed in the HTML are only limited to props with lowercase string names. For any other props, use `$$set`.

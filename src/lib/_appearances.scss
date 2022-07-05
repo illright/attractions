@@ -1,0 +1,55 @@
+@use 'sass:color';
+@use './_variables' as vars;
+
+@mixin text-field {
+  background-color: vars.$textfield-bg;
+  border: 0 solid vars.$textfield-border; // to disable the global border
+  border-bottom-width: 0.0625em;
+  border-top-left-radius: 0.375em;
+  border-top-right-radius: 0.375em;
+  box-sizing: border-box;
+  padding: 0 0.625em 0.0625em;
+  width: 100%;
+
+  &:hover {
+    background-color: color.scale(vars.$textfield-bg, $lightness: -3%);
+  }
+}
+
+@mixin text-field-focused {
+  background-color: color.scale(vars.$textfield-bg, $lightness: -8%);
+  border-bottom-width: 0.125em;
+  border-color: color.scale(vars.$main, $lightness: 4%);
+  padding-bottom: 0;
+}
+
+@mixin text-field-disabled {
+  background-color: color.scale(vars.$textfield-bg, $lightness: 15%);
+  border-color: color.adjust(vars.$dark, $alpha: -0.7);
+  color: vars.$disabled;
+
+  &:hover {
+    background-color: color.scale(vars.$textfield-bg, $lightness: 15%);
+  }
+}
+
+@mixin text-field-input {
+  font-family: vars.$font;
+  font-size: 1rem;
+  font-weight: vars.$thin-font-weight;
+  height: 2.8em;
+  outline: none;
+}
+
+@mixin button {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: vars.$font;
+  font-weight: vars.$button-font-weight;
+  outline: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}

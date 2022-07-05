@@ -1,0 +1,40 @@
+<tr>
+  <slot />
+</tr>
+
+<style lang="scss">
+  @use 'sass:color';
+  @use '$css/attractions-theme' as vars;
+
+  $border-radius: 0.5em;
+
+  tr {
+    &:nth-child(even) {
+      background: color.adjust(vars.$main, $alpha: -0.97);
+    }
+
+    &:first-child :global {
+      > td:first-child {
+        border-top-left-radius: $border-radius;
+      }
+
+      > td:last-child {
+        border-top-right-radius: $border-radius;
+      }
+    }
+
+    &:last-child :global {
+      > td {
+        border-bottom-width: 1px;
+      }
+
+      > td:first-child {
+        border-bottom-left-radius: $border-radius;
+      }
+
+      > td:last-child {
+        border-bottom-right-radius: $border-radius;
+      }
+    }
+  }
+</style>

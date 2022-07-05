@@ -1,7 +1,13 @@
+.DS_Store
 node_modules
-__sapper__
-dist
-README.md
-types
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+
+# Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
-*.d.ts
+package-lock.json
+yarn.lock

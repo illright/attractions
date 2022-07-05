@@ -1,7 +1,11 @@
 .DS_Store
 node_modules
-dist
-demo/public/build
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
 *.d.ts
 *.d.ts.map
 .stylelintcache

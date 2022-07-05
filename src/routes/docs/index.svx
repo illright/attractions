@@ -1,0 +1,31 @@
+---
+name: Home
+---
+
+<script>
+  import { formatFileSize } from '$lib/utils';
+  import { onMount } from 'svelte';
+
+  let bundleSizePromise = Promise.resolve(Infinity);
+
+  onMount(() => {
+    bundleSizePromise = fetch(`https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`)
+      .then(response => response.json());
+  });
+</script>
+
+# Warm welcome, stranded developer
+
+Attractions is a stylish and functional UI kit for Svelte, built to solve interface tasks at hand.
+
+Given the compiling nature of Svelte, the components can be used for any framework using the JavaScript API.
+
+This library is MIT licensed.
+
+- Weighs only
+  {#await bundleSizePromise}
+    (calculating...){:then bundleSize}
+    {formatFileSize(bundleSize['size'])} ({formatFileSize(bundleSize['gzip'])} gzipped){:catch}
+    (idk, an error occured){/await}, tree-shaking-enabled
+- Components are customizable with classes and Sass variables
+- Accessibility included
