@@ -14,9 +14,8 @@
   /**
    * The label text to use on the button that toggles the section.
    * Not used if the handle slot is provided.
-   * @type {string | null}
    */
-  export let label = null;
+  export let label: string | null = null;
   /**
    * The state of the section: opened or closed.
    */

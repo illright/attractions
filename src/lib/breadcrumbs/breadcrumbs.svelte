@@ -3,9 +3,8 @@
 
   /**
    * The list of segments to be displayed.
-   * @type {Array<{ href?: string; text: string; }>}
    */
-  export let items = [];
+  export let items: Array<{ href?: string; text: string }> = [];
   /**
    * The separator between segments.
    */

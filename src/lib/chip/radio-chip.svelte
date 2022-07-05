@@ -31,14 +31,12 @@
   export let disabled = false;
   /**
    * The currently selected value among the radio chips with the same name. Often used with a two-way binding: `bind:group`.
-   * @type {string | null}
    */
-  export let group = null;
+  export let group: string | null = null;
   /**
    * The tooltip to give to a chip.
-   * @type {string | null}
    */
-  export let title = null;
+  export let title: string | null = null;
 
   /**
    * Makes the chip smaller.

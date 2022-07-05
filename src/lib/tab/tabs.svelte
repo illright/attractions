@@ -14,9 +14,8 @@
 
   /**
    * The currently selected tab.
-   * @type {string | null}
    */
-  export let value = null;
+  export let value: string | null = null;
   /**
    * An array of strings that act as the labels of the tabs.
    */

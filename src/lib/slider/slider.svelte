@@ -39,9 +39,9 @@
    */
   export let disabled = false;
   /**
-   * @type {number | [number, number]}
    */
-  export let value = max < min ? min : min + (max - min) / 2;
+  export let value: number | [number, number] =
+    max < min ? min : min + (max - min) / 2;
   /**
    * Defines the ticks that appear on the slider track.
    * In `'step'` mode, the value step is used to add a tick at that interval.

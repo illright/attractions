@@ -28,9 +28,8 @@
   }>;
   /**
    * The currently selected value of the group.
-   * @type {string | null}
    */
-  export let value = null;
+  export let value: string | null = null;
   /**
    * The name of this radio button group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information.
    */

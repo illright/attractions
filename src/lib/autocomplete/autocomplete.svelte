@@ -25,13 +25,11 @@
   /**
    * The current selection as an array of `Option` objects.
    * Can be used to set the selection programmatically.
-   * @type {Option[]}
    */
-  export let selection = [];
+  export let selection: Option[] = [];
 
   /**
    * The minimum length the search query must be to call `getOptions`.
-   * @type {number}
    */
   export let minSearchLength = 3;
   /**

@@ -19,7 +19,7 @@
   /**
    * The substring to seek out and highlight among the name and the details.
    */
-  export let query = null;
+  export let query: string | null = null;
   $: matchRegex = query ? new RegExp(`(${escapeRegExp(query)})`, 'ig') : null;
 
   function markMatch(string) {

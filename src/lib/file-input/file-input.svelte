@@ -24,9 +24,8 @@
   export let vertical = false;
   /**
    * The user's selection. If `multiple` is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`.
-   * @type {File | FileList | null}
    */
-  export let value = multiple ? [] : null;
+  export let value: File | FileList | null = multiple ? [] : null;
   /**
    * Whether the input should accept files.
    */

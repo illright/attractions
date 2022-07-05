@@ -21,9 +21,8 @@
   export let text: string;
   /**
    * The action for the button on the snackbar. If this is null, the button is not rendered. Otherwise it has text as a label and calls callback on click.
-   * @type {{ text: string; callback: () => void } | null}
    */
-  export let action = null;
+  export let action: { text: string; callback: () => void } | null = null;
   /**
    * Whether to call the `closeCallback` when an action button is pressed, after its callback.
    */
@@ -35,14 +34,14 @@
   export let closeCallback: () => void;
   /**
    * The transition to use to animate the in and out of the snackbar.
-   * @type {(...args: any[]) => import('svelte/transition').TransitionConfig}
    */
-  export let transition = fly;
+  export let transition: (
+    ...args: any[]
+  ) => import('svelte/transition').TransitionConfig = fly;
   /**
    * The options to use with the given transition.
-   * @type {any}
    */
-  export let transitionOptions = { x: -20, duration: 150 };
+  export let transitionOptions: any = { x: -20, duration: 150 };
 </script>
 
 <div

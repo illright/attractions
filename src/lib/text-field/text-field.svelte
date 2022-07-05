@@ -42,23 +42,20 @@
 
   /**
    * The ID to assign to the input.
-   * @type {string | null}
    */
-  export let id = null;
+  export let id: string | null = null;
   /**
    * Whether to hide the spinner (arrow buttons inside `<input type="number">`).
    */
   export let noSpinner = false;
   /**
    * The label to show above the text field. Only works with `outline` text fields.
-   * @type {string | null}
    */
-  export let label = null;
+  export let label: string | null = null;
   /**
    * The error message to show under the text field.
-   * @type {string | false | null}
    */
-  export let error = null;
+  export let error: string | false | null = null;
   /**
    * Whether the text field should allow multiple lines (`<textarea>` will be used instead of the `<input>`).
    */
@@ -74,14 +71,12 @@
 
   /**
    * The current value of the text field. Converted to a number if `type="number"`.
-   * @type {string | number | null}
    */
-  export let value = null;
+  export let value: string | number | null = null;
   /**
    * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action.
-   * @type {Array<{name: string; handler: (e:Event) => void }>}
    */
-  export let events = [];
+  export let events: Array<{ name: string; handler: (e: Event) => void }> = [];
 
   let inputElement;
   onMount(() => autofocus && inputElement.focus());

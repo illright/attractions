@@ -24,14 +24,12 @@
   export let value: string;
   /**
    * The name assigned to the `<input type="radio">`'s [name attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).
-   * @type {string | null}
    */
-  export let name = null;
+  export let name: string | null = null;
   /**
    * The `value` of the currently selected tab. Use with `bind:group`.
-   * @type {string | null}
    */
-  export let group = null;
+  export let group: string | null = null;
   /**
    * Disallows selecting this tab.
    */

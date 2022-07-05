@@ -40,9 +40,8 @@
   export let right = false;
   /**
    * The currently selected time value. Even though a whole `Date` object is needed, only the time part will be considered.
-   * @type {Date | null}
    */
-  export let value = null;
+  export let value: Date | null = null;
   /**
    * The format used to display time and consume input.
    * The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%H`, `%M`, `%S`, `%P` and `%p` allowed. `%P` stands for AM/PM, while `%p` stands for am/pm.

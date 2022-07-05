@@ -18,9 +18,8 @@
   /**
    * A CSS style string to assign to the selector circle.
    * Can be used to make the radio button represent a color (in conjunction with the `getColorPickerStyles` utility).
-   * @type {string | null}
    */
-  export let selectorStyle = null;
+  export let selectorStyle: string | null = null;
 
   /**
    * The value assigned to the radio button input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information.
@@ -33,18 +32,16 @@
   /**
    * The value of the currently selected radio button in the `name` group.
    * Similar to Svelte's `bind:group` binding on native radio buttons.
-   * @type {string | null}
    */
-  export let group = null;
+  export let group: string | null = null;
   /**
    * Places the default slot (label) to the left of the radio button.
    */
   export let slotLeft = false;
   /**
    * Adds a tooltip to the radio button.
-   * @type {string | null}
    */
-  export let title = null;
+  export let title: string | null = null;
 
   const dispatch = createEventDispatcher();
 </script>

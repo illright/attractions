@@ -28,16 +28,14 @@
   /**
    * The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used.
    * This will affect the weekdays and the day number representations.
-   * @type {string | undefined}
    */
-  export let locale = undefined;
+  export let locale: string | undefined = undefined;
   /**
    * The index of the weekday to start the week at.
    * 0 is for Sunday and 6 is for Saturday.
    * Defaults to 1 (Monday).
-   * @type {0 | 1 | 2 | 3 | 4 | 5 | 6}
    */
-  export let firstWeekday = 1; // 1 corresponds to Monday
+  export let firstWeekday: 0 | 1 | 2 | 3 | 4 | 5 | 6 = 1; // 1 corresponds to Monday
   /**
    * An index of the desired month.
    * 0 is for January, 11 is for December.
@@ -50,19 +48,16 @@
   export let year: number;
   /**
    * If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days).
-   * @type {Date | null}
    */
-  export let selectionStart = null;
+  export let selectionStart: Date | null = null;
   /**
    * If a selection should be displayed, this should be a `Date` object signifying the end of the selection (can be outside the shown days).
-   * @type {Date | null}
    */
-  export let selectionEnd = null;
+  export let selectionEnd: Date | null = null;
   /**
    * A set of dates to disable.
-   * @type {Array<Date | { start?: Date; end?: Date }>}
    */
-  export let disabledDates = [];
+  export let disabledDates: Array<Date | { start?: Date; end?: Date }> = [];
   /**
    * Messages translation for "today not available".
    */

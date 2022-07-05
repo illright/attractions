@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
   /**
    * Adds a text to the middle of the line.
-   * @type {string | null}
    */
-  export let text = null;
+  export let text: string | null = null;
 </script>
 
 <hr data-text={text} {...$$restProps} />

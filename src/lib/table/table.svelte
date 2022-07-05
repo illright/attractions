@@ -20,15 +20,13 @@
    * - `text` is the text to display;
    * - `value` is the name of the field to take from each object in `items` to put in this column;
    * - `align` is the alignment of the text in the column (`"start" | "center" | "end"`) and defaults to `"start"`.
-   * @type {Array<Header>}
    */
-  export let headers = [];
+  export let headers: Array<Header> = [];
   /**
    * The actual data displayed in the table rows.
    * The keys of the objects have to belong to the `value`s of the headers.
-   * @type {Array<Item>}
    */
-  export let items = [];
+  export let items: Array<Item> = [];
 
   /**
    * Whether the table rows should have alternating background colors.

@@ -18,9 +18,8 @@
   /**
    * A CSS style string to assign to the selector box element.
    * Can be used to make the checkbox represent a color (in conjunction with the [`getColorPickerStyles`](https://illright.github.io/attractions/docs/utilities) utility).
-   * @type {string | null}
    */
-  export let selectorStyle = null;
+  export let selectorStyle: string | null = null;
 
   /**
    * Whether the checkbox is checked or not.
@@ -44,9 +43,8 @@
   export let round = false;
   /**
    * Adds a tooltip to the checkbox.
-   * @type {string | null}
    */
-  export let title = null;
+  export let title: string | null = null;
 
   const dispatch = createEventDispatcher();
 </script>

@@ -40,9 +40,8 @@
   /**
    * The text displayed in the tooltip when hovering over the checkboxes
    *   after the maximum allowed selection has been reached.
-   * @type {string | null}
    */
-  export let maxReachedTooltip = null;
+  export let maxReachedTooltip: string | null = null;
   $: maxReachedTooltipFinal =
     // TODO: switch back to `??` after https://github.com/pastelsky/bundlephobia/issues/530 is merged
     maxReachedTooltip || `Can only select ${max} value${s(max)}.`;

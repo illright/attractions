@@ -14,20 +14,17 @@
 
   /**
    * The name of the form field. Displayed prominently next to the actual field.
-   * @type {string | null}
    */
-  export let name = null;
+  export let name: string | null = null;
   /**
    * The subtitle text under the name providing extra guidance.
-   * @type {string | null}
    */
-  export let help = null;
+  export let help: string | null = null;
   /**
    * The ID to add the the `for` attribute of the `<label>` element containing the `name`.
    * Useful if you pass an ID to the actual field inside and want to connect it with the label.
-   * @type {string | null}
    */
-  export let id = null;
+  export let id: string | null = null;
 
   /**
    * Marks the form field as required, adding an asterisk to the name and text under the field indicating that the field is mandatory.
@@ -39,9 +36,8 @@
   export let optional = false;
   /**
    * An array of error messages to display under the field. False elements are not shown.
-   * @type {Array<string | false>}
    */
-  export let errors = [];
+  export let errors: Array<string | false> = [];
 </script>
 
 <div class={classes('form-field', _class)}>

@@ -34,9 +34,8 @@
   export let disabled = false;
   /**
    * The tooltip to give to a chip.
-   * @type {string | null}
    */
-  export let title = null;
+  export let title: string | null = null;
 
   /**
    * Makes the chip smaller.

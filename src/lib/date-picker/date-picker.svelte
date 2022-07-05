@@ -46,16 +46,14 @@
   /**
    * The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used.
    * This will affect the weekdays and the day number representations.
-   * @type {string | undefined}
    */
-  export let locale = undefined;
+  export let locale: string | undefined = undefined;
   /**
    * The index of the weekday to start the week at.
    * 0 is for Sunday and 6 is for Saturday.
    * Defaults to 1 (Monday).
-   * @type {0 | 1 | 2 | 3 | 4 | 5 | 6}
    */
-  export let firstWeekday = 1; // 1 corresponds to Monday
+  export let firstWeekday: 0 | 1 | 2 | 3 | 4 | 5 | 6 = 1; // 1 corresponds to Monday
   /**
    * Whether to hide the calendar dropdown and only keep the text input.
    */
@@ -70,14 +68,12 @@
   export let right = false;
   /**
    * Depending on the value of the range prop, this is either a `Date` object or an object with two fields, `start` and `end`, containing Date objects.
-   * @type {Date | DateRange | null}
    */
-  export let value = null;
+  export let value: Date | DateRange | null = null;
   /**
    * A set of dates to disable.
-   * @type {Array<Date | { start?: Date; end?: Date }>}
    */
-  export let disabledDates = [];
+  export let disabledDates: Array<Date | { start?: Date; end?: Date }> = [];
   /**
    * If `true`, the dropdown will be automatically closed after a date is selected.
    */

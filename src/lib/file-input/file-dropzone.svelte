@@ -17,27 +17,26 @@
   /**
    * The user's selection as an array of [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) objects.
    * Note: this is an actual `Array`, not a `FileList`, as opposed to the native `<input type="file">`.
-   * @type {File[]}
    */
-  export let files = [];
+  export let files: File[] = [];
   /**
    * The component used to render a selected file.
    * Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
    * Expected to dispatch `delete` events to delete this file from the selection with the `file` prop as the detail.
-   * @type {SvelteComponentTyped<{ file: File }, { delete: CustomEvent<File> }>}
    */
-  export let fileComponent = FileTile;
+  export let fileComponent: SvelteComponentTyped<
+    { file: File },
+    { delete: CustomEvent<File> }
+  > = FileTile;
   /**
    * Limits the allowed files to particular types. For guidelines on the value of the attribute, consult the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept).
-   * @type {string | null}
    */
-  export let accept = null;
+  export let accept: string | null = null;
   /**
    * A callback to call for each file that passes the `accept` check before it is added to the `files`.
    * If it returns a Promise, they will be started for every file in parallel and awaited together at the end.
-   * @type {((file: File) => void | Promise<void>) | null}
    */
-  export let beforeChange = null;
+  export let beforeChange: ((file: File) => void | Promise<void>) | null = null;
   /**
    * Whether the input should accept files.
    */

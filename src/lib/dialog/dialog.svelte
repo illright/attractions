@@ -16,14 +16,14 @@
   export let danger = false;
   /**
    * Adds a close button to the dialog and calls this function when it is clicked.
-   * @type {((e: CustomEvent<{ nativeEvent: MouseEvent }>) => void) | null}
    */
-  export let closeCallback = null;
+  export let closeCallback:
+    | ((e: CustomEvent<{ nativeEvent: MouseEvent }>) => void)
+    | null = null;
   /**
    * Adds a title to the dialog.
-   * @type {string | null}
    */
-  export let title = null;
+  export let title: string | null = null;
   /**
    * Gives the dialog a `max-width` of `30em`.
    */

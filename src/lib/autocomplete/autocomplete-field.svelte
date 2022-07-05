@@ -29,9 +29,8 @@
   /**
    * The current selection as an array of `Option` objects.
    * Can be used to set the selection programmatically.
-   * @type {Option[]}
    */
-  export let selection = [];
+  export let selection: Option[] = [];
   /**
    * The minimum length the search query must be to call `getOptions`.
    */
@@ -48,9 +47,12 @@
    * The component used to render a suggestion in the list.
    * Receives two props: `option` – the `Option` object ({ name, details }) and `query` – the current query.
    * Expected to dispatch click events on selection.
-   * @type {SvelteComponentTyped<{ option: Option; query: string }, { click: Event }, {}>}
    */
-  export let optionComponent = AutocompleteOption;
+  export let optionComponent: SvelteComponentTyped<
+    { option: Option; query: string },
+    { click: Event },
+    {}
+  > = AutocompleteOption;
   /**
    * Whether to disable the field.
    */

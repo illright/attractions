@@ -58,9 +58,8 @@
   export let disabled = false;
   /**
    * Turns the button into a link (prefetch-enabled for SvelteKit).
-   * @type {string | null}
    */
-  export let href = null;
+  export let href: string | null = null;
   /**
    * Disables SvelteKit prefetching for link buttons (those with an href prop).
    */
@@ -68,9 +67,8 @@
 
   /**
    * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action.
-   * @type {Array<{ name: string; handler: (e: Event) => void }>}
    */
-  export let events = [];
+  export let events: Array<{ name: string; handler: (e: Event) => void }> = [];
 
   if (filled && outline) {
     console.error('A button may not be filled and outlined at the same time');
