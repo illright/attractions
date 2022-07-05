@@ -7,6 +7,7 @@
     datesEqual,
     datesLessEqual,
     getCalendar,
+    type Day,
   } from '../utils/datetime-utils.js';
 
   /**
@@ -70,7 +71,7 @@
   const weekdays = getWeekdays(locale, firstWeekday);
   const today = new Date();
 
-  function computeTitle(day) {
+  function computeTitle(day: Day) {
     if (datesEqual(day.value, today)) {
       if (day.disabled) {
         return titleTodayNotAvailableMessage;

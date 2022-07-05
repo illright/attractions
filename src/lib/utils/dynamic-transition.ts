@@ -1,15 +1,21 @@
 /**
  * @typedef {import('svelte/transition').TransitionConfig} TransitionConfig
  */
+import type { TransitionConfig } from 'svelte/transition';
 /**
  * Create a transition that allows specifying a transition programmatically
  *  or disable it altogether.
- * @template T
- * @param {Element} node
- * @param {{ transition: (node: Element; options: T) => TransitionConfig; options: T }} options
- * @returns {TransitionConfig}
  */
-export default function dynamic(node, { transition = null, options = null }) {
+export default function dynamic<T>(
+  node: Element,
+  {
+    transition = null,
+    options = null,
+  }: {
+    transition: ((node: Element, options: T | null) => TransitionConfig) | null;
+    options: T | null;
+  }
+) {
   if (transition === null) {
     return {
       delay: 0,

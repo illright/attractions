@@ -1,10 +1,12 @@
 /**
  * Generates the styles needed for displaying a radiobutton or a checkbox
  *  with the given color.
- * @param {string} hexColor The color (in `#XXXXXX` format)
- * @returns {string | null} The `style` string to be used on the element
+ * @param hexColor The color (in `#XXXXXX` format)
+ * @returns The `style` string to be used on the element
  */
-export default function getColorPickerStyles(hexColor) {
+// The type uses "string" instead of the 6 hex components due to TypeScript inefficiency
+//  with template literal types
+export default function getColorPickerStyles(hexColor: string) {
   if (hexColor == null) {
     return null;
   }

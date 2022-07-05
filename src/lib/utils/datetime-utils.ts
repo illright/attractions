@@ -2,14 +2,27 @@ const numberRegex = /\d+/g;
 const formatSpecifierRegex = /%[HMSpPdmyY%]/g;
 const daysInWeek = 7;
 
+type MonthNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 11;
+type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+type Week = [string, string, string, string, string, string, string];
+export type Day = {
+  value: Date;
+  outside: boolean;
+  disabled: boolean;
+};
+
 /**
  * Parses a string representing a timestamp using the given format into a `Date` object.
- * @param {string} string The date-time string to be parsed
- * @param {string} format The format against which to parse the date-time string
- * @param {Date | null} [defaultValue] If the string cannot be properly parsed against the format string, this is returned
- * @returns {Date | null} The date object representing the given string
+ * @param string The date-time string to be parsed
+ * @param format The format against which to parse the date-time string
+ * @param defaultValue If the string cannot be properly parsed against the format string, this is returned
+ * @returns The date object representing the given string
  */
-export function parseDateTime(string, format, defaultValue) {
+export function parseDateTime(
+  string: string,
+  format: string,
+  defaultValue: Date | null = null
+) {
   const century = Math.floor(new Date().getFullYear() / 100);
   let isPM = false;
 
@@ -70,25 +83,25 @@ export function parseDateTime(string, format, defaultValue) {
 
       switch (format[formatIdx]) {
         case 'H':
-          result.setHours(parseInt(number[0]) + 12 * isPM);
+          result.setHours(parseInt(number[0]) + 12 * Number(isPM));
           break;
         case 'M':
-          result.setMinutes(number[0]);
+          result.setMinutes(+number[0]);
           break;
         case 'S':
-          result.setSeconds(number[0]);
+          result.setSeconds(+number[0]);
           break;
         case 'd':
-          result.setDate(number[0]);
+          result.setDate(+number[0]);
           break;
         case 'm':
-          result.setMonth(number[0] - 1);
+          result.setMonth(+number[0] - 1);
           break;
         case 'y':
           result.setFullYear(century * 100 + parseInt(number[0]));
           break;
         case 'Y':
-          result.setFullYear(number[0]);
+          result.setFullYear(+number[0]);
           break;
       }
       stringIdx += number[0].length;
@@ -105,10 +118,10 @@ export function parseDateTime(string, format, defaultValue) {
 
 /**
  * Formats a given `Date` object into a string representation.
- * @param {Date | null} datetime The timestamp to be formatted
- * @param {string} format The format to which the given timestamp will be formatted
+ * @param datetime The timestamp to be formatted
+ * @param format The format to which the given timestamp will be formatted
  */
-export function formatDateTime(datetime, format) {
+export function formatDateTime(datetime: Date | null, format: string) {
   if (datetime == null) {
     return null;
   }
@@ -123,7 +136,7 @@ export function formatDateTime(datetime, format) {
   }
 
   return format
-    .replace('%Y', datetime.getFullYear())
+    .replace('%Y', datetime.getFullYear().toString())
     .replace('%y', (datetime.getFullYear() % 100).toString().padStart(2, '0'))
     .replace('%m', (datetime.getMonth() + 1).toString().padStart(2, '0'))
     .replace('%d', datetime.getDate().toString().padStart(2, '0'))
@@ -137,41 +150,40 @@ export function formatDateTime(datetime, format) {
 
 /**
  * Generates an array with the names of the days of the week for the given locale.
- * @param {string | string[] | undefined} locale The locale(s) in which the day names should be output. Pass an empty array to use the default locale. Read more on the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument)
- * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday.
- * @returns {[string, string, string, string, string, string, string]}
+ * @param locale The locale(s) in which the day names should be output. Pass an empty array to use the default locale. Read more on the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument)
+ * @param firstWeekday First day of the week. 1 = Monday.
  */
-export function getWeekdays(locale, firstWeekday) {
+export function getWeekdays(
+  locale: string | string[] | undefined,
+  firstWeekday: Weekday
+): Week {
   const weekdayFormatter = new Intl.DateTimeFormat(locale, {
     weekday: 'short',
   });
   const anchor = new Date(1970, 0, 1); // Initially set to the UNIX epoch – Thursday
   const mondayOffset = 5; // How many days to add to the epoch to get a Monday
-  const weekdays = [];
+  const weekdays: string[] = [];
   for (let i = 0; i < daysInWeek; ++i) {
     anchor.setDate(mondayOffset + firstWeekday - 1 + i);
     weekdays.push(weekdayFormatter.format(anchor));
   }
 
-  return weekdays;
+  return weekdays as Week;
 }
 
 /**
  * Check if the given object is a date.
- * @param {*} date The object to check
- * @returns {date is Date} `true` if the given object is a valid `Date`, `false` otherwise
+ * @param date The object to check
+ * @returns `true` if the given object is a valid `Date`, `false` otherwise
  */
-export function isDate(date) {
+export function isDate(date: unknown): date is Date {
   return date instanceof Date && !isNaN(date.valueOf());
 }
 
 /**
  * Check for equality between 2 `Date` objects, disregarding the time.
- * @param {Date | null} date1
- * @param {Date | null} date2
- * @returns {boolean}
  */
-export function datesEqual(date1, date2) {
+export function datesEqual(date1: Date | null, date2: Date | null) {
   if (date1 == null || date2 == null) {
     return false;
   }
@@ -185,11 +197,11 @@ export function datesEqual(date1, date2) {
 
 /**
  * Check for equality between 2 `Date` objects, including the time (hours, minutes, and seconds only).
- * @param {Date | null} date1
- * @param {Date | null} date2
- * @returns {boolean}
  */
-export function dateTimesEqual(dt1, dt2) {
+export function dateTimesEqual(dt1: Date | null, dt2: Date | null) {
+  if (dt1 == null || dt2 == null) {
+    return false;
+  }
   return (
     datesEqual(dt1, dt2) &&
     dt1.getHours() === dt2.getHours() &&
@@ -200,11 +212,8 @@ export function dateTimesEqual(dt1, dt2) {
 
 /**
  * Checks if the date of the first `Date` object came before the date of the second (disregards time).
- * @param {Date | null} date1
- * @param {Date | null} date2
- * @returns {boolean}
  */
-export function datesLessEqual(date1, date2) {
+export function datesLessEqual(date1: Date | null, date2: Date | null) {
   if (date1 == null || date2 == null) {
     return false;
   }
@@ -215,13 +224,13 @@ export function datesLessEqual(date1, date2) {
   );
 }
 
+type DateRange = { start?: Date; end?: Date };
 /**
  * Checks if the date is included in the given array of dates or ranges.
- * @param {Date} date The date object whose inclusion is to be checked
- * @param {Array<Date | { start?: Date; end?: Date; }>} dateRanges The set of dates
- * @returns {boolean}
+ * @param date The date object whose inclusion is to be checked
+ * @param dateRanges The set of dates
  */
-export function dateIncluded(date, dateRanges) {
+export function dateIncluded(date: Date, dateRanges: Array<Date | DateRange>) {
   return dateRanges.some(dateOrRange => {
     if (isDate(dateOrRange)) {
       return datesEqual(dateOrRange, date);
@@ -236,14 +245,16 @@ export function dateIncluded(date, dateRanges) {
 
 /**
  * Generates a calendar view of a given month.
- * @param {0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11} month Zero-based numeric value for month. 0 = January
- * @param {number} year
- * @param {0 | 1 | 2 | 3 | 4 | 5 | 6} firstWeekday First day of the week. 1 = Monday
- * @param {Array<Date | {start?: Date; end?: Date}>} disabledDates
- * @returns {Array<Array<{ value: Date; outside: boolean; disabled: boolean }>>}
+ * @param month Zero-based numeric value for month. 0 = January
+ * @param firstWeekday First day of the week. 1 = Monday
  */
-export function getCalendar(month, year, firstWeekday, disabledDates = []) {
-  const calendar = [];
+export function getCalendar(
+  month: MonthNumber,
+  year: number,
+  firstWeekday: Weekday,
+  disabledDates: Array<Date | DateRange> = []
+) {
+  const calendar: Day[][] = [];
   const dayCursor = new Date(year, month, 1);
 
   // Offset the start of the month to the closest left `firstWeekday`
@@ -252,7 +263,7 @@ export function getCalendar(month, year, firstWeekday, disabledDates = []) {
   );
 
   do {
-    const week = [];
+    const week: Day[] = [];
     for (let i = 0; i < daysInWeek; ++i) {
       week.push({
         value: new Date(dayCursor.valueOf()),
@@ -269,13 +280,14 @@ export function getCalendar(month, year, firstWeekday, disabledDates = []) {
 
 /**
  * Copies the date (day, month, and year) from the first `Date` object to the second.
- * @template {Date | null} T1
- * @template {Date | null} T2
- * @param {T1} source The object to copy the date from
- * @param {T2} destination The object to which the date will be copied, modified in-place
- * @returns {T1 extends null ? T1 : T2 extends null ? T1 : T2} The modified object
+ * @param source The object to copy the date from
+ * @param destination The object to which the date will be copied, modified in-place
+ * @returns The modified object
  */
-export function applyDate(source, destination) {
+export function applyDate<T1 extends Date | null, T2 extends Date | null>(
+  source: T1,
+  destination: T2
+): T1 extends null ? T1 : T2 extends null ? T1 : T2 {
   if (source == null || destination == null) {
     return source;
   }
@@ -289,13 +301,14 @@ export function applyDate(source, destination) {
 
 /**
  * Copies the time (hour, minute, and second) from the first `Date` object to the second.
- * @template {Date | null} T1
- * @template {Date | null} T2
- * @param {T1} source The object to copy the time from
- * @param {T2} destination The object to which the time will be copied, modified in-place
- * @returns {T1 extends null ? T1 : T2 extends null ? T1 : T2} The modified object
+ * @param source The object to copy the time from
+ * @param destination The object to which the time will be copied, modified in-place
+ * @returns The modified object
  */
-export function applyTime(source, destination) {
+export function applyTime<T1 extends Date | null, T2 extends Date | null>(
+  source: T1,
+  destination: T2
+): T1 extends null ? T1 : T2 extends null ? T1 : T2 {
   if (source == null || destination == null) {
     return source;
   }
@@ -309,11 +322,10 @@ export function applyTime(source, destination) {
 
 /**
  * Copy a Date object, respecting null values.
- * @template {Date | null} T
- * @param {T} date The object from which a copy should be made
- * @returns {T} The clone of the given object
+ * @param date The object from which a copy should be made
+ * @returns The clone of the given object
  */
-export function copyDate(date) {
+export function copyDate<T extends Date | null>(date: T): T {
   if (date == null) {
     return null;
   }

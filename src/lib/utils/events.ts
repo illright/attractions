@@ -1,10 +1,11 @@
 /**
  * An action to set up arbitrary event listeners dynamically.
- * @param {Element} node
- * @param {Array<{ name: string; handler: EventListenerOrEventListenerObject }>} args The event listeners to be registered
- * @returns {{ destroy: () => void }}
+ * @param args The event listeners to be registered
  */
-export default function events(node, args) {
+export default function events(
+  node: Element,
+  args: Array<{ name: string; handler: EventListenerOrEventListenerObject }>
+) {
   if (args != null) {
     for (const event of args) {
       node.addEventListener(event.name, event.handler);

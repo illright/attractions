@@ -101,7 +101,7 @@
     (range && value != null ? (value as DateRange).start : (value as Date)) ||
     new Date();
 
-  function unpackValue(value) {
+  function unpackValue(value: Date | DateRange | null) {
     startValue = copyDate(range ? value && value.start : value);
     endValue = copyDate(range ? value && value.end : null);
   }
@@ -148,7 +148,7 @@
     }
   }
 
-  function shiftShownCalendar(date) {
+  function shiftShownCalendar(date: Date | null) {
     if (date == null) {
       return;
     }
@@ -158,7 +158,7 @@
     shownCalendar = shownCalendar;
   }
 
-  function registerChange(start, end) {
+  function registerChange(start: Date | null, end: Date | null) {
     if (value == null) {
       if (start == null && end == null) {
         return;

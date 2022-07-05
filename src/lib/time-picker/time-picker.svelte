@@ -81,12 +81,11 @@
    */
   export let seconds = hasSeconds ? [...rangeGenerator(0, 60, 5)] : [];
 
-  /**
-   * @param hourValue {number}
-   * @param [minuteValue] {number|null}
-   * @param [secondValue] {number|null}
-   */
-  function setHours(hourValue, minuteValue = null, secondValue = null) {
+  function setHours(
+    hourValue: number,
+    minuteValue: number | null = null,
+    secondValue: number | null = null
+  ) {
     hourValue %= 24;
     if (value == null) {
       value = new Date(0);
@@ -103,7 +102,7 @@
     dispatch('change', { value });
   }
 
-  function setMinutes(minuteValue) {
+  function setMinutes(minuteValue: number) {
     if (value == null) {
       value = new Date(0);
     } else {
@@ -115,7 +114,7 @@
     dispatch('change', { value });
   }
 
-  function setSeconds(secondValue) {
+  function setSeconds(secondValue: number) {
     if (value == null) {
       value = new Date(0);
     } else {
@@ -132,7 +131,7 @@
     setHours(now.getHours(), now.getMinutes(), now.getSeconds());
   }
 
-  function changeAmPm({ detail: newAmPm }) {
+  function changeAmPm({ detail: newAmPm }: CustomEvent<{ value: string }>) {
     if (value == null) {
       if (newAmPm.value === 'PM') {
         setHours(12);
@@ -148,7 +147,7 @@
     }
   }
 
-  function matchesCurrentHour(hour, selected) {
+  function matchesCurrentHour(hour: number, selected: Date) {
     if (!value) {
       return false;
     }

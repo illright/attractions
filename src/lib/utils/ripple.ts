@@ -1,27 +1,40 @@
+type Options = {
+  event: keyof HTMLElementEventMap;
+  transition: number;
+  zIndex: string;
+  rippleColor?: string;
+  disabled: boolean;
+  bg: string | null;
+};
 /**
  * Create a ripple action
- * @typedef {{ event?: string; transition?: number; zIndex?: string; rippleColor?: string; disabled?: boolean }} Options
- * @param {Element} node
- * @param {Options} [options={}]
  * @returns {{ destroy: () => void; update: (options?: Options) => void }}
  */
-export default function ripple(node, options = {}) {
+export default function ripple(
+  node: HTMLElement,
+  options: Partial<Options> = {}
+) {
   // Default values.
-  const props = {
-    event: options.event || 'click',
+  const props: Options = {
+    event: options.event || ('click' as keyof HTMLElementEventMap),
     transition: options.transition || 150,
     zIndex: options.zIndex || '100',
     bg: options.rippleColor || null,
     disabled: options.disabled || false,
   };
 
-  const handler = event => rippler(event, node, props);
+  const handler: EventListener = event =>
+    rippler(event as MouseEvent, node, props);
 
   if (!props.disabled) {
     node.addEventListener(props.event, handler);
   }
 
-  function rippler(event, target, { bg, zIndex, transition }) {
+  function rippler(
+    event: MouseEvent,
+    target: HTMLElement,
+    { bg, zIndex, transition }: Options
+  ) {
     // Get border to avoid offsetting on ripple container position
     const targetBorder = parseInt(
       getComputedStyle(target).borderWidth.replace('px', '')
@@ -112,7 +125,7 @@ export default function ripple(node, options = {}) {
 
       // Timeout set to get a smooth removal of the ripple
       setTimeout(() => {
-        rippleContainer.parentNode.removeChild(rippleContainer);
+        rippleContainer.parentNode!.removeChild(rippleContainer);
       }, transition + 250);
 
       // After removing event set position to target to it's original one
@@ -142,7 +155,7 @@ export default function ripple(node, options = {}) {
     destroy() {
       node.removeEventListener(props.event, handler);
     },
-    update(newProps = {}) {
+    update(newProps: Partial<Options> = {}) {
       if (newProps.disabled) {
         node.removeEventListener(props.event, handler);
       } else {

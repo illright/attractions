@@ -1,10 +1,10 @@
 /**
  * Validates a File object against an `accept` parameter value.
- * @param {string | null} references comma-delimited list of reference MIME types (similar to `input`'s `accept` attribute)
- * @param {string} subject The MIME type of the file to be checked
- * @returns {boolean} Whether the file should be accepted
+ * @param references comma-delimited list of reference MIME types (similar to `input`'s `accept` attribute)
+ * @param subject The file whose MIME type is to be checked
+ * @returns Whether the file should be accepted
  */
-export default function accepted(references, subject) {
+export default function accepted(references: string | null, subject: File) {
   if (references == null) {
     return true;
   }
@@ -17,11 +17,11 @@ export default function accepted(references, subject) {
 
 /**
  * Handles the check with either an extension (beginning with a dot ".") or a MIME type pattern.
- * @param {string} reference The reference pattern
- * @param {string} subject The pattern to be checked
- * @returns {boolean} Whether the MIME types match
+ * @param reference The reference pattern
+ * @param subject The pattern to be checked
+ * @returns Whether the MIME types match
  */
-function matches(reference, subject) {
+function matches(reference: string, subject: File) {
   if (reference.startsWith('.')) {
     return subject.name.toLowerCase().endsWith(reference);
   }
@@ -36,11 +36,11 @@ function matches(reference, subject) {
  * Checks for compatibility of the reference MIME type pattern with the subject MIME type.
  *   Adapted from Chromium sources:
  *     https://source.chromium.org/chromium/chromium/src/+/master:net/base/mime_util.cc;l=413
- * @param {string} reference The reference pattern
- * @param {string} subject The pattern to be checked
- * @returns {boolean} Whether the MIME types are compatible
+ * @param reference The reference pattern
+ * @param subject The pattern to be checked
+ * @returns Whether the MIME types are compatible
  */
-function checkMimeType(reference, subject) {
+function checkMimeType(reference: string, subject: string) {
   if (reference === '*' || reference === '*/*') {
     return true;
   }

@@ -1,11 +1,10 @@
 /**
  * Generates a semi-open range.
- * @param {number} start The beginning of the range (included)
- * @param {number} [end] The end of the range (excluded)
- * @param {number} [step=1] The distance between the numbers in the range
- * @returns {Generator<number, void, void>}
+ * @param start The beginning of the range (included)
+ * @param end The end of the range (excluded)
+ * @param step The distance between the numbers in the range
  */
-export default function* range(start, end, step = 1) {
+export default function* range(start: number, end?: number, step = 1) {
   if (end == null) {
     end = start;
     start = 0;
