@@ -17,6 +17,8 @@ const scssAliases = aliases => {
   };
 };
 
+const dev = process.env.NODE_ENV !== 'production';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   extensions: ['.svelte', '.svx', '.md'],
@@ -53,7 +55,7 @@ const config = {
       default: true,
     },
     paths: {
-      // base: '',
+      base: dev ? '' : '/attractions',
     },
     trailingSlash: 'always',
     alias: {
