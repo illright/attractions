@@ -34,7 +34,7 @@
       return;
     }
 
-    const isClickInside = self.contains(event.currentTarget);
+    const isClickInside = self.contains(event.target);
     if (!isClickInside && open) {
       toggle();
     }
