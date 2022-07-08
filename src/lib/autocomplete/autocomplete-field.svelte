@@ -46,7 +46,7 @@
   export let optionComponent: typeof SvelteComponentTyped<
     { option: Option; query?: string | null | undefined },
     { click: Event },
-    {}
+    Record<string, unknown>
   > = AutocompleteOption;
   /**
    * Whether to disable the field.

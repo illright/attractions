@@ -22,7 +22,7 @@
   // clamp currentPage between [1; pages]
   $: currentPage = Math.min(Math.max(currentPage, 1), pages);
 
-  let inputValue: string = '';
+  let inputValue = '';
   let leftInputActive = false;
   let rightInputActive = false;
 

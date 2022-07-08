@@ -1,14 +1,16 @@
+<script lang="ts" context="module">
+  interface Header {
+    text: string;
+    value: string;
+    align?: 'start' | 'center' | 'end';
+  }
+  type Item = { [value: string]: string | number };
+</script>
+
 <script lang="ts">
   import Label from '../typography/label.svelte';
 
   /**
-   * @typedef {{
-   *  text: string;
-   *  value: string;
-   *  align?: "start" | "center" | "end";
-   * }} Header
-   * @typedef {{[value: string]: string | number}} Item
-   *
    * @slot {{ header: Header; item: Item }} item
    * @slot {{ item: Item }} row
    */

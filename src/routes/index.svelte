@@ -46,7 +46,9 @@
     <p>
       {process.license}
       licensed &nbsp;•&nbsp;
-      <a href="{base}/docs/changelog" sapper:prefetch>v{process.latest_version}</a>
+      <a href="{base}/docs/changelog" sapper:prefetch>
+        v{process.latest_version}
+      </a>
     </p>
   </footer>
 </main>

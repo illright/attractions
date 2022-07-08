@@ -7,7 +7,8 @@ node_modules
 .env.*
 !.env.example
 
-!.eslint-svelte-hacks.js
+# Configuration files in the root dir
+/*.js
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
