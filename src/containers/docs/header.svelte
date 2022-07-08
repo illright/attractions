@@ -29,7 +29,9 @@
     <span class="hide-on-less-tb">Attractions</span>
   </a>
   {#if segment != null}
-    <Breadcrumbs items={[{ href: '/docs' }, { text: segmentToName(segment) }]}>
+    <Breadcrumbs
+      items={[{ href: '/docs', text: '' }, { text: segmentToName(segment) }]}
+    >
       <div slot="item" let:item>
         {#if item.href === '/docs'}
           <Button href="{base}/docs" round small>

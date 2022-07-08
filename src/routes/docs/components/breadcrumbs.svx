@@ -3,13 +3,14 @@ name: Breadcrumbs
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Breadcrumbs, Button, Chip } from '$lib';
   import { ArrowRightIcon, HomeIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';
 
   const items = [
-    { href: '/', text: 'Home' },
-    { href: '/docs', text: 'Docs' },
+    { href: `${base}/`, text: 'Home' },
+    { href: `${base}/docs`, text: 'Docs' },
     { text: 'Components' },
   ];
 
@@ -26,8 +27,8 @@ Breadcrumbs are used to indicate the current page's location in the navigation h
     <Breadcrumbs {items} separator='~' />
     <Breadcrumbs {items}>
       <div slot="item" let:item>
-        {#if item.href === '/'}
-          <Button href="/" round small>
+        {#if item.href === `${base}/`}
+          <Button href="{base}/" round small>
             <HomeIcon size="20" />
           </Button>
         {:else}

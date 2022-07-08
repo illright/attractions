@@ -8,7 +8,7 @@
   import type { Place } from '$containers/docs/place';
 
   $: segments = $page.url.pathname.split('/');
-  $: segment = segments[segments.length - 1];
+  $: segment = segments[segments.length - 2]; // 2 because of trailing slash
 
   function scrollToTop() {
     window.scrollTo(0, 0);
