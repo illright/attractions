@@ -129,7 +129,7 @@ Thanks to [@sallaben](https://github.com/sallaben) and [@damonbauer](https://git
 
 Not a large release, but still breaking. This will upgrade Attractions to use Sass modules which will allow zero-config installations.
 
-Refer to the [migration guide](./docs/migration-guide) for information on how to upgrade.
+Refer to the [migration guide](https://illright.github.io/attractions/docs/migration-guide) for information on how to upgrade.
 
 ### Added
 

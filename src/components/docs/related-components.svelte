@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Label, Card, Button } from '$lib';
   import { classes } from '$lib/utils';
 
@@ -12,7 +13,9 @@
     <Label>Related Components</Label>
     {#each components as component}
       <Card>
-        <Button href={component.link}>{component.name}</Button>
+        <Button href={component.link.replace('./', `${base}/`)}
+          >{component.name}</Button
+        >
       </Card>
     {/each}
   </div>

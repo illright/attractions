@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Button, Breadcrumbs } from '$lib';
   import { GithubIcon, HomeIcon } from 'svelte-feather-icons';
 
@@ -18,15 +19,20 @@
 </script>
 
 <header class="padded">
-  <a href="./" class="logo">
-    <img src="/logo-no-bg.svg" width={logoSize} height={logoSize} alt="Logo" />
+  <a href="{base}/" class="logo">
+    <img
+      src="{base}/logo-no-bg.svg"
+      width={logoSize}
+      height={logoSize}
+      alt="Logo"
+    />
     <span class="hide-on-less-tb">Attractions</span>
   </a>
   {#if segment != null}
     <Breadcrumbs items={[{ href: '/docs' }, { text: segmentToName(segment) }]}>
       <div slot="item" let:item>
         {#if item.href === '/docs'}
-          <Button href="/docs" round small>
+          <Button href="{base}/docs" round small>
             <HomeIcon size="20" />
           </Button>
         {:else}

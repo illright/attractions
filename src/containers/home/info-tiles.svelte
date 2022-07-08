@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import * as attractions from '$lib';
   import { s, formatFileSize } from '$lib/utils';
@@ -20,13 +21,13 @@
     icon={GridIcon}
     title="{totalComponents} component{s(totalComponents)}"
     subtitle="and more to come!"
-    href="./docs/components/button"
+    href="{base}/docs/components/button"
   />
   <InfoTile
     icon={Edit2Icon}
     title="Stylable with Sass"
     subtitle="customize colors, fonts, shadows!"
-    href="./docs/installation"
+    href="{base}/docs/installation"
   />
   {#await bundleSizePromise}
     <InfoTile

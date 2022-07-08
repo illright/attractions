@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { goto } from '$app/navigation';
   import { Tab, DropdownShell, Dropdown, Button } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
@@ -11,7 +12,7 @@
 
   function handleTabClick(place: Place) {
     if (place.segment != null) {
-      goto(`./docs/${place.segment}`);
+      goto(`${base}/docs/${place.segment}`);
     }
   }
 
@@ -49,7 +50,7 @@
   <Dropdown right>
     {#if currentPlace != null && currentPlace.sub != null}
       {#each currentPlace.sub as entry (entry.segment)}
-        <Button href="./docs/{entry.segment}" on:click={toggle}>
+        <Button href="{base}/docs/{entry.segment}" on:click={toggle}>
           {entry.title}
         </Button>
       {/each}

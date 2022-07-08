@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Button, Accordion, AccordionSection } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import type { Place } from './place';
@@ -23,7 +24,7 @@
             </div>
             {#each place.sub as entry}
               <Button
-                href="./docs/{entry.segment}"
+                href="{base}/docs/{entry.segment}"
                 selected={place === currentPlace}
               >
                 {entry.title}
@@ -32,7 +33,7 @@
           </AccordionSection>
         {:else}
           <Button
-            href="./docs/{place.segment}"
+            href="{base}/docs/{place.segment}"
             selected={place === currentPlace}
           >
             {place.title}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Card, Button, H1 } from '$lib';
   import { BookOpenIcon, GithubIcon } from 'svelte-feather-icons';
   import InfoTiles from '$containers/home/info-tiles.svelte';
@@ -12,9 +13,9 @@
 <main>
   <Card>
     <header>
-      <img src="/logo-no-bg.svg" alt="Attractions logo" />
+      <img src="{base}/logo-no-bg.svg" alt="Attractions logo" />
       <H1>Attractions</H1>
-      <a href="./docs/changelog" class="hide-on-tb-more" sapper:prefetch>
+      <a href="{base}/docs/changelog" class="hide-on-tb-more" sapper:prefetch>
         v{process.latest_version}
       </a>
     </header>
@@ -23,7 +24,7 @@
       <a href="https://svelte.dev">Svelte</a>.
     </p>
     <div class="actions">
-      <Button filled href="./docs">
+      <Button filled href="{base}/docs">
         <BookOpenIcon size="24" class="mr" />
         docs
       </Button>
@@ -45,7 +46,7 @@
     <p>
       {process.license}
       licensed &nbsp;•&nbsp;
-      <a href="./docs/changelog" sapper:prefetch>v{process.latest_version}</a>
+      <a href="{base}/docs/changelog" sapper:prefetch>v{process.latest_version}</a>
     </p>
   </footer>
 </main>
