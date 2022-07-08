@@ -11,16 +11,16 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Install pnpm 🧰
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.5.0
+
       - name: Set up Node 16 📦
         uses: actions/setup-node@v3
         with:
           node-version: '16'
           cache: 'pnpm'
-
-      - name: Install pnpm 🧰
-        uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 7.5.0
 
       - name: Install dependencies 🧰
         run: pnpm install
