@@ -84,7 +84,6 @@
 
   /**
    * Get the position of min in the document
-   * @return {number}
    */
   function getSliderStart() {
     const rect = slider.getBoundingClientRect();
@@ -96,7 +95,6 @@
 
   /**
    * Get the total length of the slider from min to max in the document
-   * @return {number}
    */
   function getSliderLength() {
     if (!slider) {

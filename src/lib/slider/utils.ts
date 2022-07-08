@@ -1,57 +1,47 @@
-/**
- * @typedef {import('./types').SliderState} State
- * @typedef {import('./types').TickConfig} TickConfig
- */
+import type { SliderState as State, TickConfig } from './types';
 
 /**
  * Normalizes the event to be able to use the same handler for both mouse and touch events.
- * @param {MouseEvent | TouchEvent} e
- * @returns {Pick<MouseEvent, 'clientY' | 'clientX'>}
  */
-function normalizeEvent(e) {
+function normalizeEvent(
+  e: MouseEvent | TouchEvent
+): Pick<MouseEvent, 'clientY' | 'clientX'> {
   if (e.type.includes('touch')) {
-    return /** @type {TouchEvent}*/ (e).touches[0];
+    return (e as TouchEvent).touches[0];
   } else {
-    return /** @type {MouseEvent}*/ (e);
+    return e as MouseEvent;
   }
 }
 
 /**
  * Get position of mouse or touch event.
- * @param {boolean} vertical
- * @param {MouseEvent | TouchEvent} e
- * @returns {number}
  */
-export function getPosition(vertical, e) {
+export function getPosition(vertical: boolean, e: MouseEvent | TouchEvent) {
   const normalizedE = normalizeEvent(e);
   return vertical ? normalizedE.clientY : normalizedE.clientX;
 }
 
 /**
  * Stop event propagation and cancel default operation.
- * @param {Event} e
  */
-export function stopEvent(e) {
+export function stopEvent(e: Event) {
   e.stopPropagation();
   e.preventDefault();
 }
 
+type MinMax = Pick<State, 'min' | 'max'>;
+
 /**
  * Clamps the value to the provided min/max limits
- * @param {number} val
- * @param {{ min: number, max: number }} state
- * @returns {number}
  */
-export function ensureValueInRange(val, { min, max }) {
+export function ensureValueInRange(val: number, { min, max }: MinMax): number {
   return Math.min(Math.max(val, min), max);
 }
 
 /**
  * Adjust resolution in-line with step.
- * @param {number} step
- * @returns {number}
  */
-export function getPrecision(step) {
+export function getPrecision(step: number) {
   const stepString = step.toString();
   let precision = 0;
   if (stepString.indexOf('.') >= 0) {
@@ -61,21 +51,20 @@ export function getPrecision(step) {
 }
 
 /**
- * @template T A generic parameter that flows through to the return type.
- * @param {T} v A value.
- * @return {T} The same value.
+ * @param v A value.
+ * @return The same value.
  */
-export function id(v) {
+export function id<T>(v: T): T {
   return v;
 }
 
 /**
  * Calculate all the possible values in the range.
- * @param {number} step The increment between each value and the next.
- * @param {{ min: number, max: number }} state The minimum and maximum values.
- * @returns {number[]} An array of all the possible values.
+ * @param step The increment between each value and the next.
+ * @param state The minimum and maximum values.
+ * @returns An array of all the possible values.
  */
-export function getSteps(step, { min, max }) {
+export function getSteps(step: number, { min, max }: MinMax) {
   const steps = (max - min) / step;
   return Array.from({ length: steps + 1 }, (_, i) => min + i * step);
 }
@@ -83,11 +72,8 @@ export function getSteps(step, { min, max }) {
 /**
  * Get the list of ticks depending on the ticks' `mode`.
  * @param {TickConfig} ticks The ticks configuration.
- * @param {number} min
- * @param {number} max
- * @returns {number[]}
  */
-export function getTickValues(ticks, min, max) {
+export function getTickValues(ticks: TickConfig, min: number, max: number) {
   if (ticks.mode === 'steps') return getSteps(ticks.step, { min, max });
   if (ticks.mode === 'values' && Array.isArray(ticks.values))
     return [...ticks.values];
@@ -97,12 +83,14 @@ export function getTickValues(ticks, min, max) {
 /**
  * Get the subTick values depending on the density.
  * @param {TickConfig} ticks The ticks configuration.
- * @param {number} min
- * @param {number} max
- * @param {number[]} [tickValues=[]] The values of the major ticks (to avoid collision).
- * @returns {number[]}
+ * @param tickValues The values of the major ticks (to avoid collision).
  */
-export function getSubTickPositions(ticks, min, max, tickValues = []) {
+export function getSubTickPositions(
+  ticks: TickConfig,
+  min: number,
+  max: number,
+  tickValues: number[] = []
+) {
   if (ticks.mode === 'none') return [];
   const { subDensity } = ticks;
   if (!subDensity) return [];
@@ -113,13 +101,21 @@ export function getSubTickPositions(ticks, min, max, tickValues = []) {
   return subTicks;
 }
 
+type StateWithTicks = {
+  ticks: TickConfig;
+  step: number;
+  min: number;
+  max: number;
+};
+
 /**
  * Find the closest step, including ticks, to the given value.
- * @param {number} val The value to find the closest step for.
- * @param {{ ticks: TickConfig, step: number, min: number, max: number }} state
- * @returns {number}
+ * @param val The value to find the closest step for.
  */
-export function getClosestPoint(val, { ticks, step, min, max }) {
+export function getClosestPoint(
+  val: number,
+  { ticks, step, min, max }: StateWithTicks
+) {
   const points = getTickValues(ticks, min, max);
   if (step !== null) {
     const baseNum = 10 ** getPrecision(step);
@@ -137,30 +133,23 @@ export function getClosestPoint(val, { ticks, step, min, max }) {
 /**
  * Convert from slider value to percentage of the range [min .. max]
  * used for ticks too which are not an array value
- * @param {number} value
- * @param {{ min: number, max: number }} state
- * @returns {number}
  */
-export function calcPercentOfRange(value, { min, max }) {
+export function calcPercentOfRange(value: number, { min, max }: MinMax) {
   const ratio = (value - min) / (max - min);
   return Math.max(0, ratio * 100);
 }
 
 /**
  * If using a single handle for the slider, give the user the value unnested.
- * @param {[number] | [number, number]} value
- * @returns {number | [number, number]}
  */
-export function unnestSingle(value) {
+export function unnestSingle(value: [number] | [number, number]) {
   return value.length === 1 ? value[0] : value;
 }
 
-/**
- * @param {number} val
- * @param {{ ticks: TickConfig, step: number, min: number, max: number }} stateWithTicks
- * @returns {number}
- */
-export function ensureValuePrecision(val, stateWithTicks) {
+export function ensureValuePrecision(
+  val: number,
+  stateWithTicks: StateWithTicks
+) {
   const { step } = stateWithTicks;
   const possiblePoint = getClosestPoint(val, stateWithTicks);
   const closestPoint = isFinite(possiblePoint) ? possiblePoint : 0;
@@ -171,11 +160,11 @@ export function ensureValuePrecision(val, stateWithTicks) {
 
 /**
  * Find the handle closest to the given value.
- * @param {number} value
- * @param {[number] | [number, number]} handleValues
- * @returns {number}
  */
-export function getClosestHandle(value, handleValues) {
+export function getClosestHandle(
+  value: number,
+  handleValues: [number] | [number, number]
+) {
   let closestHandleIndex = 0;
   for (let i = 1; i < handleValues.length - 1; i += 1) {
     if (value >= handleValues[i]) {
