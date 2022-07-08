@@ -6,6 +6,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Accordion, AccordionSection, Button } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';
@@ -115,10 +116,10 @@ The handle used for opening the hidden content. By default it contains a Button 
 
 | Name | Description | Default |
 | ---- | ----------- | ------- |
-| **`$main`** <small>From [`Button`](./docs/components/button)</small> | The color and hover background of the section handle. | <ColorPreview value="#4300B0" /> |
-| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the section handle. | `'Ubuntu'` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the section handle. | `1.5625em` |
-| **`$bold-font-weight`** <small>From [`Button`](./docs/components/button)</small> | The font weight of the section handle. | `500` |
+| **`$main`** <small>From [`Button`]({base}/docs/components/button)</small> | The color and hover background of the section handle. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the section handle. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the section handle. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`]({base}/docs/components/button)</small> | The font weight of the section handle. | `500` |
 
 <style lang="scss">
 [slot='showcase'] {

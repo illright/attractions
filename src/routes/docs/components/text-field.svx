@@ -3,6 +3,7 @@ name: TextField
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { TextField } from '$lib';
   import { AtSignIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';
@@ -76,7 +77,7 @@ The most basic form element – taking text input.
 | **`label`** | `null` | `string` | The label to show above the text field. Only works with <mark>`outline`</mark> text fields. |
 | **`error`** | `null` | `string` | The error message to show under the text field. |
 | **`autofocus`** | `false` | `boolean` | Whether the field should be focused on mount. |
-| **`events`** | `[]` | `Array` | List of handlers for the [Events action](./docs/utilities): `[{ name, handler }]`. |
+| **`events`** | `[]` | `Array` | List of handlers for the [Events action]({base}/docs/utilities): `[{ name, handler }]`. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` or `<textarea>` element. |
 
 ### Class Properties

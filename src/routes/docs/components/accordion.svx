@@ -6,6 +6,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Accordion, AccordionSection, Button } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';
@@ -81,7 +82,7 @@ Falsy values passed to classes will be disregarded.
 
 ### Default slot
 
-The content of the Accordion. Pass one or more [<mark>`AccordionSection`</mark>](./docs/components/accordion-section) components or something miscellaneous.
+The content of the Accordion. Pass one or more [<mark>`AccordionSection`</mark>]({base}/docs/components/accordion-section) components or something miscellaneous.
 
 | Prop Name | Type | Description |
 | --------- | ---- | ----------- |

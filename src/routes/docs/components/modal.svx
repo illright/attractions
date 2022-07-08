@@ -3,6 +3,7 @@ name: Modal
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Button, Modal, Dialog } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -15,7 +16,7 @@ name: Modal
 
 An overlay allowing any modal content to appear on the screen prominently.
 
-Works well with the [<mark>`Dialog`</mark>](./docs/components/dialog) component.
+Works well with the [<mark>`Dialog`</mark>]({base}/docs/components/dialog) component.
 
 <Showcase>
   <div slot="showcase" class="padded">

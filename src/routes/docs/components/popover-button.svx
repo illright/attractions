@@ -7,6 +7,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Popover, PopoverButton, Button } from '$lib';
   import { PopoverPositions } from '$lib/popover';
   import Showcase from '$containers/docs/showcase.svelte';
@@ -16,7 +17,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 
 # PopoverButton
 
-A button designed to be used as the [<mark>`Popover`</mark>](./docs/components/popover) content.
+A button designed to be used as the [<mark>`Popover`</mark>]({base}/docs/components/popover) content.
 
 <RelatedComponents components={relatedComponents} />
 

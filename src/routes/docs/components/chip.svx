@@ -12,6 +12,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Chip } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -22,7 +23,7 @@ relatedComponents:
 
 Tiny piece of additional information.
 
-For radio/checkbox selecting capabilities, take a look at [<mark>`RadioChipGroup`</mark>](./docs/components/radio-chip-group) and [<mark>`CheckboxChipGroup`</mark>](./docs/components/checkbox-chip-group) components.
+For radio/checkbox selecting capabilities, take a look at [<mark>`RadioChipGroup`</mark>]({base}/docs/components/radio-chip-group) and [<mark>`CheckboxChipGroup`</mark>]({base}/docs/components/checkbox-chip-group) components.
 
 <RelatedComponents components={relatedComponents} />
 

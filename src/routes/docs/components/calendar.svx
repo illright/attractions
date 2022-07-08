@@ -6,6 +6,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Calendar } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -20,7 +21,7 @@ relatedComponents:
 
 A calendar component representing a month with selectable days.
 
-If you're seeking a ready-to-use date picking solution, consider using [`DatePicker`](./docs/components/date-picker).
+If you're seeking a ready-to-use date picking solution, consider using [`DatePicker`]({base}/docs/components/date-picker).
 
 <RelatedComponents components={relatedComponents} />
 
@@ -90,5 +91,5 @@ Falsy values passed to classes will be disregarded.
 | **`$main-text`** | The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
 | **`$main`** | The tint color of the selected days in the calendar and on hover. | <ColorPreview value="#4300B0" /> |
 | **`$regular-font-weight`** | The font weight of the days. | `400` |
-| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the days in the calendar. | `'Ubuntu'` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of a button. | `1.5625em` |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the days in the calendar. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of a button. | `1.5625em` |

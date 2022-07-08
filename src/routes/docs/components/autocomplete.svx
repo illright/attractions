@@ -8,6 +8,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Autocomplete } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -31,7 +32,7 @@ relatedComponents:
 
 A text field suggesting options to select.
 
-Builds upon the [<mark>`AutocompleteField`</mark>](./docs/components/autocomplete-field), prefer that instead if you need more customization freedom.
+Builds upon the [<mark>`AutocompleteField`</mark>]({base}/docs/components/autocomplete-field), prefer that instead if you need more customization freedom.
 
 <RelatedComponents components={relatedComponents} />
 
@@ -70,7 +71,7 @@ Builds upon the [<mark>`AutocompleteField`</mark>](./docs/components/autocomplet
 | **`minSearchLength`** | `3` | `number` | The minimum amount of characters to call <mark>`getOptions`</mark>. |
 | **`maxOptions`** | `Infinity` | `number` | The maximum amount of options than can be selected. |
 | **`searchQuery`** | `''` | `string` | The current value of the text field. Can be used to control the query programmatically. |
-| **`optionComponent`** | [<mark>`AutocompleteOption`</mark>](./docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
+| **`optionComponent`** | [<mark>`AutocompleteOption`</mark>]({base}/docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
 | **`disabled`** | `false` | `boolean` | Whether to disable the field. |
 | **`...`** |  | `any` | Everything else will be passed to the underlying `<AutocompleteField>` component. |
 
@@ -96,7 +97,7 @@ Falsy values passed to classes will be disregarded.
 
 ## Slots {#slots}
 
-All slots of [<mark>`AutocompleteField`</mark>](./docs/components/autocomplete-field#slots) are available here with the same names.
+All slots of [<mark>`AutocompleteField`</mark>]({base}/docs/components/autocomplete-field#slots) are available here with the same names.
 
 
 ## SCSS Variables {#scss-variables}
@@ -107,13 +108,13 @@ All slots of [<mark>`AutocompleteField`</mark>](./docs/components/autocomplete-f
 | **`$font`** | The font of the text field's content and the options. | `'Ubuntu'` |
 | **`$textfield-border`** | The bottom border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
 | **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" bordered /> |
-| **`$light-contrast`** <small>From [`AutocompleteField`](./docs/components/autocomplete-field)</small> | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
-| **`$thin-font-weight`** <small>From [`AutocompleteField`](./docs/components/autocomplete-field)</small> | The thin font weight of the status messages like 'type X characters to search'. | `300` |
-| **`$bold-font-weight`** <small>From [`AutocompleteOption`](./docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
-| **`$chip-bg`** <small>From [`Chip`](./docs/components/chip)</small> | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
-| **`$chip-fg`** <small>From [`Chip`](./docs/components/chip)</small> | The text color of a chip. | <ColorPreview value="#656565" /> |
-| **`$chip-radius`** <small>From [`Chip`](./docs/components/chip)</small> | The curvature radius of a chip. | `1.5625em` |
-| **`$dark`** <small>From [`Button`](./docs/components/button)</small> | The color of the Xs on the option chips. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`AutocompleteField`]({base}/docs/components/autocomplete-field)</small> | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
+| **`$thin-font-weight`** <small>From [`AutocompleteField`]({base}/docs/components/autocomplete-field)</small> | The thin font weight of the status messages like 'type X characters to search'. | `300` |
+| **`$bold-font-weight`** <small>From [`AutocompleteOption`]({base}/docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
+| **`$chip-bg`** <small>From [`Chip`]({base}/docs/components/chip)</small> | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** <small>From [`Chip`]({base}/docs/components/chip)</small> | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** <small>From [`Chip`]({base}/docs/components/chip)</small> | The curvature radius of a chip. | `1.5625em` |
+| **`$dark`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the Xs on the option chips. | <ColorPreview value="#333333" /> |
 
 
 <style lang="scss">

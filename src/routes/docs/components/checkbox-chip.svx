@@ -12,6 +12,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { CheckboxChip } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -22,7 +23,7 @@ relatedComponents:
 
 An option to select in an inline fashion, as opposed to regular checkboxes.
 
-If you don't need too much customization, consider using [<mark>`CheckboxChipGroup`</mark>](./docs/components/checkbox-chip-group), which offers a nice way to generate lists of options.
+If you don't need too much customization, consider using [<mark>`CheckboxChipGroup`</mark>]({base}/docs/components/checkbox-chip-group), which offers a nice way to generate lists of options.
 
 <RelatedComponents components={relatedComponents} />
 

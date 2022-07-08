@@ -12,6 +12,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { RadioChip } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -22,7 +23,7 @@ relatedComponents:
 
 An option to select in an inline fashion, as opposed to regular radio buttons.
 
-If you don't need too much customization, consider using [<mark>`RadioChipGroup`</mark>](./docs/components/radio-chip-group), which offers a nice way to generate lists of options.
+If you don't need too much customization, consider using [<mark>`RadioChipGroup`</mark>]({base}/docs/components/radio-chip-group), which offers a nice way to generate lists of options.
 
 <RelatedComponents components={relatedComponents} />
 

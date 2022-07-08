@@ -6,6 +6,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { Tab } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -14,7 +15,7 @@ relatedComponents:
 
 # Tab
 
-Allows for finer control over individual tabs when the default [<mark>`Tabs`</mark>](./docs/components/tabs) is not good enough.
+Allows for finer control over individual tabs when the default [<mark>`Tabs`</mark>]({base}/docs/components/tabs) is not good enough.
 
 <RelatedComponents components={relatedComponents} />
 

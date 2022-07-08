@@ -7,6 +7,7 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { TimePicker } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
@@ -59,7 +60,7 @@ A time picker that supports both the text input and a dropdown with buttons.
 | **`minutes`** | `[0, 5, ..., 55]` | `number[]` | The list of possible minutes to choose from. |
 | **`seconds`** | `[0, 5, ..., 55]` if using seconds or `[]` otherwise | `number[]` | The list of possible seconds to choose from. |
 
-_Hint_: use `range` from the [utils](/docs/utilities) to generate a range of numbers.
+_Hint_: use `range` from the [utils]({base}/docs/utilities) to generate a range of numbers.
 
 ### Class Properties
 
@@ -111,15 +112,15 @@ Text on button to select the current time. Defaults to the text "`now`".
 | **`$main`** | The color of the bottom border of the focused text field border, the buttons, the selected tab and the labels. | <ColorPreview value="#4300B0" /> |
 | **`$light-contrast`** | The color of borders and WebKit scrollbars inside the dropdown. | <ColorPreview value="#DDDDDD" /> |
 | **`$background`** | The background of the WebKit scrollbars, to ensure they don'y stand out from the background. | <ColorPreview value="#FFFFFF" bordered /> |
-| **`$font`** <small>From [`Button`](./docs/components/button)</small> | The font of the buttons' text and the text fields. | `'Ubuntu'` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of buttons. | `1.5625em` |
-| **`$bold-font-weight`** <small>From [`Button`](./docs/components/button)</small> | The font weight of the buttons and the labels. | `500` |
-| **`$background`** <small>From [`Dropdown`](./docs/components/dropdown)</small> | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
-| **`$shadow-raised`** <small>From [`Dropdown`](./docs/components/dropdown)</small> | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
-| **`$card-radius`** <small>From [`Dropdown`](./docs/components/dropdown)</small> | The curvature radius of the dropdown. | `1.25em` |
-| **`$textfield-border`** <small>From [`TextField`](./docs/components/text-field)</small> | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
-| **`$thin-font-weight`** <small>From [`TextField`](./docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
-| **`$off-state`** <small>From [`Tab`](./docs/components/tab)</small> | Affects the background color of the unselected tab. | <ColorPreview value="#AAAAAA" /> |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the buttons' text and the text fields. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of buttons. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`]({base}/docs/components/button)</small> | The font weight of the buttons and the labels. | `500` |
+| **`$background`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The curvature radius of the dropdown. | `1.25em` |
+| **`$textfield-border`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$thin-font-weight`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
+| **`$off-state`** <small>From [`Tab`]({base}/docs/components/tab)</small> | Affects the background color of the unselected tab. | <ColorPreview value="#AAAAAA" /> |
 
 <style lang="scss">
 [slot='showcase'] {

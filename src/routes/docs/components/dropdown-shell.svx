@@ -6,6 +6,7 @@ relatedComponents:
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { DropdownShell, Dropdown, Button } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';
@@ -16,7 +17,7 @@ relatedComponents:
 
 # DropdownShell
 
-The container for the [`Dropdown`](./docs/components/dropdown) and its activating handle.
+The container for the [`Dropdown`]({base}/docs/components/dropdown) and its activating handle.
 
 <RelatedComponents components={relatedComponents} />
 

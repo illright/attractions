@@ -9,6 +9,7 @@ shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
 ---
 
 <script lang="ts">
+  import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { FileTile } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
@@ -86,8 +87,8 @@ All `<FileTile>` components use the `.file-tile` class.
 | **`$file-tile-radius`** | The curvature radius of the tile. | `.625em` |
 | **`$shadow-1`** | The shadow of the tile. | <ShadowPreview value={shadow1} /> |
 | **`$thin-font-weight`** | The thinner font weight for the file details: size and type. | `300` |
-| **`$button-radius`** <small>From [`Button`](./docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
-| **`$danger`** <small>From [`Button`](./docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
+| **`$danger`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
 
 <style lang="scss">
 [slot='showcase'] {
