@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
 
-  export let id = null;
+  export let id: string | null = null;
 
   let href = id && `#${id}`;
   onMount(function createSvelteKitCompatiblePermalink() {

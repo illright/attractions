@@ -27,6 +27,8 @@
 </script>
 
 <script>
+  // For some reason, MDsveX cannot work with layouts written in TS
+  /** @type {string} */
   export let name;
 </script>
 
