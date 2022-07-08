@@ -6,7 +6,7 @@ on:
     types:
       - opened
     paths:
-      - 'attractions/package.json'
+      - 'package.json'
 
 jobs:
   tag-issue:
@@ -23,7 +23,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const package = require(`${process.env.GITHUB_WORKSPACE}/attractions/package.json`);
+            const package = require(`${process.env.GITHUB_WORKSPACE}/package.json`);
             const currentVersion = `v${package.version}`;
             const tags = (await github.repos.listTags({
               owner: context.repo.owner,

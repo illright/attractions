@@ -2,8 +2,8 @@ name: Build docs from a pull request
 on:
   pull_request:
     paths:
-      - attractions/**
-      - docs/**
+      - src/**
+      - static/**
       - CHANGELOG.md
       - MIGRATION_GUIDE.md
       - package.json
@@ -13,45 +13,32 @@ jobs:
   build-docs:
     name: Build docs
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: docs
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      - name: Set up Node 14 📦
-        uses: actions/setup-node@v2
+      - name: Set up Node 16 📦
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
-
-      - name: Cache pnpm modules 🗄
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-pnpm-modules
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+          node-version: '16'
+          cache: 'pnpm'
 
       - name: Install pnpm 🧰
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v2.2.2
         with:
-          version: 6.14.2
+          version: 7.5.0
 
       - name: Build docs 🔧
         env:
-          SAPPER_APP_BASEPATH: attractions/${{ github.event.number }}
+          VITE_BASE_PATH: /attractions/${{ github.event.number }}
         run: |
           pnpm install
-          pnpm run export -- --basepath attractions/${{ github.event.number }}
+          pnpm run build
 
       - name: Save the PR number 📩
-        run: echo "${{ github.event.number }}" > ../pr_number.txt
-        # The ".." is to go outside the docs directory
+        run: echo "${{ github.event.number }}" > ./pr_number.txt
 
       - name: Upload the PR number 📤
         uses: actions/upload-artifact@v2
@@ -63,4 +50,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: docs
-          path: docs/__sapper__/export/attractions/${{ github.event.number }}/
+          path: build/
