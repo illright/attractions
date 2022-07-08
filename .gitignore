@@ -5,8 +5,8 @@ node_modules
 /package
 .env
 .env.*
+*.log
 !.env.example
-*.d.ts
 *.d.ts.map
 .stylelintcache
 .eslintcache
