@@ -2,7 +2,7 @@
 name: Theming with Sass
 ---
 
-<script>
+<script lang="ts">
   import CopyableCode from '$components/docs/copyable-code.svelte';
 </script>
 

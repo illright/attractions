@@ -2,7 +2,7 @@
 name: Migration Guide
 ---
 
-<script>
+<script lang="ts">
   import MigrationGuide from '#root/MIGRATION_GUIDE.md';
 </script>
 

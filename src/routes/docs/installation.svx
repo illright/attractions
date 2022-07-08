@@ -2,7 +2,7 @@
 name: Installation
 ---
 
-<script>
+<script lang="ts">
   import { Tabs, Label } from '$lib';
   import CopyableCode from '$components/docs/copyable-code.svelte';
 

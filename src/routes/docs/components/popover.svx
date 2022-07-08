@@ -5,7 +5,7 @@ relatedComponents:
     link: ./docs/components/popover-button
 ---
 
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { Popover, Button } from '$lib';
   import { PopoverPositions } from '$lib/popover';
@@ -32,7 +32,7 @@ Extra content revealed on hover or focus within.
 
 ```svelte
 <script>
-  import { PopoverPositions } from '$libpopover';
+  import { PopoverPositions } from 'attractions/popover';
 </script>
 
 <Popover position={PopoverPositions.BOTTOM}>

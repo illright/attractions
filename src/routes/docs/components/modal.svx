@@ -2,7 +2,7 @@
 name: Modal
 ---
 
-<script>
+<script lang="ts">
   import { Button, Modal, Dialog } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';

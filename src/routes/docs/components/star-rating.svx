@@ -2,7 +2,7 @@
 name: StarRating
 ---
 
-<script>
+<script lang="ts">
   import { StarRating } from '$lib';
   import { ThumbsUpIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';

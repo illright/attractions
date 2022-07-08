@@ -2,7 +2,7 @@
 name: Breadcrumbs
 ---
 
-<script>
+<script lang="ts">
   import { Breadcrumbs, Button, Chip } from '$lib';
   import { ArrowRightIcon, HomeIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';

@@ -5,7 +5,7 @@ relatedComponents:
     link: ./docs/components/accordion
 ---
 
-<script>
+<script lang="ts">
   import { Accordion, AccordionSection, Button } from '$lib';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';

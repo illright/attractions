@@ -5,7 +5,7 @@ relatedComponents:
     link: ./docs/components/radio-button
 ---
 
-<script>
+<script lang="ts">
   import { RadioGroup } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';

@@ -7,7 +7,7 @@ relatedComponents:
     link: ./docs/components/autocomplete-option
 ---
 
-<script>
+<script lang="ts">
   import { Autocomplete } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';

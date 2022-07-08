@@ -2,7 +2,7 @@
 name: FormField
 ---
 
-<script>
+<script lang="ts">
   import { FormField, TextField, Switch } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';

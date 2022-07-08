@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Card, Button, H1 } from '$lib';
   import { BookOpenIcon, GithubIcon } from 'svelte-feather-icons';
   import InfoTiles from '$containers/home/info-tiles.svelte';

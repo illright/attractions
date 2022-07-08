@@ -2,7 +2,7 @@
 name: TextField
 ---
 
-<script>
+<script lang="ts">
   import { TextField } from '$lib';
   import { AtSignIcon } from 'svelte-feather-icons';
   import Showcase from '$containers/docs/showcase.svelte';

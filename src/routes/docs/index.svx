@@ -2,15 +2,16 @@
 name: Home
 ---
 
-<script>
+<script lang="ts">
   import { formatFileSize } from '$lib/utils';
   import { onMount } from 'svelte';
 
   let bundleSizePromise = Promise.resolve(Infinity);
 
   onMount(() => {
-    bundleSizePromise = fetch(`https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`)
-      .then(response => response.json());
+    bundleSizePromise = fetch(
+      `https://bundlephobia.com/api/size?package=attractions@${process.latest_version}`
+    ).then(response => response.json());
   });
 </script>
 

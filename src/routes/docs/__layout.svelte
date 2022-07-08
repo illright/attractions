@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
   import { page } from '$app/stores';
   import { Button } from '$lib';
   import { HomeIcon, ArrowUpIcon } from 'svelte-feather-icons';
   import Header from '$containers/docs/header.svelte';
   import MobileNavigation from '$containers/docs/mobile-navigation.svelte';
   import DesktopNavigation from '$containers/docs/desktop-navigation.svelte';
+  import type { Place } from '$containers/docs/place';
 
   $: segments = $page.url.pathname.split('/');
   $: segment = segments[segments.length - 1];
@@ -14,7 +15,7 @@
     // TODO: manage focus
   }
 
-  let scrollbarVisible;
+  let scrollbarVisible: boolean;
   page.subscribe(function updateScrollbarVisibility() {
     if (typeof window === 'undefined') {
       return;
@@ -22,7 +23,7 @@
     scrollbarVisible = window.innerHeight < document.body.scrollHeight;
   });
 
-  const places = [
+  const places: Place[] = [
     {
       title: HomeIcon,
       segment: '',

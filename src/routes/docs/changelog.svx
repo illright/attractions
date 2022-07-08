@@ -1,9 +1,7 @@
----
-name: Changelog
----
-
-<script>
+<script lang="ts">
   import Changelog from '#root/CHANGELOG.md';
 </script>
+
+--- name: Changelog ---
 
 <Changelog />

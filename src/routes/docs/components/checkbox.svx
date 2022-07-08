@@ -5,7 +5,7 @@ relatedComponents:
     link: ./docs/components/checkbox-group
 ---
 
-<script>
+<script lang="ts">
   import { Checkbox } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';

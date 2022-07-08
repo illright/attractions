@@ -5,7 +5,7 @@ relatedComponents:
     link: ./docs/components/date-picker
 ---
 
-<script>
+<script lang="ts">
   import { Calendar } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';

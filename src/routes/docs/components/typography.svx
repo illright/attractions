@@ -2,7 +2,7 @@
 name: Typography
 ---
 
-<script>
+<script lang="ts">
   import { H1, H2, H3, Headline, Subhead, Label } from '$lib';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
