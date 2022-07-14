@@ -286,10 +286,13 @@ export function getCalendar(
  * @param destination The object to which the date will be copied, modified in-place
  * @returns The modified object
  */
-export function applyDate<T1 extends Date | null, T2 extends Date | null>(
-  source: T1,
-  destination: T2
-): T1 extends null ? T1 : T2 extends null ? T1 : T2 {
+export function applyDate(source: Date, destination: Date): Date;
+export function applyDate(source: null, destination: Date | null): null;
+export function applyDate(
+  source: Date | null,
+  destination: Date | null
+): Date | null;
+export function applyDate(source: Date | null, destination: Date | null) {
   if (source == null || destination == null) {
     return source;
   }
@@ -307,10 +310,13 @@ export function applyDate<T1 extends Date | null, T2 extends Date | null>(
  * @param destination The object to which the time will be copied, modified in-place
  * @returns The modified object
  */
-export function applyTime<T1 extends Date | null, T2 extends Date | null>(
-  source: T1,
-  destination: T2
-): T1 extends null ? T1 : T2 extends null ? T1 : T2 {
+export function applyTime(source: Date, destination: Date): Date;
+export function applyTime(source: null, destination: Date | null): null;
+export function applyTime(
+  source: Date | null,
+  destination: Date | null
+): Date | null;
+export function applyTime(source: Date | null, destination: Date | null) {
   if (source == null || destination == null) {
     return source;
   }
@@ -327,7 +333,10 @@ export function applyTime<T1 extends Date | null, T2 extends Date | null>(
  * @param date The object from which a copy should be made
  * @returns The clone of the given object
  */
-export function copyDate<T extends Date | null>(date: T): T {
+export function copyDate(date: null): null;
+export function copyDate(date: Date): Date;
+export function copyDate(date: Date | null): Date | null;
+export function copyDate(date: Date | null) {
   if (date == null) {
     return null;
   }
