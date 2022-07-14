@@ -60,7 +60,9 @@ export function parseDateTime(
       }
       stringIdx++;
     } else if (format[formatIdx].toLowerCase() === 'p') {
-      const hourFormat = string.substr(stringIdx, 2).toUpperCase();
+      const hourFormat = string
+        .substring(stringIdx, stringIdx + 2)
+        .toUpperCase();
       if (hourFormat === 'AM') {
         isPM = false;
         if (result.getHours() >= 12) {

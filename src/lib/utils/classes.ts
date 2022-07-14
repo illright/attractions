@@ -6,7 +6,7 @@ const consecutiveSpace = / {2,}/;
  * @returns Clean class string
  */
 export function stripClassWhitespace(classString: string) {
-  return classString.replace(consecutiveSpace, ' ').trimRight();
+  return classString.replace(consecutiveSpace, ' ').trimEnd();
 }
 
 /**
