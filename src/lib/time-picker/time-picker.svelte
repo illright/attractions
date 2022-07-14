@@ -213,7 +213,9 @@
                 hour +
                   12 *
                     Number(
-                      (f12hours && currentAmPm === 'PM') !== (value === 12)
+                      f12hours &&
+                        ((currentAmPm === 'PM' && hour !== 12) ||
+                          (currentAmPm === 'AM' && hour === 12))
                     )
               )}
             selected={matchesCurrentHour(hour, value)}

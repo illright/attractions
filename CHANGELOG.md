@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Improved typings for some components and utils ([#334](https://github.com/illright/attractions/pull/334)).
 - Required props will now be marked as such in the component typings.
+- Stabilized AM/PM indicator in the `TimePicker`. Previously, clicking on `12` multiple times in AM/PM mode would switch between AM and PM.
 
 ## [3.7.0] – 2021-12-30
 
