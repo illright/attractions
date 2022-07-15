@@ -99,7 +99,7 @@
       $$restProps.type === 'number'
         ? toNumber(event.currentTarget.value)
         : event.currentTarget.value;
-    dispatch('input', { value: value!, nativeEvent: event });
+    dispatch('input', { value, nativeEvent: event });
   }
 
   const dispatch = createEventDispatcher<{

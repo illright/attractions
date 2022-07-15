@@ -93,7 +93,8 @@
   }
 
   function loadMoreOptions(click: CustomEvent<{ nativeEvent: MouseEvent }>) {
-    promises.push(optionGenerator!.next());
+    if (optionGenerator == null) return;
+    promises.push(optionGenerator.next());
     promises = promises;
 
     if (click != null) {

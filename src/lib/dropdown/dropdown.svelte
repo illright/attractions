@@ -25,7 +25,7 @@
     VerticalAlignment.AUTO_BOTTOM;
 
   const isDropdownOpen = getContext<Writable<boolean>>(isDropdownOpenKey);
-  const getDropdownShellBoundary = getContext<() => DOMRect | null>(
+  const getDropdownShellBoundary = getContext<() => DOMRect>(
     getDropdownShellBoundaryKey
   );
 
@@ -80,12 +80,12 @@
 
       isVerticalAlignTop = getIsVerticalAlignTop(
         dropdownBound,
-        dropdownShellBound!
+        dropdownShellBound
       );
 
       isHorizontalAlignEnd = getIsHorizontalAlignEnd(
         dropdownBound,
-        dropdownShellBound!
+        dropdownShellBound
       );
     }
   }

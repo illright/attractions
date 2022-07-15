@@ -3,7 +3,7 @@
   import { Card } from '$lib';
   import type { SvelteComponentTyped } from 'svelte';
 
-  export let icon: typeof SvelteComponentTyped<{ size?: string }, any, any>;
+  export let icon: typeof SvelteComponentTyped<{ size?: string }>;
   export let title: string;
   export let subtitle: string;
   export let href: string;

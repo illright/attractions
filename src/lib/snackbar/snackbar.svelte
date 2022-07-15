@@ -32,16 +32,20 @@
    * Passed internally by the `SnackbarContainer` when using the `showSnackbar` function.
    */
   export let closeCallback: () => void;
+
+  // Until `$$Generic` is supported by svelte2tsx - https://github.com/sveltejs/rfcs/pull/38
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type T = any;
   /**
    * The transition to use to animate the in and out of the snackbar.
    */
   export let transition: (
-    ...args: any[]
+    ...args: T[]
   ) => import('svelte/transition').TransitionConfig = fly;
   /**
    * The options to use with the given transition.
    */
-  export let transitionOptions: any = { x: -20, duration: 150 };
+  export let transitionOptions: T = { x: -20, duration: 150 };
 </script>
 
 <div
