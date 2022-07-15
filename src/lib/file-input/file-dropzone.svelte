@@ -53,11 +53,20 @@
   let inputElement: HTMLInputElement;
 
   function checkTypesEarly(e: DragEvent) {
-    wrongType = [...e.dataTransfer.items].some(file => !accepted(accept, file));
+    if (e.dataTransfer == null) {
+      wrongType = false;
+      return;
+    }
+    wrongType = [...e.dataTransfer.items]
+      .map(item => item.getAsFile())
+      .some(file => file == null || !accepted(accept, file));
   }
 
-  async function acceptUpload(e: Event) {
-    const incomingFiles = Array.from((e.dataTransfer || e.target).files);
+  async function acceptUpload(ev: Event) {
+    const e = ev as InputEvent & { currentTarget: HTMLInputElement };
+    const incomingFiles: File[] = Array.from(
+      (e.dataTransfer || e.currentTarget)?.files ?? []
+    );
     await Promise.all(
       incomingFiles.map(async file => {
         try {
