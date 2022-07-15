@@ -14,18 +14,22 @@
    */
   export let contentClass: string | false | null = null;
 
+  // Until `$$Generic` is supported by svelte2tsx - https://github.com/sveltejs/rfcs/pull/38
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  type T = any;
   /**
    * The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information.
    */
-  export let value: string;
+  export let value: T;
   /**
    * The name assigned to the `<input type="radio">`'s [name attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname).
    */
   export let name: string | null = null;
   /**
    * The `value` of the currently selected tab. Use with `bind:group`.
+   * Must have the same type as the `value` prop.
    */
-  export let group: string | null = null;
+  export let group: T | null = null;
   /**
    * Disallows selecting this tab.
    */
@@ -36,7 +40,7 @@
   export let noRipple = false;
 
   const dispatch = createEventDispatcher<{
-    change: { value: string; nativeEvent: Event };
+    change: { value: T; nativeEvent: Event };
     click: { nativeEvent: MouseEvent };
   }>();
 </script>

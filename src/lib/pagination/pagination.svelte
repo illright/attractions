@@ -26,11 +26,12 @@
   let leftInputActive = false;
   let rightInputActive = false;
 
+  type EmptyObj = Record<string, never>;
   const leftEllipsisKey = {};
   const rightEllipsisKey = {};
 
   function generateButtonList(pageCount: number, current = 1) {
-    const list: number[] = [];
+    const list: Array<number | EmptyObj> = [];
     if (current !== 1) {
       list.push(1);
     }
@@ -139,7 +140,7 @@
             ...
           </Button>
         {/if}
-      {:else}
+      {:else if typeof buttonValue === 'number'}
         <Button
           neutral={buttonValue !== currentPage}
           class={classes('page', buttonValue === currentPage && 'current')}

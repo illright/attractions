@@ -9,18 +9,25 @@
    *   expired: Promise<boolean>,
    * } }}
    */
-  import { setContext, type SvelteComponentTyped } from 'svelte';
+  import { setContext } from 'svelte';
   import Snackbar from './snackbar.svelte';
   import snackbarContextKey from './snackbar-context-key.js';
   import SnackbarPositions from './snackbar-positions.js';
+
+  interface Key {
+    component: typeof Snackbar;
+    props: Snackbar['$$prop_def'];
+    resolveExpiredPromise?: (flag: boolean) => void;
+    timeoutID?: number;
+  }
 
   /**
    * The position of the snackbar stack inside the container.
    */
   export let position = SnackbarPositions.BOTTOM_LEFT;
-  let registeredSnackbars = new Set();
+  let registeredSnackbars = new Set<Key>();
 
-  function removeSnackbar(key, closedEarly) {
+  function removeSnackbar(key: Key, closedEarly: boolean) {
     registeredSnackbars.delete(key);
     if (typeof key.resolveExpiredPromise === 'function') {
       key.resolveExpiredPromise(!closedEarly);
@@ -31,9 +38,9 @@
   /**
    * Show the snackbar with the given options
    */
-  export function showSnackbar<Props extends Record<string, any>>(options: {
-    component: typeof SvelteComponentTyped<Props>;
-    props: Props;
+  export function showSnackbar(options: {
+    component: Key['component'];
+    props: Key['props'];
     duration: number;
   }): {
     close: () => void;
@@ -41,11 +48,11 @@
   } {
     const {
       component = Snackbar,
-      props = {} as Record<string, any>,
+      props = {} as Key['props'],
       duration = 4000,
     } = options;
 
-    const key = { component, props };
+    const key: Key = { component, props };
     const originalCloseCallback = props.closeCallback;
     key.props.closeCallback = function close() {
       clearTimeout(key.timeoutID);
@@ -54,7 +61,7 @@
         originalCloseCallback();
       }
     };
-    key.timeoutID = setTimeout(removeSnackbar, duration, key, false);
+    key.timeoutID = window.setTimeout(removeSnackbar, duration, key, false);
     registeredSnackbars.add(key);
     registeredSnackbars = registeredSnackbars;
 

@@ -2,9 +2,9 @@ const numberRegex = /\d+/g;
 const formatSpecifierRegex = /%[HMSpPdmyY%]/g;
 const daysInWeek = 7;
 
-type MonthNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 11;
-type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6;
-type Week = [string, string, string, string, string, string, string];
+export type MonthNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
+export type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type Week = [string, string, string, string, string, string, string];
 export type Day = {
   value: Date;
   outside: boolean;

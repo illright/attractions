@@ -10,7 +10,9 @@
   import type { Option } from './autocomplete-option.svelte';
   import Button from '../button/button.svelte';
   import Chip from '../chip/chip.svelte';
-  import AutocompleteField from './autocomplete-field.svelte';
+  import AutocompleteField, {
+    type OptionsGetter,
+  } from './autocomplete-field.svelte';
   import X from '../dialog/x.svelte';
   import Loading from '../loading/loading.svelte';
   import MoreHorizontal from './more-horizontal.svelte';
@@ -21,6 +23,12 @@
   let _class: string | false | null = null;
   export { _class as class };
 
+  /**
+   * An async generator of suggestions.
+   * Receives the input from the text field and is expected to yield promises that resolve to arrays of `Option` objects.
+   * Gets passed as the `getOptions` prop of the underlying `AutocompleteField`.
+   */
+  export let getOptions: OptionsGetter;
   /**
    * The current selection as an array of `Option` objects.
    * Can be used to set the selection programmatically.
@@ -70,6 +78,7 @@
     {minSearchLength}
     {maxOptions}
     {disabled}
+    {getOptions}
     {...$$restProps}
     on:change
   >

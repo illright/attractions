@@ -67,7 +67,7 @@
   /**
    * The current value of the text field. Converted to a number if `type="number"`.
    */
-  export let value: string | number | null = null;
+  export let value: string | number = '';
   /**
    * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action.
    */
@@ -78,7 +78,7 @@
 
   function toNumber(string: string) {
     if (string === '') {
-      return null;
+      return NaN;
     }
     return parseFloat(string);
   }

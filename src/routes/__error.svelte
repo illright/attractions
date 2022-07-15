@@ -3,7 +3,7 @@
   import { dev } from '$app/env';
 
   $: status = $page.status;
-  $: error = $page.error;
+  $: error = $page.error as Error;
 </script>
 
 <svelte:head>

@@ -191,12 +191,15 @@
     <div class="handle">
       <TextField
         placeholder={readableFormat}
-        value={formatDateTime(value, format)}
+        value={formatDateTime(value, format) ?? undefined}
         on:focus={() => (focus = true)}
         class={classes(focus && 'in-focus')}
         {inputClass}
         on:change={({ detail }) => {
-          value = applyTime(parseDateTime(detail.value, format, value), value);
+          value = applyTime(
+            parseDateTime(detail.value.toString(), format, value),
+            value
+          );
         }}
       />
     </div>
@@ -230,7 +233,7 @@
                           (currentAmPm === 'AM' && hour === 12))
                     )
               )}
-            selected={matchesCurrentHour(hour, value)}
+            selected={value != null && matchesCurrentHour(hour, value)}
           >
             {hour.toString().padStart(2, '0')}
           </Button>

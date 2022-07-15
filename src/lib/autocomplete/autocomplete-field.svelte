@@ -1,3 +1,9 @@
+<script lang="ts" context="module">
+  export type OptionsGetter = (
+    q: string
+  ) => AsyncGenerator<Option[], void, void>;
+</script>
+
 <script lang="ts">
   import { createEventDispatcher, SvelteComponentTyped } from 'svelte';
   import type { Option } from './autocomplete-option.svelte';
@@ -13,8 +19,6 @@
 
   let _class: string | false | null = null;
   export { _class as class };
-
-  type OptionsGetter = (q: string) => AsyncGenerator<Option[], void, void>;
 
   /**
    * An async generator of suggestions.

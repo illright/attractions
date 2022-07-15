@@ -8,6 +8,8 @@
     datesLessEqual,
     getCalendar,
     type Day,
+    type MonthNumber,
+    type Weekday,
   } from '../utils/datetime-utils.js';
 
   /**
@@ -33,12 +35,12 @@
    * 0 is for Sunday and 6 is for Saturday.
    * Defaults to 1 (Monday).
    */
-  export let firstWeekday: 0 | 1 | 2 | 3 | 4 | 5 | 6 = 1; // 1 corresponds to Monday
+  export let firstWeekday: Weekday = 1; // 1 corresponds to Monday
   /**
    * An index of the desired month.
    * 0 is for January, 11 is for December.
    */
-  export let month: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
+  export let month: MonthNumber;
   /**
    * The desired year.
    */

@@ -106,12 +106,15 @@
     new Date();
 
   function unpackValue(value: Date | DateRange | null) {
-    startValue = copyDate(range ? value && value.start : value);
-    endValue = copyDate(range ? value && value.end : null);
+    startValue = copyDate(
+      range ? value && (value as DateRange).start : (value as Date | null)
+    );
+    endValue = copyDate(range ? value && (value as DateRange).end : null);
   }
 
-  function clearFocus({ detail: open }: CustomEvent<{ value: boolean }>) {
-    if (!open.value) {
+  function clearFocus(e?: CustomEvent<{ value: boolean }>) {
+    const open = e?.detail;
+    if (!open?.value) {
       startFocus = false;
       endFocus = false;
     }
@@ -216,7 +219,7 @@
     <div class="handle">
       <TextField
         placeholder={readableFormat}
-        value={formatDateTime(startValue, format)}
+        value={formatDateTime(startValue, format) || undefined}
         on:focus={() => {
           startFocus = true;
           endFocus = false;
@@ -225,7 +228,7 @@
         {inputClass}
         on:change={({ detail }) => {
           startValue = applyDate(
-            parseDateTime(detail.value, format, startValue),
+            parseDateTime(detail.value.toString(), format, startValue),
             startValue
           );
           fixRange();
@@ -236,7 +239,7 @@
         <slot name="between-inputs"><span>to</span></slot>
         <TextField
           placeholder={readableFormat}
-          value={formatDateTime(endValue, format)}
+          value={formatDateTime(endValue, format) || undefined}
           on:focus={() => {
             startFocus = false;
             endFocus = true;
@@ -245,7 +248,7 @@
           {inputClass}
           on:change={({ detail }) => {
             endValue = applyDate(
-              parseDateTime(detail.value, format, endValue),
+              parseDateTime(detail.value.toString(), format, endValue),
               endValue
             );
             fixRange();
@@ -265,7 +268,9 @@
           : HorizontalAlignment.AUTO_START}
       >
         <div class="shown-on-focus">
-          <Button noRipple on:click={clearFocus}>close the date picker</Button>
+          <Button noRipple on:click={() => clearFocus()}>
+            close the date picker
+          </Button>
         </div>
         <div class="month-header">
           <Button round small on:click={showPrevMonth} title="Previous month">

@@ -131,7 +131,7 @@
   }
 
   function moveHandle(index: number, nextValue: number) {
-    if (nextValue === value[index]) {
+    if (Array.isArray(value) && nextValue === value[index]) {
       return;
     }
     const next: [number] | [number, number] = [...internalValue];
@@ -142,11 +142,9 @@
         if (handleIndex === index) {
           return;
         }
-        const direction = handle < value[index] ? '<-' : '->';
-        const willCrossOver =
-          direction === '<-'
-            ? handle => handle >= nextValue
-            : handle => handle <= nextValue;
+        const direction = handle < internalValue[index] ? '<-' : '->';
+        const willCrossOver = (handle: number) =>
+          direction === '<-' ? handle >= nextValue : handle <= nextValue;
         if (rangeBehavior === 'push' && willCrossOver(handle)) {
           if (direction === '<-') {
             next[handleIndex] = next[index] - 1;

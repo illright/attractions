@@ -6,9 +6,9 @@ type Options = {
   disabled: boolean;
   bg: string | null;
 };
+
 /**
  * Create a ripple action
- * @returns {{ destroy: () => void; update: (options?: Options) => void }}
  */
 export default function ripple(
   node: HTMLElement,
@@ -125,7 +125,7 @@ export default function ripple(
 
       // Timeout set to get a smooth removal of the ripple
       setTimeout(() => {
-        rippleContainer.parentNode!.removeChild(rippleContainer);
+        rippleContainer.parentNode?.removeChild(rippleContainer);
       }, transition + 250);
 
       // After removing event set position to target to it's original one
@@ -133,7 +133,9 @@ export default function ripple(
       setTimeout(() => {
         let clearPosition = true;
         for (let i = 0; i < target.childNodes.length; i++) {
-          if (target.childNodes[i].className === 'ripple-container') {
+          const node = target.childNodes[i];
+          if (node.nodeType !== Node.ELEMENT_NODE) continue;
+          if ((node as Element).className === 'ripple-container') {
             clearPosition = false;
           }
         }

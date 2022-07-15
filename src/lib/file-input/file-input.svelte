@@ -22,7 +22,7 @@
   /**
    * The user's selection. If `multiple` is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`.
    */
-  export let value: File | FileList | null = multiple ? [] : null;
+  export let value: File | FileList | null = null;
   /**
    * Whether the input should accept files.
    */
@@ -39,14 +39,14 @@
     }
   }
 
-  function clearSelection(e) {
-    value = multiple ? [] : null;
+  function clearSelection(e: CustomEvent<{ nativeEvent: MouseEvent }>) {
+    value = null;
     input.value = '';
     dispatch('change', { value, nativeEvent: e });
   }
 
   const dispatch = createEventDispatcher<{
-    change: { value: File | FileList; nativeEvent: Event };
+    change: { value: File | FileList | null; nativeEvent: Event };
   }>();
 </script>
 
@@ -69,7 +69,7 @@
       {/if}
     </slot>
   </label>
-  {#if value != null && value.length !== 0}
+  {#if value != null && (value instanceof window.File || value.length !== 0)}
     <Button danger on:click={clearSelection}>clear selection</Button>
   {/if}
 </span>
