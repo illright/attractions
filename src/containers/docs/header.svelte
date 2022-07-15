@@ -54,7 +54,7 @@
 
       </Dropdown>
     </DropdownShell> -->
-    <Button round href="https://github.com/illright/attractions">
+    <Button noPrefetch round href="https://github.com/illright/attractions">
       <GithubIcon size="24" />
     </Button>
   </div>
