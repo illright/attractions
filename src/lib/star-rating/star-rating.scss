@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '$lib/_variables' as vars;
-@use '$lib/_mixins';
+@use '../_variables' as vars;
+@use '../_mixins';
 
 $hover-color: color.mix(#fff, vars.$main, 60%);
 $selected-color: color.mix(#fff, vars.$main, 20%);

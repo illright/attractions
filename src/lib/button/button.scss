@@ -1,8 +1,8 @@
 @use 'sass:color';
 @use 'sass:math';
 @use './_mixins';
-@use '$lib/_appearances';
-@use '$lib/_variables' as vars;
+@use '../_appearances';
+@use '../_variables' as vars;
 
 .btn {
   @include appearances.button;

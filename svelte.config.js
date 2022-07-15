@@ -31,7 +31,6 @@ const config = {
         // For some reason, these aliases work only inside SCSS content
         //  but not with `<style src="$css/...">`, without printing errors
         importer: scssAliases({
-          $lib: './src/lib',
           $css: './src/css',
         }),
       },

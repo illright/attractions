@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '$lib/_variables' as vars;
-@use '$lib/_appearances';
+@use '../_variables' as vars;
+@use '../_appearances';
 @use './_slot-styles';
 
 .autocomplete {

@@ -1,6 +1,6 @@
 @use 'sass:color';
-@use '$lib/_variables' as vars;
-@use '$lib/_mixins';
+@use '../_variables' as vars;
+@use '../_mixins';
 
 .file-dropzone {
   border: 0.125em dashed currentColor;

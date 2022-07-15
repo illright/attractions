@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '$lib/_variables' as vars;
+@use '../_variables' as vars;
 
 .snackbar {
   align-items: center;

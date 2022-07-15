@@ -1,4 +1,4 @@
-@use '$lib/_variables' as vars;
+@use '../_variables' as vars;
 
 h1 {
   color: vars.$main;
