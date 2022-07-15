@@ -2,6 +2,7 @@
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
   import { Tab, DropdownShell, Dropdown, Button } from '$lib';
+  import { HorizontalAlignment } from '$lib/dropdown';
   import { ChevronDownIcon } from 'svelte-feather-icons';
   import type { Place } from './place';
 
@@ -47,7 +48,7 @@
       </Tab>
     {/each}
   </nav>
-  <Dropdown right>
+  <Dropdown horizontalAlignment={HorizontalAlignment.AUTO_END}>
     {#if currentPlace != null && currentPlace.sub != null}
       {#each currentPlace.sub as entry (entry.segment)}
         <Button href="{base}/docs/{entry.segment}" on:click={toggle}>

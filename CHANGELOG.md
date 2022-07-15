@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 - Required props will now be marked as such in the component typings.
 - Stabilized AM/PM indicator in the `TimePicker`. Previously, clicking on `12` multiple times in AM/PM mode would switch between AM and PM.
 
+### Removed
+
+- **\[BREAKING\]**: The `top` and `right` props of the `Dropdown` component were deprecated in v[3.6.0] and removed in this release
+
 ## [3.7.0] – 2021-12-30
 
 ### Added

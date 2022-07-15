@@ -5,6 +5,10 @@
   import Label from '../typography/label.svelte';
   import TextField from '../text-field/text-field.svelte';
   import Dropdown from '../dropdown/dropdown.svelte';
+  import {
+    HorizontalAlignment,
+    VerticalAlignment,
+  } from '../dropdown/dropdown-alignment';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Tab from '../tab/tab.svelte';
   import Clock from './clock.svelte';
@@ -196,7 +200,15 @@
         }}
       />
     </div>
-    <Dropdown class="barrel" {top} {right}>
+    <Dropdown
+      class="barrel"
+      verticalAlignment={top
+        ? VerticalAlignment.AUTO_TOP
+        : VerticalAlignment.AUTO_BOTTOM}
+      horizontalAlignment={right
+        ? HorizontalAlignment.AUTO_END
+        : HorizontalAlignment.AUTO_START}
+    >
       <div class="shown-on-focus">
         <Button noRipple on:click={() => (focus = false)}>
           close the time picker

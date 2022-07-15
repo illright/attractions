@@ -8,6 +8,10 @@
   import Button from '../button/button.svelte';
   import TextField from '../text-field/text-field.svelte';
   import Dropdown from '../dropdown/dropdown.svelte';
+  import {
+    HorizontalAlignment,
+    VerticalAlignment,
+  } from '../dropdown/dropdown-alignment';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import ChevronLeft from './chevron-left.svelte';
   import ChevronRight from './chevron-right.svelte';
@@ -182,8 +186,9 @@
     value = range
       ? { start: copyDate(start), end: copyDate(end) }
       : copyDate(start);
+    if (value == null) return;
     if (!range || (start != null && end != null)) {
-      dispatch('change', { value: value! });
+      dispatch('change', { value });
     }
   }
 
@@ -252,8 +257,12 @@
     {#if !noCalendar}
       <Dropdown
         class="calendar"
-        verticalAlignment="auto-{top ? 'top' : 'bottom'}"
-        horizontalAlignment="auto-{right ? 'right' : 'left'}"
+        verticalAlignment={top
+          ? VerticalAlignment.AUTO_TOP
+          : VerticalAlignment.AUTO_BOTTOM}
+        horizontalAlignment={right
+          ? HorizontalAlignment.AUTO_END
+          : HorizontalAlignment.AUTO_START}
       >
         <div class="shown-on-focus">
           <Button noRipple on:click={clearFocus}>close the date picker</Button>
