@@ -7,6 +7,9 @@ node_modules
 .env.*
 !.env.example
 
+# ESLint Svelte plugin doesn't support preprocessors, so it shows parsing errors on SVX files
+*.svx
+
 # Configuration files in the root dir
 /*.js
 
