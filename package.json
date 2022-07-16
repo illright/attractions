@@ -40,6 +40,7 @@
     "prettier-plugin-svelte": "^2.7.0",
     "remark-heading-id": "^1.0.0",
     "sass": "^1.53.0",
+    "stylelint": "^14.9.1",
     "svelte": "^3.44.0",
     "svelte-check": "^2.7.1",
     "svelte-feather-icons": "^4.0.0",
