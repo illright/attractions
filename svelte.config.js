@@ -64,8 +64,10 @@ const config = {
       '#root': './',
     },
   },
-  experimental: {
-    prebundleSvelteLibraries: true,
+  vitePlugin: {
+    experimental: {
+      prebundleSvelteLibraries: true,
+    },
   },
 };
 
