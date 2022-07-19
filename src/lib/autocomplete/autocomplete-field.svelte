@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-  import { createEventDispatcher, SvelteComponentTyped } from 'svelte';
+  import { createEventDispatcher, type ComponentType } from 'svelte';
   import type { Option } from './autocomplete-option.svelte';
   import DropdownShell from '../dropdown/dropdown-shell.svelte';
   import Dropdown from '../dropdown/dropdown.svelte';
@@ -47,11 +47,8 @@
    * Receives two props: `option` – the `Option` object ({ name, details }) and `query` – the current query.
    * Expected to dispatch click events on selection.
    */
-  export let optionComponent: typeof SvelteComponentTyped<
-    { option: Option; query?: string | null | undefined },
-    { click: Event },
-    Record<string, unknown>
-  > = AutocompleteOption;
+  export let optionComponent: ComponentType<AutocompleteOption> =
+    AutocompleteOption;
   /**
    * Whether to disable the field.
    */

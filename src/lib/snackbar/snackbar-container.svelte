@@ -9,14 +9,14 @@
    *   expired: Promise<boolean>,
    * } }}
    */
-  import { setContext } from 'svelte';
+  import { setContext, type ComponentProps, type ComponentType } from 'svelte';
   import Snackbar from './snackbar.svelte';
   import snackbarContextKey from './snackbar-context-key.js';
   import SnackbarPositions from './snackbar-positions.js';
 
   interface Key {
-    component: typeof Snackbar;
-    props: Snackbar['$$prop_def'];
+    component: ComponentType<Snackbar>;
+    props: ComponentProps<Snackbar>;
     resolveExpiredPromise?: (flag: boolean) => void;
     timeoutID?: number;
   }

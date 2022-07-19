@@ -5,7 +5,7 @@
   import Paperclip from './paperclip.svelte';
   import Plus from './plus.svelte';
   import FileTile from './file-tile.svelte';
-  import { createEventDispatcher, SvelteComponentTyped } from 'svelte';
+  import { createEventDispatcher, type ComponentType } from 'svelte';
   import classes from '../utils/classes.js';
   import ripple from '../utils/ripple.js';
   import accepted from '../utils/accepted-file-type.js';
@@ -23,10 +23,7 @@
    * Receives a single prop: `file`, the [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
    * Expected to dispatch `delete` events to delete this file from the selection with the `file` prop as the detail.
    */
-  export let fileComponent: typeof SvelteComponentTyped<
-    { file: File },
-    { delete: CustomEvent<File> }
-  > = FileTile;
+  export let fileComponent: ComponentType<FileTile> = FileTile;
   /**
    * Limits the allowed files to particular types. For guidelines on the value of the attribute, consult the [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept).
    */
