@@ -15,7 +15,11 @@
     <header>
       <img src="{base}/logo-no-bg.svg" alt="Attractions logo" />
       <H1>Attractions</H1>
-      <a href="{base}/docs/changelog" class="hide-on-tb-more" sapper:prefetch>
+      <a
+        href="{base}/docs/changelog"
+        class="hide-on-tb-more"
+        sveltekit:prefetch
+      >
         v{process.latest_version}
       </a>
     </header>
@@ -51,7 +55,7 @@
     <p>
       {process.license}
       licensed &nbsp;•&nbsp;
-      <a href="{base}/docs/changelog" sapper:prefetch>
+      <a href="{base}/docs/changelog" sveltekit:prefetch>
         v{process.latest_version}
       </a>
     </p>

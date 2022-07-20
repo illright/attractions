@@ -20,7 +20,6 @@ name: Installation
 
   const Framework = {
     svelte: 'Svelte',
-    sapper: 'Sapper',
     other: 'Other'
   };
 
@@ -184,7 +183,7 @@ pnpm add --save-dev attractions svelte-preprocess sass postcss
     {#if yourFramework === Framework.svelte}
       ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-rollup-plugin-svelte)):
     {:else}
-      ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-sapper)):
+      ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-svelte-config)):
     {/if}
   {:else}
     ([as shown here](https://github.com/sveltejs/svelte-preprocess/blob/main/docs/usage.md#with-svelte-loader)):
