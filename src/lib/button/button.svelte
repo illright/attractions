@@ -90,7 +90,6 @@
   <a
     href={disabled ? null : href}
     rel={noPrefetch ? null : 'prefetch'}
-    sapper:prefetch={noPrefetch ? null : true}
     sveltekit:prefetch={noPrefetch ? null : true}
     disabled={disabled ? true : null}
     class={classes('btn', _class)}
