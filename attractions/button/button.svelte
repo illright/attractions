@@ -125,7 +125,7 @@
 {:else}
   <button
     type="button"
-    {disabled}
+    aria-disabled={disabled}
     class={classes('btn', _class)}
     class:filled
     class:outline
