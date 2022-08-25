@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "package": "svelte-kit package",
+    "package": "svelte-package",
     "preview": "vite preview",
     "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -27,8 +27,9 @@
     "prepublishOnly": "node --unhandled-rejections=strict check-version.js"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.37",
-    "@sveltejs/kit": "1.0.0-next.405",
+    "@sveltejs/adapter-static": "1.0.0-next.39",
+    "@sveltejs/kit": "1.0.0-next.437",
+    "@sveltejs/package": "1.0.0-next.1",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "eslint": "^8.22.0",
