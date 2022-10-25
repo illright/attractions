@@ -107,6 +107,7 @@
   }>();
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <label
   class={classes('file-dropzone', _class)}
   class:has-content={files && files.length !== 0}

@@ -25,6 +25,7 @@
 </script>
 
 {#if !noClickaway}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class:open
     on:click|self={close}

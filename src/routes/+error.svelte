@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
 
   $: status = $page.status;
   $: error = $page.error as Error;

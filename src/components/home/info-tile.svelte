@@ -9,6 +9,7 @@
   export let href: string;
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="info-tile" on:click={() => goto(href)}>
   <Card>
     <div class="icon">

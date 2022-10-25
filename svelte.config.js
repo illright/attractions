@@ -50,9 +50,6 @@ const config = {
   ],
   kit: {
     adapter: adapter(),
-    prerender: {
-      default: true,
-    },
     paths: {
       base: BASE_PATH ?? (dev ? '' : '/attractions'),
     },
@@ -65,9 +62,7 @@ const config = {
     },
   },
   vitePlugin: {
-    experimental: {
-      prebundleSvelteLibraries: true,
-    },
+    prebundleSvelteLibraries: true,
   },
 };
 
