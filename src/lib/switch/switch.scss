@@ -46,10 +46,10 @@
   }
 
   input:checked ~ .track {
-    border-color: vars.$main;
+    border-color: var(--a-main);
 
     > .thumb {
-      background-color: vars.$main;
+      background-color: var(--a-main);
       transform: translateY(-50%) translateX(100%);
     }
   }
@@ -83,7 +83,7 @@
   }
 
   input:focus:checked ~ .track::before {
-    background: color.adjust(vars.$main, $alpha: -0.9);
+    background: rgba(var(--a-main), 0.1);
   }
 }
 
@@ -93,6 +93,6 @@
   }
 
   input:checked:not(:disabled) ~ .track::before {
-    background: color.adjust(vars.$main, $alpha: -0.95);
+    background: rgba(var(--a-main), 0.05);
   }
 }

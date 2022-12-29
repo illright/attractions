@@ -23,16 +23,16 @@ button {
   }
 
   &:hover {
-    background: color.adjust(vars.$main, $alpha: -0.95);
+    background: rgba(var(--a-main), 0.05);
   }
 
   &:focus {
-    background: color.adjust(vars.$main, $alpha: -0.925);
+    background: rgba(var(--a-main), 0.075);
   }
 
   mark {
     background: none;
-    color: vars.$main;
+    color: var(--a-main);
     font-weight: vars.$bold-font-weight;
   }
 }

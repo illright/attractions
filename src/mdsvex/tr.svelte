@@ -10,7 +10,7 @@
 
   tr {
     &:nth-child(even) {
-      background: color.adjust(vars.$main, $alpha: -0.97);
+      background: rgba(var(--a-main), 0.03);
     }
 
     &:first-child :global {

@@ -211,7 +211,7 @@
     }
 
     :global .required {
-      color: vars.$main;
+      color: var(--a-main);
       font-size: 0.9em;
     }
 
@@ -227,10 +227,10 @@
 
     :global mark {
       background: none;
-      color: vars.$main;
+      color: var(--a-main);
 
       code {
-        color: vars.$main;
+        color: var(--a-main);
       }
     }
   }

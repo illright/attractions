@@ -1,7 +1,7 @@
 @use '../_variables' as vars;
 
 .dot {
-  background: vars.$main;
+  background: var(--a-main);
   border-radius: 50%;
   height: 0.625em;
   width: 0.625em;

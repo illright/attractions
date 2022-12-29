@@ -13,7 +13,7 @@
   user-select: none;
 
   :global .ripple {
-    background: color.adjust(vars.$main, $alpha: -0.9);
+    background: rgba(var(--a-main), 0.1);
   }
 
   &.outline {
@@ -50,20 +50,20 @@ input:focus + .chip {
 }
 
 input:checked + .chip {
-  background: color.adjust(vars.$main, $alpha: -0.88);
-  color: vars.$main;
+  background: rgba(var(--a-main), 0.12);
+  color: var(--a-main);
 
   &.outline {
-    background: color.adjust(vars.$main, $alpha: -0.94);
-    border-color: vars.$main;
-    color: vars.$main;
+    background: rgba(var(--a-main), 0.06);
+    border-color: var(--a-main);
+    color: var(--a-main);
   }
 }
 
 input:focus:checked + .chip {
-  background-color: color.adjust(vars.$main, $alpha: -0.75);
+  background-color: rgba(var(--a-main), 0.25);
 
   &.outline {
-    background-color: color.adjust(vars.$main, $alpha: -0.88);
+    background-color: rgba(var(--a-main), 0.12);
   }
 }

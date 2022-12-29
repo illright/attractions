@@ -19,7 +19,7 @@
   $border-radius: 0.5em;
 
   .showcase {
-    border: 1px solid color.adjust(vars.$main, $alpha: -0.75);
+    border: 1px solid rgba(var(--a-main), 0.25);
     border-radius: $border-radius;
     display: grid;
     grid-template-columns: auto;
@@ -36,7 +36,7 @@
       }
 
       > [slot='showcase'] {
-        border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
+        border: 0 solid rgba(var(--a-main), 0.25);
         border-bottom-width: 1px;
         overflow-x: auto;
 
@@ -50,7 +50,7 @@
       }
 
       > .copyable {
-        border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
+        border: 0 solid rgba(var(--a-main), 0.25);
         border-radius: $border-radius;
         overflow-x: auto;
 

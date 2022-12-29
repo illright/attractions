@@ -52,7 +52,7 @@
     display: none;
 
     @media only screen and (min-width: 1024px) {
-      border-right: 1px solid color.adjust(vars.$main, $alpha: -0.75);
+      border-right: 1px solid rgba(var(--a-main), 0.25);
       display: block;
       margin-right: 3em;
       min-width: 13em;

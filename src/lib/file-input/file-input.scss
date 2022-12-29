@@ -34,11 +34,11 @@ label {
   }
 
   &:hover {
-    background: color.adjust(vars.$main, $alpha: -0.95);
+    background: rgba(var(--a-main), 0.05);
   }
 
   &:focus-within {
-    background-color: color.adjust(vars.$main, $alpha: -0.88);
+    background-color: rgba(var(--a-main), 0.12);
   }
 
   &.disabled {

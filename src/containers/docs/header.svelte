@@ -68,7 +68,7 @@
 
   header {
     align-items: center;
-    border-bottom: 1px solid color.adjust(vars.$main, $alpha: -0.75);
+    border-bottom: 1px solid rgba(var(--a-main), 0.25);
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5em;

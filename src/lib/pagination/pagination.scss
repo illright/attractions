@@ -27,14 +27,14 @@
     }
 
     > .page.current {
-      background: color.adjust(vars.$main, $alpha: -0.95);
+      background: rgba(var(--a-main), 0.05);
 
       &:hover {
-        background: color.adjust(vars.$main, $alpha: -0.9);
+        background: rgba(var(--a-main), 0.1);
       }
 
       &:focus {
-        background: color.adjust(vars.$main, $alpha: -0.85);
+        background: rgba(var(--a-main), 0.15);
       }
     }
 

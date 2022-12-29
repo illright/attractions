@@ -41,7 +41,7 @@
 
     .icon {
       align-self: center;
-      background: vars.$main;
+      background: var(--a-main);
       border-radius: 50%;
       color: #fff;
       grid-row: span 2;
@@ -53,7 +53,7 @@
     }
 
     .subtitle {
-      color: vars.$main;
+      color: var(--a-main);
       font-size: 0.9em;
       font-weight: vars.$thin-font-weight;
     }

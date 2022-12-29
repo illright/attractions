@@ -384,7 +384,7 @@ picker.$on('change', (e) => {
 @use '$css/attractions-theme' as vars;
 
 .toolchain {
-  background: color.adjust(vars.$main, $alpha: -0.97);
+  background: rgba(var(--a-main), 0.03);
   border-radius: 1em;
   display: grid;
   gap: 0.35em;
@@ -414,6 +414,6 @@ picker.$on('change', (e) => {
 }
 
 strong {
-  color: vars.$main;
+  color: var(--a-main);
 }
 </style>

@@ -47,7 +47,7 @@ $side-padding: 1rem;
     }
 
     &.today > :global .btn {
-      color: vars.$main;
+      color: var(--a-main);
     }
 
     &.selected > :global .btn {
@@ -80,7 +80,7 @@ $side-padding: 1rem;
     }
 
     &.in-range::before {
-      background-color: color.adjust(vars.$main, $alpha: -0.75);
+      background-color: rgba(var(--a-main), 0.25);
       content: '';
       height: $day-size;
       left: 0;

@@ -51,8 +51,8 @@ input:disabled + .selector {
 }
 
 input:checked + .selector {
-  background-color: vars.$main;
-  border-color: vars.$main;
+  background-color: var(--a-main);
+  border-color: var(--a-main);
 
   &::before {
     background-color: vars.$main-text;
@@ -70,7 +70,7 @@ input:disabled:checked + .selector {
   }
 
   :not(:focus):not(:disabled):checked + .selector::after {
-    background-color: color.adjust(vars.$main, $alpha: -0.95);
+    background-color: rgba(var(--a-main), 0.05);
   }
 
   :disabled + .selector::after {
@@ -83,5 +83,5 @@ input:focus + .selector::after {
 }
 
 input:focus:checked + .selector::after {
-  background-color: color.adjust(vars.$main, $alpha: -0.875);
+  background-color: rgba(var(--a-main), 0.125);
 }
