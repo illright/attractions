@@ -27,9 +27,9 @@
     "prepublishOnly": "node --unhandled-rejections=strict check-version.js"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.46",
-    "@sveltejs/kit": "1.0.0-next.525",
-    "@sveltejs/package": "1.0.0-next.5",
+    "@sveltejs/adapter-static": "1.0.0",
+    "@sveltejs/kit": "1.0.1",
+    "@sveltejs/package": "1.0.1",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",
@@ -47,13 +47,13 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^29.0.0",
     "svelte": "^3.55.0",
-    "svelte-check": "^2.10.3",
+    "svelte-check": "^3.0.1",
     "svelte-feather-icons": "^4.0.0",
-    "svelte-preprocess": "^4.10.7",
-    "svelte2tsx": "^0.5.23",
+    "svelte-preprocess": "^5.0.0",
+    "svelte2tsx": "^0.6.0",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4",
-    "vite": "^3.2.5"
+    "vite": "^4.0.3"
   },
   "type": "module"
 }

@@ -53,7 +53,6 @@ const config = {
     paths: {
       base: BASE_PATH ?? (dev ? '' : '/attractions'),
     },
-    trailingSlash: 'always',
     alias: {
       $mdsvex: './src/mdsvex',
       $components: './src/components',

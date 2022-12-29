@@ -59,10 +59,6 @@
    * Turns the button into a link (prefetch-enabled for SvelteKit).
    */
   export let href: string | null = null;
-  /**
-   * Disables SvelteKit prefetching for link buttons (those with an href prop).
-   */
-  export let noPrefetch = false;
 
   /**
    * List of handlers for the [Events](https://illright.github.io/attractions/docs/utilities) action.
@@ -89,8 +85,6 @@
 {#if href}
   <a
     href={disabled ? null : href}
-    rel={noPrefetch ? null : 'prefetch'}
-    sveltekit:prefetch={noPrefetch ? null : true}
     disabled={disabled ? true : null}
     class={classes('btn', _class)}
     class:filled

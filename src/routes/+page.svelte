@@ -18,7 +18,7 @@
       <a
         href="{base}/docs/changelog"
         class="hide-on-tb-more"
-        sveltekit:prefetch
+        data-sveltekit-preload-data
       >
         v{process.latest_version}
       </a>
@@ -55,7 +55,7 @@
     <p>
       {process.license}
       licensed &nbsp;•&nbsp;
-      <a href="{base}/docs/changelog" sveltekit:prefetch>
+      <a href="{base}/docs/changelog" data-sveltekit-preload-data>
         v{process.latest_version}
       </a>
     </p>

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ## [Unreleased]
 
+### Removed
+
+- `noPrefetch` prop for buttons. Use `data-sveltekit-preload-data` and `rel="prefetch"` instead if needed.
+
 ### Added
 
 - Slots and props for various components to better support localization (Thanks to [@Bluzzi](https://github.com/Bluzzi) for [#345](https://github.com/illright/attractions/pull/345)).
