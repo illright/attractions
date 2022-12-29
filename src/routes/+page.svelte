@@ -70,12 +70,12 @@
   $mobile-top-padding: 2.4em;
 
   main {
-    background: rgba(var(--a-main), 0.07);
+    background: hsla(var(--a-main-hsl), 0.07);
     padding: $mobile-top-padding 0.5em;
 
     mark {
       background: none;
-      color: hsl(var(--a-main));
+      color: var(--a-main);
     }
 
     > :global .card {
@@ -116,7 +116,7 @@
     }
 
     .strip {
-      background: hsl(var(--a-main));
+      background: var(--a-main);
       height: 3.6em;
       left: 0;
       position: absolute;

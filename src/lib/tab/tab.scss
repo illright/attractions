@@ -11,7 +11,7 @@
   }
 
   :global .ripple {
-    background: rgba(var(--a-main), 0.1);
+    background: hsla(var(--a-main-hsl), 0.1);
   }
 
   > .content {
@@ -20,7 +20,7 @@
     border-bottom-width: 0.125em;
     border-top-left-radius: 0.3125em;
     border-top-right-radius: 0.3125em;
-    color: hsl(var(--a-main));
+    color: var(--a-main);
     cursor: pointer;
     display: flex;
     font-family: vars.$font;
@@ -42,6 +42,6 @@
   }
 
   > input:checked + .content {
-    border-color: rgba(var(--a-main), 0.6);
+    border-color: hsla(var(--a-main-hsl), 0.6);
   }
 }

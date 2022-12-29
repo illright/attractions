@@ -23,16 +23,16 @@ button {
   }
 
   &:hover {
-    background: rgba(var(--a-main), 0.05);
+    background: hsla(var(--a-main-hsl), 0.05);
   }
 
   &:focus {
-    background: rgba(var(--a-main), 0.075);
+    background: hsla(var(--a-main-hsl), 0.075);
   }
 
   mark {
     background: none;
-    color: hsl(var(--a-main));
+    color: var(--a-main);
     font-weight: vars.$bold-font-weight;
   }
 }

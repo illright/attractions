@@ -52,7 +52,7 @@
     display: none;
 
     @media only screen and (min-width: 1024px) {
-      border-right: 1px solid rgba(var(--a-main), 0.25);
+      border-right: 1px solid hsla(var(--a-main-hsl), 0.25);
       display: block;
       margin-right: 3em;
       min-width: 13em;

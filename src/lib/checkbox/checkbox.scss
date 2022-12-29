@@ -58,8 +58,8 @@
   }
 
   :checked + .selector {
-    background-color: hsl(var(--a-main));
-    border-color: hsl(var(--a-main));
+    background-color: var(--a-main);
+    border-color: var(--a-main);
 
     &::before {
       border-bottom-width: 0.125em;
@@ -80,7 +80,7 @@
     }
 
     :checked + ::after {
-      background-color: rgba(var(--a-main), 0.05);
+      background-color: hsla(var(--a-main-hsl), 0.05);
     }
 
     :disabled + .selector::after {
@@ -93,6 +93,6 @@
   }
 
   :focus:checked + ::after {
-    background-color: rgba(var(--a-main), 0.125);
+    background-color: hsla(var(--a-main-hsl), 0.125);
   }
 }

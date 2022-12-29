@@ -26,7 +26,7 @@
   @use '$css/attractions-theme' as vars;
 
   .related-components {
-    background: rgba(var(--a-main), 0.03);
+    background: hsla(var(--a-main-hsl), 0.03);
     border-radius: 1em;
     display: flex;
     flex-wrap: wrap;

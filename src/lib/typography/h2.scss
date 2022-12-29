@@ -1,7 +1,7 @@
 @use '../_variables' as vars;
 
 h2 {
-  color: hsl(var(--a-main));
+  color: var(--a-main);
   font-size: 1.3em;
   font-weight: vars.$bold-font-weight;
   margin: 0 0 0.4em;

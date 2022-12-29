@@ -8,7 +8,7 @@
   position: relative;
 
   .title {
-    color: hsl(var(--a-main));
+    color: var(--a-main);
     display: flex;
     font-size: 1.2em;
     font-weight: vars.$bold-font-weight;

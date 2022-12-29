@@ -63,7 +63,7 @@
   }
 
   &.outline {
-    border: 1px solid hsl(var(--a-main));
+    border: 1px solid var(--a-main);
 
     &.danger {
       border-color: rgb(var(--a-danger));
@@ -107,7 +107,7 @@
   }
 
   &.selected:not(.filled) {
-    background: rgba(var(--a-main), 0.12);
+    background: hsla(var(--a-main-hsl), 0.12);
   }
 }
 

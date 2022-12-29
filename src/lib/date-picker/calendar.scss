@@ -47,7 +47,7 @@ $side-padding: 1rem;
     }
 
     &.today > :global .btn {
-      color: hsl(var(--a-main));
+      color: var(--a-main);
     }
 
     &.selected > :global .btn {
@@ -80,7 +80,7 @@ $side-padding: 1rem;
     }
 
     &.in-range::before {
-      background-color: rgba(var(--a-main), 0.25);
+      background-color: hsla(var(--a-main-hsl), 0.25);
       content: '';
       height: $day-size;
       left: 0;

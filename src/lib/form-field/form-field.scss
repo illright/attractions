@@ -14,7 +14,7 @@
       margin-bottom: 0.2em;
 
       .required {
-        color: hsl(var(--a-main));
+        color: var(--a-main);
       }
     }
 
@@ -30,7 +30,7 @@
       margin: 0.3em 0.5em;
 
       &.info {
-        color: hsl(var(--a-main));
+        color: var(--a-main);
       }
 
       &.error {

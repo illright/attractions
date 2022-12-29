@@ -81,11 +81,11 @@
     }
 
     > input:focus + :global .item {
-      color: hsl(var(--a-main));
-      stroke: hsl(var(--a-main));
+      color: var(--a-main);
+      stroke: var(--a-main);
 
       :global svg {
-        stroke: hsl(var(--a-main));
+        stroke: var(--a-main);
       }
     }
 
@@ -143,7 +143,7 @@
       }
 
       > input:focus ~ :global .item {
-        color: hsl(var(--a-main));
+        color: var(--a-main);
       }
     }
 
@@ -162,10 +162,10 @@
       }
 
       &:focus {
-        border-color: hsl(var(--a-main));
+        border-color: var(--a-main);
 
         + label {
-          color: hsl(var(--a-main));
+          color: var(--a-main);
         }
       }
 
@@ -187,7 +187,7 @@
     }
 
     input:focus ~ :global svg.item {
-      stroke: hsl(var(--a-main));
+      stroke: var(--a-main);
     }
   }
 

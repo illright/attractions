@@ -13,7 +13,7 @@
   user-select: none;
 
   :global .ripple {
-    background: rgba(var(--a-main), 0.1);
+    background: hsla(var(--a-main-hsl), 0.1);
   }
 
   &.outline {
@@ -50,20 +50,20 @@ input:focus + .chip {
 }
 
 input:checked + .chip {
-  background: rgba(var(--a-main), 0.12);
-  color: hsl(var(--a-main));
+  background: hsla(var(--a-main-hsl), 0.12);
+  color: var(--a-main);
 
   &.outline {
-    background: rgba(var(--a-main), 0.06);
-    border-color: hsl(var(--a-main));
-    color: hsl(var(--a-main));
+    background: hsla(var(--a-main-hsl), 0.06);
+    border-color: var(--a-main);
+    color: var(--a-main);
   }
 }
 
 input:focus:checked + .chip {
-  background-color: rgba(var(--a-main), 0.25);
+  background-color: hsla(var(--a-main-hsl), 0.25);
 
   &.outline {
-    background-color: rgba(var(--a-main), 0.12);
+    background-color: hsla(var(--a-main-hsl), 0.12);
   }
 }

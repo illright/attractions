@@ -211,7 +211,7 @@
     }
 
     :global .required {
-      color: hsl(var(--a-main));
+      color: var(--a-main);
       font-size: 0.9em;
     }
 
@@ -227,10 +227,10 @@
 
     :global mark {
       background: none;
-      color: hsl(var(--a-main));
+      color: var(--a-main);
 
       code {
-        color: hsl(var(--a-main));
+        color: var(--a-main);
       }
     }
   }

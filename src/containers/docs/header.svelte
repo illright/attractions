@@ -68,7 +68,7 @@
 
   header {
     align-items: center;
-    border-bottom: 1px solid rgba(var(--a-main), 0.25);
+    border-bottom: 1px solid hsla(var(--a-main-hsl), 0.25);
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5em;

@@ -32,7 +32,7 @@ $side-padding: 1rem;
 
   .month-header {
     align-items: center;
-    color: hsl(var(--a-main));
+    color: var(--a-main);
     display: flex;
     font-weight: vars.$bold-font-weight;
     justify-content: space-between;

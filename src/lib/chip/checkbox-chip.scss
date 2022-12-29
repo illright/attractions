@@ -6,7 +6,7 @@
   transition: padding-left 50ms;
 
   &::before {
-    border: 0 solid hsl(var(--a-main));
+    border: 0 solid var(--a-main);
     content: '';
     height: 0.5625em;
     left: 0.9em;
