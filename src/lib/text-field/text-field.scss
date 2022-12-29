@@ -154,10 +154,10 @@
       padding: 0 1.4em;
 
       &:hover {
-        border-color: color.adjust(#000, $alpha: -0.3);
+        border-color: rgba(0, 0, 0, 0.7);
 
         + label {
-          color: color.adjust(#000, $alpha: -0.3);
+          color: rgba(0, 0, 0, 0.7);
         }
       }
 

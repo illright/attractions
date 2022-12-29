@@ -79,7 +79,7 @@
   }
 
   input:focus ~ .track::before {
-    background: color.adjust(#000, $alpha: -0.9);
+    background: rgba(0, 0, 0, 0.1);
   }
 
   input:focus:checked ~ .track::before {
@@ -89,7 +89,7 @@
 
 .switch:hover {
   .track::before {
-    background: color.adjust(#000, $alpha: -0.9);
+    background: rgba(0, 0, 0, 0.1);
   }
 
   input:checked:not(:disabled) ~ .track::before {
