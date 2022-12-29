@@ -57,24 +57,24 @@
     }
 
     &[disabled] {
-      background: vars.$disabled-bg;
+      background: var(--a-disabled-bg);
       box-shadow: none;
     }
   }
 
   &.outline {
-    border: 1px solid var(--a-main);
+    border: 1px solid rgb(var(--a-main));
 
     &.danger {
-      border-color: vars.$danger;
+      border-color: rgb(var(--a-danger));
     }
 
     &.neutral {
-      border-color: vars.$dark;
+      border-color: rgb(var(--a-dark));;
     }
 
     &[disabled] {
-      border-color: vars.$disabled-bg;
+      border-color: var(--a-disabled-bg);
     }
   }
 

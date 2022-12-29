@@ -8,7 +8,7 @@
   position: relative;
 
   .title {
-    color: var(--a-main);
+    color: rgb(var(--a-main));
     display: flex;
     font-size: 1.2em;
     font-weight: vars.$bold-font-weight;
@@ -35,7 +35,7 @@
   }
 
   &.danger .title {
-    color: vars.$danger;
+    color: rgb(var(--a-danger));
   }
 
   .content {

@@ -4,7 +4,7 @@
   background: #fff;
   border-radius: vars.$file-tile-radius;
   box-shadow: vars.$shadow-1;
-  color: vars.$dark;
+  color: rgb(var(--a-dark));
   display: grid;
   font-size: 0.9em;
   gap: 0.2em;

@@ -5,7 +5,7 @@
 .file-dropzone {
   border: 0.125em dashed currentColor;
   border-radius: vars.$dropzone-radius;
-  color: var(--a-main);
+  color: rgb(var(--a-main));
   display: block;
   margin: 2em 0 0.5em;
   position: relative;
@@ -101,7 +101,7 @@
   }
 
   &.wrong-type {
-    color: vars.$danger;
+    color: rgb(var(--a-danger));
 
     .dropzone-layer {
       &:hover {

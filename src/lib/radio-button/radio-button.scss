@@ -51,11 +51,11 @@ input:disabled + .selector {
 }
 
 input:checked + .selector {
-  background-color: var(--a-main);
-  border-color: var(--a-main);
+  background-color: rgb(var(--a-main));
+  border-color: rgb(var(--a-main));
 
   &::before {
-    background-color: vars.$main-text;
+    background-color: var(--a-main-text);
   }
 }
 
@@ -66,7 +66,7 @@ input:disabled:checked + .selector {
 
 .radio:hover {
   :not(:focus):not(:disabled) + .selector::after {
-    background-color: color.adjust(vars.$dark, $alpha: -0.95);
+    background-color: rgba(var(--a-dark), 0.05);
   }
 
   :not(:focus):not(:disabled):checked + .selector::after {
@@ -79,7 +79,7 @@ input:disabled:checked + .selector {
 }
 
 input:focus + .selector::after {
-  background-color: color.adjust(vars.$dark, $alpha: -0.875);
+  background-color: rgba(var(--a-dark), );
 }
 
 input:focus:checked + .selector::after {

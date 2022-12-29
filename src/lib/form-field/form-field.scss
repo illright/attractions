@@ -14,7 +14,7 @@
       margin-bottom: 0.2em;
 
       .required {
-        color: var(--a-main);
+        color: rgb(var(--a-main));
       }
     }
 
@@ -30,11 +30,11 @@
       margin: 0.3em 0.5em;
 
       &.info {
-        color: var(--a-main);
+        color: rgb(var(--a-main));
       }
 
       &.error {
-        color: vars.$danger;
+        color: rgb(var(--a-danger));
       }
     }
   }

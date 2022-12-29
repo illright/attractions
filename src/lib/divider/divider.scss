@@ -11,7 +11,7 @@ hr {
     position: relative;
 
     &::after {
-      background: vars.$background;
+      background: var(--a-background);
       content: attr(data-text);
       font-size: 0.85rem;
       left: 50%;

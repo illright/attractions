@@ -1,7 +1,7 @@
 @use '../_variables' as vars;
 
 .dot {
-  background: var(--a-main);
+  background: rgb(var(--a-main));
   border-radius: 50%;
   height: 0.625em;
   width: 0.625em;
@@ -19,7 +19,7 @@
   }
 
   &.danger {
-    background: vars.$danger;
+    background: rgb(var(--a-danger));
   }
 
   &.small {

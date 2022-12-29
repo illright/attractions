@@ -3,7 +3,7 @@
 
 .handle {
   backface-visibility: hidden;
-  background: var(--a-main);
+  background: rgb(var(--a-main));
   border-radius: 50%;
   display: block;
   height: vars.$slider-handle-size;
@@ -32,7 +32,7 @@
   }
 
   &-active {
-    background: var(--a-main);
+    background: rgb(var(--a-main));
   }
 
   &-disabled,

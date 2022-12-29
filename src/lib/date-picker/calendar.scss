@@ -36,7 +36,7 @@ $side-padding: 1rem;
     }
 
     > :global .btn {
-      color: vars.$dark;
+      color: rgb(var(--a-dark));
       font-size: 0.9em;
       font-weight: vars.$regular-font-weight;
       height: $day-size;
@@ -47,7 +47,7 @@ $side-padding: 1rem;
     }
 
     &.today > :global .btn {
-      color: var(--a-main);
+      color: rgb(var(--a-main));
     }
 
     &.selected > :global .btn {
@@ -56,7 +56,7 @@ $side-padding: 1rem;
         $lightness: 15%,
         $saturation: -20%
       );
-      color: vars.$main-text;
+      color: var(--a-main-text);
     }
 
     &.outside > :global .btn {
@@ -64,11 +64,11 @@ $side-padding: 1rem;
     }
 
     &.disabled > :global .btn {
-      color: vars.$danger;
+      color: rgb(var(--a-danger));
       position: relative;
 
       &::before {
-        background: vars.$danger;
+        background: rgb(var(--a-danger));
         content: '';
         height: 1px;
         left: 50%;
@@ -91,7 +91,7 @@ $side-padding: 1rem;
     }
 
     &.outside.selected > :global .btn {
-      color: vars.$main-text;
+      color: var(--a-main-text);
     }
 
     &.start {

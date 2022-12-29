@@ -1,7 +1,7 @@
 @use '../_variables' as vars;
 
 .label {
-  color: var(--a-main);
+  color: rgb(var(--a-main));
   font-size: 0.8em;
   font-weight: vars.$bold-font-weight;
   text-transform: uppercase;

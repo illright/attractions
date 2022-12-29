@@ -2,7 +2,7 @@
 @use '../_variables' as vars;
 
 .card {
-  background-color: vars.$background;
+  background-color: var(--a-background);
   border-radius: vars.$card-radius;
   box-shadow: vars.$shadow-0;
   overflow: hidden;

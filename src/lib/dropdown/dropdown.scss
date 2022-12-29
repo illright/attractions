@@ -1,7 +1,7 @@
 @use '../_variables' as vars;
 
 .dropdown {
-  background: vars.$background;
+  background: var(--a-background);
   border-radius: vars.$card-radius;
   box-shadow: vars.$shadow-raised;
   margin-top: 0.3125em;

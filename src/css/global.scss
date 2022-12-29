@@ -31,7 +31,7 @@
   }
 
   a {
-    color: var(--a-main);
+    color: rgb(var(--a-main));
 
     &:visited {
       color: vars.$link-visited;

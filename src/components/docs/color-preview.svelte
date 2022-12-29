@@ -25,7 +25,7 @@
       width: 1.5em;
 
       &.bordered {
-        border-color: var(--a-main);
+        border-color: rgb(var(--a-main));
       }
     }
   }

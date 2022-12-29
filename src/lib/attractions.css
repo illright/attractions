@@ -1,3 +1,9 @@
 :root {
+  /* General */
   --a-main: 68, 0, 179;
+  --a-background: #fff;
+  --a-main-text: #fff;
+  --a-danger: 184, 0, 0;
+  --a-dark: 51, 51, 51;
+  --a-disabled-bg: #d7d7d7;
 }

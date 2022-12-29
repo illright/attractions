@@ -23,7 +23,7 @@
 
   .preview {
     align-items: center;
-    background: vars.$background;
+    background: var(--a-background);
     border-radius: 0.25em;
     display: flex;
     font-size: 0.8em;
@@ -34,10 +34,10 @@
   }
 
   .value-popover {
-    background: vars.$background;
+    background: var(--a-background);
     border-radius: 0.5em;
     box-shadow: vars.$shadow-raised;
-    color: vars.$dark;
+    color: rgb(var(--a-dark));
     font-family: 'Roboto Mono', monospace;
     margin-right: 0.25em;
     padding: 0.5em;

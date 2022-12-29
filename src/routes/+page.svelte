@@ -75,7 +75,7 @@
 
     mark {
       background: none;
-      color: var(--a-main);
+      color: rgb(var(--a-main));
     }
 
     > :global .card {
@@ -116,7 +116,7 @@
     }
 
     .strip {
-      background: var(--a-main);
+      background: rgb(var(--a-main));
       height: 3.6em;
       left: 0;
       position: absolute;
