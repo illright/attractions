@@ -58,8 +58,8 @@
   }
 
   :checked + .selector {
-    background-color: rgb(var(--a-main));
-    border-color: rgb(var(--a-main));
+    background-color: hsl(var(--a-main));
+    border-color: hsl(var(--a-main));
 
     &::before {
       border-bottom-width: 0.125em;

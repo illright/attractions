@@ -5,7 +5,7 @@
 .file-dropzone {
   border: 0.125em dashed currentColor;
   border-radius: vars.$dropzone-radius;
-  color: rgb(var(--a-main));
+  color: hsl(var(--a-main));
   display: block;
   margin: 2em 0 0.5em;
   position: relative;

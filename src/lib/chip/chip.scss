@@ -17,7 +17,7 @@
 
   &.outline {
     background: transparent;
-    border: 1px solid rgb(var(--a-main));
+    border: 1px solid hsl(var(--a-main));
   }
 
   &.no-padding {

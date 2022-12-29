@@ -1,6 +1,8 @@
 :root {
   /* General */
-  --a-main: 68, 0, 179;
+  --a-main-hs: 263deg, 100%;
+  --a-main-l: 35%;
+  --a-main: var(--a-main-hs), var(--a-main-l);
   --a-background: #fff;
   --a-main-text: #fff;
   --a-danger: 184, 0, 0;

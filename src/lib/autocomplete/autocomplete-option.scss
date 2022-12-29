@@ -32,7 +32,7 @@ button {
 
   mark {
     background: none;
-    color: rgb(var(--a-main));
+    color: hsl(var(--a-main));
     font-weight: vars.$bold-font-weight;
   }
 }

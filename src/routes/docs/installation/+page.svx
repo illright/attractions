@@ -414,6 +414,6 @@ picker.$on('change', (e) => {
 }
 
 strong {
-  color: rgb(var(--a-main));
+  color: hsl(var(--a-main));
 }
 </style>

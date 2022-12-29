@@ -25,7 +25,7 @@
       width: 1.5em;
 
       &.bordered {
-        border-color: rgb(var(--a-main));
+        border-color: hsl(var(--a-main));
       }
     }
   }

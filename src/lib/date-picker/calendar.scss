@@ -47,7 +47,7 @@ $side-padding: 1rem;
     }
 
     &.today > :global .btn {
-      color: rgb(var(--a-main));
+      color: hsl(var(--a-main));
     }
 
     &.selected > :global .btn {

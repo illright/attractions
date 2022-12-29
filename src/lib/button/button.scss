@@ -63,7 +63,7 @@
   }
 
   &.outline {
-    border: 1px solid rgb(var(--a-main));
+    border: 1px solid hsl(var(--a-main));
 
     &.danger {
       border-color: rgb(var(--a-danger));
