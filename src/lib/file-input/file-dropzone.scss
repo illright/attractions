@@ -101,19 +101,19 @@
   }
 
   &.wrong-type {
-    color: rgb(var(--a-danger));
+    color: var(--a-danger);
 
     .dropzone-layer {
       &:hover {
-        background: color.adjust(vars.$danger, $alpha: -0.975);
+        background: rgba(var(--a-danger-rgb), 0.025);
       }
 
       &.accepting {
-        background: color.adjust(vars.$danger, $alpha: -0.95);
+        background: rgba(var(--a-danger-rgb), 0.05);
       }
 
       :global .ripple {
-        background: color.adjust(vars.$danger, $alpha: -0.9);
+        background: rgba(var(--a-danger-rgb), 0.1);
       }
 
       :global svg.plus {

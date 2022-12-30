@@ -64,11 +64,11 @@ $side-padding: 1rem;
     }
 
     &.disabled > :global .btn {
-      color: rgb(var(--a-danger));
+      color: var(--a-danger);
       position: relative;
 
       &::before {
-        background: rgb(var(--a-danger));
+        background: var(--a-danger);
         content: '';
         height: 1px;
         left: 50%;

@@ -35,7 +35,7 @@
   }
 
   &.danger .title {
-    color: rgb(var(--a-danger));
+    color: var(--a-danger);
   }
 
   .content {

@@ -34,7 +34,7 @@
       }
 
       &.error {
-        color: rgb(var(--a-danger));
+        color: var(--a-danger);
       }
     }
   }
