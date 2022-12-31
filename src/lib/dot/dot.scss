@@ -7,15 +7,15 @@
   width: 0.625em;
 
   &.info {
-    background: vars.$info;
+    background: var(--a-info);
   }
 
   &.attention {
-    background: vars.$attention;
+    background: var(--a-attention);
   }
 
   &.success {
-    background: vars.$success;
+    background: var(--a-success);
   }
 
   &.danger {

@@ -400,7 +400,7 @@ picker.$on('change', (e) => {
 }
 
 .caution {
-  background: color.adjust(vars.$attention, $alpha: -0.93);
+  background: hsla(var(--a-attention-hsl), 0.07);
   border-radius: 1em;
   font-size: 0.9em;
   font-weight: 300;
@@ -408,7 +408,11 @@ picker.$on('change', (e) => {
   padding: 1.5em;
 
   :global .label {
-    color: color.scale(vars.$attention, $lightness: -30%);
+    color: hsl(
+      var(--a-attention-h),
+      var(--a-attention-s),
+      calc(var(--a-attention-l) - 20%)
+    );
     margin-bottom: 0.5em;
   }
 }

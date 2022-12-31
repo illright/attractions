@@ -5,16 +5,25 @@
   --a-main-l: 35%;
   --a-background: #fff;
   --a-main-text: #fff;
-  --a-danger-rgb: 184, 0, 0;
   --a-dark: 51, 51, 51;
   --a-disabled-bg: #d7d7d7;
   --a-disabled-h: 0deg;
   --a-disabled-s: 0%;
   --a-disabled-l: 53%;
 
+  /* Indicators */
+  --a-info: #86d3ff;
+  --a-attention-h: 33deg;
+  --a-attention-s: 100%;
+  --a-attention-l: 67%;
+  --a-success: #9cde70;
+  --a-danger-rgb: 184, 0, 0;
+
   /* For convenience. Not to be overridden by users directly! */
   --a-main-hsl: var(--a-main-h), var(--a-main-s), var(--a-main-l);
   --a-main: hsl(var(--a-main-hsl));
   --a-danger: rgb(var(--a-danger-rgb));
   --a-disabled: hsl(var(--a-disabled-h) var(--a-disabled-s) var(--a-disabled-l));
+  --a-attention-hsl: var(--a-attention-h), var(--a-attention-s), var(--a-attention-l);
+  --a-attention: hsl(var(--a-attention-hsl));
 }
