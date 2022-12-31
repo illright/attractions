@@ -26,7 +26,7 @@
 @mixin text-field-disabled {
   background-color: color.scale(vars.$textfield-bg, $lightness: 15%);
   border-color: rgba(var(--a-dark), 0.3);
-  color: vars.$disabled;
+  color: var(--a-disabled);
 
   &:hover {
     background-color: color.scale(vars.$textfield-bg, $lightness: 15%);

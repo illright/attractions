@@ -80,11 +80,11 @@
 
   &[disabled] {
     background: transparent;
-    color: vars.$disabled;
+    color: var(--a-disabled);
     cursor: default;
 
     :global .icon {
-      stroke: vars.$disabled;
+      stroke: var(--a-disabled);
     }
   }
 

@@ -33,7 +33,7 @@
   }
 
   > input:disabled + .content {
-    color: vars.$disabled;
+    color: var(--a-disabled);
     cursor: not-allowed;
   }
 

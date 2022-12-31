@@ -16,7 +16,7 @@
   }
 
   &.disabled {
-    color: vars.$disabled;
+    color: var(--a-disabled);
   }
 
   input {

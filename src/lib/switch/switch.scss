@@ -55,18 +55,18 @@
   }
 
   input:disabled ~ .track {
-    border-color: vars.$disabled;
+    border-color: var(--a-disabled);
     cursor: not-allowed;
 
     > .thumb {
       background: none;
-      border: 0.125em solid vars.$disabled;
+      border: 0.125em solid var(--a-disabled);
       height: 0.5em;
       position: relative;
       width: 0.5em;
 
       &::before {
-        background: vars.$disabled;
+        background: var(--a-disabled);
         content: '';
         height: 0.125em;
         left: 0;

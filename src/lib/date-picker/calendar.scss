@@ -60,7 +60,7 @@ $side-padding: 1rem;
     }
 
     &.outside > :global .btn {
-      color: vars.$disabled;
+      color: var(--a-disabled);
     }
 
     &.disabled > :global .btn {

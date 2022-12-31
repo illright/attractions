@@ -70,8 +70,12 @@
   }
 
   :disabled:checked + .selector {
-    background-color: vars.$disabled;
-    border-color: color.scale(vars.$disabled, $lightness: 4%);
+    background-color: var(--a-disabled);
+    border-color: hsl(
+      var(--a-disabled-h),
+      var(--a-disabled-s),
+      calc(var(--a-disabled-l) + 2%)
+    );
   }
 
   &:hover {

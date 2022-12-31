@@ -46,7 +46,7 @@ $selected-color: color.mix(#fff, vars.$main, 20%);
 
   input:disabled + label {
     background: none;
-    color: vars.$disabled;
+    color: var(--a-disabled);
     cursor: not-allowed;
   }
 

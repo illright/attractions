@@ -139,7 +139,7 @@
       }
 
       :global svg {
-        stroke: vars.$disabled;
+        stroke: var(--a-disabled);
       }
 
       > input:focus ~ :global .item {

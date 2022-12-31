@@ -38,7 +38,7 @@
   &-disabled,
   &-disabled:hover,
   &-disabled:active {
-    background: vars.$disabled;
+    background: var(--a-disabled);
     box-shadow: none;
     cursor: not-allowed;
   }
