@@ -14,7 +14,7 @@
   }
 
   > .selector {
-    border: 0.125em solid vars.$light-contrast;
+    border: 0.125em solid var(--a-light-contrast);
     border-radius: 50%;
     cursor: pointer;
     height: 1.25em;
@@ -46,7 +46,11 @@
 }
 
 input:disabled + .selector {
-  background-color: color.scale(vars.$light-contrast, $lightness: 45%);
+  background-color: hsl(
+    var(--a-light-contrast-h),
+    var(--a-light-contrast-s),
+    calc(var(--a-light-contrast-l) + 6.5%)
+  );
   cursor: not-allowed;
 }
 

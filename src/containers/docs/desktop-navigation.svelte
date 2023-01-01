@@ -70,7 +70,7 @@
 
         section {
           align-items: flex-start;
-          border-left: 1px solid vars.$light-contrast;
+          border-left: 1px solid var(--a-light-contrast);
           display: flex;
           flex-direction: column;
           margin: 0.5em 0 0.5em 1em;

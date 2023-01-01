@@ -10,6 +10,9 @@
   --a-disabled-h: 0deg;
   --a-disabled-s: 0%;
   --a-disabled-l: 53%;
+  --a-light-contrast-h: 0deg;
+  --a-light-contrast-s: 0%;
+  --a-light-contrast-l: 87%;
 
   /* Indicators */
   --a-info: #86d3ff;
@@ -19,6 +22,9 @@
   --a-success: #9cde70;
   --a-danger-rgb: 184, 0, 0;
 
+  /* Badge */
+  --a-badge-default: #ff5757;
+
   /* For convenience. Not to be overridden by users directly! */
   --a-main-hsl: var(--a-main-h), var(--a-main-s), var(--a-main-l);
   --a-main: hsl(var(--a-main-hsl));
@@ -26,4 +32,5 @@
   --a-disabled: hsl(var(--a-disabled-h) var(--a-disabled-s) var(--a-disabled-l));
   --a-attention-hsl: var(--a-attention-h), var(--a-attention-s), var(--a-attention-l);
   --a-attention: hsl(var(--a-attention-hsl));
+  --a-light-contrast: hsl(var(--a-light-contrast-h) var(--a-light-contrast-s) var(--a-light-contrast-l));
 }

@@ -36,11 +36,15 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: vars.$light-contrast;
+    background: var(--a-light-contrast);
     border-radius: 0.3125em;
 
     &:hover {
-      background: color.scale(vars.$light-contrast, $lightness: -10%);
+      background: hsl(
+        var(--a-light-contrast-h),
+        var(--a-light-contrast-s),
+        calc(var(--a-light-contrast-l) - 9%)
+      );
     }
   }
 }

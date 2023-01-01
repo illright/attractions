@@ -39,7 +39,7 @@
       > .column {
         @include mixins.slim-scrollbar;
 
-        border: 0 solid vars.$light-contrast;
+        border: 0 solid var(--a-light-contrast);
         border-bottom-width: 0.0625em;
         border-top-width: 0.0625em;
         list-style: none;

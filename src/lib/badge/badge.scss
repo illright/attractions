@@ -4,7 +4,7 @@
   position: relative;
 
   &::after {
-    background-color: vars.$badge-default;
+    background-color: var(--a-badge-default);
     border-radius: 50%;
     box-shadow: vars.$shadow-raised;
     content: '';
