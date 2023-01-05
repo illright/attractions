@@ -30,6 +30,8 @@
     }
   }
 
+  @include appearances.text-field-overlay;
+
   input:disabled,
   textarea:disabled {
     @include appearances.text-field-disabled;
@@ -184,6 +186,10 @@
           stroke: rgba(var(--a-danger-rgb), 0.7);
         }
       }
+    }
+
+    &::before {
+      display: none;
     }
 
     input:focus ~ :global svg.item {

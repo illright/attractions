@@ -5,6 +5,7 @@
 
 .autocomplete {
   @include appearances.text-field;
+  @include appearances.text-field-overlay;
 
   align-items: center;
   display: flex;
