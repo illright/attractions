@@ -41,34 +41,40 @@ Comes in three flavours: filled, outline and flat.
     <Button color="danger" size="medium" variant="outlined">text</Button>
     <Button color="danger" size="small" variant="flat">text</Button>
 
-    <Button filled>
+    <Button variant="filled">
       <BxGridSmall width="24" height="24" />
       icons
     </Button>
-    <Button selected>selected</Button>
     <Button shape="square" color="neutral"><BxX width="24" height="24" /></Button>
   </div>
   <div slot="source">
 
 ```svelte
-<Button variant="filled">text</Button>
-<Button variant="outlined">text</Button>
-<Button>text</Button>
+<Button variant="filled" size="large">Log in</Button>
+<Button variant="filled" size="medium">Log in</Button>
+<Button variant="filled" size="small">Log in</Button>
 
-<Button disabled variant="filled">text</Button>
-<Button disabled variant="outlined">text</Button>
-<Button disabled>text</Button>
+<Button variant="outlined" size="large">Log in</Button>
+<Button variant="outlined" size="medium">Log in</Button>
+<Button variant="outlined" size="small">Log in</Button>
 
-<Button danger variant="filled">text</Button>
-<Button danger variant="outlined">text</Button>
-<Button danger noRipple>text</Button>
+<Button variant="flat" size="large">Log in</Button>
+<Button variant="flat" size="medium">Log in</Button>
+<Button variant="flat" size="small">Log in</Button>
+
+<Button disabled variant="filled">Submit</Button>
+<Button disabled="focusable" variant="outlined">Request</Button>
+<Button disabled variant="flat">Purchase</Button>
+
+<Button color="danger" size="large" variant="filled">Save</Button>
+<Button color="danger" size="medium" variant="outlined">text</Button>
+<Button color="danger" size="small" variant="flat">text</Button>
 
 <Button variant="filled">
-  <CheckIcon size="20" class="mr" />
+  <BxGridSmall width="24" height="24" />
   icons
 </Button>
-<Button selected>selected</Button>
-<Button round neutral><XIcon size="20" /></Button>
+<Button shape="square" color="neutral"><BxX width="24" height="24" /></Button>
 ```
 
   </div>
@@ -151,14 +157,14 @@ The content of the Button. Icons, other components, everything is fair game here
   gap: 0.5em;
   grid-auto-flow: column;
   grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(3, 3em);
+  grid-template-rows: repeat(5, 3em);
   justify-items: start;
   padding: 1em;
 
   @media only screen and (min-width: 920px) {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(4, 3em);
+    grid-template-rows: repeat(6, 3em);
   }
 }
 </style>

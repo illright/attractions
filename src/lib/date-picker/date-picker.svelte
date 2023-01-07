@@ -268,12 +268,15 @@
           : HorizontalAlignment.AUTO_START}
       >
         <div class="shown-on-focus">
-          <Button noRipple on:click={() => clearFocus()}>
-            close the date picker
-          </Button>
+          <Button on:click={() => clearFocus()}>close the date picker</Button>
         </div>
         <div class="month-header">
-          <Button round small on:click={showPrevMonth} title="Previous month">
+          <Button
+            shape="square"
+            size="small"
+            on:click={showPrevMonth}
+            title="Previous month"
+          >
             <slot name="chevron-left">
               <ChevronLeft />
             </slot>
@@ -281,7 +284,12 @@
           <div class="month-display">
             {headerFormatter.format(shownCalendar)}
           </div>
-          <Button round small on:click={showNextMonth} title="Next month">
+          <Button
+            shape="square"
+            size="small"
+            on:click={showNextMonth}
+            title="Next month"
+          >
             <slot name="chevron-right">
               <ChevronRight />
             </slot>

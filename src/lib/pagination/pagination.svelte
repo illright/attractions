@@ -121,7 +121,9 @@
             on:keydown={navigateOnEnter}
           />
         {:else}
-          <Button class="page" neutral on:click={activateLeftInput}>...</Button>
+          <Button class="page" color="neutral" on:click={activateLeftInput}
+            >...</Button
+          >
         {/if}
       {:else if buttonValue === rightEllipsisKey}
         {#if rightInputActive}
@@ -136,13 +138,13 @@
             on:keydown={navigateOnEnter}
           />
         {:else}
-          <Button class="page" neutral on:click={activateRightInput}>
+          <Button class="page" color="neutral" on:click={activateRightInput}>
             ...
           </Button>
         {/if}
       {:else if typeof buttonValue === 'number'}
         <Button
-          neutral={buttonValue !== currentPage}
+          color={buttonValue !== currentPage ? 'neutral' : 'primary'}
           class={classes('page', buttonValue === currentPage && 'current')}
           on:click={() => goTo(buttonValue)}
         >

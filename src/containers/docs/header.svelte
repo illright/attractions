@@ -34,7 +34,7 @@
     >
       <div slot="item" let:item>
         {#if item.href === '/docs'}
-          <Button href="{base}/docs" round small>
+          <Button href="{base}/docs" shape="square" size="small">
             <HomeIcon size="20" />
           </Button>
         {:else}
@@ -54,7 +54,11 @@
 
       </Dropdown>
     </DropdownShell> -->
-    <Button noPrefetch round href="https://github.com/illright/attractions">
+    <Button
+      data-sveltekit-preload-data="off"
+      shape="square"
+      href="https://github.com/illright/attractions"
+    >
       <GithubIcon size="24" />
     </Button>
   </div>

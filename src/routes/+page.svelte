@@ -33,7 +33,7 @@
         docs
       </Button>
       <Button
-        noPrefetch
+        data-sveltekit-preload-data="off"
         variant="outlined"
         class="ml"
         href="https://github.com/illright/attractions"

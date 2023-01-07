@@ -20,7 +20,11 @@
     •
     {formatFileType(file.name)}
   </div>
-  <Button danger round on:click={() => dispatch('delete', file)}>
+  <Button
+    color="danger"
+    shape="square"
+    on:click={() => dispatch('delete', file)}
+  >
     <Trash2 />
   </Button>
 </div>

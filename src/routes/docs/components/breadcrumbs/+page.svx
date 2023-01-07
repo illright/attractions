@@ -28,7 +28,7 @@ Breadcrumbs are used to indicate the current page's location in the navigation h
     <Breadcrumbs {items}>
       <div slot="item" let:item>
         {#if item.href === `${base}/`}
-          <Button href="{base}/" round small>
+          <Button href="{base}/" shape="square" size="small">
             <HomeIcon size="20" />
           </Button>
         {:else}
@@ -56,7 +56,7 @@ Breadcrumbs are used to indicate the current page's location in the navigation h
 <Breadcrumbs {items}>
   <div slot="item" let:item>
     {#if item.href === '/'}
-      <Button href="/" round small>
+      <Button href="/" shape="square" size="small">
         <HomeIcon size="20" />
       </Button>
     {:else}

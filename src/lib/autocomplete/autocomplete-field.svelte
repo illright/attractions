@@ -133,7 +133,7 @@
   />
   <Dropdown>
     <div class="shown-on-focus">
-      <Button noRipple on:click={() => (focus = false)}>
+      <Button on:click={() => (focus = false)}>
         <slot name="close-message">close the options</slot>
       </Button>
     </div>

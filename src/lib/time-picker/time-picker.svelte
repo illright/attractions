@@ -213,9 +213,7 @@
         : HorizontalAlignment.AUTO_START}
     >
       <div class="shown-on-focus">
-        <Button noRipple on:click={() => (focus = false)}>
-          close the time picker
-        </Button>
+        <Button on:click={() => (focus = false)}>close the time picker</Button>
       </div>
       <slot name="hours-label">
         <Label>Hours</Label>

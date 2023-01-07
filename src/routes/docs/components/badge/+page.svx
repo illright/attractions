@@ -21,7 +21,7 @@ A distinctive colored circle to bring attention to an element.
 <Showcase>
   <div slot="showcase" class="padded">
     <Badge>used on some text</Badge>
-    <Button round on:click={() => hidden = !hidden}>
+    <Button shape="square" on:click={() => hidden = !hidden}>
       <Badge {hidden}>
         <BellIcon size="20" class="icon" />
       </Badge>
@@ -35,7 +35,7 @@ A distinctive colored circle to bring attention to an element.
 </script>
 
 <Badge>used on some text</Badge>
-<Button round on:click={() => hidden = !hidden}>
+<Button shape="square" on:click={() => hidden = !hidden}>
   <Badge {hidden}>
     <BellIcon size="20" class="icon" />
   </Badge>

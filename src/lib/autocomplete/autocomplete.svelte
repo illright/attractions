@@ -66,7 +66,12 @@
   {#each selection as item}
     <Chip noPadding>
       {item.name}
-      <Button neutral round small on:click={() => deselect(item)}>
+      <Button
+        color="neutral"
+        shape="square"
+        size="small"
+        on:click={() => deselect(item)}
+      >
         <X />
       </Button>
     </Chip>

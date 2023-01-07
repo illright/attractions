@@ -188,7 +188,7 @@
     <slot />
     {#if scrollbarVisible}
       <div class="center">
-        <Button filled on:click={scrollToTop}>
+        <Button variant="filled" on:click={scrollToTop}>
           <ArrowUpIcon size="24" class="mr" />
           scroll to top
         </Button>

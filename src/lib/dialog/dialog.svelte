@@ -36,7 +36,12 @@
   class:constrain-width={constrainWidth}
 >
   {#if closeCallback != null}
-    <Button neutral round class="close" on:click={closeCallback}>
+    <Button
+      color="neutral"
+      shape="square"
+      class="close"
+      on:click={closeCallback}
+    >
       <slot name="close-icon">
         <X />
       </slot>

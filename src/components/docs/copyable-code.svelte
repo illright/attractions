@@ -48,7 +48,7 @@
     </div>
   {/if}
   <slot />
-  <Button small round title="Copy" on:click={copy}>
+  <Button size="small" shape="square" title="Copy" on:click={copy}>
     {#if copied}
       <CheckIcon size="20" />
     {:else}

@@ -22,7 +22,7 @@
     {/if}
     <slot name="item" {item}>
       {#if item.href}
-        <Button href={item.href} class="node" small>{item.text}</Button>
+        <Button href={item.href} class="node" size="small">{item.text}</Button>
       {:else}
         <span class="node">{item.text}</span>
       {/if}

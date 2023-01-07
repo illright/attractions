@@ -70,7 +70,7 @@
     </slot>
   </label>
   {#if value != null && (value instanceof window.File || value.length !== 0)}
-    <Button danger on:click={clearSelection}>clear selection</Button>
+    <Button color="danger" on:click={clearSelection}>clear selection</Button>
   {/if}
 </span>
 
