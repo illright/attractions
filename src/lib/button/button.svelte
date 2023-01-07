@@ -64,20 +64,20 @@
   this={href ? 'a' : 'button'}
   {href}
   on:click={handleClick}
-  disabled={disabled === true}
+  disabled={disabled === true || undefined}
   aria-disabled={disabled === 'focusable' ? 'true' : undefined}
   use:eventsAction={events}
   use:ripple={{
     disabled: Boolean(disabled),
   }}
-  class={classes('button', variant, color, size, shape, _class)}
+  class={classes('btn', variant, color, size, shape, _class)}
   {...$$restProps}
 >
   <slot />
 </svelte:element>
 
 <style lang="scss">
-  .button {
+  .btn {
     border: 0;
     background: none;
     cursor: pointer;
