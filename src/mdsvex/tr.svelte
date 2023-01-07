@@ -10,7 +10,7 @@
 
   tr {
     &:nth-child(even) {
-      background: hsla(var(--a-main-hsl), 0.03);
+      background: hsla(var(--a-primary-hsl), 0.03);
     }
 
     &:first-child :global {

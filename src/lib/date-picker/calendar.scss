@@ -36,7 +36,7 @@ $side-padding: 1rem;
     }
 
     > :global .btn {
-      color: rgb(var(--a-dark));
+      color: var(--a-dark);
       font-size: 0.9em;
       font-weight: vars.$regular-font-weight;
       height: $day-size;
@@ -47,7 +47,7 @@ $side-padding: 1rem;
     }
 
     &.today > :global .btn {
-      color: var(--a-main);
+      color: var(--a-primary);
     }
 
     &.selected > :global .btn {
@@ -56,7 +56,7 @@ $side-padding: 1rem;
         $lightness: 15%,
         $saturation: -20%
       );
-      color: var(--a-main-text);
+      color: var(--a-primary-text);
     }
 
     &.outside > :global .btn {
@@ -80,7 +80,7 @@ $side-padding: 1rem;
     }
 
     &.in-range::before {
-      background-color: hsla(var(--a-main-hsl), 0.25);
+      background-color: hsla(var(--a-primary-hsl), 0.25);
       content: '';
       height: $day-size;
       left: 0;
@@ -91,7 +91,7 @@ $side-padding: 1rem;
     }
 
     &.outside.selected > :global .btn {
-      color: var(--a-main-text);
+      color: var(--a-primary-text);
     }
 
     &.start {

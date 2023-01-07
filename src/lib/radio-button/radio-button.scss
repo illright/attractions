@@ -55,11 +55,11 @@ input:disabled + .selector {
 }
 
 input:checked + .selector {
-  background-color: var(--a-main);
-  border-color: var(--a-main);
+  background-color: var(--a-primary);
+  border-color: var(--a-primary);
 
   &::before {
-    background-color: var(--a-main-text);
+    background-color: var(--a-primary-text);
   }
 }
 
@@ -74,11 +74,11 @@ input:disabled:checked + .selector {
 
 .radio:hover {
   :not(:focus):not(:disabled) + .selector::after {
-    background-color: rgba(var(--a-dark), 0.05);
+    background-color: rgba(var(-rgb), 0.05);
   }
 
   :not(:focus):not(:disabled):checked + .selector::after {
-    background-color: hsla(var(--a-main-hsl), 0.05);
+    background-color: hsla(var(--a-primary-hsl), 0.05);
   }
 
   :disabled + .selector::after {
@@ -87,9 +87,9 @@ input:disabled:checked + .selector {
 }
 
 input:focus + .selector::after {
-  background-color: rgba(var(--a-dark), );
+  background-color: var(--a-dark);
 }
 
 input:focus:checked + .selector::after {
-  background-color: hsla(var(--a-main-hsl), 0.125);
+  background-color: hsla(var(--a-primary-hsl), 0.125);
 }

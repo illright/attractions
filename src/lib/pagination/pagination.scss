@@ -27,14 +27,14 @@
     }
 
     > .page.current {
-      background: hsla(var(--a-main-hsl), 0.05);
+      background: hsla(var(--a-primary-hsl), 0.05);
 
       &:hover {
-        background: hsla(var(--a-main-hsl), 0.1);
+        background: hsla(var(--a-primary-hsl), 0.1);
       }
 
       &:focus {
-        background: hsla(var(--a-main-hsl), 0.15);
+        background: hsla(var(--a-primary-hsl), 0.15);
       }
     }
 

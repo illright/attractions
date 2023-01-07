@@ -5,10 +5,10 @@
 
   mark {
     background: none;
-    color: var(--a-main);
+    color: var(--a-primary);
 
     :global code {
-      color: var(--a-main);
+      color: var(--a-primary);
     }
   }
 </style>

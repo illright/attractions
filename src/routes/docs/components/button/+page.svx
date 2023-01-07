@@ -8,6 +8,8 @@ shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14),
   import { base } from '$app/paths';
   import { Button } from '$lib';
   import { CheckIcon, XIcon } from 'svelte-feather-icons';
+  import BxGridSmall from '~icons/bx/grid-small';
+  import BxX from '~icons/bx/x';
   import Showcase from '$containers/docs/showcase.svelte';
   import ColorPreview from '$components/docs/color-preview.svelte';
   import ShadowPreview from '$components/docs/shadow-preview.svelte';
@@ -21,41 +23,47 @@ Comes in three flavours: filled, outline and flat.
 
 <Showcase>
   <div slot="showcase">
-    <Button filled>button</Button>
-    <Button outline>button</Button>
-    <Button>button</Button>
+    <Button variant="filled" size="large">Log in</Button>
+    <Button variant="filled" size="medium">Log in</Button>
+    <Button variant="filled" size="small">Log in</Button>
+    <Button variant="outlined" size="large">Log in</Button>
+    <Button variant="outlined" size="medium">Log in</Button>
+    <Button variant="outlined" size="small">Log in</Button>
+    <Button variant="flat" size="large">Log in</Button>
+    <Button variant="flat" size="medium">Log in</Button>
+    <Button variant="flat" size="small">Log in</Button>
 
-    <Button disabled filled>button</Button>
-    <Button disabled outline>button</Button>
-    <Button disabled>button</Button>
+    <Button disabled variant="filled">Submit</Button>
+    <Button disabled="focusable" variant="outlined">Request</Button>
+    <Button disabled variant="flat">Purchase</Button>
 
-    <Button danger filled>button</Button>
-    <Button danger outline>button</Button>
-    <Button danger noRipple>button</Button>
+    <Button color="danger" size="large" variant="filled">Save</Button>
+    <Button color="danger" size="medium" variant="outlined">text</Button>
+    <Button color="danger" size="small" variant="flat">text</Button>
 
     <Button filled>
-      <CheckIcon size="20" class="mr" />
+      <BxGridSmall width="24" height="24" />
       icons
     </Button>
     <Button selected>selected</Button>
-    <Button round neutral><XIcon size="20" /></Button>
+    <Button shape="square" color="neutral"><BxX width="24" height="24" /></Button>
   </div>
   <div slot="source">
 
 ```svelte
-<Button filled>button</Button>
-<Button outline>button</Button>
-<Button>button</Button>
+<Button variant="filled">text</Button>
+<Button variant="outlined">text</Button>
+<Button>text</Button>
 
-<Button disabled filled>button</Button>
-<Button disabled outline>button</Button>
-<Button disabled>button</Button>
+<Button disabled variant="filled">text</Button>
+<Button disabled variant="outlined">text</Button>
+<Button disabled>text</Button>
 
-<Button danger filled>button</Button>
-<Button danger outline>button</Button>
-<Button danger noRipple>button</Button>
+<Button danger variant="filled">text</Button>
+<Button danger variant="outlined">text</Button>
+<Button danger noRipple>text</Button>
 
-<Button filled>
+<Button variant="filled">
   <CheckIcon size="20" class="mr" />
   icons
 </Button>

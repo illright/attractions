@@ -1,11 +1,29 @@
 :root {
-  /* General */
-  --a-main-h: 263deg;
-  --a-main-s: 100%;
-  --a-main-l: 35%;
+  /* Palette */
+  /* - Primary */
+  --a-primary-h: 258deg;
+  --a-primary-s: 58%;
+  --a-primary-l: 42%;
+  /* - Secondary */
+  --a-secondary-h: 145deg;
+  --a-secondary-s: 100%;
+  --a-secondary-l: 39%;
+  /* - Background */
   --a-background: #fff;
-  --a-main-text: #fff;
-  --a-dark: 51, 51, 51;
+  /* - On primary */
+  --a-on-primary-rgb: 255, 255, 255;
+  /* - Danger */
+  --a-danger-h: 350deg;
+  --a-danger-s: 58%;
+  --a-danger-l: 42%;
+
+  /* Neutral palette */
+  --a-neutral-h: 258deg;
+  --a-neutral-s: 5%;
+  --a-neutral-l-50: 47%;
+  --a-neutral-l-100: 5%;
+
+  --a-dark-rgb: 51, 51, 51;
   --a-disabled-bg: #d7d7d7;
   --a-disabled-h: 0deg;
   --a-disabled-s: 0%;
@@ -13,6 +31,13 @@
   --a-light-contrast-h: 0deg;
   --a-light-contrast-s: 0%;
   --a-light-contrast-l: 87%;
+
+  --a-font-family: 'Open Sans', sans-serif;
+
+  --a-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.1),
+    0px 1px 3px rgba(0, 0, 0, 0.07);
+  --a-elevation-2: 0px 2px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 
   /* Indicators */
   --a-info: #86d3ff;
@@ -25,12 +50,49 @@
   /* Badge */
   --a-badge-default: #ff5757;
 
+  /* Button */
+  --a-button-radius: 0.5em;
+  --a-button-font-weight: 500;
+
   /* For convenience. Not to be overridden by users directly! */
-  --a-main-hsl: var(--a-main-h), var(--a-main-s), var(--a-main-l);
-  --a-main: hsl(var(--a-main-hsl));
+  --a-primary-hsl: var(--a-primary-h), var(--a-primary-s), var(--a-primary-l);
+  --a-primary: hsl(var(--a-primary-hsl));
+  --a-danger-hsl: var(--a-danger-h), var(--a-danger-s), var(--a-danger-l);
+  --a-danger: hsl(var(--a-danger-hsl));
+  --a-neutral-50-hsl: var(--a-neutral-h), var(--a-neutral-s),
+    var(--a-neutral-l-50);
+  --a-neutral-50: hsl(var(--a-neutral-50-hsl));
+  --a-neutral-100-hsl: var(--a-neutral-h), var(--a-neutral-s),
+    var(--a-neutral-l-100);
+  --a-neutral-100: hsl(var(--a-neutral-100-hsl));
+  --a-secondary-hsl: var(--a-secondary-h), var(--a-secondary-s),
+    var(--a-secondary-l);
+  --a-secondary: hsl(var(--a-secondary-hsl));
+  --a-dark: rgb(var(--a-dark-rgb));
+  --a-on-primary: rgb(var(--a-on-primary-rgb));
   --a-danger: rgb(var(--a-danger-rgb));
-  --a-disabled: hsl(var(--a-disabled-h) var(--a-disabled-s) var(--a-disabled-l));
-  --a-attention-hsl: var(--a-attention-h), var(--a-attention-s), var(--a-attention-l);
+  --a-disabled: hsl(
+    var(--a-disabled-h) var(--a-disabled-s) var(--a-disabled-l)
+  );
+  --a-attention-hsl: var(--a-attention-h), var(--a-attention-s),
+    var(--a-attention-l);
   --a-attention: hsl(var(--a-attention-hsl));
-  --a-light-contrast: hsl(var(--a-light-contrast-h) var(--a-light-contrast-s) var(--a-light-contrast-l));
+  --a-light-contrast: hsl(
+    var(--a-light-contrast-h) var(--a-light-contrast-s)
+      var(--a-light-contrast-l)
+  );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([theme]) {
+    --a-background: black;
+  }
+}
+
+:root[theme='dark'] {
+  --a-background: black;
+}
+
+:root[theme='high-contrast'] {
+  --a-background: black;
 }

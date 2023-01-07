@@ -28,13 +28,13 @@
       <a href="https://svelte.dev">Svelte</a>.
     </p>
     <div class="actions">
-      <Button filled href="{base}/docs">
+      <Button variant="filled" href="{base}/docs">
         <BookOpenIcon size="24" class="mr" />
         docs
       </Button>
       <Button
         noPrefetch
-        outline
+        variant="outlined"
         class="ml"
         href="https://github.com/illright/attractions"
       >
@@ -70,12 +70,12 @@
   $mobile-top-padding: 2.4em;
 
   main {
-    background: hsla(var(--a-main-hsl), 0.07);
+    background: hsla(var(--a-primary-hsl), 0.07);
     padding: $mobile-top-padding 0.5em;
 
     mark {
       background: none;
-      color: var(--a-main);
+      color: var(--a-primary);
     }
 
     > :global .card {
@@ -116,7 +116,7 @@
     }
 
     .strip {
-      background: var(--a-main);
+      background: var(--a-primary);
       height: 3.6em;
       left: 0;
       position: absolute;

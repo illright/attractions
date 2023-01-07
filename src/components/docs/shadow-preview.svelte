@@ -37,7 +37,7 @@
     background: var(--a-background);
     border-radius: 0.5em;
     box-shadow: vars.$shadow-raised;
-    color: rgb(var(--a-dark));
+    color: var(--a-dark);
     font-family: 'Roboto Mono', monospace;
     margin-right: 0.25em;
     padding: 0.5em;

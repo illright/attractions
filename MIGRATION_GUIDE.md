@@ -2,6 +2,21 @@
 
 Here you may find guidance on upgrading Attractions from one major version to another.
 
+## From v3.x to v4.x
+
+**Sass**: all variables were renamed to CSS custom properties equivalents with `--a` prefix (standing for **A**ttractions).
+The following also changed:
+
+- `$main` --> `--a-primary`
+- `$main-text` --> `--a-on-primary`
+-
+
+The following variables need to be specified in HSL:
+
+- `--a-primary`: `--a-primary-h`, `--a-primary-s`, `--a-primary-l`. Do NOT specify `--a-primary` directly.
+
+styles in general have changed.
+
 ## From v2.x to v3.x
 
 The main change in version 3 is the migration to Sass modules.

@@ -16,7 +16,7 @@
     width: 1.25em;
 
     &:hover {
-      background-color: rgba(var(--a-dark), 0.1);
+      background-color: rgba(var(--a-dark-rgb), 0.1);
     }
   }
 
@@ -83,11 +83,11 @@
     }
 
     > input:focus + :global .item {
-      color: var(--a-main);
-      stroke: var(--a-main);
+      color: var(--a-primary);
+      stroke: var(--a-primary);
 
       :global svg {
-        stroke: var(--a-main);
+        stroke: var(--a-primary);
       }
     }
 
@@ -145,7 +145,7 @@
       }
 
       > input:focus ~ :global .item {
-        color: var(--a-main);
+        color: var(--a-primary);
       }
     }
 
@@ -164,10 +164,10 @@
       }
 
       &:focus {
-        border-color: var(--a-main);
+        border-color: var(--a-primary);
 
         + label {
-          color: var(--a-main);
+          color: var(--a-primary);
         }
       }
 
@@ -193,7 +193,7 @@
     }
 
     input:focus ~ :global svg.item {
-      stroke: var(--a-main);
+      stroke: var(--a-primary);
     }
   }
 

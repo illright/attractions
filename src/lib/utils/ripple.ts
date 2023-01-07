@@ -17,7 +17,7 @@ export default function ripple(
   // Default values.
   const props: Options = {
     event: options.event || ('click' as keyof HTMLElementEventMap),
-    transition: options.transition || 150,
+    transition: options.transition || 175,
     zIndex: options.zIndex || '100',
     bg: options.rippleColor || null,
     disabled: options.disabled || false,

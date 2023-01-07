@@ -1,9 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite';
+import Icons from 'unplugin-icons/vite';
 import pkg from './package.json' assert { type: 'json' };
 
 /** @type {import('vite').UserConfig} */
 const config = {
-  plugins: [sveltekit()],
+  plugins: [sveltekit(), Icons({ compiler: 'svelte' })],
   server: {
     fs: {
       // https://github.com/vitejs/vite/issues/5689

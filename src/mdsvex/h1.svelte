@@ -22,7 +22,7 @@
   @use '$css/attractions-theme' as vars;
 
   h1 {
-    color: var(--a-main);
+    color: var(--a-primary);
     font-size: 1.4em;
     font-weight: vars.$bold-font-weight;
     margin: 0 0 0.5em;

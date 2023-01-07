@@ -16,7 +16,7 @@
   position: relative;
 
   &:hover:not(:focus-within)::before {
-    content: "";
+    content: '';
     pointer-events: none;
     position: absolute;
     left: 0;
@@ -38,7 +38,7 @@
 
 @mixin text-field-disabled {
   background-color: color.scale(vars.$textfield-bg, $lightness: 15%);
-  border-color: rgba(var(--a-dark), 0.3);
+  border-color: rgba(var(--a-dark-rgb), 0.3);
   color: var(--a-disabled);
 
   &:hover {

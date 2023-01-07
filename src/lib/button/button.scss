@@ -10,7 +10,7 @@
   @include mixins.flat-interactive-background(vars.$main);
 
   background: none;
-  border-radius: vars.$button-radius;
+  border-radius: var(--a-button-radius);
   font-size: 1rem;
   padding: 0.8em 1.1em;
 
@@ -63,14 +63,14 @@
   }
 
   &.outline {
-    border: 1px solid var(--a-main);
+    border: 1px solid var(--a-primary);
 
     &.danger {
       border-color: var(--a-danger);
     }
 
     &.neutral {
-      border-color: rgb(var(--a-dark));;
+      border-color: var(--a-dark);
     }
 
     &[disabled] {
@@ -107,7 +107,7 @@
   }
 
   &.selected:not(.filled) {
-    background: hsla(var(--a-main-hsl), 0.12);
+    background: hsla(var(--a-primary-hsl), 0.12);
   }
 }
 

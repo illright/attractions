@@ -46,10 +46,10 @@
   }
 
   input:checked ~ .track {
-    border-color: var(--a-main);
+    border-color: var(--a-primary);
 
     > .thumb {
-      background-color: var(--a-main);
+      background-color: var(--a-primary);
       transform: translateY(-50%) translateX(100%);
     }
   }
@@ -83,7 +83,7 @@
   }
 
   input:focus:checked ~ .track::before {
-    background: hsla(var(--a-main-hsl), 0.1);
+    background: hsla(var(--a-primary-hsl), 0.1);
   }
 }
 
@@ -93,6 +93,6 @@
   }
 
   input:checked:not(:disabled) ~ .track::before {
-    background: hsla(var(--a-main-hsl), 0.05);
+    background: hsla(var(--a-primary-hsl), 0.05);
   }
 }

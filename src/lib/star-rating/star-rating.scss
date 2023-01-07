@@ -13,7 +13,7 @@ $selected-color: color.mix(#fff, vars.$main, 20%);
   justify-content: flex-end;
 
   &:focus-within {
-    background: hsla(var(--a-main-hsl), 0.05);
+    background: hsla(var(--a-primary-hsl), 0.05);
   }
 
   input {
@@ -31,11 +31,11 @@ $selected-color: color.mix(#fff, vars.$main, 20%);
     }
 
     :global .ripple {
-      background: hsla(var(--a-main-hsl), 0.1);
+      background: hsla(var(--a-primary-hsl), 0.1);
     }
 
     &:hover {
-      background: hsla(var(--a-main-hsl), 0.05);
+      background: hsla(var(--a-primary-hsl), 0.05);
       color: $hover-color;
     }
 

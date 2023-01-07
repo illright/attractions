@@ -7,7 +7,7 @@
   @use '$css/attractions-theme' as vars;
 
   td {
-    border: 0 solid hsla(var(--a-main-hsl), 0.25);
+    border: 0 solid hsla(var(--a-primary-hsl), 0.25);
     border-width: 1px 0 0 1px;
     line-height: 1.3em;
     padding: 1em;
