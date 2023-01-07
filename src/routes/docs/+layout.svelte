@@ -7,8 +7,8 @@
   import DesktopNavigation from '$containers/docs/desktop-navigation.svelte';
   import type { Place } from '$containers/docs/place';
 
-  $: segments = $page.url.pathname.split('/');
-  $: segment = segments[segments.length - 2]; // 2 because of trailing slash
+  $: segments = $page.url.pathname.replace(/\/$/, '').split('/');
+  $: segment = segments[segments.length - 1];
 
   function scrollToTop() {
     window.scrollTo(0, 0);

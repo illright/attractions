@@ -231,7 +231,9 @@
                           (currentAmPm === 'AM' && hour === 12))
                     )
               )}
-            selected={value != null && matchesCurrentHour(hour, value)}
+            variant={value != null && matchesCurrentHour(hour, value)
+              ? 'outlined'
+              : 'flat'}
           >
             {hour.toString().padStart(2, '0')}
           </Button>
@@ -244,7 +246,7 @@
         {#each minutes as mins}
           <Button
             on:click={() => setMinutes(mins)}
-            selected={(value && mins === value.getMinutes()) || undefined}
+            variant={value && mins === value.getMinutes() ? 'outlined' : 'flat'}
           >
             {mins.toString().padStart(2, '0')}
           </Button>
@@ -258,7 +260,9 @@
           {#each seconds as secs}
             <Button
               on:click={() => setSeconds(secs)}
-              selected={(value && secs === value.getSeconds()) || undefined}
+              variant={value && secs === value.getSeconds()
+                ? 'outlined'
+                : 'flat'}
             >
               {secs.toString().padStart(2, '0')}
             </Button>

@@ -23,10 +23,7 @@
               </Button>
             </div>
             {#each place.sub as entry}
-              <Button
-                href="{base}/docs/{entry.segment}"
-                selected={place === currentPlace}
-              >
+              <Button href="{base}/docs/{entry.segment}">
                 {entry.title}
               </Button>
             {/each}
@@ -34,7 +31,7 @@
         {:else}
           <Button
             href="{base}/docs/{place.segment}"
-            selected={place === currentPlace}
+            variant={place === currentPlace ? 'outlined' : 'flat'}
           >
             {place.title}
           </Button>
