@@ -45,7 +45,6 @@
   --a-attention-s: 100%;
   --a-attention-l: 67%;
   --a-success: #9cde70;
-  --a-danger-rgb: 184, 0, 0;
 
   /* Badge */
   --a-badge-default: #ff5757;
@@ -70,7 +69,6 @@
   --a-secondary: hsl(var(--a-secondary-hsl));
   --a-dark: rgb(var(--a-dark-rgb));
   --a-on-primary: rgb(var(--a-on-primary-rgb));
-  --a-danger: rgb(var(--a-danger-rgb));
   --a-disabled: hsl(
     var(--a-disabled-h) var(--a-disabled-s) var(--a-disabled-l)
   );

@@ -172,18 +172,18 @@
       }
 
       &:invalid {
-        border-color: rgba(var(--a-danger-rgb), 0.7);
+        border-color: hsla(var(--a-danger-hsl), 0.7);
 
         + label {
-          color: rgba(var(--a-danger-rgb), 0.7);
+          color: hsla(var(--a-danger-hsl), 0.7);
         }
 
         ~ :global svg.item {
-          stroke: rgba(var(--a-danger-rgb), 0.7);
+          stroke: hsla(var(--a-danger-hsl), 0.7);
         }
 
         &:focus ~ :global svg.item {
-          stroke: rgba(var(--a-danger-rgb), 0.7);
+          stroke: hsla(var(--a-danger-hsl), 0.7);
         }
       }
     }
@@ -212,7 +212,7 @@
   }
 
   > .error {
-    color: rgba(var(--a-danger-rgb), 0.7);
+    color: hsla(var(--a-danger-hsl), 0.7);
     font-size: 0.8rem;
     font-weight: vars.$bold-font-weight;
   }

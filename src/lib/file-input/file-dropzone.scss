@@ -105,15 +105,15 @@
 
     .dropzone-layer {
       &:hover {
-        background: rgba(var(--a-danger-rgb), 0.025);
+        background: hsla(var(--a-danger-hsl), 0.025);
       }
 
       &.accepting {
-        background: rgba(var(--a-danger-rgb), 0.05);
+        background: hsla(var(--a-danger-hsl), 0.05);
       }
 
       :global .ripple {
-        background: rgba(var(--a-danger-rgb), 0.1);
+        background: hsla(var(--a-danger-hsl), 0.1);
       }
 
       :global svg.plus {
