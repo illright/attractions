@@ -12,6 +12,7 @@
   --a-background: #fff;
   /* - On primary */
   --a-on-primary-rgb: 255, 255, 255;
+  --a-on-surface-rgb: 0, 0, 0;
   /* - Danger */
   --a-danger-h: 350deg;
   --a-danger-s: 58%;
@@ -53,6 +54,9 @@
   --a-button-radius: 0.5em;
   --a-button-font-weight: 500;
 
+  /* Text field */
+  --a-text-field-radius: 5px;
+
   /* For convenience. Not to be overridden by users directly! */
   --a-primary-hsl: var(--a-primary-h), var(--a-primary-s), var(--a-primary-l);
   --a-primary: hsl(var(--a-primary-hsl));
@@ -69,6 +73,7 @@
   --a-secondary: hsl(var(--a-secondary-hsl));
   --a-dark: rgb(var(--a-dark-rgb));
   --a-on-primary: rgb(var(--a-on-primary-rgb));
+  --a-on-surface: rgb(var(--a-on-surface-rgb));
   --a-disabled: hsl(
     var(--a-disabled-h) var(--a-disabled-s) var(--a-disabled-l)
   );
