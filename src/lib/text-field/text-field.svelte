@@ -44,6 +44,10 @@
    * Whether the field should be focused on mount.
    */
   export let autofocus = false;
+  /**
+   * Disables the text field, styling it appropriately and disabling click events.
+   */
+  export let disabled: boolean | 'focusable' = false;
 
   /**
    * The current value of the text field. Converted to a number if `type="number"`.
@@ -61,12 +65,27 @@
   onMount(() => autofocus && inputElement.focus());
 
   const dispatch = createEventDispatcher<{
-    input: { value: string; nativeEvent: Event };
+    input: { value: string; nativeEvent: InputEvent };
     change: { value: string; nativeEvent: Event };
     focus: { nativeEvent: FocusEvent };
     keydown: { nativeEvent: KeyboardEvent };
     blur: { nativeEvent: FocusEvent };
   }>();
+
+  function handleKeyDown(e: KeyboardEvent) {
+    if (disabled === 'focusable' && e.key !== 'Tab') {
+      e.preventDefault();
+    }
+
+    dispatch('keydown', { nativeEvent: e });
+  }
+
+  function handleInput(
+    e: Event & { currentTarget: EventTarget & HTMLInputElement }
+  ) {
+    value = e.currentTarget?.value ?? value;
+    dispatch('input', { value, nativeEvent: e as unknown as InputEvent });
+  }
 </script>
 
 <svelte:body
@@ -75,31 +94,52 @@
   }}
 />
 
-<label for={id}>{label}</label>
-<label
-  role="presentation"
-  class={classes('text-field', variant, _class)}
-  class:prominent-focus={focusedByKeyboard}
->
-  <slot name="before" />
+<div class="text-field-wrapper">
+  <label for={id}>{label}</label>
+  <label
+    role="presentation"
+    class={classes(
+      'text-field',
+      variant,
+      disabled && 'disabled',
+      error && 'error',
+      _class
+    )}
+    class:prominent-focus={focusedByKeyboard}
+  >
+    <slot name="before" />
 
-  <svelte:element
-    this={multiline ? 'textarea' : 'input'}
-    {id}
-    on:focus|self={() => {
-      if (precededByKeydownEvent) {
-        focusedByKeyboard = true;
-      }
-    }}
-    on:blur={() => {
-      precededByKeydownEvent = false;
-      focusedByKeyboard = false;
-    }}
-    on:mousedown={() => (precededByKeydownEvent = false)}
-  />
+    <svelte:element
+      this={multiline ? 'textarea' : 'input'}
+      disabled={disabled === true || undefined}
+      aria-disabled={disabled === 'focusable' ? 'true' : undefined}
+      {value}
+      on:input={handleInput}
+      on:keydown={handleKeyDown}
+      {id}
+      aria-errormessage="{id}-error"
+      class={inputClass}
+      on:focus|self={() => {
+        if (precededByKeydownEvent) {
+          focusedByKeyboard = true;
+        }
+      }}
+      on:blur={() => {
+        precededByKeydownEvent = false;
+        focusedByKeyboard = false;
+      }}
+      on:mousedown={() => (precededByKeydownEvent = false)}
+      {...$$restProps}
+    />
 
-  <slot name="after" />
-</label>
+    <slot name="after" />
+  </label>
+  {#if error !== null}
+    <span class={classes('error-message', errorClass)} id="{id}-error">
+      {error || ''}
+    </span>
+  {/if}
+</div>
 
 <!-- <div
     class={classes('text-field', _class)}
@@ -162,8 +202,34 @@
     padding: 0 12px;
     height: 48px;
     gap: 6px;
-    transition: border-width 75ms;
     cursor: text;
+    position: relative;
+    color: rgba(var(--a-on-surface-rgb), 0.5);
+
+    input {
+      font-size: 1rem;
+      line-height: 1.5;
+
+      &::placeholder {
+        color: rgba(var(--a-on-surface-rgb), 0.5);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      box-sizing: border-box;
+      width: calc(100% + 1px * 2);
+      height: calc(100% + 1px * 2);
+      bottom: -1px;
+      left: -1px;
+      border: 0 solid var(--a-primary);
+      transition: border 75ms;
+
+      @media (prefers-reduced-motion) {
+        transition: none;
+      }
+    }
 
     &.underlined {
       border-bottom-width: 1px;
@@ -171,14 +237,22 @@
       border-top-right-radius: var(--a-text-field-radius);
       background: rgba(var(--a-on-surface-rgb), 0.05);
 
-      &:hover {
+      &:hover:not(.disabled) {
         background: rgba(var(--a-on-surface-rgb), 0.07);
       }
 
-      &:focus-within {
+      &::before {
+        left: 0;
+        width: 100%;
+      }
+
+      &:focus-within:not(.disabled) {
         background: hsla(var(--a-primary-hsl), 0.05);
-        border-bottom-width: 2px;
-        border-bottom-color: var(--a-primary);
+        color: var(--a-primary);
+
+        &::before {
+          border-bottom-width: 2px;
+        }
 
         &:hover {
           background: hsla(var(--a-primary-hsl), 0.07);
@@ -186,9 +260,101 @@
       }
     }
 
+    &.outlined {
+      border-width: 1px;
+      border-radius: var(--a-text-field-radius);
+
+      &:hover:not(.disabled) {
+        background: rgba(var(--a-on-surface-rgb), 0.05);
+      }
+
+      &::before {
+        border-radius: var(--a-text-field-radius);
+      }
+
+      &:focus-within:not(.disabled) {
+        background: hsla(var(--a-primary-hsl), 0.05);
+        color: var(--a-primary);
+
+        &::before {
+          border-width: 2px;
+        }
+
+        &:hover {
+          background: hsla(var(--a-primary-hsl), 0.07);
+        }
+      }
+    }
+
+    &.disabled {
+      caret-color: transparent;
+      cursor: not-allowed;
+      border-color: rgba(var(--a-on-surface-rgb), 0.07);
+
+      input {
+        cursor: inherit;
+        appearance: textfield;
+        color: var(--a-on-surface);
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          appearance: none;
+          margin: 0;
+        }
+      }
+
+      &.underlined {
+        background: transparent;
+      }
+    }
+
     &.prominent-focus {
-      outline: 2px solid var(--a-secondary);
-      outline-offset: 2px;
+      &::after {
+        --additional-border-offset: 1px;
+        --outline-offset: 2px;
+        --outline-width: 2px;
+
+        content: '';
+        position: absolute;
+        top: calc(-1 * (var(--outline-width) + var(--outline-offset)));
+        left: calc(-1 * (var(--outline-width) + var(--outline-offset)));
+        width: calc(100% + var(--outline-offset) * 2);
+        height: calc(
+          100% + var(--outline-offset) * 2 + var(--additional-border-offset)
+        );
+        border: var(--outline-width) solid var(--a-secondary);
+        border-radius: calc(
+          var(--a-text-field-radius) + var(--outline-offset) + 1px
+        );
+      }
+
+      &.underlined {
+        &::after {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+
+      &.outlined {
+        &::after {
+          top: calc(
+            -1 * (var(--outline-width) + var(--outline-offset) +
+                  var(--additional-border-offset))
+          );
+          left: calc(
+            -1 * (var(--outline-width) + var(--outline-offset) +
+                  var(--additional-border-offset))
+          );
+          width: calc(
+            100% + var(--outline-offset) * 2 + var(--additional-border-offset) *
+              2
+          );
+          height: calc(
+            100% + var(--outline-offset) * 2 + var(--additional-border-offset) *
+              2
+          );
+        }
+      }
     }
 
     input {
@@ -198,5 +364,35 @@
       outline: 0;
       height: 100%;
     }
+
+    &.error {
+      color: var(--a-danger);
+
+      &::before {
+        border-color: var(--a-danger);
+      }
+
+      &:focus-within:not(.disabled) {
+        background: hsla(var(--a-danger-hsl), 0.05);
+        color: var(--a-danger);
+
+        &:hover {
+          background: hsla(var(--a-danger-hsl), 0.07);
+        }
+      }
+    }
+  }
+
+  .text-field-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .error-message {
+    color: var(--a-danger);
+    font-size: 90%;
+    display: inline-block;
+    height: 18px;
   }
 </style>
