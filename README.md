@@ -2,7 +2,9 @@
 
 # Attractions
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/illright/attractions/Release)](https://github.com/illright/attractions/actions?query=workflow%3ARelease)
+[![Inactively Maintained](https://img.shields.io/badge/Maintenance%20Level-Inactively%20Maintained-yellowgreen.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
+
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/illright/attractions/auto-release.yml)](https://github.com/illright/attractions/actions?query=workflow%3ARelease)
 [![npm](https://img.shields.io/npm/v/attractions)](https://www.npmjs.com/package/attractions)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/attractions)](https://bundlephobia.com/result?p=attractions)
 [![npm bundle zipped size](https://img.shields.io/bundlephobia/minzip/attractions)](https://bundlephobia.com/result?p=attractions)
