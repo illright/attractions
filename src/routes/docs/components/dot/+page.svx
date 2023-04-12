@@ -1,0 +1,96 @@
+---
+name: Dot
+---
+
+<script lang="ts">
+  import { Dot, Button } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+</script>
+
+# Dot
+
+A colorful dot to signal about all your important events.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Button>
+      Plain ol' dot: <Dot class="ml" />
+    </Button>
+    <Button>
+      New info <Dot info class="ml" />
+    </Button>
+    <Button>
+      <Dot success class="mr" />Mission accomplished
+    </Button>
+    <Button>
+      Take care! <Dot attention class="ml" />
+    </Button>
+    <Button>
+      Small warning <Dot danger small class="ml" />
+    </Button>
+  </div>
+  <div slot="source">
+
+```svelte
+<Button>
+  Plain ol' dot: <Dot class="ml" />
+</Button>
+<Button>
+  New info <Dot info class="ml" />
+</Button>
+<Button>
+  <Dot success class="mr" />Mission accomplished
+</Button>
+<Button>
+  Take care! <Dot attention class="ml" />
+</Button>
+<Button>
+  Small warning <Dot danger small class="ml" />
+</Button>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+Only one of <mark>`info`</mark>, <mark>`attention`</mark>, <mark>`danger`</mark>, and <mark>`success`</mark> props may be specified at a time.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`info`** | `false` | `boolean` | Applies the `$info` color to the dot |
+| **`attention`** | `false` | `boolean` | Applies the `$attention` color to the dot |
+| **`danger`** | `false` | `boolean` | Applies the `$danger` color to the dot |
+| **`success`** | `false` | `boolean` | Applies the `$success` color to the dot |
+| **`small`** | `false` | `boolean` | Decreases the size of the dot |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<div>` element. |
+
+### Class Properties
+
+All `<Dot>` components use the `.dot` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the dot `<div>` element. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the plain variant of the dot | <ColorPreview value="#4300B0" /> |
+| **`$info`** | The color of the `info` variant of the dot | <ColorPreview value="#86D3FF" /> |
+| **`$attention`** | The color of the `attention` variant of the dot | <ColorPreview value="#FFB359" /> |
+| **`$success`** | The color of the `success` variant of the dot | <ColorPreview value="#9CDE70" /> |
+| **`$danger`** | The color of the `danger` variant of the dot | <ColorPreview value="#B80000" /> |

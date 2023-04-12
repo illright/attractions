@@ -1,0 +1,75 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  display: block;
+  margin-bottom: 1em;
+  overflow-x: auto;
+
+  th {
+    padding: 0.5em 1em;
+    text-align: start;
+
+    &.center {
+      text-align: center;
+    }
+
+    &.end {
+      text-align: end;
+    }
+  }
+
+  tr {
+    &.alternating {
+      &:nth-child(even) {
+        background: color.adjust(vars.$main, $alpha: -0.97);
+      }
+    }
+
+    &:first-child {
+      > td:first-child {
+        border-top-left-radius: vars.$table-radius;
+      }
+
+      > td:last-child {
+        border-top-right-radius: vars.$table-radius;
+      }
+    }
+
+    &:last-child {
+      > td {
+        border-bottom-width: 1px;
+      }
+
+      > td:first-child {
+        border-bottom-left-radius: vars.$table-radius;
+      }
+
+      > td:last-child {
+        border-bottom-right-radius: vars.$table-radius;
+      }
+    }
+  }
+
+  td {
+    border: 0 solid color.adjust(vars.$main, $alpha: -0.75);
+    border-width: 1px 0 0 1px;
+    line-height: 1.3em;
+    padding: 1em;
+    text-align: start;
+
+    &.center {
+      text-align: center;
+    }
+
+    &.end {
+      text-align: end;
+    }
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+}

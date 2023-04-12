@@ -1,0 +1,101 @@
+---
+name: Accordion
+relatedComponents:
+  - name: AccordionSection
+    link: ./docs/components/accordion-section
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Accordion, AccordionSection, Button } from '$lib';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+
+# Accordion
+
+A controller for multiple collapsible elements, allowing either one open panel at a time or infinite.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase">
+    <Accordion let:closeOtherPanels>
+      {#each [0, 1, 2, 3, 4] as idx}
+        <AccordionSection on:panel-open={closeOtherPanels}>
+          <div slot="handle" let:toggle>
+            <Button on:click={toggle}>
+              open panel {idx}
+              <ChevronDownIcon size="20" class="ml accordion-chevron" />
+            </Button>
+          </div>
+          Content of panel {idx}
+        </AccordionSection>
+      {/each}
+    </Accordion>
+  </div>
+  <div slot="source">
+
+```svelte
+<Accordion let:closeOtherPanels>
+  {#each [0, 1, 2, 3, 4] as idx}
+    <AccordionSection on:panel-open={closeOtherPanels}>
+      <div slot="handle" let:toggle>
+        <Button on:click={toggle}>
+          open panel {idx}
+          <ChevronDownIcon size="20" class="ml accordion-chevron" />
+        </Button>
+      </div>
+      Content of panel {idx}
+    </AccordionSection>
+  {/each}
+</Accordion>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`multiple`** | `false` | `boolean` | Setting this to `true` allows multiple panels to be open at the same time. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<ul>` element. |
+
+### Class Properties
+
+All `<Accordion>` components use the `.accordion` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the Accordion. Pass one or more [<mark>`AccordionSection`</mark>]({base}/docs/components/accordion-section) components or something miscellaneous.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`closeOtherPanels`** | `Function` | A callback to force-close all panels except for the calling one. |
+
+<style lang="scss">
+[slot='showcase'] {
+  display: flex;
+  padding: 1em;
+
+  :global .accordion section {
+    padding: 0.5em;
+    text-align: center;
+  }
+}
+</style>

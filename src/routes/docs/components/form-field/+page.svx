@@ -1,0 +1,140 @@
+---
+name: FormField
+---
+
+<script lang="ts">
+  import { FormField, TextField, Switch } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  let happy = false;
+</script>
+
+
+# FormField
+
+A responsive form field skeleton – providing a way to label and describe the field.
+
+Note that this component doesn't add any form handling capabilities; it is merely presentational.
+
+<Showcase>
+  <div slot="showcase">
+    <FormField
+      name="Main field"
+      help="Write this and not that."
+      required
+    >
+      <TextField />
+    </FormField>
+    <FormField
+      name="Secondary field"
+      optional
+    >
+      <TextField />
+    </FormField>
+    <FormField
+      name="Happiness"
+      errors={[happy && 'Not happy enough']}
+    >
+      <Switch bind:value={happy} />
+    </FormField>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let happy = false;
+</script>
+
+<FormField
+  name="Main field"
+  help="Write this and not that."
+  required
+>
+  <TextField />
+</FormField>
+<FormField
+  name="Secondary field"
+  optional
+>
+  <TextField />
+</FormField>
+<FormField
+  name="Happiness"
+  errors={[happy && 'Not happy enough']}
+>
+  <Switch bind:value={happy} />
+</FormField>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`name`** | `null` | `string` | The name of the form field. Displayed prominently next to the actual field. |
+| **`help`** | `null` | `string` | The subtitle text under the name providing extra guidance. |
+| **`id`** | `null` | `string` | The ID to add the the `for` attribute of the `<label>` element containing the <mark>`name`</mark>. Useful if you pass an ID to the actual field inside and want to connect it with the label. |
+| **`required`** | `false` | `boolean` | Marks the form field as required, adding an asterisk to the name and text under the field indicating that the field is mandatory. |
+| **`optional`** | `false` | `boolean` | Marks the form field as optional, explicitly stating the optionality of the field in the text under the field. |
+| **`errors`** | `[]` | `Array` | An array of error messages to display under the field. Falsy elements are not shown. |
+
+### Class Properties
+
+All `<FormField>` components use the `.form-field` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`nameClass`** | `null` | `string` | A class string to add to the `<label>` containing the form field name. |
+| **`helpClass`** | `null` | `string` | A class string to add to the help text of the form field. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the form field – the actual field itself.
+
+### `description` slot
+
+Additional content to put in the form field description block, after the name and the help. If you want a completely custom description, don't pass the <mark>`name`</mark> and <mark>`help`</mark> props and just use this slot.
+
+### `message` slot
+
+Additional text to put underneath the actual field along with the messages like "required", "optional" and errors.
+
+### `required-message` slot
+
+Text to display under the field when it is marked as required. Defaults to "`* Required`".
+
+### `optional-message` slot
+
+Text to display under the field when it is marked as optional. Defaults to "`Optional`".
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of neutral status messages like "required" and "optional". | <ColorPreview value="#4300B0" /> |
+| **`$danger`** | The color of error messages. | <ColorPreview value="#B80000" /> |
+| **`$thin-font-weight`** | The thin font weight of the help text and the status messages under the field'. | `300` |
+
+<style lang="scss">
+[slot='showcase'] {
+  min-height: 10em;
+  padding: 1em;
+
+  :global .autocomplete {
+    max-width: 20em;
+  }
+}
+</style>

@@ -1,9 +1,0 @@
----
-name: Changelog
----
-
-<script>
-  import Changelog from '#root/CHANGELOG.md';
-</script>
-
-<Changelog />

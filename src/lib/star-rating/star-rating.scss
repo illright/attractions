@@ -1,0 +1,58 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+
+$hover-color: color.mix(#fff, vars.$main, 60%);
+$selected-color: color.mix(#fff, vars.$main, 20%);
+
+.star-rating {
+  border-radius: 1.5em;
+  display: inline-flex;
+  fill: none;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  &:focus-within {
+    background: color.adjust(vars.$main, $alpha: -0.95);
+  }
+
+  input {
+    @include mixins.hide-accessible;
+  }
+
+  label {
+    border-radius: 50%;
+    color: vars.$off-state;
+    cursor: pointer;
+    padding: 0.5em;
+
+    :global svg {
+      display: block;
+    }
+
+    :global .ripple {
+      background: color.adjust(vars.$main, $alpha: -0.9);
+    }
+
+    &:hover {
+      background: color.adjust(vars.$main, $alpha: -0.95);
+      color: $hover-color;
+    }
+
+    &:hover ~ label {
+      color: $hover-color;
+    }
+  }
+
+  input:disabled + label {
+    background: none;
+    color: vars.$disabled;
+    cursor: not-allowed;
+  }
+
+  input:checked + label,
+  input:checked ~ input + label {
+    color: $selected-color;
+    fill: $selected-color;
+  }
+}

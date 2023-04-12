@@ -1,0 +1,64 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 2em 1em;
+
+  :global {
+    > .page {
+      flex-shrink: 0;
+      height: 2.5em;
+      justify-content: center;
+      margin: 0 0.2em;
+      padding: 0;
+      width: 2.5em;
+    }
+
+    > .text-field {
+      margin: 0 0.2em;
+
+      input {
+        height: 2.8em !important;
+        width: 2.8em !important;
+      }
+    }
+
+    > .page.current {
+      background: color.adjust(vars.$main, $alpha: -0.95);
+
+      &:hover {
+        background: color.adjust(vars.$main, $alpha: -0.9);
+      }
+
+      &:focus {
+        background: color.adjust(vars.$main, $alpha: -0.85);
+      }
+    }
+
+    @media only screen and (min-width: 380px) {
+      > .page,
+      > .text-field {
+        margin: 0 0.4em;
+      }
+    }
+
+    @media only screen and (min-width: 540px) {
+      align-self: center;
+
+      > .page,
+      input {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      > .page,
+      input {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

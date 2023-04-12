@@ -1,0 +1,98 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+@use '../_appearances';
+
+.time-picker {
+  display: inline-block;
+
+  :global {
+    .dropdown-shell .handle {
+      align-items: center;
+      display: flex;
+
+      > span {
+        margin: 1em;
+      }
+
+      .text-field.in-focus input {
+        @include appearances.text-field-focused;
+      }
+    }
+
+    .text-field {
+      width: 4.8em;
+    }
+
+    .barrel {
+      display: grid;
+      gap: 0.5em 1em;
+      grid-template-columns: repeat(2, 4em);
+      justify-items: center;
+      padding: 1em 1em 0.5em;
+
+      > .label {
+        grid-row: 2;
+        margin: 0 1em;
+      }
+
+      > .column {
+        @include mixins.slim-scrollbar;
+
+        border: 0 solid vars.$light-contrast;
+        border-bottom-width: 0.0625em;
+        border-top-width: 0.0625em;
+        list-style: none;
+        max-height: 10em;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        overscroll-behavior: none;
+
+        @media only screen and (min-height: 620px) {
+          max-height: 15em;
+        }
+      }
+
+      .am-pm-tabs {
+        display: flex;
+
+        .tab {
+          margin: 0 1em;
+        }
+      }
+
+      .shown-on-focus > .btn {
+        @include mixins.show-on-focus;
+      }
+
+      .btn,
+      .am-pm-tabs,
+      .shown-on-focus {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+
+      .btn > svg {
+        margin-right: 0.4em;
+      }
+    }
+  }
+
+  &.f12hours :global .text-field {
+    width: 6.5em;
+  }
+
+  &.f12hours.seconds :global .text-field {
+    width: 7.7em;
+  }
+
+  &.seconds :global {
+    .text-field {
+      width: 6em;
+    }
+
+    .barrel {
+      grid-template-columns: repeat(3, 4em);
+    }
+  }
+}

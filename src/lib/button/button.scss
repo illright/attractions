@@ -1,0 +1,124 @@
+@use 'sass:color';
+@use 'sass:math';
+@use './_mixins';
+@use '../_appearances';
+@use '../_variables' as vars;
+
+.btn {
+  @include appearances.button;
+
+  @include mixins.flat-interactive-background(vars.$main);
+
+  background: none;
+  border-radius: vars.$button-radius;
+  font-size: 1rem;
+  padding: 0.8em 1.1em;
+
+  :global {
+    @include mixins.color-text-icon-ripple(vars.$main);
+  }
+
+  &.danger {
+    @include mixins.flat-interactive-background(vars.$danger);
+
+    :global {
+      @include mixins.color-text-icon-ripple(vars.$danger);
+    }
+  }
+
+  &.neutral {
+    @include mixins.flat-interactive-background(vars.$dark);
+
+    :global {
+      @include mixins.color-text-icon-ripple(vars.$dark);
+    }
+  }
+
+  &.filled {
+    @include mixins.filled-interactive-background(vars.$main);
+
+    box-shadow: vars.$shadow-1;
+
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+      box-shadow: vars.$shadow-raised;
+    }
+
+    &.danger {
+      @include mixins.filled-interactive-background(vars.$danger);
+    }
+
+    &.neutral {
+      @include mixins.filled-interactive-background(vars.$dark);
+    }
+
+    :global {
+      @include mixins.color-text-icon-ripple(vars.$main-text);
+    }
+
+    &[disabled] {
+      background: vars.$disabled-bg;
+      box-shadow: none;
+    }
+  }
+
+  &.outline {
+    border: 1px solid vars.$main;
+
+    &.danger {
+      border-color: vars.$danger;
+    }
+
+    &.neutral {
+      border-color: vars.$dark;
+    }
+
+    &[disabled] {
+      border-color: vars.$disabled-bg;
+    }
+  }
+
+  &[disabled] {
+    background: transparent;
+    color: vars.$disabled;
+    cursor: default;
+
+    :global .icon {
+      stroke: vars.$disabled;
+    }
+  }
+
+  &.round {
+    padding: 0.7em;
+  }
+
+  &.rectangle {
+    border-radius: math.div(vars.$button-radius, 2);
+    font-size: 1.1rem;
+    padding: 1.2em;
+  }
+
+  &.small {
+    padding: 0.5em 0.8em;
+
+    &.round {
+      padding: 0.5em;
+    }
+  }
+
+  &.selected:not(.filled) {
+    background: color.adjust(vars.$main, $alpha: -0.88);
+  }
+}
+
+button.btn {
+  border: 0;
+}
+
+a.btn {
+  text-decoration: none;
+
+  &[disabled] {
+    pointer-events: none;
+  }
+}

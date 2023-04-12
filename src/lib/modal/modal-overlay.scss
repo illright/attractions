@@ -1,0 +1,33 @@
+@use '../_variables' as vars;
+
+.modal-overlay {
+  background-color: vars.$modal-overlay-bg;
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  &.open {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    :global .dialog {
+      animation: slide-up 100ms ease-out;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 ## [Unreleased]
 
+### Removed
+
+- `noPrefetch` prop for buttons. Use `data-sveltekit-preload-data` and `rel="prefetch"` instead if needed.
+
 ### Added
 
 - Slots and props for various components to better support localization (Thanks to [@Bluzzi](https://github.com/Bluzzi) for [#345](https://github.com/illright/attractions/pull/345)).
@@ -14,6 +18,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Improved typings for some components and utils ([#334](https://github.com/illright/attractions/pull/334)).
 - Required props will now be marked as such in the component typings.
+- Stabilized AM/PM indicator in the `TimePicker`. Previously, clicking on `12` multiple times in AM/PM mode would switch between AM and PM.
+
+### Removed
+
+- **\[BREAKING\]**: The `top` and `right` props of the `Dropdown` component were deprecated in v[3.6.0] and removed in this release
 
 ## [3.7.0] – 2021-12-30
 
@@ -129,7 +138,7 @@ Thanks to [@sallaben](https://github.com/sallaben) and [@damonbauer](https://git
 
 Not a large release, but still breaking. This will upgrade Attractions to use Sass modules which will allow zero-config installations.
 
-Refer to the [migration guide](./docs/migration-guide) for information on how to upgrade.
+Refer to the [migration guide](https://illright.github.io/attractions/docs/migration-guide) for information on how to upgrade.
 
 ### Added
 

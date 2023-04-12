@@ -1,0 +1,82 @@
+---
+name: Badge
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { Badge, Button } from '$lib';
+  import { BellIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+
+  let hidden = false;
+</script>
+
+
+# Badge
+
+A distinctive colored circle to bring attention to an element.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Badge>used on some text</Badge>
+    <Button round on:click={() => hidden = !hidden}>
+      <Badge {hidden}>
+        <BellIcon size="20" class="icon" />
+      </Badge>
+    </Button>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let hidden = false;
+</script>
+
+<Badge>used on some text</Badge>
+<Button round on:click={() => hidden = !hidden}>
+  <Badge {hidden}>
+    <BellIcon size="20" class="icon" />
+  </Badge>
+</Button>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`hidden`** | `false` | `boolean` | Whether the badge is shown or hidden. Useful for controlling its appearance without modifying the DOM tree. |
+
+### Class Properties
+
+All `<Badge>` components use the `.badge` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the handle. |
+
+<mark>Bonus</mark>: use the `.icon` class for the icons inside the badge to set `display: block` on them and avoid unexpected space at the bottom.
+
+
+## Slots {#slots}
+
+### Default slot
+
+The element to attach a badge to.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$shadow-raised`** | The shadow of the badge. | <ShadowPreview value={shadowRaised} /> |
+| **`$badge-default`** | The default color of the badge. | <ColorPreview value="#FF5757" /> |

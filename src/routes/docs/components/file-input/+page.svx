@@ -1,0 +1,118 @@
+---
+name: FileInput
+relatedComponents:
+  - name: FileDropzone
+    link: ./docs/components/file-dropzone
+  - name: FileTile
+    link: ./docs/components/file-tile
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { FileInput, FileTile } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  let upload = null;
+</script>
+
+
+# FileInput
+
+A regular file input matching the theme of the kit. Comes with buttons to select and deselect files.
+
+For a larger, more functional and visual file uploader, check out the [`FileDropzone`]({base}/docs/components/file-dropzone). It also supports drag'n'drop file upload.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <FileInput bind:value={upload} />
+    {#if upload != null}
+      <FileTile file={upload} />
+    {/if}
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let upload = null;
+</script>
+
+<FileInput bind:value={upload} />
+{#if upload != null}
+  <FileTile file={upload} />
+{/if}
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`vertical`** | `false` | `boolean` | Decides if the <em>select a file</em> and <em>clear selection</em> buttons will be laid out in a row or a column (upload a file to see the two buttons). |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`multiple`** | `false` | `boolean` | Allows the user to select multiple files. |
+| **`value`** | `null` or `[]` | [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) or [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList) | The user's selection. If <mark>`multiple`</mark> is `false`, the value is an actual `File` object, not a one-element `FileList`, as opposed to the native `<input type="file">`. |
+| **`disabled`** | `false` | `boolean` | Whether the input should accept files. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
+
+### Class Properties
+
+All `<FileInput>` components use the `.file-input` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`labelClass`** | `null` | `string` | A class string to add to the `<label>` element wrapping the `<input>`. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when a selection is made or cleared. In case of clearing the selection, the `nativeEvent` is a click event. |
+
+
+## Slots {#slots}
+
+### `select-file-message` slot
+
+Use this slot to translate the "select file" message that appears when tabbing into the dropdown of options.
+
+### Default slot
+
+The label of the main upload button. Defaults to the text "select a file" / "select files" depending on the value of the <mark>`multiple`</mark> property.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the main upload button. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the button text. | `'Ubuntu'` |
+| **`$button-radius`** | The curvature radius of a button. | `1.5625em` |
+| **`$danger`** | The color of the clearing button. | <ColorPreview value="#B80000" /> |
+| **`$disabled`** | The color of the main upload button when the input is disabled. | <ColorPreview value="#888888" /> |
+| **`$bold-font-weight`** | The bold font weight of the buttons. | `500` |
+| **`$danger`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the "clear selection" buttons. | <ColorPreview value="#B80000" /> |
+
+<style lang="scss">
+[slot='showcase'] {
+  :global .file-tile {
+    max-width: 16em;
+  }
+}
+</style>

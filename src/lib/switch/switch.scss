@@ -1,0 +1,98 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '../_variables' as vars;
+@use '../_mixins';
+
+.switch {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: vars.$font;
+
+  input {
+    @include mixins.hide-accessible;
+  }
+
+  .track {
+    border: 0.125em solid vars.$off-state;
+    border-radius: 0.75em;
+    cursor: pointer;
+    height: 1.125em;
+    position: relative;
+    width: 2em;
+
+    &::before {
+      border-radius: 1.125em;
+      content: '';
+      height: 2.375em;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.25em;
+    }
+
+    > .thumb {
+      background: vars.$off-state;
+      border-radius: 50%;
+      height: 0.75em;
+      left: 0.25em;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 100ms;
+      width: 0.75em;
+    }
+  }
+
+  input:checked ~ .track {
+    border-color: vars.$main;
+
+    > .thumb {
+      background-color: vars.$main;
+      transform: translateY(-50%) translateX(100%);
+    }
+  }
+
+  input:disabled ~ .track {
+    border-color: vars.$disabled;
+    cursor: not-allowed;
+
+    > .thumb {
+      background: none;
+      border: 0.125em solid vars.$disabled;
+      height: 0.5em;
+      position: relative;
+      width: 0.5em;
+
+      &::before {
+        background: vars.$disabled;
+        content: '';
+        height: 0.125em;
+        left: 0;
+        position: absolute;
+        top: math.div(0.5em - 0.125em, 2);
+        transform: rotate(-45deg);
+        width: 100%;
+      }
+    }
+  }
+
+  input:focus ~ .track::before {
+    background: color.adjust(#000, $alpha: -0.9);
+  }
+
+  input:focus:checked ~ .track::before {
+    background: color.adjust(vars.$main, $alpha: -0.9);
+  }
+}
+
+.switch:hover {
+  .track::before {
+    background: color.adjust(#000, $alpha: -0.9);
+  }
+
+  input:checked:not(:disabled) ~ .track::before {
+    background: color.adjust(vars.$main, $alpha: -0.95);
+  }
+}

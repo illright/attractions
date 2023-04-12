@@ -1,0 +1,121 @@
+---
+name: DropdownShell
+relatedComponents:
+  - name: Dropdown
+    link: ./docs/components/dropdown
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { DropdownShell, Dropdown, Button } from '$lib';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# DropdownShell
+
+The container for the [`Dropdown`]({base}/docs/components/dropdown) and its activating handle.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        this is the handle
+        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+      </Button>
+      <Dropdown right>
+        <div class="padded">
+          and this is the dropdown
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell>
+      Useless without a <code>&lt;Dropdown /&gt;</code>
+    </DropdownShell>
+  </div>
+  <div slot="source">
+
+```svelte
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    this is the handle
+    <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+  </Button>
+  <Dropdown right>
+    <div class="padded">
+      and this is the dropdown
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell>
+  Useless without a <code>&lt;Dropdown /&gt;</code>
+</DropdownShell>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`open`** | `false` | `boolean` | Controls whether the dropdown content is shown or hidden. |
+
+### Class Properties
+
+All `<DropdownShell>` components use the `.dropdown-shell` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
+
+<mark>Bonus</mark>: use the `.dropdown-chevron` class for the chevrons on the dropdown handle to get a nice rotation animation (see showcase).
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when toggling the dropdown (with `value` being `true` for "open" and `false` for "closed"). |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The shell of the dropdown. The dropdown itself must be inside it.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`toggle`** | `Function` | A callback to toggle the open state of the dropdown. |
+
+
+## Exported Attributes {#exported}
+
+These attributes can be accessed from variables holding component instances bound using `bind:this` on the instance.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **`toggle`** | `Function` | Toggles the dropdown's "open" state. In addition to being exposed as a slot prop, this function is exported to allow toggling the dropdown from same component where the shell is created. |
+
+<style lang="scss">
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+
+  .padded {
+    padding: 1em;
+  }
+}
+</style>

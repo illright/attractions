@@ -1,0 +1,128 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '../_variables' as vars;
+
+$day-size: 2.25rem;
+$day-gap: 0.0625rem;
+$side-padding: 1rem;
+
+.weekdays {
+  display: flex;
+  font-size: 0.85em;
+  padding: 0.5em 1em;
+
+  > .weekday {
+    text-align: center;
+    width: percentage(math.div(1, 7));
+  }
+}
+
+.week {
+  display: flex;
+
+  .day {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: percentage(math.div(1, 7));
+
+    &:last-child {
+      padding-right: $side-padding;
+    }
+
+    &:first-child {
+      padding-left: $side-padding;
+    }
+
+    > :global .btn {
+      color: vars.$dark;
+      font-size: 0.9em;
+      font-weight: vars.$regular-font-weight;
+      height: $day-size;
+      justify-content: center;
+      margin: $day-gap;
+      width: $day-size;
+      z-index: 2;
+    }
+
+    &.today > :global .btn {
+      color: vars.$main;
+    }
+
+    &.selected > :global .btn {
+      background-color: color.scale(
+        vars.$main,
+        $lightness: 15%,
+        $saturation: -20%
+      );
+      color: vars.$main-text;
+    }
+
+    &.outside > :global .btn {
+      color: vars.$disabled;
+    }
+
+    &.disabled > :global .btn {
+      color: vars.$danger;
+      position: relative;
+
+      &::before {
+        background: vars.$danger;
+        content: '';
+        height: 1px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) rotate(-30deg);
+        width: 50%;
+      }
+    }
+
+    &.in-range::before {
+      background-color: color.adjust(vars.$main, $alpha: -0.75);
+      content: '';
+      height: $day-size;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: $day-gap;
+      z-index: 1;
+    }
+
+    &.outside.selected > :global .btn {
+      color: vars.$main-text;
+    }
+
+    &.start {
+      &::before {
+        left: unset;
+        right: 0;
+        width: math.div($day-size, 2) + $day-gap;
+      }
+
+      &:last-child::before {
+        width: math.div($day-size, 2) + $day-gap + $side-padding;
+      }
+    }
+
+    &.end {
+      &::before {
+        left: 0;
+        right: unset;
+        width: math.div($day-size, 2) + $day-gap;
+      }
+    }
+
+    &.start:last-child,
+    &.end:first-child {
+      &::before {
+        width: math.div($day-size, 2) + $day-gap + $side-padding;
+      }
+    }
+
+    &.start.end::before {
+      width: 0;
+    }
+  }
+}

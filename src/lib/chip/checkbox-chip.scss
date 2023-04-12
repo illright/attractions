@@ -1,0 +1,29 @@
+@use '../_variables' as vars;
+@use 'radio-chip';
+
+.chip {
+  position: relative;
+  transition: padding-left 50ms;
+
+  &::before {
+    border: 0 solid vars.$main;
+    content: '';
+    height: 0.5625em;
+    left: 0.9em;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: width 50ms;
+    width: 0;
+  }
+}
+
+input:checked + .chip {
+  padding-left: 2em;
+
+  &::before {
+    border-bottom-width: 0.125em;
+    border-right-width: 0.125em;
+    width: 0.3125em;
+  }
+}

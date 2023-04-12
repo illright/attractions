@@ -1,0 +1,106 @@
+---
+name: Dialog
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Dialog, Button } from '$lib';
+  import { AlertTriangleIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+</script>
+
+# Dialog
+
+A modal window that informs users about a task and can contain critical information or require actions.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Dialog title="Are you sure you want to exit?" danger closeCallback={() => console.log('Closing the dialog...')}>
+      <div slot="title-icon">
+        <AlertTriangleIcon size="25" />
+      </div>
+      <p>You have not saved your changes yet.</p>
+      <p>If you exit without saving, changes will be lost.</p>
+      <p>Are you sure you want to exit?</p>
+      <Button>yes, exit</Button>
+    </Dialog>
+  </div>
+  <div slot="source">
+
+```svelte
+<Dialog
+  title="Are you sure you want to exit?"
+  closeCallback={() => console.log('Closing the dialog...')}
+  danger
+>
+  <div slot="title-icon">
+    <AlertTriangleIcon size="25" />
+  </div>
+  <p>You have not saved your changes yet.</p>
+  <p>If you exit without saving, changes will be lost.</p>
+  <p>Are you sure you want to exit?</p>
+  <Button>yes, exit</Button>
+</Dialog>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`danger`** | `false` | `boolean` | Applies the danger color to the title (including the icon slot if it is stylable with the CSS `color` property). |
+| **`constrainWidth`** | `false` | `boolean` | Gives the dialog a `max-width` of `30em`. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`title`**| `null` | `string` | Adds a title to the dialog. |
+| **`closeCallback`**| `null` | `Function` | Adds a close button to the dialog and calls this function when it is clicked. |
+
+### Class Properties
+
+All `<Dialog>` components use the `.dialog` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`titleClass`** | `null` | `string` | A class string to add to the title `div`. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the dialog.
+
+### `close-icon` slot
+
+The icon used inside the close button. Defaults to [Feather icons](https://feathericons.com/?query=X)' `X`. Only used when `closeCallback` is supplied.
+
+### `title-icon` slot
+
+The icon prepended before the title. Only used when `title` is supplied.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the title (if supplied). | <ColorPreview value="#4300B0" /> |
+| **`$shadow-raised`** | The shadow of the dialog. | <ShadowPreview value={shadowRaised} /> |
+| **`$dialog-radius`** | The curvature radius of a dialog. | `1.5625em` |
+| **`$bold-font-weight`** | The title's font weight. | `500` |
+| **`$danger`** | The color of the title when using the danger variant of a dialog. | <ColorPreview value="#B80000" /> |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the X button (if the close callback is supplied). | `1.5625em` |
+| **`$dark`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the X button (if the close callback is supplied). | <ColorPreview value="#333333" /> |

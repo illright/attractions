@@ -1,0 +1,134 @@
+---
+name: AccordionSection
+relatedComponents:
+  - name: Accordion
+    link: ./docs/components/accordion
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Accordion, AccordionSection, Button } from '$lib';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+
+# AccordionSection
+
+The panel to be used inside an Accordion.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase">
+    <Accordion let:closeOtherPanels>
+      <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+        <div slot="handle">
+          <Button on:click={toggle}>
+            open first panel
+            <ChevronDownIcon size="20" class="ml accordion-chevron" />
+          </Button>
+        </div>
+        First panel
+      </AccordionSection>
+      <AccordionSection
+        on:panel-open={closeOtherPanels}
+        label="just text is enough"
+      >
+        Second panel
+      </AccordionSection>
+    </Accordion>
+  </div>
+  <div slot="source">
+
+```svelte
+<Accordion let:closeOtherPanels>
+  <AccordionSection on:panel-open={closeOtherPanels} let:toggle>
+    <div slot="handle">
+      <Button on:click={toggle}>
+        open first panel
+        <ChevronDownIcon size="20" class="ml accordion-chevron" />
+      </Button>
+    </div>
+    First panel
+  </AccordionSection>
+  <AccordionSection
+    on:panel-open={closeOtherPanels}
+    label="just text is enough"
+  >
+    Second panel
+  </AccordionSection>
+</Accordion>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`label`** | `null` | `string` | The label text to use on the button that toggles the section. <br /> Not used if the `handle` slot is provided. |
+| **`open`** | `false` | `boolean` | The state of the section: opened or closed. |
+
+### Class Properties
+
+All `<AccordionSection>` components use the `.panel` class for the handle and the `section` tag for the hidden content.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the handle. |
+
+<mark>Bonus</mark>: use the `.accordion-chevron` class for the chevrons on the handle to get a nice rotation animation (see showcase).
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`panel-open`** | `{ close(), toggle() }` | Fired when the panel is opened. The detail object contains callbacks to close and toggle the panel respectively. |
+| **`panel-close`** | `{ close(), toggle() }` | Fired when the panel is closed. The detail object contains callbacks to close and toggle the panel respectively. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the AccordionSection, initially hidden.
+
+### `handle` slot
+
+The handle used for opening the hidden content. By default it contains a Button with the text taken from the `label` prop.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`toggle`** | `Function` | A callback to toggle the open state of the current panel. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`Button`]({base}/docs/components/button)</small> | The color and hover background of the section handle. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the section handle. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the section handle. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`]({base}/docs/components/button)</small> | The font weight of the section handle. | `500` |
+
+<style lang="scss">
+[slot='showcase'] {
+  display: flex;
+  padding: 1em;
+
+  :global .accordion section {
+    padding: 0.5em;
+    text-align: center;
+  }
+}
+</style>

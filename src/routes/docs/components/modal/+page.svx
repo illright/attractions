@@ -1,0 +1,91 @@
+---
+name: Modal
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Button, Modal, Dialog } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  let modalOpen = false;
+</script>
+
+
+# Modal
+
+An overlay allowing any modal content to appear on the screen prominently.
+
+Works well with the [<mark>`Dialog`</mark>]({base}/docs/components/dialog) component.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Button on:click={() => modalOpen = true}>click me</Button>
+    <Modal bind:open={modalOpen} let:closeCallback>
+      <Dialog title="Hello?" {closeCallback}>
+        It's me
+      </Dialog>
+    </Modal>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let modalOpen = false;
+</script>
+
+<Button on:click={() => modalOpen = true}>click me</Button>
+<Modal bind:open={modalOpen} let:closeCallback>
+  <Dialog title="Hello?" {closeCallback}>
+    It's me
+  </Dialog>
+</Modal>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`open`** | `false` | `boolean` | Whether the modal is open or not. |
+| **`noClickaway`** | `false` | `boolean` | Removes the click event listener from the overlay `<div>` to close the modal on an outside click. |
+
+### Class Properties
+
+All `<Modal>` components use the `.modal-overlay` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired whenever the modal state is changed, the `value` represents the value of the `open` property. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The modal content.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`closeCallback`** | `Function` | A callback to close the modal. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$modal-overlay-bg`** | The background color of the overlay behind the content. | <ColorPreview value="rgba(0, 0, 0, .25)" /> |

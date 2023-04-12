@@ -1,0 +1,85 @@
+---
+name: AutocompleteOption
+relatedComponents:
+  - name: Autocomplete
+    link: ./docs/components/autocomplete
+  - name: AutocompleteField
+    link: ./docs/components/autocomplete-field
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { AutocompleteOption } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  const options = [
+    { name: 'Test Option', details: 'Description' },
+    { name: 'Another One', details: 'Different' },
+    { name: 'No Description' },
+  ];
+</script>
+
+
+# AutocompleteOption
+
+A list item representing an autocomplete suggestion.
+
+It's unlikely that this component will be used by itself, but it is a part of the larger [<mark>`Autocomplete`</mark>]({base}/docs/components/autocomplete) component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    {#each options as option}
+      <AutocompleteOption {option} query="tio" />
+    {/each}
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const options = [
+    { name: 'Test Option', details: 'Description' },
+    { name: 'Another One', details: 'Different' },
+    { name: 'No Description' },
+  ];
+</script>
+
+{#each options as option}
+  <AutocompleteOption {option} query="tio" />
+{/each}
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`option`**</mark>&nbsp;<span class="required">*</span> |  | `Object` | The option object, containing a `name` field and, optionally, a `details` field, both strings. |
+| **`query`** | `null` | `string` | The substring to seek out and highlight among the name and the details. |
+
+<div class="required">* Required</div>
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`click`** | `{ nativeEvent }` | Fired when the element is clicked. A necessary part of conforming to the [<mark>`AutocompleteField`</mark>'s]({base}/docs/components/autocomplete-field) interface. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The background color on hover and the color of the highlight. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the component. | `'Ubuntu'` |
+| **`$thin-font-weight`** | The thin font weight to differentiate the details from the name. | `300` |
+| **`$bold-font-weight`** | The bold font weight to emphasize the highight. | `500` |

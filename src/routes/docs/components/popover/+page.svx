@@ -1,0 +1,94 @@
+---
+name: Popover
+relatedComponents:
+  - name: PopoverButton
+    link: ./docs/components/popover-button
+---
+
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { Popover, Button } from '$lib';
+  import { PopoverPositions } from '$lib/popover';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# Popover
+
+Extra content revealed on hover or focus within.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Popover position={PopoverPositions.BOTTOM}>
+      <Button>hover or focus me</Button>
+      <div slot="popover-content">
+        To reveal extra content!
+      </div>
+    </Popover>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  import { PopoverPositions } from 'attractions/popover';
+</script>
+
+<Popover position={PopoverPositions.BOTTOM}>
+  <Button>hover or focus me</Button>
+  <div slot="popover-content">
+    To reveal extra content!
+  </div>
+</Popover>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`position`** | `PopoverPositions.TOP` | [<mark>`PopoverPositions`</mark>](#popover-positions) | The position of the popover content relative to the triggering handle. |
+
+### Class Properties
+
+All `<Popover>` components use the `.popover-container` class for the main element and `.popover` for the popover itself.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`popoverClass`** | `null` | `string` | A class string to add to the popover. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The handle – any content that will, on hover or focus, show a popover next to it.
+
+### `popover-content` slot
+
+The content of the popover.
+
+
+## Related Objects {#related-objects}
+
+The following objects are available as named exports in `'attractions/popover'`.
+
+### `PopoverPositions` {#popover-positions}
+
+An enum describing possible positions for the `Popover`.
+
+| Field | Description |
+| ---- | ----------- |
+| **`TOP`** | Above the handle, centered with respect to it. |
+| **`BOTTOM`** | Below the handle, centered with respect to it. |
+| **`LEFT`** | To the left of the handle, centered with respect to it. |
+| **`RIGHT`** | To the right of the handle, centered with respect to it. |

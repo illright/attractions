@@ -1,0 +1,24 @@
+@use '../_variables' as vars;
+
+.dropdown {
+  background: vars.$background;
+  border-radius: vars.$card-radius;
+  box-shadow: vars.$shadow-raised;
+  margin-top: 0.3125em;
+  position: absolute;
+  z-index: 900;
+
+  &.top {
+    margin-top: -0.3125em;
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  &:not(.right) {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+}

@@ -1,0 +1,132 @@
+---
+name: TimePicker
+relatedComponents:
+  - name: DatePicker
+    link: ./docs/components/date-picker
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { TimePicker } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# TimePicker
+
+A time picker that supports both the text input and a dropdown with buttons.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <TimePicker right />
+    <TimePicker format="%H.%M.%S %P" />
+    <TimePicker hideNow />
+  </div>
+  <div slot="source">
+
+```svelte
+<TimePicker right />
+<TimePicker format="%H.%M.%S %P" />
+<TimePicker hideNow />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`hideNow`** | `false` | `boolean` | Hides the `now` button from the component. |
+| **`right`** | `false` | `boolean` | Aligns the dropdown with the right edge of the text field. |
+| **`top`** | `false` | `boolean` | Aligns the dropdown content such that it opens to the top of the text field, extending up. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`value`** | `null` | `Date` | The currently selected time value. Even though a whole `Date` object is needed, only the time part will be considered. |
+| **`format`** | `'%H:%M'` | `string` | The format used to display time and consume input. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%H`, `%M`, `%S`, `%P` and `%p` allowed. `%P` stands for AM/PM, while `%p` stands for am/pm. |
+| **`amPmTabName`** | `'am-pm'` | `string` | If the `%P` or `%p` modifier is used in the format, the dropdown will contain tabs to switch between AM and PM. You may change the name of the radio group for these tabs to avoid collisions. |
+| **`hours`** | `[1..12]` (12 hours mode) or `[0..23]` (24 hours mode) | `number[]` | The list of possible hours to choose from. |
+| **`minutes`** | `[0, 5, ..., 55]` | `number[]` | The list of possible minutes to choose from. |
+| **`seconds`** | `[0, 5, ..., 55]` if using seconds or `[]` otherwise | `number[]` | The list of possible seconds to choose from. |
+
+_Hint_: use `range` from the [utils]({base}/docs/utilities) to generate a range of numbers.
+
+### Class Properties
+
+All `<TimePicker>` components use the `.time-picker` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`inputClass`** | `null` | `string` | A class string to pass down to the `TextField`. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when the value of the picker changes. |
+
+
+## Slots {#slots}
+
+### `hours-label` slot
+
+Label for hour selector. Defaults to the `<Label />` component with the text "`Hours`".
+
+### `minutes-label` slot
+
+Label for the minutes selector. Defaults to the `<Label />` component with the text "`Minutes`".
+
+### `seconds-label` slot
+
+Label for the seconds selector. Defaults to the `<Label />` component with the text "`Seconds`".
+
+### `now-icon` slot
+
+Icon on button to select the current time. Defaults to the `<Clock />` icon from [Feather Icons](https://feathericons.com/).
+
+### `now-label` slot
+
+Text on button to select the current time. Defaults to the text "`now`".
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" /> |
+| **`$main`** | The color of the bottom border of the focused text field border, the buttons, the selected tab and the labels. | <ColorPreview value="#4300B0" /> |
+| **`$light-contrast`** | The color of borders and WebKit scrollbars inside the dropdown. | <ColorPreview value="#DDDDDD" /> |
+| **`$background`** | The background of the WebKit scrollbars, to ensure they don'y stand out from the background. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the buttons' text and the text fields. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of buttons. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`]({base}/docs/components/button)</small> | The font weight of the buttons and the labels. | `500` |
+| **`$background`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The curvature radius of the dropdown. | `1.25em` |
+| **`$textfield-border`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$thin-font-weight`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
+| **`$off-state`** <small>From [`Tab`]({base}/docs/components/tab)</small> | Affects the background color of the unselected tab. | <ColorPreview value="#AAAAAA" /> |
+
+<style lang="scss">
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;
+}
+</style>

@@ -1,0 +1,56 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_appearances';
+@use './_slot-styles';
+
+.autocomplete {
+  @include appearances.text-field;
+
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 0.25em;
+
+  &.focus {
+    @include appearances.text-field-focused;
+  }
+
+  &.disabled {
+    @include appearances.text-field-disabled;
+  }
+
+  :global .autocomplete-field {
+    flex: 1;
+
+    input {
+      @include appearances.text-field-input;
+
+      background: none;
+      border: 0;
+      min-width: 13em;
+      width: 100%;
+    }
+  }
+
+  :global .chip.no-padding {
+    align-items: center;
+    display: flex;
+    font-size: 0.95em;
+    margin: 0.2em 0.4em 0.2em 0;
+    padding-left: 0.7em;
+
+    .btn {
+      margin-left: 0.3em;
+    }
+
+    svg {
+      height: 1.2em;
+      width: 1.2em;
+    }
+  }
+}
+
+// Included from autocomplete-field.scss to enable slot forwarding
+@include slot-styles.notice;
+@include slot-styles.loading-options;
+@include slot-styles.more-options;

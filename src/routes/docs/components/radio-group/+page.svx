@@ -1,0 +1,128 @@
+---
+name: RadioGroup
+relatedComponents:
+  - name: RadioButton
+    link: ./docs/components/radio-button
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { RadioGroup } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  const items = [
+    { value: '1', label: 'one' },
+    { value: '2', label: 'two' },
+  ];
+
+  const colors = [
+    { value: '#000000' },
+    { value: '#ff0000' },
+    { value: '#00ff00' },
+    { value: '#ffffff' },
+  ];
+</script>
+
+# RadioGroup
+
+A group of radio buttons to present a list of selectable options.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <RadioGroup {items} name="numbers" />
+    <RadioGroup color items={colors} name="colors" />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const items = [
+    { value: '1', label: 'one' },
+    { value: '2', label: 'two' },
+  ];
+
+  const colors = [
+    { value: '#000000' },
+    { value: '#ff0000' },
+    { value: '#00ff00' },
+    { value: '#ffffff' },
+  ];
+</script>
+
+<RadioGroup {items} name="numbers" />
+<RadioGroup color items={colors} name="colors" />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`labelsLeft`** | `false` | `boolean` | Places the labels to the left of the radio buttons. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`items`**</mark>&nbsp;<span class="required">*</span> | | `Array` | An array of `{ value, label, disabled }` objects, where only the value is required. Must contain at least one value. |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> | | `string` | The name to assign to all radio buttons belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`value`** | `null` | `any` | The currently selected value of the group. |
+| **`color`** | `false` | `boolean` | Designates the radio buttons as color choices. Labels are ignored and values are expected to be `"#RRGGBB"`. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<RadioButton>` components. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to assign to the wrapper `<div>` element. |
+| **`radioClass`** | `null` | `string` | A class string to add to the `<RadioButton>` components. |
+| **`labelClass`** | `null` | `string` | A class string to assign to the labels' wrapping `<span>`s. <br /> If this is not passed, the labels are not wrapped in a `<span>`. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a prop and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`RadioButton`]({base}/docs/components/radio-button)</small> | The fill color of the selected radio button. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`RadioButton`]({base}/docs/components/radio-button)</small> | The font of the radio button's label. | `'Ubuntu'` |
+| **`$disabled`** <small>From [`RadioButton`]({base}/docs/components/radio-button)</small> | The fill color of the disabled radio button. | <ColorPreview value="#888888" /> |
+| **`$dark`** <small>From [`RadioButton`]({base}/docs/components/radio-button)</small> | The background color of the radio button hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`RadioButton`]({base}/docs/components/radio-button)</small> | The border color of an unselected radio button, or the fill color of a selected disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** <small>From [`RadioButton`]({base}/docs/components/radio-button)</small> | The color of the dot inside the selected radio button. | <ColorPreview value="#FFFFFF" bordered /> |
+
+<style lang="scss">
+[slot='showcase'] :global {
+  .radio {
+    margin-bottom: 0.5em;
+  }
+
+  .colored {
+    display: flex;
+    flex-wrap: wrap;
+
+    .radio {
+      margin: 0.5em;
+    }
+  }
+}
+</style>

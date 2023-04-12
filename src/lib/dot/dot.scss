@@ -1,0 +1,29 @@
+@use '../_variables' as vars;
+
+.dot {
+  background: vars.$main;
+  border-radius: 50%;
+  height: 0.625em;
+  width: 0.625em;
+
+  &.info {
+    background: vars.$info;
+  }
+
+  &.attention {
+    background: vars.$attention;
+  }
+
+  &.success {
+    background: vars.$success;
+  }
+
+  &.danger {
+    background: vars.$danger;
+  }
+
+  &.small {
+    height: 0.375em;
+    width: 0.375em;
+  }
+}

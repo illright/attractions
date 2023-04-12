@@ -1,0 +1,47 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+
+.tab {
+  align-items: stretch;
+  display: flex;
+
+  > input {
+    @include mixins.hide-accessible;
+  }
+
+  :global .ripple {
+    background: color.adjust(vars.$main, $alpha: -0.9);
+  }
+
+  > .content {
+    align-items: center;
+    border: 0 solid color.scale(vars.$off-state, $lightness: 75%);
+    border-bottom-width: 0.125em;
+    border-top-left-radius: 0.3125em;
+    border-top-right-radius: 0.3125em;
+    color: vars.$main;
+    cursor: pointer;
+    display: flex;
+    font-family: vars.$font;
+    font-weight: vars.$bold-font-weight;
+    padding: 0.7em 0.6em 0.5em;
+
+    &:hover {
+      background: color.adjust(vars.$off-state, $alpha: -0.9);
+    }
+  }
+
+  > input:disabled + .content {
+    color: vars.$disabled;
+    cursor: not-allowed;
+  }
+
+  > input:focus + .content {
+    background: color.adjust(vars.$off-state, $alpha: -0.85);
+  }
+
+  > input:checked + .content {
+    border-color: color.adjust(vars.$main, $alpha: -0.4);
+  }
+}

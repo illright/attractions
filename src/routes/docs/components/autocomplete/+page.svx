@@ -1,0 +1,129 @@
+---
+name: Autocomplete
+relatedComponents:
+  - name: AutocompleteField
+    link: ./docs/components/autocomplete-field
+  - name: AutocompleteOption
+    link: ./docs/components/autocomplete-option
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Autocomplete } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function* getOptions(text) {
+    await sleep(1000);
+    yield [
+      { name: text, details: 'Optional' },
+      { name: `it highlights the match: ${text}` },
+    ];
+  }
+</script>
+
+
+# Autocomplete
+
+A text field suggesting options to select.
+
+Builds upon the [<mark>`AutocompleteField`</mark>]({base}/docs/components/autocomplete-field), prefer that instead if you need more customization freedom.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase">
+    <Autocomplete {getOptions} />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  async function* getOptions(text) {
+    await sleep(1000);
+    yield [
+      { name: text, details: 'Optional' },
+      { name: `it highlights the match: ${text}` },
+    ];
+  }
+</script>
+
+<Autocomplete {getOptions} />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`getOptions`**</mark>&nbsp;<span class="required">*</span> |  | `async function*` | An async generator of suggestions. <br /> Receives the input from the text field and is expected to yield promises that resolve to arrays of objects `{ name, details }`. |
+| **`selection`** | `[]` | `Array` | The current selection as an array of objects `{ name, details }`. <br /> Can be used to set the selection programmatically. |
+| **`minSearchLength`** | `3` | `number` | The minimum amount of characters to call <mark>`getOptions`</mark>. |
+| **`maxOptions`** | `Infinity` | `number` | The maximum amount of options than can be selected. |
+| **`searchQuery`** | `''` | `string` | The current value of the text field. Can be used to control the query programmatically. |
+| **`optionComponent`** | [<mark>`AutocompleteOption`</mark>]({base}/docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
+| **`disabled`** | `false` | `boolean` | Whether to disable the field. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<AutocompleteField>` component. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<Autocomplete>` components use the `.autocomplete` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when the selection changes. The `value` contains the selection array. |
+
+
+## Slots {#slots}
+
+All slots of [<mark>`AutocompleteField`</mark>]({base}/docs/components/autocomplete-field#slots) are available here with the same names.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The bottom border color of the selected text field and the highlight color in options. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the text field's content and the options. | `'Ubuntu'` |
+| **`$textfield-border`** | The bottom border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" bordered /> |
+| **`$light-contrast`** <small>From [`AutocompleteField`]({base}/docs/components/autocomplete-field)</small> | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
+| **`$thin-font-weight`** <small>From [`AutocompleteField`]({base}/docs/components/autocomplete-field)</small> | The thin font weight of the status messages like 'type X characters to search'. | `300` |
+| **`$bold-font-weight`** <small>From [`AutocompleteOption`]({base}/docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
+| **`$chip-bg`** <small>From [`Chip`]({base}/docs/components/chip)</small> | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** <small>From [`Chip`]({base}/docs/components/chip)</small> | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** <small>From [`Chip`]({base}/docs/components/chip)</small> | The curvature radius of a chip. | `1.5625em` |
+| **`$dark`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the Xs on the option chips. | <ColorPreview value="#333333" /> |
+
+
+<style lang="scss">
+[slot='showcase'] {
+  min-height: 10em;
+  padding: 1em;
+
+  :global .autocomplete {
+    max-width: 20em;
+  }
+}
+</style>

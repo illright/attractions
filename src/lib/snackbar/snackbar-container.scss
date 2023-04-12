@@ -1,0 +1,37 @@
+@use '../_variables' as vars;
+
+.snackbar-stack {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 2000;
+
+  &.left {
+    align-items: flex-start;
+    left: vars.$snackbar-horizontal-offset;
+  }
+
+  &.right {
+    align-items: flex-end;
+    right: vars.$snackbar-horizontal-offset;
+  }
+
+  &.h-middle {
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.top {
+    top: vars.$snackbar-vertical-offset;
+  }
+
+  &.bottom {
+    bottom: vars.$snackbar-vertical-offset;
+  }
+
+  &.v-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

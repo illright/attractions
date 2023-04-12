@@ -1,0 +1,29 @@
+@use '../_variables' as vars;
+@use '../_appearances';
+
+.popover-button {
+  @include appearances.button;
+
+  background: rgb(100, 100, 100);
+  border: 0;
+  border-radius: 0.625em;
+  box-shadow: vars.$shadow-raised;
+  color: #fff;
+  font-size: 0.9em;
+  margin: 0.2em;
+  padding: 0.5em 0.625em;
+
+  &:hover {
+    background: rgb(70, 70, 70);
+  }
+
+  &:focus {
+    background: rgb(50, 50, 50);
+  }
+
+  > :global svg {
+    height: 1.125em;
+    stroke: #fff;
+    width: 1.125em;
+  }
+}

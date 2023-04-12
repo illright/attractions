@@ -1,0 +1,148 @@
+---
+name: TextField
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { TextField } from '$lib';
+  import { AtSignIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  let cardNumber = '';
+</script>
+
+# TextField
+
+The most basic form element – taking text input.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <TextField
+      placeholder="1234 5678 9012 3456"
+      bind:value={cardNumber}
+      error={cardNumber.startsWith('2') && 'We do not serve your bank.'}
+    />
+    <TextField withItem itemRight type="number" noSpinner>
+      <span class="item dollar">$</span>
+    </TextField>
+    <TextField outline label="Username" withItem>
+      <AtSignIcon size="24" class="item" />
+    </TextField>
+    <TextField type="search" />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let cardNumber = '';
+</script>
+
+<TextField
+  placeholder="1234 5678 9012 3456"
+  bind:value={cardNumber}
+  error={cardNumber.startsWith('2') && 'We do not serve your bank.'}
+/>
+<TextField withItem itemRight type="number" noSpinner>
+  <span class="item dollar">$</span>
+</TextField>
+<TextField outline label="Username" withItem>
+  <AtSignIcon size="24" class="item" />
+</TextField>
+<TextField type="search" />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`outline`** | `false` | `boolean` | Whether the text field should have outline styling. |
+| **`withItem`** | `false` | `boolean` | Whether there will be something permanent inside the field like an icon. By default, this item is placed to the left of the input area. |
+| **`itemRight`** | `false` | `boolean` | Whether the item should be placed to the right of the input area. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`value`** | `''` | `string` or `number` | The current value of the text field. Converted to a number if `type="number"`. |
+| **`multiline`** | `false` | `boolean` | Whether the text field should allow multiple lines (`<textarea>` will be used instead of the `<input>`). |
+| **`id`** | `null` | `string` | The ID to assign to the input. |
+| **`noSpinner`** | `false` | `boolean` | Whether to hide the spinner (arrow buttons inside `<input type="number">`). |
+| **`label`** | `null` | `string` | The label to show above the text field. Only works with <mark>`outline`</mark> text fields. |
+| **`error`** | `null` | `string` | The error message to show under the text field. |
+| **`autofocus`** | `false` | `boolean` | Whether the field should be focused on mount. |
+| **`events`** | `[]` | `Array` | List of handlers for the [Events action]({base}/docs/utilities): `[{ name, handler }]`. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` or `<textarea>` element. |
+
+### Class Properties
+
+All `<TextField>` components use the `.text-field` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`inputClass`** | `null` | `string` | A class string to assign to the `<input>` or `<textarea>` element. |
+| **`labelClass`** | `null` | `string` | A class string to assign to the `<label>` for the outline text fields. |
+| **`errorClass`** | `null` | `string` | A class string to add to the error message under the text field. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`input`** | `{ value, nativeEvent }` | Fired when any character is added or removed in the text field. The `value` has the current value of the <mark>`value`</mark> property and `nativeEvent` holds the [native input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event). |
+| **`change`** | `{ value, nativeEvent }` | Fired when a change to the field's value is confirmed (with Enter or by unfocusing). The `value` has the current value of the <mark>`value`</mark> property and `nativeEvent` holds the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`focus`** | `{ nativeEvent }` | Fired when the field gains focus. The `nativeEvent` holds the [native focus event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event). |
+| **`blur`** | `{ nativeEvent }` | Fired when the field loses focus. The `nativeEvent` holds the [native blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event). |
+| **`keydown`** | `{ nativeEvent }` | Fired when any key is pressed inside the text field (not necessarily printable). Can be used to handle Enter key presses. The `nativeEvent` holds the [native keydown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event). |
+
+
+## Slots {#slots}
+
+### Default slot
+
+If the <mark>`withItem`</mark> property is specified, this holds the item for the text field. By default it is positioned to the left of the input area, but can be moved to the right with the <mark>`itemRight`</mark> property.
+
+**Important**: for correct positioning, the element that is placed inside this slot should have the `.icon` class.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the focused text field border. | <ColorPreview value="#4300B0" /> |
+| **`$textfield-border`** | The border color of the unselected text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" bordered /> |
+| **`$textfield-item`** | The default color of the item inside the text field. | <ColorPreview value="#7A7A7A" /> |
+| **`$textfield-bg-error`** | The background color of the text field when an invalid value is entered. | <ColorPreview value="#FBEEEE" /> |
+| **`$danger`** | The color of the item and the field border when an invalid value is entered. | <ColorPreview value="#B80000" /> |
+| **`$dark`** | The border color of the disabled text field (will be transparentized). | <ColorPreview value="#333333" /> |
+| **`$disabled`** | The text color of the disabled text field. | <ColorPreview value="#888888" /> |
+| **`$font`** | The font family of the text inside the text field. | `'Ubuntu'` |
+| **`$thin-font-weight`** | The thin font weight for the text inside the text field. | `300` |
+| **`$bold-font-weight`** | The bold font weight for the error text and the item that's positioned to the left of the input area. | `500` |
+| **`$x-icon`** | **Only applicable to `<input type="search">` in WebKit browsers**. If you wish to use a custom icon for the X that clears the field's value, supply a URL to the icon here. | [Feather Icons' X](https://feathericons.com/?query=x) as a data URL |
+| **`$textfield-outline-radius`** | The `border-radius` of the text field when using the `outline` variant | `1.5625em` |
+
+<style lang="scss">
+@use '$css/attractions-theme' as vars;
+
+[slot='showcase'] :global {
+  .text-field.outline {
+    margin-top: 1.5em;
+  }
+
+  .dollar {
+    font-weight: vars.$bold-font-weight;
+    top: 0.8em !important;
+  }
+}
+</style>

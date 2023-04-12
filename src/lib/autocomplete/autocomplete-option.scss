@@ -1,0 +1,38 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: vars.$font;
+  font-size: 1em;
+  outline: none;
+  padding: 0.7em 1.2em;
+  text-align: left;
+  width: 100%;
+
+  .subtext {
+    font-size: 0.95em;
+    font-weight: vars.$thin-font-weight;
+    margin-top: 0.2em;
+  }
+
+  &:hover {
+    background: color.adjust(vars.$main, $alpha: -0.95);
+  }
+
+  &:focus {
+    background: color.adjust(vars.$main, $alpha: -0.925);
+  }
+
+  mark {
+    background: none;
+    color: vars.$main;
+    font-weight: vars.$bold-font-weight;
+  }
+}

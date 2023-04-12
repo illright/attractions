@@ -1,0 +1,99 @@
+---
+name: FileTile
+relatedComponents:
+  - name: FileInput
+    link: ./docs/components/file-input
+  - name: FileDropzone
+    link: ./docs/components/file-dropzone
+shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { onMount } from 'svelte';
+  import { FileTile } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  let file = null;
+  onMount(() => {
+    file = new File([""], "filename.txt");
+  });
+</script>
+
+
+# FileTile
+
+A small tile displaying the name of a file, its size and format in human-readable ways.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    {#if file != null}
+      <FileTile {file} />
+    {/if}
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  import { onMount } from 'svelte';
+
+  let file = null;
+  onMount(() => {
+    file = new File([""], "filename.txt");
+  });
+</script>
+
+{#if file != null}
+  <FileTile {file} />
+{/if}
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`file`**</mark>&nbsp;<span class="required">*</span> |  | [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) | The File object to display. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<FileTile>` components use the `.file-tile` class.
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`delete`** | `file` | Fired when the delete button is pressed. The detail is the same `file` object that was passed in the property. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$dark`** | The text color of the tile. | <ColorPreview value="#333333" /> |
+| **`$file-tile-radius`** | The curvature radius of the tile. | `.625em` |
+| **`$shadow-1`** | The shadow of the tile. | <ShadowPreview value={shadow1} /> |
+| **`$thin-font-weight`** | The thinner font weight for the file details: size and type. | `300` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the "delete" button. | `1.5625em` |
+| **`$danger`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the "delete" button. | <ColorPreview value="#B80000" /> |
+
+<style lang="scss">
+[slot='showcase'] {
+  :global .file-tile {
+    max-width: 16em;
+  }
+}
+</style>

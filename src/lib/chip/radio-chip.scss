@@ -1,0 +1,69 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+@use 'chip';
+
+.input-chip > input {
+  @include mixins.hide-accessible;
+}
+
+.chip {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  user-select: none;
+
+  :global .ripple {
+    background: color.adjust(vars.$main, $alpha: -0.9);
+  }
+
+  &.outline {
+    border-color: color.adjust(vars.$chip-bg, $alpha: 0.1);
+  }
+}
+
+input + .chip {
+  &:hover {
+    background: color.adjust(vars.$chip-bg, $alpha: 0.05);
+  }
+
+  &.outline:hover {
+    background: color.adjust(vars.$chip-bg, $alpha: -0.02);
+  }
+}
+
+input:disabled + .chip {
+  background: color.adjust(vars.$chip-bg, $alpha: -0.05);
+  color: color.scale(vars.$chip-fg, $lightness: 30%);
+  cursor: not-allowed;
+
+  &:hover {
+    background: color.adjust(vars.$chip-bg, $alpha: -0.05);
+  }
+}
+
+input:focus + .chip {
+  background: color.adjust(vars.$chip-bg, $alpha: 0.1);
+
+  &.outline {
+    background: color.adjust(vars.$chip-bg, $alpha: 0.02);
+  }
+}
+
+input:checked + .chip {
+  background: color.adjust(vars.$main, $alpha: -0.88);
+  color: vars.$main;
+
+  &.outline {
+    background: color.adjust(vars.$main, $alpha: -0.94);
+    border-color: vars.$main;
+    color: vars.$main;
+  }
+}
+
+input:focus:checked + .chip {
+  background-color: color.adjust(vars.$main, $alpha: -0.75);
+
+  &.outline {
+    background-color: color.adjust(vars.$main, $alpha: -0.88);
+  }
+}

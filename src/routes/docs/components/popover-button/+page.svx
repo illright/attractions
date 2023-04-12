@@ -1,0 +1,91 @@
+---
+name: PopoverButton
+relatedComponents:
+  - name: Popover
+    link: ./docs/components/popover
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Popover, PopoverButton, Button } from '$lib';
+  import { PopoverPositions } from '$lib/popover';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# PopoverButton
+
+A button designed to be used as the [<mark>`Popover`</mark>]({base}/docs/components/popover) content.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Popover position={PopoverPositions.BOTTOM}>
+      <Button>hover or focus me</Button>
+      <div slot="popover-content">
+        <PopoverButton>copy</PopoverButton>
+      </div>
+    </Popover>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  import { PopoverPositions } from 'attractions/popover';
+</script>
+
+<Popover position={PopoverPositions.BOTTOM}>
+  <Button>hover or focus me</Button>
+  <div slot="popover-content">
+    <PopoverButton>copy</PopoverButton>
+  </div>
+</Popover>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`...`** |  | `any` | Everything will be passed to the underlying `<button>` element. |
+
+### Class Properties
+
+All `<PopoverButton>` components use the `.popover-button` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`click`** | `{ nativeEvent }` | Fired when the button is clicked. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the button.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$font`** | The font family used for the button. | `'Ubuntu'` |
+| **`$shadow-raised`** | The shadow of the button. | <ShadowPreview value={shadowRaised} /> |
+| **`$bold-font-weight`** | The bold font weight of the button. | `500` |

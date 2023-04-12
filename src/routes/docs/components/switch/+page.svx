@@ -1,0 +1,86 @@
+---
+name: Switch
+---
+
+<script lang="ts">
+  import { Switch } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+</script>
+
+# Switch
+
+An on/off switch.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Switch />
+    <Switch disabled>
+      <span class="ml">No luck</span>
+    </Switch>
+  </div>
+  <div slot="source">
+
+```svelte
+<Switch />
+<Switch disabled>
+  <span class="ml">No luck</span>
+</Switch>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`slotLeft`** | `false` | `boolean` | Whether to place the default slot to the left of the switch or to the right. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`value`** | `false` | `boolean` | Whether the switch is currently on. |
+| **`disabled`** | `false` | `boolean` | Disables the switch. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
+
+### Class Properties
+
+All `<Switch>` components use the `.switch` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`inputClass`** | `null` | `string` | A class string to add to the `<input>` inside. |
+| **`trackClass`** | `null` | `string` | A class string to add to the [track](https://material.io/components/selection-controls#switches) of the switch. |
+| **`thumbClass`** | `null` | `string` | A class string to add to the [thumb](https://material.io/components/selection-controls#switches) of the switch. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fires when a switch is toggled. The `value` corresponds to the current value of the <mark>`value`</mark> property, the `nativeEvent` contains the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The label of the switch. Positioned to the right of the switch by default, but can be moved to the left using the <mark>`slotLeft`</mark> property.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the switch in the "on" position. | <ColorPreview value="#4300B0" /> |
+| **`$disabled`** | The color of the disabled switch. | <ColorPreview value="#888888" /> |
+| **`$off-state`** | The color of the switch in the "off" position. | <ColorPreview value="#AAAAAA" /> |
+| **`$font`** | The font used for the labels. | `'Ubuntu'` |

@@ -1,0 +1,92 @@
+---
+name: StarRating
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { StarRating } from '$lib';
+  import { ThumbsUpIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  let restaurantRating = 1;
+</script>
+
+# StarRating
+
+An input element used for rating with a number of stars.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <StarRating name="restaurant" bind:value={restaurantRating} />
+    <br>
+    <StarRating name="hotel" value={5} max={7} disabled>
+      <span slot="icon"><ThumbsUpIcon size="24" /></span>
+    </StarRating>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let restaurantRating = 1;
+</script>
+
+<StarRating name="restaurant" bind:value={restaurantRating} />
+<br>
+<StarRating name="hotel" value={5} max={7} disabled>
+  <span slot="icon"><ThumbsUpIcon size="24" /></span>
+</StarRating>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name to assign to all stars belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`max`** | `5` | `number` | How many stars to be displayed. |
+| **`value`** | `null` | `number` | Current amount of selected stars. |
+| **`disabled`** | `false` | `boolean` | Disables star selection. |
+| **`events`** | `[]` | `Array` | List of handlers for the [Events action]({base}/docs/utilities): `[{ name, handler }]`. The event listeners are registered on the `<input type="radio">` elements. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input type="radio">` elements. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<StarRating>` components use the `.star-rating` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`starClass`** | `null` | `string` | A class string to assign to the `<label>` element containing the star icon. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when the selection changes. The `value` contains the number of selected stars and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## Slots {#slots}
+
+### `icon` slot
+
+The icon to use as the star. Defaults to [Feather icons](https://feathericons.com/?query=star)' `Star`.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | Affects the hover and background colors of the component and the fill color of the selected stars. | <ColorPreview value="#4300B0" /> |
+| **`$off-state`** | The color of the unselected label. | <ColorPreview value="#AAAAAA" /> |
+| **`$disabled`** | The color of the icon when the input is disabled. | <ColorPreview value="#888888" /> |

@@ -1,0 +1,95 @@
+---
+name: Calendar
+relatedComponents:
+  - name: DatePicker
+    link: ./docs/components/date-picker
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Calendar } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  // I absolutely hate this workaround, but it was the only way to get it to work because of MDSveX :(
+  const disabledDatesType = 'Array<Date | {start?: Date; end?: Date}>';
+</script>
+
+
+# Calendar
+
+A calendar component representing a month with selectable days.
+
+If you're seeking a ready-to-use date picking solution, consider using [`DatePicker`]({base}/docs/components/date-picker).
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Calendar month={0} year={2020} />
+  </div>
+  <div slot="source">
+
+```svelte
+<Calendar month={0} year={2020} />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`month`**</mark>&nbsp;<span class="required">*</span> |  | `number` | An index of the desired month. <br /> 0 is for January, 11 is for December. |
+| <mark>**`year`**</mark>&nbsp;<span class="required">*</span> |  | `number` | The desired year. |
+| **`locale`** | `undefined` | `string` | The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used. <br /> This will affect the weekdays and the day number representations. |
+| **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
+| **`selectionStart`** | `null` | `Date` | If a selection should be displayed, this should be a `Date` object signifying the start of the selection (can be outside the shown days). |
+| **`selectionEnd`** | `null` | `Date` | If a selection should be displayed, this should be a `Date` object signifying the end of the selection (can be outside the shown days). |
+| **`disabledDates`** | `[]` | <code>{disabledDatesType}</code> | A range of dates (or date ranges) for which to disable selection. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. |
+| **`weekClass`** | `null` | `string` | A class string to add to the element containing each row of days in the calendar. |
+| **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
+
+### Translation Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **titleTodayNotAvailableMessage** | `"Today, not available"` | `string` | The tooltip text that appears when hovering over the current day when it is disabled. |
+| **titleTodayMessage** | `"Today"` | `string` | The tooltip text that appears when hovering over the current day. |
+| **titleNotAvailableMessage** | `"Not available"` | `string` | The tooltip text that appears when hovering over a day that is disabled. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`day-select`** | `{ value }` | Fired when any of the days are clicked. The `value` is a `Date` object of the clicked day. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$dark`** | The text color of the days in the calendar. | <ColorPreview value="#333333" /> |
+| **`$disabled`** | The text color of the days in the calendar outside the current month. | <ColorPreview value="#888888" /> |
+| **`$danger`** | The color of the disabled days in the calendar. | <ColorPreview value="#B80000" /> |
+| **`$main-text`** | The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$main`** | The tint color of the selected days in the calendar and on hover. | <ColorPreview value="#4300B0" /> |
+| **`$regular-font-weight`** | The font weight of the days. | `400` |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the days in the calendar. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of a button. | `1.5625em` |

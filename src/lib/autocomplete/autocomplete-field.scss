@@ -1,0 +1,44 @@
+@use '../_variables' as vars;
+@use '../_mixins';
+@use './_slot-styles';
+
+.shown-on-focus {
+  display: flex;
+  justify-content: center;
+
+  > :global .btn {
+    @include mixins.show-on-focus;
+
+    margin: 0.5em;
+  }
+}
+
+@include slot-styles.notice;
+
+input + :global .dropdown {
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.options-list {
+  @include mixins.slim-scrollbar;
+
+  @include slot-styles.loading-options;
+  @include slot-styles.more-options;
+
+  margin: 0;
+  max-height: 15em;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  padding: 0;
+
+  :global li {
+    &:first-child {
+      margin-top: 0.5em;
+    }
+
+    &:last-child {
+      margin-bottom: 0.5em;
+    }
+  }
+}

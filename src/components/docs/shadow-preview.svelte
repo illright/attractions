@@ -1,0 +1,46 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { Popover } from '$lib';
+  import { PopoverPositions } from '$lib/popover';
+
+  export let value: string;
+  let preview: HTMLDivElement;
+
+  onMount(function setBoxShadow() {
+    preview.style.boxShadow = value.slice(0, -1);
+  });
+</script>
+
+<Popover position={PopoverPositions.LEFT}>
+  <div class="preview" bind:this={preview}>hover me</div>
+  <div slot="popover-content" class="value-popover">
+    {value.replace(/\), /g, '),\n')}
+  </div>
+</Popover>
+
+<style lang="scss">
+  @use '$css/attractions-theme' as vars;
+
+  .preview {
+    align-items: center;
+    background: vars.$background;
+    border-radius: 0.25em;
+    display: flex;
+    font-size: 0.8em;
+    font-weight: 300;
+    justify-content: center;
+    padding: 0.25em 0.5em;
+    width: 5em;
+  }
+
+  .value-popover {
+    background: vars.$background;
+    border-radius: 0.5em;
+    box-shadow: vars.$shadow-raised;
+    color: vars.$dark;
+    font-family: 'Roboto Mono', monospace;
+    margin-right: 0.25em;
+    padding: 0.5em;
+    white-space: pre;
+  }
+</style>

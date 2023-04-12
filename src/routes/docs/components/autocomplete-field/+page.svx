@@ -1,0 +1,162 @@
+---
+name: AutocompleteField
+relatedComponents:
+  - name: Autocomplete
+    link: ./docs/components/autocomplete
+  - name: AutocompleteOption
+    link: ./docs/components/autocomplete-option
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { AutocompleteField } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function* getOptions(text) {
+    await sleep(1000);
+    yield [
+      { name: text, details: 'Optional' },
+      { name: `it highlights the match: ${text}` },
+    ];
+  }
+
+  let selection = [];
+</script>
+
+
+# AutocompleteField
+
+A plain unstyled input element with a dropdown for suggestions.
+
+The [<mark>`Autocomplete`</mark>]({base}/docs/components/autocomplete) component uses it to provide a full-featured autocomplete solution with chips for selection, it may be better if you don't intend to display the selection on your own.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase">
+    <AutocompleteField {getOptions} bind:selection />
+    <pre>{JSON.stringify(selection, null, 2)}</pre>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  async function* getOptions(text) {
+    await sleep(1000);
+    yield [
+      { name: text, details: 'Optional' },
+      { name: `it highlights the match: ${text}` },
+    ];
+  }
+
+  let selection = [];
+</script>
+
+<AutocompleteField {getOptions} bind:selection />
+<pre>{JSON.stringify(selection, null, 2)}</pre>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`getOptions`**</mark>&nbsp;<span class="required">*</span> |  | `async function*` | An async generator of suggestions. <br /> Receives the input from the text field and is expected to yield promises that resolve to arrays of objects `{ name, details }`. |
+| **`selection`** | `[]` | `Array` | The current selection as an array of objects `{ name, details }`. <br /> Can be used to set the selection programmatically. |
+| **`minSearchLength`** | `3` | `number` | The minimum amount of characters to call <mark>`getOptions`</mark>. |
+| **`maxOptions`** | `Infinity` | `number` | The maximum amount of options than can be selected. |
+| **`searchQuery`** | `''` | `string` | The current value of the text field. Can be used to control the query programmatically. |
+| **`optionComponent`** | [<mark>`AutocompleteOption`</mark>]({base}/docs/components/autocomplete-option) | Svelte component | The component used to render a suggestion in the list. <br /> Receives two props: the `option` object (`{ name, details }`) and the current `query`. <br /> Expected to dispatch `click` events on selection. |
+| **`focus`** | `false` | `boolean` | Allows to programmatically control whether the suggestions dropdown is shown. |
+| **`disabled`** | `false` | `boolean` | Whether to disable the field. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<AutocompleteField>` components use the `.autocomplete-field` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when the selection changes. The `value` contains the selection array. |
+
+
+## Slots {#slots}
+
+### `too-many-options` slot
+
+The message to show in the dropdown when the maximum amount of selected options has been reached.
+
+### `not-enough-input` slot
+
+The message to show in the dropdown when the minimum amount of characters to type for searching hasn't been reached.
+
+### `loading-options` slot
+
+The loading state of the dropdown while the next promise with suggestions is resolving.
+
+### `more-options` slot
+
+The element to display at the end of a list to trigger the option generator.
+Defaults to a button equipped with an `IntersectionObserver` to trigger the generator whenever it scrolls into view.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`loadMoreOptions`** | `Function` | A callback to trigger the option generator. |
+
+### `close-message` slot
+
+Use this slot to translate the "close the options" message that appears when tabbing into the dropdown of options.
+
+### `loading-message` slot
+
+Use this slot to translate the "loading" message that appears while the options are loading.
+
+### `load-more-options-message` slot
+
+Use this slot to translate the "load more options" message that appears when you scroll to the bottom of the list of options before the infinite scroll triggers loading itself.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$light-contrast`** | The color of the scrollbar on WebKit browsers. | <ColorPreview value="#DDDDDD" /> |
+| **`$thin-font-weight`** | The thin font weight of the status messages like 'type X characters to search'. | `300` |
+| **`$main`** <small>From [`AutocompleteOption`]({base}/docs/components/autocomplete-option)</small> | The background color on hover and the color of the highlight in the options. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`AutocompleteOption`]({base}/docs/components/autocomplete-option)</small> | The font of the autocomplete options. | `'Ubuntu'` |
+| **`$bold-font-weight`** <small>From [`AutocompleteOption`]({base}/docs/components/autocomplete-option)</small> | The bold font weight to emphasize the highight in the options. | `500` |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the buttons used for dismissing focus and loading more options. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of buttons used for dismissing focus and loading more options. | `1.5625em` |
+
+<style lang="scss">
+[slot='showcase'] {
+  min-height: 10em;
+  padding: 1em;
+
+  :global .autocomplete {
+    max-width: 20em;
+  }
+}
+</style>

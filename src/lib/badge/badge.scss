@@ -1,0 +1,25 @@
+@use '../_variables' as vars;
+
+.badge {
+  position: relative;
+
+  &::after {
+    background-color: vars.$badge-default;
+    border-radius: 50%;
+    box-shadow: vars.$shadow-raised;
+    content: '';
+    height: 0.625em;
+    position: absolute;
+    right: -0.125em;
+    top: -0.1875em;
+    width: 0.625em;
+  }
+
+  &.hidden::after {
+    display: none;
+  }
+
+  :global .icon {
+    display: block;
+  }
+}

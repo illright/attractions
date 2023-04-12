@@ -1,0 +1,85 @@
+---
+name: Typography
+---
+
+<script lang="ts">
+  import { H1, H2, H3, Headline, Subhead, Label } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+</script>
+
+# Typography
+
+Typography elements with embedded responsive styles.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Headline>Main stuff!</Headline>
+    <Subhead>Make sure you don't miss out!</Subhead>
+
+    <H1>Heading 1</H1>
+    <H2>Heading 2</H2>
+    <H3>Heading 3</H3>
+
+    <Label>label</Label>
+    <Label small>smaller label</Label>
+  </div>
+  <div slot="source">
+
+```svelte
+<Headline>Main stuff!</Headline>
+<Subhead>Make sure you don't miss out!</Subhead>
+
+<H1>Heading 1</H1>
+<H2>Heading 2</H2>
+<H3>Heading 3</H3>
+
+<Label>label</Label>
+<Label small>smaller label</Label>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+_This property only applies to `<Label>`_.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`small`** | `false` | `boolean` | Makes the `<Label>` smaller. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`...`** |  | `any` | Everything will be passed to the underlying element. |
+
+### Class Properties
+
+All `<Headline>` components use the `.headline` class, all `<Subhead>` components use the `.subhead` class, and all `<Label>` components use the `.label` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the typographic element.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of some headings, the headline and the label. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** | The bold font weight of headings. | `500` |
+| **`$thin-font-weight`** | The thin font weight of the subhead. | `300` |

@@ -1,0 +1,24 @@
+@use '../_variables' as vars;
+
+hr {
+  border: 0 solid vars.$light-contrast;
+  border-top-width: 1px;
+  margin-top: 1em;
+  width: 100%;
+
+  &[data-text] {
+    overflow: visible;
+    position: relative;
+
+    &::after {
+      background: vars.$background;
+      content: attr(data-text);
+      font-size: 0.85rem;
+      left: 50%;
+      padding: 0 0.4em;
+      position: absolute;
+      top: 0;
+      transform: translate(-50%, -55%);
+    }
+  }
+}

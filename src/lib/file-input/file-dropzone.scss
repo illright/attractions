@@ -1,0 +1,124 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+
+.file-dropzone {
+  border: 0.125em dashed currentColor;
+  border-radius: vars.$dropzone-radius;
+  color: vars.$main;
+  display: block;
+  margin: 2em 0 0.5em;
+  position: relative;
+
+  &:focus-within {
+    border-color: color.adjust(vars.$main, $alpha: -0.5);
+    border-style: solid;
+  }
+
+  &.disabled {
+    color: vars.$disabled;
+  }
+
+  input {
+    @include mixins.hide-accessible;
+  }
+
+  :global .icon {
+    stroke: currentColor;
+  }
+
+  .empty-layer {
+    align-items: center;
+    display: flex;
+    padding: 2em 1em;
+    z-index: 1;
+
+    .title {
+      color: currentColor;
+      flex: 1;
+      font-weight: vars.$bold-font-weight;
+      margin-left: 0.5em;
+      text-align: center;
+    }
+  }
+
+  .dropzone-layer {
+    align-items: center;
+    border-radius: vars.$dropzone-radius;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    &:hover {
+      background: color.adjust(vars.$main, $alpha: -0.975);
+    }
+
+    :global .ripple {
+      background: color.adjust(vars.$main, $alpha: -0.9);
+    }
+
+    &.accepting {
+      background: color.adjust(vars.$main, $alpha: -0.95);
+    }
+
+    :global svg {
+      margin-right: 1em;
+      opacity: 0;
+      pointer-events: none;
+      stroke: currentColor;
+      transition: transform 150ms;
+    }
+  }
+
+  input:focus ~ .dropzone-layer {
+    background: color.adjust(vars.$main, $alpha: -0.95);
+  }
+
+  &.disabled .dropzone-layer {
+    background: none;
+    cursor: not-allowed;
+  }
+
+  &.has-content {
+    display: grid;
+    gap: 0.5em;
+    grid-template-columns: repeat(auto-fill, 12em);
+    padding: 1em;
+
+    .empty-layer {
+      display: none;
+    }
+
+    .dropzone-layer :global svg {
+      opacity: 1;
+    }
+  }
+
+  &.wrong-type {
+    color: vars.$danger;
+
+    .dropzone-layer {
+      &:hover {
+        background: color.adjust(vars.$danger, $alpha: -0.975);
+      }
+
+      &.accepting {
+        background: color.adjust(vars.$danger, $alpha: -0.95);
+      }
+
+      :global .ripple {
+        background: color.adjust(vars.$danger, $alpha: -0.9);
+      }
+
+      :global svg.plus {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+---
+name: CheckboxGroup
+relatedComponents:
+  - name: Checkbox
+    link: ./docs/components/checkbox
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { CheckboxGroup } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  const items = [
+    { value: 'couch_potato', label: 'Sitting lazily on the couch', checked: true, disabled: true },
+    { value: 'cycling', label: 'Cycling' },
+    { value: 'running', label: 'Running' },
+    { value: 'swimming', label: 'Olympic Swimming' },
+  ];
+  const colors = [
+    { value: '#000000' },
+    { value: '#ff0000' },
+    { value: '#00ff00' },
+    { value: '#ffffff' },
+  ];
+</script>
+
+
+# CheckboxGroup
+
+A group of checkboxes from an array of items to select.
+
+If you need more control over the labels and checkbox layout, you may use the individual [<mark>`Checkbox`</mark>]({base}/docs/components/checkbox) component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <p>Select your favorite sports:</p>
+    <CheckboxGroup name="sports[]" {items} />
+    <p>And color as well (up to 2):</p>
+    <CheckboxGroup
+      color
+      round
+      items={colors}
+      name="colors[]"
+      max={2}
+      class="colored"
+    />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const items = [
+    {
+      value: 'couch_potato',
+      label: 'Sitting lazily on the couch',
+      checked: true,
+      disabled: true
+    },
+    { value: 'cycling', label: 'Cycling' },
+    { value: 'running', label: 'Running' },
+    { value: 'swimming', label: 'Olympic Swimming' },
+  ];
+  const colors = [
+    { value: '#000000' },
+    { value: '#ff0000' },
+    { value: '#00ff00' },
+    { value: '#ffffff' },
+  ];
+</script>
+
+<p>Select your favorite sports:</p>
+<CheckboxGroup name="sports[]" {items} />
+<p>And color as well (up to 2):</p>
+<CheckboxGroup
+  color
+  round
+  items={colors}
+  name="colors[]"
+  max={2}
+  class="colored"
+/>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`labelsLeft`** | `false` | `boolean` | Places the labels to the left of the checkboxes. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`items`**</mark>&nbsp;<span class="required">*</span> | | `Array` | An array of `{ value, label, checked, disabled }` objects, where only the value is required. Must contain at least one value. |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> | | `string` | The name to assign to all checkboxes belonging to the same group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`max`** | `Infinity` | `number` | The maximum allowed number of checkboxes to select. |
+| **`color`** | `false` | `boolean` | Designates the checkboxes as color choices. Labels are ignored and values are expected to be `"#RRGGBB"`. |
+| **`maxReachedTooltip`** | `` `Can only select ${max} value${s(max)}.` `` | `string` | The tooltip to display when the maximum number of checkboxes has been selected. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<Checkbox>` components. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to assign to the wrapper `<div>` element. |
+| **`checkboxClass`** | `null` | `string` | A class string to add to the `<Checkbox>` components. |
+| **`labelClass`** | `null` | `string` | A class string to assign to the labels' wrapping `<span>`s. <br /> If this is not passed, the labels are not wrapped in a `<span>`. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, checked, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a prop, `checked` represents the input's state, and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`Checkbox`]({base}/docs/components/checkbox)</small> | The fill color of the checked checkbox. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Checkbox`]({base}/docs/components/checkbox)</small> | The font of the checkbox's label. | `'Ubuntu'` |
+| **`$disabled`** <small>From [`Checkbox`]({base}/docs/components/checkbox)</small> | The fill color of the disabled checkbox. | <ColorPreview value="#888888" /> |
+| **`$dark`** <small>From [`Checkbox`]({base}/docs/components/checkbox)</small> | The background color of the checkbox hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** <small>From [`Checkbox`]({base}/docs/components/checkbox)</small> | The border color of an unchecked checkbox, or the fill color of a checked disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** <small>From [`Checkbox`]({base}/docs/components/checkbox)</small> | The color of the checkmark. | <ColorPreview value="#FFFFFF" bordered /> |
+
+<style lang="scss">
+[slot='showcase'] :global {
+  .checkbox {
+    margin-bottom: 0.5em;
+  }
+
+  .colored {
+    display: flex;
+    flex-wrap: wrap;
+
+    .checkbox {
+      margin: 0.5em;
+    }
+  }
+}
+</style>

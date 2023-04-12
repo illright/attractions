@@ -1,0 +1,109 @@
+---
+name: RadioButton
+relatedComponents:
+  - name: RadioGroup
+    link: ./docs/components/radio-group
+---
+
+<script lang="ts">
+  import { RadioButton } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+
+# RadioButton
+
+An individual radio button.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <RadioButton
+      name="choices"
+      value="choice"
+      title="You have no choice."
+    >
+      <span class="ml">Illusion of choice</span>
+    </RadioButton>
+    <RadioButton disabled value="tons">
+      <span class="ml">Can't select me!</span>
+    </RadioButton>
+  </div>
+  <div slot="source">
+
+```svelte
+<RadioButton
+  name="choices"
+  value="choice"
+  title="You have no choice."
+>
+  <span class="ml">Illusion of choice</span>
+</RadioButton>
+<RadioButton disabled value="tons">
+  <span class="ml">Can't select me!</span>
+</RadioButton>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`slotLeft`** | `false` | `boolean` | Places the default slot (label) to the left of the radio button. |
+| **`selectorStyle`** | `null` | `string` | A CSS style string to assign to the selector circle. <br /> Can be used to make the radio button represent a color (in conjunction with the `getColorPickerStyles` utility). |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`value`**</mark>&nbsp;<span class="required">*</span> | | `string` | The value assigned to the radio button input. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information. |
+| **`group`** | `null` | `string` | The value of the currently selected radio button in the `name` group. Similar to Svelte's `bind:group` binding on native radio buttons. |
+| **`disabled`** | `false` | `boolean` | Disables the radio button. |
+| **`title`** | `null` | `string` | Adds a tooltip to the radio button. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input type="radio">` element. |
+
+### Class Properties
+
+All `<RadioButton>` components use the `.radio` class on the `<label>` and `.selector` on the selector circle.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the root `<label>` element. |
+| **`inputClass`** | `null` | `string` | A class string to assign to the `<input>` element. |
+| **`selectorClass`** | `null` | `string` | A class string to add to the selector circle. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when the selection changes. The `value` contains the element's `value` passed as a property (not altered, so if you pass an object, you get an object here) and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The label for the radio button. By default, the slot is positioned to the right of the radio button, but its placement can be adjusted with the <mark>`slotLeft`</mark> property.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The fill color of the selected radio button. | <ColorPreview value="#4300B0" /> |
+| **`$font`** | The font of the radio button's label. | `'Ubuntu'` |
+| **`$disabled`** | The fill color of the disabled radio button. | <ColorPreview value="#888888" /> |
+| **`$dark`** | The background color of the radio button hover signifier. | <ColorPreview value="#333333" /> |
+| **`$light-contrast`** | The border color of an unselected radio button, or the fill color of a selected disabled one. | <ColorPreview value="#DDDDDD" /> |
+| **`$main-text`** | The color of the dot inside the selected radio button. | <ColorPreview value="#FFFFFF" bordered /> |

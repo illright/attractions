@@ -1,0 +1,118 @@
+---
+name: SnackbarContainer
+relatedComponents:
+  - name: Snackbar
+    link: ./docs/components/snackbar
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { onMount } from 'svelte';
+  import { Button, SnackbarContainer } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# SnackbarContainer
+
+The wrapper element creating a context to show snackbars.
+
+The main piece of functionality is the `showSnackbar` function. This function accepts an object with the following fields:
+
+- `component` (default: [<mark>`Snackbar`</mark>]({base}/docs/components/snackbar)) – the component to render as a snackbar;
+- `props` (default: `{}`) – the props to be passed to the snackbar. The component also injects the `closeCallback` prop into this object, which is a function that can be called to force-close the snackbar;
+- `duration` (default: `4000`) – the duration to show the snackbar in milliseconds.
+
+You can obtain this function in three different ways:
+
+- **If you need it in the `<script>` of the component that has `SnackbarContainer` as a child**: <br /> Get ahold of the `SnackbarContainer` instance with [`bind:this`](https://svelte.dev/docs#bind_component) and access the `showSnackbar` property on the instance.
+- **If you need to pass it in a property to the immediate children**: <br /> Use an exposed slot property with `let:showSnackbar`.
+- **If you need to access it deep in the component tree**: <br /> Use [`getContext`](https://svelte.dev/docs#getContext) inside a child of this component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <SnackbarContainer let:showSnackbar>
+      <Button on:click={() => showSnackbar({ props: { text: 'Hello!' } })}>
+        press to see
+      </Button>
+    </SnackbarContainer>
+  </div>
+  <div slot="source">
+
+```svelte
+<SnackbarContainer let:showSnackbar>
+  <Button on:click={() => showSnackbar({ props: { text: 'Hello!' } })}>
+    press to see
+  </Button>
+</SnackbarContainer>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`position`** | `SnackbarPositions.BOTTOM_LEFT` | [<mark>`SnackbarPositions`</mark>](#snackbar-positions) | The position of the snackbar stack inside the window. |
+
+### Class Properties
+
+All `<SnackbarContainer>` components create the element with a `.snackbar-stack` class after the default slot content.
+
+
+## Slots {#slots}
+
+### Default slot
+
+Any content where you'd like to initiate [the snackbar context](#snackbar-context-key). The snackbar stack will be inserted after it, invisibly.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`showSnackbar`** | `Function` | Callback to display a new snackbar. |
+
+
+## Exported Attributes {#exported}
+
+These attributes can be accessed from variables holding component instances bound using `bind:this` on the instance.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **`showSnackbar`** | `Function` | Callback to display a new snackbar. Useful when you need to show a snackbar inside a component where the `SnackbarContainer` is created. |
+
+
+## Related Objects {#related-objects}
+
+The following objects are available as named exports in `'attractions/snackbar'`.
+
+### `SnackbarPositions` {#snackbar-positions}
+
+An enum listing the possible positions for the snackbar stack.
+
+| Field | Description |
+| ---- | ----------- |
+| **`TOP_LEFT`** | In the top left corner. |
+| **`TOP_MIDDLE`** | At the top, horizontally centered. |
+| **`TOP_RIGHT`** | In the top right corner. |
+| **`MIDDLE_RIGHT`** | Along the right edge, vertically centered. |
+| **`BOTTOM_RIGHT`** | In the bottom right corner. |
+| **`BOTTOM_MIDDLE`** | At the bottom, horizontally centered. |
+| **`BOTTOM_LEFT`** | In the bottom left corner. |
+| **`MIDDLE_LEFT`** | Along the left edge, vertically centered. |
+
+### `snackbarContextKey` {#snackbar-context-key}
+
+The context key to pass to Svelte's `getContext` to obtain the `showSnackbar` callback (described above).
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$snackbar-horizontal-offset`** | The offset from the left or the right edge of the screen for the snackbars. | `5%` |
+| **`$snackbar-vertical-offset`** | The offset from the top or the bottom edge of the screen for the snackbars. | `3em` |

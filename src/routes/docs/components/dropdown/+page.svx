@@ -1,0 +1,169 @@
+---
+name: Dropdown
+relatedComponents:
+  - name: DropdownShell
+    link: ./docs/components/dropdown-shell
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { DropdownShell, Dropdown, Button } from '$lib';
+  import { ChevronDownIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# Dropdown
+
+Toggleable, contextual overlays for displaying additional details or actions. Must be wrapped with a [`DropdownShell`]({base}/docs/components/dropdown-shell) for correct behavior.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        I toggle a dropdown
+        <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+      </Button>
+      <Dropdown>
+        <div class="padded">
+          and I am the dropdown content
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        look up there
+      </Button>
+      <Dropdown verticalAlignment="top">
+        <div class="padded">
+          right here
+        </div>
+      </Dropdown>
+    </DropdownShell>
+    <DropdownShell let:toggle>
+      <Button on:click={toggle}>
+        look up if there is enough space
+      </Button>
+      <Dropdown verticalAlignment="auto-top">
+        <div class="padded">
+          hello!
+        </div>
+      </Dropdown>
+    </DropdownShell>
+  </div>
+  <div slot="source">
+
+```svelte
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    I toggle a dropdown
+    <ChevronDownIcon size="24" class="ml dropdown-chevron" />
+  </Button>
+  <Dropdown>
+    <div class="padded">
+      and I am the dropdown content
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    look up there
+  </Button>
+  <Dropdown verticalAlignment="top">
+    <div class="padded">
+      right here
+    </div>
+  </Dropdown>
+</DropdownShell>
+<DropdownShell let:toggle>
+  <Button on:click={toggle}>
+    look up if there is enough space
+  </Button>
+  <Dropdown verticalAlignment="auto-top">
+    <div class="padded">
+      hello!
+    </div>
+  </Dropdown>
+</DropdownShell>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`horizontalAlignment`** | `auto-start` | `auto-start` \| `auto-end` \| `start` \| `end` | Dropdown content alignment on horizontal axis. |
+| **`verticalAlignment`** | `auto-bottom` | `auto-bottom` \| `auto-top` \| `bottom` \| `top` | Dropdown content alignment on vertical axis. |
+
+### Class Properties
+
+All `<Dropdown>` components use the `.dropdown` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the underlying `<div>` element. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the dropdown.
+
+### Related Objects
+
+The following objects are available as named exports in 'attractions/dropdown'.
+
+
+#### HorizontalAlignment
+Dropdown alignment along the horizontal axis.
+
+| Field | Description |
+| ---- | ------- |
+| **`AUTO_START`** | Align the dropdown based on available space around, preferably, at text start (left edge for LTR languages). |
+| **`AUTO_END`** | Align dropdown based on available space around, preferably, at text end (right edge for LTR languages). |
+| **`START`** | Align content start |
+| **`END`** | Align content end. |
+
+#### VerticalAlignment
+Dropdown alignment along the vertical axis.
+
+| Field | Description |
+| ---- | ------- |
+| **`AUTO_BOTTOM`** | Align content based on available space, preferable bottom. |
+| **`AUTO_TOP`** | Align content based on available space, preferable top. |
+| **`BOTTOM`** | Align content bottom. |
+| **`TOP`** | Align content top. |
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$background`** | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** | The curvature radius of the dropdown. | `1.25em` |
+
+<style lang="scss">
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+
+  .padded {
+    padding: 1em;
+  }
+}
+</style>

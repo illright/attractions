@@ -1,0 +1,167 @@
+---
+name: Slider
+---
+
+<script lang="ts">
+  import { Slider } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  let val = 4;
+  const valueType = 'number | [number, number]';
+  const tooltipsType = '"none" | "active" | "always"';
+  const ticksType = `  { mode: "none" }
+| {
+    mode: "steps";
+    step: number;
+    subDensity?: number;
+  }
+| {
+    mode: "values";
+    values: number[];
+    subDensity?: number;
+  }`;
+  const rangeBehaviorType = '"block" | "free" | "push"';
+</script>
+
+# Slider
+
+An slider for selecting a value or a range.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <div style="margin-left: 1.5em; height: 90%; min-width: 250px; max-height: 400px">
+      <Slider
+        value={5}
+        min={1}
+        max={10}
+        step={1}
+        vertical
+        tooltips="active"
+        ticks={{mode: 'step', step: 1, subDensity: 4}}
+      />
+      <br/>
+      <Slider
+        bind:value={val}
+        min={2}
+        max={6}
+        step={0.5}
+        tooltips="always"
+      />
+      <br/>
+      <Slider
+        value={[2, 4]}
+        min={1}
+        max={10}
+        step={1}
+        tooltips="never"
+        ticks={{mode: 'values', values: [1, 3, 5, 7, 9]}}
+      />
+    </div>
+  </div>
+<div slot="source">
+
+```svelte
+<Slider
+  value={5}
+  min={1}
+  max={10}
+  step={1}
+  vertical
+  tooltips="active"
+  ticks={{mode: 'step', step: 1, subDensity: 4}}
+/>
+<Slider
+  bind:value={val}
+  min={2}
+  max={6}
+  step={0.5}
+  tooltips="always"
+/>
+<Slider
+  value={[2, 4]}
+  min={1}
+  max={10}
+  step={1}
+  tooltips="never"
+  ticks={{mode: 'values', values: [1, 3, 5, 7, 9]}}
+/>
+```
+</Showcase>
+
+### Class Properties
+
+All `<Slider>` components use the `.slider` class.
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`min`**</mark>&nbsp;<span class="required">*</span> | | `number` | The minimum value of the slider. |
+| <mark>**`max`**</mark>&nbsp;<span class="required">*</span> | | `number` | The maximum value of the slider. |
+| **`value`** | | <code>{valueType}</code> | The current value of the slider. Provide an array of two numbers to create a range slider. |
+| **`step`** | `1` | `number` | The step by which the slider handle can move. |
+| **`vertical`** | `false` | `boolean` | To position the slider vertically with values from top to bottom. |
+| **`disabled`** | `false` | `boolean` | Disables the slider and applies appropriate styling. |
+| **`tooltips`** | `"none"` | <code>{tooltipsType}</code> | `active` will show tooltips above a handle when it is active. `always` will show tooltips regardless of handle state. |
+| **`ticks`** | `{ mode: "none" }` | <code>{ticksType}</code> | Configures how ticks are displayed, parallel to the slider rail. |
+| **`rangeBehavior`** | `"block"` | <code>{rangeBehaviorType}</code> | Defines how two handles interact with each other. |
+
+<div class="required">* Required</div>
+
+With `ticks.mode` value of `step` or `values`, a `subDensity` property may be provided to set the density of the ticks on a 0-100 percent scale (e.g. `2` means a tick every 2%).
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`focus`** | None | Fires when the slider is focused. |
+| **`change`** | `number` | Fires when ever a slider handle value changes. |
+| **`blur`** | None | Fires when the slider loses focus. |
+
+
+## Slots {#slots}
+
+### `tick-value` slot
+
+Receives the tick value as a prop in order to map or append a unit.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`value`** | `number` | The tick. |
+
+### `tooltip-content` slot
+
+Recieves the value for the handle as a prop in order to format or append a unit.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`value`** | `number` | The current value the handle is at. |
+
+### `rail-content` slot
+
+The content of the rail.
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The background of the tooltip. | <ColorPreview value="#4300b0" /> |
+| **`$slider-handle-size`** | The diameter of the handle. | `16px` |
+| **`$slider-handle-tooltip-size`** | The side length of the tooltip. | `12px` |
+| **`$slider-handle-tooltip-font-size`** | The font size of the tooltip content. | `14px` |
+| **`$slider-handle-tooltip-disabled`** | The background color of the tooltip when disabled. | <ColorPreview value="#aaa" /> |
+| **`$slider-rail-size`** | The thickness of the slider rail. | `4px` |
+| **`$slider-rail-bg`** | The background color of the rail. | <ColorPreview value="#aaa" /> |
+| **`$slider-disabled`** | The color assigned to the rail and tick content when the slider is disabled. | <ColorPreview value="#cfcfcf" /> |
+| **`$slider-tick-bg`** | The regular background color of the ticks. | <ColorPreview value="#7a7a7a" /> |
+| **`$slider-tick-length`** | The length of the ticks. | `8px` |
+| **`$slider-sub-tick-length`** | The length of the sub-ticks. | `4px` |
+| **`$slider-tick-value-color`** | The regular color of the tick content. | <ColorPreview value="#7a7a7a" /> |
+| **`$slider-tick-value-font-size`** | The font size of the tick content. | `12px` |

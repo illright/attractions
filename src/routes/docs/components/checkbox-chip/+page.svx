@@ -1,0 +1,119 @@
+---
+name: CheckboxChip
+relatedComponents:
+  - name: Chip
+    link: ./docs/components/chip
+  - name: RadioChip
+    link: ./docs/components/radio-chip
+  - name: RadioChipGroup
+    link: ./docs/components/radio-chip-group
+  - name: CheckboxChipGroup
+    link: ./docs/components/checkbox-chip-group
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { CheckboxChip } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# CheckboxChip
+
+An option to select in an inline fashion, as opposed to regular checkboxes.
+
+If you don't need too much customization, consider using [<mark>`CheckboxChipGroup`</mark>]({base}/docs/components/checkbox-chip-group), which offers a nice way to generate lists of options.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <CheckboxChip value="wrong" name="selection" outline>opt 1</CheckboxChip>
+    <CheckboxChip value="right" name="selection" small>opt 2</CheckboxChip>
+    <CheckboxChip value="opt 3" name="selection" />
+  </div>
+  <div slot="source">
+
+```svelte
+<CheckboxChip value="wrong" name="selection" outline>opt 1</CheckboxChip>
+<CheckboxChip value="right" name="selection" small>opt 2</CheckboxChip>
+<CheckboxChip value="opt 3" name="selection" />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`small`** | `false` | `boolean` | Makes the chip smaller. |
+| **`outline`** | `false` | `boolean` | Adds a border to the chip instead of the background. |
+| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful if you want to handle spacing yourself. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`value`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The value of this checkbox. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Value) for more information. <br /> Included in events unaltered (won't be stringified if not a string). |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name of the group to relate this checkbox chip to. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`checked`** | `false` | `boolean` | Whether the chip is selected or not. |
+| **`disabled`** | `false` | `boolean` | Disables the chip and disallows selection. |
+| **`title`** | `null` | `string` | The tooltip to give to a chip. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input>` element. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<CheckboxChip>` components use the `.input-chip` and `.checkbox-chip` classes.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`inputClass`** | `null` | `string` | A class string to add to the `<input>` element. |
+| **`chipClass`** | `null` | `string` | A class string to add to the underlying Chip element. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, checked, nativeEvent }` | Fired on selecting this chip in a group. The `value` contains the value that was passed to the checkbox (won't be stringified), `checked` is the state of the checkbox after the event and `nativeEvent` is the [native `change` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) of checkboxes. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the chip. Contains the string representation of the value by default.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$chip-bg`** | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** | The curvature radius of a chip. | `1.5625em` |
+| **`$font`** | The font of the chip text. | `'Ubuntu'` |
+| **`$main`** | The border color of outline chips and the selection color. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** | The bold font weight of the chips. | `500` |
+
+
+<style lang="scss">
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+
+  :global .chip {
+    margin-right: 0.5em;
+  }
+}
+</style>

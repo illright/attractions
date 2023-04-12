@@ -1,0 +1,73 @@
+---
+name: Card
+shadow0: '0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { Card } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+</script>
+
+# Card
+
+A surface that stands out.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Card>card content</Card>
+    <Card outline>card content</Card>
+  </div>
+  <div slot="source">
+
+```svelte
+<Card>card content</Card>
+<Card outline>card content</Card>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`outline`** | `false` | `boolean` | Instead of emphasizing the card with a shadow, uses an outline. |
+| **`tight`** | `false` | `boolean` | Removes the internal padding for full control over the content. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<div>` element. |
+
+### Class Properties
+
+All `<Card>` components use the `.card` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the card.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of the border for outline cards. | <ColorPreview value="#4300B0" /> |
+| **`$background`** | The background color of the card. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-0`** | The shadow of regular cards. | <ShadowPreview value={shadow0} /> |
+| **`$card-radius`** | The curvature radius of a card. | `1.25em` |

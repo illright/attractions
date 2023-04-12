@@ -1,0 +1,99 @@
+---
+name: Snackbar
+relatedComponents:
+  - name: SnackbarContainer
+    link: ./docs/components/snackbar-container
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Snackbar } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# Snackbar
+
+A small snackbar to display status messages.
+
+<RelatedComponents components={relatedComponents} class="mb" />
+
+Note: below is not the intended way of using this component. It is meant to be passed into the `showSnackbar` function of the [<mark>`SnackbarContainer`</mark>]({base}/docs/components/snackbar-container) component.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Snackbar
+      text="Hello!"
+      action={{
+        text: 'oh, hi',
+        callback: () => console.log('ack'),
+      }}
+      closeCallback={() => {}}
+    />
+  </div>
+  <div slot="source">
+
+```svelte
+<Snackbar
+  text="Hello!"
+  action={{
+    text: 'oh, hi',
+    callback: () => console.log('ack'),
+  }}
+  closeCallback={() => {}}
+/>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`text`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The text to show on the snackbar. |
+| <mark>**`closeCallback`**</mark>&nbsp;<span class="required">*</span> |  | `Function` | The callback to call to close the snackbar in the `SnackbarContainer`. Passed internally by the `SnackbarContainer` when using the `showSnackbar` function. |
+| **`action`** | `null` | <code>{'{'}<br />  text: string,<br />  callback: Function<br />{'}'}</code> | The action for the button on the snackbar. If this is `null`, the button is not rendered. Otherwise it has `text` as a label and calls `callback` on click. |
+| **`closeOnAction`** | `true` | `boolean` | Whether to call the <mark>`closeCallback`</mark> when an action button is pressed, after its callback. |
+| **`transition`** | [`fly`](https://svelte.dev/docs#fly) | Svelte transition | The transition to use to animate the in and out of the snackbar. |
+| **`transitionOptions`** | <code>{'{'}<br />  x: -20,<br />  duration: 150<br />{'}'}</code> | `object` | The options to use with the given transition. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<Snackbar>` components use the `.snackbar` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`textClass`** | `null` | `string` | A class string to add to the label of the snackbar. |
+| **`buttonClass`** | `null` | `string` | A class string to add to the action button of the snackbar. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$snackbar-bg`** | The background of the snackbar. | <ColorPreview value="#404040" /> |
+| **`$snackbar-fg`** | The text color of the snackbar. | <ColorPreview value="#FFFFFF" /> |
+| **`$shadow-raised`** | The shadow of the snackbar. | <ShadowPreview value={shadowRaised} /> |
+| **`$main`** | The action button color (75% lighter). | <ColorPreview value="#4300B0" /> |
+| **`$snackbar-radius`** | The curvature radius of the snackbar. | `.625em` |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the action button text. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the action button. | `1.5625em` |
+| **`$bold-font-weight`** <small>From [`Button`]({base}/docs/components/button)</small> | The font weight of the action button. | `500` |
+
+<style lang="scss">
+[slot='showcase'] {
+  max-width: 20em;
+}
+</style>

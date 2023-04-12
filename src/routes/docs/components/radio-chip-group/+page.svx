@@ -1,0 +1,104 @@
+---
+name: RadioChipGroup
+relatedComponents:
+  - name: Chip
+    link: ./docs/components/chip
+  - name: RadioChip
+    link: ./docs/components/radio-chip
+  - name: CheckboxChip
+    link: ./docs/components/checkbox-chip
+  - name: CheckboxChipGroup
+    link: ./docs/components/checkbox-chip-group
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { RadioChipGroup } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  const items = [
+    { value: 1, label: 'option 1' },
+    { value: 1.5, label: 'option 1.5', disabled: true },
+    { value: 2, label: 'option 2' },
+  ];
+</script>
+
+# RadioChipGroup
+
+A set of options presented as chips with only one option to select.
+
+If you need to allow selecting more than one option, consider using [<mark>`CheckboxChipGroup`</mark>]({base}/docs/components/checkbox-chip-group). If you need more customization for the chips, such as their slots, take a look at [<mark>`RadioChip`</mark>]({base}/docs/components/radio-chip), the building block of this component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <RadioChipGroup {items} name="group1" />
+    <RadioChipGroup {items} name="group2" outline />
+    <RadioChipGroup {items} name="group3" small />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const items = [
+    { value: 1, label: 'option 1' },
+    { value: 1.5, label: 'option 1.5', disabled: true },
+    { value: 2, label: 'option 2' },
+  ];
+</script>
+
+<RadioChipGroup {items} name="group1" />
+<RadioChipGroup {items} name="group2" outline />
+<RadioChipGroup {items} name="group3" small />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+Any properties of `RadioChip` can be specified – they will be passed down.
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`items`**</mark>&nbsp;<span class="required">*</span> |  | `Array` | An array of `{ value, label, disabled }` objects, where only the value is required. Must contain at least one value. |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name of this radio button group. Check [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname) for more information. |
+| **`value`** | `null` | `any` | The currently selected value of the group. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `RadioChip` component. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`radioClass`** | `null` | `string` | A class string to add to the `RadioChip` components inside. |
+| **`labelClass`** | `null` | `string` | A class string to add to the wrapping `<span>` around the chips' labels. If it's not specified, the `<span>` will not be added. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired on selecting any chip in a group. The `value` contains the value of the selected chip (won't be stringified) and `nativeEvent` is the [native `change` event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) of radio buttons. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$chip-bg`** <small>From [`RadioChip`]({base}/docs/components/radio-chip)</small> | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** <small>From [`RadioChip`]({base}/docs/components/radio-chip)</small> | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** <small>From [`RadioChip`]({base}/docs/components/radio-chip)</small> | The curvature radius of a chip. | `1.5625em` |
+| **`$font`** <small>From [`RadioChip`]({base}/docs/components/radio-chip)</small> | The font of the chip text. | `'Ubuntu'` |
+| **`$main`** <small>From [`RadioChip`]({base}/docs/components/radio-chip)</small> | The border color of outline chips and the selection color. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** <small>From [`RadioChip`]({base}/docs/components/radio-chip)</small> | The bold font weight of the chips. | `500` |

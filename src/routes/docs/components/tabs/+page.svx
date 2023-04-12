@@ -1,0 +1,83 @@
+---
+name: Tabs
+relatedComponents:
+  - name: Tab
+    link: ./docs/components/tab
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Tabs } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  let selectedTab = 'Main dishes';
+</script>
+
+# Tabs
+
+Tabs are used to organize content and navigate between it.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Tabs name="menu" items={['Appetizers', 'Main dishes', 'Drinks']} bind:value={selectedTab} />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  let selectedTab = 'Main dishes';
+</script>
+
+<Tabs
+  name="menu"
+  items={['Appetizers', 'Main dishes', 'Drinks']}
+  bind:value={selectedTab}
+/>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`name`**</mark>&nbsp;<span class="required">*</span> |  | `string` | The name passed to each of the underlying `<Tab>`s, which in turn becomes assigned to the `<input type="radio">`s' [`name` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname). |
+| <mark>**`items`**</mark>&nbsp;<span class="required">*</span> |  | `Array` | An array of strings that act as the labels of the tabs. |
+| **`value`** | `null` | `string` | The currently selected tab. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to assign to the root `<nav>` element. |
+| **`tabClass`** | `null` | `string` | A class string to pass to each `<Tab>` component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when selecting a different tab. The `value` contains the tab's `value` (from the `items` prop) and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** <small>From [`Tab`]({base}/docs/components/tab)</small> | Affects the color of the ripple background, border color of the selected tab, and text color. | <ColorPreview value="#4300B0" /> |
+| **`$disabled`** <small>From [`Tab`]({base}/docs/components/tab)</small> | The text color of disabled tabs. | <ColorPreview value="#888888" /> |
+| **`$off-state`** <small>From [`Tab`]({base}/docs/components/tab)</small> | Affects the background color of the tab when focused or hovered on and the default border color. | <ColorPreview value="#AAAAAA" /> |
+| **`$font`** <small>From [`Tab`]({base}/docs/components/tab)</small> | The font family of the content text. | `'Ubuntu'` |
+| **`$bold-font-weight`** <small>From [`Tab`]({base}/docs/components/tab)</small> | The font weight of the content text. | `500` |

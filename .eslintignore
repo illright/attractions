@@ -1,7 +1,19 @@
-public
+.DS_Store
 node_modules
-dist
-__sapper__
-types
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
 
-!.eslint-svelte-hacks.js
+# ESLint Svelte plugin doesn't support preprocessors, so it shows parsing errors on SVX files
+*.svx
+
+# Configuration files in the root dir
+/*.js
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

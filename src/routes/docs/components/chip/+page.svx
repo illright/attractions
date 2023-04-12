@@ -1,0 +1,95 @@
+---
+name: Chip
+relatedComponents:
+  - name: RadioChip
+    link: ./docs/components/radio-chip
+  - name: RadioChipGroup
+    link: ./docs/components/radio-chip-group
+  - name: CheckboxChip
+    link: ./docs/components/checkbox-chip
+  - name: CheckboxChipGroup
+    link: ./docs/components/checkbox-chip-group
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Chip } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# Chip
+
+Tiny piece of additional information.
+
+For radio/checkbox selecting capabilities, take a look at [<mark>`RadioChipGroup`</mark>]({base}/docs/components/radio-chip-group) and [<mark>`CheckboxChipGroup`</mark>]({base}/docs/components/checkbox-chip-group) components.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Chip outline>ayy</Chip>
+    <Chip small>that small?</Chip>
+  </div>
+  <div slot="source">
+
+```svelte
+<Chip outline>ayy</Chip>
+<Chip small>that small?</Chip>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`small`** | `false` | `boolean` | Makes the chip smaller. |
+| **`outline`** | `false` | `boolean` | Adds a border to the chip instead of the background. |
+| **`noPadding`** | `false` | `boolean` | Clears the internal padding. Useful if you want to handle spacing yourself. |
+
+### Class Properties
+
+All `<Chip>` components use the `.chip` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the chip.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$chip-bg`** | The background color of a non-outline chip. | <ColorPreview value="rgba(0, 0, 0, .08)" /> |
+| **`$chip-fg`** | The text color of a chip. | <ColorPreview value="#656565" /> |
+| **`$chip-radius`** | The curvature radius of a chip. | `1.5625em` |
+| **`$font`** | The font of the chip text. | `'Ubuntu'` |
+| **`$main`** | The border color of outline chips. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** | The bold font weight of the chips. | `500` |
+
+
+<style lang="scss">
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+
+  :global .chip {
+    margin-right: 0.5em;
+  }
+}
+</style>

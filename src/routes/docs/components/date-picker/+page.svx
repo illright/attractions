@@ -1,0 +1,140 @@
+---
+name: DatePicker
+relatedComponents:
+  - name: Calendar
+    link: ./docs/components/calendar
+  - name: TimePicker
+    link: ./docs/components/time-picker
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { DatePicker } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+
+  // I absolutely hate this workaround, but it was the only way to get it to work because of MDSveX :(
+  const disabledDatesType = 'Array<Date | {start?: Date; end?: Date}>';
+</script>
+
+
+# DatePicker
+
+A date picker that supports both text input and a dropdown calendar.
+
+If you need to display the calendar differently, check out the [`Calendar`]({base}/docs/components/calendar) component.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <DatePicker format="%m/%d/%Y" closeOnSelection />
+    <DatePicker format="%m/%d" noCalendar />
+    <DatePicker range top />
+  </div>
+  <div slot="source">
+
+```svelte
+<DatePicker format="%m/%d/%Y" closeOnSelection />
+<DatePicker format="%m/%d" noCalendar />
+<DatePicker range top />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`noCalendar`** | `false` | `boolean` | Whether to hide the calendar dropdown and only keep the text input. |
+| **`top`** | `false` | `boolean` | Whether to show the calendar dropdown above or below the text field. |
+| **`right`** | `false` | `boolean` | Whether to align the calendar dropdown to the right or the left side of the text field. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`range`** | `false` | `boolean` | If this is set, the date picker will have two fields – for the start and the end of the date range. |
+| **`value`** | `null` | `Date` or `{ start, end }` | Depending on the value of the <mark>`range`</mark> prop, this is either a Date object or an object with two fields, `start` and `end`, containing Date objects. |
+| **`locale`** | `undefined` | `string` | The language tag defining the desired locale (e.g., `en-US`). If left `undefined`, the user's locale will be used. <br /> This will affect the weekdays and the day number representations as well as the spelling of the selected month.  |
+| **`firstWeekday`** | `1` | `number` | The index of the weekday to start the week at. <br /> 0 is for Sunday and 6 is for Saturday. |
+| **`disabledDates`** | `[]` | <code>{disabledDatesType}</code> | A range of dates (or date ranges) for which to disable selection. |
+| **`closeOnSelection`** | `false` | `boolean` | If `true`, the dropdown will be automatically closed after a date is selected. |
+| **`format`** | `'%d.%m.%Y'` | `string` | The format string for the text input and representation. The `%`-specifiers are a subset of [C date format specifiers](http://www.cplusplus.com/reference/ctime/strftime/), with only `%d`, `%m`, `%y` and `%Y` allowed. |
+
+### Class Properties
+
+All `<DatePicker>` components use the `.date-picker` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+| **`weekdaysClass`** | `null` | `string` | A class string to add to the list of weekdays above the calendar. |
+| **`weekClass`** | `null` | `string` | A class string to add to each element containing a row of days in the calendar. |
+| **`dayClass`** | `null` | `string` | A class string to add to each day in the calendar. |
+| **`inputClass`** | `null` | `string` | A class string to pass down to the `TextField`(s). |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when the value of the picker changes. For the range pickers, will only fire when both ends of the range are selected. The `value` field contains the same thing as the `value` property would contain. |
+
+
+## Slots {#slots}
+
+### `between-inputs` slot
+
+The area between two text fields in a range picker. Defaults to the text "`to`".
+
+### `chevron-left` slot
+
+The icon to use for switching to the previous month in the calendar.
+
+### `chevron-right` slot
+
+The icon to use for switching to the next month in the calendar.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$textfield-bg`** | The background color of the text field. | <ColorPreview value="#F5F5F5" /> |
+| **`$main`** | The color of the bottom border of the focused text field and calendar selection. | <ColorPreview value="#4300B0" /> |
+| **`$bold-font-weight`** | The bold font weight of the selected month in the calendar. | `500` |
+| **`$dark`** <small>From [`Calendar`]({base}/docs/components/calendar)</small> | The text color of the days in the calendar. | <ColorPreview value="#333333" /> |
+| **`$disabled`** <small>From [`Calendar`]({base}/docs/components/calendar)</small> | The text color of the days in the calendar outside the current month. | <ColorPreview value="#888888" /> |
+| **`$danger`** | The color of the disabled days in the calendar. | <ColorPreview value="#B80000" /> |
+| **`$main-text`** <small>From [`Calendar`]({base}/docs/components/calendar)</small> | The text color of the selected days in the calendar. | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$regular-font-weight`** <small>From [`Calendar`]({base}/docs/components/calendar)</small> | The font weight of the days. | `400` |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the days in the calendar and the text of the text field. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of a button. | `1.5625em` |
+| **`$background`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The background color of the dropdown content | <ColorPreview value="#FFFFFF" bordered /> |
+| **`$shadow-raised`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The shadow of the dropdown. | <ShadowPreview value={shadowRaised} /> |
+| **`$card-radius`** <small>From [`Dropdown`]({base}/docs/components/dropdown)</small> | The curvature radius of the dropdown. | `1.25em` |
+| **`$textfield-border`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The color of the bottom border of the unfocused text field. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$thin-font-weight`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The thin font weight for the text inside the text field. | `300` |
+
+<style lang="scss">
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;
+
+  @media only screen and (max-width: 340px) {
+    padding: 0.25em !important;
+  }
+}
+</style>

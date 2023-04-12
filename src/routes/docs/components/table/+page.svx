@@ -1,0 +1,104 @@
+---
+name: Table
+---
+
+<script lang="ts">
+  import { Table } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+
+  const headers = [
+    { text: 'First Name', value: 'firstName' },
+    { text: 'Last Name', value: 'lastName' },
+    { text: 'Age', value: 'age', align: 'end' },
+  ];
+  const items = [
+    { firstName: 'John', lastName: 'Doe', age: 694 },
+    { firstName: 'Leo', lastName: 'Tolstoy', age: new Date().getFullYear() - 1828 },
+    { firstName: 'فلان', lastName: 'الفلاني', age: 42 },
+    { firstName: 'Иван', lastName: 'Иванов', age: 69 },
+  ];
+  const headerType = '{ text: string; value: string}';
+  const headersType = `Array<{
+  text: string;
+  value: string;
+  align?: "start" | "center" | "end"
+}>`;
+  const itemType = '{ [key: string]: string | number }';
+  const itemsType = `Array<${itemType}>`;
+</script>
+
+# Table
+
+Simple data table.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Table {headers} {items} />
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const headers = [
+    { text: 'First Name', value: 'firstName' },
+    { text: 'Last Name', value: 'lastName' },
+    { text: 'Age', value: 'age', align: 'end' },
+  ];
+  const items = [
+    { firstName: 'John', lastName: 'Doe', age: 694 },
+    { firstName: 'Leo', lastName: 'Tolstoy', age: new Date().getFullYear() - 1828 },
+    { firstName: 'فلان', lastName: 'الفلاني', age: 42 },
+    { firstName: 'Иван', lastName: 'Иванов', age: 69 },
+  ];
+</script>
+
+<Table {headers} {items} />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`alternatingRows`** | `true` | `boolean` | Controls whether rows will have an alternating background color. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`headers`** | `[]` | <code>{headersType}</code> | The labels for the column headers. Each column header is an object with the following fields:<br /><ul><li>`text` is the text to display;</li><li>`value` is the name of the field to take from each object in `items` to put in this column;</li><li>`align` is the alignment of the text in the column (`"start" &#124; "center" &#124; "end"`), defaulting to `"start"`.</li></ul> |
+| **`items`** | `[]` | <code>{itemsType}</code> | The actual rows of data to be displayed. It is an array of objects, where each object must have as its keys the content of the `value` property of the headers, and the value is the text to be displayed. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<table>` element. |
+
+## Slots {#slots}
+
+### `header-item` slot
+
+Customizes the content of the `<th>` elements. Defaults to a `<Label>` component with the text content of the header.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`header`** | <code>{headerType}</code> | The header object passed as part of the `headers` array. |
+
+### `item` slot
+
+Used to customize each data cell (contents of `<td>`) on its own.
+The intersection of `header` and `item` can be used to identify the data cell.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`header`** | <code>{headerType}</code> | The header object passed as part of the `headers` array. |
+| **`item`** | <code>{itemType}</code> | The row object passed as part of the `items` array. |
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | Used for the border color and the background color of alternating rows. | <ColorPreview value="#4300B0" /> |
+| **`$table-radius`** | The border radius of the table body. | `0.5em` |

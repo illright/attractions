@@ -1,0 +1,80 @@
+---
+name: Pagination
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Pagination } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+</script>
+
+# Pagination
+
+A page navigating component that supports random page access.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Pagination pages={20} />
+  </div>
+  <div slot="source">
+
+```svelte
+<Pagination pages={20} />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`showLonePage`** | `true` | `boolean` | Whether the pagination component should be displayed when there's only one page. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`pages`**</mark>&nbsp;<span class="required">*</span> |  | `number` | The amount of pages to allow for navigation. |
+| **`currentPage`** | `1` | `number` | The currently selected page (starting from 1). |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<nav>` element. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<Pagination>` components use the `.pagination` class.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value }` | Fired when a page is changed. The value contains the currently selected page. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | The color of selection and the focused text fields' borders. | <ColorPreview value="#4300B0" /> |
+| **`$font`** <small>From [`Button`]({base}/docs/components/button)</small> | The font of the page buttons. | `'Ubuntu'` |
+| **`$button-radius`** <small>From [`Button`]({base}/docs/components/button)</small> | The curvature radius of the page buttons. | `1.5625em` |
+| **`$dark`** <small>From [`Button`]({base}/docs/components/button)</small> | The color of the page buttons. | <ColorPreview value="#333333" /> |
+| **`$bold-font-weight`** <small>From [`Button`]({base}/docs/components/button)</small> | The font weight of the page buttons. | `500` |
+| **`$textfield-border`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The border color of the unselected text fields. | <ColorPreview value="rgba(0, 0, 0, .42)" /> |
+| **`$textfield-bg`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The background color of the text fields. | <ColorPreview value="#F5F5F5" bordered /> |
+| **`$textfield-bg-error`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The background color of the text fields when an invalid page is entered. | <ColorPreview value="#FBEEEE" /> |
+| **`$danger`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The color of the text fields' border when an invalid page is entered. | <ColorPreview value="#B80000" /> |
+| **`$font`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The font family of the text inside the text fields. | `'Ubuntu'` |
+| **`$thin-font-weight`** <small>From [`TextField`]({base}/docs/components/text-field)</small> | The thin font weight for the text inside the text fields. | `300` |

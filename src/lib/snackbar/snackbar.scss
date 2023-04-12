@@ -1,0 +1,25 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+
+.snackbar {
+  align-items: center;
+  background: vars.$snackbar-bg;
+  border-radius: vars.$snackbar-radius;
+  box-shadow: vars.$shadow-raised;
+  display: flex;
+  margin-top: 1em;
+  min-width: 16em;
+  padding: 0.375em;
+
+  .text {
+    color: vars.$snackbar-fg;
+    flex: 1;
+    font-size: 0.95em;
+    margin: 0 0.625em;
+    padding: 0.8em 0;
+  }
+
+  :global .btn {
+    color: color.scale(vars.$main, $lightness: 75%);
+  }
+}

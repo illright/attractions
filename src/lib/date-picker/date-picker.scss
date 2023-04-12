@@ -1,0 +1,58 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+@use '../_appearances';
+
+$side-padding: 1rem;
+
+.date-picker {
+  display: inline-block;
+
+  :global .dropdown-shell .handle {
+    align-items: center;
+    display: flex;
+
+    > span {
+      margin: 1em;
+    }
+
+    .text-field.in-focus input {
+      @include appearances.text-field-focused;
+    }
+  }
+
+  .shown-on-focus :global {
+    display: flex;
+    justify-content: center;
+
+    > .btn {
+      @include mixins.show-on-focus;
+    }
+  }
+
+  .month-header {
+    align-items: center;
+    color: vars.$main;
+    display: flex;
+    font-weight: vars.$bold-font-weight;
+    justify-content: space-between;
+    padding: 0 $side-padding 0.5em;
+
+    :global .btn {
+      flex: 0;
+    }
+
+    .month-display {
+      min-width: 12em;
+      text-align: center;
+    }
+  }
+
+  :global .calendar {
+    padding: 0.5em 0 1em;
+  }
+
+  :global .text-field {
+    width: 7em;
+  }
+}

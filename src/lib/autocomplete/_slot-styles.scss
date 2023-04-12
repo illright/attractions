@@ -1,0 +1,34 @@
+@use '../_variables' as vars;
+
+@mixin notice {
+  .notice {
+    font-size: 0.9em;
+    font-weight: vars.$thin-font-weight;
+    margin: 0.5em;
+  }
+}
+
+@mixin loading-options {
+  .loading-options {
+    align-items: center;
+    display: flex;
+    font-size: 0.95em;
+    margin: 0.5em 1.2em;
+
+    :global .spinner {
+      margin: 0.3em 0.7em 0.3em 0;
+    }
+  }
+}
+
+@mixin more-options {
+  .more-options {
+    list-style: none;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+
+    :global svg {
+      margin-right: 0.5em;
+    }
+  }
+}

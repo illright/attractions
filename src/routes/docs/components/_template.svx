@@ -1,0 +1,114 @@
+---
+name: TEMPLATE
+relatedComponents:
+  - name: RelatedComponent
+    link: ./docs/components/related
+shadow0: '0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);'
+shadow1: '0 2px 5px rgba(0, 0, 0, .14), 0 1px 5px rgba(0, 0, 0, .12);'
+shadowRaised: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 3px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);'
+---
+
+<script lang="ts">
+  import { TEMPLATE } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import ShadowPreview from '$components/docs/shadow-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# TEMPLATE
+
+Text.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+
+  </div>
+  <div slot="source">
+
+```svelte
+
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`prop`** | `value` | `type` | Description. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`prop`**</mark>&nbsp;<span class="required">*</span> | `value` | `type` | Description. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<element>` element. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<TEMPLATE>` components use the `.template` class.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the component. |
+
+<mark>Bonus</mark>: something.
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`event`** | `{  }` | Description. |
+
+
+## Slots {#slots}
+
+### Default slot
+
+Description.
+
+| Prop Name | Type | Description |
+| --------- | ---- | ----------- |
+| **`name`** | `type` | Description. |
+
+
+## Exported Attributes {#exported}
+
+These attributes can be accessed from variables holding component instances bound using `bind:this` on the instance.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| **`prop`** | `type` | Description. |
+
+
+## Related Objects {#related-objects}
+
+The following objects are available as named exports in `'attractions/template'`.
+
+### `TemplateEnum` {#template-enum}
+
+| Field | Description |
+| ---- | ----------- |
+| **`FIELD`** | Description. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | Description. | <ColorPreview value="#4300B0" /> |
+| **`$thin-font-weight`** | Description. | `300` |
+| **`$shadow-raised`** | Description. | <ShadowPreview value={shadowRaised} /> |
+
+<style lang="scss">
+</style>

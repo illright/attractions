@@ -1,0 +1,104 @@
+---
+name: Tab
+relatedComponents:
+  - name: Tabs
+    link: ./docs/components/tabs
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Tab } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+  import RelatedComponents from '$components/docs/related-components.svelte';
+</script>
+
+# Tab
+
+Allows for finer control over individual tabs when the default [<mark>`Tabs`</mark>]({base}/docs/components/tabs) is not good enough.
+
+<RelatedComponents components={relatedComponents} />
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Tab value="page1" name="nav1">
+      Components
+    </Tab>
+    <Tab value="page2" name="nav1" disabled>
+      Installation
+    </Tab>
+    <Tab value="Showcase" name="nav1" />
+  </div>
+  <div slot="source">
+
+```svelte
+<Tab value="page1" name="nav1">
+  Components
+</Tab>
+<Tab value="page2" name="nav1" disabled>
+  Installation
+</Tab>
+<Tab value="Showcase" name="nav1" />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Style Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`noRipple`** | `false` | `boolean` | Disables the ripple on the tab when clicking on it. |
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| <mark>**`value`**</mark>&nbsp;<span class="required">*</span> |  | `any` | The value assigned to the `<input type="radio">`. Check [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#Value) for more information. |
+| **`name`** | `null` | `string` | The name assigned to the `<input type="radio">`'s [`name` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefname). |
+| **`group`** | `null` | `any` | The `value` of the currently selected tab. Use with `bind:group`. Must be the same type as `value`. |
+| **`disabled`** | `false` | `boolean` | Disallows selecting this tab. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<input type="radio">` element. |
+
+<div class="required">* Required</div>
+
+### Class Properties
+
+All `<Tab>` components use the `.tab` class on the `<label>` element and `.content` on the content of the tab label.
+
+Falsy values passed to classes will be disregarded.
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`class`** | `null` | `string` | A class string to add to the root `<label>` element. |
+| **`inputClass`** | `null` | `string` | A class string to assign to the `<input>` element. |
+| **`contentClass`** | `null` | `string` | A class string to add to the content of the tab. |
+
+
+## Events {#events}
+
+| Name | Event Detail | Description |
+| ---- | ------------ | ----------- |
+| **`change`** | `{ value, nativeEvent }` | Fired when selecting a tab. The `value` is the `value` prop and `nativeEvent` has the [native change event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event). |
+| **`click`** | `{ nativeEvent }` | Fired when clicking on a tab. The `nativeEvent` has the [native click event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event). |
+
+
+## Slots {#slots}
+
+### Default slot
+
+The content of the tab label. Defaults to the content of the `value` prop.
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$main`** | Affects the color of the ripple background, border color of the selected tab, and text color. | <ColorPreview value="#4300B0" /> |
+| **`$disabled`** | The text color of disabled tabs. | <ColorPreview value="#888888" /> |
+| **`$off-state`** | Affects the background color of the tab when focused or hovered on and the default border color. | <ColorPreview value="#AAAAAA" /> |
+| **`$font`** | The font family of the content text. | `'Ubuntu'` |
+| **`$bold-font-weight`** | The font weight of the content text. | `500` |

@@ -1,0 +1,16 @@
+@use '../_variables' as vars;
+
+h2 {
+  color: vars.$main;
+  font-size: 1.3em;
+  font-weight: vars.$bold-font-weight;
+  margin: 0 0 0.4em;
+
+  @media only screen and (min-width: 640px) {
+    font-size: 1.4em;
+  }
+
+  @media only screen and (min-width: 840px) {
+    font-size: 1.5em;
+  }
+}

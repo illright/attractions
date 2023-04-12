@@ -1,0 +1,102 @@
+---
+name: Breadcrumbs
+---
+
+<script lang="ts">
+  import { base } from '$app/paths';
+  import { Breadcrumbs, Button, Chip } from '$lib';
+  import { ArrowRightIcon, HomeIcon } from 'svelte-feather-icons';
+  import Showcase from '$containers/docs/showcase.svelte';
+
+  const items = [
+    { href: `${base}/`, text: 'Home' },
+    { href: `${base}/docs`, text: 'Docs' },
+    { text: 'Components' },
+  ];
+
+  const itemsType = 'Array<{ href?: string; text: string; }>';
+</script>
+
+# Breadcrumbs
+
+Breadcrumbs are used to indicate the current page's location in the navigation hierarchy, as well as to navigate through it.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <Breadcrumbs {items} />
+    <Breadcrumbs {items} separator='~' />
+    <Breadcrumbs {items}>
+      <div slot="item" let:item>
+        {#if item.href === `${base}/`}
+          <Button href="{base}/" round small>
+            <HomeIcon size="20" />
+          </Button>
+        {:else}
+          <Chip>{item.text}</Chip>
+        {/if}
+        </div>
+      <ArrowRightIcon slot="separator" size="20" />
+    </Breadcrumbs>
+  </div>
+  <div slot="source">
+
+```svelte
+<script>
+  const items = [
+    { href: '/', text: 'Home' },
+    { href: '/docs', text: 'Docs' },
+    { text: 'Components' },
+  ];
+</script>
+
+<Breadcrumbs {items} />
+
+<Breadcrumbs {items} separator='~' />
+
+<Breadcrumbs {items}>
+  <div slot="item" let:item>
+    {#if item.href === '/'}
+      <Button href="/" round small>
+        <HomeIcon size="20" />
+      </Button>
+    {:else}
+      <Chip>{item.text}</Chip>
+    {/if}
+  </div>
+  <ArrowRightIcon slot="separator" size="20" />
+</Breadcrumbs>
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`items`** | `[]` | <code>{itemsType}</code> | The list of segments to be displayed. |
+| **`separator`** | `'/'` | `string` | The separator between segments. |
+
+
+## Slots {#slots}
+
+### `item` slot
+
+The item displayed in the breadcrumbs. Defaults to a `<Button>` if `href` is provided, otherwise a `<span>`.
+
+  | Prop Name | Type | Description |
+  | --------- | ---- | ----------- |
+  | **`item`** | `{ href?: string, text: string }` | Information about the current segment. |
+
+### `separator` slot
+
+If a string separator is not enough, use this slot to add a custom component separator (and ignore the prop).
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$thin-font-weight`** | The font size of the separator and the segments without `href`. | `300` |

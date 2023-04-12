@@ -1,0 +1,26 @@
+@use '../_variables' as vars;
+
+.chip {
+  background: vars.$chip-bg;
+  border-radius: vars.$chip-radius;
+  color: vars.$chip-fg;
+  font-family: vars.$font;
+  font-weight: vars.$bold-font-weight;
+  padding: 0.6em 0.9em;
+
+  &.small {
+    font-size: 0.9rem;
+    min-width: 0.9em;
+    padding: 0.4em 0.6em;
+    text-align: center;
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid vars.$main;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
+}

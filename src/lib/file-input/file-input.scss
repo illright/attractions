@@ -1,0 +1,53 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+@use '../_appearances';
+@use '../button/_mixins' as button-mixins;
+
+.file-input {
+  align-items: center;
+  display: inline-flex;
+
+  &.vertical {
+    flex-direction: column;
+
+    label {
+      margin-bottom: 0.5em;
+      margin-right: 0;
+    }
+  }
+}
+
+label {
+  @include appearances.button;
+
+  border-radius: vars.$button-radius;
+  margin-right: 0.5em;
+  padding: 0.8em 1.1em;
+
+  input {
+    @include mixins.hide-accessible;
+  }
+
+  :global {
+    @include button-mixins.color-text-icon-ripple(vars.$main);
+  }
+
+  &:hover {
+    background: color.adjust(vars.$main, $alpha: -0.95);
+  }
+
+  &:focus-within {
+    background-color: color.adjust(vars.$main, $alpha: -0.88);
+  }
+
+  &.disabled {
+    background: transparent;
+    color: vars.$disabled;
+    cursor: default;
+
+    :global .icon {
+      stroke: vars.$disabled;
+    }
+  }
+}

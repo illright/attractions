@@ -1,0 +1,33 @@
+@use '../_variables' as vars;
+
+.file-tile {
+  background: #fff;
+  border-radius: vars.$file-tile-radius;
+  box-shadow: vars.$shadow-1;
+  color: vars.$dark;
+  display: grid;
+  font-size: 0.9em;
+  gap: 0.2em;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  padding: 0.5em;
+  padding-left: 1.2em;
+  z-index: 100;
+
+  :global .btn {
+    align-self: center;
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  .filename {
+    align-self: end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .properties {
+    font-size: 0.85em;
+    font-weight: vars.$thin-font-weight;
+  }
+}

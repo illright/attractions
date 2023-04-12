@@ -1,0 +1,87 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+@use '../_mixins';
+
+.radio {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-family: vars.$font;
+  position: relative;
+
+  > input[type='radio'] {
+    @include mixins.hide-accessible;
+  }
+
+  > .selector {
+    border: 0.125em solid vars.$light-contrast;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 1.25em;
+    position: relative;
+    width: 1.25em;
+
+    &::after {
+      border-radius: 50%;
+      content: '';
+      height: 2.25em;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 2.25em;
+    }
+  }
+
+  > input:checked + .selector::before {
+    border-radius: 50%;
+    content: '';
+    height: 0.5em;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5em;
+  }
+}
+
+input:disabled + .selector {
+  background-color: color.scale(vars.$light-contrast, $lightness: 45%);
+  cursor: not-allowed;
+}
+
+input:checked + .selector {
+  background-color: vars.$main;
+  border-color: vars.$main;
+
+  &::before {
+    background-color: vars.$main-text;
+  }
+}
+
+input:disabled:checked + .selector {
+  background-color: vars.$disabled;
+  border-color: color.scale(vars.$disabled, $lightness: 4%);
+}
+
+.radio:hover {
+  :not(:focus):not(:disabled) + .selector::after {
+    background-color: color.adjust(vars.$dark, $alpha: -0.95);
+  }
+
+  :not(:focus):not(:disabled):checked + .selector::after {
+    background-color: color.adjust(vars.$main, $alpha: -0.95);
+  }
+
+  :disabled + .selector::after {
+    background: none;
+  }
+}
+
+input:focus + .selector::after {
+  background-color: color.adjust(vars.$dark, $alpha: -0.875);
+}
+
+input:focus:checked + .selector::after {
+  background-color: color.adjust(vars.$main, $alpha: -0.875);
+}

@@ -1,0 +1,54 @@
+---
+name: Divider
+---
+
+<script lang="ts">
+  import { Divider } from '$lib';
+  import Showcase from '$containers/docs/showcase.svelte';
+  import ColorPreview from '$components/docs/color-preview.svelte';
+</script>
+
+# Divider
+
+A thin horizontal line used to separate sections and group content, with optional text to display in the middle.
+
+<Showcase>
+  <div slot="showcase" class="padded">
+    <p>This is some introduction to something</p>
+    <Divider text="Section 1" />
+    <p>This is the 1st section. Have fun</p>
+    <Divider text="Conclusion" />
+    <p>This ends our test</p>
+    <Divider />
+  </div>
+  <div slot="source">
+
+```svelte
+<p>This is some introduction to something</p>
+<Divider text="Section 1" />
+<p>This is the 1st section. Have fun</p>
+<Divider text="Conclusion" />
+<p>This ends our test</p>
+<Divider />
+```
+
+  </div>
+</Showcase>
+
+
+## Properties {#properties}
+
+### Functional Properties
+
+| Name | Default | Type | Description |
+| ---- | ------- | ---- | ----------- |
+| **`text`**| `null` | `string` | Adds a text to the middle of the line. |
+| **`...`** |  | `any` | Everything else will be passed to the underlying `<hr>` element. |
+
+
+## SCSS Variables {#scss-variables}
+
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| **`$light-contrast`** | The color of the horizontal rule | <ColorPreview value="#DDDDDD" /> |
+| **`$background`** | The background color of the text. | <ColorPreview value="#FFFFFF" /> |

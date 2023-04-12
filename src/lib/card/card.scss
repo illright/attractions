@@ -1,0 +1,19 @@
+@use 'sass:color';
+@use '../_variables' as vars;
+
+.card {
+  background-color: vars.$background;
+  border-radius: vars.$card-radius;
+  box-shadow: vars.$shadow-0;
+  overflow: hidden;
+  padding: 1.5em;
+
+  &.no-padding {
+    padding: 0;
+  }
+
+  &.outline {
+    border: 1px solid color.adjust(vars.$main, $alpha: -0.7);
+    box-shadow: none;
+  }
+}
