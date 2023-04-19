@@ -14,6 +14,10 @@
    */
   export let inputClass: string | false | null = null;
   /**
+   * A class string to assign to the `<label>` element.
+   */
+  export let labelClass: string | false | null = null;
+  /**
    * A class string to add to the error message under the text field.
    */
   export let errorClass: string | false | null = null;
@@ -97,7 +101,7 @@
 
 <div class="text-field-wrapper">
   {#if label != null}
-    <label for={id}>{label}</label>
+    <label for={id} class={classes(labelClass)}>{label}</label>
   {/if}
   <label
     role="presentation"
