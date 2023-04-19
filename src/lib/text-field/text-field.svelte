@@ -27,7 +27,7 @@
   /**
    * The ID to assign to the input.
    */
-  export let id: string;
+  export let id: string | null = null;
   /**
    * The label to show above the text field.
    */
@@ -95,7 +95,9 @@
 />
 
 <div class="text-field-wrapper">
-  <label for={id}>{label}</label>
+  {#if label != null}
+    <label for={id}>{label}</label>
+  {/if}
   <label
     role="presentation"
     class={classes(
@@ -117,7 +119,7 @@
       on:input={handleInput}
       on:keydown={handleKeyDown}
       {id}
-      aria-errormessage="{id}-error"
+      aria-errormessage={id && id + '-error'}
       class={inputClass}
       on:focus|self={() => {
         if (precededByKeydownEvent) {
@@ -135,7 +137,7 @@
     <slot name="after" />
   </label>
   {#if error !== null}
-    <span class={classes('error-message', errorClass)} id="{id}-error">
+    <span class={classes('error-message', errorClass)} id={id && id + '-error'}>
       {error || ''}
     </span>
   {/if}
