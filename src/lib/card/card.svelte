@@ -21,5 +21,21 @@
   <slot />
 </div>
 
-<style src="./card.scss">
+<style lang="scss">
+  .card {
+    background-color: var(--a-background);
+    border-radius: var(--a-card-radius);
+    box-shadow: var(--a-shadow-0);
+    overflow: hidden;
+    padding: 1.5em;
+
+    &.no-padding {
+      padding: 0;
+    }
+
+    &.outline {
+      border: 1px solid hsla(var(--a-primary-hsl), 0.3);
+      box-shadow: none;
+    }
+  }
 </style>

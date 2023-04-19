@@ -100,5 +100,27 @@
   <slot />
 </div>
 
-<style src="./dropdown.scss">
+<style lang="scss">
+  .dropdown {
+    background: var(--a-background);
+    border-radius: var(--a-card-radius);
+    box-shadow: var(--a-shadow-raised);
+    margin-top: 0.3125em;
+    position: absolute;
+    z-index: 900;
+
+    &.top {
+      margin-top: -0.3125em;
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    &:not(.right) {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
 </style>

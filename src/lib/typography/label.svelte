@@ -13,5 +13,15 @@
   <slot />
 </div>
 
-<style src="./label.scss">
+<style lang="scss">
+  .label {
+    color: var(--a-primary);
+    font-size: 0.8em;
+    font-weight: var(--a-bold-font-weight);
+    text-transform: uppercase;
+
+    &.small {
+      font-size: 0.7em;
+    }
+  }
 </style>

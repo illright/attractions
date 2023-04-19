@@ -80,5 +80,25 @@
   </div>
 {/if}
 
-<style src="./radio-group.scss">
+<style lang="scss">
+  div[role='radiogroup'] :global {
+    .radio:not(.colored) > .selector {
+      margin: 0 0.5em;
+    }
+
+    .radio.colored > input + .selector::before {
+      background-color: #d3d3d3;
+      background-color: rgb(var(--before-r), var(--before-g), var(--before-b));
+    }
+
+    .radio.colored:hover > input + .selector::after {
+      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(var(--r), var(--g), var(--b), 0.05);
+    }
+
+    .radio.colored > input:focus + .selector::after {
+      background-color: rgba(0, 0, 0, 0.125);
+      background-color: rgba(var(--r), var(--g), var(--b), 0.125);
+    }
+  }
 </style>

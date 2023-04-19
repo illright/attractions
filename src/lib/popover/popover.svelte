@@ -22,5 +22,45 @@
   </div>
 </div>
 
-<style src="./popover.scss">
+<style lang="scss">
+  .popover-container {
+    position: relative;
+
+    > .popover {
+      display: none;
+      position: absolute;
+
+      &.top {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -100%);
+      }
+
+      &.bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%);
+      }
+
+      &.left {
+        bottom: 50%;
+        left: 0;
+        transform: translate(-100%, 50%);
+      }
+
+      &.right {
+        bottom: 50%;
+        right: 0;
+        transform: translate(100%, 50%);
+      }
+    }
+
+    &:hover > .popover {
+      display: block;
+    }
+
+    &:focus-within > .popover {
+      display: block;
+    }
+  }
 </style>

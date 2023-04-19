@@ -9,5 +9,19 @@
   <slot />
 </h2>
 
-<style src="./h2.scss">
+<style lang="scss">
+  h2 {
+    color: var(--a-primary);
+    font-size: 1.3em;
+    font-weight: var(--a-bold-font-weight);
+    margin: 0 0 0.4em;
+
+    @media only screen and (min-width: 640px) {
+      font-size: 1.4em;
+    }
+
+    @media only screen and (min-width: 840px) {
+      font-size: 1.5em;
+    }
+  }
 </style>

@@ -72,5 +72,57 @@
   </div>
 </div>
 
-<style src="./form-field.scss">
+<style lang="scss">
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+
+    .description {
+      margin-bottom: 0.75em;
+
+      .name {
+        display: block;
+        font-size: 1.1em;
+        margin-bottom: 0.2em;
+
+        .required {
+          color: var(--a-primary);
+        }
+      }
+
+      .help {
+        font-size: 0.95em;
+        font-weight: var(--a-thin-font-weight);
+      }
+    }
+
+    .field {
+      .message {
+        font-size: 0.85em;
+        margin: 0.3em 0.5em;
+
+        &.info {
+          color: var(--a-primary);
+        }
+
+        &.error {
+          color: var(--a-danger);
+        }
+      }
+    }
+
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+
+      .description {
+        flex-basis: 40%;
+      }
+
+      .field {
+        flex: 1;
+        margin-left: 1em;
+      }
+    }
+  }
 </style>

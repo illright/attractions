@@ -62,5 +62,49 @@
   <slot />
 </div>
 
-<style src="./dialog.scss">
+<style lang="scss">
+  .dialog {
+    background-color: #fff;
+    border-radius: var(--a-dialog-radius);
+    box-shadow: var(--a-shadow-raised);
+    padding: 1.4em 2em;
+    position: relative;
+
+    .title {
+      color: var(--a-primary);
+      display: flex;
+      font-size: 1.2em;
+      font-weight: var(--a-bold-font-weight);
+      margin-bottom: 0.7em;
+
+      &.close-padded {
+        padding-right: 1.5em;
+      }
+
+      :global svg {
+        flex-shrink: 0;
+        margin-right: 0.5em;
+      }
+    }
+
+    > :global .btn.close {
+      position: absolute;
+      right: 0.7em;
+      top: 0.7em;
+    }
+
+    &.constrain-width {
+      max-width: 30em;
+    }
+
+    &.danger .title {
+      color: var(--a-danger);
+    }
+
+    .content {
+      max-height: calc(100vh - 10em);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
 </style>

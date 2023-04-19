@@ -29,5 +29,10 @@
   <slot {closeOtherPanels} />
 </ul>
 
-<style src="./accordion.scss">
+<style lang="scss">
+  .accordion {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+  }
 </style>

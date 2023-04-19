@@ -42,5 +42,19 @@
   <slot />
 </section>
 
-<style src="./accordion-section.scss">
+<style lang="scss">
+  .panel {
+    &:not(.open) + section {
+      display: none;
+    }
+
+    :global .accordion-chevron {
+      margin-bottom: -0.125em;
+      transition: transform 100ms;
+    }
+
+    &.open :global .accordion-chevron {
+      transform: rotate(180deg);
+    }
+  }
 </style>

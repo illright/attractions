@@ -9,5 +9,18 @@
   <slot />
 </h3>
 
-<style src="./h3.scss">
+<style lang="scss">
+  h3 {
+    font-size: 1.15em;
+    font-weight: var(--a-bold-font-weight);
+    margin: 0 0 0.3em;
+
+    @media only screen and (min-width: 640px) {
+      font-size: 1.25em;
+    }
+
+    @media only screen and (min-width: 840px) {
+      font-size: 1.35em;
+    }
+  }
 </style>

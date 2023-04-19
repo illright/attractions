@@ -155,5 +155,66 @@
   </nav>
 {/if}
 
-<style src="./pagination.scss">
+<style lang="scss">
+  .pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 2em 1em;
+
+    :global {
+      > .page {
+        flex-shrink: 0;
+        height: 2.5em;
+        justify-content: center;
+        margin: 0 0.2em;
+        padding: 0;
+        width: 2.5em;
+      }
+
+      > .text-field {
+        margin: 0 0.2em;
+
+        input {
+          height: 2.8em !important;
+          width: 2.8em !important;
+        }
+      }
+
+      > .page.current {
+        background: hsla(var(--a-primary-hsl), 0.05);
+
+        &:hover {
+          background: hsla(var(--a-primary-hsl), 0.1);
+        }
+
+        &:focus {
+          background: hsla(var(--a-primary-hsl), 0.15);
+        }
+      }
+
+      @media only screen and (min-width: 380px) {
+        > .page,
+        > .text-field {
+          margin: 0 0.4em;
+        }
+      }
+
+      @media only screen and (min-width: 540px) {
+        align-self: center;
+
+        > .page,
+        input {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media only screen and (min-width: 1024px) {
+        > .page,
+        input {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 </style>

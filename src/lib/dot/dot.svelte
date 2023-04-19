@@ -43,5 +43,32 @@
   {...$$restProps}
 />
 
-<style src="./dot.scss">
+<style lang="scss">
+  .dot {
+    background: var(--a-primary);
+    border-radius: 50%;
+    height: 0.625em;
+    width: 0.625em;
+
+    &.info {
+      background: var(--a-info);
+    }
+
+    &.attention {
+      background: var(--a-attention);
+    }
+
+    &.success {
+      background: var(--a-success);
+    }
+
+    &.danger {
+      background: var(--a-danger);
+    }
+
+    &.small {
+      height: 0.375em;
+      width: 0.375em;
+    }
+  }
 </style>

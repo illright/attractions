@@ -30,4 +30,16 @@
   {/each}
 </nav>
 
-<style src="./breadcrumbs.scss"></style>
+<style lang="scss">
+  nav {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    font-weight: var(--a-thin-font-weight);
+    margin: 0 2em;
+
+    > :global .node {
+      margin: 0 0.25em;
+    }
+  }
+</style>

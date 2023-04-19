@@ -81,5 +81,40 @@
   {/each}
 </div>
 
-<style src="snackbar-container.scss">
+<style lang="scss">
+  .snackbar-stack {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 2000;
+
+    &.left {
+      align-items: flex-start;
+      left: var(--a-snackbar-horizontal-offset);
+    }
+
+    &.right {
+      align-items: flex-end;
+      right: var(--a-snackbar-horizontal-offset);
+    }
+
+    &.h-middle {
+      align-items: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.top {
+      top: var(--a-snackbar-vertical-offset);
+    }
+
+    &.bottom {
+      bottom: var(--a-snackbar-vertical-offset);
+    }
+
+    &.v-middle {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 </style>

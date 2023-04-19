@@ -103,5 +103,25 @@
   </div>
 {/if}
 
-<style src="./checkbox-group.scss">
+<style lang="scss">
+  div[role='group'] :global {
+    .checkbox:not(.colored) > .selector {
+      margin: 0 0.5em;
+    }
+
+    .checkbox.colored > input + .selector::before {
+      border-color: #d3d3d3;
+      border-color: rgb(var(--before-r), var(--before-g), var(--before-b));
+    }
+
+    .checkbox.colored:hover > input + .selector::after {
+      background-color: rgba(0, 0, 0, 0.05);
+      background-color: rgba(var(--r), var(--g), var(--b), 0.05);
+    }
+
+    .checkbox.colored > input:focus + .selector::after {
+      background-color: rgba(0, 0, 0, 0.125);
+      background-color: rgba(var(--r), var(--g), var(--b), 0.125);
+    }
+  }
 </style>

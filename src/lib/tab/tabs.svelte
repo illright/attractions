@@ -38,5 +38,9 @@
   {/each}
 </nav>
 
-<style src="./tabs.scss">
+<style lang="scss">
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
 </style>

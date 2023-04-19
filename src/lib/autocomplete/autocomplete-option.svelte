@@ -52,5 +52,40 @@
   </button>
 </li>
 
-<style src="./autocomplete-option.scss">
+<style lang="scss">
+  li {
+    list-style: none;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--a-font);
+    font-size: 1em;
+    outline: none;
+    padding: 0.7em 1.2em;
+    text-align: left;
+    width: 100%;
+
+    .subtext {
+      font-size: 0.95em;
+      font-weight: var(--a-thin-font-weight);
+      margin-top: 0.2em;
+    }
+
+    &:hover {
+      background: hsla(var(--a-primary-hsl), 0.05);
+    }
+
+    &:focus {
+      background: hsla(var(--a-primary-hsl), 0.075);
+    }
+
+    mark {
+      background: none;
+      color: var(--a-primary);
+      font-weight: var(--a-bold-font-weight);
+    }
+  }
 </style>

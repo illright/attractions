@@ -69,5 +69,21 @@
   <slot {toggle} />
 </div>
 
-<style src="./dropdown-shell.scss">
+<style lang="scss">
+  .dropdown-shell {
+    position: relative;
+
+    &:not(.open) > :global .dropdown {
+      display: none;
+    }
+
+    :global .dropdown-chevron {
+      margin-bottom: -0.125em;
+      transition: transform 150ms;
+    }
+
+    &.open :global .dropdown-chevron {
+      transform: scaleY(-1);
+    }
+  }
 </style>
