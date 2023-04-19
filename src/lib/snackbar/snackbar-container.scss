@@ -8,12 +8,12 @@
 
   &.left {
     align-items: flex-start;
-    left: vars.$snackbar-horizontal-offset;
+    left: var(--a-snackbar-horizontal-offset);
   }
 
   &.right {
     align-items: flex-end;
-    right: vars.$snackbar-horizontal-offset;
+    right: var(--a-snackbar-horizontal-offset);
   }
 
   &.h-middle {
@@ -23,11 +23,11 @@
   }
 
   &.top {
-    top: vars.$snackbar-vertical-offset;
+    top: var(--a-snackbar-vertical-offset);
   }
 
   &.bottom {
-    bottom: vars.$snackbar-vertical-offset;
+    bottom: var(--a-snackbar-vertical-offset);
   }
 
   &.v-middle {

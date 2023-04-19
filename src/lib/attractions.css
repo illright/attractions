@@ -89,6 +89,11 @@
   --a-slider-tick-value-color: #7a7a7a;
   --a-slider-tick-value-font-size: 12px;
 
+  /* Snackbar */
+  --a-snackbar-horizontal-offset: 5%;
+  --a-snackbar-vertical-offset: 3em;
+  --a-snackbar-fg: white;
+
   /* For convenience. Not to be overridden by users directly! */
   --a-primary-hsl: var(--a-primary-h), var(--a-primary-s), var(--a-primary-l);
   --a-primary: hsl(var(--a-primary-hsl));

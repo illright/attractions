@@ -12,7 +12,7 @@
   padding: 0.375em;
 
   .text {
-    color: vars.$snackbar-fg;
+    color: var(--a-snackbar-fg);
     flex: 1;
     font-size: 0.95em;
     margin: 0 0.625em;

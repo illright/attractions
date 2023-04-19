@@ -14,11 +14,7 @@ $off-state: #aaa !default;
 $chip-bg: rgba(0, 0, 0, 0.08) !default;
 $chip-fg: #656565 !default;
 $snackbar-bg: color.scale($dark, $lightness: 10%) !default;
-$snackbar-fg: #fff !default;
 $modal-overlay-bg: rgba(0, 0, 0, 0.25) !default;
-
-$snackbar-horizontal-offset: 5% !default;
-$snackbar-vertical-offset: 3em !default;
 
 $slider-disabled: #cfcfcf !default;
 
