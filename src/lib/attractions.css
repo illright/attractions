@@ -75,6 +75,20 @@
   /* Text field */
   --a-text-field-radius: 5px;
 
+  /* Slider */
+  --a-slider-handle-size: 16px;
+  --a-slider-handle-tooltip-size: 12px;
+  --a-slider-handle-tooltip-font-size: 14px;
+  --a-slider-handle-tooltip-disabled: #aaa;
+  --a-slider-rail-size: 4px;
+  --a-slider-rail-bg: #aaa;
+  --a-slider-disabled: #cfcfcf;
+  --a-slider-tick-bg: #7a7a7a;
+  --a-slider-tick-length: 8px;
+  --a-slider-sub-tick-length: 4px;
+  --a-slider-tick-value-color: #7a7a7a;
+  --a-slider-tick-value-font-size: 12px;
+
   /* For convenience. Not to be overridden by users directly! */
   --a-primary-hsl: var(--a-primary-h), var(--a-primary-s), var(--a-primary-l);
   --a-primary: hsl(var(--a-primary-hsl));

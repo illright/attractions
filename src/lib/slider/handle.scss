@@ -1,23 +1,24 @@
-@use '../_variables' as vars;
-@use 'sass:math';
-
 .handle {
   backface-visibility: hidden;
   background: var(--a-primary);
   border-radius: 50%;
   display: block;
-  height: vars.$slider-handle-size;
+  height: var(--a-slider-handle-size);
   position: absolute;
-  width: vars.$slider-handle-size;
+  width: var(--a-slider-handle-size);
   z-index: 2;
 
   &-horizontal {
-    top: -(math.div(vars.$slider-handle-size - vars.$slider-rail-size, 2));
+    top: calc(
+      -1 * (var(--a-slider-handle-size) - var(--a-slider-rail-size)) / 2
+    );
     transform: translateX(-50%);
   }
 
   &-vertical {
-    left: -(math.div(vars.$slider-handle-size - vars.$slider-rail-size, 2));
+    left: calc(
+      -1 * (var(--a-slider-handle-size) - var(--a-slider-rail-size)) / 2
+    );
     transform: translateY(50%);
   }
 
