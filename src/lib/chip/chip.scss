@@ -2,7 +2,7 @@
 
 .chip {
   background: vars.$chip-bg;
-  border-radius: vars.$chip-radius;
+  border-radius: var(--a-chip-radius);
   color: vars.$chip-fg;
   font-family: vars.$font;
   font-weight: vars.$bold-font-weight;

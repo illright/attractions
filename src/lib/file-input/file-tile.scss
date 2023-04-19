@@ -2,7 +2,7 @@
 
 .file-tile {
   background: #fff;
-  border-radius: vars.$file-tile-radius;
+  border-radius: var(--a-file-tile-radius);
   box-shadow: var(--a-shadow-1);
   color: var(--a-dark);
   display: grid;

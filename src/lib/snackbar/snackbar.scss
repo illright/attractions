@@ -4,7 +4,7 @@
 .snackbar {
   align-items: center;
   background: vars.$snackbar-bg;
-  border-radius: vars.$snackbar-radius;
+  border-radius: var(--a-snackbar-radius);
   box-shadow: var(--a-shadow-raised);
   display: flex;
   margin-top: 1em;

@@ -63,6 +63,15 @@
   /* Card */
   --a-card-radius: 1.25em;
 
+  /* Radii */
+  --a-chip-radius: 1.5625em;
+  --a-snackbar-radius: 0.625em;
+  --a-dialog-radius: 1.5625em;
+  --a-dropzone-radius: 1.5625em;
+  --a-file-tile-radius: 0.625em;
+  --a-textfield-outline-radius: 1.5625em;
+  --a-table-radius: 0.5em;
+
   /* Text field */
   --a-text-field-radius: 5px;
 

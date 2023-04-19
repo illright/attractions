@@ -4,7 +4,7 @@
 
 .file-dropzone {
   border: 0.125em dashed currentColor;
-  border-radius: vars.$dropzone-radius;
+  border-radius: var(--a-dropzone-radius);
   color: var(--a-primary);
   display: block;
   margin: 2em 0 0.5em;
@@ -44,7 +44,7 @@
 
   .dropzone-layer {
     align-items: center;
-    border-radius: vars.$dropzone-radius;
+    border-radius: var(--a-dropzone-radius);
     cursor: pointer;
     display: flex;
     height: 100%;

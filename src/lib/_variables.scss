@@ -16,13 +16,6 @@ $chip-fg: #656565 !default;
 $snackbar-bg: color.scale($dark, $lightness: 10%) !default;
 $snackbar-fg: #fff !default;
 $modal-overlay-bg: rgba(0, 0, 0, 0.25) !default;
-$chip-radius: 1.5625em !default;
-$snackbar-radius: 0.625em !default;
-$dialog-radius: 1.5625em !default;
-$dropzone-radius: 1.5625em !default;
-$file-tile-radius: 0.625em !default;
-$textfield-outline-radius: 1.5625em !default;
-$table-radius: 0.5em !default;
 
 $snackbar-horizontal-offset: 5% !default;
 $snackbar-vertical-offset: 3em !default;
