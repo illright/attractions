@@ -228,6 +228,7 @@
       left: -1px;
       border: 0 solid var(--a-primary);
       transition: border 75ms;
+      z-index: -1;
 
       @media (prefers-reduced-motion) {
         transition: none;
