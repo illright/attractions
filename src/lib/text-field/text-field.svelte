@@ -120,7 +120,7 @@
       on:keydown={handleKeyDown}
       {id}
       aria-errormessage={id && id + '-error'}
-      class={inputClass}
+      class={classes(inputClass)}
       on:focus|self={() => {
         if (precededByKeydownEvent) {
           focusedByKeyboard = true;
@@ -131,6 +131,7 @@
         focusedByKeyboard = false;
       }}
       on:mousedown={() => (precededByKeydownEvent = false)}
+      use:eventsAction={events}
       {...$$restProps}
     />
 
