@@ -1,7 +1,6 @@
 extends:
   - stylelint-config-standard
   - stylelint-config-sass-guidelines
-  - stylelint-config-prettier
 
 rules:
   selector-pseudo-class-no-unknown:
@@ -23,3 +22,5 @@ rules:
 
   # Doesn't always make sense with Sass nesting
   no-descending-specificity: null
+
+  color-named: "always-where-possible"

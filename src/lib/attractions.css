@@ -1,18 +1,23 @@
 :root {
   /* Palette */
+
   /* - Primary */
   --a-primary-h: 258deg;
   --a-primary-s: 58%;
   --a-primary-l: 42%;
+
   /* - Secondary */
   --a-secondary-h: 145deg;
   --a-secondary-s: 100%;
   --a-secondary-l: 39%;
+
   /* - Background */
-  --a-background: #fff;
+  --a-background: white;
+
   /* - On primary */
   --a-on-primary-rgb: 255, 255, 255;
   --a-on-surface-rgb: 0, 0, 0;
+
   /* - Danger */
   --a-danger-h: 350deg;
   --a-danger-s: 58%;
@@ -23,7 +28,6 @@
   --a-neutral-s: 5%;
   --a-neutral-l-50: 47%;
   --a-neutral-l-100: 5%;
-
   --a-dark-rgb: 51, 51, 51;
   --a-disabled-bg: #d7d7d7;
   --a-disabled-h: 0deg;
@@ -32,13 +36,9 @@
   --a-light-contrast-h: 0deg;
   --a-light-contrast-s: 0%;
   --a-light-contrast-l: 87%;
-
   --a-font-family: 'Open Sans', sans-serif;
-
-  --a-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.1),
-    0px 1px 3px rgba(0, 0, 0, 0.07);
-  --a-elevation-2: 0px 2px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  --a-elevation-1: 0 1px 2px rgba(0 0 0 10%), 0 1px 3px rgba(0 0 0 7%);
+  --a-elevation-2: 0 2px 5px 0 rgba(0 0 0 14%), 0 1px 5px 0 rgba(0 0 0 12%);
 
   /* Indicators */
   --a-info: #86d3ff;
