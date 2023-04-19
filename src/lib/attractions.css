@@ -37,8 +37,14 @@
   --a-light-contrast-s: 0%;
   --a-light-contrast-l: 87%;
   --a-font-family: 'Open Sans', sans-serif;
-  --a-elevation-1: 0 1px 2px rgba(0 0 0 10%), 0 1px 3px rgba(0 0 0 7%);
-  --a-elevation-2: 0 2px 5px 0 rgba(0 0 0 14%), 0 1px 5px 0 rgba(0 0 0 12%);
+  --a-elevation-1: 0 1px 2px rgba(0 0 0 / 10%), 0 1px 3px rgba(0 0 0 / 7%);
+  --a-elevation-2: 0 2px 5px 0 rgba(0 0 0 / 14%), 0 1px 5px 0 rgba(0 0 0 / 12%);
+
+  /* Shadows */
+  --a-shadow-0: 0 2px 2px 0 rgba(0 0 0 / 14%), 0 1px 5px 0 rgba(0 0 0 / 12%);
+  --a-shadow-1: 0 2px 5px rgba(0 0 0 / 14%), 0 1px 5px rgba(0 0 0 / 12%);
+  --a-shadow-raised: 0 2px 4px -1px rgba(0 0 0 / 2%),
+    0 3px 5px 0 rgba(0 0 0 / 14%), 0 1px 10px 0 rgba(0 0 0 / 12%);
 
   /* Indicators */
   --a-info: #86d3ff;
@@ -53,6 +59,9 @@
   /* Button */
   --a-button-radius: 0.5em;
   --a-button-font-weight: 500;
+
+  /* Card */
+  --a-card-radius: 1.25em;
 
   /* Text field */
   --a-text-field-radius: 5px;

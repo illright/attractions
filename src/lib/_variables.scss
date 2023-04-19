@@ -20,7 +20,6 @@ $chip-radius: 1.5625em !default;
 $snackbar-radius: 0.625em !default;
 $dialog-radius: 1.5625em !default;
 $dropzone-radius: 1.5625em !default;
-$card-radius: 1.25em !default;
 $file-tile-radius: 0.625em !default;
 $textfield-outline-radius: 1.5625em !default;
 $table-radius: 0.5em !default;
@@ -45,13 +44,6 @@ $bold-font-weight: 500 !default;
 $regular-font-weight: 400 !default;
 $thin-font-weight: 300 !default;
 $button-font-weight: $bold-font-weight !default;
-
-$shadow-0: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12) !default;
-
-$shadow-1: 0 2px 5px rgba(0, 0, 0, 0.14), 0 1px 5px rgba(0, 0, 0, 0.12) !default;
-
-$shadow-raised: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
-  0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12) !default;
 
 // X icon from Feather icons: https://feathericons.com/?query=x
 $x-icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E" !default;

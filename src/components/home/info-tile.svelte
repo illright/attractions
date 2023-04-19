@@ -35,7 +35,7 @@
       transition: 150ms box-shadow;
 
       &:hover {
-        box-shadow: vars.$shadow-raised;
+        box-shadow: var(--a-shadow-raised);
       }
     }
 

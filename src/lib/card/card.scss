@@ -3,8 +3,8 @@
 
 .card {
   background-color: var(--a-background);
-  border-radius: vars.$card-radius;
-  box-shadow: vars.$shadow-0;
+  border-radius: var(--a-card-radius);
+  box-shadow: var(--a-shadow-0);
   overflow: hidden;
   padding: 1.5em;
 

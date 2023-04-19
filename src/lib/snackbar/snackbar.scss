@@ -5,7 +5,7 @@
   align-items: center;
   background: vars.$snackbar-bg;
   border-radius: vars.$snackbar-radius;
-  box-shadow: vars.$shadow-raised;
+  box-shadow: var(--a-shadow-raised);
   display: flex;
   margin-top: 1em;
   min-width: 16em;

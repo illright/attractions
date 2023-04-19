@@ -7,7 +7,7 @@
   background: rgb(100, 100, 100);
   border: 0;
   border-radius: 0.625em;
-  box-shadow: vars.$shadow-raised;
+  box-shadow: var(--a-shadow-raised);
   color: #fff;
   font-size: 0.9em;
   margin: 0.2em;

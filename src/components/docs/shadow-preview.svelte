@@ -36,7 +36,7 @@
   .value-popover {
     background: var(--a-background);
     border-radius: 0.5em;
-    box-shadow: vars.$shadow-raised;
+    box-shadow: var(--a-shadow-raised);
     color: var(--a-dark);
     font-family: 'Roboto Mono', monospace;
     margin-right: 0.25em;

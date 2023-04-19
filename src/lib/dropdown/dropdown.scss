@@ -2,8 +2,8 @@
 
 .dropdown {
   background: var(--a-background);
-  border-radius: vars.$card-radius;
-  box-shadow: vars.$shadow-raised;
+  border-radius: var(--a-card-radius);
+  box-shadow: var(--a-shadow-raised);
   margin-top: 0.3125em;
   position: absolute;
   z-index: 900;

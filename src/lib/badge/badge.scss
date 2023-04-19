@@ -6,7 +6,7 @@
   &::after {
     background-color: var(--a-badge-default);
     border-radius: 50%;
-    box-shadow: vars.$shadow-raised;
+    box-shadow: var(--a-shadow-raised);
     content: '';
     height: 0.625em;
     position: absolute;

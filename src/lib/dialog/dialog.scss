@@ -3,7 +3,7 @@
 .dialog {
   background-color: #fff;
   border-radius: vars.$dialog-radius;
-  box-shadow: vars.$shadow-raised;
+  box-shadow: var(--a-shadow-raised);
   padding: 1.4em 2em;
   position: relative;
 
