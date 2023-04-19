@@ -21,7 +21,7 @@
 label {
   @include appearances.button;
 
-  border-radius: vars.$button-radius;
+  border-radius: var(--a-button-radius);
   margin-right: 0.5em;
   padding: 0.8em 1.1em;
 
