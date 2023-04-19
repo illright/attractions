@@ -64,6 +64,7 @@
   let inputElement: HTMLInputElement | HTMLTextAreaElement;
   onMount(() => autofocus && inputElement.focus());
 
+  // TODO: dispatch the events where appropriate again
   const dispatch = createEventDispatcher<{
     input: { value: string; nativeEvent: InputEvent };
     change: { value: string; nativeEvent: Event };
@@ -144,58 +145,6 @@
   {/if}
 </div>
 
-<!-- <div
-    class={classes('text-field', _class)}
-    class:outline
-    class:with-item={withItem}
-    class:left={withItem && !itemRight}
-    class:right={withItem && itemRight}
-    class:no-spinner={noSpinner}
-  >
-    {#if multiline}
-      <textarea
-        {id}
-        {value}
-        class={classes(inputClass)}
-        bind:this={inputElement}
-        on:input={handleInput}
-        on:change={e => dispatch('change', { value, nativeEvent: e })}
-        on:focus={e => dispatch('focus', { nativeEvent: e })}
-        on:keydown={e => dispatch('keydown', { nativeEvent: e })}
-        on:blur={e => dispatch('blur', { nativeEvent: e })}
-        use:eventsAction={events}
-        {...$$restProps}
-      />
-    {:else}
-      <input
-        {id}
-        value={toString(value)}
-        class={classes(inputClass)}
-        bind:this={inputElement}
-        on:input={handleInput}
-        on:change={e => dispatch('change', { value, nativeEvent: e })}
-        on:focus={e => dispatch('focus', { nativeEvent: e })}
-        on:keydown={e => dispatch('keydown', { nativeEvent: e })}
-        on:blur={e => dispatch('blur', { nativeEvent: e })}
-        use:eventsAction={events}
-        {...$$restProps}
-      />
-      {#if outline && label != null}
-        <label for={id} class={classes(labelClass)}>{label}</label>
-      {/if}
-
-      {#if withItem}
-        <slot />
-      {/if}
-
-      {#if error}
-        <span class={classes('error', errorClass)}>
-          <slot name="error">{error}</slot>
-        </span>
-      {/if}
-    {/if}
-  </div>
--->
 <style lang="scss">
   .text-field {
     box-sizing: border-box;
