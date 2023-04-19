@@ -3,7 +3,7 @@
 .headline {
   color: var(--a-primary);
   font-size: 1.5em;
-  font-weight: vars.$bold-font-weight;
+  font-weight: var(--a-bold-font-weight);
   margin-bottom: 0.2em;
 
   @media only screen and (min-width: 640px) {

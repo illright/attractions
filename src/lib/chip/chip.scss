@@ -5,7 +5,7 @@
   border-radius: var(--a-chip-radius);
   color: vars.$chip-fg;
   font-family: vars.$font;
-  font-weight: vars.$bold-font-weight;
+  font-weight: var(--a-bold-font-weight);
   padding: 0.6em 0.9em;
 
   &.small {

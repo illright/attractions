@@ -106,7 +106,7 @@
       }
 
       p {
-        font-weight: vars.$thin-font-weight;
+        font-weight: var(--a-thin-font-weight);
         margin-top: 1.5em;
       }
 

@@ -55,7 +55,7 @@
     .subtitle {
       color: var(--a-primary);
       font-size: 0.9em;
-      font-weight: vars.$thin-font-weight;
+      font-weight: var(--a-thin-font-weight);
     }
 
     @media only screen and (min-width: 640px) {

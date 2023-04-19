@@ -49,7 +49,7 @@
 @mixin text-field-input {
   font-family: vars.$font;
   font-size: 1rem;
-  font-weight: vars.$thin-font-weight;
+  font-weight: var(--a-thin-font-weight);
   height: 2.8em;
   outline: none;
 }
@@ -59,7 +59,7 @@
   cursor: pointer;
   display: flex;
   font-family: vars.$font;
-  font-weight: vars.$button-font-weight;
+  font-weight: var(--a-button-font-weight);
   outline: none;
 
   &::-moz-focus-inner {

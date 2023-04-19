@@ -23,7 +23,7 @@
 
   h3 {
     font-size: 1.1em;
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
     margin: 1.5em 0 0.5em;
 
     @media only screen and (min-width: 640px) {

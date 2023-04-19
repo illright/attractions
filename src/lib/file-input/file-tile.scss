@@ -28,6 +28,6 @@
 
   .properties {
     font-size: 0.85em;
-    font-weight: vars.$thin-font-weight;
+    font-weight: var(--a-thin-font-weight);
   }
 }

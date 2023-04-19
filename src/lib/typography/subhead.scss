@@ -2,7 +2,7 @@
 
 .subhead {
   font-size: 0.95em;
-  font-weight: vars.$thin-font-weight;
+  font-weight: var(--a-thin-font-weight);
   line-height: 1.2em;
 
   @media only screen and (min-width: 640px) {

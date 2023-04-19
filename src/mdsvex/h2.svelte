@@ -23,7 +23,7 @@
 
   h2 {
     font-size: 1.3em;
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
     margin: 2em 0 1em;
 
     @media only screen and (min-width: 640px) {

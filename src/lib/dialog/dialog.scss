@@ -11,7 +11,7 @@
     color: var(--a-primary);
     display: flex;
     font-size: 1.2em;
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
     margin-bottom: 0.7em;
 
     &.close-padded {

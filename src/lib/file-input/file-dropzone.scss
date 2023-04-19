@@ -36,7 +36,7 @@
     .title {
       color: currentColor;
       flex: 1;
-      font-weight: vars.$bold-font-weight;
+      font-weight: var(--a-bold-font-weight);
       margin-left: 0.5em;
       text-align: center;
     }

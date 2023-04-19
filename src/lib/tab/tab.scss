@@ -24,7 +24,7 @@
     cursor: pointer;
     display: flex;
     font-family: vars.$font;
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
     padding: 0.7em 0.6em 0.5em;
 
     &:hover {

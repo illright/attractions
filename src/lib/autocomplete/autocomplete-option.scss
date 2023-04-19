@@ -18,7 +18,7 @@ button {
 
   .subtext {
     font-size: 0.95em;
-    font-weight: vars.$thin-font-weight;
+    font-weight: var(--a-thin-font-weight);
     margin-top: 0.2em;
   }
 
@@ -33,6 +33,6 @@ button {
   mark {
     background: none;
     color: var(--a-primary);
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
   }
 }

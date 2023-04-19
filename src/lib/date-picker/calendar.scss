@@ -38,7 +38,7 @@ $side-padding: 1rem;
     > :global .btn {
       color: var(--a-dark);
       font-size: 0.9em;
-      font-weight: vars.$regular-font-weight;
+      font-weight: var(--a-regular-font-weight);
       height: $day-size;
       justify-content: center;
       margin: $day-gap;

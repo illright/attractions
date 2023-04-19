@@ -91,7 +91,7 @@
       span {
         color: #000;
         font-size: 1.25em;
-        font-weight: vars.$bold-font-weight;
+        font-weight: var(--a-bold-font-weight);
         margin-left: 0.7em;
       }
     }

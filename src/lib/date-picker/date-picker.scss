@@ -34,7 +34,7 @@ $side-padding: 1rem;
     align-items: center;
     color: var(--a-primary);
     display: flex;
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
     justify-content: space-between;
     padding: 0 $side-padding 0.5em;
 

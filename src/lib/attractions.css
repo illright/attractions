@@ -46,6 +46,11 @@
   --a-shadow-raised: 0 2px 4px -1px rgba(0 0 0 / 2%),
     0 3px 5px 0 rgba(0 0 0 / 14%), 0 1px 10px 0 rgba(0 0 0 / 12%);
 
+  /* Font weights */
+  --a-bold-font-weight: 500;
+  --a-regular-font-weight: 400;
+  --a-thin-font-weight: 300;
+
   /* Indicators */
   --a-info: #86d3ff;
   --a-attention-h: 33deg;
@@ -58,7 +63,7 @@
 
   /* Button */
   --a-button-radius: 0.5em;
-  --a-button-font-weight: 500;
+  --a-button-font-weight: var(--a-bold-font-weight);
 
   /* Card */
   --a-card-radius: 1.25em;

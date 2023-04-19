@@ -27,7 +27,7 @@
   }
 
   strong {
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
   }
 
   a {

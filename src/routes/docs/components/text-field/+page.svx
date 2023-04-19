@@ -144,7 +144,7 @@ If the <mark>`withItem`</mark> property is specified, this holds the item for th
   }
 
   .dollar {
-    font-weight: vars.$bold-font-weight;
+    font-weight: var(--a-bold-font-weight);
     top: 0.8em !important;
   }
 }
