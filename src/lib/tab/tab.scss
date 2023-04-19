@@ -23,7 +23,7 @@
     color: var(--a-primary);
     cursor: pointer;
     display: flex;
-    font-family: vars.$font;
+    font-family: var(--a-font);
     font-weight: var(--a-bold-font-weight);
     padding: 0.7em 0.6em 0.5em;
 

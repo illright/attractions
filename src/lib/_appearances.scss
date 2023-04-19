@@ -47,7 +47,7 @@
 }
 
 @mixin text-field-input {
-  font-family: vars.$font;
+  font-family: var(--a-font);
   font-size: 1rem;
   font-weight: var(--a-thin-font-weight);
   height: 2.8em;
@@ -58,7 +58,7 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  font-family: vars.$font;
+  font-family: var(--a-font);
   font-weight: var(--a-button-font-weight);
   outline: none;
 

@@ -7,7 +7,7 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  font-family: vars.$font;
+  font-family: var(--a-font);
 
   input {
     @include mixins.hide-accessible;
