@@ -33,6 +33,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <li on:click|stopPropagation={e => dispatch('click', { nativeEvent: e })}>
   <button type="button">
     {#each markMatch(option.name) as part}
