@@ -4,7 +4,7 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [3.7.1] - 2023-06-25
 
 ### Added
 
@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/) and this 
 
 - Improved typings for some components and utils ([#334](https://github.com/illright/attractions/pull/334)).
 - Required props will now be marked as such in the component typings.
+- Silenced some false-positive warnings by the svelte compiler (Thanks to [@noosxe](https://github.com/noosxe) for [#369](https://github.com/illright/attractions/pull/369))
 
 ## [3.7.0] – 2021-12-30
 
@@ -229,7 +230,8 @@ Minor documentation and bug fixes.
 First stable release with proper documentation.
 Previous, undocumented, releases can be found in [the releases section](https://github.com/illright/attractions/releases).
 
-[unreleased]: https://github.com/illright/attractions/compare/v3.7.0...HEAD
+[unreleased]: https://github.com/illright/attractions/compare/v3.7.1...HEAD
+[3.7.1]: https://github.com/illright/attractions/releases/tag/v3.7.1
 [3.7.0]: https://github.com/illright/attractions/releases/tag/v3.7.0
 [3.6.0]: https://github.com/illright/attractions/releases/tag/v3.6.0
 [3.5.2]: https://github.com/illright/attractions/releases/tag/v3.5.2
