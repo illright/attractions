@@ -40,11 +40,14 @@ jobs:
             return changelog.slice(start + 1, end).join('\n').trim();
 
       - name: Create a release 🔖
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+        uses: actions/github-script@v3
         with:
-          tag_name: ${{ steps.fetch-version.outputs.result }}
-          release_name: ${{ steps.fetch-version.outputs.result }}
-          body: ${{ steps.fetch-changelog.outputs.result }}
-          commitish: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: "${{ steps.fetch-version.outputs.result }}",
+              name: "${{ steps.fetch-version.outputs.result }}",
+              body: "${{ steps.fetch-changelog.outputs.result }}"
+            });
