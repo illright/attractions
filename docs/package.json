@@ -31,7 +31,7 @@
     "attractions": "workspace:^3.7.0",
     "eslint-config-prettier": "^8.5.0",
     "mdsvex": "^0.9.8",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.31",
     "prettier": "2.4.0",
     "prism-svelte": "^0.4.7",
     "remark-heading-id": "^1.0.0",
