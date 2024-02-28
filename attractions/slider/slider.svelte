@@ -229,11 +229,7 @@
    * @param {MouseEvent | TouchEvent} e
    */
   function onEnd(e) {
-    const el = e.target;
     if (sliderActive) {
-      if (el === slider || slider.contains(/** @type {HTMLElement} */ (el))) {
-        onMove(e);
-      }
       dispatch('blur');
       sliderActive = false;
     }
