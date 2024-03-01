@@ -10,7 +10,10 @@
  */
 function normalizeEvent(e) {
   if (e.type.includes('touch')) {
-    return /** @type {TouchEvent}*/ (e).touches[0];
+    return (
+      /** @type {TouchEvent}*/ (e).touches[0] ||
+      /** @type {TouchEvent}*/ (e).changedTouches[0]
+    );
   } else {
     return /** @type {MouseEvent}*/ (e);
   }
