@@ -7,29 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v4
 
-      - name: Set up Node 14 📦
-        uses: actions/setup-node@v2
+      - name: Use pnpm
+        uses: pnpm/action-setup@6e1964dde3397a825e79e4607ad57f3f7ca2c7cb
         with:
-          node-version: '14'
+          version: ^8.10.2
 
-      - name: Cache pnpm modules 🗄
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-pnpm-modules
+      - name: Set up Node 20 📦
+        uses: actions/setup-node@v4
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
-
-      - name: Install pnpm 🧰
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.14.2
+          node-version: '20'
+          cache: pnpm
 
       - name: Install dependencies 🧰
         run: pnpm install

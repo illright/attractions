@@ -13,7 +13,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Download the docs artifact 📥
-        uses: dawidd6/action-download-artifact@891cccee4b25d3306cf5edafa174ddc1d969871f
+        uses: dawidd6/action-download-artifact@a430ac5786b39ad5869da25a98130624d2ce340c
         with:
           workflow: build-pr-docs.yml
           commit: ${{ github.event.workflow_run.head_sha }}
@@ -21,7 +21,7 @@ jobs:
           path: ./docs
 
       - name: Download the PR number artifact 📥
-        uses: dawidd6/action-download-artifact@891cccee4b25d3306cf5edafa174ddc1d969871f
+        uses: dawidd6/action-download-artifact@a430ac5786b39ad5869da25a98130624d2ce340c
         with:
           workflow: build-pr-docs.yml
           name: pr_number
@@ -30,7 +30,7 @@ jobs:
         run: echo "PR_NUMBER=$(cat pr_number.txt)" >> $GITHUB_ENV
 
       - name: Publish 🚀
-        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+        uses: peaceiris/actions-gh-pages@4eb285e828117bca26638192c3ed309c622e7bad
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
@@ -38,9 +38,8 @@ jobs:
           keep_files: true
 
       - name: Post the URL on the PR 🖊
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script:
             | # yeah, I know it's weird how you get PR comments with `.issues`
             const prComments = (await github.issues.listComments({

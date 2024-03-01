@@ -14,14 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v4
 
       - name: Add the [new release] tag 🔖
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/attractions/package.json`);
             const currentVersion = `v${package.version}`;
