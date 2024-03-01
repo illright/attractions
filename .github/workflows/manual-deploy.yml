@@ -37,7 +37,7 @@ jobs:
           SAPPER_APP_BASEPATH: attractions/${{ github.event.inputs.prefix }}
         run: |
           pnpm install
-          pnpm run export -- --basepath attractions/${{ github.event.inputs.prefix }}
+          pnpm run export --basepath attractions/${{ github.event.inputs.prefix }}
 
       - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@4eb285e828117bca26638192c3ed309c622e7bad
