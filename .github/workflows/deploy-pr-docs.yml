@@ -30,7 +30,7 @@ jobs:
         run: echo "PR_NUMBER=$(cat pr_number.txt)" >> $GITHUB_ENV
 
       - name: Publish 🚀
-        uses: peaceiris/actions-gh-pages@4eb285e828117bca26638192c3ed309c622e7bad
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
