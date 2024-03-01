@@ -2,6 +2,7 @@ name: Post-release chores
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   deploy-docs:
@@ -22,7 +23,7 @@ jobs:
       - name: Set up Node 20 📦
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: pnpm
 
       - name: Build docs 🔧
@@ -54,8 +55,8 @@ jobs:
       - name: Set up Node 20 📦
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
           cache: pnpm
 
       - name: Build bundles 🔧
