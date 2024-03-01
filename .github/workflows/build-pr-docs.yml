@@ -2,6 +2,7 @@ name: Build docs from a pull request
 on:
   pull_request:
     paths:
+      - .github/workflows/**
       - attractions/**
       - docs/**
       - CHANGELOG.md
