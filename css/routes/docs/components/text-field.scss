@@ -1,0 +1,12 @@
+@use 'attractions-theme' as vars;
+
+[slot='showcase'] :global {
+  .text-field.outline {
+    margin-top: 1.5em;
+  }
+
+  .dollar {
+    font-weight: vars.$bold-font-weight;
+    top: 0.8em !important;
+  }
+}

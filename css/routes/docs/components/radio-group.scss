@@ -1,0 +1,14 @@
+[slot='showcase'] :global {
+  .radio {
+    margin-bottom: 0.5em;
+  }
+
+  .colored {
+    display: flex;
+    flex-wrap: wrap;
+
+    .radio {
+      margin: 0.5em;
+    }
+  }
+}

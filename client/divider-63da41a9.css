@@ -1,0 +1,1 @@
+hr.svelte-lhyupy{border:0 solid #ddd;border-top-width:1px;margin-top:1em;width:100%}hr[data-text].svelte-lhyupy{overflow:visible;position:relative}hr[data-text].svelte-lhyupy::after{background:#fff;content:attr(data-text);font-size:0.85rem;left:50%;padding:0 0.4em;position:absolute;top:0;transform:translate(-50%, -55%)}

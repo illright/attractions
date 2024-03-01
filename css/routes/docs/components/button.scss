@@ -1,0 +1,16 @@
+[slot='showcase'] {
+  align-items: center;
+  display: grid;
+  gap: 0.5em;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, 3em);
+  justify-items: start;
+  padding: 1em;
+
+  @media only screen and (min-width: 920px) {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, 3em);
+  }
+}

@@ -1,0 +1,39 @@
+@use 'sass:color';
+@use 'attractions-theme' as vars;
+
+$side-margin: 1em;
+
+header {
+  align-items: center;
+  border-bottom: 1px solid color.adjust(vars.$main, $alpha: -0.75);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+  padding-top: 0.6em;
+
+  .logo,
+  .clickables {
+    align-items: center;
+    display: flex;
+  }
+
+  .logo {
+    margin-left: $side-margin + 0.7em;
+    text-decoration: none;
+
+    span {
+      color: #000;
+      font-size: 1.25em;
+      font-weight: vars.$bold-font-weight;
+      margin-left: 0.7em;
+    }
+  }
+
+  .clickables {
+    margin-right: $side-margin;
+
+    :global .dropdown-chevron {
+      margin-top: -2px;
+    }
+  }
+}

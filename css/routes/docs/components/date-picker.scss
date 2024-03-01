@@ -1,0 +1,10 @@
+[slot='showcase'] {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow: visible !important;
+
+  @media only screen and (max-width: 340px) {
+    padding: 0.25em !important;
+  }
+}

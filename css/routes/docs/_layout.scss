@@ -1,0 +1,42 @@
+@use 'attractions-theme' as vars;
+@use 'global';
+
+main {
+  display: flex;
+  margin: 1em 0 2em;
+
+  article {
+    padding: 1em 0;
+    width: 100%;
+  }
+
+  :global .required {
+    color: vars.$main;
+    font-size: 0.9em;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    flex: 1;
+    margin-top: 2em;
+  }
+
+  :global small {
+    display: block;
+    white-space: nowrap;
+  }
+
+  :global mark {
+    background: none;
+    color: vars.$main;
+
+    code {
+      color: vars.$main;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}

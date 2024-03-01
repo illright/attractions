@@ -1,0 +1,1 @@
+function t(t){const B=1e3;if(Math.abs(t)<B)return t+" B";const e=["KB","MB","GB","TB","PB","EB","ZB","YB"];let n=-1;do{t/=B,++n}while(Math.round(10*Math.abs(t))/10>=B&&n<e.length-1);return t.toFixed(1)+" "+e[n]}export{t as f};

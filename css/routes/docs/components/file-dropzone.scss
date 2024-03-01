@@ -1,0 +1,13 @@
+[slot='showcase'] {
+  p {
+    margin: 2em 0 0;
+  }
+
+  :global .file-dropzone {
+    margin-top: 1em;
+  }
+
+  @media only screen and (min-width: 340px) {
+    min-width: 17em;
+  }
+}

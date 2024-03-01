@@ -1,0 +1,9 @@
+[slot='showcase'] {
+  display: flex;
+  padding: 1em;
+
+  :global .accordion section {
+    padding: 0.5em;
+    text-align: center;
+  }
+}

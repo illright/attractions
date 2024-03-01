@@ -1,0 +1,8 @@
+[slot='showcase'] {
+  min-height: 10em;
+  padding: 1em;
+
+  :global .autocomplete {
+    max-width: 20em;
+  }
+}
