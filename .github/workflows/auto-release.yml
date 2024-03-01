@@ -13,15 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v4
 
       - name: Fetch the version number 📝
         id: fetch-version
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: string
           script: |
             const package = require(`${process.env.GITHUB_WORKSPACE}/attractions/package.json`);
@@ -29,9 +26,8 @@ jobs:
 
       - name: Fetch the changelog 📝
         id: fetch-changelog
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           result-encoding: string
           script: |
             const changelog = require('fs').readFileSync('CHANGELOG.md', { encoding: 'utf-8' }).split('\n');
@@ -40,9 +36,8 @@ jobs:
             return changelog.slice(start + 1, end).join('\n').trim();
 
       - name: Create a release 🔖
-        uses: actions/github-script@v3
+        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             await github.rest.repos.createRelease({
               owner: context.repo.owner,
