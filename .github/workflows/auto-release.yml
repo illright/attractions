@@ -37,6 +37,8 @@ jobs:
 
       - name: Create a release 🔖
         uses: actions/github-script@v7
+        env:
+          CHANGELOG: ${{ steps.fetch-changelog.outputs.result }}
         with:
           script: |
             await github.rest.repos.createRelease({
@@ -44,5 +46,5 @@ jobs:
               repo: context.repo.repo,
               tag_name: "${{ steps.fetch-version.outputs.result }}",
               name: "${{ steps.fetch-version.outputs.result }}",
-              body: "${{ steps.fetch-changelog.outputs.result }}"
+              body: process.env.CHANGELOG,
             });
