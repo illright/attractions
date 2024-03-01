@@ -44,13 +44,13 @@ jobs:
         # The ".." is to go outside the docs directory
 
       - name: Upload the PR number 📤
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: pr_number
           path: pr_number.txt
 
       - name: Upload the built docs 📤
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: docs
           path: docs/__sapper__/export/attractions/${{ github.event.number }}/
