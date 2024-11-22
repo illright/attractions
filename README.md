@@ -2,6 +2,13 @@
 
 # Attractions
 
+> [!IMPORTANT]
+> This UI kit is now deprecated. It's originally been built for Svelte 3, since then a lot has changed in the ecosystem. Namely, Svelte 5 came out with much better ergonomics for component libraries and a lot of other great projects popped up, like [shadcn-svelte](https://www.shadcn-svelte.com/) and [Melt UI](https://www.melt-ui.com/). Today you should use those projects instead.
+
+<details>
+
+<summary>Old README </summary>
+
 [![Inactively Maintained](https://img.shields.io/badge/Maintenance%20Level-Inactively%20Maintained-yellowgreen.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/illright/attractions/auto-release.yml)](https://github.com/illright/attractions/actions?query=workflow%3ARelease)
@@ -81,6 +88,8 @@ Example usage:
 ```
 
 For more details, check out [the docs](https://illright.github.io/attractions/docs/custom-elements).
+
+</details>
 
 ## License
 
